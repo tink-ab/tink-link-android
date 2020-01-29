@@ -1,0 +1,18 @@
+dokka {
+
+    outputDirectory = "$rootDir/docs"
+    outputFormat = "html"
+
+    configuration {
+        moduleName = 'all'
+        sourceRoot {
+            path = "$rootDir/service/src"
+        }
+        sourceRoot {
+            path = "$rootDir/models/src"
+        }
+        sourceRoot {
+            path = "$rootDir/core/src"
+        }
+    }
+}
