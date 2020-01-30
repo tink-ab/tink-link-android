@@ -25,20 +25,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
 
         // Set a user on the TinkLink instance:
         tinkLink.setUser(getUser())
-        // Request a list of providers, and show them in a new fragment.
-        tinkLink.getUserContext()?.providerRepository?.listProviders(
-            ResultHandler(
-                {
-                    findNavController().navigate(
-                        R.id.action_mainFragment_to_providerListFragment,
-                        ProviderListFragment.getBundle(it)
-                    )
-                },
-                {
-                    // Handle error
-                }
-            )
-        )
+        findNavController().navigate(R.id.profileFragment)
     }
 
     /**
@@ -49,9 +36,9 @@ class MainFragment : Fragment(), TinkLinkConsumer {
      * @see [getUserByAccessToken]
      * @see [getUserByAuthenticationCode]
      */
-    private fun getUser(): User {
-        TODO("Replace with implementation for getting a User using your preferred method.")
-    }
+    private fun getUser(): User = User(
+        "eyJhbGciOiJFUzI1NiIsImtpZCI6IjkyZjI1ZWM2LWFiN2QtNGEzZS1hZmE4LTFhYjZiYTAxMzQyZSIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODAzOTYzNjgsImlhdCI6MTU4MDM4OTE2OCwiaXNzIjoidGluazovL2F1dGgiLCJqdGkiOiJmN2ExODRhMi0zZjMxLTQxNTUtOTlkYS1iY2U3MDNiZjI3ZWMiLCJvcmlnaW4iOiJtYWluIiwic2NvcGVzIjpbInByb3ZpZGVyczpyZWFkIiwic3VnZ2VzdGlvbnM6cmVhZCIsImludmVzdG1lbnRzOnJlYWQiLCJjcmVkZW50aWFsczp3cml0ZSIsImF1dGhvcml6YXRpb246cmVhZCIsImNyZWRlbnRpYWxzOnJlZnJlc2giLCJ1c2VyOnJlYWQiLCJzdGF0aXN0aWNzOnJlYWQiLCJhY2NvdW50czpyZWFkIiwiY3JlZGVudGlhbHM6cmVhZCIsInRyYW5zYWN0aW9uczpyZWFkIl0sInN1YiI6InRpbms6Ly9hdXRoL3VzZXIvOTdjNmE3NDc3MWEyNGI1NmI1YTJjZmIyMGM1NDVkNjYiLCJ0aW5rOi8vYXBwL2lkIjoiMDIyNThiMWFlMDNkNDQ5YWE3M2EyY2Y5OWRhMjlhZDMifQ.7EhJRK6wUA0DsUV1FFSCqF2p2RVLxo04kIgjAAb2AiKmTIhkNZH05rEsy64k70SzUNFNdihruXUPZ3ZR9FTApQ"
+    )
 
     /**
      * Example of creating a User from an access token.
