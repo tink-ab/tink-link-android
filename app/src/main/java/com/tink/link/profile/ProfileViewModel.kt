@@ -10,6 +10,10 @@ import com.tink.link.model.provider.Provider
 import com.tink.link.service.handler.ResultHandler
 import com.tink.link.service.streaming.publisher.StreamObserver
 import com.tink.link.service.streaming.publisher.StreamSubscription
+import org.threeten.bp.Instant
+import org.threeten.bp.ZoneId
+import org.threeten.bp.format.DateTimeFormatter
+import java.util.Locale
 
 class ProfileViewModel : ViewModel() {
 
@@ -55,7 +59,7 @@ class ProfileViewModel : ViewModel() {
                     id = it.id,
                     providerName = providers.find { provider -> provider.name == it.providerName }?.displayName
                         ?: "",
-                    status = it.statusPayload ?: ""
+                    lastUpdated = it.updated.format()
                 )
             }
         }
@@ -77,5 +81,12 @@ class ProfileViewModel : ViewModel() {
 data class Connection(
     val id: String,
     val providerName: String,
-    val status: String
+    val lastUpdated: String
 )
+
+private fun Instant.format(): String =
+    DateTimeFormatter
+        .ofPattern("MMM dd, HH:mm")
+        .withLocale(Locale.getDefault())
+        .withZone(ZoneId.systemDefault())
+        .format(this)

@@ -6,19 +6,32 @@
   android:orientation="vertical">
 
   <TextView
-    android:id="@+id/info"
+    android:id="@+id/title"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:layout_margin="32dp"
+    android:text="Credentials"
+    android:textAppearance="?textAppearanceHeadline5"
+    android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/title" />
+
   <Button
     android:id="@+id/addBankButton"
-    android:enabled="false"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
+    android:enabled="false"
     android:text="Add bank"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
