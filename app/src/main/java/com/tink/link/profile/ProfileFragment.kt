@@ -1,5 +1,6 @@
 package com.tink.link.profile
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -22,6 +23,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java].also {
             it.initialize((activity as MainActivity).tinkLink)
+        }
+
+        adapter.onItemClickedListener = { credentialsId ->
+            AlertDialog.Builder(context)
+                .setItems(arrayOf("Update", "Delete")) { _, selected: Int ->
+                    when (selected) {
+                        0 -> { } //TODO
+                        1 -> deleteCredential(credentialsId)
+                    }
+                }
+                .show()
         }
     }
 
@@ -52,5 +64,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 }
             }
         })
+        loadingBackground.setOnTouchListener { _, _ -> true } // Prevent click-through
+    }
+
+    private fun deleteCredential(id: String) {
+        loader.visibility = View.VISIBLE
+        loadingBackground.visibility = View.VISIBLE
+        viewModel.deleteCredential(id) {
+            loader.post {
+                loader.visibility = View.GONE
+                loadingBackground.visibility = View.GONE
+            }
+        }
     }
 }

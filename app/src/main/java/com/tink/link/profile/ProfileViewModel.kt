@@ -5,6 +5,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.link.TinkLink
+import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.model.credential.Credential
 import com.tink.link.model.provider.Provider
 import com.tink.link.service.handler.ResultHandler
@@ -20,6 +21,8 @@ class ProfileViewModel : ViewModel() {
     private val providerStream = MutableLiveData<List<Provider>>()
     private val credentialsStream = MutableLiveData<List<Credential>>()
 
+    private lateinit var credentialRepository: CredentialRepository
+
     private var credentialsSubscription: StreamSubscription? = null
         set(value) {
             field?.unsubscribe()
@@ -29,7 +32,7 @@ class ProfileViewModel : ViewModel() {
 
     fun initialize(tinkLink: TinkLink) {
 
-        val credentialRepository = tinkLink.getUserContext()!!.credentialRepository
+        credentialRepository = tinkLink.getUserContext()!!.credentialRepository
         val providerRepository = tinkLink.getUserContext()!!.providerRepository
 
 
@@ -76,6 +79,9 @@ class ProfileViewModel : ViewModel() {
         super.onCleared()
         credentialsSubscription?.unsubscribe()
     }
+
+    fun deleteCredential(id: String, completed: () -> Unit) =
+        credentialRepository.delete(id, ResultHandler({ completed() }, { completed() }))
 }
 
 data class Connection(
