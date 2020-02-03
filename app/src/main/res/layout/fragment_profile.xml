@@ -43,14 +43,14 @@
     android:layout_height="match_parent"
     android:background="@color/loading_background"
     android:elevation="20dp"
-    android:visibility="visible" />
+    android:visibility="gone" />
 
   <ProgressBar
     android:id="@+id/loader"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:elevation="20dp"
-    android:visibility="visible"
+    android:visibility="gone"
     app:layout_constraintBottom_toBottomOf="@id/loadingBackground"
     app:layout_constraintEnd_toEndOf="@id/loadingBackground"
     app:layout_constraintStart_toStartOf="@id/loadingBackground"

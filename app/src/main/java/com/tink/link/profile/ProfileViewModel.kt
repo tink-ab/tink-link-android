@@ -82,12 +82,28 @@ class ProfileViewModel : ViewModel() {
 
     fun deleteCredential(id: String, completed: () -> Unit) =
         credentialRepository.delete(id, ResultHandler({ completed() }, { completed() }))
+
+    fun getUpdateDataForCredential(credentialId: String): CredentialUpdateData? {
+
+        val credential = credentialsStream.value?.find { it.id == credentialId } ?: return null
+        val provider = providers.value?.find { it.name == credential.providerName } ?: return null
+
+        return CredentialUpdateData(
+            provider,
+            credential.fields
+        )
+    }
 }
 
 data class Connection(
     val id: String,
     val providerName: String,
     val lastUpdated: String
+)
+
+data class CredentialUpdateData(
+    val provider: Provider,
+    val currentValues: Map<String, String>
 )
 
 private fun Instant.format(): String =

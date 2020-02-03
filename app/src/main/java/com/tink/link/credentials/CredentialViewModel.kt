@@ -155,5 +155,40 @@ class CredentialViewModel : ViewModel() {
         streamSubscription?.unsubscribe()
     }
 
+    fun updateCredential(
+        id: String,
+        fields: List<Field>,
+        credentialRepository: CredentialRepository,
+        onError: (Throwable) -> Unit
+    ){
+
+        credentialId.value = id
+
+        createdCredential.value
+            ?.takeIf { it.status == Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
+            ?.let {
+                supplementalInformation(
+                    credentialId = it.id,
+                    fields = fields,
+                    credentialRepository = credentialRepository,
+                    onError = onError
+                )
+                return
+            }
+        credentialRepository.update(
+            id,
+            fields.toFieldMap(),
+            ResultHandler(
+                { credential ->
+                    fetchCredentials(credentialRepository) // Start streaming credentials
+                },
+                {
+                    _viewState.postValue(ViewState.NOT_LOADING)
+                    onError(it)
+                }
+            )
+        )
+    }
+
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }
 }

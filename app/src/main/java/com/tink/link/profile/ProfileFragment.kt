@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.MainActivity
 import com.tink.link.R
+import com.tink.link.credentials.CredentialFragment
 import com.tink.link.providerlist.ProviderListFragment
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -29,7 +30,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             AlertDialog.Builder(context)
                 .setItems(arrayOf("Update", "Delete")) { _, selected: Int ->
                     when (selected) {
-                        0 -> { } //TODO
+                        0 -> updateCredential(credentialsId)
                         1 -> deleteCredential(credentialsId)
                     }
                 }
@@ -75,6 +76,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 loader.visibility = View.GONE
                 loadingBackground.visibility = View.GONE
             }
+        }
+    }
+
+    private fun updateCredential(id: String) {
+        viewModel.getUpdateDataForCredential(id)?.let {
+            findNavController().navigate(
+                R.id.credentialFragment,
+                CredentialFragment.getBundle(
+                    it.provider,
+                    CredentialFragment.CredentialUpdateArgs(id, it.currentValues)
+                )
+            )
         }
     }
 }
