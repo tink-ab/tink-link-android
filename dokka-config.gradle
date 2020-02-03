@@ -4,7 +4,6 @@ dokka {
     outputFormat = "html"
 
     configuration {
-        moduleName = 'all'
         sourceRoot {
             path = "$rootDir/service/src"
         }
