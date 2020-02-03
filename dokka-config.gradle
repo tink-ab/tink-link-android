@@ -14,5 +14,8 @@ dokka {
         sourceRoot {
             path = "$rootDir/core/src"
         }
+        sourceRoot {
+            path = "$rootDir/link/src"
+        }
     }
 }
