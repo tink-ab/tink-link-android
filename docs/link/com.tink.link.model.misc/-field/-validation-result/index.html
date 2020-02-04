@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Field.ValidationResult - link</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">link</a>&nbsp;/&nbsp;<a href="../../index.html">com.tink.link.model.misc</a>&nbsp;/&nbsp;<a href="../index.html">Field</a>&nbsp;/&nbsp;<a href="./index.html">ValidationResult</a><br/>
+<br/>
+<h1>ValidationResult</h1>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">ValidationResult</span></code>
+<p>Represents the result of a validation of the user input for a field.
+It can be either one of two types depending upon whether the user input was valid or not.
+If the user input is valid, the result is <a href="-valid.html">ValidationResult.Valid</a>
+If the user input is invalid, the result is <a href="-validation-error/index.html">ValidationResult.ValidationError</a></p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-valid.html">Valid</a></h4>
+</td>
+<td>
+<p>Represents the type of <a href="./index.html">ValidationResult</a> when the user input is valid.</p>
+<code><span class="keyword">object </span><span class="identifier">Valid</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ValidationResult</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-validation-error/index.html">ValidationError</a></h4>
+</td>
+<td>
+<p>Represents the type of <a href="./index.html">ValidationResult</a> when the user input is invalid.</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">ValidationError</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ValidationResult</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

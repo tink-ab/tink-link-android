@@ -39,7 +39,5 @@ ui/build/*
 json/build/*
 buildSrc/build
 
-docs/
-
 # Ignore the sample configuration package.
 app/src/main/java/com/tink/link/configuration

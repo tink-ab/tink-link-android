@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Provider - link</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">link</a>&nbsp;/&nbsp;<a href="../index.html">com.tink.link.model.provider</a>&nbsp;/&nbsp;<a href="./index.html">Provider</a><br/>
+<br/>
+<h1>Provider</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Provider</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Provider</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code>
+<p>The provider model represents a way of connecting to different banks or other financial institutions in Tink.
+Multiple providers can exist for the same financial institution, each representing a different type of access the user can choose from.
+The model contains metadata about the provider which can be used to group and properly display the representations,
+thus helping the end user make the correct decision on which provider to choose.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-access-type/index.html">AccessType</a></h4>
+</td>
+<td>
+<p>Describes how Tink will access a provider, for example whether open banking apis are used or not. See <a href="access-type.html">Provider.accessType</a></p>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">AccessType</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-financial-institution/index.html">FinancialInstitution</a></h4>
+</td>
+<td>
+<p>Indicates which financial institution a provider belongs to. This can be used for grouping providers together:
+the <a href="-financial-institution/id.html">id</a> should be used as a selector, whereas the <a href="-financial-institution/name.html">name</a> should be used as the label for the group.
+See <a href="financial-institution.html">Provider.financialInstitution</a></p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">FinancialInstitution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-status/index.html">Status</a></h4>
+</td>
+<td>
+<p>Indicates the current status of the provider. It is only possible to perform credentials create or refresh actions on providers which are enabled. See <a href="status.html">Provider.status</a></p>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Status</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-type/index.html">Type</a></h4>
+</td>
+<td>
+<p>Indicates what type of financial institution the provider represents.</p>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Type</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>creates a new provider object. This is usually done inside the Tink framework. It should normally not be necessary to create your own provider objects.</p>
+<code><span class="identifier">Provider</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/displayName">displayName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">Type</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/status">status</span><span class="symbol">:</span>&nbsp;<span class="identifier">Status</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/credentialType">credentialType</span><span class="symbol">:</span>&nbsp;<span class="identifier">Type</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/helpText">helpText</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/isPopular">isPopular</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/fields">fields</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.tink.link.model.misc/-field/index.html"><span class="identifier">Field</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/groupDisplayName">groupDisplayName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/displayDescription">displayDescription</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/images">images</span><span class="symbol">:</span>&nbsp;<a href="../../com.tink.link.model/-images/index.html"><span class="identifier">Images</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/financialInstitution">financialInstitution</span><span class="symbol">:</span>&nbsp;<span class="identifier">FinancialInstitution</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.provider.Provider$<init>(kotlin.String, kotlin.String, com.tink.link.model.provider.Provider.Type, com.tink.link.model.provider.Provider.Status, com.tink.link.model.credential.Credential.Type, kotlin.String, kotlin.Boolean, kotlin.collections.List((com.tink.link.model.misc.Field)), kotlin.String, kotlin.String, com.tink.link.model.Images, com.tink.link.model.provider.Provider.FinancialInstitution, com.tink.link.model.provider.Provider.AccessType)/accessType">accessType</span><span class="symbol">:</span>&nbsp;<span class="identifier">AccessType</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="access-type.html">accessType</a></h4>
+</td>
+<td>
+<p>The access type of the provider. See <a href="-access-type/index.html">AccessType</a></p>
+<code><span class="keyword">val </span><span class="identifier">accessType</span><span class="symbol">: </span><span class="identifier">AccessType</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="credential-type.html">credentialType</a></h4>
+</td>
+<td>
+<p>Indicates which method will be used to connect this provider, for example with username/password or a third party app.</p>
+<code><span class="keyword">val </span><span class="identifier">credentialType</span><span class="symbol">: </span><span class="identifier">Type</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="display-description.html">displayDescription</a></h4>
+</td>
+<td>
+<p>a short displayable description of the authentication type used</p>
+<code><span class="keyword">val </span><span class="identifier">displayDescription</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="display-name.html">displayName</a></h4>
+</td>
+<td>
+<p>the formatted name of this provider, meant for display to the end user</p>
+<code><span class="keyword">val </span><span class="identifier">displayName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="fields.html">fields</a></h4>
+</td>
+<td>
+<p>the list of inputs that need to be filled to connect to this provider. See also <a href="../../com.tink.link.model.credential/-credential/fields.html">Credential.fields</a></p>
+<code><span class="keyword">val </span><span class="identifier">fields</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.tink.link.model.misc/-field/index.html"><span class="identifier">Field</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="financial-institution.html">financialInstitution</a></h4>
+</td>
+<td>
+<p>The financial institution the provider belongs to. See <a href="-financial-institution/index.html">FinancialInstitution</a></p>
+<code><span class="keyword">val </span><span class="identifier">financialInstitution</span><span class="symbol">: </span><span class="identifier">FinancialInstitution</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="group-display-name.html">groupDisplayName</a></h4>
+</td>
+<td>
+<p>this can for example be used as a label for groups of providers</p>
+<code><span class="keyword">val </span><span class="identifier">groupDisplayName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="help-text.html">helpText</a></h4>
+</td>
+<td>
+<p>a small help text that you can display to the user for further information on how to connect this provider</p>
+<code><span class="keyword">val </span><span class="identifier">helpText</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="images.html">images</a></h4>
+</td>
+<td>
+<p>a wrapper class for images describing the provider, for example a bank logo</p>
+<code><span class="keyword">val </span><span class="identifier">images</span><span class="symbol">: </span><a href="../../com.tink.link.model/-images/index.html"><span class="identifier">Images</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-popular.html">isPopular</a></h4>
+</td>
+<td>
+<p>Indicates whether the provider is one of the major providers in a market. This can be used to provide shortcuts for the end user, for example by putting this provider on the top of the list.</p>
+<code><span class="keyword">val </span><span class="identifier">isPopular</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="name.html">name</a></h4>
+</td>
+<td>
+<p>the name of this provider. This serves as a human readable identifier</p>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="status.html">status</a></h4>
+</td>
+<td>
+<p>The status of the provider. See <a href="-status/index.html">Status</a></p>
+<code><span class="keyword">val </span><span class="identifier">status</span><span class="symbol">: </span><span class="identifier">Status</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="type.html">type</a></h4>
+</td>
+<td>
+<p>The type of the provider. See <a href="-type/index.html">Type</a></p>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><span class="identifier">Type</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="compare-to.html">compareTo</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">compareTo</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.model.provider.Provider$compareTo(com.tink.link.model.provider.Provider)/other">other</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Provider</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

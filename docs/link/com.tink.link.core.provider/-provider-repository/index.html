@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProviderRepository - link</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">link</a>&nbsp;/&nbsp;<a href="../index.html">com.tink.link.core.provider</a>&nbsp;/&nbsp;<a href="./index.html">ProviderRepository</a><br/>
+<br/>
+<h1>ProviderRepository</h1>
+<code><span class="keyword">class </span><span class="identifier">ProviderRepository</span></code>
+<p>Repository for retrieving <a href="../../com.tink.link.model.provider/-provider/index.html">Provider</a>s</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Create a new repository instance from a <a href="../../com.tink.link.service.provider/-provider-service/index.html">ProviderService</a>.
+This is usually done inside the TinkLink framework and it should normally not be necessary to create your own instance.</p>
+<code><span class="identifier">ProviderRepository</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.core.provider.ProviderRepository$<init>(com.tink.link.service.provider.ProviderService)/service">service</span><span class="symbol">:</span>&nbsp;<a href="../../com.tink.link.service.provider/-provider-service/index.html"><span class="identifier">ProviderService</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="list-providers.html">listProviders</a></h4>
+</td>
+<td>
+<p>List all providers on the current market. The result will already be filtered to only contain
+providers that are <a href="../../com.tink.link.model.provider/-provider/-status/-e-n-a-b-l-e-d.html">enabled</a></p>
+<code><span class="keyword">fun </span><span class="identifier">listProviders</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.core.provider.ProviderRepository$listProviders(com.tink.link.service.handler.ResultHandler((kotlin.collections.List((com.tink.link.model.provider.Provider)))), kotlin.Boolean)/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="../../com.tink.link.service.handler/-result-handler/index.html"><span class="identifier">ResultHandler</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.tink.link.model.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.core.provider.ProviderRepository$listProviders(com.tink.link.service.handler.ResultHandler((kotlin.collections.List((com.tink.link.model.provider.Provider)))), kotlin.Boolean)/includeDemoProviders">includeDemoProviders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
