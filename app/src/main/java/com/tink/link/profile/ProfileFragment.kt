@@ -41,7 +41,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 

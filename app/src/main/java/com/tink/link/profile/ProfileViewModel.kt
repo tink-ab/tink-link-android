@@ -29,12 +29,10 @@ class ProfileViewModel : ViewModel() {
             field = value
         }
 
-
     fun initialize(tinkLink: TinkLink) {
 
         credentialRepository = tinkLink.getUserContext()!!.credentialRepository
         val providerRepository = tinkLink.getUserContext()!!.providerRepository
-
 
         credentialsSubscription =
             credentialRepository.listStream().subscribe(object : StreamObserver<List<Credential>> {
