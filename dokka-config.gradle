@@ -4,7 +4,6 @@ dokka {
     outputFormat = "html"
 
     configuration {
-        moduleName = 'all'
         sourceRoot {
             path = "$rootDir/service/src"
         }
@@ -13,6 +12,9 @@ dokka {
         }
         sourceRoot {
             path = "$rootDir/core/src"
+        }
+        sourceRoot {
+            path = "$rootDir/link/src"
         }
     }
 }

@@ -1,0 +1,27 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:com.tink.link.model.provider$toProviderTree(kotlin.collections.List((com.tink.link.model.provider.Provider)))com.tink.link.model.provider/kotlin.collections.-list/to-provider-tree.html
+$dokka.location:com.tink.link.service.misc$toFieldMap(kotlin.collections.List((com.tink.link.model.misc.Field)))com.tink.link.service.misc/kotlin.collections.-list/to-field-map.html
+com.tink.link
+com.tink.link.core.authentication
+com.tink.link.core.credentials
+com.tink.link.core.provider
+com.tink.link.core.user
+com.tink.link.model
+com.tink.link.model.account
+com.tink.link.model.authentication
+com.tink.link.model.credential
+com.tink.link.model.misc
+com.tink.link.model.provider
+com.tink.link.service
+com.tink.link.service.account
+com.tink.link.service.authentication
+com.tink.link.service.authorization
+com.tink.link.service.credential
+com.tink.link.service.handler
+com.tink.link.service.misc
+com.tink.link.service.network
+com.tink.link.service.observer
+com.tink.link.service.provider
+com.tink.link.service.streaming
+com.tink.link.service.streaming.publisher

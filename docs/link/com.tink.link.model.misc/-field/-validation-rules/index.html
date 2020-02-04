@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Field.ValidationRules - link</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">link</a>&nbsp;/&nbsp;<a href="../../index.html">com.tink.link.model.misc</a>&nbsp;/&nbsp;<a href="../index.html">Field</a>&nbsp;/&nbsp;<a href="./index.html">ValidationRules</a><br/>
+<br/>
+<h1>ValidationRules</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">ValidationRules</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code>
+<p>Represents rules that determine whether the user input for a field is valid.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<p>Represents rules that determine whether the user input for a field is valid.</p>
+<code><span class="identifier">ValidationRules</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$<init>(kotlin.Int, kotlin.Int, kotlin.String, kotlin.String, kotlin.Boolean)/maxLength">maxLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$<init>(kotlin.Int, kotlin.Int, kotlin.String, kotlin.String, kotlin.Boolean)/minLength">minLength</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$<init>(kotlin.Int, kotlin.Int, kotlin.String, kotlin.String, kotlin.Boolean)/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$<init>(kotlin.Int, kotlin.Int, kotlin.String, kotlin.String, kotlin.Boolean)/patternError">patternError</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$<init>(kotlin.Int, kotlin.Int, kotlin.String, kotlin.String, kotlin.Boolean)/isOptional">isOptional</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="is-optional.html">isOptional</a></h4>
+</td>
+<td>
+<p>Indicates whether the user input is optional</p>
+<code><span class="keyword">val </span><span class="identifier">isOptional</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="max-length.html">maxLength</a></h4>
+</td>
+<td>
+<p>The maximum allowed length for the user input</p>
+<code><span class="keyword">val </span><span class="identifier">maxLength</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="min-length.html">minLength</a></h4>
+</td>
+<td>
+<p>The minimum allowed length for the user input</p>
+<code><span class="keyword">val </span><span class="identifier">minLength</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="pattern.html">pattern</a></h4>
+</td>
+<td>
+<p>The regex pattern allowed for the user input</p>
+<code><span class="keyword">val </span><span class="identifier">pattern</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="pattern-error.html">patternError</a></h4>
+</td>
+<td>
+<p>A user-friendly text describing an error where the user input did not match the <a href="pattern.html">pattern</a></p>
+<code><span class="keyword">val </span><span class="identifier">patternError</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="validate.html">validate</a></h4>
+</td>
+<td>
+<p>Validates the user input for a field.</p>
+<code><span class="keyword">fun </span><span class="identifier">validate</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$validate(kotlin.String, kotlin.String)/fieldName">fieldName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.model.misc.Field.ValidationRules$validate(kotlin.String, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ValidationResult</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
