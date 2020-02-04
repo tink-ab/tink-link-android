@@ -76,4 +76,8 @@
       android:id="@+id/action_profileFragment_to_providerListFragment"
       app:destination="@+id/providerListFragment" />
   </fragment>
+  <fragment
+    android:id="@+id/refreshCredentialsFragment"
+    android:name="com.tink.link.credentials.RefreshCredentialsFragment"
+    android:label="RefreshCredentialsFragment" />
 </navigation>

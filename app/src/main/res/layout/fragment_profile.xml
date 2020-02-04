@@ -13,9 +13,20 @@
     android:text="Credentials"
     android:textAppearance="?textAppearanceHeadline5"
     android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/refreshButton"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/refreshButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toEndOf="@+id/title"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="@+id/title"
+    style="@style/Widget.MaterialComponents.Button.TextButton"
+    android:text="Refresh"
+    android:layout_marginEnd="16dp" />
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerView"
