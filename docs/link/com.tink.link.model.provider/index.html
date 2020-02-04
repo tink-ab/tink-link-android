@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>com.tink.link.model.provider - link</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">link</a>&nbsp;/&nbsp;<a href="./index.html">com.tink.link.model.provider</a><br/>
+<br/>
+<h2>Package com.tink.link.model.provider</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-provider/index.html">Provider</a></h4>
+</td>
+<td>
+<p>The provider model represents a way of connecting to different banks or other financial institutions in Tink.
+Multiple providers can exist for the same financial institution, each representing a different type of access the user can choose from.
+The model contains metadata about the provider which can be used to group and properly display the representations,
+thus helping the end user make the correct decision on which provider to choose.</p>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Provider</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-provider-tree-node/index.html">ProviderTreeNode</a></h4>
+</td>
+<td>
+<p>This class represents a tree structure of <a href="-provider-tree-node/-financial-institution-group-node/index.html">FinancialInstitutionGroupNode</a> objects with children.
+This eventually leads to a leaf object of type <a href="-provider-tree-node/-credential-type-node/index.html">CredentialTypeNode</a>,
+that contains more detailed <a href="-provider/index.html">Provider</a> data.</p>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">ProviderTreeNode</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Parcelable.html"><span class="identifier">Parcelable</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extensions for External Classes</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="kotlin.collections.-list/index.html">kotlin.collections.List</a></h4>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
