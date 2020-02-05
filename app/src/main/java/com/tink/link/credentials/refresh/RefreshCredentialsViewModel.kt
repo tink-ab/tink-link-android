@@ -7,8 +7,10 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.provider.ProviderRepository
 import com.tink.link.model.credential.Credential
 import com.tink.link.model.misc.Field
+import com.tink.link.model.provider.Provider
 import com.tink.link.service.handler.ResultHandler
 import com.tink.link.service.streaming.publisher.StreamObserver
 import com.tink.link.service.streaming.publisher.StreamSubscription
@@ -25,7 +27,12 @@ class RefreshCredentialsViewModel : ViewModel() {
 
     private lateinit var credentialRepository: CredentialRepository
 
-    fun initialize(credentialRepository: CredentialRepository) {
+    private val providers = MutableLiveData<List<Provider>>()
+
+    fun initialize(
+        credentialRepository: CredentialRepository,
+        providerRepository: ProviderRepository
+    ) {
         this.credentialRepository = credentialRepository
         credentialsSubscription =
             credentialRepository.listStream().subscribe(object :
@@ -34,15 +41,24 @@ class RefreshCredentialsViewModel : ViewModel() {
                     _credentials.postValue(value)
                 }
             })
+
+        providerRepository.listProviders(
+            ResultHandler({
+                providers.postValue(it)
+            }, {
+                // Error
+            })
+        )
     }
 
     fun refreshAll() {
         credentials.value?.map { it.id }?.let {
-            credentialRepository.refresh(it,
+            credentialRepository.refresh(
+                it,
                 ResultHandler({
-                    Timber.tag("Jan").d("Refresh success")
+                    Timber.d("Refresh success")
                 }, {
-                    Timber.tag("Jan").d("Refresh error")
+                    Timber.d("Refresh error")
                 })
             )
         }
@@ -57,7 +73,8 @@ class RefreshCredentialsViewModel : ViewModel() {
     }
 
     fun cancelSupplementalInformation(credentialId: String) {
-        credentialRepository.cancelSupplementalInformation(credentialId,
+        credentialRepository.cancelSupplementalInformation(
+            credentialId,
             ResultHandler({}, {})
         )
     }
@@ -71,16 +88,16 @@ class RefreshCredentialsViewModel : ViewModel() {
 
     private val currentlyRefreshingWithDistinctStatus = MediatorLiveData<Credential?>()
         .apply {
-        addSource(currentlyRefreshing) {
-            whenNonNull(value, it) { old, new ->
-                if (old.id != new.id || old.status != new.status || old.statusUpdated < new.statusUpdated) {
-                    value = new
+            addSource(currentlyRefreshing) {
+                whenNonNull(value, it) { old, new ->
+                    if (old.id != new.id || old.status != new.status || old.statusUpdated < new.statusUpdated) {
+                        value = new
+                    }
+                } ?: if (value != it) { //one of both is null, set value
+                    value = it
                 }
-            } ?: if (value != it) { //one of both is null, set value
-                value = it
             }
         }
-    }
 
     val infoRequiredEvent: LiveData<Event<Credential>> =
         Transformations.map(currentlyRefreshingWithDistinctStatus) { credential ->
@@ -89,10 +106,24 @@ class RefreshCredentialsViewModel : ViewModel() {
                 ?.let { Event(it) }
         }
 
-    val credentialListRefreshState: LiveData<Map<Credential, CredentialRefreshState>> =
-        Transformations.map(credentials) { list ->
-            list.associateWith { getRefreshState(it.status) }
+    val refreshInfo: LiveData<List<RefreshModel>> = MediatorLiveData<List<RefreshModel>>().apply {
+        fun update() {
+            value = credentials.value?.map {
+                RefreshModel(
+                    label = providers.value
+                        ?.find { provider -> provider.name == it.providerName }
+                        ?.displayName
+                        ?: "",
+                    status = it.status?.toString() ?: "",
+                    id = it.id,
+                    state = getRefreshState(it.status)
+                )
+            }
+
         }
+        addSource(credentials) { update() }
+        addSource(providers) { update() }
+    }
 
     private fun getRefreshState(credentialStatus: Credential.Status?) = when (credentialStatus) {
         Credential.Status.CREATED,
@@ -111,6 +142,17 @@ class RefreshCredentialsViewModel : ViewModel() {
         null -> TODO()
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        credentialsSubscription?.unsubscribe()
+    }
 }
 
 enum class CredentialRefreshState { LOADING, DONE, INFO_REQUIRED }
+
+data class RefreshModel(
+    val label: String,
+    val status: String,
+    val id: String,
+    val state: CredentialRefreshState
+)
