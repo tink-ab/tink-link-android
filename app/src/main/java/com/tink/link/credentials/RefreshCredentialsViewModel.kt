@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.model.credential.Credential
+import com.tink.link.model.misc.Field
 import com.tink.link.service.handler.ResultHandler
 import com.tink.link.service.streaming.publisher.StreamObserver
 import com.tink.link.service.streaming.publisher.StreamSubscription
@@ -41,6 +42,18 @@ class RefreshCredentialsViewModel : ViewModel() {
                 Timber.tag("Jan").d("Refresh error")
             }))
         }
+    }
+
+    fun sendSupplementalInformation(credentialId: String, fields: List<Field>) {
+        credentialRepository.supplementInformation(
+            credentialId,
+            fields.associate { it.name to it.value },
+            ResultHandler({}, {})
+        )
+    }
+
+    fun cancelSupplementalInformation(credentialId: String) {
+        credentialRepository.cancelSupplementalInformation(credentialId, ResultHandler({}, {}))
     }
 
     private val currentlyRefreshing: LiveData<Credential?> =
