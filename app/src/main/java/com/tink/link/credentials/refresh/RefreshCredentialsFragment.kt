@@ -1,4 +1,4 @@
-package com.tink.link.credentials
+package com.tink.link.credentials.refresh
 
 import android.os.Bundle
 import android.view.View
@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.tink.link.MainActivity
 import com.tink.link.R
+import com.tink.link.credentials.CredentialField
 import com.tink.link.extensions.dpToPixels
 import com.tink.link.extensions.launch
 import com.tink.link.model.credential.Credential
@@ -77,11 +78,12 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
 
         for (field in credential.supplementalInformation) {
             credentialFields
-                .addView(CredentialField(requireContext())
-                    .also {
-                        it.updatePadding(bottom = resources.dpToPixels(32))
-                        it.setupField(field)
-                    })
+                .addView(
+                    CredentialField(requireContext())
+                        .also {
+                            it.updatePadding(bottom = resources.dpToPixels(32))
+                            it.setupField(field)
+                        })
         }
 
         AlertDialog.Builder(requireContext())

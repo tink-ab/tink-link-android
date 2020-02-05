@@ -78,6 +78,6 @@
   </fragment>
   <fragment
     android:id="@+id/refreshCredentialsFragment"
-    android:name="com.tink.link.credentials.RefreshCredentialsFragment"
+    android:name="com.tink.link.credentials.refresh.RefreshCredentialsFragment"
     android:label="RefreshCredentialsFragment" />
 </navigation>

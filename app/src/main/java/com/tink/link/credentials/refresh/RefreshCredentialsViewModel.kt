@@ -1,4 +1,4 @@
-package com.tink.link.credentials
+package com.tink.link.credentials.refresh
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
@@ -17,7 +17,8 @@ import timber.log.Timber
 
 class RefreshCredentialsViewModel : ViewModel() {
 
-    private val _credentials = MutableLiveData<List<Credential>>()
+    private val _credentials =
+        MutableLiveData<List<Credential>>()
     val credentials: LiveData<List<Credential>> = _credentials
 
     private var credentialsSubscription: StreamSubscription? = null
@@ -27,7 +28,8 @@ class RefreshCredentialsViewModel : ViewModel() {
     fun initialize(credentialRepository: CredentialRepository) {
         this.credentialRepository = credentialRepository
         credentialsSubscription =
-            credentialRepository.listStream().subscribe(object : StreamObserver<List<Credential>> {
+            credentialRepository.listStream().subscribe(object :
+                StreamObserver<List<Credential>> {
                 override fun onNext(value: List<Credential>) {
                     _credentials.postValue(value)
                 }
@@ -36,11 +38,13 @@ class RefreshCredentialsViewModel : ViewModel() {
 
     fun refreshAll() {
         credentials.value?.map { it.id }?.let {
-            credentialRepository.refresh(it, ResultHandler({
-                Timber.tag("Jan").d("Refresh success")
-            }, {
-                Timber.tag("Jan").d("Refresh error")
-            }))
+            credentialRepository.refresh(it,
+                ResultHandler({
+                    Timber.tag("Jan").d("Refresh success")
+                }, {
+                    Timber.tag("Jan").d("Refresh error")
+                })
+            )
         }
     }
 
@@ -53,7 +57,9 @@ class RefreshCredentialsViewModel : ViewModel() {
     }
 
     fun cancelSupplementalInformation(credentialId: String) {
-        credentialRepository.cancelSupplementalInformation(credentialId, ResultHandler({}, {}))
+        credentialRepository.cancelSupplementalInformation(credentialId,
+            ResultHandler({}, {})
+        )
     }
 
     private val currentlyRefreshing: LiveData<Credential?> =
@@ -63,7 +69,8 @@ class RefreshCredentialsViewModel : ViewModel() {
                 .firstOrNull()
         }
 
-    private val currentlyRefreshingWithDistinctStatus = MediatorLiveData<Credential?>().apply {
+    private val currentlyRefreshingWithDistinctStatus = MediatorLiveData<Credential?>()
+        .apply {
         addSource(currentlyRefreshing) {
             whenNonNull(value, it) { old, new ->
                 if (old.id != new.id || old.status != new.status || old.statusUpdated < new.statusUpdated) {
