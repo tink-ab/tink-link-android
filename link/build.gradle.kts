@@ -67,3 +67,17 @@ if (project.hasProperty("kapt")) {
 }
 
 apply(from = "../publishing.gradle")
+
+tasks {
+    val dokkaWithCopy by registering {
+        group = "documentation"
+        dependsOn(findByName("dokka"))
+        doLast {
+            copy {
+                from("../docs/link")
+                into("../docs")
+            }
+            delete("../docs/link")
+        }
+    }
+}
