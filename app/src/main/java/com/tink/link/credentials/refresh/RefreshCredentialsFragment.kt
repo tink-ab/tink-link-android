@@ -64,7 +64,6 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
         refreshButton.setOnClickListener { viewModel.refreshAll() }
     }
 
-
     private fun showSupplementalInfoDialog(credential: Credential) {
 
         val credentialFields = LinearLayout(requireContext())
@@ -74,7 +73,6 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
             LinearLayout.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
-
 
         credentialFields.layoutParams = params
         credentialFields.setPadding(50)

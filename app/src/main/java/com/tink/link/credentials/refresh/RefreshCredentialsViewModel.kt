@@ -15,19 +15,21 @@ import com.tink.link.service.handler.ResultHandler
 import com.tink.link.service.streaming.publisher.StreamObserver
 import com.tink.link.service.streaming.publisher.StreamSubscription
 import com.tink.link.whenNonNull
+import org.threeten.bp.Instant
 import timber.log.Timber
 
 class RefreshCredentialsViewModel : ViewModel() {
 
-    private val _credentials =
-        MutableLiveData<List<Credential>>()
-    val credentials: LiveData<List<Credential>> = _credentials
+    private val credentials = MutableLiveData<List<Credential>>()
+    private val providers = MutableLiveData<List<Provider>>()
 
     private var credentialsSubscription: StreamSubscription? = null
 
     private lateinit var credentialRepository: CredentialRepository
 
-    private val providers = MutableLiveData<List<Provider>>()
+    private val credentialStatusMap = mutableMapOf<String, CredentialStatusModel>()
+
+    private val updateQueue = LinkedHashMap<String, Credential>()
 
     fun initialize(
         credentialRepository: CredentialRepository,
@@ -38,7 +40,8 @@ class RefreshCredentialsViewModel : ViewModel() {
             credentialRepository.listStream().subscribe(object :
                 StreamObserver<List<Credential>> {
                 override fun onNext(value: List<Credential>) {
-                    _credentials.postValue(value)
+                    credentialListUpdate(value)
+                    credentials.postValue(value)
                 }
             })
 
@@ -50,6 +53,60 @@ class RefreshCredentialsViewModel : ViewModel() {
             })
         )
     }
+
+    // Check if any status in the list has changed
+    private fun credentialListUpdate(credentials: List<Credential>) {
+        for (newCredential in credentials) {
+
+            val newStatusModel = newCredential.toStatusModel()
+
+            val oldStatusDescription = credentialStatusMap[newCredential.id]
+            if (oldStatusDescription == null || oldStatusDescription.isNewStatus(newStatusModel)) {
+                credentialStatusMap[newCredential.id] = newStatusModel // Update map
+                onCredentialStatusUpdate(newCredential) // Update queue as necessary
+                currentlyRefreshing.postValue(
+                    updateQueue.asIterable().firstOrNull()?.value // Post first value of the queue as current credential
+                )
+            }
+        }
+    }
+
+    private fun onCredentialStatusUpdate(credential: Credential) {
+
+        when (getRefreshState(credential.status)) {
+
+            // Status is done or error. Nothing to do anymore for the user, remove from queue
+            CredentialRefreshState.DONE -> updateQueue.remove(credential.id)
+
+            // Status changed to an active state. Add to queue or update if already in
+            CredentialRefreshState.LOADING,
+            CredentialRefreshState.INFO_REQUIRED -> updateQueue[credential.id] = credential
+        }
+    }
+
+    private val currentlyRefreshing: MutableLiveData<Credential?> = MutableLiveData()
+
+    // A live data which will only update its value if the status of the
+    // credential held has changed or if it's a completely new credential
+    private val currentlyRefreshingWithDistinctStatus = MediatorLiveData<Credential?>()
+        .apply {
+            addSource(currentlyRefreshing) {
+                whenNonNull(value, it) { old, new ->
+                    if (old.id != new.id || old.toStatusModel().isNewStatus(new.toStatusModel())) {
+                        value = new
+                    }
+                } ?: if (value != it) { //one of both is null, set value
+                    value = it
+                }
+            }
+        }
+
+    val infoRequiredEvent: LiveData<Event<Credential>> =
+        Transformations.map(currentlyRefreshingWithDistinctStatus) { credential ->
+            credential
+                ?.takeIf { getRefreshState(it.status) == CredentialRefreshState.INFO_REQUIRED }
+                ?.let { Event(it) }
+        }
 
     fun refreshAll() {
         credentials.value?.map { it.id }?.let {
@@ -78,33 +135,6 @@ class RefreshCredentialsViewModel : ViewModel() {
             ResultHandler({}, {})
         )
     }
-
-    private val currentlyRefreshing: LiveData<Credential?> =
-        Transformations.map(credentials) { list ->
-            list.filterNot { getRefreshState(it.status) == CredentialRefreshState.DONE }
-                .sortedBy { it.id }
-                .firstOrNull()
-        }
-
-    private val currentlyRefreshingWithDistinctStatus = MediatorLiveData<Credential?>()
-        .apply {
-            addSource(currentlyRefreshing) {
-                whenNonNull(value, it) { old, new ->
-                    if (old.id != new.id || old.status != new.status || old.statusUpdated < new.statusUpdated) {
-                        value = new
-                    }
-                } ?: if (value != it) { //one of both is null, set value
-                    value = it
-                }
-            }
-        }
-
-    val infoRequiredEvent: LiveData<Event<Credential>> =
-        Transformations.map(currentlyRefreshingWithDistinctStatus) { credential ->
-            credential
-                ?.takeIf { getRefreshState(it.status) == CredentialRefreshState.INFO_REQUIRED }
-                ?.let { Event(it) }
-        }
 
     val refreshInfo: LiveData<List<RefreshModel>> = MediatorLiveData<List<RefreshModel>>().apply {
         fun update() {
@@ -136,10 +166,10 @@ class RefreshCredentialsViewModel : ViewModel() {
         Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
         Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
         Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> CredentialRefreshState.INFO_REQUIRED
-        Credential.Status.SESSION_EXPIRED -> TODO()
-        Credential.Status.DISABLED -> TODO()
-        Credential.Status.UNKNOWN -> TODO()
-        null -> TODO()
+        Credential.Status.SESSION_EXPIRED,
+        Credential.Status.DISABLED,
+        Credential.Status.UNKNOWN,
+        null -> CredentialRefreshState.DONE // Status handling not implemented, ignore
     }
 
     override fun onCleared() {
@@ -147,6 +177,11 @@ class RefreshCredentialsViewModel : ViewModel() {
         credentialsSubscription?.unsubscribe()
     }
 }
+
+private data class CredentialStatusModel(
+    val status: Credential.Status?,
+    val statusUpdated: Instant
+)
 
 enum class CredentialRefreshState { LOADING, DONE, INFO_REQUIRED }
 
@@ -156,3 +191,8 @@ data class RefreshModel(
     val id: String,
     val state: CredentialRefreshState
 )
+
+private fun Credential.toStatusModel() = CredentialStatusModel(status, statusUpdated)
+
+private fun CredentialStatusModel.isNewStatus(other: CredentialStatusModel) =
+    status != other.status || statusUpdated < other.statusUpdated
