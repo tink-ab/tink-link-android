@@ -17,4 +17,9 @@
   <string name="third_party_authentication_download_app_positive">Install</string>
   <string name="third_party_authentication_download_app_negative">Cancel</string>
   <string name="third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
+  <string name="refresh_headline">Refresh</string>
+  <string name="refresh_all_button">Refresh All</string>
+  <string name="profile_headline">Credentials</string>
+  <string name="refresh_button">Refresh</string>
+  <string name="add_credentials_button">Add bank</string>
 </resources>
