@@ -30,7 +30,15 @@ class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) 
     fun bind(model: RefreshModel) {
         itemView.providerName.text = model.label
         itemView.status.text = model.status
-        itemView.loader.visibility =
-            if (model.state == CredentialRefreshState.DONE) View.GONE else View.VISIBLE
+
+        val loading = model.state != CredentialRefreshState.DONE
+
+        itemView.loader.visibility = if (loading) View.VISIBLE else View.INVISIBLE
+        itemView.logo.visibility = View.INVISIBLE
+
+        model.iconUri?.takeUnless { loading }.let {
+            itemView.logo.visibility = View.VISIBLE
+            itemView.logo.setImageURI(it)
+        }
     }
 }
