@@ -65,8 +65,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             }
         })
         loadingBackground.setOnTouchListener { _, _ -> true } // Prevent click-through
-
-
         refreshButton.setOnClickListener { findNavController().navigate(R.id.refreshCredentialsFragment) }
     }
 

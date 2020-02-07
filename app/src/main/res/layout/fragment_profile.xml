@@ -2,15 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical">
+  android:layout_height="match_parent">
 
   <TextView
     android:id="@+id/title"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="32dp"
-    android:text="Credentials"
+    android:text="@string/profile_headline"
     android:textAppearance="?textAppearanceHeadline5"
     android:textStyle="bold"
     app:layout_constraintEnd_toStartOf="@+id/refreshButton"
@@ -19,14 +18,14 @@
 
   <Button
     android:id="@+id/refreshButton"
+    style="@style/Widget.MaterialComponents.Button.TextButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintStart_toEndOf="@+id/title"
-    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginEnd="16dp"
+    android:text="@string/refresh_button"
     app:layout_constraintBottom_toBottomOf="@+id/title"
-    style="@style/Widget.MaterialComponents.Button.TextButton"
-    android:text="Refresh"
-    android:layout_marginEnd="16dp" />
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/title" />
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerView"
@@ -43,7 +42,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
     android:enabled="false"
-    android:text="Add bank"
+    android:text="@string/add_credentials_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
