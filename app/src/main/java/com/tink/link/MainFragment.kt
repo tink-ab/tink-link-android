@@ -25,20 +25,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
 
         // Set a user on the TinkLink instance:
         tinkLink.setUser(getUser())
-        // Request a list of providers, and show them in a new fragment.
-        tinkLink.getUserContext()?.providerRepository?.listProviders(
-            ResultHandler(
-                {
-                    findNavController().navigate(
-                        R.id.action_mainFragment_to_providerListFragment,
-                        ProviderListFragment.getBundle(it)
-                    )
-                },
-                {
-                    // Handle error
-                }
-            )
-        )
+        findNavController().navigate(R.id.profileFragment)
     }
 
     /**
