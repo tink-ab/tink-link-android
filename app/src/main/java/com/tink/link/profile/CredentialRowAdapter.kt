@@ -39,5 +39,11 @@ class CredentialRowViewHolder(itemView: View, clickListener: OnViewHolderClicked
     fun bind(connection: Connection) {
         itemView.providerName.text = connection.providerName
         itemView.updatedTime.text = connection.lastUpdated
+
+        itemView.logo.visibility = View.GONE
+        connection.iconUri?.let {
+            itemView.logo.visibility = View.VISIBLE
+            itemView.logo.setImageURI(it)
+        }
     }
 }
