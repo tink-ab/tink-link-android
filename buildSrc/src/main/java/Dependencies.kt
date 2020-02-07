@@ -61,4 +61,5 @@ object Dependencies {
     const val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
     const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.2.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
+    const val fresco = "com.facebook.fresco:fresco:2.1.0"
 }

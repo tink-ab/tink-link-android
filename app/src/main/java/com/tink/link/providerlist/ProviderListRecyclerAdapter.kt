@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.drawee.view.SimpleDraweeView
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import com.tink.link.model.credential.Credential
@@ -48,6 +49,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
     ClickableViewHolder(itemView, clickListener) {
 
     private val title: TextView = itemView.findViewById(R.id.title)
+    private val logo: SimpleDraweeView = itemView.findViewById(R.id.logo)
 
     fun bind(item: ProviderTreeNode) {
         title.text = when (item) {
@@ -56,6 +58,15 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.ProviderNode -> item.name
+        }
+
+        if (item is ProviderTreeNode.CredentialTypeNode) {
+            logo.visibility = View.GONE
+        } else {
+            item.icon?.let {
+                logo.setImageURI(it)
+                logo.visibility = View.VISIBLE
+            }
         }
     }
 }
