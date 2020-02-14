@@ -52,5 +52,5 @@ dependencies {
     implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
-    implementation(Dependencies.fresco)
+    implementation(Dependencies.picasso)
 }

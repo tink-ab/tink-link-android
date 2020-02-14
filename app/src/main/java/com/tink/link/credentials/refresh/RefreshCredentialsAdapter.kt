@@ -3,6 +3,7 @@ package com.tink.link.credentials.refresh
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import kotlinx.android.synthetic.main.item_credential_refresh_row.view.*
@@ -38,7 +39,7 @@ class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
         model.iconUri?.takeUnless { loading }.let {
             itemView.logo.visibility = View.VISIBLE
-            itemView.logo.setImageURI(it)
+            Picasso.get().load(it).into(itemView.logo)
         }
     }
 }

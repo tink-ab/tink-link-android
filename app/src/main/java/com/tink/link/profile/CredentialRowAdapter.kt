@@ -3,6 +3,7 @@ package com.tink.link.profile
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import com.tink.link.viewholders.ClickableViewHolder
@@ -43,7 +44,7 @@ class CredentialRowViewHolder(itemView: View, clickListener: OnViewHolderClicked
         itemView.logo.visibility = View.GONE
         connection.iconUri?.let {
             itemView.logo.visibility = View.VISIBLE
-            itemView.logo.setImageURI(it)
+            Picasso.get().load(it).into(itemView.logo)
         }
     }
 }

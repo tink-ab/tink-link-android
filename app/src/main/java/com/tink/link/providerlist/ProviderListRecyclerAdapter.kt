@@ -2,9 +2,10 @@ package com.tink.link.providerlist
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.facebook.drawee.view.SimpleDraweeView
+import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import com.tink.link.model.credential.Credential
@@ -49,7 +50,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
     ClickableViewHolder(itemView, clickListener) {
 
     private val title: TextView = itemView.findViewById(R.id.title)
-    private val logo: SimpleDraweeView = itemView.findViewById(R.id.logo)
+    private val logo: ImageView = itemView.findViewById(R.id.logo)
 
     fun bind(item: ProviderTreeNode) {
         title.text = when (item) {
@@ -64,7 +65,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             logo.visibility = View.GONE
         } else {
             item.icon?.let {
-                logo.setImageURI(it)
+                Picasso.get().load(it).into(logo)
                 logo.visibility = View.VISIBLE
             }
         }

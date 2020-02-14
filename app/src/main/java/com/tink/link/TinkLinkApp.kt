@@ -1,7 +1,6 @@
 package com.tink.link
 
 import android.app.Application
-import com.facebook.drawee.backends.pipeline.Fresco
 import com.jakewharton.threetenabp.AndroidThreeTen
 import timber.log.Timber
 
@@ -10,7 +9,6 @@ class TinkLinkApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Fresco.initialize(this)
         AndroidThreeTen.init(this)
         Timber.plant(getTimberTree())
     }
