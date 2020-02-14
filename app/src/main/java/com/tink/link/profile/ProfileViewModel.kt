@@ -57,11 +57,14 @@ class ProfileViewModel : ViewModel() {
             val providers = providerStream.value ?: return
 
             value = credentials.map {
+
+                val provider = providers.find { provider -> provider.name == it.providerName }
+
                 Connection(
                     id = it.id,
-                    providerName = providers.find { provider -> provider.name == it.providerName }?.displayName
-                        ?: "",
-                    lastUpdated = it.updated.format()
+                    providerName = provider?.displayName ?: "",
+                    lastUpdated = it.updated.format(),
+                    iconUri = provider?.images?.icon
                 )
             }
         }
@@ -97,7 +100,8 @@ class ProfileViewModel : ViewModel() {
 data class Connection(
     val id: String,
     val providerName: String,
-    val lastUpdated: String
+    val lastUpdated: String,
+    val iconUri: String?
 )
 
 data class CredentialUpdateData(

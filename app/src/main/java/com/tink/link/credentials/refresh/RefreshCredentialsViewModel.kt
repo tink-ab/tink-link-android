@@ -139,14 +139,17 @@ class RefreshCredentialsViewModel : ViewModel() {
     val refreshInfo: LiveData<List<RefreshModel>> = MediatorLiveData<List<RefreshModel>>().apply {
         fun update() {
             value = credentials.value?.map {
+
+                val provider = providers.value?.find { provider ->
+                    provider.name == it.providerName
+                }
+
                 RefreshModel(
-                    label = providers.value
-                        ?.find { provider -> provider.name == it.providerName }
-                        ?.displayName
-                        ?: "",
+                    label = provider?.displayName ?: "",
                     status = it.status?.toString() ?: "",
                     id = it.id,
-                    state = getRefreshState(it.status)
+                    state = getRefreshState(it.status),
+                    iconUri = provider?.images?.icon
                 )
             }
 
@@ -189,7 +192,8 @@ data class RefreshModel(
     val label: String,
     val status: String,
     val id: String,
-    val state: CredentialRefreshState
+    val state: CredentialRefreshState,
+    val iconUri: String?
 )
 
 private fun Credential.toStatusModel() = CredentialStatusModel(status, statusUpdated)

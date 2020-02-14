@@ -3,6 +3,7 @@ package com.tink.link.credentials.refresh
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import kotlinx.android.synthetic.main.item_credential_refresh_row.view.*
@@ -30,7 +31,15 @@ class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) 
     fun bind(model: RefreshModel) {
         itemView.providerName.text = model.label
         itemView.status.text = model.status
-        itemView.loader.visibility =
-            if (model.state == CredentialRefreshState.DONE) View.GONE else View.VISIBLE
+
+        val loading = model.state != CredentialRefreshState.DONE
+
+        itemView.loader.visibility = if (loading) View.VISIBLE else View.INVISIBLE
+        itemView.logo.visibility = View.INVISIBLE
+
+        model.iconUri?.takeUnless { loading }.let {
+            itemView.logo.visibility = View.VISIBLE
+            Picasso.get().load(it).into(itemView.logo)
+        }
     }
 }
