@@ -6,13 +6,13 @@ import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.core.provider.ProviderRepository
 import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
-import com.tink.link.service.ServiceModule
-import com.tink.link.service.authentication.AccessTokenEventBus
-import com.tink.link.service.authorization.Scope
-import com.tink.link.service.authorization.UserService
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.network.NetworkModule
-import com.tink.link.service.network.TinkLinkConfiguration
+import com.tink.service.ServiceModule
+import com.tink.service.authentication.AccessTokenEventBus
+import com.tink.service.authorization.Scope
+import com.tink.service.authorization.UserService
+import com.tink.service.handler.ResultHandler
+import com.tink.service.network.NetworkModule
+import com.tink.service.network.TinkConfiguration
 import dagger.BindsInstance
 import dagger.Component
 import dagger.Subcomponent
@@ -119,7 +119,7 @@ abstract class TinkLink {
         userService.authenticate(
             authenticationCode,
             ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User(accessToken))},
+                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
                 resultHandler.onError
             )
         )
@@ -135,7 +135,7 @@ abstract class TinkLink {
          */
         @JvmStatic
         fun create(
-            tinkLinkConfiguration: TinkLinkConfiguration,
+            tinkLinkConfiguration: TinkConfiguration,
             context: Context
         ): TinkLink =
             DaggerTinkLink.builder()
@@ -148,7 +148,7 @@ abstract class TinkLink {
     internal interface Builder {
 
         @BindsInstance
-        fun tinkLinkConfiguration(tinkLinkConfiguration: TinkLinkConfiguration): Builder
+        fun tinkLinkConfiguration(tinkLinkConfiguration: TinkConfiguration): Builder
 
         @BindsInstance
         fun applicationContext(applicationContext: Context): Builder
@@ -160,7 +160,7 @@ abstract class TinkLink {
 }
 
 @Subcomponent
-internal interface RepositoryComponent: Repositories
+internal interface RepositoryComponent : Repositories
 
 internal interface Repositories {
     val providerRepository: ProviderRepository

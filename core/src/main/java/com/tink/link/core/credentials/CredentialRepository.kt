@@ -1,14 +1,12 @@
 package com.tink.link.core.credentials
 
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.misc.Field
-import com.tink.link.model.provider.Provider
-import com.tink.link.service.credential.CredentialCreationDescriptor
-import com.tink.link.service.credential.CredentialService
-import com.tink.link.service.credential.CredentialUpdateDescriptor
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.network.TinkLinkConfiguration
-import com.tink.link.service.streaming.publisher.Stream
+import com.tink.model.credential.Credential
+import com.tink.service.credential.CredentialCreationDescriptor
+import com.tink.service.credential.CredentialService
+import com.tink.service.credential.CredentialUpdateDescriptor
+import com.tink.service.handler.ResultHandler
+import com.tink.service.network.TinkConfiguration
+import com.tink.service.streaming.publisher.Stream
 import javax.inject.Inject
 
 /**
@@ -19,7 +17,7 @@ import javax.inject.Inject
  */
 class CredentialRepository @Inject constructor(
     private val service: CredentialService,
-    private val tinkLinkConfiguration: TinkLinkConfiguration
+    private val tinkLinkConfiguration: TinkConfiguration
 ) {
 
     /**
@@ -142,7 +140,11 @@ class CredentialRepository @Inject constructor(
      * @param parameters The map of key and value pairs, other than `state` from the received callback parameters.
      * @param handler The [ResultHandler] for processing error and success callbacks
      */
-    fun thirdPartyCallback(state: String, parameters: Map<String, String>, handler: ResultHandler<Unit>) {
+    fun thirdPartyCallback(
+        state: String,
+        parameters: Map<String, String>,
+        handler: ResultHandler<Unit>
+    ) {
         service.thirdPartyCallback(state, parameters, handler)
     }
 }

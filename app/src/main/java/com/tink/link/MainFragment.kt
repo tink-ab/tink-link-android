@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.link.core.user.User
-import com.tink.link.providerlist.ProviderListFragment
-import com.tink.link.service.handler.ResultHandler
+import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
 

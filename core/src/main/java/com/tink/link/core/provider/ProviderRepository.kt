@@ -1,8 +1,8 @@
 package com.tink.link.core.provider
 
-import com.tink.link.model.provider.Provider
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.provider.ProviderService
+import com.tink.model.provider.Provider
+import com.tink.service.handler.ResultHandler
+import com.tink.service.provider.ProviderService
 import javax.inject.Inject
 
 /**

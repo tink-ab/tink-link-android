@@ -9,10 +9,10 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
 import com.tink.link.R
 import com.tink.link.accesstype.AccessTypeListFragment
 import com.tink.link.extensions.toArrayList
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.providertree.ARG_PROVIDER_TREE
 import com.tink.link.providertree.ProviderTreeNodeFragment
+import com.tink.model.provider.ProviderTreeNode
 
 /**
  * Fragment responsible for displaying a list of financial institutions that belongs to the same financial institution group.

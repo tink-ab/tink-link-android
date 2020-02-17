@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.provider.Provider
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.viewholders.ClickableViewHolder
 import com.tink.link.viewholders.OnViewHolderClickedListener
+import com.tink.model.credential.Credential
+import com.tink.model.provider.Provider
+import com.tink.model.provider.ProviderTreeNode
 import kotlin.properties.Delegates
 
 /**

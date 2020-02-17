@@ -1,8 +1,8 @@
 package com.tink.link.core.authentication
 
-import com.tink.link.service.authentication.AuthenticationService
-import com.tink.link.service.authentication.UserCreationDescriptor
-import com.tink.link.service.handler.ResultHandler
+import com.tink.service.authentication.AuthenticationService
+import com.tink.service.authentication.UserCreationDescriptor
+import com.tink.service.handler.ResultHandler
 import javax.inject.Inject
 
 typealias AccessToken = String

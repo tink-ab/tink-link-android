@@ -6,11 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.link.TinkLink
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.provider.Provider
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.streaming.publisher.StreamObserver
-import com.tink.link.service.streaming.publisher.StreamSubscription
+import com.tink.model.credential.Credential
+import com.tink.model.provider.Provider
+import com.tink.service.handler.ResultHandler
+import com.tink.service.streaming.publisher.StreamObserver
+import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
 import org.threeten.bp.ZoneId
 import org.threeten.bp.format.DateTimeFormatter

@@ -4,16 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
 import com.tink.link.R
 import com.tink.link.extensions.toArrayList
 import com.tink.link.financialinstitution.FinancialInstitutionListFragment
-import com.tink.link.model.provider.Provider
-import com.tink.link.model.provider.ProviderTreeNode
-import com.tink.link.model.provider.toProviderTree
 import com.tink.link.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.providertree.ARG_PROVIDER_TREE
 import com.tink.link.providertree.ProviderTreeNodeFragment
+import com.tink.model.provider.Provider
+import com.tink.model.provider.ProviderTreeNode
+import com.tink.model.provider.toProviderTree
+import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
 
 /**
  * Fragment responsible for displaying a list of financial institution groups.
