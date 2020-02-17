@@ -27,9 +27,9 @@ android {
 }
 
 dependencies {
-    api(project(":service"))
-    api(project(":models"))
-    implementation(project(":rpc"))
+    api(Dependencies.Tink.service)
+    api(Dependencies.Tink.models)
+    implementation(Dependencies.Tink.rpc)
 
     implementation(Dependencies.kotlin_stdlib)
 
