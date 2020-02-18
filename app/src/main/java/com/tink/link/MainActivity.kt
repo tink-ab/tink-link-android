@@ -25,8 +25,6 @@ private val MainActivity.testTinkLinkConfig
 
 class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
 
-    lateinit var tinkLink: TinkLink
-
     override val providerRepository
         get() = Tink.link().getUserContext()?.providerRepository
     override val credentialRepository
@@ -37,7 +35,6 @@ class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
         setContentView(R.layout.activity_main)
 
         Tink.init(testTinkLinkConfig, applicationContext)
-        tinkLink = Tink.link()
 
         redirectIfAppropriate(intent)
     }
@@ -49,7 +46,7 @@ class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
 
     private fun redirectIfAppropriate(intent: Intent?) {
         intent?.data?.let { uri ->
-            tinkLink.getUserContext()?.handleUri(uri)
+            Tink.link().getUserContext()?.handleUri(uri)
         }
     }
 }

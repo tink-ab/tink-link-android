@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.tink.link.TinkLink
+import com.tink.core.Tink
 import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.link
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
@@ -15,7 +16,6 @@ import org.threeten.bp.Instant
 import org.threeten.bp.ZoneId
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.FormatStyle
-import timber.log.Timber
 import java.util.Locale
 
 class ProfileViewModel : ViewModel() {
@@ -23,7 +23,7 @@ class ProfileViewModel : ViewModel() {
     private val providerStream = MutableLiveData<List<Provider>>()
     private val credentialsStream = MutableLiveData<List<Credential>>()
 
-    private lateinit var credentialRepository: CredentialRepository
+    private val credentialRepository: CredentialRepository
 
     private var credentialsSubscription: StreamSubscription? = null
         set(value) {
@@ -31,10 +31,11 @@ class ProfileViewModel : ViewModel() {
             field = value
         }
 
-    fun initialize(tinkLink: TinkLink) {
+    init {
+        val userContext = requireNotNull(Tink.link().getUserContext())
 
-        credentialRepository = tinkLink.getUserContext()!!.credentialRepository
-        val providerRepository = tinkLink.getUserContext()!!.providerRepository
+        credentialRepository = userContext.credentialRepository
+        val providerRepository = userContext.providerRepository
 
         credentialsSubscription =
             credentialRepository.listStream().subscribe(object : StreamObserver<List<Credential>> {

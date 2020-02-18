@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.tink.core.Tink
 import com.tink.link.core.user.User
 import com.tink.service.handler.ResultHandler
 
@@ -20,10 +21,9 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val tinkLink = (activity as MainActivity).tinkLink
 
         // Set a user on the TinkLink instance:
-        tinkLink.setUser(getUser())
+        Tink.link().setUser(getUser())
         findNavController().navigate(R.id.profileFragment)
     }
 

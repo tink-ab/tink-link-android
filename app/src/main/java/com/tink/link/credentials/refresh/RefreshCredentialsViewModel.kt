@@ -5,9 +5,10 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.tink.core.Tink
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.core.provider.ProviderRepository
+import com.tink.link.link
 import com.tink.link.whenNonNull
 import com.tink.model.credential.Credential
 import com.tink.model.misc.Field
@@ -25,17 +26,18 @@ class RefreshCredentialsViewModel : ViewModel() {
 
     private var credentialsSubscription: StreamSubscription? = null
 
-    private lateinit var credentialRepository: CredentialRepository
+    private val credentialRepository: CredentialRepository
 
     private val credentialStatusMap = mutableMapOf<String, CredentialStatusModel>()
 
     private val updateQueue = LinkedHashMap<String, Credential>()
 
-    fun initialize(
-        credentialRepository: CredentialRepository,
-        providerRepository: ProviderRepository
-    ) {
-        this.credentialRepository = credentialRepository
+    init {
+        val userContext = requireNotNull(Tink.link().getUserContext())
+
+        credentialRepository = userContext.credentialRepository
+        val providerRepository = userContext.providerRepository
+
         credentialsSubscription =
             credentialRepository.listStream().subscribe(object :
                 StreamObserver<List<Credential>> {
