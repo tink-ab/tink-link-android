@@ -46,9 +46,7 @@ class ProfileViewModel : ViewModel() {
         providerRepository.listProviders(
             ResultHandler(
                 onSuccess = { providerStream.postValue(it) },
-                onError = {
-                    Timber.tag("Jan").e(it)
-                    /*handle error */ }
+                onError = { /*handle error */ }
             ),
             includeDemoProviders = true
         )
