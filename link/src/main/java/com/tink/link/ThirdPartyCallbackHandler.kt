@@ -8,7 +8,7 @@ import com.tink.service.network.TinkConfiguration
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+@TinkLinkScope
 internal class ThirdPartyCallbackHandler @Inject constructor(
     private val credentialRepository: CredentialRepository,
     tinkLinkConfiguration: TinkConfiguration

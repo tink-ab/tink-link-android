@@ -1,22 +1,18 @@
 package com.tink.link
 
-import android.content.Context
 import android.net.Uri
+import com.tink.core.Tink
+import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
-import com.tink.service.ServiceModule
 import com.tink.service.authentication.AccessTokenEventBus
 import com.tink.service.authorization.Scope
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
-import com.tink.service.network.NetworkModule
-import com.tink.service.network.TinkConfiguration
-import dagger.BindsInstance
 import dagger.Component
 import dagger.Subcomponent
-import javax.inject.Singleton
 
 /**
  * Starting point for using Tink Link in your application.
@@ -24,12 +20,9 @@ import javax.inject.Singleton
  * After that you can get further access to specific repositories with the context fetched from [getUserContext].
  */
 @Component(
-    modules = [
-        ServiceModule::class,
-        NetworkModule::class
-    ]
+    dependencies = [TinkComponent::class]
 )
-@Singleton
+@TinkLinkScope
 abstract class TinkLink {
 
     internal abstract val accessTokenEventBus: AccessTokenEventBus
@@ -126,34 +119,18 @@ abstract class TinkLink {
     }
 
     companion object {
-        /**
-         * Create an instance of TinkLink. This operation is expensive and should not be called to often.
-         * Make sure to save a reference to your instance and manage it accordingly.
-         *
-         * @param tinkLinkConfiguration Your configuration
-         * @param context An Android [Context]. This should have application scope.
-         */
-        @JvmStatic
-        fun create(
-            tinkLinkConfiguration: TinkConfiguration,
-            context: Context
-        ): TinkLink =
-            DaggerTinkLink.builder()
-                .tinkLinkConfiguration(tinkLinkConfiguration)
-                .applicationContext(context.applicationContext)
+        private fun create(): TinkLink {
+            return DaggerTinkLink.builder()
+                .tinkComponent(Tink.requireComponent())
                 .build()
+        }
+        val instance: TinkLink by lazy { create() }
     }
 
     @Component.Builder
     internal interface Builder {
 
-        @BindsInstance
-        fun tinkLinkConfiguration(tinkLinkConfiguration: TinkConfiguration): Builder
-
-        @BindsInstance
-        fun applicationContext(applicationContext: Context): Builder
-
-        fun networkModule(networkModule: NetworkModule): Builder
+        fun tinkComponent(tinkComponent: TinkComponent): Builder
 
         fun build(): TinkLink
     }
@@ -166,3 +143,8 @@ internal interface Repositories {
     val providerRepository: ProviderRepository
     val credentialRepository: CredentialRepository
 }
+
+@javax.inject.Scope
+annotation class TinkLinkScope
+
+fun Tink.link() = TinkLink.instance

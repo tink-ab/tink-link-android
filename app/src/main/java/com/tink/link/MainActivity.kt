@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.tink.core.Tink
 import com.tink.link.configuration.Configuration
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.core.provider.ProviderRepository
@@ -27,17 +28,17 @@ class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
     lateinit var tinkLink: TinkLink
 
     override val providerRepository
-        get() = tinkLink.getUserContext()?.providerRepository
+        get() = Tink.link().getUserContext()?.providerRepository
     override val credentialRepository
-        get() = tinkLink.getUserContext()?.credentialRepository
+        get() = Tink.link().getUserContext()?.credentialRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tinkLink = TinkLink.create(
-            testTinkLinkConfig,
-            applicationContext
-        )
+
+        Tink.init(testTinkLinkConfig, applicationContext)
+        tinkLink = Tink.link()
+
         redirectIfAppropriate(intent)
     }
 
