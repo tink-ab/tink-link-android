@@ -25,8 +25,6 @@ import dagger.Subcomponent
 @TinkLinkScope
 internal abstract class TinkLinkComponent : TinkLink {
 
-    internal abstract val accessTokenEventBus: AccessTokenEventBus
-
     internal abstract val repositoryComponent: RepositoryComponent
 
     private val repositories: Repositories
@@ -83,7 +81,7 @@ internal abstract class TinkLinkComponent : TinkLink {
      */
     override fun setUser(user: User) {
         this.user = user
-        accessTokenEventBus.postAccessToken(user.accessToken)
+        Tink.setUser(user.accessToken)
     }
 
 //    /**
