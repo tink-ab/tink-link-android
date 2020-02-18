@@ -15,6 +15,7 @@ import org.threeten.bp.Instant
 import org.threeten.bp.ZoneId
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.format.FormatStyle
+import timber.log.Timber
 import java.util.Locale
 
 class ProfileViewModel : ViewModel() {
@@ -45,7 +46,9 @@ class ProfileViewModel : ViewModel() {
         providerRepository.listProviders(
             ResultHandler(
                 onSuccess = { providerStream.postValue(it) },
-                onError = { /*handle error */ }
+                onError = {
+                    Timber.tag("Jan").e(it)
+                    /*handle error */ }
             ),
             includeDemoProviders = true
         )

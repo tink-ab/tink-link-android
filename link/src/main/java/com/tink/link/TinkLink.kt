@@ -2,8 +2,8 @@ package com.tink.link
 
 import android.content.Context
 import android.net.Uri
+import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.provider.ProviderRepository
 import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
 import com.tink.service.ServiceModule

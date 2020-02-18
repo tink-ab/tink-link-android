@@ -7,7 +7,7 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.provider.ProviderRepository
+import com.tink.core.provider.ProviderRepository
 import com.tink.link.whenNonNull
 import com.tink.model.credential.Credential
 import com.tink.model.misc.Field
