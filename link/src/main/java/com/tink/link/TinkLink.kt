@@ -1,90 +1,28 @@
 package com.tink.link
 
-import android.net.Uri
-import com.tink.core.Tink
-import com.tink.core.TinkComponent
-import com.tink.core.provider.ProviderRepository
-import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
-import com.tink.service.authentication.AccessTokenEventBus
-import com.tink.service.authorization.Scope
-import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
-import dagger.Component
-import dagger.Subcomponent
 
 /**
  * Starting point for using Tink Link in your application.
  * Call [TinkLink.create] to obtain an instance, then use [setUser] to add authorization capabilities to that instance.
  * After that you can get further access to specific repositories with the context fetched from [getUserContext].
  */
-@Component(
-    dependencies = [TinkComponent::class]
-)
-@TinkLinkScope
-abstract class TinkLink {
-
-    internal abstract val accessTokenEventBus: AccessTokenEventBus
-
-    internal abstract val repositoryComponent: RepositoryComponent
-
-    private val repositories: Repositories
-        get() = repositoryComponent
-
-    internal abstract val userService: UserService
-
-    internal abstract val thirdPartyCallbackHandler: ThirdPartyCallbackHandler
-
-    private var user: User? = null
-    private val _userContext = object : UserContext {
-        override val providerRepository: ProviderRepository
-            get() = repositories.providerRepository
-        override val credentialRepository: CredentialRepository
-            get() = repositories.credentialRepository
-
-        /**
-         * Handle a third-party callback.
-         *
-         * Call this method when identifying a third-party callback from the registered
-         * [redirectUri][TinkLinkConfiguration.redirectUri]
-         *
-         * Example:
-         * ```
-         * private fun redirectIfAppropriate(intent: Intent?) {
-         *      intent?.data?.let { uri ->
-         *          tinkLink.getUserContext()?.handleUri(uri)
-         *      }
-         * }
-         * ```
-         */
-        override fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>?) =
-            thirdPartyCallbackHandler.handleUri(uri, resultHandler)
-
-        /**
-         * Authorize your user towards a new set of scopes.
-         * These scopes needs to be enabled for your [clientId][TinkLinkConfiguration.oAuthClientId].
-         */
-        override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) =
-            userService.authorize(scopes, resultHandler)
-
-    }
+interface TinkLink {
 
     /**
      * Fetches the [UserContext] for this TinkLink instance if a user is set.
      *
      * If no user is set, this will return `null`
      */
-    fun getUserContext(): UserContext? = user?.let { _userContext }
+    fun getUserContext(): UserContext?
 
     /**
      * Set the user to the TinkLink instance. This enables you to fetch the [UserContext] with
      * [getUserContext].
      */
-    fun setUser(user: User) {
-        this.user = user
-        accessTokenEventBus.postAccessToken(user.accessToken)
-    }
+    fun setUser(user: User)
 
 //    /**
 //     * Create a temporary user.
@@ -108,43 +46,6 @@ abstract class TinkLink {
      *
      * On a successful result, your resultHandler should call [setUser] to set this user to the TinkLink instance.
      */
-    fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
-        userService.authenticate(
-            authenticationCode,
-            ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
-                resultHandler.onError
-            )
-        )
-    }
-
-    companion object {
-        private fun create(): TinkLink {
-            return DaggerTinkLink.builder()
-                .tinkComponent(Tink.requireComponent())
-                .build()
-        }
-        val instance: TinkLink by lazy { create() }
-    }
-
-    @Component.Builder
-    internal interface Builder {
-
-        fun tinkComponent(tinkComponent: TinkComponent): Builder
-
-        fun build(): TinkLink
-    }
+    fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>)
 }
 
-@Subcomponent
-internal interface RepositoryComponent : Repositories
-
-internal interface Repositories {
-    val providerRepository: ProviderRepository
-    val credentialRepository: CredentialRepository
-}
-
-@javax.inject.Scope
-annotation class TinkLinkScope
-
-fun Tink.link() = TinkLink.instance
