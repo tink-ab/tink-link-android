@@ -7,7 +7,6 @@ import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
-import com.tink.service.authentication.AccessTokenEventBus
 import com.tink.service.authorization.Scope
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
@@ -23,7 +22,7 @@ import dagger.Subcomponent
     dependencies = [TinkComponent::class]
 )
 @TinkLinkScope
-internal abstract class TinkLinkComponent : TinkLink {
+internal abstract class TinkLinkComponent {
 
     internal abstract val repositoryComponent: RepositoryComponent
 
@@ -73,16 +72,7 @@ internal abstract class TinkLinkComponent : TinkLink {
      *
      * If no user is set, this will return `null`
      */
-    override fun getUserContext(): UserContext? = user?.let { _userContext }
-
-    /**
-     * Set the user to the TinkLink instance. This enables you to fetch the [UserContext] with
-     * [getUserContext].
-     */
-    override fun setUser(user: User) {
-        this.user = user
-        Tink.setUser(user.accessToken)
-    }
+    internal fun getUserContext(): UserContext? = user?.let { _userContext }
 
 //    /**
 //     * Create a temporary user.
@@ -106,7 +96,7 @@ internal abstract class TinkLinkComponent : TinkLink {
      *
      * On a successful result, your resultHandler should call [setUser] to set this user to the TinkLink instance.
      */
-    override fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
+    internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
         userService.authenticate(
             authenticationCode,
             ResultHandler(
@@ -123,7 +113,7 @@ internal abstract class TinkLinkComponent : TinkLink {
                 .build()
         }
 
-        internal val instance: TinkLink by lazy { create() }
+        internal val instance by lazy { create() }
     }
 
     @Component.Builder
@@ -144,5 +134,7 @@ internal interface Repositories {
 @javax.inject.Scope
 internal annotation class TinkLinkScope
 
-fun Tink.link(): TinkLink = TinkLinkComponent.instance
+fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserContext()
 
+fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
+    TinkLinkComponent.instance.authenticateUser(authenticationCode, resultHandler)

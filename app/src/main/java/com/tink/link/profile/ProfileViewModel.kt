@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.link
+import com.tink.link.getUserContext
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
@@ -32,7 +32,7 @@ class ProfileViewModel : ViewModel() {
         }
 
     init {
-        val userContext = requireNotNull(Tink.link().getUserContext())
+        val userContext = requireNotNull(Tink.getUserContext())
 
         credentialRepository = userContext.credentialRepository
         val providerRepository = userContext.providerRepository

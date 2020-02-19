@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.tink.core.Tink
+import com.tink.core.provider.ProviderRepository
 import com.tink.link.configuration.Configuration
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.core.provider.ProviderRepository
 import com.tink.service.network.TinkConfiguration
 
 private val MainActivity.testTinkLinkConfig
@@ -23,12 +23,7 @@ private val MainActivity.testTinkLinkConfig
             .build()
     )
 
-class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
-
-    override val providerRepository
-        get() = Tink.link().getUserContext()?.providerRepository
-    override val credentialRepository
-        get() = Tink.link().getUserContext()?.credentialRepository
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +41,7 @@ class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
 
     private fun redirectIfAppropriate(intent: Intent?) {
         intent?.data?.let { uri ->
-            Tink.link().getUserContext()?.handleUri(uri)
+            Tink.getUserContext()?.handleUri(uri)
         }
     }
 }
@@ -59,4 +54,9 @@ interface TinkRepositoryProvider {
 }
 
 fun <T> T.getRepositoryProvider() where T : Fragment, T : TinkLinkConsumer =
-    activity as? TinkRepositoryProvider
+    object : TinkRepositoryProvider {
+        override val providerRepository: ProviderRepository?
+            get() = Tink.getUserContext()?.providerRepository
+        override val credentialRepository: CredentialRepository?
+            get() = Tink.getUserContext()?.credentialRepository
+    }

@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.link
+import com.tink.link.getUserContext
 import com.tink.link.whenNonNull
 import com.tink.model.credential.Credential
 import com.tink.model.misc.Field
@@ -33,7 +33,7 @@ class RefreshCredentialsViewModel : ViewModel() {
     private val updateQueue = LinkedHashMap<String, Credential>()
 
     init {
-        val userContext = requireNotNull(Tink.link().getUserContext())
+        val userContext = requireNotNull(Tink.getUserContext())
 
         credentialRepository = userContext.credentialRepository
         val providerRepository = userContext.providerRepository

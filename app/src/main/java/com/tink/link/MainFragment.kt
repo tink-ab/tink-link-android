@@ -23,7 +23,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         // Set a user on the TinkLink instance:
-        Tink.link().setUser(getUser())
+        Tink.setUser(getUser().accessToken)
         findNavController().navigate(R.id.profileFragment)
     }
 
@@ -47,8 +47,8 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     /**
      * Example of fetching a user from an authentication code.
      */
-    private fun getUserByAuthenticationCode(tinkLink: TinkLink, code: String) {
-        tinkLink.authenticateUser(code, ResultHandler(
+    private fun getUserByAuthenticationCode(code: String) {
+        Tink.authenticateUser(code, ResultHandler(
             { user ->
                 // Do something with the user
             }, {}
