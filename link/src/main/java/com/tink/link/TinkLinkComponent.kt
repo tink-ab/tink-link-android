@@ -74,6 +74,16 @@ internal abstract class TinkLinkComponent {
      */
     internal fun getUserContext(): UserContext? = user?.let { _userContext }
 
+    /**
+     * Set the user to the TinkLink instance. This enables you to fetch the [UserContext] with
+     * [getUserContext].
+     */
+    internal fun setUser(user: User) {
+        this.user = user
+        Tink.setUser(user.accessToken)
+    }
+
+
 //    /**
 //     * Create a temporary user.
 //     * This allows you to launch the flow and fetch data for users without having permanent Tink users.
