@@ -44,10 +44,10 @@ val config =
 `[1]` _Note: You need to add a custom URL scheme or supported web URLS to handle redirects from a third party authentication flow back into your app.
 This should be the same redirect URI that is registered in the list of allowed redirect URIs. Follow the [third party authentication guide](/third-party-authentication.md) to set this up._
 
-2. Create an instance of TinkLink in your Application or Activity
+2. Initialize the Tink framework in your Application
 
 ```kotlin
-val tinkLink = TinkLink.create(config, applicationContext)
+Tink.init(config, applicationContext)
 ```
 
 ## Examples
