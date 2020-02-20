@@ -34,8 +34,8 @@ apply {
 }
 
 dependencies {
-    api(project(":core"))
-    implementation(project(":rpc"))
+    api(Dependencies.Tink.core)
+    implementation(Dependencies.Tink.rpc)
 
     implementation(Dependencies.kotlin_stdlib)
 

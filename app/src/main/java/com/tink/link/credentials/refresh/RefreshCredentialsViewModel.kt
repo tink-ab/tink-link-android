@@ -5,16 +5,17 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.tink.core.Tink
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.provider.ProviderRepository
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.misc.Field
-import com.tink.link.model.provider.Provider
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.streaming.publisher.StreamObserver
-import com.tink.link.service.streaming.publisher.StreamSubscription
+import com.tink.link.getUserContext
 import com.tink.link.whenNonNull
+import com.tink.model.credential.Credential
+import com.tink.model.misc.Field
+import com.tink.model.provider.Provider
+import com.tink.service.handler.ResultHandler
+import com.tink.service.streaming.publisher.StreamObserver
+import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
 import timber.log.Timber
 
@@ -25,17 +26,18 @@ class RefreshCredentialsViewModel : ViewModel() {
 
     private var credentialsSubscription: StreamSubscription? = null
 
-    private lateinit var credentialRepository: CredentialRepository
+    private val credentialRepository: CredentialRepository
 
     private val credentialStatusMap = mutableMapOf<String, CredentialStatusModel>()
 
     private val updateQueue = LinkedHashMap<String, Credential>()
 
-    fun initialize(
-        credentialRepository: CredentialRepository,
-        providerRepository: ProviderRepository
-    ) {
-        this.credentialRepository = credentialRepository
+    init {
+        val userContext = requireNotNull(Tink.getUserContext())
+
+        credentialRepository = userContext.credentialRepository
+        val providerRepository = userContext.providerRepository
+
         credentialsSubscription =
             credentialRepository.listStream().subscribe(object :
                 StreamObserver<List<Credential>> {

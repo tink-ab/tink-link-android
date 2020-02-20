@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.providerlist.ProviderListRecyclerAdapter
+import com.tink.model.provider.ProviderTreeNode
 
 internal const val ARG_PROVIDER_TREE = "ARG_PROVIDER_TREE"
 internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"

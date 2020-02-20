@@ -8,7 +8,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tink.link.MainActivity
 import com.tink.link.R
 import com.tink.link.credentials.CredentialFragment
 import com.tink.link.providerlist.ProviderListFragment
@@ -22,9 +21,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java].also {
-            it.initialize((activity as MainActivity).tinkLink)
-        }
+        viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
 
         adapter.onItemClickedListener = { credentialsId ->
             AlertDialog.Builder(context)

@@ -5,14 +5,14 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.tink.core.Tink
+import com.tink.core.provider.ProviderRepository
 import com.tink.link.configuration.Configuration
-import com.tink.link.TinkLink
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.provider.ProviderRepository
-import com.tink.link.service.network.TinkLinkConfiguration
+import com.tink.service.network.TinkConfiguration
 
 private val MainActivity.testTinkLinkConfig
-    get() = TinkLinkConfiguration(
+    get() = TinkConfiguration(
         environment = Configuration.sampleEnvironment,
         oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
@@ -23,22 +23,14 @@ private val MainActivity.testTinkLinkConfig
             .build()
     )
 
-class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
-
-    lateinit var tinkLink: TinkLink
-
-    override val providerRepository
-        get() = tinkLink.getUserContext()?.providerRepository
-    override val credentialRepository
-        get() = tinkLink.getUserContext()?.credentialRepository
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        tinkLink = TinkLink.create(
-            testTinkLinkConfig,
-            applicationContext
-        )
+
+        Tink.init(testTinkLinkConfig, applicationContext)
+
         redirectIfAppropriate(intent)
     }
 
@@ -49,7 +41,7 @@ class MainActivity : AppCompatActivity(), TinkRepositoryProvider {
 
     private fun redirectIfAppropriate(intent: Intent?) {
         intent?.data?.let { uri ->
-            tinkLink.getUserContext()?.handleUri(uri)
+            Tink.getUserContext()?.handleUri(uri)
         }
     }
 }
@@ -62,4 +54,9 @@ interface TinkRepositoryProvider {
 }
 
 fun <T> T.getRepositoryProvider() where T : Fragment, T : TinkLinkConsumer =
-    activity as? TinkRepositoryProvider
+    object : TinkRepositoryProvider {
+        override val providerRepository: ProviderRepository?
+            get() = Tink.getUserContext()?.providerRepository
+        override val credentialRepository: CredentialRepository?
+            get() = Tink.getUserContext()?.credentialRepository
+    }

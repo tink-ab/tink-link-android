@@ -18,7 +18,7 @@ import com.tink.link.extensions.dpToPixels
 import com.tink.link.extensions.hideKeyboard
 import com.tink.link.extensions.launch
 import com.tink.link.getRepositoryProvider
-import com.tink.link.model.provider.Provider
+import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_credential.*
 import kotlinx.android.synthetic.main.layout_toolbar.toolbar

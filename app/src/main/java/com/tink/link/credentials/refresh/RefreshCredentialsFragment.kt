@@ -11,23 +11,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tink.link.MainActivity
 import com.tink.link.R
 import com.tink.link.credentials.CredentialField
 import com.tink.link.extensions.dpToPixels
 import com.tink.link.extensions.launch
-import com.tink.link.model.credential.Credential
+import com.tink.model.credential.Credential
 import kotlinx.android.synthetic.main.fragment_refresh_credentials.*
 
 class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credentials) {
 
     private val viewModel: RefreshCredentialsViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val userContext = (activity as MainActivity).tinkLink.getUserContext()!!
-        viewModel.initialize(userContext.credentialRepository, userContext.providerRepository)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

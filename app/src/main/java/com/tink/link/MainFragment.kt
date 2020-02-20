@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.tink.core.Tink
 import com.tink.link.core.user.User
-import com.tink.link.providerlist.ProviderListFragment
-import com.tink.link.service.handler.ResultHandler
+import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
 
@@ -21,10 +21,9 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val tinkLink = (activity as MainActivity).tinkLink
 
         // Set a user on the TinkLink instance:
-        tinkLink.setUser(getUser())
+        Tink.setUser(getUser())
         findNavController().navigate(R.id.profileFragment)
     }
 
@@ -48,8 +47,8 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     /**
      * Example of fetching a user from an authentication code.
      */
-    private fun getUserByAuthenticationCode(tinkLink: TinkLink, code: String) {
-        tinkLink.authenticateUser(code, ResultHandler(
+    private fun getUserByAuthenticationCode(code: String) {
+        Tink.authenticateUser(code, ResultHandler(
             { user ->
                 // Do something with the user
             }, {}

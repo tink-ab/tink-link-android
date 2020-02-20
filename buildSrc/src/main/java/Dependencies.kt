@@ -62,4 +62,11 @@ object Dependencies {
     const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.2.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.71828"
+
+    object Tink {
+        const val service = "com.tink:service:0.1.0"
+        const val core = "com.tink:core:0.1.0"
+        const val rpc = "com.tink:rpc:0.1.0"
+        const val models = "com.tink:models:0.1.0"
+    }
 }
