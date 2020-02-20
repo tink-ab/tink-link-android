@@ -1,5 +1,3 @@
-@file:JvmName("TinkLink")
-
 package com.tink.link
 
 import com.tink.core.Tink
@@ -8,14 +6,22 @@ import com.tink.link.core.user.UserContext
 import com.tink.service.handler.ResultHandler
 
 
-// For Java
+/**
+ * This is for Java compatibility only. Use extensions on `Tink` when using Kotlin
+ */
+@kotlin.SinceKotlin(version = "999999999.0.0")
+object TinkLink {
 
-fun getUserContext() = Tink.getUserContext()
+    @JvmStatic
+    fun getUserContext() = Tink.getUserContext()
 
-fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
-    Tink.authenticateUser(authenticationCode, resultHandler)
+    @JvmStatic
+    fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
+        Tink.authenticateUser(authenticationCode, resultHandler)
 
-fun setUser(user: User) = Tink.setUser(user)
+    @JvmStatic
+    fun setUser(user: User) = Tink.setUser(user)
+}
 
 // For Kotlin
 
