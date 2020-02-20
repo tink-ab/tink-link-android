@@ -134,9 +134,3 @@ internal interface Repositories {
 @javax.inject.Scope
 internal annotation class TinkLinkScope
 
-@JvmSynthetic
-fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserContext()
-
-@JvmSynthetic
-fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
-    TinkLinkComponent.instance.authenticateUser(authenticationCode, resultHandler)
