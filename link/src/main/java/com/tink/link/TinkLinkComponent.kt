@@ -33,7 +33,6 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val thirdPartyCallbackHandler: ThirdPartyCallbackHandler
 
-    private var user: User? = null
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
             get() = repositories.providerRepository
@@ -72,17 +71,7 @@ internal abstract class TinkLinkComponent {
      *
      * If no user is set, this will return `null`
      */
-    internal fun getUserContext(): UserContext? = user?.let { _userContext }
-
-    /**
-     * Set the user to the TinkLink instance. This enables you to fetch the [UserContext] with
-     * [getUserContext].
-     */
-    internal fun setUser(user: User) {
-        this.user = user
-        Tink.setUser(user)
-    }
-
+    internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
 //    /**
 //     * Create a temporary user.
