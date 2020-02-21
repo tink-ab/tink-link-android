@@ -5,8 +5,8 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
+import com.tink.service.authentication.user.User
 import com.tink.service.authorization.Scope
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
@@ -80,7 +80,7 @@ internal abstract class TinkLinkComponent {
      */
     internal fun setUser(user: User) {
         this.user = user
-        Tink.setUser(user.accessToken)
+        Tink.setUser(user)
     }
 
 
@@ -110,7 +110,7 @@ internal abstract class TinkLinkComponent {
         userService.authenticate(
             authenticationCode,
             ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
+                { accessToken -> resultHandler.onSuccess(User.fromAccessToken(accessToken)) },
                 resultHandler.onError
             )
         )
