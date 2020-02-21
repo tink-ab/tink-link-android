@@ -26,9 +26,6 @@ object TinkLink {
 // For Kotlin
 
 @JvmSynthetic
-fun Tink.setUser(user: User) = TinkLinkComponent.instance.setUser(user)
-
-@JvmSynthetic
 fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserContext()
 
 @JvmSynthetic
