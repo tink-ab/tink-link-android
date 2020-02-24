@@ -5,8 +5,8 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
+import com.tink.service.authentication.user.User
 import com.tink.service.authorization.Scope
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
@@ -33,7 +33,6 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val thirdPartyCallbackHandler: ThirdPartyCallbackHandler
 
-    private var user: User? = null
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
             get() = repositories.providerRepository
@@ -72,17 +71,7 @@ internal abstract class TinkLinkComponent {
      *
      * If no user is set, this will return `null`
      */
-    internal fun getUserContext(): UserContext? = user?.let { _userContext }
-
-    /**
-     * Set the user to the TinkLink instance. This enables you to fetch the [UserContext] with
-     * [getUserContext].
-     */
-    internal fun setUser(user: User) {
-        this.user = user
-        Tink.setUser(user.accessToken)
-    }
-
+    internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
 //    /**
 //     * Create a temporary user.
@@ -110,7 +99,7 @@ internal abstract class TinkLinkComponent {
         userService.authenticate(
             authenticationCode,
             ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
+                { accessToken -> resultHandler.onSuccess(User.fromAccessToken(accessToken)) },
                 resultHandler.onError
             )
         )

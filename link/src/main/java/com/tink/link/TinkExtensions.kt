@@ -1,8 +1,8 @@
 package com.tink.link
 
 import com.tink.core.Tink
-import com.tink.link.core.user.User
 import com.tink.link.core.user.UserContext
+import com.tink.service.authentication.user.User
 import com.tink.service.handler.ResultHandler
 
 
@@ -24,9 +24,6 @@ object TinkLink {
 }
 
 // For Kotlin
-
-@JvmSynthetic
-fun Tink.setUser(user: User) = TinkLinkComponent.instance.setUser(user)
 
 @JvmSynthetic
 fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserContext()

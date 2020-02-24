@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
-import com.tink.link.core.user.User
+import com.tink.service.authentication.user.User
 import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
@@ -42,14 +42,14 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     /**
      * Example of creating a User from an access token.
      */
-    private fun getUserByAccessToken(accessToken: String) = User(accessToken)
+    private fun getUserByAccessToken(accessToken: String) = User.fromAccessToken(accessToken)
 
     /**
      * Example of fetching a user from an authentication code.
      */
     private fun getUserByAuthenticationCode(code: String) {
         Tink.authenticateUser(code, ResultHandler(
-            { user ->
+            { user: User ->
                 // Do something with the user
             }, {}
         ))
