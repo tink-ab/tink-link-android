@@ -4,6 +4,7 @@ import android.net.Uri
 import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
+import com.tink.link.consent.ConsentContext
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.core.user.UserContext
 import com.tink.service.authentication.user.User
@@ -32,6 +33,9 @@ internal abstract class TinkLinkComponent {
     internal abstract val userService: UserService
 
     internal abstract val thirdPartyCallbackHandler: ThirdPartyCallbackHandler
+
+
+    internal abstract val consentContext: ConsentContext
 
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
