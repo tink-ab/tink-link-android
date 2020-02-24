@@ -21,6 +21,9 @@ object TinkLink {
 
     @JvmStatic
     fun setUser(user: User) = Tink.setUser(user)
+
+    @JvmStatic
+    fun getConsentContext() = Tink.getConsentContext()
 }
 
 // For Kotlin
@@ -32,3 +35,5 @@ fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserCont
 fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
     TinkLinkComponent.instance.authenticateUser(authenticationCode, resultHandler)
 
+@JvmSynthetic
+fun Tink.getConsentContext() = TinkLinkComponent.instance.consentContext
