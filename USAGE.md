@@ -56,8 +56,8 @@ In order to show Tink Terms and Conditions and Privacy Policy to the user, you a
 
 ```kotlin
 val consentContext = Tink.getConsentContext()
-
 val locale = Locale.ENGLISH // Use the locale of your choice
+
 val termsUri = consentContext.termsAndConditions(locale)
 val privacyPolicyUri = consentContext.privacyPolicy(locale)
 ```
