@@ -1,5 +1,5 @@
 # Java API
-Tink Link is written in Kotlin and the main entry points are realized with extension functions. The API is best used from Kotlin, but if you are bound to use Java, there are small differences when calling different functions:
+Tink Link is written in Kotlin and the main entry points are realized with extension functions. For that reason there are small differences when calling some functions from Java:
 
 |Function            | in Kotlin                                      | in Java                                           |
 |--------------------|------------------------------------------------|---------------------------------------------------|
