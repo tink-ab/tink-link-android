@@ -4,35 +4,31 @@
 1. Follow the [getting started guide](https://docs.tink.com/resources/getting-started/set-up-your-account) to create your developer account and retrieve your Client ID.
 2. Register the Redirect URI for your app (e.g. `myapp://callback` or `https://myapp.com/callback`) in the list of allowed redirect URIs in console.tink.com.
 
-## Installation (ALPHA)
+## Installation
 
-// TODO: Adjust to bintray
-
-1. Take the `com` folder (containing the Tink Link local Maven dependencies) and put it in `~/.m2/repository/`.
-2. Add `mavenLocal()` as repository in your root level build.gradle file.
+1. Make sure `jcenter()` is added to your repositories (it should be by default).
 
 ```groovy
 allprojects {
     repositories {
-        mavenLocal()
-        // Rest of the repositories
+       jcenter()
+       ...
     }
 }
 ```
 
-_Note: The `mavenLocal()` repository needs to be on top of the other repositories, as shown above._
-
-// TODO: Section about checksum verification
-
-3. Add dependency on `com.tink:tink-link-android-core:0.2.0-alpha`:
+2. Add dependency on `com.tink:link:0.9.0`
 
 // TODO: Fix version
 
 ```groovy
 dependencies {
-    implementation("com.tink:tink-link-android-core:0.2.0-alpha")
+    implementation "com.tink:link:0.9.0"
 }
 ```
+3. Optional: Verify artifact checksums
+
+// TODO
 
 ## Initialization
 
