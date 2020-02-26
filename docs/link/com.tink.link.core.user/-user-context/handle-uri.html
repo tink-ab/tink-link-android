@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UserContext.handleUri - link</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">link</a>&nbsp;/&nbsp;<a href="../index.html">com.tink.link.core.user</a>&nbsp;/&nbsp;<a href="index.html">UserContext</a>&nbsp;/&nbsp;<a href="./handle-uri.html">handleUri</a><br/>
+<br/>
+<h1>handleUri</h1>
+<a name="com.tink.link.core.user.UserContext$handleUri(android.net.Uri, com.tink.service.handler.ResultHandler((kotlin.Unit)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">handleUri</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.core.user.UserContext$handleUri(android.net.Uri, com.tink.service.handler.ResultHandler((kotlin.Unit)))/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/net/Uri.html"><span class="identifier">Uri</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.core.user.UserContext$handleUri(android.net.Uri, com.tink.service.handler.ResultHandler((kotlin.Unit)))/resultHandler">resultHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResultHandler</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Handle a third-party callback.</p>
+<p>Call this method when identifying a third-party callback from the registered
+<a href="#">redirectUri</a></p>
+<p>Example:</p>
+<pre><code>private fun redirectIfAppropriate(intent: Intent?) {
+     intent?.data?.let { uri -&gt;
+         tinkLink.getUserContext()?.handleUri(uri)
+     }
+}
+</code></pre>
+</BODY>
+</HTML>
