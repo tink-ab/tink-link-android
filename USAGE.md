@@ -64,6 +64,27 @@ val privacyPolicyUri = consentContext.privacyPolicy(locale)
 
 2. Make the contents of the `Uri`'s available to the users, and require the users to give their consent in order to move forward.
 
+### Showing scope descriptions
+
+If aggregating under Tink’s license the user must be informed and fully understand what kind of data will be aggregated before aggregating any data:
+
+```kotlin
+val consentContext = Tink.getConsentContext()
+consentContext.scopeDescriptions(
+    setOf(Scope.AccountsRead, Scope.TransactionsRead), // See the [Scope] class for more scopes
+    ResultHandler(
+        { list ->
+            // Show the list of scope descriptions to the user.
+            // The list items contain a title and a description and are of type [ScopeDescription]
+            // See the [ScopeDescription] class for further info.
+        },
+        { error ->
+            // Handle error
+        }
+    )
+)
+```
+
 ## Listing providers
 
 ```kotlin
