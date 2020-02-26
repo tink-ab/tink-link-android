@@ -109,7 +109,7 @@ override fun onNewIntent(intent: Intent?) {
 
 private fun redirectIfAppropriate(intent: Intent?) {
     intent?.data?.let { uri ->
-        val hasBeenHandled = tinkLink.getUserContext()?.handleUri(uri) // This function returns `true` if the uri has been handled successfully, `false` otherwise
+        val hasBeenHandled = Tink.getUserContext()?.handleUri(uri) // This function returns `true` if the uri has been handled successfully, `false` otherwise
     }
 }
 ```
