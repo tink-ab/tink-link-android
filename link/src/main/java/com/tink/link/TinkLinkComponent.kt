@@ -14,11 +14,6 @@ import com.tink.service.handler.ResultHandler
 import dagger.Component
 import dagger.Subcomponent
 
-/**
- * Starting point for using Tink Link in your application.
- * Call [TinkLink.create] to obtain an instance, then use [setUser] to add authorization capabilities to that instance.
- * After that you can get further access to specific repositories with the context fetched from [getUserContext].
- */
 @Component(
     dependencies = [TinkComponent::class]
 )
@@ -34,7 +29,6 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val thirdPartyCallbackHandler: ThirdPartyCallbackHandler
 
-
     internal abstract val consentContext: ConsentContext
 
     private val _userContext = object : UserContext {
@@ -43,38 +37,14 @@ internal abstract class TinkLinkComponent {
         override val credentialRepository: CredentialRepository
             get() = repositories.credentialRepository
 
-        /**
-         * Handle a third-party callback.
-         *
-         * Call this method when identifying a third-party callback from the registered
-         * [redirectUri][TinkLinkConfiguration.redirectUri]
-         *
-         * Example:
-         * ```
-         * private fun redirectIfAppropriate(intent: Intent?) {
-         *      intent?.data?.let { uri ->
-         *          tinkLink.getUserContext()?.handleUri(uri)
-         *      }
-         * }
-         * ```
-         */
         override fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>?) =
             thirdPartyCallbackHandler.handleUri(uri, resultHandler)
 
-        /**
-         * Authorize your user towards a new set of scopes.
-         * These scopes needs to be enabled for your [clientId][TinkLinkConfiguration.oAuthClientId].
-         */
         override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) =
             userService.authorize(scopes, resultHandler)
 
     }
 
-    /**
-     * Fetches the [UserContext] for this TinkLink instance if a user is set.
-     *
-     * If no user is set, this will return `null`
-     */
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
 //    /**
@@ -94,11 +64,6 @@ internal abstract class TinkLinkComponent {
 //        )
 //    }
 
-    /**
-     * Authenticate an existing user with an authentication code.
-     *
-     * On a successful result, your resultHandler should call [setUser] to set this user to the TinkLink instance.
-     */
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
         userService.authenticate(
             authenticationCode,

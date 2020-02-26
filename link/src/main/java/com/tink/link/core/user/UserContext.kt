@@ -9,6 +9,27 @@ import com.tink.service.handler.ResultHandler
 interface UserContext {
     val providerRepository: ProviderRepository
     val credentialRepository: CredentialRepository
+
+    /**
+     * Handle a third-party callback.
+     *
+     * Call this method when identifying a third-party callback from the registered
+     * [redirectUri][TinkConfiguration.redirectUri]
+     *
+     * Example:
+     * ```
+     * private fun redirectIfAppropriate(intent: Intent?) {
+     *      intent?.data?.let { uri ->
+     *          tinkLink.getUserContext()?.handleUri(uri)
+     *      }
+     * }
+     * ```
+     */
     fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>? = null): Boolean
+
+    /**
+     * Authorize your user towards a new set of scopes.
+     * These scopes needs to be enabled for your [clientId][TinkLinkConfiguration.oAuthClientId].
+     */
     fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>)
 }
