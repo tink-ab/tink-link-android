@@ -6,6 +6,8 @@
 
 ## Installation (ALPHA)
 
+// TODO: Adjust to bintray
+
 1. Take the `com` folder (containing the Tink Link local Maven dependencies) and put it in `~/.m2/repository/`.
 2. Add `mavenLocal()` as repository in your root level build.gradle file.
 
@@ -20,7 +22,11 @@ allprojects {
 
 _Note: The `mavenLocal()` repository needs to be on top of the other repositories, as shown above._
 
+// TODO: Section about checksum verification
+
 3. Add dependency on `com.tink:tink-link-android-core:0.2.0-alpha`:
+
+// TODO: Fix version
 
 ```groovy
 dependencies {
@@ -34,7 +40,7 @@ dependencies {
 
 ```kotlin
 val config = 
-    TinkLinkConfiguration(
+    TinkConfiguration(
         environment = Environment.Production, // Or define your own environment
         oAuthClientId = "yourKey", // Your clientId. Retrieve it from console.tink.com,
         redirectUri = "https://localhost:3000/callback" // [1]
@@ -44,10 +50,10 @@ val config =
 `[1]` _Note: You need to add a custom URL scheme or supported web URLS to handle redirects from a third party authentication flow back into your app.
 This should be the same redirect URI that is registered in the list of allowed redirect URIs. Follow the [third party authentication guide](/third-party-authentication.md) to set this up._
 
-2. Create an instance of TinkLink in your Application or Activity
+2. Initialise Tink in your Application
 
 ```kotlin
-val tinkLink = TinkLink.create(config, applicationContext)
+Tink.init(config, applicationContext)
 ```
 
 ## Examples
