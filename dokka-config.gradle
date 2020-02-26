@@ -5,15 +5,6 @@ dokka {
 
     configuration {
         sourceRoot {
-            path = "$rootDir/service/src"
-        }
-        sourceRoot {
-            path = "$rootDir/models/src"
-        }
-        sourceRoot {
-            path = "$rootDir/core/src"
-        }
-        sourceRoot {
             path = "$rootDir/link/src"
         }
     }
