@@ -38,8 +38,8 @@ Tink.authenticateUser(
 ```
 ### Setting a user to TinkLink instance
 
-Once a permanent user is authenticated, the user must be set to the `tinkLink` instance. Once this is done, you can perform operations related to the user through the `UserContext` object. 
-You can access the `UserContext` object through the `tinkLink` instance by calling `tinkLink.getUserContext()`. Please note that this will return `null` if no user has been set.
+Once a permanent user is authenticated, the user must be set passed to `Tink`. Once this is done, you can perform operations related to the user through the `UserContext` object. 
+You can access the `UserContext` object through the `Tink.getUserContext()`. Please note that this will return `null` if no user has been set.
 
 ```kotlin
 Tink.setUser(user)
