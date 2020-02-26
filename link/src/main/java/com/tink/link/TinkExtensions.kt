@@ -20,9 +20,6 @@ object TinkLink {
         Tink.authenticateUser(authenticationCode, resultHandler)
 
     @JvmStatic
-    fun setUser(user: User) = Tink.setUser(user)
-
-    @JvmStatic
     fun getConsentContext() = Tink.getConsentContext()
 }
 
