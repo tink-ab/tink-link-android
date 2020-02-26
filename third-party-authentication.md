@@ -1,5 +1,5 @@
 # Redirecting to the third party application for authentication
-> Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](../JAVA_API.md) in usage.
+> Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](./JAVA_API.md) in usage.
 
 When we [observe the credentials](/USAGE.md) and the credential status changes to `AWAITING_MOBILE_BANKID_AUTHENTICATION` or `AWAITING_THIRD_PARTY_APP_AUTHENTICATION`,
 the credential will have a valid `ThirdPartyAuthentication` attribute value required to handle the redirection towards the third party application
