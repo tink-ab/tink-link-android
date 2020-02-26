@@ -6,6 +6,9 @@ import com.tink.link.core.credentials.CredentialRepository
 import com.tink.service.authorization.Scope
 import com.tink.service.handler.ResultHandler
 
+/**
+ * Context for functionality that requires a user to be set.
+ */
 interface UserContext {
     val providerRepository: ProviderRepository
     val credentialRepository: CredentialRepository
@@ -29,7 +32,7 @@ interface UserContext {
 
     /**
      * Authorize your user towards a new set of scopes.
-     * These scopes needs to be enabled for your [clientId][TinkLinkConfiguration.oAuthClientId].
+     * These scopes needs to be enabled for your [clientId][TinkConfiguration.oAuthClientId].
      */
     fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>)
 }
