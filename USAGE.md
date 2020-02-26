@@ -1,5 +1,5 @@
 # Usage examples
-> Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](../JAVA_API.md) in usage.
+> Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](./JAVA_API.md) in usage.
 ## Creating a user
 
 Creating a user should be the first step when using Tink Link.
