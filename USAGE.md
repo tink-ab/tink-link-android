@@ -24,17 +24,17 @@ If you wish to support these features in your application, you will need to auth
 
 ```kotlin
 Tink.authenticateUser(
-            authenticationCode = "yourCode",
-            resultHandler = ResultHandler(
-                onSuccess = { user: User ->
-                    // Set this user to the TinkLink instance.
-                    Tink.setUser(user)
-                },
-                onError = { error ->
-                    // Handle error
-                }
-            )
-        )
+    authenticationCode = "yourCode",
+    resultHandler = ResultHandler(
+        onSuccess = { user: User ->
+            // Set this user to the TinkLink instance.
+            Tink.setUser(user)
+        },
+        onError = { error ->
+            // Handle error
+        }
+    )
+)
 ```
 ### Setting a user to TinkLink instance
 
