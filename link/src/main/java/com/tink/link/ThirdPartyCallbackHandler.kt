@@ -6,14 +6,13 @@ import com.tink.link.core.credentials.CredentialRepository
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.TinkConfiguration
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @TinkLinkScope
 internal class ThirdPartyCallbackHandler @Inject constructor(
     private val credentialRepository: CredentialRepository,
-    tinkLinkConfiguration: TinkConfiguration
+    tinkConfiguration: TinkConfiguration
 ) {
-    private val applicationRedirectUri = tinkLinkConfiguration.redirectUri
+    private val applicationRedirectUri = tinkConfiguration.redirectUri
 
     fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>? = null) =
         uri

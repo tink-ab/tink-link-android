@@ -23,7 +23,7 @@ object TinkLink {
     /**
      * Authenticate an existing user with an authentication code.
      *
-     * On a successful result, your resultHandler should call [setUser] to set this user to Tink.
+     * On a successful result, your resultHandler should call [Tink.setUser] to set this user to Tink.
      */
     @JvmStatic
     fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
@@ -46,7 +46,7 @@ fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserCont
 /**
  * Authenticate an existing user with an authentication code.
  *
- * On a successful result, your resultHandler should call [setUser] to set this user to Tink.
+ * On a successful result, your resultHandler should call [Tink.setUser] to set this user to Tink.
  */
 @JvmSynthetic
 fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =

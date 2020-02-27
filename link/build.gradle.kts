@@ -69,14 +69,14 @@ if (project.hasProperty("kapt")) {
 apply(from = "../publishing.gradle")
 
 tasks {
-    val dokkaWithCopy by registering {
-        group = "documentation"
-        dependsOn(findByName("dokka"))
+    dokka {
         doLast {
+            println("Copying docs from /docs/link to /docs")
             copy {
                 from("../docs/link")
                 into("../docs")
             }
+            println("Deleting /docs/link")
             delete("../docs/link")
         }
     }

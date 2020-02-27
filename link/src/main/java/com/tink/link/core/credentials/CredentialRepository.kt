@@ -13,11 +13,11 @@ import javax.inject.Inject
  * Repository for creating, accessing and modifying credentials.
  *
  * @constructor Create a new repository instance from a [CredentialService]
- * This is usually done inside the TinkLink framework and it should normally not be necessary to create your own instance.
+ * This is usually done inside the Tink framework and it should normally not be necessary to create your own instance.
  */
 class CredentialRepository @Inject constructor(
     private val service: CredentialService,
-    private val tinkLinkConfiguration: TinkConfiguration
+    private val tinkConfiguration: TinkConfiguration
 ) {
 
     /**
@@ -48,7 +48,7 @@ class CredentialRepository @Inject constructor(
                 providerName,
                 credentialType,
                 fields,
-                tinkLinkConfiguration.redirectUri
+                tinkConfiguration.redirectUri
             ), resultHandler
         )
     }
@@ -71,7 +71,7 @@ class CredentialRepository @Inject constructor(
             CredentialUpdateDescriptor(
                 credentialId,
                 fields,
-                tinkLinkConfiguration.redirectUri
+                tinkConfiguration.redirectUri
             ), resultHandler
         )
     }

@@ -22,7 +22,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        // Set a user on the TinkLink instance:
+        // Set a user on the Tink instance:
         Tink.setUser(getUser())
         findNavController().navigate(R.id.profileFragment)
     }
@@ -30,7 +30,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     /**
      * Implement this method by returning a [User] either from an existing access token
      * (just create a [User] object with that token and return it),
-     * or by fetching it from [TinkLink.authenticateUser].
+     * or by fetching it from [Tink.authenticateUser].
      *
      * @see [getUserByAccessToken]
      * @see [getUserByAuthenticationCode]

@@ -16,7 +16,7 @@
 <p>Example:</p>
 <pre><code>private fun redirectIfAppropriate(intent: Intent?) {
      intent?.data?.let { uri -&gt;
-         tinkLink.getUserContext()?.handleUri(uri)
+         Tink.getUserContext()?.handleUri(uri)
      }
 }
 </code></pre>
