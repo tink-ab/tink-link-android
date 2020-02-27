@@ -5,6 +5,7 @@ import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.service.authorization.Scope
 import com.tink.service.handler.ResultHandler
+import com.tink.service.network.TinkConfiguration
 
 /**
  * Context for functionality that requires a user to be set.
@@ -23,7 +24,7 @@ interface UserContext {
      * ```
      * private fun redirectIfAppropriate(intent: Intent?) {
      *      intent?.data?.let { uri ->
-     *          tinkLink.getUserContext()?.handleUri(uri)
+     *          Tink.getUserContext()?.handleUri(uri)
      *      }
      * }
      * ```
