@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UserContext - link</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">link</a>&nbsp;/&nbsp;<a href="../index.html">com.tink.link.core.user</a>&nbsp;/&nbsp;<a href="./index.html">UserContext</a><br/>
+<br/>
+<h1>UserContext</h1>
+<code><span class="keyword">interface </span><span class="identifier">UserContext</span></code>
+<p>Context for functionality that requires a user to be set.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="credential-repository.html">credentialRepository</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">credentialRepository</span><span class="symbol">: </span><a href="../../com.tink.link.core.credentials/-credential-repository/index.html"><span class="identifier">CredentialRepository</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="provider-repository.html">providerRepository</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">providerRepository</span><span class="symbol">: </span><span class="identifier">ProviderRepository</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="authorize.html">authorize</a></h4>
+</td>
+<td>
+<p>Authorize your user towards a new set of scopes.
+These scopes needs to be enabled for your <a href="#">clientId</a>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">authorize</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.core.user.UserContext$authorize(kotlin.collections.Set((com.tink.service.authorization.Scope)), com.tink.service.handler.ResultHandler((kotlin.String)))/scopes">scopes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><span class="identifier">Scope</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.tink.link.core.user.UserContext$authorize(kotlin.collections.Set((com.tink.service.authorization.Scope)), com.tink.service.handler.ResultHandler((kotlin.String)))/resultHandler">resultHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResultHandler</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="handle-uri.html">handleUri</a></h4>
+</td>
+<td>
+<p>Handle a third-party callback.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">handleUri</span><span class="symbol">(</span><span class="identifier" id="com.tink.link.core.user.UserContext$handleUri(android.net.Uri, com.tink.service.handler.ResultHandler((kotlin.Unit)))/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/net/Uri.html"><span class="identifier">Uri</span></a><span class="symbol">, </span><span class="identifier" id="com.tink.link.core.user.UserContext$handleUri(android.net.Uri, com.tink.service.handler.ResultHandler((kotlin.Unit)))/resultHandler">resultHandler</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResultHandler</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

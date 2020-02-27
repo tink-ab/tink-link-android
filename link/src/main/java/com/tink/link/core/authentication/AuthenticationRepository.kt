@@ -5,7 +5,7 @@ import com.tink.service.authentication.UserCreationDescriptor
 import com.tink.service.handler.ResultHandler
 import javax.inject.Inject
 
-typealias AccessToken = String
+internal typealias AccessToken = String
 
 internal class AuthenticationRepository @Inject constructor(
     private val service: AuthenticationService
