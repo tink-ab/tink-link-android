@@ -19,8 +19,6 @@ allprojects {
 
 2. Add dependency on `com.tink:link:0.9.0`
 
-// TODO: Fix version
-
 ```groovy
 dependencies {
     implementation "com.tink:link:0.9.0"
