@@ -1,8 +1,8 @@
-$dokka.format:html
-$dokka.linkExtension:html
-$dokka.location:com.tink.link$authenticateUser(com.tink.core.Tink, kotlin.String, com.tink.service.handler.ResultHandler((com.tink.service.authentication.user.User)))com.tink.link/com.tink.core.-tink/authenticate-user.html
-$dokka.location:com.tink.link$getConsentContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-consent-context.html
-$dokka.location:com.tink.link$getUserContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-user-context.html
+$dokka.format:gfm
+$dokka.linkExtension:md
+$dokka.location:com.tink.link$authenticateUser(com.tink.core.Tink, kotlin.String, com.tink.service.handler.ResultHandler((com.tink.service.authentication.user.User)))com.tink.link/com.tink.core.-tink/authenticate-user.md
+$dokka.location:com.tink.link$getConsentContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-consent-context.md
+$dokka.location:com.tink.link$getUserContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-user-context.md
 com.tink.link
 com.tink.link.consent
 com.tink.link.core.credentials
