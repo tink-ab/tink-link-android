@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("org.jetbrains.dokka").version("0.10.0")
+    id("org.jetbrains.dokka").version(Versions.dokka)
     id("com.jfrog.bintray")
 }
 

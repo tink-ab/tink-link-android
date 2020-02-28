@@ -12,6 +12,7 @@ object Versions {
     const val retrofit = "2.6.2"
     const val rxjava = "2.1.9"
     const val navigation = "2.1.0-rc01"
+    const val dokka = "0.10.1"
 }
 
 object Dependencies {
