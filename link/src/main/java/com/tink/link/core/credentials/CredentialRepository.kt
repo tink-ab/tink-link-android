@@ -1,6 +1,8 @@
 package com.tink.link.core.credentials
 
 import com.tink.model.credential.Credential
+import com.tink.model.misc.Field
+import com.tink.model.provider.Provider
 import com.tink.service.credential.CredentialCreationDescriptor
 import com.tink.service.credential.CredentialService
 import com.tink.service.credential.CredentialUpdateDescriptor
