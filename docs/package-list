@@ -5,6 +5,5 @@ $dokka.location:com.tink.link$getConsentContext(com.tink.core.Tink)com.tink.lin
 $dokka.location:com.tink.link$getUserContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-user-context.html
 com.tink.link
 com.tink.link.consent
-com.tink.link.core.authentication
 com.tink.link.core.credentials
 com.tink.link.core.user
