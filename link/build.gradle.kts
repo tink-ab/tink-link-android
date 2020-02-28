@@ -70,6 +70,10 @@ apply(from = "../publishing.gradle")
 
 tasks {
     dokka {
+        doFirst {
+            println("Deleting old /docs")
+            delete("../docs")
+        }
         doLast {
             println("Copying docs from /docs/link to /docs")
             copy {
