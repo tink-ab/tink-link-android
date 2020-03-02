@@ -52,3 +52,6 @@ Tink.init(config, applicationContext)
 
 ## Examples
 - [Usage Examples](/USAGE.md) This document outlines how to use the different classes and types provided with TinkLink
+
+## Developer documentation
+- [Tink Link Android Reference](/docs/index.md)
