@@ -1,10 +1,38 @@
-$dokka.format:html
-$dokka.linkExtension:html
-$dokka.location:com.tink.link$authenticateUser(com.tink.core.Tink, kotlin.String, com.tink.service.handler.ResultHandler((com.tink.service.authentication.user.User)))com.tink.link/com.tink.core.-tink/authenticate-user.html
-$dokka.location:com.tink.link$getConsentContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-consent-context.html
-$dokka.location:com.tink.link$getUserContext(com.tink.core.Tink)com.tink.link/com.tink.core.-tink/get-user-context.html
+$dokka.format:gfm
+$dokka.linkExtension:md
+$dokka.location:com.tink.model.provider$toProviderTree(kotlin.collections.List((com.tink.model.provider.Provider)))com.tink.model.provider/kotlin.collections.-list/to-provider-tree.md
+$dokka.location:com.tink.service.misc$toFieldMap(kotlin.collections.List((com.tink.model.misc.Field)))com.tink.service.misc/kotlin.collections.-list/to-field-map.md
+com.tink.core
+com.tink.core.provider
 com.tink.link
 com.tink.link.consent
-com.tink.link.core.authentication
 com.tink.link.core.credentials
 com.tink.link.core.user
+com.tink.model
+com.tink.model.account
+com.tink.model.authentication
+com.tink.model.budget
+com.tink.model.category
+com.tink.model.credential
+com.tink.model.insights
+com.tink.model.misc
+com.tink.model.provider
+com.tink.model.relations
+com.tink.model.statistic
+com.tink.model.time
+com.tink.model.transaction
+com.tink.model.user
+com.tink.service
+com.tink.service.account
+com.tink.service.authentication
+com.tink.service.authentication.user
+com.tink.service.authorization
+com.tink.service.consent
+com.tink.service.credential
+com.tink.service.handler
+com.tink.service.misc
+com.tink.service.network
+com.tink.service.observer
+com.tink.service.provider
+com.tink.service.streaming
+com.tink.service.streaming.publisher

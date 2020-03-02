@@ -1,11 +1,23 @@
 dokka {
 
     outputDirectory = "$rootDir/docs"
-    outputFormat = "html"
+    outputFormat = "gfm"
 
     configuration {
         sourceRoot {
             path = "$rootDir/link/src"
+        }
+        sourceRoot {
+            path = "$rootDir/../tink-sdk-core-android/core/src"
+        }
+        sourceRoot {
+            path = "$rootDir/../tink-sdk-core-android/models/src"
+        }
+        sourceRoot {
+            path = "$rootDir/../tink-sdk-core-android/service/src"
+        }
+        sourceRoot {
+            path = "$rootDir/../tink-sdk-core-android/rpc/src"
         }
     }
 }
