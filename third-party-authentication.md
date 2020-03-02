@@ -1,4 +1,5 @@
 # Redirecting to the third party application for authentication
+> Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](./JAVA_API.md) in usage.
 
 When we [observe the credentials](/USAGE.md) and the credential status changes to `AWAITING_MOBILE_BANKID_AUTHENTICATION` or `AWAITING_THIRD_PARTY_APP_AUTHENTICATION`,
 the credential will have a valid `ThirdPartyAuthentication` attribute value required to handle the redirection towards the third party application
@@ -109,7 +110,7 @@ override fun onNewIntent(intent: Intent?) {
 
 private fun redirectIfAppropriate(intent: Intent?) {
     intent?.data?.let { uri ->
-        val hasBeenHandled = tinkLink.getUserContext()?.handleUri(uri) // This function returns `true` if the uri has been handled successfully, `false` otherwise
+        val hasBeenHandled = Tink.getUserContext()?.handleUri(uri) // This function returns `true` if the uri has been handled successfully, `false` otherwise
     }
 }
 ```
