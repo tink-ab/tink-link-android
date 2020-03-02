@@ -2,4 +2,4 @@
 
 # providerRepository
 
-`abstract val providerRepository: ProviderRepository`
+`abstract val providerRepository: `[`ProviderRepository`](../../com.tink.core.provider/-provider-repository/index.md)

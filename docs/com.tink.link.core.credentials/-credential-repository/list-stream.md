@@ -2,9 +2,9 @@
 
 # listStream
 
-`fun listStream(): Stream<`[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<Credential>>`
+`fun listStream(): `[`Stream`](../../com.tink.service.streaming.publisher/-stream/index.md)`<`[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Credential`](../../com.tink.model.credential/-credential/index.md)`>>`
 
-Returns a [Stream](#) containing the list of [Credential](#) objects.
+Returns a [Stream](../../com.tink.service.streaming.publisher/-stream/index.md) containing the list of [Credential](../../com.tink.model.credential/-credential/index.md) objects.
 
-You can subscribe to the [Stream](#) and observe changes in the [Credential](#) objects and act upon them.
+You can subscribe to the [Stream](../../com.tink.service.streaming.publisher/-stream/index.md) and observe changes in the [Credential](../../com.tink.model.credential/-credential/index.md) objects and act upon them.
 
