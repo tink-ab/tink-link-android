@@ -24,9 +24,10 @@ dependencies {
     implementation "com.tink:link:0.9.0"
 }
 ```
+
 3. Optional: Verify artifact checksums
 
-// TODO
+The *SHA-256* checksums can be found in the corresponding [release](https://github.com/tink-ab/tink-link-android/releases).
 
 ## Initialization
 
