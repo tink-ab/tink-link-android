@@ -4,10 +4,9 @@ buildscript {
     repositories {
         google()
         jcenter()
-
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.2")
+        classpath("com.android.tools.build:gradle:3.6.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
         // NOTE: Do not place your application dependencies here; they belong

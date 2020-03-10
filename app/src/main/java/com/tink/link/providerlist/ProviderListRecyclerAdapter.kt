@@ -2,15 +2,17 @@ package com.tink.link.providerlist
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.provider.Provider
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.viewholders.ClickableViewHolder
 import com.tink.link.viewholders.OnViewHolderClickedListener
+import com.tink.model.credential.Credential
+import com.tink.model.provider.Provider
+import com.tink.model.provider.ProviderTreeNode
 import kotlin.properties.Delegates
 
 /**
@@ -48,6 +50,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
     ClickableViewHolder(itemView, clickListener) {
 
     private val title: TextView = itemView.findViewById(R.id.title)
+    private val logo: ImageView = itemView.findViewById(R.id.logo)
 
     fun bind(item: ProviderTreeNode) {
         title.text = when (item) {
@@ -56,6 +59,15 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.ProviderNode -> item.name
+        }
+
+        if (item is ProviderTreeNode.CredentialTypeNode) {
+            logo.visibility = View.GONE
+        } else {
+            item.icon?.let {
+                Picasso.get().load(it).into(logo)
+                logo.visibility = View.VISIBLE
+            }
         }
     }
 }

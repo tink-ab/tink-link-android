@@ -6,7 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tink.link.R
-import com.tink.link.model.authentication.ThirdPartyAppAuthentication
+import com.tink.model.authentication.ThirdPartyAppAuthentication
 
 fun ThirdPartyAppAuthentication.launch(activity: Activity, onCancel: (() -> Unit)? = null) {
     val thirdPartyAuthenticationAndroid = requireNotNull(android)

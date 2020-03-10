@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.tink.link.core.user.User
-import com.tink.link.providerlist.ProviderListFragment
-import com.tink.link.service.handler.ResultHandler
+import com.tink.core.Tink
+import com.tink.service.authentication.user.User
+import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
 
@@ -21,30 +21,16 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val tinkLink = (activity as MainActivity).tinkLink
 
-        // Set a user on the TinkLink instance:
-        tinkLink.setUser(getUser())
-        // Request a list of providers, and show them in a new fragment.
-        tinkLink.getUserContext()?.providerRepository?.listProviders(
-            ResultHandler(
-                {
-                    findNavController().navigate(
-                        R.id.action_mainFragment_to_providerListFragment,
-                        ProviderListFragment.getBundle(it)
-                    )
-                },
-                {
-                    // Handle error
-                }
-            )
-        )
+        // Set a user on the Tink instance:
+        Tink.setUser(getUser())
+        findNavController().navigate(R.id.profileFragment)
     }
 
     /**
      * Implement this method by returning a [User] either from an existing access token
      * (just create a [User] object with that token and return it),
-     * or by fetching it from [TinkLink.authenticateUser].
+     * or by fetching it from [Tink.authenticateUser].
      *
      * @see [getUserByAccessToken]
      * @see [getUserByAuthenticationCode]
@@ -56,14 +42,14 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     /**
      * Example of creating a User from an access token.
      */
-    private fun getUserByAccessToken(accessToken: String) = User(accessToken)
+    private fun getUserByAccessToken(accessToken: String) = User.fromAccessToken(accessToken)
 
     /**
      * Example of fetching a user from an authentication code.
      */
-    private fun getUserByAuthenticationCode(tinkLink: TinkLink, code: String) {
-        tinkLink.authenticateUser(code, ResultHandler(
-            { user ->
+    private fun getUserByAuthenticationCode(code: String) {
+        Tink.authenticateUser(code, ResultHandler(
+            { user: User ->
                 // Do something with the user
             }, {}
         ))
