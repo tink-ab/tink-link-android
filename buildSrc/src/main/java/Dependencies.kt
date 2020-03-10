@@ -65,9 +65,10 @@ object Dependencies {
     const val picasso = "com.squareup.picasso:picasso:2.71828"
 
     object Tink {
-        const val service = "com.tink:service:0.1.0"
-        const val core = "com.tink:core:0.1.0"
-        const val rpc = "com.tink:rpc:0.1.0"
-        const val models = "com.tink:models:0.1.0"
+        private const val coreVersion = "0.1.0"
+        const val service = "com.tink:service:$coreVersion"
+        const val core = "com.tink:core:$coreVersion"
+        const val rpc = "com.tink:rpc:$coreVersion"
+        const val models = "com.tink:models:$coreVersion"
     }
 }
