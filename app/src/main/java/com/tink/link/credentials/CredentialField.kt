@@ -6,11 +6,10 @@ import android.text.InputType
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import android.widget.LinearLayout
-import kotlinx.android.synthetic.main.view_credential_field.view.*
 import com.tink.link.R
 import com.tink.link.extensions.inflate
-import com.tink.link.model.misc.Field
-import com.tink.link.model.misc.Field.ValidationResult
+import com.tink.model.misc.Field
+import kotlinx.android.synthetic.main.view_credential_field.view.*
 
 class CredentialField : LinearLayout {
     constructor(context: Context) : super(context)
@@ -59,9 +58,9 @@ class CredentialField : LinearLayout {
         getFilledField().validate()
             .also {
                 textInputLayout.error =
-                    if (it is ValidationResult.ValidationError) it.errorMessage else null
+                    if (it is Field.ValidationResult.ValidationError) it.errorMessage else null
             }
-            .let { it == ValidationResult.Valid }
+            .let { it == Field.ValidationResult.Valid }
 
 
     fun getFilledField(): Field {

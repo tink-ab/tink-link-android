@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModel
 import com.tink.link.CombinedLiveData
 import com.tink.link.Event
 import com.tink.link.core.credentials.CredentialRepository
-import com.tink.link.model.authentication.ThirdPartyAppAuthentication
-import com.tink.link.model.credential.Credential
-import com.tink.link.model.misc.Field
-import com.tink.link.model.provider.Provider
-import com.tink.link.service.handler.ResultHandler
-import com.tink.link.service.misc.toFieldMap
-import com.tink.link.service.streaming.publisher.StreamObserver
-import com.tink.link.service.streaming.publisher.StreamSubscription
+import com.tink.model.authentication.ThirdPartyAppAuthentication
+import com.tink.model.credential.Credential
+import com.tink.model.misc.Field
+import com.tink.model.provider.Provider
+import com.tink.service.handler.ResultHandler
+import com.tink.service.misc.toFieldMap
+import com.tink.service.streaming.publisher.StreamObserver
+import com.tink.service.streaming.publisher.StreamSubscription
 
 class CredentialViewModel : ViewModel() {
 
@@ -65,8 +65,10 @@ class CredentialViewModel : ViewModel() {
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = _viewState
 
-    private val _thirdPartyAuthenticationEvent = MutableLiveData<Event<ThirdPartyAppAuthentication>>()
-    val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> = _thirdPartyAuthenticationEvent
+    private val _thirdPartyAuthenticationEvent =
+        MutableLiveData<Event<ThirdPartyAppAuthentication>>()
+    val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
+        _thirdPartyAuthenticationEvent
 
     private val _errorEvent = MutableLiveData<Event<String>>()
     val errorEvent: LiveData<Event<String>> = _errorEvent
@@ -153,6 +155,41 @@ class CredentialViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         streamSubscription?.unsubscribe()
+    }
+
+    fun updateCredential(
+        id: String,
+        fields: List<Field>,
+        credentialRepository: CredentialRepository,
+        onError: (Throwable) -> Unit
+    ) {
+
+        credentialId.value = id
+
+        createdCredential.value
+            ?.takeIf { it.status == Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
+            ?.let {
+                supplementalInformation(
+                    credentialId = it.id,
+                    fields = fields,
+                    credentialRepository = credentialRepository,
+                    onError = onError
+                )
+                return
+            }
+        credentialRepository.update(
+            id,
+            fields.toFieldMap(),
+            ResultHandler(
+                { credential ->
+                    fetchCredentials(credentialRepository) // Start streaming credentials
+                },
+                {
+                    _viewState.postValue(ViewState.NOT_LOADING)
+                    onError(it)
+                }
+            )
+        )
     }
 
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }

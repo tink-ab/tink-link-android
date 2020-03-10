@@ -8,11 +8,11 @@ import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import com.tink.link.R
 import com.tink.link.extensions.toArrayList
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.providertree.ARG_PROVIDER_TREE
 import com.tink.link.providertree.ProviderTreeNodeFragment
 import com.tink.link.providernode.ProviderNodeFragment
+import com.tink.model.provider.ProviderTreeNode
 
 /**
  * Fragment responsible for displaying a list of credential types that belongs to the same access type.

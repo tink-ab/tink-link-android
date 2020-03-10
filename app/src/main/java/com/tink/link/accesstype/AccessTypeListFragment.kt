@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
-import kotlinx.android.synthetic.main.layout_toolbar.*
 import com.tink.link.R
 import com.tink.link.credentialtype.CredentialTypeListFragment
 import com.tink.link.extensions.toArrayList
-import com.tink.link.model.provider.ProviderTreeNode
 import com.tink.link.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.providertree.ARG_PROVIDER_TREE
 import com.tink.link.providertree.ProviderTreeNodeFragment
+import com.tink.model.provider.ProviderTreeNode
+import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.layout_toolbar.*
 
 /**
  * Fragment responsible for displaying a list of access types that belong to the same financial institution.
