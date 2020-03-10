@@ -12,6 +12,7 @@ object Versions {
     const val retrofit = "2.6.2"
     const val rxjava = "2.1.9"
     const val navigation = "2.1.0-rc01"
+    const val dokka = "0.10.1"
 }
 
 object Dependencies {
@@ -61,4 +62,13 @@ object Dependencies {
     const val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
     const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.2.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
+    const val picasso = "com.squareup.picasso:picasso:2.71828"
+
+    object Tink {
+        private const val coreVersion = "0.1.0"
+        const val service = "com.tink:service:$coreVersion"
+        const val core = "com.tink:core:$coreVersion"
+        const val rpc = "com.tink:rpc:$coreVersion"
+        const val models = "com.tink:models:$coreVersion"
+    }
 }
