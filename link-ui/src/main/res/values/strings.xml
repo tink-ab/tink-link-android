@@ -1,11 +1,4 @@
 <resources>
-  <string name="app_name">tink-link-android</string>
-
-  <string name="redirect_uri_scheme">http</string>
-  <string name="redirect_uri_host">localhost</string>
-  <string name="redirect_uri_port">3000</string>
-  <string name="redirect_uri_path">/callback</string>
-
   <string name="provider_list_title">Choose your bank</string>
   <string name="financial_institution_fragment_title">Choose financial institution</string>
   <string name="credential_fragment_title">Enter your credentials</string>
