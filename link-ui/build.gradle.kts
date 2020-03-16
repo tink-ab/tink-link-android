@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.dokka").version("0.10.0")
     id("com.jfrog.bintray")
 }
@@ -34,7 +35,32 @@ apply {
 }
 
 dependencies {
+    implementation("com.tink:link:${TinkLinkVersion.name}")
+
     implementation(Dependencies.kotlin_stdlib)
+    implementation(Dependencies.Androidx.appcompat)
+    implementation(Dependencies.Androidx.core_ktx)
+    implementation(Dependencies.Androidx.constraint_layout)
+    testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.Androidx.test_runner)
+    androidTestImplementation(Dependencies.Androidx.test_espresso)
+
+    implementation(Dependencies.Dagger.core)
+    implementation(Dependencies.Dagger.dagger_android)
+    implementation(Dependencies.Dagger.dagger_android_support)
+    kapt(Dependencies.Dagger.dagger_android_processor)
+    kapt(Dependencies.Dagger.dagger_android_compiler)
+
+    implementation(Dependencies.Androidx.navigation_fragment)
+    implementation(Dependencies.Androidx.navigation_ui)
+
+    implementation(Dependencies.Androidx.lifecycle_extensions)
+
+    implementation(Dependencies.timber)
+    implementation(Dependencies.three_ten_abp)
+
+    implementation(Dependencies.material_components)
+    implementation(Dependencies.picasso)
 }
 
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804
