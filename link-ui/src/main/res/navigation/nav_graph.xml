@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/mainFragment">
+  <fragment
+    android:id="@+id/mainFragment"
+    android:name="com.tink.link.ui.MainFragment"
+    android:label="MainFragment"
+    tools:layout="@layout/fragment_main">
+    <action
+      android:id="@+id/action_mainFragment_to_providerListFragment"
+      app:destination="@id/providerListFragment"
+      app:popUpTo="@+id/nav_graph" />
+    <action
+      android:id="@+id/action_mainFragment_to_profileFragment"
+      app:destination="@id/profileFragment"
+      app:popUpTo="@+id/nav_graph" />
+  </fragment>
+  <fragment
+    android:id="@+id/providerListFragment"
+    android:name="com.tink.link.ui.providerlist.ProviderListFragment"
+    tools:layout="@layout/layout_provider_tree_node_list">
+    <action
+      android:id="@+id/action_providerListFragment_to_financialInstitutionListFragment"
+      app:destination="@id/financialInstitutionListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/financialInstitutionListFragment"
+    android:name="com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment"
+    android:label="FinancialInstitutionListFragment"
+    tools:layout="@layout/fragment_financial_institution_list">
+    <action
+      android:id="@+id/action_financialInstitutionListFragment_to_accessTypeListFragment"
+      app:destination="@id/accessTypeListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/accessTypeListFragment"
+    android:name="com.tink.link.ui.accesstype.AccessTypeListFragment"
+    android:label="AccessTypeListFragment"
+    tools:layout="@layout/fragment_access_type_list">
+    <action
+      android:id="@+id/action_accessTypeListFragment_to_credentialTypeListFragment"
+      app:destination="@id/credentialTypeListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/credentialTypeListFragment"
+    android:name="com.tink.link.ui.credentialtype.CredentialTypeListFragment"
+    android:label="CredentialTypeListFragment"
+    tools:layout="@layout/fragment_credential_type_list">
+    <action
+      android:id="@+id/action_credentialTypeListFragment_to_providerNodeFragment"
+      app:destination="@id/providerNodeFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/credentialFragment"
+    android:name="com.tink.link.ui.credentials.CredentialFragment"
+    android:label="CredentialFragment"
+    tools:layout="@layout/fragment_credential" />
+  <fragment
+    android:id="@+id/providerNodeFragment"
+    android:name="com.tink.link.ui.providernode.ProviderNodeFragment"
+    android:label="ProviderNodeFragment"
+    tools:layout="@layout/fragment_provider_node">
+    <action
+      android:id="@+id/action_providerNodeFragment_to_credentialFragment"
+      app:destination="@id/credentialFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/profileFragment"
+    android:name="com.tink.link.ui.profile.ProfileFragment"
+    android:label="ProfileFragment"
+    tools:layout="@layout/fragment_profile">
+    <action
+      android:id="@+id/action_profileFragment_to_providerListFragment"
+      app:destination="@+id/providerListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/refreshCredentialsFragment"
+    android:name="com.tink.link.ui.credentials.refresh.RefreshCredentialsFragment"
+    android:label="RefreshCredentialsFragment" />
+</navigation>
