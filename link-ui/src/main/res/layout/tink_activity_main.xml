@@ -13,7 +13,7 @@
     android:layout_height="match_parent"
 
     app:defaultNavHost="true"
-    app:navGraph="@navigation/nav_graph"
-    tools:layout="@layout/fragment_main"/>
+    app:navGraph="@navigation/tink_nav_graph"
+    tools:layout="@layout/tink_fragment_main"/>
 
 </FrameLayout>

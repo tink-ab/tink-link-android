@@ -20,8 +20,8 @@ import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.getRepositoryProvider
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.synthetic.main.fragment_credential.*
-import kotlinx.android.synthetic.main.layout_toolbar.toolbar
+import kotlinx.android.synthetic.main.tink_fragment_credential.*
+import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 import timber.log.Timber
 
 private const val PROVIDER_ARGS = "PROVIDER"
@@ -32,7 +32,7 @@ private const val UPDATE_ARGS = "UPDATE_ARGS"
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsumer {
+class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLinkConsumer {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
@@ -47,7 +47,7 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.credential_fragment_title)
+        title.setText(R.string.tink_credential_fragment_title)
         toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
             hideKeyboard()
@@ -111,7 +111,7 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
                         viewModel.updateViewState(CredentialViewModel.ViewState.NOT_LOADING)
                         Snackbar.make(
                             view,
-                            R.string.third_party_authentication_download_app_negative_error,
+                            R.string.tink_third_party_authentication_download_app_negative_error,
                             Snackbar.LENGTH_LONG
                         ).show()
                     }

@@ -8,7 +8,7 @@ import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
-import kotlinx.android.synthetic.main.item_credential_row.view.*
+import kotlinx.android.synthetic.main.tink_item_credential_row.view.*
 import kotlin.properties.Delegates
 
 class CredentialRowAdapter : RecyclerView.Adapter<CredentialRowViewHolder>(),
@@ -21,7 +21,7 @@ class CredentialRowAdapter : RecyclerView.Adapter<CredentialRowViewHolder>(),
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CredentialRowViewHolder {
         return CredentialRowViewHolder(
-            parent.inflate(R.layout.item_credential_row),
+            parent.inflate(R.layout.tink_item_credential_row),
             clickListener = this
         )
     }

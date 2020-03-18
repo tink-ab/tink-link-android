@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.credentials.CredentialFragment
 import com.tink.link.ui.providerlist.ProviderListFragment
-import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.tink_fragment_profile.*
 
-class ProfileFragment : Fragment(R.layout.fragment_profile) {
+class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
 
     private lateinit var viewModel: ProfileViewModel
 

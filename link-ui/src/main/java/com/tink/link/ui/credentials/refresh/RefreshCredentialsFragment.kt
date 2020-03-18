@@ -16,9 +16,9 @@ import com.tink.link.ui.credentials.CredentialField
 import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.launch
 import com.tink.model.credential.Credential
-import kotlinx.android.synthetic.main.fragment_refresh_credentials.*
+import kotlinx.android.synthetic.main.tink_fragment_refresh_credentials.*
 
-class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credentials) {
+class RefreshCredentialsFragment : Fragment(R.layout.tink_fragment_refresh_credentials) {
 
     private val viewModel: RefreshCredentialsViewModel by viewModels()
 

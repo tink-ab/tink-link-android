@@ -13,7 +13,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="32dp"
     android:textAppearance="?textAppearanceHeadline5"
-    tools:text="@string/provider_list_title" />
+    tools:text="@string/tink_provider_list_title" />
 
   <TextView
     android:id="@+id/subtitle"
@@ -22,7 +22,7 @@
     android:layout_margin="16dp"
     android:textAppearance="?textAppearanceSubtitle1"
     android:visibility="gone"
-    tools:text="@string/provider_list_title" />
+    tools:text="@string/tink_provider_list_title" />
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/providers"
@@ -31,6 +31,6 @@
     android:layout_marginStart="32dp"
     android:layout_marginEnd="32dp"
     android:overScrollMode="never"
-    tools:listitem="@layout/item_provider_list" />
+    tools:listitem="@layout/tink_item_provider_list" />
 
 </LinearLayout>

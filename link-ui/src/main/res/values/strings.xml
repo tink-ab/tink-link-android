@@ -1,18 +1,18 @@
 <resources>
-  <string name="provider_list_title">Choose your bank</string>
-  <string name="financial_institution_fragment_title">Choose financial institution</string>
-  <string name="credential_fragment_title">Enter your credentials</string>
-  <string name="credential_type_fragment_title">Choose credential type</string>
-  <string name="access_type_fragment_title">Sign in method</string>
-  <string name="access_type_fragment_subtitle">What method would you like to connect with?</string>
-  <string name="create_credential_button">Continue</string>
-  <string name="provider_node_fragment_title">Choose provider</string>
-  <string name="third_party_authentication_download_app_positive">Install</string>
-  <string name="third_party_authentication_download_app_negative">Cancel</string>
-  <string name="third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
-  <string name="refresh_headline">Refresh</string>
-  <string name="refresh_all_button">Refresh All</string>
-  <string name="profile_headline">Credentials</string>
-  <string name="refresh_button">Refresh</string>
-  <string name="add_credentials_button">Add bank</string>
+  <string name="tink_provider_list_title">Choose your bank</string>
+  <string name="tink_financial_institution_fragment_title">Choose financial institution</string>
+  <string name="tink_credential_fragment_title">Enter your credentials</string>
+  <string name="tink_credential_type_fragment_title">Choose credential type</string>
+  <string name="tink_access_type_fragment_title">Sign in method</string>
+  <string name="tink_access_type_fragment_subtitle">What method would you like to connect with?</string>
+  <string name="tink_create_credential_button">Continue</string>
+  <string name="tink_provider_node_fragment_title">Choose provider</string>
+  <string name="tink_third_party_authentication_download_app_positive">Install</string>
+  <string name="tink_third_party_authentication_download_app_negative">Cancel</string>
+  <string name="tink_third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
+  <string name="tink_refresh_headline">Refresh</string>
+  <string name="tink_refresh_all_button">Refresh All</string>
+  <string name="tink_profile_headline">Credentials</string>
+  <string name="tink_refresh_button">Refresh</string>
+  <string name="tink_add_credentials_button">Add bank</string>
 </resources>
