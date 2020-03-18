@@ -12,6 +12,7 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
+    
     <activity
       android:name="com.tink.link.MainActivity"
       android:launchMode="singleTask">
@@ -31,6 +32,24 @@
           android:scheme="@string/redirect_uri_scheme" />
       </intent-filter>
     </activity>
+
+    <activity android:name=".MainLinkUiActivity" />
+
+    <activity
+      android:name="com.tink.link.ui.TinkLinkUiActivity"
+      android:launchMode="singleTask">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data
+          android:host="@string/redirect_uri_host"
+          android:pathPrefix="@string/redirect_uri_path"
+          android:port="@string/redirect_uri_port"
+          android:scheme="@string/redirect_uri_scheme" />
+      </intent-filter>
+    </activity>
+
   </application>
 
 </manifest>

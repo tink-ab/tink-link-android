@@ -11,6 +11,13 @@ import com.tink.link.getUserContext
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
+    companion object {
+        const val REQUEST_CODE = 100
+        const val RESULT_SUCCESS = 101
+        const val RESULT_CANCELLED = 102
+        const val RESULT_FAILURE = 103
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tink_activity_main)
