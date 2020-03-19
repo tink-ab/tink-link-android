@@ -9,7 +9,7 @@
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="32dp"
-    android:text="@string/profile_headline"
+    android:text="@string/tink_profile_headline"
     android:textAppearance="?textAppearanceHeadline5"
     android:textStyle="bold"
     app:layout_constraintEnd_toStartOf="@+id/refreshButton"
@@ -22,7 +22,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="16dp"
-    android:text="@string/refresh_button"
+    android:text="@string/tink_refresh_button"
     app:layout_constraintBottom_toBottomOf="@+id/title"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/title" />
@@ -42,7 +42,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
     android:enabled="false"
-    android:text="@string/add_credentials_button"
+    android:text="@string/tink_add_credentials_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
@@ -51,7 +51,7 @@
     android:id="@+id/loadingBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/loading_background"
+    android:background="@color/tink_loading_background"
     android:elevation="20dp"
     android:visibility="gone" />
 

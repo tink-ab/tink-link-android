@@ -8,7 +8,7 @@
     android:id="@+id/mainFragment"
     android:name="com.tink.link.ui.MainFragment"
     android:label="MainFragment"
-    tools:layout="@layout/fragment_main">
+    tools:layout="@layout/tink_fragment_main">
     <action
       android:id="@+id/action_mainFragment_to_providerListFragment"
       app:destination="@id/providerListFragment"
@@ -21,7 +21,7 @@
   <fragment
     android:id="@+id/providerListFragment"
     android:name="com.tink.link.ui.providerlist.ProviderListFragment"
-    tools:layout="@layout/layout_provider_tree_node_list">
+    tools:layout="@layout/tink_layout_provider_tree_node_list">
     <action
       android:id="@+id/action_providerListFragment_to_financialInstitutionListFragment"
       app:destination="@id/financialInstitutionListFragment" />
@@ -30,7 +30,7 @@
     android:id="@+id/financialInstitutionListFragment"
     android:name="com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment"
     android:label="FinancialInstitutionListFragment"
-    tools:layout="@layout/fragment_financial_institution_list">
+    tools:layout="@layout/tink_fragment_financial_institution_list">
     <action
       android:id="@+id/action_financialInstitutionListFragment_to_accessTypeListFragment"
       app:destination="@id/accessTypeListFragment" />
@@ -39,7 +39,7 @@
     android:id="@+id/accessTypeListFragment"
     android:name="com.tink.link.ui.accesstype.AccessTypeListFragment"
     android:label="AccessTypeListFragment"
-    tools:layout="@layout/fragment_access_type_list">
+    tools:layout="@layout/tink_fragment_access_type_list">
     <action
       android:id="@+id/action_accessTypeListFragment_to_credentialTypeListFragment"
       app:destination="@id/credentialTypeListFragment" />
@@ -48,7 +48,7 @@
     android:id="@+id/credentialTypeListFragment"
     android:name="com.tink.link.ui.credentialtype.CredentialTypeListFragment"
     android:label="CredentialTypeListFragment"
-    tools:layout="@layout/fragment_credential_type_list">
+    tools:layout="@layout/tink_fragment_credential_type_list">
     <action
       android:id="@+id/action_credentialTypeListFragment_to_providerNodeFragment"
       app:destination="@id/providerNodeFragment" />
@@ -57,12 +57,12 @@
     android:id="@+id/credentialFragment"
     android:name="com.tink.link.ui.credentials.CredentialFragment"
     android:label="CredentialFragment"
-    tools:layout="@layout/fragment_credential" />
+    tools:layout="@layout/tink_fragment_credential" />
   <fragment
     android:id="@+id/providerNodeFragment"
     android:name="com.tink.link.ui.providernode.ProviderNodeFragment"
     android:label="ProviderNodeFragment"
-    tools:layout="@layout/fragment_provider_node">
+    tools:layout="@layout/tink_fragment_provider_node">
     <action
       android:id="@+id/action_providerNodeFragment_to_credentialFragment"
       app:destination="@id/credentialFragment" />
@@ -71,7 +71,7 @@
     android:id="@+id/profileFragment"
     android:name="com.tink.link.ui.profile.ProfileFragment"
     android:label="ProfileFragment"
-    tools:layout="@layout/fragment_profile">
+    tools:layout="@layout/tink_fragment_profile">
     <action
       android:id="@+id/action_profileFragment_to_providerListFragment"
       app:destination="@+id/providerListFragment" />

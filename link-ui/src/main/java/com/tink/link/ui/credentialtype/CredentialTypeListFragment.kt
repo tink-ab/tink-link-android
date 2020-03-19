@@ -11,8 +11,8 @@ import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
-import kotlinx.android.synthetic.main.layout_toolbar.*
+import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
  * Fragment responsible for displaying a list of credential types that belongs to the same access type.
@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
  * @see [ProviderTreeNode.AccessTypeNode]
  */
 class CredentialTypeListFragment :
-    ProviderTreeNodeFragment(R.layout.fragment_credential_type_list) {
+    ProviderTreeNodeFragment(R.layout.tink_fragment_credential_type_list) {
 
     private val toolbarTitle: String by lazy {
         requireNotNull(arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE))
@@ -29,7 +29,7 @@ class CredentialTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.credential_type_fragment_title)
+        title.setText(R.string.tink_credential_type_fragment_title)
         toolbar.title = toolbarTitle
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }

@@ -26,7 +26,7 @@ class ProviderListRecyclerAdapter : RecyclerView.Adapter<ProviderViewHolder>(),
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProviderViewHolder {
         return ProviderViewHolder(
-            parent.inflate(R.layout.item_provider_list),
+            parent.inflate(R.layout.tink_item_provider_list),
             this
         )
     }

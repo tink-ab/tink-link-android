@@ -28,6 +28,7 @@ android {
         }
     }
 
+    resourcePrefix("tink_")
 }
 
 apply {

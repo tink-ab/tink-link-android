@@ -13,17 +13,17 @@ import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 
 /**
  * Fragment responsible for displaying a list of financial institution groups.
  * This is the root level of the tree.
  */
-class ProviderListFragment : ProviderTreeNodeFragment(R.layout.layout_provider_tree_node_list) {
+class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_layout_provider_tree_node_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        title.setText(R.string.provider_list_title)
+        title.setText(R.string.tink_provider_list_title)
     }
 
     /**

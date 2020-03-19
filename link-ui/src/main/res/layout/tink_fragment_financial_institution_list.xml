@@ -6,8 +6,8 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
-  <include layout="@layout/layout_toolbar" />
+  <include layout="@layout/tink_layout_toolbar" />
 
-  <include layout="@layout/layout_provider_tree_node_list" />
+  <include layout="@layout/tink_layout_provider_tree_node_list" />
 
 </LinearLayout>

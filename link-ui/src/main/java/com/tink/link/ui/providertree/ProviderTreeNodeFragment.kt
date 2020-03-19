@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.providerlist.ProviderListRecyclerAdapter
 import com.tink.model.provider.ProviderTreeNode
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 
 internal const val ARG_PROVIDER_TREE = "ARG_PROVIDER_TREE"
 internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"

@@ -11,8 +11,8 @@ import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.provider.ProviderTreeNode
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
-import kotlinx.android.synthetic.main.layout_toolbar.*
+import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
  * Fragment responsible for displaying a list of access types that belong to the same financial institution.
@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.layout_toolbar.*
  * @see [ProviderTreeNode.FinancialInstitutionNode]
  */
 class AccessTypeListFragment :
-    ProviderTreeNodeFragment(R.layout.fragment_access_type_list) {
+    ProviderTreeNodeFragment(R.layout.tink_fragment_access_type_list) {
 
     private val toolbarTitle: String by lazy {
         requireNotNull(arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE))
@@ -29,9 +29,9 @@ class AccessTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.access_type_fragment_title)
+        title.setText(R.string.tink_access_type_fragment_title)
         subtitle.apply {
-            setText(R.string.access_type_fragment_subtitle)
+            setText(R.string.tink_access_type_fragment_subtitle)
             visibility = View.VISIBLE
         }
         toolbar.title = toolbarTitle
