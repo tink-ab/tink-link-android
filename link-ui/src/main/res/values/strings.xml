@@ -15,4 +15,6 @@
   <string name="tink_profile_headline">Credentials</string>
   <string name="tink_refresh_button">Refresh</string>
   <string name="tink_add_credentials_button">Add bank</string>
+  <string name="tink_search">Search</string>
+  <string name="tink_close">Close</string>
 </resources>
