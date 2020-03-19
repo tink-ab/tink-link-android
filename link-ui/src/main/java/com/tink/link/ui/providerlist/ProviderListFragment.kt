@@ -9,21 +9,23 @@ import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
-import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
  * Fragment responsible for displaying a list of financial institution groups.
  * This is the root level of the tree.
  */
-class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_layout_provider_tree_node_list) {
+class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        title.setText(R.string.tink_provider_list_title)
+        toolbar.setTitle(R.string.tink_provider_list_title)
+        toolbar.setNavigationOnClickListener { (activity as? TinkLinkUiActivity)?.finish() }
     }
 
     /**

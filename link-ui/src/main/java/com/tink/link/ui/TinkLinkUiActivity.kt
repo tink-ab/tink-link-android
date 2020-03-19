@@ -37,6 +37,11 @@ class TinkLinkUiActivity : AppCompatActivity() {
             Tink.getUserContext()?.handleUri(uri)
         }
     }
+
+    fun closeTinkLinkUi(resultCode: Int) {
+        setResult(resultCode)
+        finish()
+    }
 }
 
 interface TinkLinkConsumer
