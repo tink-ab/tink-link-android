@@ -17,4 +17,5 @@
   <string name="tink_add_credentials_button">Add bank</string>
   <string name="tink_search">Search</string>
   <string name="tink_close">Close</string>
+  <string name="tink_search_provider_hint">Search for a bank</string>
 </resources>

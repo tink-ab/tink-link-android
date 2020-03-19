@@ -2,6 +2,7 @@ package com.tink.link.ui.providerlist
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,13 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))
     }
 
+    private var queryString: String = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        queryString = savedInstanceState?.getString(QUERY) ?: ""
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(providers) {
@@ -37,11 +45,11 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
 
             // Declare a RecyclerView.Adapter object that will show the providers,
             // and navigate to a node when the corresponding item in the list is clicked.
-            adapter = ProviderListRecyclerAdapter().also {
+            providerAdapter = ProviderListRecyclerAdapter().also {
                 it.providers = providerList
                 it.onItemClickedListener = ::navigateToNode
-                providerAdapter = it
             }
+            adapter = providerAdapter
         }
         setupToolbar()
     }
@@ -49,13 +57,9 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
     private fun setupToolbar() {
         toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search_close)
+        setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.search_button -> {
-                    // TODO: Implement search
-                    true
-                }
-
                 R.id.close_button -> {
                     (activity as? TinkLinkUiActivity)?.finish()
                     true
@@ -65,6 +69,44 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
             }
         }
         toolbar.setNavigationOnClickListener { (activity as? TinkLinkUiActivity)?.finish() }
+    }
+
+    private fun setupSearch(searchView: SearchView) {
+        searchView.apply {
+            maxWidth = resources.getDimensionPixelSize(R.dimen.tink_search_view_width)
+            queryHint = getString(R.string.tink_search_provider_hint)
+            if (queryString.isNotEmpty()) {
+                setQuery(queryString, false)
+                isIconified = false
+            }
+            setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    search(query)
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String): Boolean {
+                    search(newText)
+                    return true
+                }
+            })
+        }
+    }
+
+    private fun search(searchText: String) {
+        queryString = searchText
+        val filteredProviders =
+                queryString
+                    .takeIf { it.isNotBlank() && it.length >= 3 }
+                    ?.let { query ->
+                        providerList.filter {
+                            it.name?.contains(query, ignoreCase = true) ?: false
+                        }
+                    }
+                    ?: providerList
+        providerAdapter?.apply {
+            providers = filteredProviders
+        }
     }
 
     /**
@@ -80,7 +122,15 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         )
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.apply {
+            putString(QUERY, queryString)
+        }
+        super.onSaveInstanceState(outState)
+    }
+
     companion object {
+        internal const val QUERY = "query"
         /**
          * Create an arguments bundle.
          *
