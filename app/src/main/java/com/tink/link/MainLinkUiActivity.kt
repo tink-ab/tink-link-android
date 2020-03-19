@@ -38,7 +38,7 @@ class MainLinkUiActivity : AppCompatActivity() {
             Tink.getUserContext()?.let {
                 startActivityForResult(
                     Intent(this, TinkLinkUiActivity::class.java),
-                    TinkLinkUiActivity.REQUEST_CODE
+                    REQUEST_CODE
                 )
             }
         }
@@ -51,5 +51,9 @@ class MainLinkUiActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //TODO("Do something with the result from the Tink Link UI")
+    }
+
+    companion object {
+        const val REQUEST_CODE = 100
     }
 }
