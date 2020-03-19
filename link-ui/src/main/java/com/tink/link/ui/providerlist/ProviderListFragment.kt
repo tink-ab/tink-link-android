@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.toArrayList
@@ -14,6 +15,7 @@ import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
+import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
@@ -22,8 +24,25 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  */
 class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
 
+    private var providerAdapter: ProviderListRecyclerAdapter? = null
+
+    private val providerList: List<ProviderTreeNode> by lazy {
+        requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        with(providers) {
+            layoutManager = LinearLayoutManager(requireContext())
+
+            // Declare a RecyclerView.Adapter object that will show the providers,
+            // and navigate to a node when the corresponding item in the list is clicked.
+            adapter = ProviderListRecyclerAdapter().also {
+                it.providers = providerList
+                it.onItemClickedListener = ::navigateToNode
+                providerAdapter = it
+            }
+        }
         setupToolbar()
     }
 
