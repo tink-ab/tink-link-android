@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
-import com.tink.link.ui.R
-import com.tink.link.ui.TinkLinkUiActivity
-import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
@@ -24,7 +24,27 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupToolbar()
+    }
+
+    private fun setupToolbar() {
         toolbar.setTitle(R.string.tink_provider_list_title)
+        toolbar.inflateMenu(R.menu.tink_menu_search_close)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.search_button -> {
+                    // TODO: Implement search
+                    true
+                }
+
+                R.id.close_button -> {
+                    (activity as? TinkLinkUiActivity)?.finish()
+                    true
+                }
+
+                else -> false
+            }
+        }
         toolbar.setNavigationOnClickListener { (activity as? TinkLinkUiActivity)?.finish() }
     }
 
