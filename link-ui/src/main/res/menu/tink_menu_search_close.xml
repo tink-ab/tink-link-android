@@ -5,6 +5,7 @@
     android:id="@+id/search_button"
     android:icon="@drawable/tink_search"
     android:title="@string/tink_search"
+    app:actionViewClass="androidx.appcompat.widget.SearchView"
     app:showAsAction="ifRoom"/>
   <item
     android:id="@+id/close_button"
