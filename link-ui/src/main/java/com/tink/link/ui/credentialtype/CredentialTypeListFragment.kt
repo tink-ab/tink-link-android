@@ -11,7 +11,6 @@ import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
-import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
@@ -30,7 +29,6 @@ class CredentialTypeListFragment :
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.title = getString(R.string.tink_credential_type_fragment_title)
-        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     /**

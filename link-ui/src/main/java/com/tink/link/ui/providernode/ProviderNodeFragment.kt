@@ -8,7 +8,6 @@ import com.tink.link.ui.credentials.CredentialFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.model.provider.ProviderTreeNode
-import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
@@ -26,7 +25,6 @@ class ProviderNodeFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.title = toolbarTitle
-        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     /**

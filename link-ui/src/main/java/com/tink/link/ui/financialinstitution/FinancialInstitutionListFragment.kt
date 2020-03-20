@@ -29,7 +29,6 @@ class FinancialInstitutionListFragment :
         super.onViewCreated(view, savedInstanceState)
 
         toolbar.title = toolbarTitle
-        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     /**

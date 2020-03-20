@@ -48,10 +48,9 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
             }
             adapter = providerAdapter
         }
-        setupToolbar()
     }
 
-    private fun setupToolbar() {
+    override fun setupToolbar() {
         toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search_close)
         setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
