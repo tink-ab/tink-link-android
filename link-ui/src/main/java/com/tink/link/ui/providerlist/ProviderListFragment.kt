@@ -42,9 +42,6 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         super.onViewCreated(view, savedInstanceState)
         with(providers) {
             layoutManager = LinearLayoutManager(requireContext())
-
-            // Declare a RecyclerView.Adapter object that will show the providers,
-            // and navigate to a node when the corresponding item in the list is clicked.
             providerAdapter = ProviderListRecyclerAdapter().also {
                 it.providers = providerList
                 it.onItemClickedListener = ::navigateToNode
