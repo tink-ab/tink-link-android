@@ -61,14 +61,16 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.close_button -> {
-                    (activity as? TinkLinkUiActivity)?.finish()
+                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
                     true
                 }
 
                 else -> false
             }
         }
-        toolbar.setNavigationOnClickListener { (activity as? TinkLinkUiActivity)?.finish() }
+        toolbar.setNavigationOnClickListener {
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
+        }
     }
 
     private fun setupSearch(searchView: SearchView) {
