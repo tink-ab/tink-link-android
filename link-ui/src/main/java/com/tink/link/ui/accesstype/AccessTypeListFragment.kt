@@ -3,12 +3,14 @@ package com.tink.link.ui.accesstype
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.credentialtype.CredentialTypeListFragment
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
+import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
+import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_access_type_list.*
@@ -20,14 +22,14 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  * @see [ProviderTreeNode.FinancialInstitutionNode]
  */
 class AccessTypeListFragment :
-    Fragment(R.layout.tink_fragment_access_type_list) {
-
-    private val providerList: List<ProviderTreeNode> by lazy {
-        requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))
-    }
+    ProviderTreeNodeFragment(R.layout.tink_fragment_access_type_list) {
 
     private val toolbarTitle: String by lazy {
         requireNotNull(arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE))
+    }
+
+    private val providerList: List<ProviderTreeNode> by lazy {
+        requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +42,7 @@ class AccessTypeListFragment :
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun setupViews() {
         toolbar.title = getString(R.string.tink_access_type_fragment_title, toolbarTitle)
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
         setupCardViews()
@@ -78,7 +78,7 @@ class AccessTypeListFragment :
     /**
      * Navigate to the [CredentialTypeListFragment]
      */
-    private fun navigateToNode(node: ProviderTreeNode) {
+    override fun navigateToNode(node: ProviderTreeNode) {
         findNavController().navigate(
             R.id.credentialTypeListFragment,
             bundleOf(
@@ -86,10 +86,5 @@ class AccessTypeListFragment :
                 ARG_PROVIDER_TOOLBAR_TITLE to toolbarTitle
             )
         )
-    }
-
-    companion object {
-        internal const val ARG_PROVIDER_TREE = "ARG_PROVIDER_TREE"
-        internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
     }
 }
