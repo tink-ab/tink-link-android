@@ -39,9 +39,7 @@ abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(la
         super.onViewCreated(view, savedInstanceState)
 
         with(providers) {
-            layoutManager = LinearLayoutManager(requireContext()).also {
-                addItemDecoration(DividerItemDecoration(context, it.orientation))
-            }
+            layoutManager = LinearLayoutManager(requireContext())
 
             // Declare a RecyclerView.Adapter object that will show the providers,
             // and navigate to a node when the corresponding item in the list is clicked.
