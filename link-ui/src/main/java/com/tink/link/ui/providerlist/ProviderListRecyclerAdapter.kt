@@ -63,7 +63,12 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
         }
 
         if (item is ProviderTreeNode.CredentialTypeNode) {
-            logo.visibility = View.GONE
+            val iconRes = when (item.type) {
+                Credential.Type.MOBILE_BANKID -> R.drawable.tink_credential_type_mobile_bank_id
+                else -> R.drawable.tink_credential_type_password
+            }
+            Picasso.get().load(iconRes).into(logo)
+            logo.visibility = View.VISIBLE
         } else {
             item.icon?.let {
                 Picasso.get().load(it).into(logo)
