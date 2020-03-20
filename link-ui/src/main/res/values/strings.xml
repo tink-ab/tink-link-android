@@ -21,5 +21,10 @@
   <string name="tink_access_type_card_other_title">Other account types</string>
   <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
   <string name="tink_access_type_card_other_button_text">Add</string>
-
+  <string name="tink_credential_type_password_default_description">Password</string>
+  <string name="tink_credential_type_mobile_bank_id_default_description">Mobile BankID</string>
+  <string name="tink_credential_type_third_party_authentication_default_description">Third Party Authentication</string>
+  <string name="tink_credential_type_keyfob_default_description">Key Fob</string>
+  <string name="tink_credential_type_fraud_default_description">Fraud</string>
+  <string name="tink_credential_type_unknown_default_description">Unknown</string>
 </resources>

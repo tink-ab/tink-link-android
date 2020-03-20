@@ -1,5 +1,6 @@
 package com.tink.link.ui.providerlist
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -57,7 +58,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
-            is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription()
+            is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription(title.context)
             is ProviderTreeNode.ProviderNode -> item.name
         }
 
@@ -79,12 +80,12 @@ private fun Provider.AccessType.getDescription() =
         Provider.AccessType.OTHER -> "Other"
     }
 
-private fun Credential.Type.getDescription() =
+private fun Credential.Type.getDescription(context: Context) =
     when (this) {
-        Credential.Type.UNKNOWN -> "Unknown"
-        Credential.Type.PASSWORD -> "Password"
-        Credential.Type.MOBILE_BANKID -> "Mobile BankID"
-        Credential.Type.THIRD_PARTY_AUTHENTICATION -> "Third Party Authentication"
-        Credential.Type.KEYFOB -> "Key Fob"
-        Credential.Type.FRAUD -> "Fraud"
+        Credential.Type.UNKNOWN -> context.getString(R.string.tink_credential_type_unknown_default_description)
+        Credential.Type.PASSWORD -> context.getString(R.string.tink_credential_type_password_default_description)
+        Credential.Type.MOBILE_BANKID -> context.getString(R.string.tink_credential_type_mobile_bank_id_default_description)
+        Credential.Type.THIRD_PARTY_AUTHENTICATION -> context.getString(R.string.tink_credential_type_third_party_authentication_default_description)
+        Credential.Type.KEYFOB -> context.getString(R.string.tink_credential_type_keyfob_default_description)
+        Credential.Type.FRAUD -> context.getString(R.string.tink_credential_type_fraud_default_description)
     }
