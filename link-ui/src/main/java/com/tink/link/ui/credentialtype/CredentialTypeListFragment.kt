@@ -29,7 +29,7 @@ class CredentialTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.title = toolbarTitle
+        toolbar.title = getString(R.string.tink_credential_type_fragment_title)
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
