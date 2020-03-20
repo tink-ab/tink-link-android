@@ -29,7 +29,6 @@ class FinancialInstitutionListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.tink_financial_institution_fragment_title)
         toolbar.title = toolbarTitle
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }

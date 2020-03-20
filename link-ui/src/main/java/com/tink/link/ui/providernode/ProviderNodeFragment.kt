@@ -25,7 +25,6 @@ class ProviderNodeFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.tink_provider_node_fragment_title)
         toolbar.title = toolbarTitle
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }

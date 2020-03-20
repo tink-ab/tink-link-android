@@ -6,24 +6,6 @@
   android:orientation="vertical"
   tools:context=".providerlist.ProviderListFragment">
 
-  <TextView
-    android:id="@+id/title"
-    android:textStyle="bold"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="32dp"
-    android:textAppearance="?textAppearanceHeadline5"
-    tools:text="@string/tink_provider_list_title" />
-
-  <TextView
-    android:id="@+id/subtitle"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:textAppearance="?textAppearanceSubtitle1"
-    android:visibility="gone"
-    tools:text="@string/tink_provider_list_title" />
-
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/providers"
     android:layout_width="match_parent"

@@ -29,11 +29,6 @@ class AccessTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.tink_access_type_fragment_title)
-        subtitle.apply {
-            setText(R.string.tink_access_type_fragment_subtitle)
-            visibility = View.VISIBLE
-        }
         toolbar.title = toolbarTitle
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
