@@ -72,7 +72,7 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
 
     private fun setupSearch(searchView: SearchView) {
         searchView.apply {
-            maxWidth = resources.getDimensionPixelSize(R.dimen.tink_search_view_width)
+            maxWidth = resources.getDimensionPixelSize(R.dimen.tink_search_view_width) // TODO: Test for different screen sizes
             queryHint = getString(R.string.tink_search_provider_hint)
             if (queryString.isNotEmpty()) {
                 setQuery(queryString, false)
