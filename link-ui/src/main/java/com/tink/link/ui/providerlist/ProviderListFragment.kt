@@ -42,9 +42,9 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         super.onViewCreated(view, savedInstanceState)
         with(providers) {
             layoutManager = LinearLayoutManager(requireContext())
-            providerAdapter = ProviderListRecyclerAdapter().also {
-                it.providers = providerList
-                it.onItemClickedListener = ::navigateToNode
+            providerAdapter = ProviderListRecyclerAdapter().apply {
+                providers = providerList
+                onItemClickedListener = ::navigateToNode
             }
             adapter = providerAdapter
         }
