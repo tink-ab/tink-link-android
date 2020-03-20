@@ -38,7 +38,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         }
     }
 
-    fun closeTinkLinkUi(resultCode: Int) {
+    internal fun closeTinkLinkUi(resultCode: Int) {
         setResult(resultCode)
         finish()
     }
