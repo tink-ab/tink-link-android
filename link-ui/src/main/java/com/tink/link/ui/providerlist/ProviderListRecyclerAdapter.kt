@@ -67,7 +67,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
                 Credential.Type.MOBILE_BANKID -> R.drawable.tink_credential_type_mobile_bank_id
                 else -> R.drawable.tink_credential_type_password
             }
-            Picasso.get().load(iconRes).into(logo)
+            logo.setImageResource(iconRes)
             logo.visibility = View.VISIBLE
         } else {
             item.icon?.let {
