@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="tink_h2_text_size">17dp</dimen>
+  <dimen name="tink_h2_line_height">24dp</dimen>
+  <dimen name="tink_deci_text_size">15dp</dimen>
+  <dimen name="tink_deci_line_height">20dp</dimen>
+  <dimen name="tink_giga_text_size">25dp</dimen>
+  <dimen name="tink_giga_line_height">32dp</dimen>
+  <dimen name="tink_hecto_text_size">17dp</dimen>
+  <dimen name="tink_hecto_line_height">24dp</dimen>
+  <dimen name="tink_mega_text_size">21dp</dimen>
+  <dimen name="tink_mega_line_height">28dp</dimen>
+  <dimen name="tink_micro_text_size">13dp</dimen>
+  <dimen name="tink_micro_line_height">18dp</dimen>
+  <dimen name="tink_nano_text_size">11dp</dimen>
+  <dimen name="tink_nano_line_height">16dp</dimen>
+  <dimen name="tink_tera_text_size">35dp</dimen>
+  <dimen name="tink_tera_line_height">40dp</dimen>
+  <dimen name="tink_peta_text_size">45dp</dimen>
+  <dimen name="tink_peta_line_height">48dp</dimen>
+
+</resources>
