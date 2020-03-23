@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="tink_h2">
+    <item name="android:textColor">?tink_textColorTertiary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_h2_text_size</item>
+    <item name="lineHeight">@dimen/tink_h2_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_deci">
+    <item name="android:textColor">?tink_textColorSecondary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_deci_text_size</item>
+    <item name="lineHeight">@dimen/tink_deci_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_deci.bold">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+  </style>
+
+  <style name="tink_deci.semibold">
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+  </style>
+
+  <style name="tink_deci.primary">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+  </style>
+
+  <style name="tink_deci.primary.bold">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+  </style>
+
+  <style name="tink_deci.colorPrimary">
+    <item name="android:textColor">?tink_colorPrimary</item>
+  </style>
+
+  <style name="tink_deci.colorPrimary.bold">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+  </style>
+
+  <style name="tink_deci.title">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_deci.disabled">
+    <item name="android:textColor">?tink_textColorSecondaryDisabled</item>
+  </style>
+
+  <style name="tink_giga">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+    <item name="android:textSize">@dimen/tink_giga_text_size</item>
+    <item name="lineHeight">@dimen/tink_giga_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_giga.regular">
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+  </style>
+
+  <style name="tink_giga.autoSize" parent="tink_giga">
+    <item name="autoSizeTextType">uniform</item>
+    <item name="autoSizeMaxTextSize">25sp</item>
+    <item name="autoSizeMinTextSize">11sp</item>
+    <item name="autoSizeStepGranularity">1sp</item>
+  </style>
+
+  <style name="tink_hecto">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_hecto_text_size</item>
+    <item name="lineHeight">@dimen/tink_hecto_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_hecto.bold">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+  </style>
+
+  <style name="tink_hecto.semibold">
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+  </style>
+
+  <style name="tink_hecto.secondary">
+    <item name="android:textColor">?tink_textColorSecondary</item>
+  </style>
+
+  <style name="tink_hecto.tertiary">
+    <item name="android:textColor">?tink_textColorTertiary</item>
+  </style>
+
+  <style name="tink_hecto.disabled">
+    <item name="android:textColor">?tink_textColorPrimaryDisabled</item>
+  </style>
+
+  <style name="tink_mega">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_mega_text_size</item>
+    <item name="lineHeight">@dimen/tink_mega_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_mega.bold">
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+  </style>
+
+  <style name="tink_mega.semibold">
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+  </style>
+
+  <style name="tink_mega.hint">
+    <item name="android:textColor">?tink_textColorTertiary</item>
+  </style>
+
+  <style name="tink_micro">
+    <item name="android:textColor">?tink_textColorSecondary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_micro_text_size</item>
+    <item name="lineHeight">@dimen/tink_micro_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_micro.semibold">
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+  </style>
+
+  <style name="tink_micro.primary">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+  </style>
+
+  <style name="tink_nano">
+    <item name="android:textColor">?tink_textColorSecondary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+    <item name="android:textSize">@dimen/tink_nano_text_size</item>
+    <item name="lineHeight">@dimen/tink_nano_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_nano.primary">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+  </style>
+
+  <style name="tink_nano.tertiary">
+    <item name="android:textColor">?tink_textColorTertiary</item>
+  </style>
+
+  <style name="tink_nano.semibold">
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+  </style>
+
+  <style name="tink_peta">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+    <item name="android:textSize">@dimen/tink_peta_text_size</item>
+    <item name="lineHeight">@dimen/tink_peta_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="tink_peta.autosize">
+    <item name="autoSizeTextType">uniform</item>
+    <item name="autoSizeMaxTextSize">@dimen/tink_peta_text_size</item>
+    <item name="autoSizeMinTextSize">@dimen/tink_nano_text_size</item>
+    <item name="autoSizeStepGranularity">1dp</item>
+  </style>
+
+  <style name="tink_tera">
+    <item name="android:textColor">?tink_textColorPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_bold</item>
+    <item name="android:textSize">@dimen/tink_tera_text_size</item>
+    <item name="lineHeight">@dimen/tink_tera_line_height</item>
+    <item name="android:letterSpacing">0</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+</resources>
