@@ -8,6 +8,23 @@
     <item name="colorAccent">@color/tink_colorAccent</item>
   </style>
 
+  <style name="TinkLinkUiStyle">
+    <item name="tink_colorBackground">#ffffff</item>
+    <item name="tink_colorSurface">#ffffff</item>
+    <item name="tink_colorPrimary">#ff427783</item>
+    <item name="tink_colorOnPrimary">#ffffff</item>
+    <item name="tink_colorSecondary">#ff427783</item>
+    <item name="tink_colorError">#ff0000</item>
+    <item name="tink_textColorPrimary">#ff262626</item>
+    <item name="tink_textColorPrimaryDisabled">#ffa7a7a7</item>
+    <item name="tink_textColorSecondary">#ff808080</item>
+    <item name="tink_textColorSecondaryDisabled">#ffa7a7a7</item>
+    <item name="tink_textColorTertiary">#ff808080</item>
+    <item name="tink_dividerColor">#ff808080</item>
+    <item name="tink_snackbarColor">#ff808080</item>
+    <item name="tink_colorOnSnackBar">#ffffff</item>
+  </style>
+
   <item name="tink_font_bold" type="font">@font/roboto_bold</item>
   <item name="tink_font_semi_bold" type="font">@font/roboto_medium</item>
   <item name="tink_font_regular" type="font">@font/roboto</item>
