@@ -7,6 +7,5 @@
   <color name="tink_toolbar_background">#FFFFFF</color>
   <color name="tink_colorBackground">#FFFFFF</color>
 
-  <color name="tink_ripple_on_light_background">#20444444</color>
-  <color name="tink_ripple_on_dark_background">#20ffffff</color>
+  <color name="tink_ripple_on_background">#20444444</color>
 </resources>
