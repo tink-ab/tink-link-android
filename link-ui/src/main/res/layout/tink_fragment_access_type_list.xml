@@ -55,9 +55,10 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/openBankingAddButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/tink_access_type_card_open_banking_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,9 +116,10 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/otherAddButton"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/tink_access_type_card_other_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
