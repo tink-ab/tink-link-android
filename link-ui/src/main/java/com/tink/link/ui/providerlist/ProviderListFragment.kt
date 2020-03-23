@@ -52,18 +52,8 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
 
     override fun setupToolbar() {
         toolbar.setTitle(R.string.tink_provider_list_title)
-        toolbar.inflateMenu(R.menu.tink_menu_search_close)
+        toolbar.inflateMenu(R.menu.tink_menu_search)
         setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
-        toolbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.close_button -> {
-                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
-                    true
-                }
-
-                else -> false
-            }
-        }
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
         }
@@ -71,7 +61,6 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
 
     private fun setupSearch(searchView: SearchView) {
         searchView.apply {
-            maxWidth = resources.getDimensionPixelSize(R.dimen.tink_search_view_width) // TODO: Test for different screen sizes
             queryHint = getString(R.string.tink_search_provider_hint)
             if (queryString.isNotEmpty()) {
                 setQuery(queryString, false)
