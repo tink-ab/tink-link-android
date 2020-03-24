@@ -30,7 +30,7 @@
     android:id="@+id/financialInstitutionListFragment"
     android:name="com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment"
     android:label="FinancialInstitutionListFragment"
-    tools:layout="@layout/tink_fragment_financial_institution_list">
+    tools:layout="@layout/tink_fragment_provider_list">
     <action
       android:id="@+id/action_financialInstitutionListFragment_to_accessTypeListFragment"
       app:destination="@id/accessTypeListFragment" />

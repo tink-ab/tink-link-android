@@ -7,9 +7,4 @@
     android:title="@string/tink_search"
     app:actionViewClass="androidx.appcompat.widget.SearchView"
     app:showAsAction="ifRoom"/>
-  <item
-    android:id="@+id/close_button"
-    android:icon="@drawable/tink_close"
-    android:title="@string/tink_close"
-    app:showAsAction="ifRoom"/>
 </menu>

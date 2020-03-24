@@ -5,4 +5,7 @@
   <color name="tink_colorAccent">#D81B60</color>
   <color name="tink_loading_background">#E6FFFFFF</color>
   <color name="tink_toolbar_background">#FFFFFF</color>
+  <color name="tink_colorBackground">#FFFFFF</color>
+
+  <color name="tink_ripple_on_background">#20444444</color>
 </resources>
