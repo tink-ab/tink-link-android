@@ -44,7 +44,6 @@ class AccessTypeListFragment :
 
     override fun setupViews() {
         toolbar.title = getString(R.string.tink_access_type_fragment_title, toolbarTitle)
-        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
         setupCardViews()
     }
 
