@@ -3,9 +3,6 @@
   <!-- Base application theme. -->
   <style name="Tink_AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
     <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/tink_colorPrimary</item>
-    <item name="colorPrimaryDark">@color/tink_colorPrimaryDark</item>
-    <item name="colorAccent">@color/tink_colorAccent</item>
   </style>
 
   <style name="TinkLinkUiStyle">
