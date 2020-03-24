@@ -10,6 +10,7 @@ import com.tink.core.Tink
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialRepository
 import com.tink.link.getUserContext
+import com.tink.link.ui.extensions.getColorFromAttr
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
+        window.statusBarColor = getColorFromAttr(R.attr.tink_colorPrimary)
         setContentView(R.layout.tink_activity_main)
 
         // TODO: Confirm how and where this is done (perhaps in the activity that launches this one?)
