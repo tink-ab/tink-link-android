@@ -37,7 +37,7 @@ class MainLinkUiActivity : AppCompatActivity() {
         linkUiButton.setOnClickListener {
             Tink.getUserContext()?.let {
                 startActivityForResult(
-                    Intent(this, TinkLinkUiActivity::class.java),
+                    TinkLinkUiActivity.createIntent(this, R.style.TinkStyle_ChewingGum),
                     REQUEST_CODE
                 )
             }
