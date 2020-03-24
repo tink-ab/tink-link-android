@@ -36,6 +36,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/openBankingCardTitle"
+        style="@style/tink_hecto.bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -47,6 +48,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/openBankingCardDescription"
+        style="@style/tink_deci.primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -98,6 +100,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/otherCardTitle"
+        style="@style/tink_hecto.bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -109,6 +112,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/otherCardDescription"
+        style="@style/tink_deci.primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
