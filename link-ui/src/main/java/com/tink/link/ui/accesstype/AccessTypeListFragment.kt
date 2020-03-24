@@ -65,7 +65,7 @@ class AccessTypeListFragment :
                     .firstOrNull { it.type == Provider.AccessType.OTHER }
                     ?.let { otherItem ->
                         otherItem.icon?.let {
-                            Picasso.get().load(it).into(openBankingLogo)
+                            Picasso.get().load(it).into(otherLogo)
                             otherLogo.visibility = View.VISIBLE
                         }
                         otherAddButton.setOnClickListener { navigateToNode(otherItem) }
