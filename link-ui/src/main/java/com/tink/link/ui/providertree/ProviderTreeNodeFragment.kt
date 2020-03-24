@@ -44,18 +44,12 @@ abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(la
     }
 
     internal open fun setupToolbar() {
-        toolbar.inflateMenu(R.menu.tink_menu_close)
-        toolbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.close_button -> {
-                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
-                    true
-                }
-
-                else -> false
-            }
+        toolbar.setNavigationIcon(R.drawable.tink_close)
+        toolbar.setNavigationOnClickListener {
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
         }
-        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 
     internal open fun setupViews() {

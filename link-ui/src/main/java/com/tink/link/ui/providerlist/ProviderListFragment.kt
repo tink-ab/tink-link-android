@@ -7,7 +7,6 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
-import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
@@ -51,12 +50,10 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
     }
 
     override fun setupToolbar() {
+        super.setupToolbar()
         toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search)
         setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
-        toolbar.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
-        }
     }
 
     private fun setupSearch(searchView: SearchView) {
