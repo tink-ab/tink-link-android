@@ -59,7 +59,7 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/openBankingAddButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="@style/tink_textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -123,7 +123,7 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/otherAddButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="@style/tink_textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
