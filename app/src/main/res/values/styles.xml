@@ -28,4 +28,9 @@
     <item name="tink_rippleColor">#20FFFFFF</item>
   </style>
 
+  <!--  Comment in for testing font overrides-->
+<!--    <item name="tink_font_bold" type="font">@font/lobster</item>-->
+<!--    <item name="tink_font_semi_bold" type="font">@font/lobster</item>-->
+<!--    <item name="tink_font_regular" type="font">@font/lobster</item>-->
+
 </resources>
