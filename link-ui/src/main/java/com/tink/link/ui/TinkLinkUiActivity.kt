@@ -19,6 +19,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.TinkLinkUiStyle)
         setContentView(R.layout.tink_activity_main)
 
         // TODO: Confirm how and where this is done (perhaps in the activity that launches this one?)
