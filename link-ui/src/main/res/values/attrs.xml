@@ -19,6 +19,7 @@
     <attr name="tink_dividerColor" format="color|reference" />
     <attr name="tink_snackbarColor" format="color|reference"/>
     <attr name="tink_colorOnSnackBar" format="color|reference"/>
+    <attr name="tink_rippleColor" format="color|reference"/>
   </declare-styleable>
 
 </resources>

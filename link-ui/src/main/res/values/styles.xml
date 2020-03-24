@@ -23,6 +23,7 @@
     <item name="tink_dividerColor">#ff808080</item>
     <item name="tink_snackbarColor">#ff808080</item>
     <item name="tink_colorOnSnackBar">#ffffff</item>
+    <item name="tink_rippleColor">#20444444</item>
   </style>
 
   <item name="tink_font_bold" type="font">@font/roboto_bold</item>
