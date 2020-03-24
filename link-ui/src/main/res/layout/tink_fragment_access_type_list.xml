@@ -12,12 +12,12 @@
     android:id="@+id/openBankingAccessTypeCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?tink_colorSurface"
     android:layout_marginStart="20dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="24dp"
-    android:visibility="gone">
+    android:visibility="gone"
+    app:cardBackgroundColor="?tink_colorSurface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -77,11 +77,11 @@
     android:id="@+id/otherAccessTypeCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?tink_colorSurface"
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="24dp"
-    android:visibility="gone">
+    android:visibility="gone"
+    app:cardBackgroundColor="?tink_colorSurface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
