@@ -5,7 +5,8 @@
   android:id="@+id/toolbar"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:background="@color/tink_toolbar_background"
+  android:background="?tink_colorPrimary"
   android:elevation="4dp"
   app:navigationIcon="?homeAsUpIndicator"
+  app:titleTextColor="?tink_colorOnPrimary"
   tools:title="Bank name" />

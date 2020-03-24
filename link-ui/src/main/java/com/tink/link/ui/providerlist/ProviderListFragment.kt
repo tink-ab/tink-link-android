@@ -3,10 +3,12 @@ package com.tink.link.ui.providerlist
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
+import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
@@ -53,6 +55,11 @@ class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
         super.setupToolbar()
         toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search)
+        val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
+        DrawableCompat.setTint(
+            searchMenuItem.icon,
+            requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
+        )
         setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
     }
 

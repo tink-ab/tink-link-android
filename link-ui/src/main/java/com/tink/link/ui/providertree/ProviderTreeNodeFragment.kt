@@ -3,11 +3,13 @@ package com.tink.link.ui.providertree
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.providerlist.ProviderListRecyclerAdapter
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
@@ -45,6 +47,12 @@ abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(la
 
     internal open fun setupToolbar() {
         toolbar.setNavigationIcon(R.drawable.tink_close)
+        toolbar.navigationIcon?.apply {
+            DrawableCompat.setTint(
+                this,
+                requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
+            )
+        }
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
