@@ -5,7 +5,7 @@
     <attr name="tink_colorBackground" format="color|reference"/>
     <attr name="tink_colorSurface" format="color|reference"/>
     <attr name="tink_colorPrimary" format="color|reference"/>
-    <attr name="tink_colorPrimaryLight" format="color|reference"/>
+    <attr name="tink_colorPrimaryVariant" format="color|reference"/>
     <attr name="tink_colorOnPrimary" format="color|reference"/>
     <attr name="tink_colorSecondary" format="color|reference"/>
     <attr name="tink_colorError" format="color|reference" />
