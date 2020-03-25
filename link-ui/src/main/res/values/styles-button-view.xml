@@ -3,9 +3,8 @@
 
   <style name="tink_textButton" parent="Widget.MaterialComponents.Button.TextButton">
     <item name="android:textColor">?tink_colorPrimary</item>
-    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
-    <item name="android:textSize">@dimen/tink_hecto_text_size</item>
-    <item name="lineHeight">@dimen/tink_hecto_line_height</item>
+    <item name="android:textAppearance">@style/tink_hecto.semibold</item>
+    <item name="android:textAllCaps">true</item>
     <item name="rippleColor">?tink_rippleColor</item>
   </style>
 
