@@ -174,7 +174,7 @@
     <item name="autoSizeTextType">uniform</item>
     <item name="autoSizeMaxTextSize">@dimen/tink_peta_text_size</item>
     <item name="autoSizeMinTextSize">@dimen/tink_nano_text_size</item>
-    <item name="autoSizeStepGranularity">1dp</item>
+    <item name="autoSizeStepGranularity">1sp</item>
   </style>
 
   <style name="tink_tera">
