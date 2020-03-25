@@ -23,6 +23,16 @@
     <item name="tink_rippleColor">#20444444</item>
   </style>
 
+  <style name="Tink_ToolbarStyle">
+    <item name="android:background">?tink_colorPrimary</item>
+    <item name="android:textColorPrimary">?tink_colorOnPrimary</item>
+    <item name="colorControlNormal">?tink_colorOnPrimary</item>
+    <item name="colorControlHighlight">?tink_colorOnPrimary</item>
+    <item name="colorControlActivated">?tink_colorOnPrimary</item>
+    <item name="android:textColorHint">?tink_colorOnPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_regular</item>
+  </style>
+
   <item name="tink_font_bold" type="font">@font/roboto_bold</item>
   <item name="tink_font_semi_bold" type="font">@font/roboto_medium</item>
   <item name="tink_font_regular" type="font">@font/roboto</item>
