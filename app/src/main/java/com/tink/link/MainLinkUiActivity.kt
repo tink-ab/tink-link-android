@@ -36,9 +36,8 @@ class MainLinkUiActivity : AppCompatActivity() {
 
         linkUiButton.setOnClickListener {
             Tink.getUserContext()?.let {
-                // TODO: Remove this once testing is done
                 startActivityForResult(
-                    TinkLinkUiActivity.createIntent(this, R.style.TinkStyle_ChewingGum),
+                    TinkLinkUiActivity.createIntent(this),
                     REQUEST_CODE
                 )
             }

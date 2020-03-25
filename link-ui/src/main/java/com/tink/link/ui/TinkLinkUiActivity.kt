@@ -21,7 +21,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
         const val ARG_STYLE = "styleResId"
 
-        fun createIntent(context: Context, styleResId: Int) =
+        fun createIntent(context: Context, styleResId: Int? = R.style.TinkLinkUiStyle) =
             Intent(context, TinkLinkUiActivity::class.java).apply {
                 putExtras(
                     bundleOf(
