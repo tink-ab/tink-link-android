@@ -7,7 +7,6 @@
     <item name="android:textSize">@dimen/tink_h2_text_size</item>
     <item name="lineHeight">@dimen/tink_h2_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_deci">
@@ -16,7 +15,6 @@
     <item name="android:textSize">@dimen/tink_deci_text_size</item>
     <item name="lineHeight">@dimen/tink_deci_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_deci.bold">
@@ -46,7 +44,6 @@
   <style name="tink_deci.title">
     <item name="android:fontFamily">@font/tink_font_bold</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_deci.disabled">
@@ -59,7 +56,6 @@
     <item name="android:textSize">@dimen/tink_giga_text_size</item>
     <item name="lineHeight">@dimen/tink_giga_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_giga.regular">
@@ -79,7 +75,6 @@
     <item name="android:textSize">@dimen/tink_hecto_text_size</item>
     <item name="lineHeight">@dimen/tink_hecto_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_hecto.bold">
@@ -128,7 +123,6 @@
     <item name="android:textSize">@dimen/tink_micro_text_size</item>
     <item name="lineHeight">@dimen/tink_micro_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_micro.semibold">
@@ -145,7 +139,6 @@
     <item name="android:textSize">@dimen/tink_nano_text_size</item>
     <item name="lineHeight">@dimen/tink_nano_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_nano.primary">
@@ -166,7 +159,6 @@
     <item name="android:textSize">@dimen/tink_peta_text_size</item>
     <item name="lineHeight">@dimen/tink_peta_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="tink_peta.autosize">
@@ -182,7 +174,6 @@
     <item name="android:textSize">@dimen/tink_tera_text_size</item>
     <item name="lineHeight">@dimen/tink_tera_line_height</item>
     <item name="android:letterSpacing">0</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
 </resources>
