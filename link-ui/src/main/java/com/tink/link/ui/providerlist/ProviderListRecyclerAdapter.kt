@@ -52,7 +52,6 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
 
     private val title: TextView = itemView.findViewById(R.id.title)
     private val logo: ImageView = itemView.findViewById(R.id.logo)
-    private val logoBackground: View = itemView.findViewById(R.id.logoBackground)
 
     fun bind(item: ProviderTreeNode) {
         title.text = when (item) {
@@ -69,8 +68,8 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
                 else -> R.drawable.tink_code
             }
             logo.setImageResource(iconRes)
+            logo.background = logo.context.getDrawable(R.drawable.tink_rounded_background)
             logo.visibility = View.VISIBLE
-            logoBackground.visibility = View.VISIBLE
         } else {
             item.icon?.let {
                 Picasso.get().load(it).into(logo)
