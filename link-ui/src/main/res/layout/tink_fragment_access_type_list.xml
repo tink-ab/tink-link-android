@@ -3,6 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="?tink_colorBackground"
   android:orientation="vertical">
 
   <include layout="@layout/tink_layout_toolbar" />
@@ -15,7 +16,8 @@
     android:layout_marginTop="16dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="24dp"
-    android:visibility="gone">
+    android:visibility="gone"
+    app:cardBackgroundColor="?tink_colorSurface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -34,6 +36,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/openBankingCardTitle"
+        style="@style/tink_hecto.bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,6 +48,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/openBankingCardDescription"
+        style="@style/tink_deci.primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -55,7 +59,7 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/openBankingAddButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="@style/tink_textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -76,7 +80,8 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="24dp"
-    android:visibility="gone">
+    android:visibility="gone"
+    app:cardBackgroundColor="?tink_colorSurface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -95,6 +100,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/otherCardTitle"
+        style="@style/tink_hecto.bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -106,6 +112,7 @@
 
       <com.google.android.material.textview.MaterialTextView
         android:id="@+id/otherCardDescription"
+        style="@style/tink_deci.primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -116,7 +123,7 @@
 
       <com.google.android.material.button.MaterialButton
         android:id="@+id/otherAddButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
+        style="@style/tink_textButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

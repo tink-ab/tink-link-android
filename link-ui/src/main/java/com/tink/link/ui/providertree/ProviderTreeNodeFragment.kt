@@ -6,7 +6,6 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.providerlist.ProviderListRecyclerAdapter
 import com.tink.model.provider.ProviderTreeNode
@@ -44,7 +43,6 @@ abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(la
     }
 
     internal open fun setupToolbar() {
-        toolbar.setNavigationIcon(R.drawable.tink_close)
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED

@@ -51,7 +51,7 @@
     android:id="@+id/loadingBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tink_loading_background"
+    android:background="?tink_colorBackground"
     android:elevation="20dp"
     android:visibility="gone" />
 
