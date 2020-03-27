@@ -1,6 +1,7 @@
 package com.tink.link.ui.providerlist
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
+import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
@@ -67,9 +69,13 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
                 Credential.Type.MOBILE_BANKID -> R.drawable.tink_bankid
                 else -> R.drawable.tink_code
             }
-            logo.setImageResource(iconRes)
-            logo.background = logo.context.getDrawable(R.drawable.tink_rounded_background)
-            logo.visibility = View.VISIBLE
+            logo.apply {
+                setImageResource(iconRes)
+                imageTintList =
+                    ColorStateList.valueOf(context.getColorFromAttr(R.attr.tink_colorOnPrimary))
+                background = context.getDrawable(R.drawable.tink_rounded_background)
+                visibility = View.VISIBLE
+            }
         } else {
             item.icon?.let {
                 Picasso.get().load(it).into(logo)
