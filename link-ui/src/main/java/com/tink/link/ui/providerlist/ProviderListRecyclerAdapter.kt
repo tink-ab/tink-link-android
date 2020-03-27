@@ -64,10 +64,11 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
 
         if (item is ProviderTreeNode.CredentialTypeNode) {
             val iconRes = when (item.type) {
-                Credential.Type.MOBILE_BANKID -> R.drawable.tink_credential_type_mobile_bank_id
-                else -> R.drawable.tink_credential_type_password
+                Credential.Type.MOBILE_BANKID -> R.drawable.tink_bankid
+                else -> R.drawable.tink_code
             }
             logo.setImageResource(iconRes)
+            logo.background = logo.context.getDrawable(R.drawable.tink_rounded_background)
             logo.visibility = View.VISIBLE
         } else {
             item.icon?.let {
