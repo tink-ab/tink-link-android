@@ -2,6 +2,7 @@ package com.tink.link.ui.credentials
 
 import android.os.Bundle
 import android.os.Parcelable
+import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.children
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkConsumer
+import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
@@ -21,6 +23,7 @@ import com.tink.link.ui.getRepositoryProvider
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credential.*
+import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 import timber.log.Timber
 
@@ -43,6 +46,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
     }
 
     private val viewModel: CredentialViewModel by viewModels()
+    private val consentViewModel: ConsentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,6 +58,29 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             findNavController().navigateUp()
         }
 
+        consentViewModel.apply {
+            user.observe(viewLifecycleOwner, Observer { user ->
+                username.text = user
+                username.visibility = if (user.isNullOrBlank()) View.GONE else View.VISIBLE
+            })
+            showConsentInformation.observe(viewLifecycleOwner, Observer {
+                usernameConsentInfoContainer.visibility =
+                    if (it == true) View.VISIBLE else View.GONE
+            })
+        }
+
+        val readMoreText = getString(R.string.tink_consent_information_read_more)
+        consentInformation.text =
+            getString(
+                R.string.tink_consent_information,
+                provider.displayName,
+                readMoreText
+            ).convertCallToActionText(
+                ctaText = readMoreText,
+                action = { showConsentInformation() },
+                context = requireContext()
+            )
+        consentInformation.movementMethod = LinkMovementMethod.getInstance()
 
         val fields = provider.fields.map { field ->
             updateArgs?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
@@ -124,6 +151,10 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
             }
         })
+    }
+
+    private fun showConsentInformation() {
+        // TODO: Show consent information screen with scope descriptions
     }
 
     private fun validateFields() {
