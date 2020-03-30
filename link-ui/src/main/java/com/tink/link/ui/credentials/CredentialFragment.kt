@@ -64,7 +64,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 username.visibility = if (user.isNullOrBlank()) View.GONE else View.VISIBLE
             })
             showConsentInformation.observe(viewLifecycleOwner, Observer {
-                usernameConsentInfoContainer.visibility =
+                userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE
             })
         }
