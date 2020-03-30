@@ -154,7 +154,13 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
     }
 
     private fun showConsentInformation() {
-        // TODO: Show consent information screen with scope descriptions
+        findNavController().navigate(
+            R.id.consentInformationFragment,
+            ConsentInformationFragment.getBundle(
+                provider.displayName,
+                ScopesListArgs(emptyList()) //TODO: Add scope list data here
+            )
+        )
     }
 
     private fun validateFields() {
