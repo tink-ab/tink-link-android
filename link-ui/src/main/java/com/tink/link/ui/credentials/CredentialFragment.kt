@@ -158,7 +158,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             R.id.consentInformationFragment,
             ConsentInformationFragment.getBundle(
                 provider.displayName,
-                ScopesListArgs(emptyList()) //TODO: Add scope list data here
+                arrayListOf() //TODO: Add scope list data here
             )
         )
     }

@@ -30,7 +30,7 @@
     android:text="@string/tink_consent_information_list_description" />
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/scopesList"
+    android:id="@+id/scopeInfoList"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"

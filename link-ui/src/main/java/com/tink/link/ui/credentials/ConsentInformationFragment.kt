@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.tink_fragment_consent_information.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 private const val TOOLBAR_TITLE_ARG = "TOOLBAR_TITLE_ARG"
-private const val SCOPES_LIST_ARGS = "SCOPES_LIST_ARGS"
+private const val SCOPE_LIST_ARG = "SCOPE_LIST_ARG"
 
 internal class ConsentInformationFragment : Fragment(R.layout.tink_fragment_consent_information) {
 
@@ -24,26 +24,26 @@ internal class ConsentInformationFragment : Fragment(R.layout.tink_fragment_cons
         requireNotNull(arguments?.getString(TOOLBAR_TITLE_ARG))
     }
 
-    private val scopesListArgs by lazy {
-        requireNotNull(arguments?.getParcelable<ScopesListArgs>(SCOPES_LIST_ARGS))
+    private val scopeList by lazy {
+        requireNotNull(arguments?.getParcelableArrayList<ScopeInfo>(SCOPE_LIST_ARG))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar.title = toolbarTitle
-        with(scopesList) {
+        with(scopeInfoList) {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = ScopesListAdapter().apply { data = scopesListArgs.scopeInfoList }
+            adapter = ScopeListAdapter().apply { data = scopeList }
         }
     }
 
     companion object {
-        fun getBundle(toolbarTitle: String, scopesListArgs: ScopesListArgs) =
-            bundleOf(TOOLBAR_TITLE_ARG to toolbarTitle, SCOPES_LIST_ARGS to scopesListArgs)
+        fun getBundle(toolbarTitle: String, scopeList: ArrayList<ScopeInfo>) =
+            bundleOf(TOOLBAR_TITLE_ARG to toolbarTitle, SCOPE_LIST_ARG to scopeList)
     }
 }
 
-internal class ScopesListAdapter : RecyclerView.Adapter<ScopesListAdapter.ScopeItemViewHolder>() {
+internal class ScopeListAdapter : RecyclerView.Adapter<ScopeListAdapter.ScopeItemViewHolder>() {
 
     var data: List<ScopeInfo> = emptyList()
 
@@ -70,9 +70,6 @@ internal class ScopesListAdapter : RecyclerView.Adapter<ScopesListAdapter.ScopeI
         }
     }
 }
-
-@Parcelize
-internal data class ScopesListArgs(val scopeInfoList: List<ScopeInfo>): Parcelable
 
 @Parcelize
 internal data class ScopeInfo(val title: String, val description: String): Parcelable
