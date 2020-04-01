@@ -57,7 +57,11 @@
     android:id="@+id/credentialFragment"
     android:name="com.tink.link.ui.credentials.CredentialFragment"
     android:label="CredentialFragment"
-    tools:layout="@layout/tink_fragment_credential" />
+    tools:layout="@layout/tink_fragment_credential">
+    <action
+      android:id="@+id/action_credentialFragment_to_consentInformationFragment"
+      app:destination="@id/consentInformationFragment" />
+  </fragment>
   <fragment
     android:id="@+id/providerNodeFragment"
     android:name="com.tink.link.ui.providernode.ProviderNodeFragment"
@@ -67,6 +71,11 @@
       android:id="@+id/action_providerNodeFragment_to_credentialFragment"
       app:destination="@id/credentialFragment" />
   </fragment>
+  <fragment
+    android:id="@+id/consentInformationFragment"
+    android:name="com.tink.link.ui.credentials.ConsentInformationFragment"
+    android:label="ConsentInformationFragment"
+    tools:layout="@layout/tink_fragment_consent_information" />
   <fragment
     android:id="@+id/profileFragment"
     android:name="com.tink.link.ui.profile.ProfileFragment"
