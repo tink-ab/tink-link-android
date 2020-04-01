@@ -28,13 +28,13 @@ internal fun String.convertCallToActionText(
     return SpannedString(spannableString)
 }
 
-internal class TinkCallToActionSpan(
+private class TinkCallToActionSpan(
     val context: Context,
     val action: () -> Unit
 ) : ClickableSpan() {
 
-    override fun updateDrawState(ds: TextPaint) {
-        ds.apply {
+    override fun updateDrawState(textPaint: TextPaint) {
+        textPaint.apply {
             isUnderlineText = false
             color = context.getColorFromAttr(R.attr.tink_colorPrimary)
             typeface = ResourcesCompat.getFont(context, R.font.tink_font_semi_bold)
@@ -42,6 +42,6 @@ internal class TinkCallToActionSpan(
     }
 
     override fun onClick(widget: View) {
-        action.invoke()
+        action()
     }
 }
