@@ -29,6 +29,6 @@
   <string name="tink_credential_type_unknown_default_description">Unknown</string>
   <string name="tink_consent_information">%1$s will obtain some of your financial information. %2$s</string>
   <string name="tink_consent_information_read_more">Read More</string>
-  <string name="tink_consent_information_list_title">We’ll collect the following data from you</string>
-  <string name="tink_consent_information_list_description">By following through this service, we’ll collect financial data from you. These are the data points we will collect from you:</string>
+  <string name="tink_consent_information_list_title">We will collect the following data from you</string>
+  <string name="tink_consent_information_list_description">By following through this service, we will collect financial data from you. These are the data points we will collect from you:</string>
 </resources>
