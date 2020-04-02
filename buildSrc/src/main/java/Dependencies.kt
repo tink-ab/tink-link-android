@@ -25,6 +25,7 @@ object Dependencies {
         const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
         const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+        const val browser = "androidx.browser:browser:1.2.0"
     }
 
     object Coroutines {
