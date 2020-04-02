@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkConsumer
 import com.tink.link.ui.extensions.convertCallToActionText
@@ -68,6 +69,12 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                     if (it == true) View.VISIBLE else View.GONE
             })
         }
+
+        provider.images?.icon?.let {
+            Picasso.get().load(it).into(logo)
+        }
+
+        bankName.text = provider.displayName
 
         val readMoreText = getString(R.string.tink_consent_information_read_more)
         consentInformation.text =
