@@ -80,7 +80,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         consentInformation.text =
             getString(
                 R.string.tink_consent_information,
-                provider.displayName,
+                getString(R.string.tink_app_name),
                 readMoreText
             ).convertCallToActionText(
                 ctaText = readMoreText,
