@@ -66,6 +66,7 @@
     android:layout_height="30dp"
     android:scaleType="fitCenter"
     android:src="@drawable/tink_user"
+    android:tint="?tink_colorPrimary"
     app:layout_constraintBottom_toBottomOf="@+id/userIconBackground"
     app:layout_constraintEnd_toEndOf="@+id/userIconBackground"
     app:layout_constraintStart_toStartOf="@+id/userIconBackground"
