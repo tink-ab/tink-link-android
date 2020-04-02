@@ -6,7 +6,9 @@ import android.text.Spanned
 import android.text.SpannedString
 import android.text.TextPaint
 import android.text.style.ClickableSpan
+import android.text.style.URLSpan
 import android.view.View
+import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import com.tink.link.ui.R
 
@@ -28,6 +30,22 @@ internal fun String.convertCallToActionText(
     return SpannedString(spannableString)
 }
 
+internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) {
+    val spannableString = SpannableString.valueOf(fullText)
+        .apply {
+            for (link in links) {
+                val startIndex = indexOf(link.linkText)
+                setSpan(
+                    TinkUrlSpan(link.url, context),
+                    startIndex,
+                    startIndex + link.linkText.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+            }
+        }
+    text = SpannedString(spannableString)
+}
+
 private class TinkCallToActionSpan(
     val context: Context,
     val action: () -> Unit
@@ -45,3 +63,15 @@ private class TinkCallToActionSpan(
         action()
     }
 }
+
+private class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
+    override fun updateDrawState(textPaint: TextPaint) {
+        textPaint.apply {
+            isUnderlineText = true
+            color = context.getColorFromAttr(R.attr.tink_textColorSecondary)
+            typeface = ResourcesCompat.getFont(context, R.font.tink_font_regular)
+        }
+    }
+}
+
+internal data class LinkInfo(val url: String, val linkText: String)
