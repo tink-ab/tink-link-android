@@ -2,7 +2,7 @@ package com.tink.link.core.user
 
 import android.net.Uri
 import com.tink.core.provider.ProviderRepository
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.service.authorization.Scope
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.TinkConfiguration
@@ -12,7 +12,7 @@ import com.tink.service.network.TinkConfiguration
  */
 interface UserContext {
     val providerRepository: ProviderRepository
-    val credentialRepository: CredentialRepository
+    val credentialsRepository: CredentialsRepository
 
     /**
      * Handle a third-party callback.

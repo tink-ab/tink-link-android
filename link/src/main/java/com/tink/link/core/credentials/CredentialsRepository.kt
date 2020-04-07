@@ -1,11 +1,11 @@
 package com.tink.link.core.credentials
 
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
-import com.tink.service.credential.CredentialCreationDescriptor
-import com.tink.service.credential.CredentialService
-import com.tink.service.credential.CredentialUpdateDescriptor
+import com.tink.service.credentials.CredentialsCreationDescriptor
+import com.tink.service.credentials.CredentialsService
+import com.tink.service.credentials.CredentialsUpdateDescriptor
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.Stream
@@ -14,41 +14,41 @@ import javax.inject.Inject
 /**
  * Repository for creating, accessing and modifying credentials.
  *
- * @constructor Create a new repository instance from a [CredentialService]
+ * @constructor Create a new repository instance from a [CredentialsService]
  * This is usually done inside the Tink framework and it should normally not be necessary to create your own instance.
  */
-class CredentialRepository @Inject constructor(
-    private val service: CredentialService,
+class CredentialsRepository @Inject constructor(
+    private val service: CredentialsService,
     private val tinkConfiguration: TinkConfiguration
 ) {
 
     /**
-     * Returns a [Stream] containing the list of [Credential] objects.
+     * Returns a [Stream] containing the list of [Credentials] objects.
      *
-     * You can subscribe to the [Stream] and observe changes in the [Credential] objects and act upon them.
+     * You can subscribe to the [Stream] and observe changes in the [Credentials] objects and act upon them.
      */
-    fun listStream(): Stream<List<Credential>> {
+    fun listStream(): Stream<List<Credentials>> {
         return service.list()
     }
 
     /**
-     * Creates a new [Credential] object.
+     * Creates a new [Credentials] object.
      *
      * @param providerName Identifier for the [Provider]. See [Provider.name]
-     * @param credentialType The [Credential.Type] used to authenticate the user to the financial institution
+     * @param credentialsType The [Credentials.Type] used to authenticate the user to the financial institution
      * @param fields The map of [Field] name and value pairs for the [Provider]
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
     fun create(
         providerName: String,
-        credentialType: Credential.Type,
+        credentialsType: Credentials.Type,
         fields: Map<String, String>,
-        resultHandler: ResultHandler<Credential>
+        resultHandler: ResultHandler<Credentials>
     ) {
         service.create(
-            CredentialCreationDescriptor(
+            CredentialsCreationDescriptor(
                 providerName,
-                credentialType,
+                credentialsType,
                 fields,
                 tinkConfiguration.redirectUri
             ), resultHandler
@@ -56,22 +56,22 @@ class CredentialRepository @Inject constructor(
     }
 
     /**
-     * Updates the [Credential] matching the id.
+     * Updates the [Credentials] matching the id.
      *
      * You can only update the value of a [Field] that is mutable.
      *
-     * @param credentialId Identifier for the [Credential] that is being updated
-     * @param fields The map of [Field] name and value pairs for the [Credential]
+     * @param credentialsId Identifier for the [Credentials] that is being updated
+     * @param fields The map of [Field] name and value pairs for the [Credentials]
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
     fun update(
-        credentialId: String,
+        credentialsId: String,
         fields: Map<String, String>,
-        resultHandler: ResultHandler<Credential>
+        resultHandler: ResultHandler<Credentials>
     ) {
         service.update(
-            CredentialUpdateDescriptor(
-                credentialId,
+            CredentialsUpdateDescriptor(
+                credentialsId,
                 fields,
                 tinkConfiguration.redirectUri
             ), resultHandler
@@ -79,46 +79,46 @@ class CredentialRepository @Inject constructor(
     }
 
     /**
-     * Refreshes all [Credential] objects matching the list of ids.
+     * Refreshes all [Credentials] objects matching the list of ids.
      *
-     * @param credentialIds List of identifiers for all the [Credential] objects that is being refreshed
+     * @param credentialsIds List of identifiers for all the [Credentials] objects that is being refreshed
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
-    fun refresh(credentialIds: List<String>, resultHandler: ResultHandler<Unit>) {
-        service.refresh(credentialIds, resultHandler)
+    fun refresh(credentialsIds: List<String>, resultHandler: ResultHandler<Unit>) {
+        service.refresh(credentialsIds, resultHandler)
     }
 
     /**
-     * Deletes the [Credential] matching the id.
+     * Deletes the [Credentials] matching the id.
      *
-     * @param credentialId Identifier for the [Credential] that is being deleted
+     * @param credentialsId Identifier for the [Credentials] that is being deleted
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
-    fun delete(credentialId: String, resultHandler: ResultHandler<Unit>) {
-        service.delete(credentialId, resultHandler)
+    fun delete(credentialsId: String, resultHandler: ResultHandler<Unit>) {
+        service.delete(credentialsId, resultHandler)
     }
 
-    private fun enable(credentialId: String, resultHandler: ResultHandler<Unit>) {
-        service.enable(credentialId, resultHandler)
+    private fun enable(credentialsId: String, resultHandler: ResultHandler<Unit>) {
+        service.enable(credentialsId, resultHandler)
     }
 
-    private fun disable(credentialId: String, resultHandler: ResultHandler<Unit>) {
-        service.disable(credentialId, resultHandler)
+    private fun disable(credentialsId: String, resultHandler: ResultHandler<Unit>) {
+        service.disable(credentialsId, resultHandler)
     }
 
     /**
-     * Submits the supplemental information required to authenticate the [Credential] matching the id.
+     * Submits the supplemental information required to authenticate the [Credentials] matching the id.
      *
-     * @param credentialId Identifier for the [Credential] that is being authenticated
+     * @param credentialsId Identifier for the [Credentials] that is being authenticated
      * @param information The map of [Field] name and value pairs representing the supplemental information to be sent
      * @param handler The [ResultHandler] for processing error and success callbacks
      */
     fun supplementInformation(
-        credentialId: String,
+        credentialsId: String,
         information: Map<String, String>,
         handler: ResultHandler<Unit>
     ) {
-        service.supplementInformation(credentialId, information, handler)
+        service.supplementInformation(credentialsId, information, handler)
     }
 
     /**
@@ -126,11 +126,11 @@ class CredentialRepository @Inject constructor(
      * The backend service is informed to stop waiting for the supplemental information.
      * This method should be called if you want to dismiss the supplemental information flow.
      *
-     * @param credentialId Identifier for the [Credential] that is being authenticated
+     * @param credentialsId Identifier for the [Credentials] that is being authenticated
      * @param handler The [ResultHandler] for processing error and success callbacks
      */
-    fun cancelSupplementalInformation(credentialId: String, handler: ResultHandler<Unit>) {
-        service.cancelSupplementalInformation(credentialId, handler)
+    fun cancelSupplementalInformation(credentialsId: String, handler: ResultHandler<Unit>) {
+        service.cancelSupplementalInformation(credentialsId, handler)
     }
 
     /**

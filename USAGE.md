@@ -177,13 +177,13 @@ fun showError(message: String) {
 // Convert your field list to a map
 val fieldsMap = yourFilledFieldsList.associate { it.name to it.value }
 
-Tink.getUserContext()?.credentialRepository.create(
+Tink.getUserContext()?.credentialsRepository.create(
     provider.name,
-    provider.credentialType,
+    provider.credentialsType,
     fieldsMap,
     ResultHandler(
-        onSuccess = { credential ->
-            // Start observing the credential status
+        onSuccess = { credentials ->
+            // Start observing the credentials status
         },
         onError = { error ->
             // Handle error
@@ -194,23 +194,23 @@ Tink.getUserContext()?.credentialRepository.create(
 
 ## Observing credentials
 ```kotlin
-Tink.getUserContext()?.credentialRepository.listStream().subscribe(
-    object : StreamObserver<List<Credential>> {
-        override fun onNext(value: List<Credential>) {
+Tink.getUserContext()?.credentialsRepository.listStream().subscribe(
+    object : StreamObserver<List<Credentials>> {
+        override fun onNext(value: List<Credentials>) {
             // Handle list updates. For example:
             value
-                .find { it.id = "idOfYourCredential" }
+                .find { it.id = "idOfYourCredentials" }
                 ?.status?.let {
                     when(it) {
-                        Credential.Status.UPDATED -> { /* Done, credential is added */ }
-                        Credential.Status.UPDATING -> { /* Updating, statusPayload will contain more info */ }
+                        Credentials.Status.UPDATED -> { /* Done, credentials is added */ }
+                        Credentials.Status.UPDATING -> { /* Updating, statusPayload will contain more info */ }
 
-                        Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
-                        Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> { /* [1] */ }
+                        Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
+                        Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> { /* [1] */ }
 
-                        Credential.Status.TEMPORARY_ERROR,
-                        Credential.Status.AUTHENTICATION_ERROR,
-                        Credential.Status.PERMANENT_ERROR -> { /* Something went wrong, handle error */ }
+                        Credentials.Status.TEMPORARY_ERROR,
+                        Credentials.Status.AUTHENTICATION_ERROR,
+                        Credentials.Status.PERMANENT_ERROR -> { /* Something went wrong, handle error */ }
                         else -> {}
                     }
                 }

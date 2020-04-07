@@ -1,10 +1,10 @@
 # Redirecting to the third party application for authentication
 > Note: The following examples assume the use of Kotlin. If you are working with Java, please note the [small differences](./JAVA_API.md) in usage.
 
-When we [observe the credentials](/USAGE.md) and the credential status changes to `AWAITING_MOBILE_BANKID_AUTHENTICATION` or `AWAITING_THIRD_PARTY_APP_AUTHENTICATION`,
-the credential will have a valid `ThirdPartyAuthentication` attribute value required to handle the redirection towards the third party application
+When we [observe the credentials](/USAGE.md) and the credentials status changes to `AWAITING_MOBILE_BANKID_AUTHENTICATION` or `AWAITING_THIRD_PARTY_APP_AUTHENTICATION`,
+the credentials will have a valid `ThirdPartyAuthentication` attribute value required to handle the redirection towards the third party application
 ```kotlin
-val thirdPartyAuthentication = requireNotNull(credential.thirdPartyAuthentication)
+val thirdPartyAuthentication = requireNotNull(credentials.thirdPartyAuthentication)
 val thirdPartyAuthenticationAndroid = thirdPartyAuthentication.android
 
 val thirdPartyIntent = Intent().apply {
@@ -93,7 +93,7 @@ If you are using a special type of deep link such as your company website URLs (
 
 ## Handling thirds party callbacks in the app with TinkLink
 
-After the redirect to the third party app, some providers requires additional information to be sent to Tink after the user authenticates with the third party app for the credential to be added successfully. This information is passed to your app via the redirect URI.
+After the redirect to the third party app, some providers requires additional information to be sent to Tink after the user authenticates with the third party app for the credentials to be added successfully. This information is passed to your app via the redirect URI.
 ```kotlin
 // MainActivity.kt
 override fun onCreate(savedInstanceState: Bundle?) {

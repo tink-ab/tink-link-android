@@ -2,14 +2,14 @@ package com.tink.link
 
 import android.net.Uri
 import android.net.UrlQuerySanitizer
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.TinkConfiguration
 import javax.inject.Inject
 
 @TinkLinkScope
 internal class ThirdPartyCallbackHandler @Inject constructor(
-    private val credentialRepository: CredentialRepository,
+    private val credentialsRepository: CredentialsRepository,
     tinkConfiguration: TinkConfiguration
 ) {
     private val applicationRedirectUri = tinkConfiguration.redirectUri
@@ -30,7 +30,7 @@ internal class ThirdPartyCallbackHandler @Inject constructor(
                                 .filterNot { it.mParameter == "state" }
                                 .mapNotNull { it.mParameter to it.mValue }
                                 .toMap()
-                        credentialRepository.thirdPartyCallback(
+                        credentialsRepository.thirdPartyCallback(
                             state = state,
                             parameters = parameters,
                             handler = resultHandler ?: ResultHandler({}, {})

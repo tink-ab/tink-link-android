@@ -5,7 +5,7 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.service.authentication.user.User
 import com.tink.service.authorization.Scope
@@ -34,8 +34,8 @@ internal abstract class TinkLinkComponent {
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
             get() = repositories.providerRepository
-        override val credentialRepository: CredentialRepository
-            get() = repositories.credentialRepository
+        override val credentialsRepository: CredentialsRepository
+            get() = repositories.credentialsRepository
 
         override fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>?) =
             thirdPartyCallbackHandler.handleUri(uri, resultHandler)
@@ -96,7 +96,7 @@ internal interface RepositoryComponent : Repositories
 
 internal interface Repositories {
     val providerRepository: ProviderRepository
-    val credentialRepository: CredentialRepository
+    val credentialsRepository: CredentialsRepository
 }
 
 @javax.inject.Scope

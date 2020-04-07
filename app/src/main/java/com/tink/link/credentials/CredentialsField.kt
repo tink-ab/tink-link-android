@@ -9,9 +9,9 @@ import android.widget.LinearLayout
 import com.tink.link.R
 import com.tink.link.extensions.inflate
 import com.tink.model.misc.Field
-import kotlinx.android.synthetic.main.view_credential_field.view.*
+import kotlinx.android.synthetic.main.view_credentials_field.view.*
 
-class CredentialField : LinearLayout {
+class CredentialsField : LinearLayout {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
@@ -23,7 +23,7 @@ class CredentialField : LinearLayout {
     lateinit var field: Field
 
     init {
-        inflate(R.layout.view_credential_field, true)
+        inflate(R.layout.view_credentials_field, true)
         orientation = VERTICAL
     }
 
