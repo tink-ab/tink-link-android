@@ -33,6 +33,21 @@
     <item name="android:fontFamily">@font/tink_font_regular</item>
   </style>
 
+  <style name="Tink_TextInputLayoutStyle">
+    <item name="textAppearanceCaption">@style/tink_micro</item>
+    <item name="colorError">?tink_colorError</item>
+    <item name="colorPrimary">?tink_colorPrimary</item>
+    <item name="colorOnSurface">?tink_colorPrimary</item>
+  </style>
+
+  <style name="Tink_TinkEditTextStyle">
+    <item name="android:background">@android:color/transparent</item>
+    <item name="hintTextAppearance">@style/tink_hecto</item>
+    <item name="android:textColorHint">?tink_textColorSecondary</item>
+    <item name="android:textAppearance">@style/tink_hecto</item>
+    <item name="android:textColor">?tink_textColorPrimary</item>
+  </style>
+
   <item name="tink_font_bold" type="font">@font/roboto_bold</item>
   <item name="tink_font_semi_bold" type="font">@font/roboto_medium</item>
   <item name="tink_font_regular" type="font">@font/roboto</item>
