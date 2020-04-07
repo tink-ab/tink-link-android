@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkConsumer
+import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.dpToPixels
@@ -58,8 +59,9 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         title.setText(R.string.tink_credential_fragment_title)
         toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
-            hideKeyboard()
-            findNavController().navigateUp()
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
         }
 
         consentViewModel.apply {
