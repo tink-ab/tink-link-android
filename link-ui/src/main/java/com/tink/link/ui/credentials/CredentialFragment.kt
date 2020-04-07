@@ -73,26 +73,32 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE
             })
-
-            val termsText = getString(
-                R.string.tink_terms_policy_information,
-                getString(R.string.tink_terms_and_conditions),
-                getString(R.string.tink_privacy_policy)
-            )
-            termsAndConditionsText.setTextWithLinks(
-                fullText = termsText,
-                links = listOf(
-                    LinkInfo(
-                        termsAndConditionsUrl.toString(),
-                        getString(R.string.tink_terms_and_conditions)
-                    ),
-                    LinkInfo(
-                        privacyPolicyUrl.toString(),
+            showTermsAndConditions.observe(viewLifecycleOwner, Observer {
+                if (it == true) {
+                    val termsText = getString(
+                        R.string.tink_terms_policy_information,
+                        getString(R.string.tink_terms_and_conditions),
                         getString(R.string.tink_privacy_policy)
                     )
-                )
-            )
-            termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
+                    termsAndConditionsText.setTextWithLinks(
+                        fullText = termsText,
+                        links = listOf(
+                            LinkInfo(
+                                termsAndConditionsUrl.toString(),
+                                getString(R.string.tink_terms_and_conditions)
+                            ),
+                            LinkInfo(
+                                privacyPolicyUrl.toString(),
+                                getString(R.string.tink_privacy_policy)
+                            )
+                        )
+                    )
+                    termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
+                    termsAndConditionsText.visibility = View.VISIBLE
+                } else {
+                    termsAndConditionsText.visibility = View.GONE
+                }
+            })
         }
 
         provider.images?.icon?.let {
