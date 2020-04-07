@@ -23,6 +23,7 @@ import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.getRepositoryProvider
+import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credential.*
@@ -138,6 +139,19 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             } else {
                 updateCredential()
             }
+        }
+
+        if (provider.credentialType == Credential.Type.MOBILE_BANKID) {
+            createCredentialBtn.visibility = View.GONE
+            bankIdButtonGroup.visibility = View.VISIBLE
+        }
+
+        bankIdButton.setOnClickListener {
+            // TODO: Add button logic
+        }
+
+        bankIdOtherDeviceButton.setOnClickListener {
+            // TODO: Add button logic
         }
 
         viewModel.credentials.observe(viewLifecycleOwner, Observer {
