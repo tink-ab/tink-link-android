@@ -9,4 +9,19 @@
     <item name="rippleColor">?tink_rippleColor</item>
   </style>
 
+  <style name="tink_textButton.deci" parent="@style/tink_textButton">
+    <item name="android:textSize">@dimen/tink_deci_text_size</item>
+    <item name="lineHeight">@dimen/tink_deci_line_height</item>
+  </style>
+
+  <style name="tink_button" parent="Widget.MaterialComponents.Button">
+    <item name="iconTint">?tink_colorOnPrimary</item>
+    <item name="backgroundTint">?tink_colorPrimary</item>
+    <item name="android:textColor">?tink_colorOnPrimary</item>
+    <item name="android:fontFamily">@font/tink_font_semi_bold</item>
+    <item name="android:textSize">@dimen/tink_deci_text_size</item>
+    <item name="lineHeight">@dimen/tink_deci_line_height</item>
+    <item name="rippleColor">?tink_rippleColor</item>
+  </style>
+
 </resources>
