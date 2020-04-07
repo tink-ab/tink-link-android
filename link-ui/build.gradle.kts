@@ -62,6 +62,8 @@ dependencies {
 
     implementation(Dependencies.material_components)
     implementation(Dependencies.picasso)
+
+    implementation(Dependencies.Androidx.browser)
 }
 
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804

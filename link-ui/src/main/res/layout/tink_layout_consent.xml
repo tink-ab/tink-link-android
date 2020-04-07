@@ -10,6 +10,7 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:alpha="0.05"
+    android:background="?tink_colorPrimary"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -17,8 +18,8 @@
 
   <ImageView
     android:id="@+id/logo"
-    android:layout_width="30dp"
-    android:layout_height="30dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:layout_marginStart="16dp"
     android:layout_marginTop="20dp"
     android:scaleType="fitCenter"
@@ -51,8 +52,8 @@
 
   <View
     android:id="@+id/userIconBackground"
-    android:layout_width="30dp"
-    android:layout_height="30dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:alpha="0.1"
     android:background="@drawable/tink_rounded_background"
     android:scaleType="fitCenter"
@@ -61,10 +62,11 @@
 
   <ImageView
     android:id="@+id/userIcon"
-    android:layout_width="30dp"
-    android:layout_height="30dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:scaleType="fitCenter"
     android:src="@drawable/tink_user"
+    android:tint="?tink_colorPrimary"
     app:layout_constraintBottom_toBottomOf="@+id/userIconBackground"
     app:layout_constraintEnd_toEndOf="@+id/userIconBackground"
     app:layout_constraintStart_toStartOf="@+id/userIconBackground"
@@ -74,7 +76,7 @@
     android:id="@+id/usernameConsentInfoContainer"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="6dp"
+    android:layout_marginTop="12dp"
     android:layout_marginStart="12dp"
     android:layout_marginEnd="32dp"
     android:orientation="vertical"
@@ -87,7 +89,7 @@
       style="@style/tink_hecto.bold"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="12dp"
       android:gravity="center_vertical"
       android:visibility="gone"
       tools:text="John Doe" />

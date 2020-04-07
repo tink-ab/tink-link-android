@@ -13,12 +13,15 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkConsumer
+import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
+import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.getRepositoryProvider
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -67,13 +70,39 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE
             })
+
+            val termsText = getString(
+                R.string.tink_terms_policy_information,
+                getString(R.string.tink_terms_and_conditions),
+                getString(R.string.tink_privacy_policy)
+            )
+            termsAndConditionsText.setTextWithLinks(
+                fullText = termsText,
+                links = listOf(
+                    LinkInfo(
+                        termsAndConditionsUrl.toString(),
+                        getString(R.string.tink_terms_and_conditions)
+                    ),
+                    LinkInfo(
+                        privacyPolicyUrl.toString(),
+                        getString(R.string.tink_privacy_policy)
+                    )
+                )
+            )
+            termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
         }
+
+        provider.images?.icon?.let {
+            Picasso.get().load(it).into(logo)
+        }
+
+        bankName.text = provider.displayName
 
         val readMoreText = getString(R.string.tink_consent_information_read_more)
         consentInformation.text =
             getString(
                 R.string.tink_consent_information,
-                provider.displayName,
+                getString(R.string.tink_app_name),
                 readMoreText
             ).convertCallToActionText(
                 ctaText = readMoreText,
