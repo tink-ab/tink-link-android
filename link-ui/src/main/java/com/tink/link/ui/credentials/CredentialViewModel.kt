@@ -37,19 +37,19 @@ class CredentialViewModel : ViewModel() {
                         credential.thirdPartyAppAuthentication
                             ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
                             ?.also {
-                                _viewState.postValue(ViewState.UPDATING)
+                                _viewState.postValue(ViewState.THIRD_PARTY_AUTHENTICATION)
                             }
                     }
 
                     Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
                         setFields(credential.supplementalInformation)
-                        _viewState.postValue(ViewState.NOT_LOADING)
+                        _viewState.postValue(ViewState.SUPPLEMENTAL_INFO)
                     }
 
                     Credential.Status.AUTHENTICATION_ERROR,
                     Credential.Status.TEMPORARY_ERROR,
                     Credential.Status.PERMANENT_ERROR -> {
-                        _viewState.postValue(ViewState.NOT_LOADING)
+                        _viewState.postValue(ViewState.ERROR)
                         credential.statusPayload?.let { _errorEvent.postValue(Event(it)) }
                     }
 
@@ -126,7 +126,7 @@ class CredentialViewModel : ViewModel() {
                     credentialId.postValue(credential.id)
                 },
                 {
-                    _viewState.postValue(ViewState.NOT_LOADING)
+                    _viewState.postValue(ViewState.ERROR)
                     onError(it)
                 }
             )
@@ -145,7 +145,7 @@ class CredentialViewModel : ViewModel() {
             ResultHandler(
                 {},
                 {
-                    _viewState.postValue(ViewState.NOT_LOADING)
+                    _viewState.postValue(ViewState.ERROR)
                     onError(it)
                 }
             )
@@ -185,12 +185,19 @@ class CredentialViewModel : ViewModel() {
                     fetchCredentials(credentialRepository) // Start streaming credentials
                 },
                 {
-                    _viewState.postValue(ViewState.NOT_LOADING)
+                    _viewState.postValue(ViewState.ERROR)
                     onError(it)
                 }
             )
         )
     }
 
-    enum class ViewState { NOT_LOADING, UPDATING, UPDATED }
+    enum class ViewState {
+        NOT_LOADING,
+        UPDATING,
+        UPDATED,
+        ERROR,
+        THIRD_PARTY_AUTHENTICATION,
+        SUPPLEMENTAL_INFO
+    }
 }

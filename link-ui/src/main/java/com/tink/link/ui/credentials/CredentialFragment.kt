@@ -157,18 +157,23 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
+            loadingGroup.visibility = View.GONE
             when (state) {
-                // TODO: Fix this with more view states
-                //CredentialViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
                 CredentialViewModel.ViewState.UPDATING,
-                CredentialViewModel.ViewState.UPDATED -> {
-                    loadingProgress.visibility = View.GONE
+                CredentialViewModel.ViewState.UPDATED,
+                CredentialViewModel.ViewState.ERROR -> {
                     navigateToCredentialStatusScreen()
                 }
-                //CredentialViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
-                else -> {
-                    loadingGroup.visibility = View.GONE
+
+                CredentialViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
+                    // TODO: Show third party authentication screen
                 }
+
+                CredentialViewModel.ViewState.SUPPLEMENTAL_INFO -> {
+                    // TODO: Show supplemental information screen
+                }
+
+                else -> {}
             }
         })
 

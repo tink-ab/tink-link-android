@@ -43,7 +43,7 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
                     onCloseAction = { closeWithResult(TinkLinkUiActivity.RESULT_SUCCESS) }
                 }
 
-                CredentialViewModel.ViewState.NOT_LOADING -> {
+                CredentialViewModel.ViewState.ERROR -> {
                     successIcon.visibility = View.GONE
                     statusProgress.visibility = View.GONE
                     doneButton.visibility = View.VISIBLE
