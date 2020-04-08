@@ -38,5 +38,6 @@
   <string name="tink_credential_bankId_other_device_button">Open Bank ID on another device</string>
   <string name="tink_credential_status_success_title">Connection successful</string>
   <string name="tink_credential_status_success_description">Your accounts have been successfully added to %s</string>
-  <string name="tink_credential_status_success_button">Done</string>
+  <string name="tink_credential_status_button_success">Done</string>
+  <string name="tink_credential_status_button_failure">Retry</string>
 </resources>
