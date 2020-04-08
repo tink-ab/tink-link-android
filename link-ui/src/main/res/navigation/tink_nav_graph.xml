@@ -63,6 +63,11 @@
       app:destination="@id/consentInformationFragment" />
   </fragment>
   <fragment
+    android:id="@+id/credentialStatusFragment"
+    android:name="com.tink.link.ui.credentials.CredentialStatusFragment"
+    android:label="CredentialStatusFragment"
+    tools:layout="@layout/tink_fragment_credential_status"/>
+  <fragment
     android:id="@+id/providerNodeFragment"
     android:name="com.tink.link.ui.providernode.ProviderNodeFragment"
     android:label="ProviderNodeFragment"
