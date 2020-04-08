@@ -55,8 +55,6 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        title.setText(R.string.tink_credential_fragment_title)
         toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
