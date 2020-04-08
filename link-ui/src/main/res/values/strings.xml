@@ -40,4 +40,5 @@
   <string name="tink_credential_status_success_description">Your accounts have been successfully added to %s</string>
   <string name="tink_credential_status_button_success">Done</string>
   <string name="tink_credential_status_button_failure">Retry</string>
+  <string name="tink_error_unknown">Something went wrong. Please try again later.</string>
 </resources>

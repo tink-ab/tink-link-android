@@ -254,9 +254,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 // Pass the filled fields to the credential repository to authorize the user.
                 viewModel.createCredential(provider, fields, it) { error ->
                     view?.let { view ->
-                        // TODO: Make hard-coded text as string resource
                         val message = error.localizedMessage ?: error.message
-                        ?: "Something went wrong. Please try again later."
+                        ?: getString(R.string.tink_error_unknown)
                         Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                     }
                 }
@@ -284,8 +283,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             ) { error ->
                 view?.let { view ->
                     val message = error.localizedMessage ?: error.message
-                    // TODO: Make hard-coded text as string resource
-                    ?: "Something went wrong. Please try again later."
+                    ?: getString(R.string.tink_error_unknown)
                     Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
