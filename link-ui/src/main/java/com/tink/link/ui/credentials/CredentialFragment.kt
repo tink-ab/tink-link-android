@@ -10,6 +10,7 @@ import androidx.core.view.children
 import androidx.core.view.forEach
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -51,7 +52,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         arguments?.getParcelable<CredentialUpdateArgs>(UPDATE_ARGS)
     }
 
-    private val viewModel: CredentialViewModel by viewModels()
+    private val viewModel: CredentialViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -149,17 +150,24 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         })
 
         viewModel.createdCredential.observe(viewLifecycleOwner, Observer { credential ->
+            // TODO: Remove
             Timber.d("Received update for credential ${credential.id}")
-            status.text = "Status = ${credential.status?.name}"
-            statusPayload.text = credential.statusPayload
+            Timber.d("Status = ${credential.status?.name}")
+            Timber.d("Status = ${credential.statusPayload}")
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
-                CredentialViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
-                CredentialViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
-                CredentialViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
+                // TODO: Fix this with more view states
+                //CredentialViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
+                CredentialViewModel.ViewState.UPDATING,
+                CredentialViewModel.ViewState.UPDATED -> {
+                    loadingProgress.visibility = View.GONE
+                    navigateToCredentialStatusScreen()
+                }
+                //CredentialViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
                 else -> {
+                    loadingGroup.visibility = View.GONE
                 }
             }
         })
@@ -246,6 +254,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 // Pass the filled fields to the credential repository to authorize the user.
                 viewModel.createCredential(provider, fields, it) { error ->
                     view?.let { view ->
+                        // TODO: Make hard-coded text as string resource
                         val message = error.localizedMessage ?: error.message
                         ?: "Something went wrong. Please try again later."
                         Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
@@ -275,11 +284,19 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             ) { error ->
                 view?.let { view ->
                     val message = error.localizedMessage ?: error.message
+                    // TODO: Make hard-coded text as string resource
                     ?: "Something went wrong. Please try again later."
                     Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
         }
+    }
+
+    private fun navigateToCredentialStatusScreen() {
+        findNavController().navigate(
+            R.id.credentialStatusFragment,
+            CredentialStatusFragment.getBundle(provider.displayName)
+        )
     }
 
     companion object {
