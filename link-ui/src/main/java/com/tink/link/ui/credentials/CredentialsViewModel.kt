@@ -22,7 +22,8 @@ class CredentialsViewModel : ViewModel() {
     private val _credentials = MutableLiveData<List<Credential>>()
     val credentials: LiveData<List<Credential>> = _credentials
 
-    private val credentialId = MutableLiveData<String>()
+    private val _credentialId = MutableLiveData<String>()
+    val credentialId: LiveData<String> = _credentialId
 
     private val credentialRepository: CredentialRepository
 
@@ -123,7 +124,7 @@ class CredentialsViewModel : ViewModel() {
             ResultHandler(
                 { credential ->
                     fetchCredentials() // Start streaming credentials
-                    credentialId.postValue(credential.id)
+                    _credentialId.postValue(credential.id)
                 },
                 {
                     _viewState.postValue(ViewState.ERROR)
@@ -169,7 +170,7 @@ class CredentialsViewModel : ViewModel() {
         onError: (Throwable) -> Unit
     ) {
 
-        credentialId.value = id
+        _credentialId.value = id
 
         credentialRepository.update(
             id,
