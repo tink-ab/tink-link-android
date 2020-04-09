@@ -113,16 +113,6 @@ class CredentialsViewModel : ViewModel() {
         fields: List<Field>,
         onError: (Throwable) -> Unit
     ) {
-        createdCredential.value
-            ?.takeIf { it.status == Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
-            ?.let {
-                supplementalInformation(
-                    credentialId = it.id,
-                    fields = fields,
-                    onError = onError
-                )
-                return
-            }
         credentialRepository.create(
             provider.name,
             provider.credentialType,
@@ -178,16 +168,6 @@ class CredentialsViewModel : ViewModel() {
 
         credentialId.value = id
 
-        createdCredential.value
-            ?.takeIf { it.status == Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
-            ?.let {
-                supplementalInformation(
-                    credentialId = it.id,
-                    fields = fields,
-                    onError = onError
-                )
-                return
-            }
         credentialRepository.update(
             id,
             fields.toFieldMap(),
