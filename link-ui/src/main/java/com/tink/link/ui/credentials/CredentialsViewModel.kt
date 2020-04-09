@@ -140,7 +140,7 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
-    private fun supplementalInformation(
+    fun sendSupplementalInformation(
         credentialId: String,
         fields: List<Field>,
         onError: (Throwable) -> Unit
