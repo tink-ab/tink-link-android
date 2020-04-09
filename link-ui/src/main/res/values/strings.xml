@@ -42,4 +42,7 @@
   <string name="tink_credentials_status_button_success">Done</string>
   <string name="tink_credentials_status_button_failure">Retry</string>
   <string name="tink_error_unknown">Something went wrong. Please try again later.</string>
+  <string name="tink_credential_supplemental_information">Supplemental Information</string>
+  <string name="tink_credential_supplemental_information_submit_button">Submit</string>
+  <string name="tink_credential_supplemental_information_cancel_button">Cancel</string>
 </resources>

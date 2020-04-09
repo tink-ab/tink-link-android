@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import android.widget.LinearLayout
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.core.view.forEach
+import androidx.core.view.setPadding
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
@@ -107,11 +110,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
         viewModel.setFields(fields)
 
-        viewModel.fields.observe(viewLifecycleOwner, Observer { fields ->
+        viewModel.fields.observe(viewLifecycleOwner, Observer { fieldList ->
             if (credentialFields.childCount > 0) {
                 credentialFields.removeAllViews()
             }
-            for (field in fields) {
+            for (field in fieldList) {
                 credentialFields
                     .addView(
                         CredentialField(requireContext())
@@ -168,7 +171,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    // TODO: Show supplemental information screen
+                    viewModel.credentialId.value?.let { showSupplementalInfoDialog(it) }
                 }
 
                 else -> {}
@@ -227,6 +230,53 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 arrayListOf() //TODO: Add scope list data here
             )
         )
+    }
+
+    private fun showSupplementalInfoDialog(credentialId: String) {
+        viewModel.supplementalFields.value?.let { fields ->
+            val supplementalFields = LinearLayout(requireContext()).apply {
+                layoutParams =
+                    LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                setPadding(50)
+                orientation = LinearLayout.VERTICAL
+            }
+
+            for (field in fields) {
+                supplementalFields
+                    .addView(
+                        CredentialField(requireContext())
+                            .also {
+                                it.updatePadding(bottom = resources.dpToPixels(32))
+                                it.setupField(field)
+                            })
+            }
+
+            MaterialAlertDialogBuilder(requireContext())
+                .setPositiveButton(getString(R.string.tink_credential_supplemental_information_submit_button)) { _, _ ->
+
+                    val filledFields = supplementalFields.children
+                        .filterIsInstance(CredentialField::class.java)
+                        .map { it.getFilledField() }
+                        .toList()
+
+                    viewModel.sendSupplementalInformation(credentialId, filledFields) { error ->
+                        view?.let { view ->
+                            val message = error.localizedMessage ?: error.message
+                            ?: getString(R.string.tink_error_unknown)
+                            Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
+                        }
+                    }
+                }
+                .setNegativeButton(getString(R.string.tink_credential_supplemental_information_cancel_button)) { _, _ ->
+                    viewModel.cancelSupplementalInformation(credentialId)
+                }
+                .setTitle(R.string.tink_credential_supplemental_information)
+                .setView(supplementalFields)
+                .show()
+        }
     }
 
     private fun validateFields() {
