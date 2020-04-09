@@ -3,9 +3,11 @@ package com.tink.link.ui.credentials
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.tink.core.Tink
 import com.tink.link.ui.CombinedLiveData
 import com.tink.link.ui.Event
 import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.getUserContext
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credential.Credential
 import com.tink.model.misc.Field
@@ -21,6 +23,13 @@ class CredentialsViewModel : ViewModel() {
     val credentials: LiveData<List<Credential>> = _credentials
 
     private val credentialId = MutableLiveData<String>()
+
+    private val credentialRepository: CredentialRepository
+
+    init {
+        val userContext = requireNotNull(Tink.getUserContext())
+        credentialRepository = userContext.credentialRepository
+    }
 
     /**
      * Combines the output of [credentialId] and [credentials] to a [LiveData] that holds the
@@ -83,7 +92,7 @@ class CredentialsViewModel : ViewModel() {
     /**
      * Stream credentials from the repository and post updates to [_credentials].
      */
-    private fun fetchCredentials(credentialRepository: CredentialRepository) {
+    private fun fetchCredentials() {
         streamSubscription?.unsubscribe()
         streamSubscription = credentialRepository.listStream().subscribe(
             object : StreamObserver<List<Credential>> {
@@ -102,7 +111,6 @@ class CredentialsViewModel : ViewModel() {
     fun createCredential(
         provider: Provider,
         fields: List<Field>,
-        credentialRepository: CredentialRepository,
         onError: (Throwable) -> Unit
     ) {
         createdCredential.value
@@ -111,7 +119,6 @@ class CredentialsViewModel : ViewModel() {
                 supplementalInformation(
                     credentialId = it.id,
                     fields = fields,
-                    credentialRepository = credentialRepository,
                     onError = onError
                 )
                 return
@@ -122,7 +129,7 @@ class CredentialsViewModel : ViewModel() {
             fields.toFieldMap(),
             ResultHandler(
                 { credential ->
-                    fetchCredentials(credentialRepository) // Start streaming credentials
+                    fetchCredentials() // Start streaming credentials
                     credentialId.postValue(credential.id)
                 },
                 {
@@ -136,7 +143,6 @@ class CredentialsViewModel : ViewModel() {
     private fun supplementalInformation(
         credentialId: String,
         fields: List<Field>,
-        credentialRepository: CredentialRepository,
         onError: (Throwable) -> Unit
     ) {
         credentialRepository.supplementInformation(
@@ -160,7 +166,6 @@ class CredentialsViewModel : ViewModel() {
     fun updateCredential(
         id: String,
         fields: List<Field>,
-        credentialRepository: CredentialRepository,
         onError: (Throwable) -> Unit
     ) {
 
@@ -172,7 +177,6 @@ class CredentialsViewModel : ViewModel() {
                 supplementalInformation(
                     credentialId = it.id,
                     fields = fields,
-                    credentialRepository = credentialRepository,
                     onError = onError
                 )
                 return
@@ -181,8 +185,8 @@ class CredentialsViewModel : ViewModel() {
             id,
             fields.toFieldMap(),
             ResultHandler(
-                { credential ->
-                    fetchCredentials(credentialRepository) // Start streaming credentials
+                {
+                    fetchCredentials() // Start streaming credentials
                 },
                 {
                     _viewState.postValue(ViewState.ERROR)

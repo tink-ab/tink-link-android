@@ -17,7 +17,6 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
-import com.tink.link.ui.TinkLinkConsumer
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
@@ -25,7 +24,6 @@ import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
-import com.tink.link.ui.getRepositoryProvider
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -42,7 +40,7 @@ private const val UPDATE_ARGS = "UPDATE_ARGS"
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLinkConsumer {
+class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
@@ -255,14 +253,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 .map { it.getFilledField() }
                 .toList()
 
-            getRepositoryProvider()?.credentialRepository?.let {
-                // Pass the filled fields to the credential repository to authorize the user.
-                viewModel.createCredential(provider, fields, it) { error ->
-                    view?.let { view ->
-                        val message = error.localizedMessage ?: error.message
-                        ?: getString(R.string.tink_error_unknown)
-                        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                    }
+            viewModel.createCredential(provider, fields) { error ->
+                view?.let { view ->
+                    val message = error.localizedMessage ?: error.message
+                    ?: getString(R.string.tink_error_unknown)
+                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
         }
@@ -279,18 +274,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             .map { it.getFilledField() }
             .toList()
 
-        getRepositoryProvider()?.credentialRepository?.let {
-            // Pass the filled fields to the credential repository to authorize the user.
-            viewModel.updateCredential(
-                requireNotNull(updateArgs).credentialId,
-                fields,
-                it
-            ) { error ->
-                view?.let { view ->
-                    val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
-                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                }
+        viewModel.updateCredential(requireNotNull(updateArgs).credentialId, fields) { error ->
+            view?.let { view ->
+                val message = error.localizedMessage ?: error.message
+                ?: getString(R.string.tink_error_unknown)
+                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
             }
         }
     }
