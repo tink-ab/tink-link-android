@@ -1,7 +1,6 @@
 <resources>
   <string name="tink_app_name">Application</string>
   <string name="tink_provider_list_title">Choose your bank</string>
-  <string name="tink_credential_fragment_title">Enter your credentials</string>
   <string name="tink_credential_type_fragment_title">Sign in method</string>
   <string name="tink_access_type_fragment_title">Add %s Account</string>
   <string name="tink_create_credential_button">Continue</string>
@@ -35,4 +34,6 @@
   <string name="tink_terms_policy_information">By using the service, you agree to Tink’s %1$s and %2$s</string>
   <string name="tink_terms_and_conditions">Terms and Conditions</string>
   <string name="tink_privacy_policy">Privacy Policy</string>
+  <string name="tink_credential_bankId_button">Open Bank ID</string>
+  <string name="tink_credential_bankId_other_device_button">Open Bank ID on another device</string>
 </resources>

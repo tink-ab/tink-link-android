@@ -1,5 +1,6 @@
 package com.tink.link.ui.credentials
 
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
@@ -16,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkConsumer
+import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.dpToPixels
@@ -23,6 +25,7 @@ import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.getRepositoryProvider
+import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credential.*
@@ -53,12 +56,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        title.setText(R.string.tink_credential_fragment_title)
         toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
-            hideKeyboard()
-            findNavController().navigateUp()
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
         }
 
         consentViewModel.apply {
@@ -70,26 +72,15 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE
             })
-
-            val termsText = getString(
-                R.string.tink_terms_policy_information,
-                getString(R.string.tink_terms_and_conditions),
-                getString(R.string.tink_privacy_policy)
-            )
-            termsAndConditionsText.setTextWithLinks(
-                fullText = termsText,
-                links = listOf(
-                    LinkInfo(
-                        termsAndConditionsUrl.toString(),
-                        getString(R.string.tink_terms_and_conditions)
-                    ),
-                    LinkInfo(
-                        privacyPolicyUrl.toString(),
-                        getString(R.string.tink_privacy_policy)
-                    )
-                )
-            )
-            termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
+            showTermsAndConditions.observe(viewLifecycleOwner, Observer {
+                termsAndConditionsText.visibility =
+                    if (it == true) {
+                        setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
+                        View.VISIBLE
+                    } else {
+                        View.GONE
+                    }
+            })
         }
 
         provider.images?.icon?.let {
@@ -140,6 +131,19 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             }
         }
 
+        if (provider.credentialType == Credential.Type.MOBILE_BANKID) {
+            createCredentialBtn.visibility = View.GONE
+            bankIdButtonGroup.visibility = View.VISIBLE
+        }
+
+        bankIdButton.setOnClickListener {
+            // TODO: Add button logic
+        }
+
+        bankIdOtherDeviceButton.setOnClickListener {
+            // TODO: Add button logic
+        }
+
         viewModel.credentials.observe(viewLifecycleOwner, Observer {
             Timber.d(it.toString())
         })
@@ -180,6 +184,28 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
             }
         })
+    }
+
+    private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
+        val termsText = getString(
+            R.string.tink_terms_policy_information,
+            getString(R.string.tink_terms_and_conditions),
+            getString(R.string.tink_privacy_policy)
+        )
+        termsAndConditionsText.setTextWithLinks(
+            fullText = termsText,
+            links = listOf(
+                LinkInfo(
+                    termsAndConditionsUrl.toString(),
+                    getString(R.string.tink_terms_and_conditions)
+                ),
+                LinkInfo(
+                    privacyPolicyUrl.toString(),
+                    getString(R.string.tink_privacy_policy)
+                )
+            )
+        )
+        termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun showConsentInformation() {

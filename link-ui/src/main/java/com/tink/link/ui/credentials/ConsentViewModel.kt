@@ -19,4 +19,6 @@ internal class ConsentViewModel() : ViewModel() {
     val user: LiveData<String> = MutableLiveData<String>().apply { value = "John Doe" }
 
     val showConsentInformation: LiveData<Boolean> = MutableLiveData<Boolean>().apply { value = true }
+
+    val showTermsAndConditions: LiveData<Boolean> = MutableLiveData<Boolean>().apply { value = true }
 }
