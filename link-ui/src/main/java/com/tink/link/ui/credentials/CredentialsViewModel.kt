@@ -158,6 +158,13 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
+    fun cancelSupplementalInformation(credentialId: String) {
+        credentialRepository.cancelSupplementalInformation(
+            credentialId,
+            ResultHandler({}, {})
+        )
+    }
+
     override fun onCleared() {
         super.onCleared()
         streamSubscription?.unsubscribe()
