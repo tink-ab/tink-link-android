@@ -51,7 +51,7 @@ class CredentialsViewModel : ViewModel() {
                     }
 
                     Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                        setFields(credential.supplementalInformation)
+                        _supplementalFields.postValue(credential.supplementalInformation)
                         _viewState.postValue(ViewState.SUPPLEMENTAL_INFO)
                     }
 
@@ -86,6 +86,9 @@ class CredentialsViewModel : ViewModel() {
     val fields: LiveData<List<Field>> = _fields
 
     fun setFields(fields: List<Field>) = _fields.postValue(fields)
+
+    private val _supplementalFields = MutableLiveData<List<Field>>()
+    val supplementalFields: LiveData<List<Field>> = _supplementalFields
 
     private var streamSubscription: StreamSubscription? = null
 
