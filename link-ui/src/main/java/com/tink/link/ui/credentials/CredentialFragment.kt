@@ -1,5 +1,6 @@
 package com.tink.link.ui.credentials
 
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
@@ -72,30 +73,13 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                     if (it == true) View.VISIBLE else View.GONE
             })
             showTermsAndConditions.observe(viewLifecycleOwner, Observer {
-                if (it == true) {
-                    val termsText = getString(
-                        R.string.tink_terms_policy_information,
-                        getString(R.string.tink_terms_and_conditions),
-                        getString(R.string.tink_privacy_policy)
-                    )
-                    termsAndConditionsText.setTextWithLinks(
-                        fullText = termsText,
-                        links = listOf(
-                            LinkInfo(
-                                termsAndConditionsUrl.toString(),
-                                getString(R.string.tink_terms_and_conditions)
-                            ),
-                            LinkInfo(
-                                privacyPolicyUrl.toString(),
-                                getString(R.string.tink_privacy_policy)
-                            )
-                        )
-                    )
-                    termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
-                    termsAndConditionsText.visibility = View.VISIBLE
-                } else {
-                    termsAndConditionsText.visibility = View.GONE
-                }
+                termsAndConditionsText.visibility =
+                    if (it == true) {
+                        setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
+                        View.VISIBLE
+                    } else {
+                        View.GONE
+                    }
             })
         }
 
@@ -200,6 +184,28 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
             }
         })
+    }
+
+    private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
+        val termsText = getString(
+            R.string.tink_terms_policy_information,
+            getString(R.string.tink_terms_and_conditions),
+            getString(R.string.tink_privacy_policy)
+        )
+        termsAndConditionsText.setTextWithLinks(
+            fullText = termsText,
+            links = listOf(
+                LinkInfo(
+                    termsAndConditionsUrl.toString(),
+                    getString(R.string.tink_terms_and_conditions)
+                ),
+                LinkInfo(
+                    privacyPolicyUrl.toString(),
+                    getString(R.string.tink_privacy_policy)
+                )
+            )
+        )
+        termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun showConsentInformation() {
