@@ -187,6 +187,7 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
+    // TODO: Should this be renamed to CredentialState instead?
     enum class ViewState {
         NOT_LOADING,
         UPDATING,
