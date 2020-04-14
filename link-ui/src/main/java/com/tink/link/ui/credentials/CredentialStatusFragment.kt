@@ -23,15 +23,15 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
 
     private val viewModel: CredentialViewModel by activityViewModels()
 
-    private var onCloseAction: (() -> Unit)? =
-        { closeWithResult(TinkLinkUiActivity.RESULT_CANCELLED) }
+    private var result: Int = TinkLinkUiActivity.RESULT_CANCELLED
+    private fun close() = closeWithResult(result)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar.title = providerDisplayName
-        toolbar.setNavigationOnClickListener { onCloseAction?.invoke() }
+        toolbar.setNavigationOnClickListener { close() }
 
-        doneButton.setOnClickListener { onCloseAction?.invoke() }
+        doneButton.setOnClickListener { close() }
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
@@ -40,7 +40,7 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
                     statusProgress.visibility = View.GONE
                     doneButton.visibility = View.VISIBLE
                     doneButton.text = getString(R.string.tink_credential_status_button_success)
-                    onCloseAction = { closeWithResult(TinkLinkUiActivity.RESULT_SUCCESS) }
+                    result = TinkLinkUiActivity.RESULT_SUCCESS
                 }
 
                 CredentialViewModel.ViewState.ERROR -> {
@@ -48,14 +48,14 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
                     statusProgress.visibility = View.GONE
                     doneButton.visibility = View.VISIBLE
                     doneButton.text = getString(R.string.tink_credential_status_button_failure)
-                    onCloseAction = { closeWithResult(TinkLinkUiActivity.RESULT_FAILURE) }
+                    result = TinkLinkUiActivity.RESULT_FAILURE
                 }
 
                 else -> {
                     successIcon.visibility = View.GONE
                     statusProgress.visibility = View.VISIBLE
                     doneButton.visibility = View.GONE
-                    onCloseAction = { closeWithResult(TinkLinkUiActivity.RESULT_CANCELLED) }
+                    result = TinkLinkUiActivity.RESULT_CANCELLED
                 }
             }
         })
