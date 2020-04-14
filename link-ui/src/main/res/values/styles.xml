@@ -38,6 +38,7 @@
     <item name="colorError">?tink_colorError</item>
     <item name="colorPrimary">?tink_colorPrimary</item>
     <item name="colorOnSurface">?tink_textColorSecondary</item>
+    <item name="placeholderTextAppearance">@style/tink_hecto.secondary</item>
     <item name="hintTextAppearance">@style/tink_hecto.secondary</item>
   </style>
 
