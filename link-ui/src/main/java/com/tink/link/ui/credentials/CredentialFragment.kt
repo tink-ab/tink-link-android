@@ -240,7 +240,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     )
-                setPadding(50)
+                setPadding(resources.dpToPixels(24))
                 orientation = LinearLayout.VERTICAL
             }
 
