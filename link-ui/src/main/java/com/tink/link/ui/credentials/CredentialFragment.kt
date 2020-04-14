@@ -254,7 +254,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                             })
             }
 
-            MaterialAlertDialogBuilder(requireContext())
+            MaterialAlertDialogBuilder(requireContext(), R.style.Tink_MaterialAlertDialogStyle)
                 .setPositiveButton(getString(R.string.tink_credential_supplemental_information_submit_button)) { _, _ ->
 
                     val filledFields = supplementalFields.children
