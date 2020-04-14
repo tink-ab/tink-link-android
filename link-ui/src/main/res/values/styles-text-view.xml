@@ -2,7 +2,7 @@
 <resources>
 
   <style name="tink_h2">
-    <item name="android:textColor">?tink_textColorTertiary</item>
+    <item name="android:textColor">?tink_textColorPrimary</item>
     <item name="android:fontFamily">@font/tink_font_regular</item>
     <item name="android:textSize">@dimen/tink_h2_text_size</item>
     <item name="lineHeight">@dimen/tink_h2_line_height</item>

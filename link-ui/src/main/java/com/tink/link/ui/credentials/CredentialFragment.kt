@@ -10,6 +10,7 @@ import androidx.core.view.children
 import androidx.core.view.forEach
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -51,7 +52,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         arguments?.getParcelable<CredentialUpdateArgs>(UPDATE_ARGS)
     }
 
-    private val viewModel: CredentialViewModel by viewModels()
+    private val viewModel: CredentialsViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -149,18 +150,30 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         })
 
         viewModel.createdCredential.observe(viewLifecycleOwner, Observer { credential ->
+            // TODO: Remove
             Timber.d("Received update for credential ${credential.id}")
-            status.text = "Status = ${credential.status?.name}"
-            statusPayload.text = credential.statusPayload
+            Timber.d("Status = ${credential.status?.name}")
+            Timber.d("Status = ${credential.statusPayload}")
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
+            loadingGroup.visibility = View.GONE
             when (state) {
-                CredentialViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
-                CredentialViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
-                CredentialViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
-                else -> {
+                CredentialsViewModel.ViewState.UPDATING,
+                CredentialsViewModel.ViewState.UPDATED,
+                CredentialsViewModel.ViewState.ERROR -> {
+                    navigateToCredentialStatusScreen()
                 }
+
+                CredentialsViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
+                    // TODO: Show third party authentication screen
+                }
+
+                CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
+                    // TODO: Show supplemental information screen
+                }
+
+                else -> {}
             }
         })
 
@@ -168,7 +181,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
-                        viewModel.updateViewState(CredentialViewModel.ViewState.NOT_LOADING)
+                        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
                         Snackbar.make(
                             view,
                             R.string.tink_third_party_authentication_download_app_negative_error,
@@ -247,7 +260,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 viewModel.createCredential(provider, fields, it) { error ->
                     view?.let { view ->
                         val message = error.localizedMessage ?: error.message
-                        ?: "Something went wrong. Please try again later."
+                        ?: getString(R.string.tink_error_unknown)
                         Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                     }
                 }
@@ -275,11 +288,18 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             ) { error ->
                 view?.let { view ->
                     val message = error.localizedMessage ?: error.message
-                    ?: "Something went wrong. Please try again later."
+                    ?: getString(R.string.tink_error_unknown)
                     Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
         }
+    }
+
+    private fun navigateToCredentialStatusScreen() {
+        findNavController().navigate(
+            R.id.credentialsStatusFragment,
+            CredentialsStatusFragment.getBundle(provider.displayName)
+        )
     }
 
     companion object {
