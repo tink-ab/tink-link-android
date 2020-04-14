@@ -7,9 +7,7 @@ import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import com.tink.link.ui.R
-import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.inflate
-import com.tink.link.ui.extensions.showKeyboard
 import com.tink.model.misc.Field
 import kotlinx.android.synthetic.main.tink_view_credential_field.view.*
 
@@ -34,20 +32,12 @@ class CredentialField : LinearLayout {
         textInputLayout.hint = field.attributes.description +
                 " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
+        textInputLayout.placeholderText = field.attributes.hint
+
         textInputLayout.helperText = field.attributes.helpText
 
         textInputEditText.apply {
             setText(field.value)
-
-            onFocusChangeListener = OnFocusChangeListener { view, hasFocus ->
-                hint = if (hasFocus) {
-                    view.showKeyboard()
-                    field.attributes.hint
-                } else {
-                    view.hideKeyboard()
-                    ""
-                }
-            }
 
             if (field.attributes.inputType.isNumeric) {
                 inputType = InputType.TYPE_CLASS_NUMBER
