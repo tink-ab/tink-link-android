@@ -13,12 +13,12 @@ import kotlinx.android.synthetic.main.tink_fragment_credential_status.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 import timber.log.Timber
 
-private const val PROVIDER_NAME_ARG = "PROVIDER_NAME"
+private const val PROVIDER_DISPLAY_NAME_ARG = "PROVIDER_DISPLAY_NAME"
 
 class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_status) {
 
-    private val providerName: String by lazy {
-        requireNotNull(arguments?.getString(PROVIDER_NAME_ARG))
+    private val providerDisplayName: String by lazy {
+        requireNotNull(arguments?.getString(PROVIDER_DISPLAY_NAME_ARG))
     }
 
     private val viewModel: CredentialViewModel by activityViewModels()
@@ -28,7 +28,7 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.title = providerName
+        toolbar.title = providerDisplayName
         toolbar.setNavigationOnClickListener { onCloseAction?.invoke() }
 
         doneButton.setOnClickListener { onCloseAction?.invoke() }
@@ -83,6 +83,6 @@ class CredentialStatusFragment : Fragment(R.layout.tink_fragment_credential_stat
     }
 
     companion object {
-        fun getBundle(providerName: String) = bundleOf(PROVIDER_NAME_ARG to providerName)
+        fun getBundle(providerDisplayName: String) = bundleOf(PROVIDER_DISPLAY_NAME_ARG to providerDisplayName)
     }
 }
