@@ -34,6 +34,8 @@ class CredentialField : LinearLayout {
         textInputLayout.hint = field.attributes.description +
                 " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
+        textInputLayout.placeholderText = field.attributes.hint
+
         textInputLayout.helperText = field.attributes.helpText
 
         textInputEditText.apply {
