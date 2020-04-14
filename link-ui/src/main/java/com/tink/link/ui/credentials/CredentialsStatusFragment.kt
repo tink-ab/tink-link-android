@@ -69,6 +69,13 @@ class CredentialsStatusFragment : Fragment(R.layout.tink_fragment_credentials_st
                             R.string.tink_credentials_status_success_description,
                             getString(R.string.tink_app_name)
                         )
+                } else if (status == Credential.Status.UPDATING) {
+                    statusTitle.text = status.name
+                    statusDescription.text =
+                        getString(
+                            R.string.tink_credentials_status_updating_description,
+                            getString(R.string.tink_app_name)
+                        )
                 } else {
                     statusTitle.text = status.name
                     statusDescription.text = credential.statusPayload ?: ""

@@ -38,6 +38,7 @@
   <string name="tink_credential_bankId_other_device_button">Open Bank ID on another device</string>
   <string name="tink_credentials_status_success_title">Connection successful</string>
   <string name="tink_credentials_status_success_description">Your accounts have been successfully added to %s</string>
+  <string name="tink_credentials_status_updating_description">Connecting to %s, please wait…</string>
   <string name="tink_credentials_status_button_success">Done</string>
   <string name="tink_credentials_status_button_failure">Retry</string>
   <string name="tink_error_unknown">Something went wrong. Please try again later.</string>
