@@ -276,6 +276,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 .setTitle(R.string.tink_credential_supplemental_information)
                 .setView(supplementalFields)
                 .show()
+                .also { it.setCanceledOnTouchOutside(false) }
         }
     }
 
