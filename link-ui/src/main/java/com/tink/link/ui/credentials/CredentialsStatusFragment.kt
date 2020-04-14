@@ -62,24 +62,22 @@ class CredentialsStatusFragment : Fragment(R.layout.tink_fragment_credentials_st
 
         viewModel.createdCredential.observe(viewLifecycleOwner, Observer { credential ->
             credential.status?.let { status ->
-                if (status == Credential.Status.UPDATED) {
-                    statusTitle.text = getString(R.string.tink_credentials_status_success_title)
-                    statusDescription.text =
-                        getString(
-                            R.string.tink_credentials_status_success_description,
-                            getString(R.string.tink_app_name)
-                        )
-                } else if (status == Credential.Status.UPDATING) {
-                    statusTitle.text = status.name
-                    statusDescription.text =
-                        getString(
-                            R.string.tink_credentials_status_updating_description,
-                            getString(R.string.tink_app_name)
-                        )
-                } else {
-                    statusTitle.text = status.name
-                    statusDescription.text = credential.statusPayload ?: ""
-                }
+                statusMessage.text =
+                    when (status) {
+                        Credential.Status.UPDATED ->
+                            getString(
+                                R.string.tink_credentials_status_success_description,
+                                getString(R.string.tink_app_name)
+                            )
+
+                        Credential.Status.UPDATING ->
+                            getString(
+                                R.string.tink_credentials_status_updating_description,
+                                getString(R.string.tink_app_name)
+                            )
+
+                        else -> credential.statusPayload ?: ""
+                    }
             }
             Timber.d("Received update for credential ${credential.id}") // TODO: Remove
         })
