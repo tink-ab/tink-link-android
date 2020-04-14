@@ -22,23 +22,23 @@ class CredentialsViewModel : ViewModel() {
     private val _credentials = MutableLiveData<List<Credential>>()
     val credentials: LiveData<List<Credential>> = _credentials
 
-    private val _credentialId = MutableLiveData<String>()
-    val credentialId: LiveData<String> = _credentialId
+    private val _credentialsId = MutableLiveData<String>()
+    val credentialsId: LiveData<String> = _credentialsId
 
-    private val credentialRepository: CredentialRepository
+    private val credentialsRepository: CredentialRepository
 
     init {
         val userContext = requireNotNull(Tink.getUserContext())
-        credentialRepository = userContext.credentialRepository
+        credentialsRepository = userContext.credentialRepository
     }
 
     /**
-     * Combines the output of [credentialId] and [credentials] to a [LiveData] that holds the
-     * [Credential] with the id held in [credentialId].
+     * Combines the output of [credentialsId] and [credentials] to a [LiveData] that holds the
+     * [Credential] with the id held in [credentialsId].
      *
      * As a side-effect, it also updates our view state based on the status of the credential.
      */
-    val createdCredential = CombinedLiveData(credentialId, credentials) { id, list ->
+    val createdCredential = CombinedLiveData(credentialsId, credentials) { id, list ->
         list.firstOrNull { it.id == id }
             ?.also { credential ->
                 when (credential.status) {
@@ -98,7 +98,7 @@ class CredentialsViewModel : ViewModel() {
      */
     private fun fetchCredentials() {
         streamSubscription?.unsubscribe()
-        streamSubscription = credentialRepository.listStream().subscribe(
+        streamSubscription = credentialsRepository.listStream().subscribe(
             object : StreamObserver<List<Credential>> {
                 override fun onNext(value: List<Credential>) {
                     if (_credentials.value != value) {
@@ -110,21 +110,21 @@ class CredentialsViewModel : ViewModel() {
     }
 
     /**
-     * Pass the filled [fields] to the [credentialRepository] to authorize the user.
+     * Pass the filled [fields] to the [credentialsRepository] to authorize the user.
      */
     fun createCredential(
         provider: Provider,
         fields: List<Field>,
         onError: (Throwable) -> Unit
     ) {
-        credentialRepository.create(
+        credentialsRepository.create(
             provider.name,
             provider.credentialType,
             fields.toFieldMap(),
             ResultHandler(
                 { credential ->
                     fetchCredentials() // Start streaming credentials
-                    _credentialId.postValue(credential.id)
+                    _credentialsId.postValue(credential.id)
                 },
                 {
                     _viewState.postValue(ViewState.ERROR)
@@ -139,7 +139,7 @@ class CredentialsViewModel : ViewModel() {
         fields: List<Field>,
         onError: (Throwable) -> Unit
     ) {
-        credentialRepository.supplementInformation(
+        credentialsRepository.supplementInformation(
             credentialId,
             fields.toFieldMap(),
             ResultHandler(
@@ -153,7 +153,7 @@ class CredentialsViewModel : ViewModel() {
     }
 
     fun cancelSupplementalInformation(credentialId: String) {
-        credentialRepository.cancelSupplementalInformation(
+        credentialsRepository.cancelSupplementalInformation(
             credentialId,
             ResultHandler({}, {})
         )
@@ -170,9 +170,9 @@ class CredentialsViewModel : ViewModel() {
         onError: (Throwable) -> Unit
     ) {
 
-        _credentialId.value = id
+        _credentialsId.value = id
 
-        credentialRepository.update(
+        credentialsRepository.update(
             id,
             fields.toFieldMap(),
             ResultHandler(

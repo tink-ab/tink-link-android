@@ -171,7 +171,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    viewModel.credentialId.value?.let { showSupplementalInfoDialog(it) }
+                    viewModel.credentialsId.value?.let { showSupplementalInfoDialog(it) }
                 }
 
                 else -> {}
@@ -232,7 +232,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         )
     }
 
-    private fun showSupplementalInfoDialog(credentialId: String) {
+    private fun showSupplementalInfoDialog(credentialsId: String) {
         viewModel.supplementalFields.value?.let { fields ->
             val supplementalFields = LinearLayout(requireContext()).apply {
                 layoutParams =
@@ -255,14 +255,14 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             }
 
             MaterialAlertDialogBuilder(requireContext(), R.style.Tink_MaterialAlertDialogStyle)
-                .setPositiveButton(getString(R.string.tink_credential_supplemental_information_submit_button)) { _, _ ->
+                .setPositiveButton(getString(R.string.tink_credentials_supplemental_information_submit_button)) { _, _ ->
 
                     val filledFields = supplementalFields.children
                         .filterIsInstance(CredentialField::class.java)
                         .map { it.getFilledField() }
                         .toList()
 
-                    viewModel.sendSupplementalInformation(credentialId, filledFields) { error ->
+                    viewModel.sendSupplementalInformation(credentialsId, filledFields) { error ->
                         view?.let { view ->
                             val message = error.localizedMessage ?: error.message
                             ?: getString(R.string.tink_error_unknown)
@@ -270,10 +270,10 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                         }
                     }
                 }
-                .setNegativeButton(getString(R.string.tink_credential_supplemental_information_cancel_button)) { _, _ ->
-                    viewModel.cancelSupplementalInformation(credentialId)
+                .setNegativeButton(getString(R.string.tink_credentials_supplemental_information_cancel_button)) { _, _ ->
+                    viewModel.cancelSupplementalInformation(credentialsId)
                 }
-                .setTitle(R.string.tink_credential_supplemental_information)
+                .setTitle(R.string.tink_credentials_supplemental_information)
                 .setView(supplementalFields)
                 .show()
                 .also { it.setCanceledOnTouchOutside(false) }
