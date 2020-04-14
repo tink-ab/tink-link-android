@@ -15,7 +15,7 @@ import com.tink.service.misc.toFieldMap
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 
-class CredentialViewModel : ViewModel() {
+class CredentialsViewModel : ViewModel() {
 
     private val _credentials = MutableLiveData<List<Credential>>()
     val credentials: LiveData<List<Credential>> = _credentials

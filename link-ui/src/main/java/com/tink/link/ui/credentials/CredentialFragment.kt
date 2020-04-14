@@ -52,7 +52,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         arguments?.getParcelable<CredentialUpdateArgs>(UPDATE_ARGS)
     }
 
-    private val viewModel: CredentialViewModel by activityViewModels()
+    private val viewModel: CredentialsViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -159,17 +159,17 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             loadingGroup.visibility = View.GONE
             when (state) {
-                CredentialViewModel.ViewState.UPDATING,
-                CredentialViewModel.ViewState.UPDATED,
-                CredentialViewModel.ViewState.ERROR -> {
+                CredentialsViewModel.ViewState.UPDATING,
+                CredentialsViewModel.ViewState.UPDATED,
+                CredentialsViewModel.ViewState.ERROR -> {
                     navigateToCredentialStatusScreen()
                 }
 
-                CredentialViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
+                CredentialsViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
                     // TODO: Show third party authentication screen
                 }
 
-                CredentialViewModel.ViewState.SUPPLEMENTAL_INFO -> {
+                CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
                     // TODO: Show supplemental information screen
                 }
 
@@ -181,7 +181,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
-                        viewModel.updateViewState(CredentialViewModel.ViewState.NOT_LOADING)
+                        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
                         Snackbar.make(
                             view,
                             R.string.tink_third_party_authentication_download_app_negative_error,
@@ -297,8 +297,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
 
     private fun navigateToCredentialStatusScreen() {
         findNavController().navigate(
-            R.id.credentialStatusFragment,
-            CredentialStatusFragment.getBundle(provider.displayName)
+            R.id.credentialsStatusFragment,
+            CredentialsStatusFragment.getBundle(provider.displayName)
         )
     }
 
