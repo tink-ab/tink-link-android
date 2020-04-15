@@ -134,31 +134,6 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
-    fun sendSupplementalInformation(
-        credentialId: String,
-        fields: List<Field>,
-        onError: (Throwable) -> Unit
-    ) {
-        credentialsRepository.supplementInformation(
-            credentialId,
-            fields.toFieldMap(),
-            ResultHandler(
-                {},
-                {
-                    _viewState.postValue(ViewState.ERROR)
-                    onError(it)
-                }
-            )
-        )
-    }
-
-    fun cancelSupplementalInformation(credentialId: String) {
-        credentialsRepository.cancelSupplementalInformation(
-            credentialId,
-            ResultHandler({}, {})
-        )
-    }
-
     override fun onCleared() {
         super.onCleared()
         streamSubscription?.unsubscribe()
