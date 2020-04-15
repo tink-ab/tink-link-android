@@ -39,37 +39,41 @@ class SupplementalInformationFragment : DialogFragment() {
 
             setContentView(R.layout.tink_dialog_supplemental_information)
 
-            supplementalInformationViewModel.apply {
-                supplementalFields.value?.let { fields ->
-                    for (field in fields) {
-                        supplementalFieldsContainer
-                            .addView(
-                                CredentialField(requireContext())
-                                    .also {
-                                        it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
-                                        it.setupField(field)
-                                    })
-                    }
+            supplementalInformationViewModel.supplementalFields.value?.let { fields ->
+                if (supplementalFieldsContainer.childCount > 0) {
+                    supplementalFieldsContainer.removeAllViews()
                 }
+                for (field in fields) {
+                    supplementalFieldsContainer
+                        .addView(
+                            CredentialField(requireContext())
+                                .also {
+                                    it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
+                                    it.setupField(field)
+                                }
+                        )
+                }
+            }
 
-                submitButton.setOnClickListener {
-                    val filledFields = supplementalFieldsContainer.children
+            submitButton.setOnClickListener {
+                val filledFields =
+                    supplementalFieldsContainer
+                        .children
                         .filterIsInstance(CredentialField::class.java)
                         .map { it.getFilledField() }
                         .toList()
-                    supplementalInformationViewModel.sendSupplementalInformation(
-                        filledFields,
-                        { dismiss() },
-                        {
-                            // TODO: Do error handling without leaving dialog
-                        }
-                    )
-                }
+                supplementalInformationViewModel.sendSupplementalInformation(
+                    filledFields,
+                    { dismiss() },
+                    {
+                        // TODO: Do error handling without leaving dialog
+                    }
+                )
+            }
 
-                cancelButton.setOnClickListener {
-                    supplementalInformationViewModel.cancelSupplementalInformation()
-                    dismiss()
-                }
+            cancelButton.setOnClickListener {
+                supplementalInformationViewModel.cancelSupplementalInformation()
+                dismiss()
             }
 
             setCanceledOnTouchOutside(false)
