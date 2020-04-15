@@ -21,5 +21,6 @@
   <dimen name="tink_peta_line_height">48sp</dimen>
 
   <dimen name="tink_dialog_padding">24dp</dimen>
+  <dimen name="tink_credential_field_padding_bottom">32dp</dimen>
 
 </resources>

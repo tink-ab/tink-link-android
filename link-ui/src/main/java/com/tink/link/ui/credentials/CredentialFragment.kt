@@ -19,7 +19,6 @@ import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
-import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
@@ -115,7 +114,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     .addView(
                         CredentialField(requireContext())
                             .also {
-                                it.updatePadding(bottom = resources.dpToPixels(32))
+                                it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
                                 it.setupField(field)
                             })
             }

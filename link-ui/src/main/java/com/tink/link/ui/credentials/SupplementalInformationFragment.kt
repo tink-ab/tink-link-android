@@ -10,7 +10,6 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import com.tink.link.ui.R
-import com.tink.link.ui.extensions.dpToPixels
 import com.tink.model.misc.Field
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
@@ -49,7 +48,7 @@ class SupplementalInformationFragment : DialogFragment() {
                             .addView(
                                 CredentialField(requireContext())
                                     .also {
-                                        it.updatePadding(bottom = resources.dpToPixels(32))
+                                        it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
                                         it.setupField(field)
                                     })
                     }
