@@ -51,7 +51,7 @@
     <item name="android:textColor">?tink_textColorPrimary</item>
   </style>
 
-  <style name="Tink_MaterialAlertDialogStyle">
+  <style name="Tink_MaterialAlertDialogStyle" parent="Theme.MaterialComponents.Dialog.Alert">
     <item name="colorSurface">?tink_colorSurface</item>
     <item name="colorPrimary">?tink_colorPrimary</item>
     <item name="colorOnSurface">?tink_textColorPrimary</item>
