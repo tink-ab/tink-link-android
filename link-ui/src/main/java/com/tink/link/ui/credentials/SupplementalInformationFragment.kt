@@ -2,8 +2,6 @@ package com.tink.link.ui.credentials
 
 import android.app.Dialog
 import android.os.Bundle
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.core.view.updatePadding
@@ -62,7 +60,9 @@ class SupplementalInformationFragment : DialogFragment() {
                     supplementalInformationViewModel.sendSupplementalInformation(
                         filledFields,
                         { dismiss() },
-                        {}
+                        {
+                            // TODO: Do error handling without leaving dialog
+                        }
                     )
                 }
 
