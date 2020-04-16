@@ -31,21 +31,14 @@ class SupplementalInformationViewModel : ViewModel() {
 
     fun sendSupplementalInformation(
         fields: List<Field>,
-        onSuccess: () -> Unit,
+        onSuccess: (Unit) -> Unit,
         onError: (Throwable) -> Unit
     ) {
         credentialsId.value?.let { id ->
             credentialsRepository.supplementInformation(
                 id,
                 fields.toFieldMap(),
-                ResultHandler(
-                    {
-                        onSuccess()
-                    },
-                    {
-                        onError(it)
-                    }
-                )
+                ResultHandler(onSuccess, onError)
             )
         }
     }
