@@ -6,15 +6,14 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
 import androidx.core.view.setPadding
-import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.credentials.CredentialField
-import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.launch
+import com.tink.link.ui.extensions.toView
 import com.tink.model.credential.Credential
 import kotlinx.android.synthetic.main.tink_fragment_refresh_credentials.*
 
@@ -72,13 +71,7 @@ class RefreshCredentialsFragment : Fragment(R.layout.tink_fragment_refresh_crede
         credentialFields.orientation = LinearLayout.VERTICAL
 
         for (field in credential.supplementalInformation) {
-            credentialFields
-                .addView(
-                    CredentialField(requireContext())
-                        .also {
-                            it.updatePadding(bottom = resources.dpToPixels(32))
-                            it.setupField(field)
-                        })
+            credentialFields.addView(field.toView(requireContext()))
         }
 
         AlertDialog.Builder(requireContext())

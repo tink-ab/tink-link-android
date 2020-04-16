@@ -5,13 +5,23 @@ import android.text.InputFilter
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
+import android.view.View
 import android.widget.LinearLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
 import com.tink.model.misc.Field
 import kotlinx.android.synthetic.main.tink_view_credential_field.view.*
+import kotlinx.android.synthetic.main.tink_view_credential_field_immutable.view.*
 
-class CredentialField : LinearLayout {
+internal interface CredentialField {
+    fun setupField(field: Field)
+    fun validateContent(): Boolean
+    fun getFilledField(): Field
+    fun getView(): View
+}
+
+internal class MutableCredentialField : LinearLayout, CredentialField {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
@@ -27,7 +37,9 @@ class CredentialField : LinearLayout {
         orientation = VERTICAL
     }
 
-    fun setupField(field: Field) {
+    override fun getView(): View = this
+
+    override fun setupField(field: Field) {
         this.field = field
         textInputLayout.hint = field.attributes.description +
                 " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
@@ -55,7 +67,7 @@ class CredentialField : LinearLayout {
         }
     }
 
-    fun validateContent(): Boolean =
+    override fun validateContent(): Boolean =
         getFilledField().validate()
             .also {
                 textInputLayout.error =
@@ -64,7 +76,36 @@ class CredentialField : LinearLayout {
             .let { it == Field.ValidationResult.Valid }
 
 
-    fun getFilledField(): Field {
+    override fun getFilledField(): Field {
         return field.copy(value = textInputEditText.text.toString())
     }
+}
+
+internal class ImmutableCredentialField : ConstraintLayout, CredentialField {
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    )
+
+    lateinit var field: Field
+
+    init {
+        inflate(R.layout.tink_view_credential_field_immutable, true)
+    }
+
+    override fun getView(): View = this
+
+    override fun setupField(field: Field) {
+        this.field = field
+        description.text = field.attributes.description
+        filledValue.text = field.value
+        helpText.text = field.attributes.helpText
+    }
+
+    override fun validateContent(): Boolean = true
+
+    override fun getFilledField(): Field = field
 }
