@@ -7,7 +7,6 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.children
-import androidx.core.view.forEach
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -17,15 +16,12 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
-import com.tink.link.ui.TinkLinkConsumer
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
-import com.tink.link.ui.extensions.dpToPixels
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
-import com.tink.link.ui.getRepositoryProvider
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -42,7 +38,7 @@ private const val UPDATE_ARGS = "UPDATE_ARGS"
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLinkConsumer {
+class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
@@ -109,18 +105,18 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
 
         viewModel.setFields(fields)
 
-        viewModel.fields.observe(viewLifecycleOwner, Observer { fields ->
+        viewModel.fields.observe(viewLifecycleOwner, Observer { fieldList ->
             if (credentialFields.childCount > 0) {
                 credentialFields.removeAllViews()
             }
-            for (field in fields) {
+            for (field in fieldList) {
                 credentialFields
                     .addView(
                         CredentialField(requireContext())
-                        .also {
-                            it.updatePadding(bottom = resources.dpToPixels(32))
-                            it.setupField(field)
-                        })
+                            .also {
+                                it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
+                                it.setupField(field)
+                            })
             }
         })
 
@@ -170,10 +166,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    // TODO: Show supplemental information screen
+                    viewModel.credentialsId.value?.let { showSupplementalInfoDialog(it) }
                 }
 
-                else -> {}
+                else -> {
+                }
             }
         })
 
@@ -231,11 +228,14 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
         )
     }
 
-    private fun validateFields() {
-        credentialFields.forEach {
-            if (it is CredentialField) {
-                it.validateContent()
-            }
+    private fun showSupplementalInfoDialog(credentialsId: String) {
+        viewModel.supplementalFields.value?.let { supplementalFields ->
+            SupplementalInformationFragment()
+                .apply {
+                    arguments =
+                        SupplementalInformationFragment.getBundle(credentialsId, supplementalFields)
+                }
+                .show(childFragmentManager, null)
         }
     }
 
@@ -255,14 +255,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
                 .map { it.getFilledField() }
                 .toList()
 
-            getRepositoryProvider()?.credentialRepository?.let {
-                // Pass the filled fields to the credential repository to authorize the user.
-                viewModel.createCredential(provider, fields, it) { error ->
-                    view?.let { view ->
-                        val message = error.localizedMessage ?: error.message
-                        ?: getString(R.string.tink_error_unknown)
-                        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                    }
+            viewModel.createCredential(provider, fields) { error ->
+                view?.let { view ->
+                    val message = error.localizedMessage ?: error.message
+                    ?: getString(R.string.tink_error_unknown)
+                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
         }
@@ -279,18 +276,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential), TinkLink
             .map { it.getFilledField() }
             .toList()
 
-        getRepositoryProvider()?.credentialRepository?.let {
-            // Pass the filled fields to the credential repository to authorize the user.
-            viewModel.updateCredential(
-                requireNotNull(updateArgs).credentialId,
-                fields,
-                it
-            ) { error ->
-                view?.let { view ->
-                    val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
-                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                }
+        viewModel.updateCredential(requireNotNull(updateArgs).credentialId, fields) { error ->
+            view?.let { view ->
+                val message = error.localizedMessage ?: error.message
+                ?: getString(R.string.tink_error_unknown)
+                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
             }
         }
     }

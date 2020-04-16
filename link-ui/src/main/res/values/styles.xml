@@ -51,6 +51,13 @@
     <item name="android:textColor">?tink_textColorPrimary</item>
   </style>
 
+  <style name="Tink_MaterialAlertDialogStyle" parent="Theme.MaterialComponents.Dialog.Alert">
+    <item name="colorSurface">?tink_colorSurface</item>
+    <item name="colorPrimary">?tink_colorPrimary</item>
+    <item name="colorOnSurface">?tink_textColorPrimary</item>
+    <item name="android:textAppearance">@style/tink_mega</item>
+  </style>
+
   <item name="tink_font_bold" type="font">@font/roboto_bold</item>
   <item name="tink_font_semi_bold" type="font">@font/roboto_medium</item>
   <item name="tink_font_regular" type="font">@font/roboto</item>
