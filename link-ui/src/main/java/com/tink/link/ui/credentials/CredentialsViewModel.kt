@@ -42,7 +42,13 @@ class CredentialsViewModel : ViewModel() {
         list.firstOrNull { it.id == id }
             ?.also { credential ->
                 when (credential.status) {
-                    Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
+                    Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION -> {
+                        credential.thirdPartyAppAuthentication
+                            ?.let { _mobileBankIdAuthenticationEvent.postValue(Event(it)) }
+                            ?.also {
+                                _viewState.postValue(ViewState.NOT_LOADING)
+                            }
+                    }
                     Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
                         credential.thirdPartyAppAuthentication
                             ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
@@ -74,6 +80,11 @@ class CredentialsViewModel : ViewModel() {
 
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = _viewState
+
+    private val _mobileBankIdAuthenticationEvent =
+        MutableLiveData<Event<ThirdPartyAppAuthentication>>()
+    val mobileBankIdAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
+        _mobileBankIdAuthenticationEvent
 
     private val _thirdPartyAuthenticationEvent =
         MutableLiveData<Event<ThirdPartyAppAuthentication>>()
