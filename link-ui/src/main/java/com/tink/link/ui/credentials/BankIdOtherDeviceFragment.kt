@@ -43,8 +43,8 @@ class BankIdOtherDeviceFragment : DialogFragment() {
             val bitMatrix = multiFormatWriter.encode(
                 bankIdUri,
                 BarcodeFormat.QR_CODE,
-                resources.getDimensionPixelSize(R.dimen.tink_credential_qr_code_width),
-                resources.getDimensionPixelSize(R.dimen.tink_credential_qr_code_height)
+                resources.getDimensionPixelSize(R.dimen.tink_credentials_qr_code_width),
+                resources.getDimensionPixelSize(R.dimen.tink_credentials_qr_code_height)
             )
             val bitmap =
                 Bitmap.createBitmap(bitMatrix.width, bitMatrix.height, Bitmap.Config.ARGB_8888)
