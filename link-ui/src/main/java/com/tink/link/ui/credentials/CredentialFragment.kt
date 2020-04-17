@@ -156,10 +156,6 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     navigateToCredentialStatusScreen()
                 }
 
-                CredentialsViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
-                    // TODO: Show third party authentication screen
-                }
-
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
                     viewModel.credentialsId.value?.let { showSupplementalInfoDialog(it) }
                 }

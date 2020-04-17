@@ -53,7 +53,7 @@ class CredentialsViewModel : ViewModel() {
                         credential.thirdPartyAppAuthentication
                             ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
                             ?.also {
-                                _viewState.postValue(ViewState.THIRD_PARTY_AUTHENTICATION)
+                                _viewState.postValue(ViewState.NOT_LOADING)
                             }
                     }
 
@@ -179,7 +179,6 @@ class CredentialsViewModel : ViewModel() {
         UPDATING,
         UPDATED,
         ERROR,
-        THIRD_PARTY_AUTHENTICATION,
         SUPPLEMENTAL_INFO
     }
 }
