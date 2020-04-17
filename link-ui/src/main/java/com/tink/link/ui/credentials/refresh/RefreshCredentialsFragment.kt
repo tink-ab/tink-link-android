@@ -11,7 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
-import com.tink.link.ui.credentials.CredentialField
+import com.tink.link.ui.credentials.CredentialsField
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.toView
 import com.tink.model.credential.Credential
@@ -78,7 +78,7 @@ class RefreshCredentialsFragment : Fragment(R.layout.tink_fragment_refresh_crede
             .setPositiveButton("Send") { _, _ ->
 
                 val filledFields = credentialFields.children
-                    .filterIsInstance(CredentialField::class.java)
+                    .filterIsInstance(CredentialsField::class.java)
                     .map { it.getFilledField() }
                     .toList()
 

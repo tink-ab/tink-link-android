@@ -11,17 +11,17 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
 import com.tink.model.misc.Field
-import kotlinx.android.synthetic.main.tink_view_credential_field.view.*
-import kotlinx.android.synthetic.main.tink_view_credential_field_immutable.view.*
+import kotlinx.android.synthetic.main.tink_view_credentials_field.view.*
+import kotlinx.android.synthetic.main.tink_view_credentials_field_immutable.view.*
 
-internal interface CredentialField {
+internal interface CredentialsField {
     fun setupField(field: Field)
     fun validateContent(): Boolean
     fun getFilledField(): Field
     fun getView(): View
 }
 
-internal class MutableCredentialField : LinearLayout, CredentialField {
+internal class MutableCredentialsField : LinearLayout, CredentialsField {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
@@ -33,7 +33,7 @@ internal class MutableCredentialField : LinearLayout, CredentialField {
     lateinit var field: Field
 
     init {
-        inflate(R.layout.tink_view_credential_field, true)
+        inflate(R.layout.tink_view_credentials_field, true)
         orientation = VERTICAL
     }
 
@@ -81,7 +81,7 @@ internal class MutableCredentialField : LinearLayout, CredentialField {
     }
 }
 
-internal class ImmutableCredentialField : ConstraintLayout, CredentialField {
+internal class ImmutableCredentialsField : ConstraintLayout, CredentialsField {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
@@ -93,7 +93,7 @@ internal class ImmutableCredentialField : ConstraintLayout, CredentialField {
     lateinit var field: Field
 
     init {
-        inflate(R.layout.tink_view_credential_field_immutable, true)
+        inflate(R.layout.tink_view_credentials_field_immutable, true)
     }
 
     override fun getView(): View = this

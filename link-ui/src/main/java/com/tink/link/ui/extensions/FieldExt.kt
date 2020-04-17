@@ -2,19 +2,19 @@ package com.tink.link.ui.extensions
 
 import android.content.Context
 import android.view.View
-import com.tink.link.ui.credentials.CredentialField
-import com.tink.link.ui.credentials.ImmutableCredentialField
-import com.tink.link.ui.credentials.MutableCredentialField
+import com.tink.link.ui.credentials.CredentialsField
+import com.tink.link.ui.credentials.ImmutableCredentialsField
+import com.tink.link.ui.credentials.MutableCredentialsField
 import com.tink.model.misc.Field
 
 internal fun Field.toView(context: Context): View {
-    val credentialField: CredentialField =
+    val credentialsField: CredentialsField =
         if (isEditable()) {
-            MutableCredentialField(context)
+            MutableCredentialsField(context)
         } else {
-            ImmutableCredentialField(context)
+            ImmutableCredentialsField(context)
         }
-    return credentialField
+    return credentialsField
         .let {
             it.setupField(this@toView)
             it.getView()

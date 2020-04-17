@@ -235,7 +235,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun areFieldsValid(): Boolean {
         return credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+            .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
     }
 
@@ -245,7 +245,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             hideKeyboard()
 
             val fields = credentialFields.children
-                .filterIsInstance(CredentialField::class.java)
+                .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
 
@@ -266,7 +266,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         }
 
         val fields = credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+            .filterIsInstance(CredentialsField::class.java)
             .map { it.getFilledField() }
             .toList()
 

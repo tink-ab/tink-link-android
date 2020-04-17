@@ -52,7 +52,7 @@ class SupplementalInformationFragment : DialogFragment() {
                 val filledFields =
                     supplementalFieldsContainer
                         .children
-                        .filterIsInstance(CredentialField::class.java)
+                        .filterIsInstance(CredentialsField::class.java)
                         .map { it.getFilledField() }
                         .toList()
                 supplementalInformationViewModel.sendSupplementalInformation(
