@@ -157,7 +157,10 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    viewModel.credentialsId.value?.let { showSupplementalInfoDialog(it) }
+                    viewModel.credentialsId.value?.let {
+                        loadingGroup.visibility = View.GONE
+                        showSupplementalInfoDialog(it)
+                    }
                 }
 
                 else -> {
