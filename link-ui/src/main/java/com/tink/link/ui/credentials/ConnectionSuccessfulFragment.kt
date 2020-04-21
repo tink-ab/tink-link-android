@@ -26,7 +26,7 @@ class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_
 
         successMessage.text =
             getString(
-                R.string.tink_credentials_status_success_description,
+                R.string.tink_connection_successful_description,
                 getString(R.string.tink_app_name)
             )
 

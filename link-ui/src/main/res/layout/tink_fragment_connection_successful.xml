@@ -34,7 +34,7 @@
     android:layout_marginEnd="56dp"
     android:layout_marginBottom="20dp"
     android:gravity="center_horizontal"
-    android:text="@string/tink_credentials_status_success_title"
+    android:text="@string/tink_connection_successful_title"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/successTitle"
-    tools:text="@string/tink_credentials_status_success_description" />
+    tools:text="@string/tink_connection_successful_description" />
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/doneButton"
@@ -61,7 +61,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginBottom="32dp"
-    android:text="@string/tink_credentials_status_button_success"
+    android:text="@string/tink_connection_successful_done_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
