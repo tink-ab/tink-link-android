@@ -151,9 +151,13 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
                 CredentialsViewModel.ViewState.UPDATING,
-                CredentialsViewModel.ViewState.UPDATED,
                 CredentialsViewModel.ViewState.ERROR -> {
-                    navigateToCredentialStatusScreen()
+                    // TODO: Implement dialog
+                }
+
+                CredentialsViewModel.ViewState.UPDATED -> {
+                    loadingGroup.visibility = View.GONE
+                    showConnectionSuccessfulScreen()
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
@@ -314,8 +318,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             }
         }
     }
-    private fun navigateToCredentialStatusScreen() {
-        loadingGroup.visibility = View.GONE
+    private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
             R.id.credentialsStatusFragment,
             CredentialsStatusFragment.getBundle(provider.displayName)
