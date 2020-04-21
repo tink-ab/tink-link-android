@@ -330,7 +330,6 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun launchBankIdAuthentication(thirdPartyAppAuthentication: ThirdPartyAppAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
-            // TODO: Update this flow to match design
             thirdPartyAppAuthentication.launch(requireActivity(), {})
         } else {
             val intent = thirdPartyAppAuthentication.android?.intent

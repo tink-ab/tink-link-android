@@ -58,9 +58,7 @@ class SupplementalInformationFragment : DialogFragment() {
                 supplementalInformationViewModel.sendSupplementalInformation(
                     filledFields,
                     { dismiss() },
-                    {
-                        // TODO: Do error handling without leaving dialog
-                    }
+                    { }
                 )
             }
 
