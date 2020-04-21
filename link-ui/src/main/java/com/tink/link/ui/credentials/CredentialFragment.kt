@@ -320,8 +320,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     }
     private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
-            R.id.credentialsStatusFragment,
-            CredentialsStatusFragment.getBundle(provider.displayName)
+            R.id.connectionSuccessfulFragment,
+            ConnectionSuccessfulFragment.getBundle(provider.displayName)
         )
     }
 
