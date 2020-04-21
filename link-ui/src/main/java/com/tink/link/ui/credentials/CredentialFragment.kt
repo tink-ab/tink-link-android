@@ -24,6 +24,7 @@ import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credential.Credential
+import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credential.*
@@ -169,14 +170,6 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     showConnectionSuccessfulScreen()
                 }
 
-                CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    viewModel.credentialsId.value?.let {
-                        // TODO: This should be moved out and use NOT_LOADING view state
-                        statusDialog?.dismiss()
-                        showSupplementalInfoDialog(it)
-                    }
-                }
-
                 CredentialsViewModel.ViewState.NOT_LOADING -> {
                     statusDialog?.dismiss()
                 }
@@ -199,6 +192,14 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         viewModel.mobileBankIdAuthenticationEvent.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
                 launchBankIdAuthentication(thirdPartyAuthentication)
+            }
+        })
+
+        viewModel.supplementalInformationEvent.observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { supplementalInformation ->
+                viewModel.credentialsId.value?.let { credentialsId ->
+                    showSupplementalInfoDialog(credentialsId, supplementalInformation)
+                }
             }
         })
 
@@ -241,15 +242,13 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         )
     }
 
-    private fun showSupplementalInfoDialog(credentialsId: String) {
-        viewModel.supplementalFields.value?.let { supplementalFields ->
-            SupplementalInformationFragment()
-                .apply {
-                    arguments =
-                        SupplementalInformationFragment.getBundle(credentialsId, supplementalFields)
-                }
-                .show(childFragmentManager, null)
-        }
+    private fun showSupplementalInfoDialog(credentialsId: String, supplementalFields: List<Field>) {
+        SupplementalInformationFragment()
+            .apply {
+                arguments =
+                    SupplementalInformationFragment.getBundle(credentialsId, supplementalFields)
+            }
+            .show(childFragmentManager, null)
     }
 
     private fun submitFilledFields() {

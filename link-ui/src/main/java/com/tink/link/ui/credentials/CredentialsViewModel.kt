@@ -58,8 +58,11 @@ class CredentialsViewModel : ViewModel() {
                     }
 
                     Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                        _supplementalFields.postValue(credential.supplementalInformation)
-                        _viewState.postValue(ViewState.SUPPLEMENTAL_INFO)
+                        credential.supplementalInformation
+                            .let { _supplementalInformationEvent.postValue(Event(it)) }
+                            .also {
+                                _viewState.postValue(ViewState.NOT_LOADING)
+                            }
                     }
 
                     Credential.Status.AUTHENTICATION_ERROR,
@@ -91,6 +94,11 @@ class CredentialsViewModel : ViewModel() {
     val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
         _thirdPartyAuthenticationEvent
 
+    private val _supplementalInformationEvent =
+        MutableLiveData<Event<List<Field>>>()
+    val supplementalInformationEvent: LiveData<Event<List<Field>>> =
+        _supplementalInformationEvent
+
     private val _errorEvent = MutableLiveData<Event<String>>()
     val errorEvent: LiveData<Event<String>> = _errorEvent
 
@@ -98,9 +106,6 @@ class CredentialsViewModel : ViewModel() {
     val fields: LiveData<List<Field>> = _fields
 
     fun setFields(fields: List<Field>) = _fields.postValue(fields)
-
-    private val _supplementalFields = MutableLiveData<List<Field>>()
-    val supplementalFields: LiveData<List<Field>> = _supplementalFields
 
     private var streamSubscription: StreamSubscription? = null
 
@@ -173,12 +178,10 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
-    // TODO: Should this be renamed to CredentialState instead?
     enum class ViewState {
         NOT_LOADING,
         WAITING_FOR_AUTHENTICATION,
         UPDATING,
         UPDATED,
-        SUPPLEMENTAL_INFO
     }
 }
