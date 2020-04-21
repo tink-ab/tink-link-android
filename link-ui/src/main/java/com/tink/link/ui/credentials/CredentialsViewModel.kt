@@ -46,14 +46,14 @@ class CredentialsViewModel : ViewModel() {
                         credential.thirdPartyAppAuthentication
                             ?.let { _mobileBankIdAuthenticationEvent.postValue(Event(it)) }
                             ?.also {
-                                _viewState.postValue(ViewState.NOT_LOADING)
+                                _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
                             }
                     }
                     Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
                         credential.thirdPartyAppAuthentication
                             ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
                             ?.also {
-                                _viewState.postValue(ViewState.NOT_LOADING)
+                                _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
                             }
                     }
 
@@ -65,7 +65,7 @@ class CredentialsViewModel : ViewModel() {
                     Credential.Status.AUTHENTICATION_ERROR,
                     Credential.Status.TEMPORARY_ERROR,
                     Credential.Status.PERMANENT_ERROR -> {
-                        _viewState.postValue(ViewState.ERROR)
+                        _viewState.postValue(ViewState.NOT_LOADING)
                         credential.statusPayload?.let { _errorEvent.postValue(Event(it)) }
                     }
 
@@ -138,7 +138,7 @@ class CredentialsViewModel : ViewModel() {
                     _credentialsId.postValue(credential.id)
                 },
                 {
-                    _viewState.postValue(ViewState.ERROR)
+                    _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
             )
@@ -166,7 +166,7 @@ class CredentialsViewModel : ViewModel() {
                     fetchCredentials() // Start streaming credentials
                 },
                 {
-                    _viewState.postValue(ViewState.ERROR)
+                    _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
             )
@@ -176,9 +176,9 @@ class CredentialsViewModel : ViewModel() {
     // TODO: Should this be renamed to CredentialState instead?
     enum class ViewState {
         NOT_LOADING,
+        WAITING_FOR_AUTHENTICATION,
         UPDATING,
         UPDATED,
-        ERROR,
         SUPPLEMENTAL_INFO
     }
 }

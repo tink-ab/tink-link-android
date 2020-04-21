@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
@@ -12,7 +13,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
@@ -56,6 +56,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     private val consentViewModel: ConsentViewModel by viewModels()
 
     private var bankIdActionType: Int = BANK_ID_ACTION_SAME_DEVICE
+    private var statusDialog: AlertDialog? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -150,26 +151,37 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
-                CredentialsViewModel.ViewState.UPDATING,
-                CredentialsViewModel.ViewState.ERROR -> {
-                    // TODO: Implement dialog
+                CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
+                    showLoading(getString(R.string.tink_credentials_status_authorizing_text))
+                }
+
+                CredentialsViewModel.ViewState.UPDATING -> {
+                    showLoading(
+                        getString(
+                            R.string.tink_credentials_status_updating_text,
+                            provider.displayName
+                        )
+                    )
                 }
 
                 CredentialsViewModel.ViewState.UPDATED -> {
-                    loadingGroup.visibility = View.GONE
+                    statusDialog?.dismiss()
                     showConnectionSuccessfulScreen()
                 }
 
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
                     viewModel.credentialsId.value?.let {
-                        loadingGroup.visibility = View.GONE
+                        // TODO: This should be moved out and use NOT_LOADING view state
+                        statusDialog?.dismiss()
                         showSupplementalInfoDialog(it)
                     }
                 }
 
-                else -> {
-                    loadingGroup.visibility = View.GONE
+                CredentialsViewModel.ViewState.NOT_LOADING -> {
+                    statusDialog?.dismiss()
                 }
+
+                else -> { }
             }
         })
 
@@ -178,11 +190,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
                         viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        Snackbar.make(
-                            view,
-                            R.string.tink_third_party_authentication_download_app_negative_error,
-                            Snackbar.LENGTH_LONG
-                        ).show()
+                        showError(getString(R.string.tink_third_party_authentication_download_app_negative_error))
                     }
                 }
             }
@@ -196,7 +204,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
         viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { statusPayload ->
-                Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
+                showError(statusPayload)
             }
         })
     }
@@ -260,7 +268,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun createCredential() {
         if (areFieldsValid()) {
-            loadingGroup.visibility = View.VISIBLE
+            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
 
             val fields = credentialFields.children
@@ -269,18 +277,43 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 .toList()
 
             viewModel.createCredential(provider, fields) { error ->
-                view?.let { view ->
-                    val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
-                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                }
+                val message = error.localizedMessage ?: error.message
+                ?: getString(R.string.tink_error_unknown)
+                showError(message)
             }
         }
     }
 
+    private fun showError(message: String) {
+        statusDialog?.dismiss()
+        statusDialog = CredentialsStatusDialog
+            .create(
+                requireContext(),
+                CredentialsStatusDialog.Type.ERROR,
+                message
+            ) {
+                statusDialog?.dismiss()
+            }
+            .also { it.show() }
+    }
+
+    private fun showLoading(message: String, onCancel: (() -> Unit)? = null) {
+        statusDialog?.dismiss()
+        statusDialog = CredentialsStatusDialog
+            .create(
+                requireContext(),
+                CredentialsStatusDialog.Type.LOADING,
+                message
+            ) {
+                onCancel?.invoke()
+                statusDialog?.dismiss()
+            }
+            .also { it.show() }
+    }
+
     private fun updateCredential() {
         if (areFieldsValid()) {
-            loadingGroup.visibility = View.VISIBLE
+            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
         }
 
@@ -290,11 +323,9 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             .toList()
 
         viewModel.updateCredential(requireNotNull(updateArgs).credentialId, fields) { error ->
-            view?.let { view ->
-                val message = error.localizedMessage ?: error.message
-                ?: getString(R.string.tink_error_unknown)
-                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-            }
+            val message = error.localizedMessage ?: error.message
+            ?: getString(R.string.tink_error_unknown)
+            showError(message)
         }
     }
 
@@ -309,12 +340,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     .newInstance(intent)
                     .show(childFragmentManager, null)
             } else {
-                view?.let {
-                    Snackbar.make(
-                        it,
-                        getString(R.string.tink_error_unknown),
-                        Snackbar.LENGTH_LONG).show()
-                }
+                showError(getString(R.string.tink_error_unknown))
             }
         }
     }
