@@ -177,6 +177,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
             // Pass the filled fields to the credentials repository to authorize the user.
             viewModel.updateCredentials(
                 requireNotNull(updateArgs).credentialsId,
+                provider,
                 fields,
                 it
             ) { error ->

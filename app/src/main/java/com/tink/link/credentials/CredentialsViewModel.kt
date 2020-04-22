@@ -159,6 +159,7 @@ class CredentialsViewModel : ViewModel() {
 
     fun updateCredentials(
         id: String,
+        provider: Provider,
         fields: List<Field>,
         credentialsRepository: CredentialsRepository,
         onError: (Throwable) -> Unit
@@ -179,6 +180,7 @@ class CredentialsViewModel : ViewModel() {
             }
         credentialsRepository.update(
             id,
+            provider.name,
             fields.toFieldMap(),
             ResultHandler(
                 { credentials ->
