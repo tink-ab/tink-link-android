@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import javax.inject.Inject
 
-internal class AuthenticationRepository @Inject constructor(
+internal class AccessRepository @Inject constructor(
     private val service: UserService
 ) {
 

@@ -5,19 +5,15 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
-import com.tink.link.core.authentication.AuthenticationRepository
+import com.tink.link.core.authentication.AccessRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
-import com.tink.link.coroutines.launchForResult
 import com.tink.model.user.Scope
 import com.tink.service.authentication.user.User
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
 import dagger.Component
 import dagger.Subcomponent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 
 @Component(
     dependencies = [TinkComponent::class]
@@ -36,7 +32,7 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val consentContext: ConsentContext
 
-    internal abstract val authenticationRepository: AuthenticationRepository
+    internal abstract val accessRepository: AccessRepository
 
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
@@ -48,7 +44,7 @@ internal abstract class TinkLinkComponent {
             thirdPartyCallbackHandler.handleUri(uri, resultHandler)
 
         override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) {
-            authenticationRepository.authorize(scopes, resultHandler)
+            accessRepository.authorize(scopes, resultHandler)
         }
 
     }
@@ -70,7 +66,7 @@ internal abstract class TinkLinkComponent {
 //    }
 
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
-        authenticationRepository.authenticate(authenticationCode, resultHandler)
+        accessRepository.authenticate(authenticationCode, resultHandler)
     }
 
     companion object {
