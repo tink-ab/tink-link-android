@@ -27,8 +27,10 @@ internal object CredentialsStatusDialog {
                     loadingMessage.text = message
                     cancelButton.text =
                         if (type == Type.LOADING) {
+                            loadingProgress.visibility = View.VISIBLE
                             context.getString(R.string.tink_credentials_status_dialog_cancel_button)
                         } else {
+                            loadingProgress.visibility = View.GONE
                             context.getString(R.string.tink_credentials_status_dialog_ok_button)
                         }
                     cancelButton.setOnClickListener {
