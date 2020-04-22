@@ -4,10 +4,10 @@ import android.app.Dialog
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.core.view.children
-import androidx.core.view.updatePadding
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import com.tink.link.ui.R
+import com.tink.link.ui.extensions.toView
 import com.tink.model.misc.Field
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
@@ -44,14 +44,7 @@ class SupplementalInformationFragment : DialogFragment() {
                     supplementalFieldsContainer.removeAllViews()
                 }
                 for (field in fields) {
-                    supplementalFieldsContainer
-                        .addView(
-                            CredentialField(requireContext())
-                                .also {
-                                    it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
-                                    it.setupField(field)
-                                }
-                        )
+                    supplementalFieldsContainer.addView(field.toView(context))
                 }
             }
 
@@ -59,7 +52,7 @@ class SupplementalInformationFragment : DialogFragment() {
                 val filledFields =
                     supplementalFieldsContainer
                         .children
-                        .filterIsInstance(CredentialField::class.java)
+                        .filterIsInstance(CredentialsField::class.java)
                         .map { it.getFilledField() }
                         .toList()
                 supplementalInformationViewModel.sendSupplementalInformation(

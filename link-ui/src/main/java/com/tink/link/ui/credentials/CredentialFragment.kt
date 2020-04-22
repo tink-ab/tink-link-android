@@ -7,7 +7,6 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.children
-import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -22,6 +21,7 @@ import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
+import com.tink.link.ui.extensions.toView
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -110,13 +110,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 credentialFields.removeAllViews()
             }
             for (field in fieldList) {
-                credentialFields
-                    .addView(
-                        CredentialField(requireContext())
-                            .also {
-                                it.updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credential_field_padding_bottom))
-                                it.setupField(field)
-                            })
+                credentialFields.addView(field.toView(requireContext()))
             }
         })
 
@@ -241,7 +235,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun areFieldsValid(): Boolean {
         return credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+            .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
     }
 
@@ -251,7 +245,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             hideKeyboard()
 
             val fields = credentialFields.children
-                .filterIsInstance(CredentialField::class.java)
+                .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
 
@@ -272,7 +266,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         }
 
         val fields = credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+            .filterIsInstance(CredentialsField::class.java)
             .map { it.getFilledField() }
             .toList()
 
