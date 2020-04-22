@@ -205,7 +205,9 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
         viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { statusPayload ->
-                showError(statusPayload)
+                val message =
+                    statusPayload.takeIf { !it.isBlank() } ?: getString(R.string.tink_error_unknown)
+                showError(message)
             }
         })
     }
