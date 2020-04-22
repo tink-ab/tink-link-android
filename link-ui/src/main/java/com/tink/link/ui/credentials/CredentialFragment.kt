@@ -252,10 +252,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     }
 
     private fun submitFilledFields() {
-        if (updateArgs?.credentialId.isNullOrEmpty()) {
+        val credentialsId = updateArgs?.credentialId ?: viewModel.credentialsId.value
+        if (credentialsId.isNullOrEmpty()) {
             createCredential()
         } else {
-            updateCredential()
+            updateCredential(credentialsId)
         }
     }
 
@@ -310,7 +311,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             .also { it.show() }
     }
 
-    private fun updateCredential() {
+    private fun updateCredential(credentialsId: String) {
         if (areFieldsValid()) {
             showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
@@ -321,7 +322,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             .map { it.getFilledField() }
             .toList()
 
-        viewModel.updateCredential(requireNotNull(updateArgs).credentialId, fields) { error ->
+        viewModel.updateCredential(credentialsId, fields) { error ->
             val message = error.localizedMessage ?: error.message
             ?: getString(R.string.tink_error_unknown)
             showError(message)
