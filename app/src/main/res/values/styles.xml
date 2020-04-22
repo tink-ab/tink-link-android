@@ -16,8 +16,8 @@
   </style>
 
   <style name="TinkStyle_ChewingGum" parent="TinkLinkUiStyle">
-    <item name="tink_colorBackground">#343035</item>
-    <item name="tink_colorSurface">#29262A</item>
+    <item name="tink_colorBackground">#29262A</item>
+    <item name="tink_colorSurface">#343035</item>
     <item name="tink_colorSecondary">#e8a9e0</item>
     <item name="tink_colorPrimary">#e8a9e0</item>
     <item name="tink_colorOnPrimary">#343035</item>
