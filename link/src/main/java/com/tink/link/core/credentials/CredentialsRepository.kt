@@ -1,14 +1,19 @@
 package com.tink.link.core.credentials
 
+import com.tink.link.coroutines.launchForResult
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import com.tink.service.credentials.CredentialsCreationDescriptor
+import com.tink.service.credentials.CredentialsRefreshDescriptor
 import com.tink.service.credentials.CredentialsService
 import com.tink.service.credentials.CredentialsUpdateDescriptor
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.Stream
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import javax.inject.Inject
 
 /**
@@ -21,6 +26,8 @@ class CredentialsRepository @Inject constructor(
     private val service: CredentialsService,
     private val tinkConfiguration: TinkConfiguration
 ) {
+
+    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     /**
      * Returns a [Stream] containing the list of [Credentials] objects.
@@ -45,14 +52,16 @@ class CredentialsRepository @Inject constructor(
         fields: Map<String, String>,
         resultHandler: ResultHandler<Credentials>
     ) {
-        service.create(
-            CredentialsCreationDescriptor(
-                providerName,
-                credentialsType,
-                fields,
-                tinkConfiguration.redirectUri
-            ), resultHandler
-        )
+        scope.launchForResult(resultHandler) {
+            service.create(
+                CredentialsCreationDescriptor(
+                    providerName,
+                    credentialsType,
+                    fields,
+                    tinkConfiguration.redirectUri
+                )
+            )
+        }
     }
 
     /**
@@ -66,16 +75,20 @@ class CredentialsRepository @Inject constructor(
      */
     fun update(
         credentialsId: String,
+        providerName: String,
         fields: Map<String, String>,
         resultHandler: ResultHandler<Credentials>
     ) {
-        service.update(
-            CredentialsUpdateDescriptor(
-                credentialsId,
-                fields,
-                tinkConfiguration.redirectUri
-            ), resultHandler
-        )
+        scope.launchForResult(resultHandler) {
+            service.update(
+                CredentialsUpdateDescriptor(
+                    id = credentialsId,
+                    providerName = providerName,
+                    fields = fields,
+                    appUri = tinkConfiguration.redirectUri
+                )
+            )
+        }
     }
 
     /**
@@ -85,7 +98,12 @@ class CredentialsRepository @Inject constructor(
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
     fun refresh(credentialsIds: List<String>, resultHandler: ResultHandler<Unit>) {
-        service.refresh(credentialsIds, resultHandler)
+        //TODO: Refresh logic for multiple credentials
+        scope.launchForResult(resultHandler) {
+            for (id in credentialsIds) {
+                service.refresh(CredentialsRefreshDescriptor(id))
+            }
+        }
     }
 
     /**
@@ -95,15 +113,21 @@ class CredentialsRepository @Inject constructor(
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
     fun delete(credentialsId: String, resultHandler: ResultHandler<Unit>) {
-        service.delete(credentialsId, resultHandler)
+        scope.launchForResult(resultHandler) {
+            service.delete(credentialsId)
+        }
     }
 
     private fun enable(credentialsId: String, resultHandler: ResultHandler<Unit>) {
-        service.enable(credentialsId, resultHandler)
+        scope.launchForResult(resultHandler) {
+            service.enable(credentialsId)
+        }
     }
 
     private fun disable(credentialsId: String, resultHandler: ResultHandler<Unit>) {
-        service.disable(credentialsId, resultHandler)
+        scope.launchForResult(resultHandler) {
+            service.disable(credentialsId)
+        }
     }
 
     /**
@@ -118,7 +142,9 @@ class CredentialsRepository @Inject constructor(
         information: Map<String, String>,
         handler: ResultHandler<Unit>
     ) {
-        service.supplementInformation(credentialsId, information, handler)
+        scope.launchForResult(handler) {
+            service.supplementInformation(credentialsId, information)
+        }
     }
 
     /**
@@ -130,7 +156,9 @@ class CredentialsRepository @Inject constructor(
      * @param handler The [ResultHandler] for processing error and success callbacks
      */
     fun cancelSupplementalInformation(credentialsId: String, handler: ResultHandler<Unit>) {
-        service.cancelSupplementalInformation(credentialsId, handler)
+        scope.launchForResult(handler) {
+            service.cancelSupplementalInformation(credentialsId)
+        }
     }
 
     /**
@@ -147,6 +175,8 @@ class CredentialsRepository @Inject constructor(
         parameters: Map<String, String>,
         handler: ResultHandler<Unit>
     ) {
-        service.thirdPartyCallback(state, parameters, handler)
+        scope.launchForResult(handler) {
+            service.thirdPartyCallback(state, parameters)
+        }
     }
 }
