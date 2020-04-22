@@ -5,14 +5,19 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
+import com.tink.link.core.authentication.AuthenticationRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
+import com.tink.link.coroutines.launchForResult
+import com.tink.model.user.Scope
 import com.tink.service.authentication.user.User
-import com.tink.service.authorization.Scope
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
 import dagger.Component
 import dagger.Subcomponent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 
 @Component(
     dependencies = [TinkComponent::class]
@@ -31,6 +36,8 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val consentContext: ConsentContext
 
+    internal abstract val authenticationRepository: AuthenticationRepository
+
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
             get() = repositories.providerRepository
@@ -40,8 +47,9 @@ internal abstract class TinkLinkComponent {
         override fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>?) =
             thirdPartyCallbackHandler.handleUri(uri, resultHandler)
 
-        override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) =
-            userService.authorize(scopes, resultHandler)
+        override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) {
+            authenticationRepository.authorize(scopes, resultHandler)
+        }
 
     }
 
@@ -53,25 +61,16 @@ internal abstract class TinkLinkComponent {
 //     *
 //     * On a successful result, your resultHandler should call [Tink.setUser] to set this user to the Tink instance.
 //     */
-//    private fun createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) {
-//        authenticationRepository.createAnonymousUser(
-//            market,
-//            locale,
-//            ResultHandler(
-//                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
-//                resultHandler.onError
-//            )
-//        )
+//    fun createTemporaryUser(
+//        market: String,
+//        locale: String,
+//        resultHandler: ResultHandler<User>
+//    ) {
+//        authenticationRepository.createAnonymousUser(market, locale, resultHandler)
 //    }
 
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
-        userService.authenticate(
-            authenticationCode,
-            ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User.fromAccessToken(accessToken)) },
-                resultHandler.onError
-            )
-        )
+        authenticationRepository.authenticate(authenticationCode, resultHandler)
     }
 
     companion object {
