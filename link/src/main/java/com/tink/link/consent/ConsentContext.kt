@@ -1,10 +1,14 @@
 package com.tink.link.consent
 
 import android.net.Uri
-import com.tink.service.authorization.Scope
+import com.tink.link.coroutines.launchForResult
+import com.tink.model.consent.ScopeDescription
+import com.tink.model.user.Scope
 import com.tink.service.consent.ConsentService
-import com.tink.service.consent.ScopeDescription
 import com.tink.service.handler.ResultHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import java.util.Locale
 import javax.inject.Inject
 
@@ -14,6 +18,8 @@ import javax.inject.Inject
 class ConsentContext @Inject constructor(
     private val consentService: ConsentService
 ) {
+
+    val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     /**
      * Get a link to the Terms & Conditions for Tink Link.
@@ -49,6 +55,8 @@ class ConsentContext @Inject constructor(
         scopes: Set<Scope>,
         resultHandler: ResultHandler<List<ScopeDescription>>
     ) {
-        consentService.scopeDescriptions(scopes, resultHandler)
+        scope.launchForResult(resultHandler) {
+            consentService.describeClient(scopes).scopeDescriptions
+        }
     }
 }
