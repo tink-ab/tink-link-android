@@ -33,7 +33,7 @@ class CredentialsViewModel : ViewModel() {
         credentialsRepository = userContext.credentialRepository
     }
 
-    private var credentialStatus: CredentialStatusModel? = null
+    private var credentialsStatus: CredentialsStatusModel? = null
 
     /**
      * Combines the output of [credentialsId] and [credentials] to a [LiveData] that holds the
@@ -45,9 +45,9 @@ class CredentialsViewModel : ViewModel() {
         list.firstOrNull { it.id == id }
             ?.also { credential ->
                 val newStatusModel = credential.toStatusModel()
-                val oldStatusModel = credentialStatus
+                val oldStatusModel = credentialsStatus
                 if (oldStatusModel == null || oldStatusModel.isNewStatus(newStatusModel)) {
-                    credentialStatus = newStatusModel
+                    credentialsStatus = newStatusModel
                     when (credential.status) {
                         Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION -> {
                             credential.thirdPartyAppAuthentication
@@ -194,13 +194,13 @@ class CredentialsViewModel : ViewModel() {
     }
 }
 
-data class CredentialStatusModel(
+data class CredentialsStatusModel(
     val status: Credential.Status?,
     val statusUpdated: Instant
 )
 
 private fun Credential.toStatusModel() =
-    CredentialStatusModel(status, statusUpdated)
+    CredentialsStatusModel(status, statusUpdated)
 
-private fun CredentialStatusModel.isNewStatus(other: CredentialStatusModel) =
+private fun CredentialsStatusModel.isNewStatus(other: CredentialsStatusModel) =
     status != other.status || statusUpdated < other.statusUpdated
