@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.updatePadding
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
 import com.tink.model.misc.Field
@@ -41,6 +42,7 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
 
     override fun setupField(field: Field) {
         this.field = field
+        updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         textInputLayout.hint = field.attributes.description +
                 " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
@@ -100,6 +102,7 @@ internal class ImmutableCredentialsField : ConstraintLayout, CredentialsField {
 
     override fun setupField(field: Field) {
         this.field = field
+        updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         description.text = field.attributes.description
         filledValue.text = field.value
         helpText.text = field.attributes.helpText
