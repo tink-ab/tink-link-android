@@ -5,7 +5,6 @@ import android.text.InputFilter
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
-import android.view.View
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.updatePadding
@@ -19,7 +18,6 @@ internal interface CredentialsField {
     fun setupField(field: Field)
     fun validateContent(): Boolean
     fun getFilledField(): Field
-    fun getView(): View
 }
 
 internal class MutableCredentialsField : LinearLayout, CredentialsField {
@@ -37,8 +35,6 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
         inflate(R.layout.tink_view_credentials_field, true)
         orientation = VERTICAL
     }
-
-    override fun getView(): View = this
 
     override fun setupField(field: Field) {
         this.field = field
@@ -97,8 +93,6 @@ internal class ImmutableCredentialsField : ConstraintLayout, CredentialsField {
     init {
         inflate(R.layout.tink_view_credentials_field_immutable, true)
     }
-
-    override fun getView(): View = this
 
     override fun setupField(field: Field) {
         this.field = field
