@@ -69,9 +69,9 @@ class BankIdOtherDeviceFragment : DialogFragment() {
     }
 
     companion object {
-        fun getBundle(bankIdUri: String) =
-            bundleOf(
-                BANK_ID_URI_ARG to bankIdUri
-            )
+        fun newInstance(bankIdUri: String) =
+            BankIdOtherDeviceFragment().apply {
+                arguments = bundleOf(BANK_ID_URI_ARG to bankIdUri)
+            }
     }
 }

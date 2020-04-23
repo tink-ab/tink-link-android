@@ -301,10 +301,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         } else {
             val intent = thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
-                BankIdOtherDeviceFragment()
-                    .apply {
-                        arguments = BankIdOtherDeviceFragment.getBundle(intent)
-                    }
+                BankIdOtherDeviceFragment
+                    .newInstance(intent)
                     .show(childFragmentManager, null)
             } else {
                 view?.let {
