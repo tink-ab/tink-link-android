@@ -63,11 +63,7 @@ class SupplementalInformationFragment : DialogFragment() {
             }
 
             cancelButton.setOnClickListener {
-                supplementalInformationViewModel.sendSupplementalInformation(
-                    fields = emptyList(),
-                    onSuccess = {},
-                    onError = {}
-                )
+                supplementalInformationViewModel.cancelSupplementalInformation()
                 dismiss()
             }
 
