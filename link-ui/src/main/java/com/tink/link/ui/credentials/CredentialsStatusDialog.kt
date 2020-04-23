@@ -20,26 +20,25 @@ internal object CredentialsStatusDialog {
         message: String,
         onDismiss: (() -> Unit)? = null
     ): AlertDialog {
-        return MaterialAlertDialogBuilder(context, R.style.Tink_MaterialAlertDialogStyle)
+        val view = View
+            .inflate(context, R.layout.tink_dialog_credentials_status, null)
             .apply {
-                val view = View.inflate(context, R.layout.tink_dialog_credentials_status, null)
-                view.apply {
-                    loadingMessage.text = message
-                    cancelButton.text =
-                        if (type == Type.LOADING) {
-                            loadingProgress.visibility = View.VISIBLE
-                            context.getString(R.string.tink_credentials_status_dialog_cancel_button)
-                        } else {
-                            loadingProgress.visibility = View.GONE
-                            context.getString(R.string.tink_credentials_status_dialog_ok_button)
-                        }
-                    cancelButton.setOnClickListener {
-                        onDismiss?.invoke()
+                loadingMessage.text = message
+                cancelButton.text =
+                    if (type == Type.LOADING) {
+                        loadingProgress.visibility = View.VISIBLE
+                        context.getString(R.string.tink_credentials_status_dialog_cancel_button)
+                    } else {
+                        loadingProgress.visibility = View.GONE
+                        context.getString(R.string.tink_credentials_status_dialog_ok_button)
                     }
+                cancelButton.setOnClickListener {
+                    onDismiss?.invoke()
                 }
-                setView(view)
-                setCancelable(false)
             }
+        return MaterialAlertDialogBuilder(context, R.style.Tink_MaterialAlertDialogStyle)
+            .setView(view)
+            .setCancelable(false)
             .create()
     }
 }
