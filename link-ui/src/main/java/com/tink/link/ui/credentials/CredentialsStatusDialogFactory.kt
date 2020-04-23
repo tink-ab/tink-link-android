@@ -7,14 +7,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.tink.link.ui.R
 import kotlinx.android.synthetic.main.tink_dialog_credentials_status.view.*
 
-internal object CredentialsStatusDialog {
+internal object CredentialsStatusDialogFactory {
 
     enum class Type {
         LOADING,
         ERROR
     }
 
-    fun create(
+    fun createDialog(
         context: Context,
         type: Type,
         message: String,

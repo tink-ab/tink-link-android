@@ -288,10 +288,10 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun showError(message: String) {
         statusDialog?.dismiss()
-        statusDialog = CredentialsStatusDialog
-            .create(
+        statusDialog = CredentialsStatusDialogFactory
+            .createDialog(
                 requireContext(),
-                CredentialsStatusDialog.Type.ERROR,
+                CredentialsStatusDialogFactory.Type.ERROR,
                 message
             ) {
                 statusDialog?.dismiss()
@@ -301,10 +301,10 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun showLoading(message: String, onCancel: (() -> Unit)? = null) {
         statusDialog?.dismiss()
-        statusDialog = CredentialsStatusDialog
-            .create(
+        statusDialog = CredentialsStatusDialogFactory
+            .createDialog(
                 requireContext(),
-                CredentialsStatusDialog.Type.LOADING,
+                CredentialsStatusDialogFactory.Type.LOADING,
                 message
             ) {
                 onCancel?.invoke()
