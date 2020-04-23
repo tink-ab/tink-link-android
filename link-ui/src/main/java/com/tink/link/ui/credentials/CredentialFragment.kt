@@ -22,6 +22,7 @@ import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
+import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credential.Credential
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -33,6 +34,9 @@ import timber.log.Timber
 private const val PROVIDER_ARGS = "PROVIDER"
 
 private const val UPDATE_ARGS = "UPDATE_ARGS"
+
+private const val BANK_ID_ACTION_SAME_DEVICE = 1
+private const val BANK_ID_ACTION_OTHER_DEVICE = 2
 
 /**
  * Responsible for displaying the fields that the user should fill their credentials into
@@ -50,6 +54,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private val viewModel: CredentialsViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
+
+    private var bankIdActionType: Int = BANK_ID_ACTION_SAME_DEVICE
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -114,13 +120,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             }
         })
 
-        createCredentialBtn.setOnClickListener {
-            if (updateArgs?.credentialId.isNullOrEmpty()) {
-                createCredential()
-            } else {
-                updateCredential()
-            }
-        }
+        createCredentialBtn.setOnClickListener { submitFilledFields() }
 
         if (provider.credentialType == Credential.Type.MOBILE_BANKID) {
             createCredentialBtn.visibility = View.GONE
@@ -128,11 +128,13 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         }
 
         bankIdButton.setOnClickListener {
-            // TODO: Add button logic
+            bankIdActionType = BANK_ID_ACTION_SAME_DEVICE
+            submitFilledFields()
         }
 
         bankIdOtherDeviceButton.setOnClickListener {
-            // TODO: Add button logic
+            bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
+            submitFilledFields()
         }
 
         viewModel.credentials.observe(viewLifecycleOwner, Observer {
@@ -147,7 +149,6 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
-            loadingGroup.visibility = View.GONE
             when (state) {
                 CredentialsViewModel.ViewState.UPDATING,
                 CredentialsViewModel.ViewState.UPDATED,
@@ -155,15 +156,15 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     navigateToCredentialStatusScreen()
                 }
 
-                CredentialsViewModel.ViewState.THIRD_PARTY_AUTHENTICATION -> {
-                    // TODO: Show third party authentication screen
-                }
-
                 CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    viewModel.credentialsId.value?.let { showSupplementalInfoDialog(it) }
+                    viewModel.credentialsId.value?.let {
+                        loadingGroup.visibility = View.GONE
+                        showSupplementalInfoDialog(it)
+                    }
                 }
 
                 else -> {
+                    loadingGroup.visibility = View.GONE
                 }
             }
         })
@@ -180,6 +181,12 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                         ).show()
                     }
                 }
+            }
+        })
+
+        viewModel.mobileBankIdAuthenticationEvent.observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
+                launchBankIdAuthentication(thirdPartyAuthentication)
             }
         })
 
@@ -233,6 +240,14 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         }
     }
 
+    private fun submitFilledFields() {
+        if (updateArgs?.credentialId.isNullOrEmpty()) {
+            createCredential()
+        } else {
+            updateCredential()
+        }
+    }
+
     private fun areFieldsValid(): Boolean {
         return credentialFields.children
             .filterIsInstance(CredentialsField::class.java)
@@ -279,7 +294,28 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         }
     }
 
+    private fun launchBankIdAuthentication(thirdPartyAppAuthentication: ThirdPartyAppAuthentication) {
+        if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
+            // TODO: Update this flow to match design
+            thirdPartyAppAuthentication.launch(requireActivity(), {})
+        } else {
+            val intent = thirdPartyAppAuthentication.android?.intent
+            if (!intent.isNullOrEmpty()) {
+                BankIdOtherDeviceFragment
+                    .newInstance(intent)
+                    .show(childFragmentManager, null)
+            } else {
+                view?.let {
+                    Snackbar.make(
+                        it,
+                        getString(R.string.tink_error_unknown),
+                        Snackbar.LENGTH_LONG).show()
+                }
+            }
+        }
+    }
     private fun navigateToCredentialStatusScreen() {
+        loadingGroup.visibility = View.GONE
         findNavController().navigate(
             R.id.credentialsStatusFragment,
             CredentialsStatusFragment.getBundle(provider.displayName)

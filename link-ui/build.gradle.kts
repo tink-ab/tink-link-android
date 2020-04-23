@@ -64,6 +64,8 @@ dependencies {
     implementation(Dependencies.picasso)
 
     implementation(Dependencies.Androidx.browser)
+
+    implementation(Dependencies.zxing)
 }
 
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804

@@ -45,4 +45,7 @@
   <string name="tink_credentials_supplemental_information">Supplemental Information</string>
   <string name="tink_credentials_supplemental_information_submit_button">Submit</string>
   <string name="tink_credentials_supplemental_information_cancel_button">Cancel</string>
+  <string name="tink_credentials_qr_code_title">Open the Bank ID app</string>
+  <string name="tink_credentials_qr_code_description">Open the Mobile Bank ID app and scan this QR code to authenticate</string>
+  <string name="tink_credentials_qr_code_error_message">There is a problem with loading the QR code. Please try again later.</string>
 </resources>
