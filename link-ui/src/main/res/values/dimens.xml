@@ -23,6 +23,6 @@
   <dimen name="tink_dialog_padding">24dp</dimen>
   <dimen name="tink_credentials_field_padding_bottom">20dp</dimen>
 
-  <dimen name="tink_credentials_qr_code_size">156dp</dimen>
+  <dimen name="tink_qr_code_size">156dp</dimen>
 
 </resources>

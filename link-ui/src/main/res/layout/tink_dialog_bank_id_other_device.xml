@@ -21,8 +21,8 @@
 
   <ImageView
     android:id="@+id/qrCode"
-    android:layout_width="@dimen/tink_credentials_qr_code_size"
-    android:layout_height="@dimen/tink_credentials_qr_code_size"
+    android:layout_width="@dimen/tink_qr_code_size"
+    android:layout_height="@dimen/tink_qr_code_size"
     android:layout_marginTop="76dp"
     android:background="@drawable/tink_qr_code_background"
     android:padding="8dp"
