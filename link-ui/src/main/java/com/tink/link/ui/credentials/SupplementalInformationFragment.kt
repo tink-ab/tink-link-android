@@ -78,10 +78,13 @@ class SupplementalInformationFragment : DialogFragment() {
     }
 
     companion object {
-        fun getBundle(credentialsId: String, supplementalFields: List<Field>) =
-            bundleOf(
-                CREDENTIALS_ID_ARG to credentialsId,
-                SUPPLEMENTAL_FIELDS_ARG to supplementalFields
-            )
+        fun newInstance(credentialsId: String, supplementalFields: List<Field>) =
+            SupplementalInformationFragment()
+                .apply {
+                    arguments = bundleOf(
+                        CREDENTIALS_ID_ARG to credentialsId,
+                        SUPPLEMENTAL_FIELDS_ARG to supplementalFields
+                    )
+                }
     }
 }

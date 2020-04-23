@@ -245,11 +245,8 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     }
 
     private fun showSupplementalInfoDialog(credentialsId: String, supplementalFields: List<Field>) {
-        SupplementalInformationFragment()
-            .apply {
-                arguments =
-                    SupplementalInformationFragment.getBundle(credentialsId, supplementalFields)
-            }
+        SupplementalInformationFragment
+            .newInstance(credentialsId, supplementalFields)
             .show(childFragmentManager, null)
     }
 
