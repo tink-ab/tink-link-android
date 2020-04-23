@@ -56,17 +56,17 @@ class SupplementalInformationFragment : DialogFragment() {
                         .map { it.getFilledField() }
                         .toList()
                 supplementalInformationViewModel.sendSupplementalInformation(
-                    filledFields,
-                    { dismiss() },
-                    { }
+                    fields = filledFields,
+                    onSuccess = { dismiss() },
+                    onError = { }
                 )
             }
 
             cancelButton.setOnClickListener {
                 supplementalInformationViewModel.sendSupplementalInformation(
-                    emptyList(),
-                    {},
-                    {}
+                    fields = emptyList(),
+                    onSuccess = {},
+                    onError = {}
                 )
                 dismiss()
             }
