@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
@@ -12,7 +13,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
@@ -24,6 +24,7 @@ import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credential.Credential
+import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credential.*
@@ -56,6 +57,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     private val consentViewModel: ConsentViewModel by viewModels()
 
     private var bankIdActionType: Int = BANK_ID_ACTION_SAME_DEVICE
+    private var statusDialog: AlertDialog? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -150,22 +152,29 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
-                CredentialsViewModel.ViewState.UPDATING,
-                CredentialsViewModel.ViewState.UPDATED,
-                CredentialsViewModel.ViewState.ERROR -> {
-                    navigateToCredentialStatusScreen()
+                CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
+                    showLoading(getString(R.string.tink_credentials_status_authorizing_text))
                 }
 
-                CredentialsViewModel.ViewState.SUPPLEMENTAL_INFO -> {
-                    viewModel.credentialsId.value?.let {
-                        loadingGroup.visibility = View.GONE
-                        showSupplementalInfoDialog(it)
-                    }
+                CredentialsViewModel.ViewState.UPDATING -> {
+                    showLoading(
+                        getString(
+                            R.string.tink_credentials_status_updating_text,
+                            provider.displayName
+                        )
+                    )
                 }
 
-                else -> {
-                    loadingGroup.visibility = View.GONE
+                CredentialsViewModel.ViewState.UPDATED -> {
+                    statusDialog?.dismiss()
+                    showConnectionSuccessfulScreen()
                 }
+
+                CredentialsViewModel.ViewState.NOT_LOADING -> {
+                    statusDialog?.dismiss()
+                }
+
+                else -> { }
             }
         })
 
@@ -174,11 +183,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
                         viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        Snackbar.make(
-                            view,
-                            R.string.tink_third_party_authentication_download_app_negative_error,
-                            Snackbar.LENGTH_LONG
-                        ).show()
+                        showError(getString(R.string.tink_third_party_authentication_download_app_negative_error))
                     }
                 }
             }
@@ -190,9 +195,19 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             }
         })
 
+        viewModel.supplementalInformationEvent.observe(viewLifecycleOwner, Observer { event ->
+            event.getContentIfNotHandled()?.let { supplementalInformation ->
+                viewModel.credentialsId.value?.let { credentialsId ->
+                    showSupplementalInfoDialog(credentialsId, supplementalInformation)
+                }
+            }
+        })
+
         viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { statusPayload ->
-                Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
+                val message =
+                    statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
+                showError(message)
             }
         })
     }
@@ -229,22 +244,18 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         )
     }
 
-    private fun showSupplementalInfoDialog(credentialsId: String) {
-        viewModel.supplementalFields.value?.let { supplementalFields ->
-            SupplementalInformationFragment()
-                .apply {
-                    arguments =
-                        SupplementalInformationFragment.getBundle(credentialsId, supplementalFields)
-                }
-                .show(childFragmentManager, null)
-        }
+    private fun showSupplementalInfoDialog(credentialsId: String, supplementalFields: List<Field>) {
+        SupplementalInformationFragment
+            .newInstance(credentialsId, supplementalFields)
+            .show(childFragmentManager, null)
     }
 
     private fun submitFilledFields() {
-        if (updateArgs?.credentialId.isNullOrEmpty()) {
+        val credentialsId = updateArgs?.credentialId ?: viewModel.credentialsId.value
+        if (credentialsId.isNullOrEmpty()) {
             createCredential()
         } else {
-            updateCredential()
+            updateCredential(credentialsId)
         }
     }
 
@@ -256,7 +267,7 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
 
     private fun createCredential() {
         if (areFieldsValid()) {
-            loadingGroup.visibility = View.VISIBLE
+            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
 
             val fields = credentialFields.children
@@ -265,18 +276,43 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                 .toList()
 
             viewModel.createCredential(provider, fields) { error ->
-                view?.let { view ->
-                    val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
-                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                }
+                val message = error.localizedMessage ?: error.message
+                ?: getString(R.string.tink_error_unknown)
+                showError(message)
             }
         }
     }
 
-    private fun updateCredential() {
+    private fun showError(message: String) {
+        statusDialog?.dismiss()
+        statusDialog = CredentialsStatusDialogFactory
+            .createDialog(
+                requireContext(),
+                CredentialsStatusDialogFactory.Type.ERROR,
+                message
+            ) {
+                statusDialog?.dismiss()
+            }
+            .also { it.show() }
+    }
+
+    private fun showLoading(message: String, onCancel: (() -> Unit)? = null) {
+        statusDialog?.dismiss()
+        statusDialog = CredentialsStatusDialogFactory
+            .createDialog(
+                requireContext(),
+                CredentialsStatusDialogFactory.Type.LOADING,
+                message
+            ) {
+                onCancel?.invoke()
+                statusDialog?.dismiss()
+            }
+            .also { it.show() }
+    }
+
+    private fun updateCredential(credentialsId: String) {
         if (areFieldsValid()) {
-            loadingGroup.visibility = View.VISIBLE
+            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
         }
 
@@ -285,18 +321,15 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             .map { it.getFilledField() }
             .toList()
 
-        viewModel.updateCredential(requireNotNull(updateArgs).credentialId, fields) { error ->
-            view?.let { view ->
-                val message = error.localizedMessage ?: error.message
-                ?: getString(R.string.tink_error_unknown)
-                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-            }
+        viewModel.updateCredential(credentialsId, fields) { error ->
+            val message = error.localizedMessage ?: error.message
+            ?: getString(R.string.tink_error_unknown)
+            showError(message)
         }
     }
 
     private fun launchBankIdAuthentication(thirdPartyAppAuthentication: ThirdPartyAppAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
-            // TODO: Update this flow to match design
             thirdPartyAppAuthentication.launch(requireActivity(), {})
         } else {
             val intent = thirdPartyAppAuthentication.android?.intent
@@ -305,20 +338,14 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
                     .newInstance(intent)
                     .show(childFragmentManager, null)
             } else {
-                view?.let {
-                    Snackbar.make(
-                        it,
-                        getString(R.string.tink_error_unknown),
-                        Snackbar.LENGTH_LONG).show()
-                }
+                showError(getString(R.string.tink_error_unknown))
             }
         }
     }
-    private fun navigateToCredentialStatusScreen() {
-        loadingGroup.visibility = View.GONE
+    private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
-            R.id.credentialsStatusFragment,
-            CredentialsStatusFragment.getBundle(provider.displayName)
+            R.id.connectionSuccessfulFragment,
+            ConnectionSuccessfulFragment.getBundle(provider.displayName)
         )
     }
 

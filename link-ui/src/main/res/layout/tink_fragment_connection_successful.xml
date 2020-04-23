@@ -10,52 +10,62 @@
     android:id="@+id/toolbar"
     layout="@layout/tink_layout_toolbar" />
 
-  <ProgressBar
-    android:id="@+id/statusProgress"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:indeterminateTint="?tink_colorPrimary"
-    android:layout_marginBottom="8dp"
-    app:layout_constraintBottom_toTopOf="@id/statusMessage"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
-
   <ImageView
     android:id="@+id/successIcon"
     android:layout_width="40dp"
     android:layout_height="40dp"
     android:layout_marginBottom="8dp"
+    android:background="@drawable/tink_rounded_background"
+    android:backgroundTint="?tink_colorPrimary"
+    android:padding="6dp"
     android:src="@drawable/tink_done"
-    android:tint="?tink_colorPrimary"
-    android:visibility="gone"
-    app:layout_constraintBottom_toTopOf="@id/statusMessage"
+    android:tint="?tink_colorOnPrimary"
+    app:layout_constraintBottom_toTopOf="@id/successTitle"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
 
   <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/statusMessage"
-    style="@style/tink_deci.primary"
+    android:id="@+id/successTitle"
+    style="@style/tink_hecto.bold"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
     android:layout_marginStart="56dp"
+    android:layout_marginTop="16dp"
     android:layout_marginEnd="56dp"
     android:layout_marginBottom="20dp"
     android:gravity="center_horizontal"
+    android:text="@string/tink_connection_successful_title"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:text="@string/tink_credentials_status_success_description" />
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/successMessage"
+    style="@style/tink_deci.primary"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="56dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="56dp"
+    android:layout_marginBottom="20dp"
+    android:gravity="center_horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/successTitle"
+    tools:text="@string/tink_connection_successful_description" />
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/doneButton"
     style="@style/tink_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
     android:layout_marginBottom="32dp"
-    android:text="@string/tink_credentials_status_button_success"
-    android:visibility="gone"
+    android:text="@string/tink_connection_successful_done_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />

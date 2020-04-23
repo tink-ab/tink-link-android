@@ -16,6 +16,7 @@ import com.tink.service.handler.ResultHandler
 import com.tink.service.misc.toFieldMap
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
+import org.threeten.bp.Instant
 
 class CredentialsViewModel : ViewModel() {
 
@@ -32,6 +33,8 @@ class CredentialsViewModel : ViewModel() {
         credentialsRepository = userContext.credentialRepository
     }
 
+    private var credentialsStatus: CredentialsStatusModel? = null
+
     /**
      * Combines the output of [credentialsId] and [credentials] to a [LiveData] that holds the
      * [Credential] with the id held in [credentialsId].
@@ -41,37 +44,42 @@ class CredentialsViewModel : ViewModel() {
     val createdCredential = CombinedLiveData(credentialsId, credentials) { id, list ->
         list.firstOrNull { it.id == id }
             ?.also { credential ->
-                when (credential.status) {
-                    Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION -> {
-                        credential.thirdPartyAppAuthentication
-                            ?.let { _mobileBankIdAuthenticationEvent.postValue(Event(it)) }
-                            ?.also {
-                                _viewState.postValue(ViewState.NOT_LOADING)
-                            }
-                    }
-                    Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
-                        credential.thirdPartyAppAuthentication
-                            ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
-                            ?.also {
-                                _viewState.postValue(ViewState.NOT_LOADING)
-                            }
-                    }
+                val newStatusModel = credential.toStatusModel()
+                val oldStatusModel = credentialsStatus
+                if (oldStatusModel == null || oldStatusModel.isNewStatus(newStatusModel)) {
+                    credentialsStatus = newStatusModel
+                    when (credential.status) {
+                        Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION -> {
+                            credential.thirdPartyAppAuthentication
+                                ?.let { _mobileBankIdAuthenticationEvent.postValue(Event(it)) }
+                                ?.also {
+                                    _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                                }
+                        }
+                        Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
+                            credential.thirdPartyAppAuthentication
+                                ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
+                                ?.also {
+                                    _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                                }
+                        }
 
-                    Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                        _supplementalFields.postValue(credential.supplementalInformation)
-                        _viewState.postValue(ViewState.SUPPLEMENTAL_INFO)
-                    }
+                        Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
+                            _supplementalInformationEvent.postValue(Event(credential.supplementalInformation))
+                            _viewState.postValue(ViewState.NOT_LOADING)
+                        }
 
-                    Credential.Status.AUTHENTICATION_ERROR,
-                    Credential.Status.TEMPORARY_ERROR,
-                    Credential.Status.PERMANENT_ERROR -> {
-                        _viewState.postValue(ViewState.ERROR)
-                        credential.statusPayload?.let { _errorEvent.postValue(Event(it)) }
-                    }
+                        Credential.Status.AUTHENTICATION_ERROR,
+                        Credential.Status.TEMPORARY_ERROR,
+                        Credential.Status.PERMANENT_ERROR -> {
+                            _viewState.postValue(ViewState.NOT_LOADING)
+                            credential.statusPayload?.let { _errorEvent.postValue(Event(it)) }
+                        }
 
-                    Credential.Status.UPDATING -> _viewState.postValue(ViewState.UPDATING)
-                    Credential.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
-                    else -> {}
+                        Credential.Status.UPDATING -> _viewState.postValue(ViewState.UPDATING)
+                        Credential.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
+                        else -> {}
+                    }
                 }
             }
     }
@@ -91,6 +99,11 @@ class CredentialsViewModel : ViewModel() {
     val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
         _thirdPartyAuthenticationEvent
 
+    private val _supplementalInformationEvent =
+        MutableLiveData<Event<List<Field>>>()
+    val supplementalInformationEvent: LiveData<Event<List<Field>>> =
+        _supplementalInformationEvent
+
     private val _errorEvent = MutableLiveData<Event<String>>()
     val errorEvent: LiveData<Event<String>> = _errorEvent
 
@@ -98,9 +111,6 @@ class CredentialsViewModel : ViewModel() {
     val fields: LiveData<List<Field>> = _fields
 
     fun setFields(fields: List<Field>) = _fields.postValue(fields)
-
-    private val _supplementalFields = MutableLiveData<List<Field>>()
-    val supplementalFields: LiveData<List<Field>> = _supplementalFields
 
     private var streamSubscription: StreamSubscription? = null
 
@@ -138,7 +148,7 @@ class CredentialsViewModel : ViewModel() {
                     _credentialsId.postValue(credential.id)
                 },
                 {
-                    _viewState.postValue(ViewState.ERROR)
+                    _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
             )
@@ -166,19 +176,28 @@ class CredentialsViewModel : ViewModel() {
                     fetchCredentials() // Start streaming credentials
                 },
                 {
-                    _viewState.postValue(ViewState.ERROR)
+                    _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
             )
         )
     }
 
-    // TODO: Should this be renamed to CredentialState instead?
     enum class ViewState {
         NOT_LOADING,
+        WAITING_FOR_AUTHENTICATION,
         UPDATING,
         UPDATED,
-        ERROR,
-        SUPPLEMENTAL_INFO
     }
 }
+
+data class CredentialsStatusModel(
+    val status: Credential.Status?,
+    val statusUpdated: Instant
+)
+
+private fun Credential.toStatusModel() =
+    CredentialsStatusModel(status, statusUpdated)
+
+private fun CredentialsStatusModel.isNewStatus(other: CredentialsStatusModel) =
+    status != other.status || statusUpdated < other.statusUpdated
