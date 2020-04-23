@@ -65,11 +65,8 @@ class CredentialsViewModel : ViewModel() {
                         }
 
                         Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                            credential.supplementalInformation
-                                .let { _supplementalInformationEvent.postValue(Event(it)) }
-                                .also {
-                                    _viewState.postValue(ViewState.NOT_LOADING)
-                                }
+                            _supplementalInformationEvent.postValue(Event(credential.supplementalInformation))
+                            _viewState.postValue(ViewState.NOT_LOADING)
                         }
 
                         Credential.Status.AUTHENTICATION_ERROR,
