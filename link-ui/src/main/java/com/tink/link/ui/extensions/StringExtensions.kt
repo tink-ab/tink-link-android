@@ -13,6 +13,11 @@ import android.widget.TextView
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.res.ResourcesCompat
 import com.tink.link.ui.R
+import io.noties.markwon.AbstractMarkwonPlugin
+import io.noties.markwon.Markwon
+import io.noties.markwon.MarkwonSpansFactory
+import io.noties.markwon.core.CoreProps
+import org.commonmark.node.Link
 
 internal fun String.convertCallToActionText(
     ctaText: String,
@@ -47,6 +52,19 @@ internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) 
         }
     text = SpannedString(spannableString)
 }
+
+internal fun TextView.setMarkdownText(markdownText: String) =
+    Markwon
+        .builder(context)
+        .usePlugin(object : AbstractMarkwonPlugin() {
+            override fun configureSpansFactory(builder: MarkwonSpansFactory.Builder) {
+                builder.setFactory(Link::class.java) { _, props ->
+                    TinkUrlSpan(CoreProps.LINK_DESTINATION.require(props), context)
+                }
+            }
+        })
+        .build()
+        .setMarkdown(this, markdownText)
 
 private class TinkCallToActionSpan(
     val context: Context,

@@ -20,6 +20,7 @@ import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
+import com.tink.link.ui.extensions.setMarkdownText
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
@@ -123,6 +124,8 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         })
 
         createCredentialsBtn.setOnClickListener { submitFilledFields() }
+        providerHelpText.setMarkdownText(provider.helpText)
+        providerHelpText.movementMethod = LinkMovementMethod.getInstance()
 
         if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
             createCredentialsBtn.visibility = View.GONE
