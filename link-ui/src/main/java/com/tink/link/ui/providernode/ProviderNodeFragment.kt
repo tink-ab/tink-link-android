@@ -4,16 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.tink.link.ui.R
-import com.tink.link.ui.credentials.CredentialFragment
+import com.tink.link.ui.credentials.CredentialsFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 /**
- * Fragment responsible for displaying a list of providers that has the same credential type.
+ * Fragment responsible for displaying a list of providers that has the same credentials type.
  *
- * @see [ProviderTreeNode.CredentialTypeNode]
+ * @see [ProviderTreeNode.CredentialsTypeNode]
  */
 class ProviderNodeFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_node) {
 
@@ -28,12 +28,12 @@ class ProviderNodeFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_pro
     }
 
     /**
-     * Navigate to the [CredentialFragment]
+     * Navigate to the [CredentialsFragment]
      */
     override fun navigateToNode(node: ProviderTreeNode) {
         findNavController().navigate(
-            R.id.credentialFragment,
-            CredentialFragment.getBundle(
+            R.id.credentialsFragment,
+            CredentialsFragment.getBundle(
                 (node as ProviderTreeNode.ProviderNode).provider
             )
         )

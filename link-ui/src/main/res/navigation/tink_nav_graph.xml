@@ -41,25 +41,25 @@
     android:label="AccessTypeListFragment"
     tools:layout="@layout/tink_fragment_access_type_list">
     <action
-      android:id="@+id/action_accessTypeListFragment_to_credentialTypeListFragment"
-      app:destination="@id/credentialTypeListFragment" />
+      android:id="@+id/action_accessTypeListFragment_to_credentialsTypeListFragment"
+      app:destination="@id/credentialsTypeListFragment" />
   </fragment>
   <fragment
-    android:id="@+id/credentialTypeListFragment"
-    android:name="com.tink.link.ui.credentialtype.CredentialTypeListFragment"
-    android:label="CredentialTypeListFragment"
-    tools:layout="@layout/tink_fragment_credential_type_list">
+    android:id="@+id/credentialsTypeListFragment"
+    android:name="com.tink.link.ui.credentialstype.CredentialsTypeListFragment"
+    android:label="CredentialsTypeListFragment"
+    tools:layout="@layout/tink_fragment_credentials_type_list">
     <action
-      android:id="@+id/action_credentialTypeListFragment_to_providerNodeFragment"
+      android:id="@+id/action_credentialsTypeListFragment_to_providerNodeFragment"
       app:destination="@id/providerNodeFragment" />
   </fragment>
   <fragment
-    android:id="@+id/credentialFragment"
-    android:name="com.tink.link.ui.credentials.CredentialFragment"
-    android:label="CredentialFragment"
-    tools:layout="@layout/tink_fragment_credential">
+    android:id="@+id/credentialsFragment"
+    android:name="com.tink.link.ui.credentials.CredentialsFragment"
+    android:label="CredentialsFragment"
+    tools:layout="@layout/tink_fragment_credentials">
     <action
-      android:id="@+id/action_credentialFragment_to_consentInformationFragment"
+      android:id="@+id/action_credentialsFragment_to_consentInformationFragment"
       app:destination="@id/consentInformationFragment" />
   </fragment>
   <fragment
@@ -73,8 +73,8 @@
     android:label="ProviderNodeFragment"
     tools:layout="@layout/tink_fragment_provider_node">
     <action
-      android:id="@+id/action_providerNodeFragment_to_credentialFragment"
-      app:destination="@id/credentialFragment" />
+      android:id="@+id/action_providerNodeFragment_to_credentialsFragment"
+      app:destination="@id/credentialsFragment" />
   </fragment>
   <fragment
     android:id="@+id/consentInformationFragment"

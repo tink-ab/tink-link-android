@@ -5,7 +5,7 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.squareup.picasso.Picasso
-import com.tink.link.ui.credentialtype.CredentialTypeListFragment
+import com.tink.link.ui.credentialstype.CredentialsTypeListFragment
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
@@ -75,13 +75,13 @@ class AccessTypeListFragment :
     }
 
     /**
-     * Navigate to the [CredentialTypeListFragment]
+     * Navigate to the [CredentialsTypeListFragment]
      */
     override fun navigateToNode(node: ProviderTreeNode) {
         findNavController().navigate(
-            R.id.credentialTypeListFragment,
+            R.id.credentialsTypeListFragment,
             bundleOf(
-                ARG_PROVIDER_TREE to (node as ProviderTreeNode.AccessTypeNode).credentialTypes.toArrayList(),
+                ARG_PROVIDER_TREE to (node as ProviderTreeNode.AccessTypeNode).credentialsTypes.toArrayList(),
                 ARG_PROVIDER_TOOLBAR_TITLE to toolbarTitle
             )
         )

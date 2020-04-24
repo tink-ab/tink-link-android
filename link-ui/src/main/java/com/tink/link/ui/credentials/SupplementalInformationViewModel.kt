@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
 import com.tink.model.misc.Field
 import com.tink.service.handler.ResultHandler
@@ -17,11 +17,11 @@ class SupplementalInformationViewModel : ViewModel() {
     private val _supplementalFields = MutableLiveData<List<Field>>()
     val supplementalFields: LiveData<List<Field>> = _supplementalFields
 
-    private val credentialsRepository: CredentialRepository
+    private val credentialsRepository: CredentialsRepository
 
     init {
         val userContext = requireNotNull(Tink.getUserContext())
-        credentialsRepository = userContext.credentialRepository
+        credentialsRepository = userContext.credentialsRepository
     }
 
     fun setData(credentialsId: String, supplementalFields: List<Field>) {

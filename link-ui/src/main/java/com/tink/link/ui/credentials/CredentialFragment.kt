@@ -23,11 +23,11 @@ import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.synthetic.main.tink_fragment_credential.*
+import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 import timber.log.Timber
@@ -43,14 +43,14 @@ private const val BANK_ID_ACTION_OTHER_DEVICE = 2
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
+class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
     }
 
-    private val updateArgs: CredentialUpdateArgs? by lazy {
-        arguments?.getParcelable<CredentialUpdateArgs>(UPDATE_ARGS)
+    private val updateArgs: CredentialsUpdateArgs? by lazy {
+        arguments?.getParcelable<CredentialsUpdateArgs>(UPDATE_ARGS)
     }
 
     private val viewModel: CredentialsViewModel by activityViewModels()
@@ -114,18 +114,18 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
         viewModel.setFields(fields)
 
         viewModel.fields.observe(viewLifecycleOwner, Observer { fieldList ->
-            if (credentialFields.childCount > 0) {
-                credentialFields.removeAllViews()
+            if (credentialsFields.childCount > 0) {
+                credentialsFields.removeAllViews()
             }
             for (field in fieldList) {
-                credentialFields.addView(field.toView(requireContext()))
+                credentialsFields.addView(field.toView(requireContext()))
             }
         })
 
-        createCredentialBtn.setOnClickListener { submitFilledFields() }
+        createCredentialsBtn.setOnClickListener { submitFilledFields() }
 
-        if (provider.credentialType == Credential.Type.MOBILE_BANKID) {
-            createCredentialBtn.visibility = View.GONE
+        if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
+            createCredentialsBtn.visibility = View.GONE
             bankIdButtonGroup.visibility = View.VISIBLE
         }
 
@@ -143,11 +143,11 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             Timber.d(it.toString())
         })
 
-        viewModel.createdCredential.observe(viewLifecycleOwner, Observer { credential ->
+        viewModel.createdCredentials.observe(viewLifecycleOwner, Observer { credentials ->
             // TODO: Remove
-            Timber.d("Received update for credential ${credential.id}")
-            Timber.d("Status = ${credential.status?.name}")
-            Timber.d("Status = ${credential.statusPayload}")
+            Timber.d("Received update for credentials ${credentials.id}")
+            Timber.d("Status = ${credentials.status?.name}")
+            Timber.d("Status = ${credentials.statusPayload}")
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
@@ -251,31 +251,31 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     }
 
     private fun submitFilledFields() {
-        val credentialsId = updateArgs?.credentialId ?: viewModel.credentialsId.value
+        val credentialsId = updateArgs?.credentialsId ?: viewModel.credentialsId.value
         if (credentialsId.isNullOrEmpty()) {
-            createCredential()
+            createCredentials()
         } else {
-            updateCredential(credentialsId)
+            updateCredentials(credentialsId)
         }
     }
 
     private fun areFieldsValid(): Boolean {
-        return credentialFields.children
+        return credentialsFields.children
             .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
     }
 
-    private fun createCredential() {
+    private fun createCredentials() {
         if (areFieldsValid()) {
             showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
 
-            val fields = credentialFields.children
+            val fields = credentialsFields.children
                 .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
 
-            viewModel.createCredential(provider, fields) { error ->
+            viewModel.createCredentials(provider, fields) { error ->
                 val message = error.localizedMessage ?: error.message
                 ?: getString(R.string.tink_error_unknown)
                 showError(message)
@@ -310,18 +310,18 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
             .also { it.show() }
     }
 
-    private fun updateCredential(credentialsId: String) {
+    private fun updateCredentials(credentialsId: String) {
         if (areFieldsValid()) {
             showLoading(getString(R.string.tink_credentials_status_authorizing_text))
             hideKeyboard()
         }
 
-        val fields = credentialFields.children
+        val fields = credentialsFields.children
             .filterIsInstance(CredentialsField::class.java)
             .map { it.getFilledField() }
             .toList()
 
-        viewModel.updateCredential(credentialsId, fields) { error ->
+        viewModel.updateCredentials(credentialsId, fields) { error ->
             val message = error.localizedMessage ?: error.message
             ?: getString(R.string.tink_error_unknown)
             showError(message)
@@ -350,12 +350,12 @@ class CredentialFragment : Fragment(R.layout.tink_fragment_credential) {
     }
 
     companion object {
-        fun getBundle(provider: Provider, credentialUpdateArgs: CredentialUpdateArgs? = null) =
-            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialUpdateArgs)
+        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
+            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
     }
 
     @Parcelize
-    data class CredentialUpdateArgs(
-        val credentialId: String, val fields: Map<String, String>
+    data class CredentialsUpdateArgs(
+        val credentialsId: String, val fields: Map<String, String>
     ) : Parcelable
 }

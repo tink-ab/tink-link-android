@@ -13,7 +13,7 @@ import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import kotlin.properties.Delegates
@@ -60,13 +60,13 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
-            is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription(title.context)
+            is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription(title.context)
             is ProviderTreeNode.ProviderNode -> item.name
         }
 
-        if (item is ProviderTreeNode.CredentialTypeNode) {
+        if (item is ProviderTreeNode.CredentialsTypeNode) {
             val iconRes = when (item.type) {
-                Credential.Type.MOBILE_BANKID -> R.drawable.tink_bankid
+                Credentials.Type.MOBILE_BANKID -> R.drawable.tink_bankid
                 else -> R.drawable.tink_code
             }
             logo.apply {
@@ -92,12 +92,12 @@ private fun Provider.AccessType.getDescription() =
         Provider.AccessType.OTHER -> "Other"
     }
 
-private fun Credential.Type.getDescription(context: Context) =
+private fun Credentials.Type.getDescription(context: Context) =
     when (this) {
-        Credential.Type.UNKNOWN -> context.getString(R.string.tink_credential_type_unknown_default_description)
-        Credential.Type.PASSWORD -> context.getString(R.string.tink_credential_type_password_default_description)
-        Credential.Type.MOBILE_BANKID -> context.getString(R.string.tink_credential_type_mobile_bank_id_default_description)
-        Credential.Type.THIRD_PARTY_AUTHENTICATION -> context.getString(R.string.tink_credential_type_third_party_authentication_default_description)
-        Credential.Type.KEYFOB -> context.getString(R.string.tink_credential_type_keyfob_default_description)
-        Credential.Type.FRAUD -> context.getString(R.string.tink_credential_type_fraud_default_description)
+        Credentials.Type.UNKNOWN -> context.getString(R.string.tink_credentials_type_unknown_default_description)
+        Credentials.Type.PASSWORD -> context.getString(R.string.tink_credentials_type_password_default_description)
+        Credentials.Type.MOBILE_BANKID -> context.getString(R.string.tink_credentials_type_mobile_bank_id_default_description)
+        Credentials.Type.THIRD_PARTY_AUTHENTICATION -> context.getString(R.string.tink_credentials_type_third_party_authentication_default_description)
+        Credentials.Type.KEYFOB -> context.getString(R.string.tink_credentials_type_keyfob_default_description)
+        Credentials.Type.FRAUD -> context.getString(R.string.tink_credentials_type_fraud_default_description)
     }

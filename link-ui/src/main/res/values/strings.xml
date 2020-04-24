@@ -1,9 +1,9 @@
 <resources>
   <string name="tink_app_name">Application</string>
   <string name="tink_provider_list_title">Choose your bank</string>
-  <string name="tink_credential_type_fragment_title">Sign in method</string>
+  <string name="tink_credentials_type_fragment_title">Sign in method</string>
   <string name="tink_access_type_fragment_title">Add %s Account</string>
-  <string name="tink_create_credential_button">Continue</string>
+  <string name="tink_create_credentials_button">Continue</string>
   <string name="tink_third_party_authentication_download_app_positive">Install</string>
   <string name="tink_third_party_authentication_download_app_negative">Cancel</string>
   <string name="tink_third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
@@ -21,12 +21,12 @@
   <string name="tink_access_type_card_other_title">Other account types</string>
   <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
   <string name="tink_access_type_card_other_button_text">Add</string>
-  <string name="tink_credential_type_password_default_description">Password</string>
-  <string name="tink_credential_type_mobile_bank_id_default_description">Mobile BankID</string>
-  <string name="tink_credential_type_third_party_authentication_default_description">Third Party Authentication</string>
-  <string name="tink_credential_type_keyfob_default_description">Key Fob</string>
-  <string name="tink_credential_type_fraud_default_description">Fraud</string>
-  <string name="tink_credential_type_unknown_default_description">Unknown</string>
+  <string name="tink_credentials_type_password_default_description">Password</string>
+  <string name="tink_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
+  <string name="tink_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
+  <string name="tink_credentials_type_keyfob_default_description">Key Fob</string>
+  <string name="tink_credentials_type_fraud_default_description">Fraud</string>
+  <string name="tink_credentials_type_unknown_default_description">Unknown</string>
   <string name="tink_consent_information">%1$s will obtain some of your financial information. %2$s</string>
   <string name="tink_consent_information_read_more">Read More</string>
   <string name="tink_consent_information_list_title">We will collect the following data from you</string>
@@ -34,8 +34,8 @@
   <string name="tink_terms_policy_information">By using the service, you agree to Tink’s %1$s and %2$s</string>
   <string name="tink_terms_and_conditions">Terms and Conditions</string>
   <string name="tink_privacy_policy">Privacy Policy</string>
-  <string name="tink_credential_bankId_button">Open Bank ID</string>
-  <string name="tink_credential_bankId_other_device_button">Open Bank ID on another device</string>
+  <string name="tink_credentials_bankId_button">Open Bank ID</string>
+  <string name="tink_credentials_bankId_other_device_button">Open Bank ID on another device</string>
   <string name="tink_connection_successful_title">Connection successful</string>
   <string name="tink_connection_successful_description">Your accounts have been successfully added to %s</string>
   <string name="tink_connection_successful_done_button">Done</string>

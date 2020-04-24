@@ -8,7 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.tink.core.Tink
 import com.tink.core.provider.ProviderRepository
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
 
 class TinkLinkUiActivity : AppCompatActivity() {
@@ -62,13 +62,13 @@ interface TinkLinkConsumer
 
 interface TinkRepositoryProvider {
     val providerRepository: ProviderRepository?
-    val credentialRepository: CredentialRepository?
+    val credentialsRepository: CredentialsRepository?
 }
 
 fun <T> T.getRepositoryProvider() where T : Fragment, T : TinkLinkConsumer =
     object : TinkRepositoryProvider {
         override val providerRepository: ProviderRepository?
             get() = Tink.getUserContext()?.providerRepository
-        override val credentialRepository: CredentialRepository?
-            get() = Tink.getUserContext()?.credentialRepository
+        override val credentialsRepository: CredentialsRepository?
+            get() = Tink.getUserContext()?.credentialsRepository
     }

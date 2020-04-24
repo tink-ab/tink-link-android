@@ -8,10 +8,10 @@ import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
-import kotlinx.android.synthetic.main.tink_item_credential_row.view.*
+import kotlinx.android.synthetic.main.tink_item_credentials_row.view.*
 import kotlin.properties.Delegates
 
-class CredentialRowAdapter : RecyclerView.Adapter<CredentialRowViewHolder>(),
+class CredentialsRowAdapter : RecyclerView.Adapter<CredentialsRowViewHolder>(),
     OnViewHolderClickedListener {
 
     var connections: List<Connection> by Delegates.observable(emptyList()) { _, _, _ -> notifyDataSetChanged() }
@@ -19,14 +19,14 @@ class CredentialRowAdapter : RecyclerView.Adapter<CredentialRowViewHolder>(),
 
     override fun getItemCount(): Int = connections.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CredentialRowViewHolder {
-        return CredentialRowViewHolder(
-            parent.inflate(R.layout.tink_item_credential_row),
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CredentialsRowViewHolder {
+        return CredentialsRowViewHolder(
+            parent.inflate(R.layout.tink_item_credentials_row),
             clickListener = this
         )
     }
 
-    override fun onBindViewHolder(holder: CredentialRowViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CredentialsRowViewHolder, position: Int) {
         holder.bind(connections[position])
     }
 
@@ -35,7 +35,7 @@ class CredentialRowAdapter : RecyclerView.Adapter<CredentialRowViewHolder>(),
     }
 }
 
-class CredentialRowViewHolder(itemView: View, clickListener: OnViewHolderClickedListener) :
+class CredentialsRowViewHolder(itemView: View, clickListener: OnViewHolderClickedListener) :
     ClickableViewHolder(itemView, clickListener) {
     fun bind(connection: Connection) {
         itemView.providerName.text = connection.providerName
