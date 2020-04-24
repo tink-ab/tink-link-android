@@ -1,4 +1,4 @@
-package com.tink.link.credentialtype
+package com.tink.link.credentialstype
 
 import android.os.Bundle
 import android.view.View
@@ -15,12 +15,12 @@ import com.tink.link.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
 
 /**
- * Fragment responsible for displaying a list of credential types that belongs to the same access type.
+ * Fragment responsible for displaying a list of credentials types that belongs to the same access type.
  *
  * @see [ProviderTreeNode.AccessTypeNode]
  */
-class CredentialTypeListFragment :
-    ProviderTreeNodeFragment(R.layout.fragment_credential_type_list) {
+class CredentialsTypeListFragment :
+    ProviderTreeNodeFragment(R.layout.fragment_credentials_type_list) {
 
     private val toolbarTitle: String by lazy {
         requireNotNull(arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE))
@@ -29,7 +29,7 @@ class CredentialTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.credential_type_fragment_title)
+        title.setText(R.string.credentials_type_fragment_title)
         toolbar.title = toolbarTitle
         toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
@@ -42,7 +42,7 @@ class CredentialTypeListFragment :
             R.id.providerNodeFragment,
             bundleOf(
                 ARG_PROVIDER_TOOLBAR_TITLE to toolbarTitle,
-                ARG_PROVIDER_TREE to (node as ProviderTreeNode.CredentialTypeNode).providers.toArrayList()
+                ARG_PROVIDER_TREE to (node as ProviderTreeNode.CredentialsTypeNode).providers.toArrayList()
             )
         )
     }
