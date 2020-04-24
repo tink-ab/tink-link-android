@@ -7,14 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.tink.core.Tink
 import com.tink.core.provider.ProviderRepository
+import com.tink.link.configuration.Configuration
 import com.tink.link.core.credentials.CredentialsRepository
-import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 
 private val MainActivity.testTinkLinkConfig
     get() = TinkConfiguration(
-        environment = Environment.Production,
-        oAuthClientId = "",
+        environment = Configuration.sampleEnvironment,
+        oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
         Uri.Builder()
             .scheme(getString(R.string.redirect_uri_scheme))
