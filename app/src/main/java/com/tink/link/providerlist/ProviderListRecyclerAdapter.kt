@@ -10,7 +10,7 @@ import com.tink.link.R
 import com.tink.link.extensions.inflate
 import com.tink.link.viewholders.ClickableViewHolder
 import com.tink.link.viewholders.OnViewHolderClickedListener
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import kotlin.properties.Delegates
@@ -57,11 +57,11 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
-            is ProviderTreeNode.CredentialTypeNode -> item.name ?: item.type.getDescription()
+            is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.ProviderNode -> item.name
         }
 
-        if (item is ProviderTreeNode.CredentialTypeNode) {
+        if (item is ProviderTreeNode.CredentialsTypeNode) {
             logo.visibility = View.GONE
         } else {
             item.icon?.let {
@@ -79,12 +79,12 @@ private fun Provider.AccessType.getDescription() =
         Provider.AccessType.OTHER -> "Other"
     }
 
-private fun Credential.Type.getDescription() =
+private fun Credentials.Type.getDescription() =
     when (this) {
-        Credential.Type.UNKNOWN -> "Unknown"
-        Credential.Type.PASSWORD -> "Password"
-        Credential.Type.MOBILE_BANKID -> "Mobile BankID"
-        Credential.Type.THIRD_PARTY_AUTHENTICATION -> "Third Party Authentication"
-        Credential.Type.KEYFOB -> "Key Fob"
-        Credential.Type.FRAUD -> "Fraud"
+        Credentials.Type.UNKNOWN -> "Unknown"
+        Credentials.Type.PASSWORD -> "Password"
+        Credentials.Type.MOBILE_BANKID -> "Mobile BankID"
+        Credentials.Type.THIRD_PARTY_AUTHENTICATION -> "Third Party Authentication"
+        Credentials.Type.KEYFOB -> "Key Fob"
+        Credentials.Type.FRAUD -> "Fraud"
     }

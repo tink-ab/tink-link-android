@@ -20,7 +20,7 @@ import com.tink.link.extensions.launch
 import com.tink.link.getRepositoryProvider
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.synthetic.main.fragment_credential.*
+import kotlinx.android.synthetic.main.fragment_credentials.*
 import kotlinx.android.synthetic.main.layout_toolbar.toolbar
 import timber.log.Timber
 
@@ -32,22 +32,22 @@ private const val UPDATE_ARGS = "UPDATE_ARGS"
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsumer {
+class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkConsumer {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
     }
 
-    private val updateArgs: CredentialUpdateArgs? by lazy {
-        arguments?.getParcelable<CredentialUpdateArgs>(UPDATE_ARGS)
+    private val updateArgs: CredentialsUpdateArgs? by lazy {
+        arguments?.getParcelable<CredentialsUpdateArgs>(UPDATE_ARGS)
     }
 
-    private val viewModel: CredentialViewModel by viewModels()
+    private val viewModel: CredentialsViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.setText(R.string.credential_fragment_title)
+        title.setText(R.string.credentials_fragment_title)
         toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
             hideKeyboard()
@@ -62,12 +62,12 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
         viewModel.setFields(fields)
 
         viewModel.fields.observe(viewLifecycleOwner, Observer { fields ->
-            if (credentialFields.childCount > 0) {
-                credentialFields.removeAllViews()
+            if (credentialsFields.childCount > 0) {
+                credentialsFields.removeAllViews()
             }
             for (field in fields) {
-                credentialFields
-                    .addView(CredentialField(requireContext())
+                credentialsFields
+                    .addView(CredentialsField(requireContext())
                         .also {
                             it.updatePadding(bottom = resources.dpToPixels(32))
                             it.setupField(field)
@@ -75,11 +75,11 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
             }
         })
 
-        createCredentialBtn.setOnClickListener {
-            if (updateArgs?.credentialId.isNullOrEmpty()) {
-                createCredential()
+        createCredentialsBtn.setOnClickListener {
+            if (updateArgs?.credentialsId.isNullOrEmpty()) {
+                createCredentials()
             } else {
-                updateCredential()
+                updateCredentials()
             }
         }
 
@@ -87,17 +87,17 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
             Timber.d(it.toString())
         })
 
-        viewModel.createdCredential.observe(viewLifecycleOwner, Observer { credential ->
-            Timber.d("Received update for credential ${credential.id}")
-            status.text = "Status = ${credential.status?.name}"
-            statusPayload.text = credential.statusPayload
+        viewModel.createdCredentials.observe(viewLifecycleOwner, Observer { credentials ->
+            Timber.d("Received update for credentials ${credentials.id}")
+            status.text = "Status = ${credentials.status?.name}"
+            statusPayload.text = credentials.statusPayload
         })
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
-                CredentialViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
-                CredentialViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
-                CredentialViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
+                CredentialsViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
+                CredentialsViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
+                CredentialsViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
                 else -> {
                 }
             }
@@ -107,7 +107,7 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
             event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
-                        viewModel.updateViewState(CredentialViewModel.ViewState.NOT_LOADING)
+                        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
                         Snackbar.make(
                             view,
                             R.string.third_party_authentication_download_app_negative_error,
@@ -126,32 +126,32 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
     }
 
     private fun validateFields() {
-        credentialFields.forEach {
-            if (it is CredentialField) {
+        credentialsFields.forEach {
+            if (it is CredentialsField) {
                 it.validateContent()
             }
         }
     }
 
     private fun areFieldsValid(): Boolean {
-        return credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+        return credentialsFields.children
+            .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
     }
 
-    private fun createCredential() {
+    private fun createCredentials() {
         if (areFieldsValid()) {
             loadingGroup.visibility = View.VISIBLE
             hideKeyboard()
 
-            val fields = credentialFields.children
-                .filterIsInstance(CredentialField::class.java)
+            val fields = credentialsFields.children
+                .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
 
-            getRepositoryProvider()?.credentialRepository?.let {
-                // Pass the filled fields to the credential repository to authorize the user.
-                viewModel.createCredential(provider, fields, it) { error ->
+            getRepositoryProvider()?.credentialsRepository?.let {
+                // Pass the filled fields to the credentials repository to authorize the user.
+                viewModel.createCredentials(provider, fields, it) { error ->
                     view?.let { view ->
                         val message = error.localizedMessage ?: error.message
                         ?: "Something went wrong. Please try again later."
@@ -162,21 +162,22 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
         }
     }
 
-    private fun updateCredential() {
+    private fun updateCredentials() {
         if (areFieldsValid()) {
             loadingGroup.visibility = View.VISIBLE
             hideKeyboard()
         }
 
-        val fields = credentialFields.children
-            .filterIsInstance(CredentialField::class.java)
+        val fields = credentialsFields.children
+            .filterIsInstance(CredentialsField::class.java)
             .map { it.getFilledField() }
             .toList()
 
-        getRepositoryProvider()?.credentialRepository?.let {
-            // Pass the filled fields to the credential repository to authorize the user.
-            viewModel.updateCredential(
-                requireNotNull(updateArgs).credentialId,
+        getRepositoryProvider()?.credentialsRepository?.let {
+            // Pass the filled fields to the credentials repository to authorize the user.
+            viewModel.updateCredentials(
+                requireNotNull(updateArgs).credentialsId,
+                provider,
                 fields,
                 it
             ) { error ->
@@ -190,12 +191,12 @@ class CredentialFragment : Fragment(R.layout.fragment_credential), TinkLinkConsu
     }
 
     companion object {
-        fun getBundle(provider: Provider, credentialUpdateArgs: CredentialUpdateArgs? = null) =
-            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialUpdateArgs)
+        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
+            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
     }
 
     @Parcelize
-    data class CredentialUpdateArgs(
-        val credentialId: String, val fields: Map<String, String>
+    data class CredentialsUpdateArgs(
+        val credentialsId: String, val fields: Map<String, String>
     ) : Parcelable
 }
