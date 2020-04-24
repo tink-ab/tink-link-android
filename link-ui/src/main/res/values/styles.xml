@@ -17,7 +17,7 @@
     <item name="tink_textColorSecondary">#ff808080</item>
     <item name="tink_textColorSecondaryDisabled">#ffa7a7a7</item>
     <item name="tink_textColorTertiary">#ff808080</item>
-    <item name="tink_dividerColor">#ff808080</item>
+    <item name="tink_dividerColor">#eeeeee</item>
     <item name="tink_snackbarColor">#ff808080</item>
     <item name="tink_colorOnSnackBar">#ffffff</item>
     <item name="tink_rippleColor">#20444444</item>
