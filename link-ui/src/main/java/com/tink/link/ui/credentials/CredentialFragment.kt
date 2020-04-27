@@ -123,9 +123,15 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         })
 
-        createCredentialsBtn.setOnClickListener { submitFilledFields() }
-        providerHelpText.setMarkdownText(provider.helpText)
-        providerHelpText.movementMethod = LinkMovementMethod.getInstance()
+        if (provider.helpText.isNotBlank()) {
+            providerHelpText.visibility = View.VISIBLE
+            providerHelpTextBackground.visibility = View.VISIBLE
+            providerHelpText.setMarkdownText(provider.helpText)
+            providerHelpText.movementMethod = LinkMovementMethod.getInstance()
+        } else {
+            providerHelpText.visibility = View.GONE
+            providerHelpTextBackground.visibility = View.GONE
+        }
 
         if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
             createCredentialsBtn.visibility = View.GONE
