@@ -36,7 +36,7 @@ apply {
 }
 
 dependencies {
-    implementation("com.tink:link:${TinkLinkVersion.name}")
+    implementation(project(":link"))
 
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
