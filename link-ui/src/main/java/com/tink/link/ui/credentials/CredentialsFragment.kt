@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.view.children
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -20,6 +21,7 @@ import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
+import com.tink.link.ui.extensions.setMarkdownText
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
@@ -122,7 +124,15 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         })
 
-        createCredentialsBtn.setOnClickListener { submitFilledFields() }
+        if (provider.helpText.isNotBlank()) {
+            providerHelpText.visibility = View.VISIBLE
+            providerHelpTextBackground.visibility = View.VISIBLE
+            providerHelpText.setMarkdownText(provider.helpText)
+            providerHelpText.movementMethod = LinkMovementMethod.getInstance()
+        } else {
+            providerHelpText.visibility = View.GONE
+            providerHelpTextBackground.visibility = View.GONE
+        }
 
         if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
             createCredentialsBtn.visibility = View.GONE
@@ -137,6 +147,12 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         bankIdOtherDeviceButton.setOnClickListener {
             bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
             submitFilledFields()
+        }
+
+        footer.post {
+            bottomSpacer.updateLayoutParams {
+                height = footer.height
+            }
         }
 
         viewModel.credentials.observe(viewLifecycleOwner, Observer {

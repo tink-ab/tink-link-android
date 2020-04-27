@@ -65,6 +65,7 @@ object Dependencies {
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.71828"
     const val zxing = "com.google.zxing:core:3.4.0"
+    const val markwon = "io.noties.markwon:core:4.3.1"
 
     object Tink {
         private const val coreVersion = "0.2.0"
