@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.view.children
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -146,6 +147,12 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         bankIdOtherDeviceButton.setOnClickListener {
             bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
             submitFilledFields()
+        }
+
+        footer.post {
+            bottomSpacer.updateLayoutParams {
+                height = footer.height
+            }
         }
 
         viewModel.credentials.observe(viewLifecycleOwner, Observer {
