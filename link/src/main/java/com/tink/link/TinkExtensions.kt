@@ -31,6 +31,15 @@ object TinkLink {
 
     @JvmStatic
     fun getConsentContext() = Tink.getConsentContext()
+
+    /**
+     * Create a temporary user.
+     * This allows you to launch the flow and fetch data for users without having permanent Tink users.
+     *
+     * On a successful result, your resultHandler should call [Tink.setUser] to set this user to the Tink instance.
+     */
+    fun createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) =
+        Tink.createTemporaryUser(market, locale, resultHandler)
 }
 
 // For Kotlin
@@ -54,3 +63,13 @@ fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandl
 
 @JvmSynthetic
 fun Tink.getConsentContext() = TinkLinkComponent.instance.consentContext
+
+/**
+ * Create a temporary user.
+ * This allows you to launch the flow and fetch data for users without having permanent Tink users.
+ *
+ * On a successful result, your resultHandler should call [Tink.setUser] to set this user to the Tink instance.
+ */
+@JvmSynthetic
+fun Tink.createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) =
+    TinkLinkComponent.instance.createTemporaryUser(market, locale, resultHandler)
