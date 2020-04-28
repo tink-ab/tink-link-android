@@ -2,7 +2,7 @@ package com.tink.link.consent
 
 import android.net.Uri
 import com.tink.link.coroutines.launchForResult
-import com.tink.model.consent.ScopeDescription
+import com.tink.model.consent.OAuthClientDescription
 import com.tink.model.user.Scope
 import com.tink.service.consent.ConsentService
 import com.tink.service.handler.ResultHandler
@@ -46,17 +46,17 @@ class ConsentContext @Inject constructor(
     }
 
     /**
-     * Lists [scope descriptions][ScopeDescription] for the provided scopes.
+     * Get the [client description][OAuthClientDescription] for a client with the provided scopes.
      *
-     * @param scopes A [Scope] set of OAuth scopes to be requested.
-     * @param resultHandler Handler for successful (providing a list of [ScopeDescription]) or error events.
+     * @param scopes A [Scope] set of OAuth scopes authorized for this client
+     * @param resultHandler Handler for successful (providing the [client description][OAuthClientDescription]) or error events.
      */
-    fun scopeDescriptions(
+    fun describeClient(
         scopes: Set<Scope>,
-        resultHandler: ResultHandler<List<ScopeDescription>>
+        resultHandler: ResultHandler<OAuthClientDescription>
     ) {
         scope.launchForResult(resultHandler) {
-            consentService.describeClient(scopes).scopeDescriptions
+            consentService.describeClient(scopes)
         }
     }
 }
