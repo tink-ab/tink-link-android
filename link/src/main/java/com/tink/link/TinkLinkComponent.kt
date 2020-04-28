@@ -51,19 +51,13 @@ internal abstract class TinkLinkComponent {
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
-//    /**
-//     * Create a temporary user.
-//     * This allows you to launch the flow and fetch data for users without having permanent Tink users.
-//     *
-//     * On a successful result, your resultHandler should call [Tink.setUser] to set this user to the Tink instance.
-//     */
-//    fun createTemporaryUser(
-//        market: String,
-//        locale: String,
-//        resultHandler: ResultHandler<User>
-//    ) {
-//        authenticationRepository.createAnonymousUser(market, locale, resultHandler)
-//    }
+    internal fun createTemporaryUser(
+        market: String,
+        locale: String,
+        resultHandler: ResultHandler<User>
+    ) {
+        accessRepository.createAnonymousUser(market, locale, resultHandler)
+    }
 
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
         accessRepository.authenticate(authenticationCode, resultHandler)
