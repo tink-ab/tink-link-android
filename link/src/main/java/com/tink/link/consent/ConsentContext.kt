@@ -2,6 +2,7 @@ package com.tink.link.consent
 
 import android.net.Uri
 import com.tink.link.coroutines.launchForResult
+import com.tink.model.consent.OAuthClientDescription
 import com.tink.model.consent.ScopeDescription
 import com.tink.model.user.Scope
 import com.tink.service.consent.ConsentService
@@ -43,6 +44,21 @@ class ConsentContext @Inject constructor(
      */
     fun privacyPolicy(locale: Locale = Locale.getDefault()): Uri {
         return Uri.parse("https://link.tink.com/privacy-policy/${locale.language}")
+    }
+
+    /**
+     * Get the [client description][OAuthClientDescription] for a client with the provided scopes.
+     *
+     * @param scopes A [Scope] srt of OAuth scopes authorized for this client
+     * @param resultHandler Handler for successful (providing the [client description][OAuthClientDescription]) or error events.
+     */
+    fun describeClient(
+        scopes: Set<Scope>,
+        resultHandler: ResultHandler<OAuthClientDescription>
+    ) {
+        scope.launchForResult(resultHandler) {
+            consentService.describeClient(scopes)
+        }
     }
 
     /**
