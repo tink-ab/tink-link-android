@@ -193,6 +193,23 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
+    fun authenticateCredentials(
+        id: String,
+        credentialsRepository: CredentialsRepository,
+        onError: (Throwable) -> Unit
+    ) {
+        credentialsId.postValue(id)
+        credentialsRepository.authenticate(id,
+            ResultHandler({
+                fetchCredentials(credentialsRepository)
+            },
+                {
+                    _viewState.postValue(ViewState.NOT_LOADING)
+                    onError(it)
+                }
+            ))
+    }
+
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }
 }
 

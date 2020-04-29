@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.credentials.CredentialsFragment
 import com.tink.link.getUserContext
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
@@ -96,6 +97,15 @@ class ProfileViewModel : ViewModel() {
             provider,
             credentials.fields
         )
+    }
+
+    fun getProviderForCredentials(credentialsId: String): Provider? {
+        val credentials = credentialsStream.value?.find { it.id == credentialsId } ?: return null
+        return providers.value?.find { it.name == credentials.providerName }
+    }
+
+    fun authenticateCredentials(id: String, completed: () -> Unit) {
+        credentialsRepository.authenticate(id, ResultHandler({ completed() }, { completed() }))
     }
 }
 

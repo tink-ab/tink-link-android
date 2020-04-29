@@ -27,6 +27,7 @@ import timber.log.Timber
 private const val PROVIDER_ARGS = "PROVIDER"
 
 private const val UPDATE_ARGS = "UPDATE_ARGS"
+private const val MANUAL_AUTH_ARGS = "MANUAL_AUTH_ARGS"
 
 /**
  * Responsible for displaying the fields that the user should fill their credentials into
@@ -40,6 +41,10 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
 
     private val updateArgs: CredentialsUpdateArgs? by lazy {
         arguments?.getParcelable<CredentialsUpdateArgs>(UPDATE_ARGS)
+    }
+
+    private val manualAuthArgs: CredentialsManualAuthArgs? by lazy {
+        arguments?.getParcelable<CredentialsManualAuthArgs>(MANUAL_AUTH_ARGS)
     }
 
     private val viewModel: CredentialsViewModel by viewModels()
@@ -76,10 +81,13 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
         })
 
         createCredentialsBtn.setOnClickListener {
-            if (updateArgs?.credentialsId.isNullOrEmpty()) {
-                createCredentials()
-            } else {
-                updateCredentials()
+            when {
+                updateArgs?.credentialsId?.isEmpty() == false -> updateCredentials()
+
+                manualAuthArgs?.credentialsId?.isEmpty() == false -> authenticateCredentials()
+
+                else -> createCredentials()
+
             }
         }
 
@@ -190,13 +198,40 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
         }
     }
 
+    private fun authenticateCredentials() {
+
+        val id = requireNotNull(manualAuthArgs?.credentialsId)
+
+        getRepositoryProvider().credentialsRepository?.let {
+            viewModel.authenticateCredentials(id, it) { error ->
+                view?.let { view ->
+                    val message = error.localizedMessage ?: error.message
+                    ?: "Something went wrong. Please try again later."
+                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
+                }
+            }
+        }
+    }
+
     companion object {
-        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
-            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
+        fun getBundle(
+            provider: Provider,
+            credentialsUpdateArgs: CredentialsUpdateArgs? = null,
+            credentialsManualAuthArgs: CredentialsManualAuthArgs? = null
+        ) = bundleOf(
+            PROVIDER_ARGS to provider,
+            UPDATE_ARGS to credentialsUpdateArgs,
+            MANUAL_AUTH_ARGS to credentialsManualAuthArgs
+        )
     }
 
     @Parcelize
     data class CredentialsUpdateArgs(
         val credentialsId: String, val fields: Map<String, String>
+    ) : Parcelable
+
+    @Parcelize
+    data class CredentialsManualAuthArgs(
+        val credentialsId: String
     ) : Parcelable
 }
