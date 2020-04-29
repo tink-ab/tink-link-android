@@ -66,8 +66,6 @@ dependencies {
     implementation(Dependencies.Androidx.browser)
 
     implementation(Dependencies.zxing)
-
-    implementation(Dependencies.markwon)
 }
 
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804
