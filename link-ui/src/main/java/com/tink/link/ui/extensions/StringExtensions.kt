@@ -50,11 +50,11 @@ internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) 
 }
 
 internal fun TextView.setTextWithUrlMarkdown(markdownText: String) {
+    text = markdownText
     Pattern
         .compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]")
         .matcher(markdownText)
         .let { matcher ->
-            text = markdownText
             while (matcher.find()) {
                 val linkText = matcher.toMatchResult().group(1)
                 val url = matcher.toMatchResult().group(2)
