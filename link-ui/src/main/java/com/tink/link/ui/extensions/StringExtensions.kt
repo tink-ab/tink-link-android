@@ -51,30 +51,24 @@ internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) 
 
 internal fun TextView.setTextWithUrlMarkdown(markdownText: String) {
     text = markdownText
-    Pattern
-        .compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]")
-        .matcher(markdownText)
-        .let { matcher ->
-            while (matcher.find()) {
-                val linkText = matcher.toMatchResult().group(1)
-                val url = matcher.toMatchResult().group(2)
-                val startIndex = matcher.start(1)
-                if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
-                    val linkInfo = LinkInfo(url, linkText)
-                    val fullText = matcher.replaceAll(linkText)
-                    text =
-                        SpannableString.valueOf(fullText)
-                            .apply {
-                                setSpan(
-                                    TinkUrlSpan(linkInfo.url, context),
-                                    startIndex - 1,
-                                    startIndex + linkInfo.linkText.length,
-                                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-                                )
-                            }
-                }
+    val matcher = Pattern.compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]").matcher(markdownText)
+    if (matcher.find()) {
+        val linkText = matcher.toMatchResult().group(1)
+        val url = matcher.toMatchResult().group(2)
+        val startIndex = matcher.start(1)
+        if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
+            val linkInfo = LinkInfo(url, linkText)
+            val fullText = matcher.replaceAll(linkText)
+            text = SpannableString.valueOf(fullText).apply {
+                setSpan(
+                    TinkUrlSpan(linkInfo.url, context),
+                    startIndex - 1,
+                    startIndex + linkInfo.linkText.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
             }
         }
+    }
 }
 
 private class TinkCallToActionSpan(
