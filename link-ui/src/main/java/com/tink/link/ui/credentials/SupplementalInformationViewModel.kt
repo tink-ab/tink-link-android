@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
+import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.misc.Field
 import com.tink.service.handler.ResultHandler
-import com.tink.service.misc.toFieldMap
 
 class SupplementalInformationViewModel : ViewModel() {
 

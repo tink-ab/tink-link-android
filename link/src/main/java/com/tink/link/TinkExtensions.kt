@@ -2,7 +2,7 @@ package com.tink.link
 
 import com.tink.core.Tink
 import com.tink.link.core.user.UserContext
-import com.tink.service.authentication.user.User
+import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
 

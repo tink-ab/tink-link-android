@@ -11,7 +11,6 @@ import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
-import com.tink.service.misc.toFieldMap
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 
@@ -196,3 +195,5 @@ class CredentialsViewModel : ViewModel() {
 
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }
 }
+
+private fun List<Field>.toFieldMap() = map { it.name to it.value }.toMap()

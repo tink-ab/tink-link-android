@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
 import com.tink.link.configuration.Configuration
 import com.tink.link.ui.TinkLinkUiActivity
-import com.tink.service.authentication.user.User
+import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.synthetic.main.activity_main_link_ui.*
 

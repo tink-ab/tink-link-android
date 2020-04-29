@@ -14,3 +14,5 @@ internal fun Field.toView(context: Context): View =
     }
 
 internal fun Field.isEditable(): Boolean = !attributes.inputType.isImmutable || value.isEmpty()
+
+internal fun List<Field>.toFieldMap() = map { it.name to it.value }.toMap()
