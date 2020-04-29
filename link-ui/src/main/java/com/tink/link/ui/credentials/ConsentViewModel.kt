@@ -2,10 +2,14 @@ package com.tink.link.ui.credentials
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.consent.ConsentContext
 import com.tink.link.getConsentContext
+import com.tink.model.consent.OAuthClientDescription
+import com.tink.model.consent.ScopeDescription
+import com.tink.service.handler.ResultHandler
 
 internal class ConsentViewModel() : ViewModel() {
 
@@ -14,11 +18,30 @@ internal class ConsentViewModel() : ViewModel() {
     val termsAndConditionsUrl = consentContext.termsAndConditions()
     val privacyPolicyUrl = consentContext.privacyPolicy()
 
-    //TODO: Update this view model once the OAuth2ClientDescription endpoint is implemented
+    private val _clientDescription = MutableLiveData<OAuthClientDescription>()
 
-    val user: LiveData<String> = MutableLiveData<String>().apply { value = "John Doe" }
+    val scopeDescriptions: MutableList<ScopeDescription> = mutableListOf()
 
-    val showConsentInformation: LiveData<Boolean> = MutableLiveData<Boolean>().apply { value = true }
+    init {
+        consentContext.describeClient(
+            scopes = setOf(), // TODO: Get scopes from client
+            resultHandler = ResultHandler(
+                { clientDescription ->
+                    _clientDescription.postValue(clientDescription)
+                    scopeDescriptions.clear()
+                    scopeDescriptions.addAll(clientDescription.scopeDescriptions)
+                },
+                { }
+            )
+        )
+    }
 
-    val showTermsAndConditions: LiveData<Boolean> = MutableLiveData<Boolean>().apply { value = true }
+    val user: LiveData<String> =
+        Transformations.map(_clientDescription) { it?.clientName ?: "" }
+
+    val showConsentInformation: LiveData<Boolean> =
+        Transformations.map(_clientDescription) { it?.aggregator == false }
+
+    val showTermsAndConditions: LiveData<Boolean> =
+        Transformations.map(_clientDescription) { it?.aggregator == false }
 }
