@@ -4,6 +4,8 @@ import com.tink.link.coroutines.launchForResult
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
+import com.tink.model.user.Scope
+import com.tink.service.credentials.CredentialsAuthenticateDescriptor
 import com.tink.service.credentials.CredentialsCreationDescriptor
 import com.tink.service.credentials.CredentialsRefreshDescriptor
 import com.tink.service.credentials.CredentialsService
@@ -115,6 +117,22 @@ class CredentialsRepository @Inject constructor(
     fun delete(credentialsId: String, resultHandler: ResultHandler<Unit>) {
         scope.launchForResult(resultHandler) {
             service.delete(credentialsId)
+        }
+    }
+
+    /**
+     * Manually authenticates the [Credentials] matching the id. This is only applicable for PSD2 credentials.
+     *
+     * @param credentialsId Identifier for the [Credentials] that is being authenticated
+     */
+    fun authenticate(credentialsId: String, resultHandler: ResultHandler<Unit>) {
+        scope.launchForResult(resultHandler) {
+            service.authenticate(
+                CredentialsAuthenticateDescriptor(
+                    id = credentialsId,
+                    appUri = tinkConfiguration.redirectUri
+                )
+            )
         }
     }
 
