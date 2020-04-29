@@ -8,12 +8,12 @@ import com.tink.link.ui.CombinedLiveData
 import com.tink.link.ui.Event
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
+import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
-import com.tink.service.misc.toFieldMap
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant

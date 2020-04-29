@@ -9,7 +9,7 @@ import com.tink.link.core.authentication.AccessRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.model.user.Scope
-import com.tink.service.authentication.user.User
+import com.tink.model.user.User
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
 import dagger.Component
