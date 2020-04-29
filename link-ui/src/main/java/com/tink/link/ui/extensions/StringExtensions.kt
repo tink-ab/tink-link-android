@@ -49,7 +49,7 @@ internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) 
     text = SpannedString(spannableString)
 }
 
-internal fun TextView.setMarkdownText(markdownText: String) {
+internal fun TextView.setTextWithUrlMarkdown(markdownText: String) {
     Pattern
         .compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]")
         .matcher(markdownText)

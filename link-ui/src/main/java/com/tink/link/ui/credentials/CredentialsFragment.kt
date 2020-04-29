@@ -21,7 +21,7 @@ import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
-import com.tink.link.ui.extensions.setMarkdownText
+import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
@@ -127,7 +127,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         if (provider.helpText.isNotBlank()) {
             providerHelpText.visibility = View.VISIBLE
             providerHelpTextBackground.visibility = View.VISIBLE
-            providerHelpText.setMarkdownText(provider.helpText)
+            providerHelpText.setTextWithUrlMarkdown(provider.helpText)
             providerHelpText.movementMethod = LinkMovementMethod.getInstance()
         } else {
             providerHelpText.visibility = View.GONE
