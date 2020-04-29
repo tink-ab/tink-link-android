@@ -2,9 +2,9 @@ package com.tink.link.core.credentials
 
 import com.tink.link.coroutines.launchForResult
 import com.tink.model.credentials.Credentials
+import com.tink.model.credentials.RefreshableItem
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
-import com.tink.model.user.Scope
 import com.tink.service.credentials.CredentialsAuthenticateDescriptor
 import com.tink.service.credentials.CredentialsCreationDescriptor
 import com.tink.service.credentials.CredentialsRefreshDescriptor
@@ -47,12 +47,14 @@ class CredentialsRepository @Inject constructor(
      * @param credentialsType The [Credentials.Type] used to authenticate the user to the financial institution
      * @param fields The map of [Field] name and value pairs for the [Provider]
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
+     * @param items A list of [RefreshableItem] representing the data types to aggregate from the provider. If omitted, all data types are aggregated.
      */
     fun create(
         providerName: String,
         credentialsType: Credentials.Type,
         fields: Map<String, String>,
-        resultHandler: ResultHandler<Credentials>
+        resultHandler: ResultHandler<Credentials>,
+        items: Set<RefreshableItem>? = null
     ) {
         scope.launchForResult(resultHandler) {
             service.create(
@@ -60,7 +62,8 @@ class CredentialsRepository @Inject constructor(
                     providerName,
                     credentialsType,
                     fields,
-                    tinkConfiguration.redirectUri
+                    tinkConfiguration.redirectUri,
+                    items
                 )
             )
         }
@@ -98,12 +101,16 @@ class CredentialsRepository @Inject constructor(
      *
      * @param credentialsIds List of identifiers for all the [Credentials] objects that is being refreshed
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
+     * @param items A list of [RefreshableItem] representing the data types to aggregate from the Provider. If omitted, all data types are aggregated.
      */
-    fun refresh(credentialsIds: List<String>, resultHandler: ResultHandler<Unit>) {
-        //TODO: Refresh logic for multiple credentials
+    fun refresh(
+        credentialsIds: List<String>,
+        resultHandler: ResultHandler<Unit>,
+        items: Set<RefreshableItem>? = null
+    ) {
         scope.launchForResult(resultHandler) {
             for (id in credentialsIds) {
-                service.refresh(CredentialsRefreshDescriptor(id))
+                service.refresh(CredentialsRefreshDescriptor(id, items))
             }
         }
     }
