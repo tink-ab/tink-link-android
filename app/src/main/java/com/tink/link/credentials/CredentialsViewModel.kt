@@ -3,9 +3,10 @@ package com.tink.link.credentials
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.tink.core.Tink
 import com.tink.link.CombinedLiveData
 import com.tink.link.Event
-import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.getUserContext
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
@@ -15,6 +16,8 @@ import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 
 class CredentialsViewModel : ViewModel() {
+
+    private val credentialsRepository = requireNotNull(Tink.getUserContext()?.credentialsRepository)
 
     private val _credentials = MutableLiveData<List<Credentials>>()
     val credentials: LiveData<List<Credentials>> = _credentials
@@ -54,7 +57,8 @@ class CredentialsViewModel : ViewModel() {
 
                     Credentials.Status.UPDATING -> _viewState.postValue(ViewState.UPDATING)
                     Credentials.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
-                    else -> {}
+                    else -> {
+                    }
                 }
             }
     }
@@ -82,7 +86,7 @@ class CredentialsViewModel : ViewModel() {
     /**
      * Stream credentials from the repository and post updates to [_credentials].
      */
-    private fun fetchCredentials(credentialsRepository: CredentialsRepository) {
+    private fun fetchCredentials() {
         streamSubscription?.unsubscribe()
         streamSubscription = credentialsRepository.listStream().subscribe(
             object : StreamObserver<List<Credentials>> {
@@ -101,7 +105,6 @@ class CredentialsViewModel : ViewModel() {
     fun createCredentials(
         provider: Provider,
         fields: List<Field>,
-        credentialsRepository: CredentialsRepository,
         onError: (Throwable) -> Unit
     ) {
         createdCredentials.value
@@ -110,7 +113,6 @@ class CredentialsViewModel : ViewModel() {
                 supplementalInformation(
                     credentialsId = it.id,
                     fields = fields,
-                    credentialsRepository = credentialsRepository,
                     onError = onError
                 )
                 return
@@ -121,7 +123,7 @@ class CredentialsViewModel : ViewModel() {
             fields.toFieldMap(),
             ResultHandler(
                 { credentials ->
-                    fetchCredentials(credentialsRepository) // Start streaming credentials
+                    fetchCredentials() // Start streaming credentials
                     credentialsId.postValue(credentials.id)
                 },
                 {
@@ -135,7 +137,6 @@ class CredentialsViewModel : ViewModel() {
     private fun supplementalInformation(
         credentialsId: String,
         fields: List<Field>,
-        credentialsRepository: CredentialsRepository,
         onError: (Throwable) -> Unit
     ) {
         credentialsRepository.supplementInformation(
@@ -160,7 +161,6 @@ class CredentialsViewModel : ViewModel() {
         id: String,
         provider: Provider,
         fields: List<Field>,
-        credentialsRepository: CredentialsRepository,
         onError: (Throwable) -> Unit
     ) {
 
@@ -172,7 +172,6 @@ class CredentialsViewModel : ViewModel() {
                 supplementalInformation(
                     credentialsId = it.id,
                     fields = fields,
-                    credentialsRepository = credentialsRepository,
                     onError = onError
                 )
                 return
@@ -183,7 +182,7 @@ class CredentialsViewModel : ViewModel() {
             fields.toFieldMap(),
             ResultHandler(
                 { credentials ->
-                    fetchCredentials(credentialsRepository) // Start streaming credentials
+                    fetchCredentials() // Start streaming credentials
                 },
                 {
                     _viewState.postValue(ViewState.NOT_LOADING)
@@ -195,14 +194,12 @@ class CredentialsViewModel : ViewModel() {
 
     fun authenticateCredentials(
         id: String,
-        credentialsRepository: CredentialsRepository,
         onError: (Throwable) -> Unit
     ) {
         credentialsId.postValue(id)
         credentialsRepository.authenticate(id,
-            ResultHandler({
-                fetchCredentials(credentialsRepository)
-            },
+            ResultHandler(
+                { fetchCredentials() }, // Start streaming credentials
                 {
                     _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
