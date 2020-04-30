@@ -43,6 +43,7 @@ dependencies {
     implementation(Dependencies.Androidx.core_ktx)
     implementation(Dependencies.Androidx.constraint_layout)
     testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.Testing.test_assertj)
     androidTestImplementation(Dependencies.Androidx.test_runner)
     androidTestImplementation(Dependencies.Androidx.test_espresso)
 
