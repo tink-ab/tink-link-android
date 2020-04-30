@@ -56,14 +56,14 @@ internal fun TextView.setTextWithUrlMarkdown(markdownText: String) {
 
 internal fun String.convertUrlMarkdownToSpan(context: Context): SpannableString {
     val matcher = Pattern.compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]").matcher(this)
-    return if (matcher.find()) {
+    if (matcher.find()) {
         val linkText = matcher.toMatchResult().group(1)
         val url = matcher.toMatchResult().group(2)
         val startIndex = matcher.start(1) - 1
         if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
             val linkInfo = LinkInfo(url, linkText)
             val fullText = matcher.replaceAll(linkText)
-            SpannableString.valueOf(fullText).apply {
+            return SpannableString.valueOf(fullText).apply {
                 setSpan(
                     TinkUrlSpan(linkInfo.url, context),
                     startIndex,
@@ -71,12 +71,9 @@ internal fun String.convertUrlMarkdownToSpan(context: Context): SpannableString 
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
             }
-        } else {
-            SpannableString(this)
         }
-    } else {
-        SpannableString(this)
     }
+    return SpannableString(this)
 }
 
 private class TinkCallToActionSpan(
