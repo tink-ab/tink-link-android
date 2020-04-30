@@ -10,14 +10,11 @@ import android.text.style.ClickableSpan
 import android.text.style.URLSpan
 import android.view.View
 import android.widget.TextView
+import androidx.annotation.VisibleForTesting
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.res.ResourcesCompat
 import com.tink.link.ui.R
-import io.noties.markwon.AbstractMarkwonPlugin
-import io.noties.markwon.Markwon
-import io.noties.markwon.MarkwonSpansFactory
-import io.noties.markwon.core.CoreProps
-import org.commonmark.node.Link
+import java.util.regex.Pattern
 
 internal fun String.convertCallToActionText(
     ctaText: String,
@@ -53,18 +50,31 @@ internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) 
     text = SpannedString(spannableString)
 }
 
-internal fun TextView.setMarkdownText(markdownText: String) =
-    Markwon
-        .builder(context)
-        .usePlugin(object : AbstractMarkwonPlugin() {
-            override fun configureSpansFactory(builder: MarkwonSpansFactory.Builder) {
-                builder.setFactory(Link::class.java) { _, props ->
-                    TinkUrlSpan(CoreProps.LINK_DESTINATION.require(props), context)
-                }
+internal fun TextView.setTextWithUrlMarkdown(markdownText: String) {
+    text = markdownText.convertUrlMarkdownToSpan(context)
+}
+
+internal fun String.convertUrlMarkdownToSpan(context: Context): SpannableString {
+    val matcher = Pattern.compile("\\[([^]]*)]\\(([^\\s^)]*)[\\s)]").matcher(this)
+    if (matcher.find()) {
+        val linkText = matcher.toMatchResult().group(1)
+        val url = matcher.toMatchResult().group(2)
+        val startIndex = matcher.start(1) - 1
+        if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
+            val linkInfo = LinkInfo(url, linkText)
+            val fullText = matcher.replaceAll(linkText)
+            return SpannableString.valueOf(fullText).apply {
+                setSpan(
+                    TinkUrlSpan(linkInfo.url, context),
+                    startIndex,
+                    startIndex + linkInfo.linkText.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
             }
-        })
-        .build()
-        .setMarkdown(this, markdownText)
+        }
+    }
+    return SpannableString(this)
+}
 
 private class TinkCallToActionSpan(
     val context: Context,
@@ -84,7 +94,8 @@ private class TinkCallToActionSpan(
     }
 }
 
-private class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
+@VisibleForTesting
+class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
     override fun updateDrawState(textPaint: TextPaint) {
         textPaint.apply {
             isUnderlineText = true
