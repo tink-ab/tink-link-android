@@ -23,6 +23,7 @@ import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.setTextWithLinks
+import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
@@ -71,10 +72,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         }
 
         consentViewModel.apply {
-            user.observe(viewLifecycleOwner, Observer { user ->
-                username.text = user
-                username.visibility = if (user.isNullOrBlank()) View.GONE else View.VISIBLE
-            })
             showConsentInformation.observe(viewLifecycleOwner, Observer {
                 userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE
@@ -255,7 +252,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             R.id.consentInformationFragment,
             ConsentInformationFragment.getBundle(
                 provider.displayName,
-                arrayListOf() //TODO: Add scope list data here
+                consentViewModel.scopeDescriptions.toArrayList()
             )
         )
     }
