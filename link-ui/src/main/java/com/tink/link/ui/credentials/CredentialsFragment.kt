@@ -72,10 +72,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         }
 
         consentViewModel.apply {
-            user.observe(viewLifecycleOwner, Observer { user ->
-                username.text = user
-                username.visibility = if (user.isNullOrBlank()) View.GONE else View.VISIBLE
-            })
             showConsentInformation.observe(viewLifecycleOwner, Observer {
                 userGroup.visibility =
                     if (it == true) View.VISIBLE else View.GONE

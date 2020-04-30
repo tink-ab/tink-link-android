@@ -72,49 +72,29 @@
     app:layout_constraintStart_toStartOf="@+id/userIconBackground"
     app:layout_constraintTop_toTopOf="@+id/userIconBackground" />
 
-  <LinearLayout
-    android:id="@+id/usernameConsentInfoContainer"
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/consentInformation"
+    style="@style/tink_deci.primary"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
     android:layout_marginStart="12dp"
+    android:layout_marginTop="20dp"
     android:layout_marginEnd="32dp"
-    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/userIconBackground"
     app:layout_constraintTop_toBottomOf="@+id/bankName"
-    app:layout_constraintEnd_toEndOf="parent">
-
-    <com.google.android.material.textview.MaterialTextView
-      android:id="@+id/username"
-      style="@style/tink_hecto.bold"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12dp"
-      android:gravity="center_vertical"
-      android:visibility="gone"
-      tools:text="John Doe" />
-
-    <com.google.android.material.textview.MaterialTextView
-      android:id="@+id/consentInformation"
-      style="@style/tink_deci.primary"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="8dp"
-      android:layout_gravity="center_vertical"
-      tools:text="Bank will obtain some of your financial information. Read More" />
-
-  </LinearLayout>
+    tools:text="Application will obtain some of your financial information. Read More" />
 
   <Space
     android:layout_width="match_parent"
     android:layout_height="24dp"
-    app:layout_constraintTop_toBottomOf="@id/usernameConsentInfoContainer"/>
+    app:layout_constraintTop_toBottomOf="@id/consentInformation" />
 
   <androidx.constraintlayout.widget.Group
     android:id="@+id/userGroup"
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:visibility="gone"
-    app:constraint_referenced_ids="dottedLine, userIcon, userIconBackground, usernameConsentInfoContainer"/>
+    app:constraint_referenced_ids="dottedLine, userIcon, userIconBackground, consentInformation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

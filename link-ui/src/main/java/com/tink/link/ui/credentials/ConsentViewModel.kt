@@ -36,9 +36,6 @@ internal class ConsentViewModel() : ViewModel() {
         )
     }
 
-    val user: LiveData<String> =
-        Transformations.map(_clientDescription) { it?.clientName ?: "" }
-
     val showConsentInformation: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.aggregator == false }
 
