@@ -1,7 +1,6 @@
 package com.tink.link.ui.credentials
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.inflate
-import kotlinx.android.parcel.Parcelize
+import com.tink.model.consent.ScopeDescription
 import kotlinx.android.synthetic.main.tink_fragment_consent_information.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
@@ -25,7 +24,7 @@ internal class ConsentInformationFragment : Fragment(R.layout.tink_fragment_cons
     }
 
     private val scopeList by lazy {
-        requireNotNull(arguments?.getParcelableArrayList<ScopeInfo>(SCOPE_LIST_ARG))
+        requireNotNull(arguments?.getParcelableArrayList<ScopeDescription>(SCOPE_LIST_ARG))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,14 +37,14 @@ internal class ConsentInformationFragment : Fragment(R.layout.tink_fragment_cons
     }
 
     companion object {
-        fun getBundle(toolbarTitle: String, scopeList: ArrayList<ScopeInfo>) =
+        fun getBundle(toolbarTitle: String, scopeList: ArrayList<ScopeDescription>) =
             bundleOf(TOOLBAR_TITLE_ARG to toolbarTitle, SCOPE_LIST_ARG to scopeList)
     }
 }
 
 internal class ScopeListAdapter : RecyclerView.Adapter<ScopeListAdapter.ScopeItemViewHolder>() {
 
-    var data: List<ScopeInfo> = emptyList()
+    var data: List<ScopeDescription> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScopeItemViewHolder {
         return ScopeItemViewHolder(parent.inflate(R.layout.tink_item_consent_scope))
@@ -64,12 +63,9 @@ internal class ScopeListAdapter : RecyclerView.Adapter<ScopeListAdapter.ScopeIte
         private val title: TextView = itemView.findViewById(R.id.scopeTitle)
         private val description: TextView = itemView.findViewById(R.id.scopeDescription)
 
-        fun bind(item: ScopeInfo) {
+        fun bind(item: ScopeDescription) {
             title.text = item.title
             description.text = item.description
         }
     }
 }
-
-@Parcelize
-internal data class ScopeInfo(val title: String, val description: String): Parcelable
