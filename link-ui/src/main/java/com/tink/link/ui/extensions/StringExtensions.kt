@@ -10,6 +10,7 @@ import android.text.style.ClickableSpan
 import android.text.style.URLSpan
 import android.view.View
 import android.widget.TextView
+import androidx.annotation.VisibleForTesting
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.res.ResourcesCompat
 import com.tink.link.ui.R
@@ -96,7 +97,8 @@ private class TinkCallToActionSpan(
     }
 }
 
-private class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
+@VisibleForTesting
+class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
     override fun updateDrawState(textPaint: TextPaint) {
         textPaint.apply {
             isUnderlineText = true
