@@ -18,7 +18,7 @@ internal class StringExtensionsTest {
         val spannableString = TEXT_WITH_URL_MARKDOWN.convertUrlMarkdownToSpan(context)
         val arrayOfTinkUrlSpansGenerated =
             spannableString.getSpans(0, spannableString.length - 1, TinkUrlSpan::class.java)
-        assertThat(arrayOfTinkUrlSpansGenerated).isNotEmpty
+        assertThat(arrayOfTinkUrlSpansGenerated.size).isOne()
     }
 
     @Test
