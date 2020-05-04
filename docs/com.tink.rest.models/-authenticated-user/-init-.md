@@ -1,5 +1,0 @@
-[link](../../index.md) / [com.tink.rest.models](../index.md) / [AuthenticatedUser](index.md) / [&lt;init&gt;](./-init-.md)
-
-# &lt;init&gt;
-
-`AuthenticatedUser(@Json("method") method: MethodEnum? = null, @Json("appId") appId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("user") user: `[`User`](../-user/index.md)`? = null, @Json("administrativeMode") administrativeMode: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`? = null, @Json("scopes") scopes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>? = null, @Json("locale") locale: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("oauthClientId") oauthClientId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`

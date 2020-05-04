@@ -1,5 +1,0 @@
-[link](../../index.md) / [com.tink.rest.models](../index.md) / [OAuth2AuthenticationTokenResponse](index.md) / [&lt;init&gt;](./-init-.md)
-
-# &lt;init&gt;
-
-`OAuth2AuthenticationTokenResponse(@Json("token_type") tokenType: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("expires_in") expiresIn: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, @Json("access_token") accessToken: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("refresh_token") refreshToken: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("scope") scope: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("id_hint") idHint: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`

@@ -1,5 +1,0 @@
-[link](../../index.md) / [com.tink.rest.models](../index.md) / [UserProfile](index.md) / [&lt;init&gt;](./-init-.md)
-
-# &lt;init&gt;
-
-`UserProfile(@Json("currency") currency: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("locale") locale: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("market") market: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("periodAdjustedDay") periodAdjustedDay: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, @Json("periodMode") periodMode: PeriodModeEnum, @Json("timeZone") timeZone: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("notificationSettings") notificationSettings: `[`NotificationSettings`](../-notification-settings/index.md)`, @Json("cashbackEnabled") cashbackEnabled: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`? = null)`
