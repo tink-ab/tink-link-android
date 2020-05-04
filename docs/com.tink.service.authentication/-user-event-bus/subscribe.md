@@ -2,4 +2,4 @@
 
 # subscribe
 
-`fun subscribe(onUserReceived: (`[`User`](../../com.tink.service.authentication.user/-user/index.md)`) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): Disposable`
+`fun subscribe(onUserReceived: (`[`User`](../../com.tink.model.user/-user/index.md)`) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): Disposable`

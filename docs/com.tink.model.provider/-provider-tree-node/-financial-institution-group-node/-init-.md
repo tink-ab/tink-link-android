@@ -9,4 +9,6 @@ The top level node of the tree structure, with a list of [FinancialInstitutionNo
 ### Parameters
 
 `name` - The grouping identifier related to the [Provider](../../-provider/index.md)'s `groupDisplayName` or
-    `financialInstitution.name` property
+    `financialInstitution.name` property.
+
+`financialInstitutions` - The list of child nodes.
