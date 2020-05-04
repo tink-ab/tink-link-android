@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [StatisticQuery](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`StatisticQuery(@Json("description") description: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("periods") periods: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>? = null, @Json("resolution") resolution: ResolutionEnum? = null, @Json("types") types: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>? = null, @Json("padResultUntilToday") padResultUntilToday: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`? = null)`

@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [TransferDestination](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`TransferDestination(@Json("balance") balance: `[`Double`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)`? = null, @Json("displayBankName") displayBankName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("displayAccountNumber") displayAccountNumber: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("uri") uri: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("name") name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("type") type: TypeEnum? = null, @Json("matchesMultiple") matchesMultiple: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`? = null)`

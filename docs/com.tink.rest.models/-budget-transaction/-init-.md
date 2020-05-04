@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [BudgetTransaction](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`BudgetTransaction(@Json("id") id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("amount") amount: `[`CurrencyDenominatedAmount`](../-currency-denominated-amount/index.md)`? = null, @Json("dispensableAmount") dispensableAmount: `[`CurrencyDenominatedAmount`](../-currency-denominated-amount/index.md)`? = null, @Json("date") date: ZonedDateTime? = null, @Json("description") description: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("categoryCode") categoryCode: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("accountId") accountId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`

@@ -1,0 +1,8 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [Budget](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`Budget(@Json("id") id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("name") name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("amount") amount: `[`CurrencyDenominatedAmount`](../-currency-denominated-amount/index.md)`? = null, @Json("periodicityType") periodicityType: PeriodicityTypeEnum? = null, @Json("recurringPeriodicity") recurringPeriodicity: `[`RecurringPeriodicity`](../-recurring-periodicity/index.md)`? = null, @Json("oneOffPeriodicity") oneOffPeriodicity: `[`OneOffPeriodicity`](../-one-off-periodicity/index.md)`? = null, @Json("archived") archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`? = null, @Json("filter") filter: `[`Filter`](../-filter/index.md)`? = null)`
+
+A budget represents a financial target for a defined period. The budget itself is identified by certain filter/criteria (such as accounts, categories, tags or free-text) to target expenses. Defining multiple filter properties will yield an AND operation, and specifying multiple values of a filter property will yield an OR operation.Depending on the use case a budget can either be recurring (WEEK, MONTH or YEAR) or be seen as a one-off budget (fixed start and end time period). The amount of the budget will relate to the recurring period defined by the periodicity unit for recurring budgets, or the fixed time window for a one-off budget. A budget could for example be the goal to spend at maximum 10 euros weekly on coffee.
+

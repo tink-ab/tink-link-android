@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [UpdateCredentialsRequest](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`UpdateCredentialsRequest(@Json("providerName") providerName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("fields") fields: `[`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>? = null, @Json("callbackUri") callbackUri: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("appUri") appUri: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`

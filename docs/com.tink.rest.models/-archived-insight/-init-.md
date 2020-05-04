@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [ArchivedInsight](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`ArchivedInsight(@Json("userId") userId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Json("id") id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("type") type: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("title") title: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("description") description: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, @Json("data") data: `[`InsightData`](../-insight-data/index.md)`? = null, @Json("dateInsightCreated") dateInsightCreated: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`? = null, @Json("dateArchived") dateArchived: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`? = null)`

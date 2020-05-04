@@ -6,4 +6,4 @@
 
 | Name | Summary |
 |---|---|
-| [CredentialRepository](-credential-repository/index.md) | Repository for creating, accessing and modifying credentials.`class CredentialRepository` |
+| [CredentialsRepository](-credentials-repository/index.md) | Repository for creating, accessing and modifying credentials.`class CredentialsRepository` |

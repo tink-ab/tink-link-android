@@ -2,7 +2,7 @@
 
 # UserEventBus
 
-`@Singleton class UserEventBus`
+`class UserEventBus`
 
 ### Constructors
 
@@ -14,5 +14,5 @@
 
 | Name | Summary |
 |---|---|
-| [postUser](post-user.md) | `fun postUser(user: `[`User`](../../com.tink.service.authentication.user/-user/index.md)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
-| [subscribe](subscribe.md) | `fun subscribe(onUserReceived: (`[`User`](../../com.tink.service.authentication.user/-user/index.md)`) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): Disposable` |
+| [postUser](post-user.md) | `fun postUser(user: `[`User`](../../com.tink.model.user/-user/index.md)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [subscribe](subscribe.md) | `fun subscribe(onUserReceived: (`[`User`](../../com.tink.model.user/-user/index.md)`) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`): Disposable` |

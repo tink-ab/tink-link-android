@@ -8,7 +8,7 @@
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `PollingHandler(pollingAction: (`[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<T>) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)` |
+| [&lt;init&gt;](-init-.md) | `PollingHandler(pollingAction: suspend (`[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<T>) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)` |
 
 ### Functions
 

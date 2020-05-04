@@ -1,7 +1,7 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
 $dokka.location:com.tink.model.provider$toProviderTree(kotlin.collections.List((com.tink.model.provider.Provider)))com.tink.model.provider/kotlin.collections.-list/to-provider-tree.md
-$dokka.location:com.tink.service.misc$toFieldMap(kotlin.collections.List((com.tink.model.misc.Field)))com.tink.service.misc/kotlin.collections.-list/to-field-map.md
+$dokka.location:com.tink.rest.tools$unwrap(retrofit2.Response((kotlin.Unit)))com.tink.rest.tools/retrofit2.-response/unwrap.md
 com.tink.core
 com.tink.core.provider
 com.tink.link
@@ -13,7 +13,8 @@ com.tink.model.account
 com.tink.model.authentication
 com.tink.model.budget
 com.tink.model.category
-com.tink.model.credential
+com.tink.model.consent
+com.tink.model.credentials
 com.tink.model.insights
 com.tink.model.misc
 com.tink.model.provider
@@ -22,17 +23,18 @@ com.tink.model.statistic
 com.tink.model.time
 com.tink.model.transaction
 com.tink.model.user
-com.tink.service
+com.tink.rest.apis
+com.tink.rest.models
+com.tink.rest.tools
 com.tink.service.account
 com.tink.service.authentication
-com.tink.service.authentication.user
 com.tink.service.authorization
+com.tink.service.category
 com.tink.service.consent
-com.tink.service.credential
+com.tink.service.credentials
+com.tink.service.di
 com.tink.service.handler
-com.tink.service.misc
 com.tink.service.network
-com.tink.service.observer
 com.tink.service.provider
 com.tink.service.streaming
 com.tink.service.streaming.publisher

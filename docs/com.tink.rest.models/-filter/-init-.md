@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.rest.models](../index.md) / [Filter](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`Filter(@Json("accounts") accounts: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`BudgetFilterAccount`](../-budget-filter-account/index.md)`>? = null, @Json("categories") categories: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`BudgetFilterCategory`](../-budget-filter-category/index.md)`>? = null, @Json("tags") tags: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`BudgetFilterTag`](../-budget-filter-tag/index.md)`>? = null, @Json("freeTextQuery") freeTextQuery: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`
