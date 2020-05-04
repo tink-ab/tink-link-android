@@ -17,7 +17,7 @@ dokka {
             path = "$rootDir/../tink-sdk-core-android/service/src"
         }
         sourceRoot {
-            path = "$rootDir/../tink-sdk-core-android/rpc/src"
+            path = "$rootDir/../tink-sdk-core-android/rest/src"
         }
     }
 }
