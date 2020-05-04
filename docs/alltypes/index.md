@@ -306,11 +306,6 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 ##### [com.tink.model.statistic.StatisticTree](../com.tink.model.statistic/-statistic-tree/index.md)
 
 
-| (extensions in package com.tink.service.credentials)
-
-##### [com.tink.rest.models.Credentials.StatusEnum](../com.tink.service.credentials/com.tink.rest.models.-credentials.-status-enum/index.md)
-
-
 |
 
 ##### [com.tink.service.streaming.publisher.Stream](../com.tink.service.streaming.publisher/-stream/index.md)
@@ -336,11 +331,6 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 ##### [com.tink.model.authentication.ThirdPartyAppAuthentication](../com.tink.model.authentication/-third-party-app-authentication/index.md)
 
 This model contains information required for third party authentication flow.
-
-
-| (extensions in package com.tink.service.credentials)
-
-##### [com.tink.rest.models.Credentials.ThirdPartyAuthentication](../com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/index.md)
 
 
 |
@@ -380,11 +370,6 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 |
 
 ##### [com.tink.model.transaction.TransactionDetails](../com.tink.model.transaction/-transaction-details/index.md)
-
-
-| (extensions in package com.tink.service.credentials)
-
-##### [com.tink.rest.models.Credentials.TypeEnum](../com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/index.md)
 
 
 |

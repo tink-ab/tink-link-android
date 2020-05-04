@@ -1,9 +1,6 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
 $dokka.location:com.tink.model.provider$toProviderTree(kotlin.collections.List((com.tink.model.provider.Provider)))com.tink.model.provider/kotlin.collections.-list/to-provider-tree.md
-$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.StatusEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-status-enum/to-core-model.md
-$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.ThirdPartyAuthentication)com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/to-core-model.md
-$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.TypeEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/to-core-model.md
 com.tink.core
 com.tink.core.provider
 com.tink.link
