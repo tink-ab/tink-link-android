@@ -99,19 +99,17 @@ class CredentialsRepository @Inject constructor(
     /**
      * Refreshes all [Credentials] objects matching the list of ids.
      *
-     * @param credentialsIds List of identifiers for all the [Credentials] objects that is being refreshed
+     * @param credentialsId Id of the [Credentials] that are being refreshed
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      * @param items A list of [RefreshableItem] representing the data types to aggregate from the Provider. If omitted, all data types are aggregated.
      */
     fun refresh(
-        credentialsIds: List<String>,
+        credentialsId: String,
         resultHandler: ResultHandler<Unit>,
         items: Set<RefreshableItem>? = null
     ) {
         scope.launchForResult(resultHandler) {
-            for (id in credentialsIds) {
-                service.refresh(CredentialsRefreshDescriptor(id, items))
-            }
+            service.refresh(CredentialsRefreshDescriptor(credentialsId, items))
         }
     }
 

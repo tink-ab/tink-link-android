@@ -67,7 +67,8 @@ class RefreshCredentialsViewModel : ViewModel() {
                 credentialsStatusMap[newCredentials.id] = newStatusModel // Update map
                 onCredentialsStatusUpdate(newCredentials) // Update queue as necessary
                 currentlyRefreshing.postValue(
-                    updateQueue.asIterable().firstOrNull()?.value // Post first value of the queue as current credentials
+                    updateQueue.asIterable()
+                        .firstOrNull()?.value // Post first value of the queue as current credentials
                 )
             }
         }
@@ -111,16 +112,17 @@ class RefreshCredentialsViewModel : ViewModel() {
         }
 
     fun refreshAll() {
-        credentials.value?.map { it.id }?.let {
-            credentialsRepository.refresh(
-                it,
-                ResultHandler({
-                    Timber.d("Refresh success")
-                }, {
-                    Timber.d("Refresh error")
-                })
-            )
-        }
+        credentials.value
+            ?.forEach { credentials ->
+                credentialsRepository.refresh(
+                    credentials.id,
+                    ResultHandler({
+                        Timber.d("Refresh success for $credentials")
+                    }, {
+                        Timber.d("Refresh error for $credentials")
+                    })
+                )
+            }
     }
 
     fun sendSupplementalInformation(credentialsId: String, fields: List<Field>) {
