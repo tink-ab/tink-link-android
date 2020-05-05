@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
 import com.tink.link.configuration.Configuration
+import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 
 private val MainActivity.testTinkLinkConfig
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Tink.init(testTinkLinkConfig, applicationContext)
+        val config = getConfigFromIntent() ?: testTinkLinkConfig
+
+        Tink.init(config, applicationContext)
 
         redirectIfAppropriate(intent)
     }
@@ -40,6 +43,18 @@ class MainActivity : AppCompatActivity() {
         intent?.data?.let { uri ->
             Tink.getUserContext()?.handleUri(uri)
         }
+    }
+
+    private fun getConfigFromIntent(): TinkConfiguration? =
+        intent?.getStringExtra(CLIENT_ID_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                TinkConfiguration(Environment.Production, it, testTinkLinkConfig.redirectUri)
+            }
+
+    companion object {
+        const val CLIENT_ID_EXTRA = "clientIdExtra"
+        const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
     }
 }
 
