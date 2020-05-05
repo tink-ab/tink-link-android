@@ -25,6 +25,8 @@ dependencies {
 }
 ```
 
+Latest version: ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-link-android?color=%230E9EC2)
+
 3. Optional: Verify artifact checksums
 
 The *SHA-256* checksums can be found in the corresponding [release](https://github.com/tink-ab/tink-link-android/releases).
