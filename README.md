@@ -45,7 +45,7 @@ val config =
 ```
 
 `[1]` _Note: You need to add a custom URL scheme or supported web URLS to handle redirects from a third party authentication flow back into your app.
-This should be the same redirect URI that is registered in the list of allowed redirect URIs. Follow the [third party authentication guide](/third-party-authentication.md) to set this up._
+This should be the same redirect URI that is registered in the list of allowed redirect URIs. Follow the [third party authentication guide](https://docs.tink.com/resources/tutorials/tink-link-sdk-android-tutorial#third-party-authentication) to set this up._
 
 2. Initialize Tink in your Application
 
@@ -54,7 +54,7 @@ Tink.init(config, applicationContext)
 ```
 
 ## Examples
-- [Usage Examples](/USAGE.md) This document outlines how to use the different classes and types provided with TinkLink
+- [Usage Examples](https://docs.tink.com/resources/tutorials/tink-link-sdk-android-tutorial#usage-examples) This section outlines how to use the different classes and types provided with Tink Link.
 
 ## Developer documentation
 - [Tink Link Android Reference](https://tink-ab.github.io/tink-link-android/)
