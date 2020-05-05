@@ -17,15 +17,15 @@ allprojects {
 }
 ```
 
-2. Add dependency on the [latest release](https://github.com/tink-ab/tink-link-android/releases/latest):
+2. Add dependency on the latest version: 
+
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-link-android?color=%230E9EC2)](https://github.com/tink-ab/tink-link-android/releases/latest)
 
 ```groovy
 dependencies {
     implementation "com.tink:link:<version>"
 }
 ```
-
-Latest version: ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-link-android?color=%230E9EC2)
 
 3. Optional: Verify artifact checksums
 
