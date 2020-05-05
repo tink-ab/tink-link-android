@@ -17,11 +17,11 @@ allprojects {
 }
 ```
 
-2. Add dependency on `com.tink:link:0.9.0`
+2. Add dependency on the [latest release](https://github.com/tink-ab/tink-link-android/releases/latest):
 
 ```groovy
 dependencies {
-    implementation "com.tink:link:0.9.0"
+    implementation "com.tink:link:<version>"
 }
 ```
 
