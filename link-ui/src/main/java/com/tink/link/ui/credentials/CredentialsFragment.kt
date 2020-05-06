@@ -146,6 +146,8 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             submitFilledFields()
         }
 
+        createCredentialsBtn.setOnClickListener { submitFilledFields() }
+
         footer.post {
             bottomSpacer.updateLayoutParams {
                 height = footer.height
