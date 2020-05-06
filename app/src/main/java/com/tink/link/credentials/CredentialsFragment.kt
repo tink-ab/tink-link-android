@@ -13,11 +13,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.tink.link.R
-import com.tink.link.TinkLinkConsumer
 import com.tink.link.extensions.dpToPixels
 import com.tink.link.extensions.hideKeyboard
 import com.tink.link.extensions.launch
-import com.tink.link.getRepositoryProvider
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_credentials.*
