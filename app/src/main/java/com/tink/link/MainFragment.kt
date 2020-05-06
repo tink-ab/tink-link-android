@@ -56,7 +56,10 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     private fun getUserFromIntent(): User? =
-        activity?.intent?.getStringExtra(MainActivity.ACCESS_TOKEN_EXTRA)?.let {
-            User.fromAccessToken(it)
-        }
+        activity?.intent
+            ?.getStringExtra(MainActivity.ACCESS_TOKEN_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                User.fromAccessToken(it)
+            }
 }
