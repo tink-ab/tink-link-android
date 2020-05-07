@@ -12,10 +12,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.R
-import com.tink.link.credentials.CredentialField
+import com.tink.link.credentials.CredentialsField
 import com.tink.link.extensions.dpToPixels
 import com.tink.link.extensions.launch
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import kotlinx.android.synthetic.main.fragment_refresh_credentials.*
 
 class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credentials) {
@@ -36,16 +36,16 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
 
         viewModel.infoRequiredEvent.observe(viewLifecycleOwner, Observer { event ->
 
-            event?.getContentIfNotHandled()?.let { credential ->
-                when (credential.status) {
-                    Credential.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
-                    Credential.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION ->
-                        credential.thirdPartyAppAuthentication?.launch(requireActivity()) {
+            event?.getContentIfNotHandled()?.let { credentials ->
+                when (credentials.status) {
+                    Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
+                    Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION ->
+                        credentials.thirdPartyAppAuthentication?.launch(requireActivity()) {
                             // User cancelled authorization
                         }
 
-                    Credential.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
-                        showSupplementalInfoDialog(credential)
+                    Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
+                        showSupplementalInfoDialog(credentials)
 
                     else -> {
                         // Event handling not applicable
@@ -57,9 +57,9 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
         refreshButton.setOnClickListener { viewModel.refreshAll() }
     }
 
-    private fun showSupplementalInfoDialog(credential: Credential) {
+    private fun showSupplementalInfoDialog(credentials: Credentials) {
 
-        val credentialFields = LinearLayout(requireContext())
+        val credentialsFields = LinearLayout(requireContext())
 
 
         val params = LinearLayout.LayoutParams(
@@ -67,14 +67,14 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
             LinearLayout.LayoutParams.WRAP_CONTENT
         )
 
-        credentialFields.layoutParams = params
-        credentialFields.setPadding(50)
-        credentialFields.orientation = LinearLayout.VERTICAL
+        credentialsFields.layoutParams = params
+        credentialsFields.setPadding(50)
+        credentialsFields.orientation = LinearLayout.VERTICAL
 
-        for (field in credential.supplementalInformation) {
-            credentialFields
+        for (field in credentials.supplementalInformation) {
+            credentialsFields
                 .addView(
-                    CredentialField(requireContext())
+                    CredentialsField(requireContext())
                         .also {
                             it.updatePadding(bottom = resources.dpToPixels(32))
                             it.setupField(field)
@@ -84,17 +84,17 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
         AlertDialog.Builder(requireContext())
             .setPositiveButton("Send") { _, _ ->
 
-                val filledFields = credentialFields.children
-                    .filterIsInstance(CredentialField::class.java)
+                val filledFields = credentialsFields.children
+                    .filterIsInstance(CredentialsField::class.java)
                     .map { it.getFilledField() }
                     .toList()
 
-                viewModel.sendSupplementalInformation(credential.id, filledFields)
+                viewModel.sendSupplementalInformation(credentials.id, filledFields)
             }
             .setNegativeButton("Cancel") { _, _ ->
-                viewModel.cancelSupplementalInformation(credential.id)
+                viewModel.cancelSupplementalInformation(credentials.id)
             }
-            .setView(credentialFields)
+            .setView(credentialsFields)
             .show()
     }
 }

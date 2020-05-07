@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tink.link.R
 import com.tink.link.extensions.inflate
-import kotlinx.android.synthetic.main.item_credential_refresh_row.view.*
-import kotlinx.android.synthetic.main.item_credential_row.view.providerName
+import kotlinx.android.synthetic.main.item_credentials_refresh_row.view.*
+import kotlinx.android.synthetic.main.item_credentials_row.view.providerName
 import kotlin.properties.Delegates
 
 class RefreshCredentialsAdapter : RecyclerView.Adapter<RefreshCredentialsRow>() {
@@ -18,7 +18,7 @@ class RefreshCredentialsAdapter : RecyclerView.Adapter<RefreshCredentialsRow>() 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RefreshCredentialsRow {
         return RefreshCredentialsRow(
-            parent.inflate(R.layout.item_credential_refresh_row)
+            parent.inflate(R.layout.item_credentials_refresh_row)
         )
     }
 
@@ -32,7 +32,7 @@ class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) 
         itemView.providerName.text = model.label
         itemView.status.text = model.status
 
-        val loading = model.state != CredentialRefreshState.DONE
+        val loading = model.state != CredentialsRefreshState.DONE
 
         itemView.loader.visibility = if (loading) View.VISIBLE else View.INVISIBLE
         itemView.logo.visibility = View.INVISIBLE

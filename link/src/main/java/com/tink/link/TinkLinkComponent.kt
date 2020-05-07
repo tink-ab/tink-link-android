@@ -5,10 +5,11 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.authentication.AccessRepository
+import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
-import com.tink.service.authentication.user.User
-import com.tink.service.authorization.Scope
+import com.tink.model.user.Scope
+import com.tink.model.user.User
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
 import dagger.Component
@@ -31,47 +32,35 @@ internal abstract class TinkLinkComponent {
 
     internal abstract val consentContext: ConsentContext
 
+    internal abstract val accessRepository: AccessRepository
+
     private val _userContext = object : UserContext {
         override val providerRepository: ProviderRepository
             get() = repositories.providerRepository
-        override val credentialRepository: CredentialRepository
-            get() = repositories.credentialRepository
+        override val credentialsRepository: CredentialsRepository
+            get() = repositories.credentialsRepository
 
         override fun handleUri(uri: Uri, resultHandler: ResultHandler<Unit>?) =
             thirdPartyCallbackHandler.handleUri(uri, resultHandler)
 
-        override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) =
-            userService.authorize(scopes, resultHandler)
+        override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) {
+            accessRepository.authorize(scopes, resultHandler)
+        }
 
     }
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
-//    /**
-//     * Create a temporary user.
-//     * This allows you to launch the flow and fetch data for users without having permanent Tink users.
-//     *
-//     * On a successful result, your resultHandler should call [Tink.setUser] to set this user to the Tink instance.
-//     */
-//    private fun createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) {
-//        authenticationRepository.createAnonymousUser(
-//            market,
-//            locale,
-//            ResultHandler(
-//                { accessToken -> resultHandler.onSuccess(User(accessToken)) },
-//                resultHandler.onError
-//            )
-//        )
-//    }
+    internal fun createTemporaryUser(
+        market: String,
+        locale: String,
+        resultHandler: ResultHandler<User>
+    ) {
+        accessRepository.createAnonymousUser(market, locale, resultHandler)
+    }
 
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
-        userService.authenticate(
-            authenticationCode,
-            ResultHandler(
-                { accessToken -> resultHandler.onSuccess(User.fromAccessToken(accessToken)) },
-                resultHandler.onError
-            )
-        )
+        accessRepository.authenticate(authenticationCode, resultHandler)
     }
 
     companion object {
@@ -96,7 +85,7 @@ internal interface RepositoryComponent : Repositories
 
 internal interface Repositories {
     val providerRepository: ProviderRepository
-    val credentialRepository: CredentialRepository
+    val credentialsRepository: CredentialsRepository
 }
 
 @javax.inject.Scope

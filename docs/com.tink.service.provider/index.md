@@ -7,4 +7,3 @@
 | Name | Summary |
 |---|---|
 | [ProviderService](-provider-service/index.md) | `interface ProviderService` |
-| [ProviderServiceImpl](-provider-service-impl/index.md) | `class ProviderServiceImpl : `[`ProviderService`](-provider-service/index.md) |

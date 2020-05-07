@@ -6,5 +6,5 @@
 
 | Name | Summary |
 |---|---|
-| [Scope](-scope/index.md) | `sealed class Scope` |
+| [UserCreationDescriptor](-user-creation-descriptor/index.md) | `data class UserCreationDescriptor` |
 | [UserService](-user-service/index.md) | `interface UserService` |

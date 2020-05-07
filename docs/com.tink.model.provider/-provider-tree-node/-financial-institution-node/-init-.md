@@ -8,4 +8,6 @@ A parent node of the tree structure, with a list of [AccessTypeNode](../-access-
 
 ### Parameters
 
-`id` - The unique identifier of the financial institution.
+`financialInstitution` - The `financialInstitution` that this node represents.
+
+`accessTypes` - The list of child nodes.
