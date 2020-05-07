@@ -3,3 +3,6 @@
 # financialInstitution
 
 `val financialInstitution: FinancialInstitution`
+
+The `financialInstitution` that this node represents.
+

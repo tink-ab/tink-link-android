@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
-import com.tink.service.authentication.user.User
+import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
@@ -23,7 +23,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         // Set a user on the Tink instance:
-        Tink.setUser(getUser())
+        Tink.setUser(getUserFromIntent() ?: getUser())
         findNavController().navigate(R.id.profileFragment)
     }
 
@@ -54,4 +54,12 @@ class MainFragment : Fragment(), TinkLinkConsumer {
             }, {}
         ))
     }
+
+    private fun getUserFromIntent(): User? =
+        activity?.intent
+            ?.getStringExtra(MainActivity.ACCESS_TOKEN_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                User.fromAccessToken(it)
+            }
 }

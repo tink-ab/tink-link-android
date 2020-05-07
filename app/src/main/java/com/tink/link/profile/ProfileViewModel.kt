@@ -5,9 +5,10 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.credentials.CredentialsFragment
 import com.tink.link.getUserContext
-import com.tink.model.credential.Credential
+import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
@@ -21,9 +22,9 @@ import java.util.Locale
 class ProfileViewModel : ViewModel() {
 
     private val providerStream = MutableLiveData<List<Provider>>()
-    private val credentialsStream = MutableLiveData<List<Credential>>()
+    private val credentialsStream = MutableLiveData<List<Credentials>>()
 
-    private val credentialRepository: CredentialRepository
+    private val credentialsRepository: CredentialsRepository
 
     private var credentialsSubscription: StreamSubscription? = null
         set(value) {
@@ -34,12 +35,12 @@ class ProfileViewModel : ViewModel() {
     init {
         val userContext = requireNotNull(Tink.getUserContext())
 
-        credentialRepository = userContext.credentialRepository
+        credentialsRepository = userContext.credentialsRepository
         val providerRepository = userContext.providerRepository
 
         credentialsSubscription =
-            credentialRepository.listStream().subscribe(object : StreamObserver<List<Credential>> {
-                override fun onNext(value: List<Credential>) {
+            credentialsRepository.listStream().subscribe(object : StreamObserver<List<Credentials>> {
+                override fun onNext(value: List<Credentials>) {
                     credentialsStream.postValue(value)
                 }
             })
@@ -84,18 +85,27 @@ class ProfileViewModel : ViewModel() {
         credentialsSubscription?.unsubscribe()
     }
 
-    fun deleteCredential(id: String, completed: () -> Unit) =
-        credentialRepository.delete(id, ResultHandler({ completed() }, { completed() }))
+    fun deleteCredentials(id: String, completed: () -> Unit) =
+        credentialsRepository.delete(id, ResultHandler({ completed() }, { completed() }))
 
-    fun getUpdateDataForCredential(credentialId: String): CredentialUpdateData? {
+    fun getUpdateDataForCredentials(credentialsId: String): CredentialsUpdateData? {
 
-        val credential = credentialsStream.value?.find { it.id == credentialId } ?: return null
-        val provider = providers.value?.find { it.name == credential.providerName } ?: return null
+        val credentials = credentialsStream.value?.find { it.id == credentialsId } ?: return null
+        val provider = providers.value?.find { it.name == credentials.providerName } ?: return null
 
-        return CredentialUpdateData(
+        return CredentialsUpdateData(
             provider,
-            credential.fields
+            credentials.fields
         )
+    }
+
+    fun getProviderForCredentials(credentialsId: String): Provider? {
+        val credentials = credentialsStream.value?.find { it.id == credentialsId } ?: return null
+        return providers.value?.find { it.name == credentials.providerName }
+    }
+
+    fun authenticateCredentials(id: String, completed: () -> Unit) {
+        credentialsRepository.authenticate(id, ResultHandler({ completed() }, { completed() }))
     }
 }
 
@@ -106,7 +116,7 @@ data class Connection(
     val iconUri: String?
 )
 
-data class CredentialUpdateData(
+data class CredentialsUpdateData(
     val provider: Provider,
     val currentValues: Map<String, String>
 )

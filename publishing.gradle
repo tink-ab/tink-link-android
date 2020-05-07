@@ -31,6 +31,8 @@ publishing {
         tinkLink(MavenPublication) {
             artifact sourcesJar
             artifact javadocJar
+            artifact AAR_PATH
+
 
             artifactId POM_NAME
             version this.version
@@ -99,7 +101,7 @@ bintray {
         websiteUrl = POM_URL
         vcsUrl = POM_GIT_URL
         licenses = [POM_LICENSE]
-        publish = true
+        publish = false
         publicDownloadNumbers = true
         version {
             desc = POM_DESCRIPTION
