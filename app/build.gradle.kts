@@ -26,7 +26,6 @@ android {
 }
 
 dependencies {
-//    implementation(project(":link"))
     implementation("com.tink:link:${TinkLinkVersion.name}")
 
     implementation(Dependencies.kotlin_stdlib)

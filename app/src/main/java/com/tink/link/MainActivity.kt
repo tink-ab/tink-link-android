@@ -4,11 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.tink.core.Tink
-import com.tink.core.provider.ProviderRepository
 import com.tink.link.configuration.Configuration
-import com.tink.link.core.credentials.CredentialRepository
+import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 
 private val MainActivity.testTinkLinkConfig
@@ -29,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Tink.init(testTinkLinkConfig, applicationContext)
+        val config = getConfigFromIntent() ?: testTinkLinkConfig
+
+        Tink.init(config, applicationContext)
 
         redirectIfAppropriate(intent)
     }
@@ -44,19 +44,18 @@ class MainActivity : AppCompatActivity() {
             Tink.getUserContext()?.handleUri(uri)
         }
     }
+
+    private fun getConfigFromIntent(): TinkConfiguration? =
+        intent?.getStringExtra(CLIENT_ID_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                TinkConfiguration(Environment.Production, it, testTinkLinkConfig.redirectUri)
+            }
+
+    companion object {
+        const val CLIENT_ID_EXTRA = "clientIdExtra"
+        const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
+    }
 }
 
 interface TinkLinkConsumer
-
-interface TinkRepositoryProvider {
-    val providerRepository: ProviderRepository?
-    val credentialRepository: CredentialRepository?
-}
-
-fun <T> T.getRepositoryProvider() where T : Fragment, T : TinkLinkConsumer =
-    object : TinkRepositoryProvider {
-        override val providerRepository: ProviderRepository?
-            get() = Tink.getUserContext()?.providerRepository
-        override val credentialRepository: CredentialRepository?
-            get() = Tink.getUserContext()?.credentialRepository
-    }

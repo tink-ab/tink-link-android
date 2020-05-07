@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.R
-import com.tink.link.credentials.CredentialFragment
+import com.tink.link.credentials.CredentialsFragment
 import com.tink.link.providerlist.ProviderListFragment
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -17,7 +17,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private lateinit var viewModel: ProfileViewModel
 
-    private val adapter = CredentialRowAdapter()
+    private val adapter = CredentialsRowAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +25,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         adapter.onItemClickedListener = { credentialsId ->
             AlertDialog.Builder(context)
-                .setItems(arrayOf("Update", "Delete")) { _, selected: Int ->
+                .setItems(arrayOf("Update", "Authenticate", "Delete")) { _, selected: Int ->
                     when (selected) {
-                        0 -> updateCredential(credentialsId)
-                        1 -> deleteCredential(credentialsId)
+                        0 -> updateCredentials(credentialsId)
+                        1 -> authenticateCredentials(credentialsId)
+                        2 -> deleteCredentials(credentialsId)
                     }
                 }
                 .show()
@@ -65,10 +66,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         refreshButton.setOnClickListener { findNavController().navigate(R.id.refreshCredentialsFragment) }
     }
 
-    private fun deleteCredential(id: String) {
+    private fun deleteCredentials(id: String) {
         loader.visibility = View.VISIBLE
         loadingBackground.visibility = View.VISIBLE
-        viewModel.deleteCredential(id) {
+        viewModel.deleteCredentials(id) {
             loader.post {
                 loader.visibility = View.GONE
                 loadingBackground.visibility = View.GONE
@@ -76,13 +77,25 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    private fun updateCredential(id: String) {
-        viewModel.getUpdateDataForCredential(id)?.let {
+    private fun authenticateCredentials(id: String) {
+        viewModel.getProviderForCredentials(id)?.let {
             findNavController().navigate(
-                R.id.credentialFragment,
-                CredentialFragment.getBundle(
+                R.id.credentialsFragment,
+                CredentialsFragment.getBundle(
+                    provider = it,
+                    credentialsManualAuthArgs = CredentialsFragment.CredentialsManualAuthArgs(id)
+                )
+            )
+        }
+    }
+
+    private fun updateCredentials(id: String) {
+        viewModel.getUpdateDataForCredentials(id)?.let {
+            findNavController().navigate(
+                R.id.credentialsFragment,
+                CredentialsFragment.getBundle(
                     it.provider,
-                    CredentialFragment.CredentialUpdateArgs(id, it.currentValues)
+                    CredentialsFragment.CredentialsUpdateArgs(id, it.currentValues)
                 )
             )
         }
