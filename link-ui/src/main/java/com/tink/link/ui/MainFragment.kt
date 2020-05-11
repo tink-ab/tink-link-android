@@ -5,6 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.tink.core.Tink
+import com.tink.link.getUserContext
+import com.tink.link.ui.providerlist.ProviderListFragment.Companion.getBundle
+import com.tink.model.provider.Provider
+import com.tink.service.handler.ResultHandler
 
 class MainFragment : Fragment(), TinkLinkConsumer {
 
@@ -17,5 +23,19 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // TODO: Needs to be updated when supporting permanent user features
+        Tink.getUserContext()?.providerRepository?.listProviders(
+            handler = ResultHandler(
+                { providers: List<Provider> ->
+                    findNavController().navigate(
+                        R.id.action_mainFragment_to_providerListFragment,
+                        getBundle(providers)
+                    )
+                }, {}
+            ),
+            includeDemoProviders = true
+        )
+
+
     }
 }
