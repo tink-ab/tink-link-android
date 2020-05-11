@@ -13,7 +13,6 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
 
-    <!-- TODO: This needs to be updated by creating a separate sample app for Link UI -->
     <activity
       android:name="com.tink.sample.MainLinkUiActivity"
       android:launchMode="singleTask">
