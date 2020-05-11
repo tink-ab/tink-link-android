@@ -13,7 +13,6 @@ import com.tink.service.handler.ResultHandler
 import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.synthetic.main.activity_main_link_ui.*
-import timber.log.Timber
 
 private val MainLinkUiActivity.testTinkLinkConfig
     get() = TinkConfiguration(
@@ -51,9 +50,7 @@ class MainLinkUiActivity : AppCompatActivity() {
                         }
                     }
                 },
-                {
-                    Timber.d("mohan: %s", it.toString())
-                }
+                { }
             )
         )
 
