@@ -1,10 +1,11 @@
 <resources>
-  <string name="app_name">tink-link-android</string>
-
-  <string name="redirect_uri_scheme">http</string>
-  <string name="redirect_uri_host">localhost</string>
-  <string name="redirect_uri_port">3000</string>
-  <string name="redirect_uri_path">/callback</string>
+  <!-- TODO: This needs to be done in a separate sample app for Link UI -->
+  <string name="tink_app_name">Sample Tink Link</string>
+  
+  <string name="tink_redirect_uri_scheme">http</string>
+  <string name="tink_redirect_uri_host">localhost</string>
+  <string name="tink_redirect_uri_port">3000</string>
+  <string name="tink_redirect_uri_path">/callback</string>
 
   <string name="provider_list_title">Choose your bank</string>
   <string name="financial_institution_fragment_title">Choose financial institution</string>
