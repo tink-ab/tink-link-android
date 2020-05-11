@@ -7,7 +7,7 @@
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
-    android:label="@string/tink_app_name"
+    android:label="@string/app_name"
     android:name="com.tink.link.TinkLinkApp"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
@@ -25,10 +25,10 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data
-          android:host="@string/tink_redirect_uri_host"
-          android:pathPrefix="@string/tink_redirect_uri_path"
-          android:port="@string/tink_redirect_uri_port"
-          android:scheme="@string/tink_redirect_uri_scheme" />
+          android:host="@string/redirect_uri_host"
+          android:pathPrefix="@string/redirect_uri_path"
+          android:port="@string/redirect_uri_port"
+          android:scheme="@string/redirect_uri_scheme" />
       </intent-filter>
     </activity>
 
