@@ -1,2 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.tink.link.ui" />
+  package="com.tink.link.ui">
+
+  <application>
+
+    <activity
+      android:name="com.tink.link.ui.TinkLinkUiActivity"
+      android:launchMode="singleTask">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data
+          android:host="@string/tink_redirect_uri_host"
+          android:pathPrefix="@string/tink_redirect_uri_path"
+          android:port="@string/tink_redirect_uri_port"
+          android:scheme="@string/tink_redirect_uri_scheme" />
+      </intent-filter>
+    </activity>
+
+  </application>
+
+</manifest>
