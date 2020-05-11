@@ -1,5 +1,5 @@
 <resources>
-  <string name="tink_app_name">Application</string>
+  <string name="tink_app_name">link-ui</string>
   <string name="tink_redirect_uri_scheme">http</string>
   <string name="tink_redirect_uri_host">localhost</string>
   <string name="tink_redirect_uri_port">3000</string>

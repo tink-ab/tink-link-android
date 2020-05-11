@@ -1,5 +1,5 @@
 <resources>
-  <string name="tink_app_name">Sample Tink Link</string>
+  <string name="tink_app_name">Sample Tink Link UI</string>
   
   <string name="tink_redirect_uri_scheme">http</string>
   <string name="tink_redirect_uri_host">localhost</string>
