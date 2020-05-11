@@ -23,7 +23,6 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // TODO: Needs to be updated when supporting permanent user features
         Tink.getUserContext()?.providerRepository?.listProviders(
             handler = ResultHandler(
                 { providers: List<Provider> ->
