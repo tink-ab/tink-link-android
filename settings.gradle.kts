@@ -1,1 +1,1 @@
-include(":app", "sample-link-ui", ":link", ":link-ui")
+include("sample-link", "sample-link-ui", ":link", ":link-ui")
