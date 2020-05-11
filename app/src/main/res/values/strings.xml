@@ -23,5 +23,4 @@
   <string name="profile_headline">Credentials</string>
   <string name="refresh_button">Refresh</string>
   <string name="add_credentials_button">Add bank</string>
-  <string name="link_ui_button_text">Launch Tink Link UI</string>
 </resources>

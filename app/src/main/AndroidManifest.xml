@@ -13,34 +13,24 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
 
-    <!-- TODO: This needs to be updated by creating a separate sample app for Link UI -->
     <activity
-      android:name="com.tink.link.MainLinkUiActivity"
+      android:name="com.tink.link.MainActivity"
       android:launchMode="singleTask">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data
+          android:host="@string/tink_redirect_uri_host"
+          android:pathPrefix="@string/tink_redirect_uri_path"
+          android:port="@string/tink_redirect_uri_port"
+          android:scheme="@string/tink_redirect_uri_scheme" />
+      </intent-filter>
     </activity>
-
-<!--    <activity-->
-<!--      android:name="com.tink.link.MainActivity"-->
-<!--      android:launchMode="singleTask">-->
-<!--      <intent-filter>-->
-<!--        <action android:name="android.intent.action.MAIN" />-->
-<!--        <category android:name="android.intent.category.LAUNCHER" />-->
-<!--      </intent-filter>-->
-<!--      <intent-filter>-->
-<!--        <action android:name="android.intent.action.VIEW" />-->
-<!--        <category android:name="android.intent.category.DEFAULT" />-->
-<!--        <category android:name="android.intent.category.BROWSABLE" />-->
-<!--        <data-->
-<!--          android:host="@string/tink_redirect_uri_host"-->
-<!--          android:pathPrefix="@string/tink_redirect_uri_path"-->
-<!--          android:port="@string/tink_redirect_uri_port"-->
-<!--          android:scheme="@string/tink_redirect_uri_scheme" />-->
-<!--      </intent-filter>-->
-<!--    </activity>-->
 
   </application>
 
