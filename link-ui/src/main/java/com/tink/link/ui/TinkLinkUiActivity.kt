@@ -67,9 +67,6 @@ class TinkLinkUiActivity : AppCompatActivity() {
         locale = intent.extras?.getString(ARG_LOCALE) ?: ""
         setContentView(R.layout.tink_activity_main)
 
-        // TODO: Confirm how and where this is done (perhaps in the activity that launches this one?)
-        //Tink.init(testTinkLinkConfig, applicationContext)
-
         redirectIfAppropriate(intent)
     }
 
