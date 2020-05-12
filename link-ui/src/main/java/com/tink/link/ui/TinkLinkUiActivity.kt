@@ -5,10 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import com.tink.core.Tink
-import com.tink.core.provider.ProviderRepository
-import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.user.Scope
@@ -92,18 +89,3 @@ class TinkLinkUiActivity : AppCompatActivity() {
         finish()
     }
 }
-
-interface TinkLinkConsumer
-
-interface TinkRepositoryProvider {
-    val providerRepository: ProviderRepository?
-    val credentialsRepository: CredentialsRepository?
-}
-
-fun <T> T.getRepositoryProvider() where T : Fragment, T : TinkLinkConsumer =
-    object : TinkRepositoryProvider {
-        override val providerRepository: ProviderRepository?
-            get() = Tink.getUserContext()?.providerRepository
-        override val credentialsRepository: CredentialsRepository?
-            get() = Tink.getUserContext()?.credentialsRepository
-    }

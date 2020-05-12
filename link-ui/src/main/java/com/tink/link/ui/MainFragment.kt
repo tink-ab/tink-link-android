@@ -14,7 +14,7 @@ import com.tink.model.provider.Provider
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
-class MainFragment : Fragment(), TinkLinkConsumer {
+class MainFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
