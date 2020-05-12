@@ -9,6 +9,7 @@ import com.tink.link.consent.ConsentContext
 import com.tink.link.getConsentContext
 import com.tink.model.consent.OAuthClientDescription
 import com.tink.model.consent.ScopeDescription
+import com.tink.model.user.Scope
 import com.tink.service.handler.ResultHandler
 
 internal class ConsentViewModel() : ViewModel() {
@@ -22,9 +23,9 @@ internal class ConsentViewModel() : ViewModel() {
 
     val scopeDescriptions: MutableList<ScopeDescription> = mutableListOf()
 
-    init {
+    internal fun initialize(scopes: List<Scope>) {
         consentContext.describeClient(
-            scopes = setOf(), // TODO: Get scopes from client
+            scopes = scopes.toSet(),
             resultHandler = ResultHandler(
                 { clientDescription ->
                     _clientDescription.postValue(clientDescription)

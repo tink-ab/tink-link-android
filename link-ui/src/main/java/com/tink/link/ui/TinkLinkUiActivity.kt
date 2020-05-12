@@ -10,6 +10,8 @@ import com.tink.core.Tink
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
+import com.tink.link.ui.extensions.toArrayList
+import com.tink.model.user.Scope
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
@@ -19,20 +21,29 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_FAILURE = 103
 
         const val ARG_STYLE = "styleResId"
+        const val ARG_SCOPES = "scopes"
 
-        fun createIntent(context: Context, styleResId: Int? = R.style.TinkLinkUiStyle) =
+        fun createIntent(
+            context: Context,
+            styleResId: Int? = R.style.TinkLinkUiStyle,
+            scopes: List<Scope> = listOf(Scope.AccountsRead) // TODO: Confirm if this should be the default
+        ) =
             Intent(context, TinkLinkUiActivity::class.java).apply {
                 putExtras(
                     bundleOf(
-                        ARG_STYLE to styleResId
+                        ARG_STYLE to styleResId,
+                        ARG_SCOPES to scopes.toArrayList()
                     )
                 )
             }
     }
 
+    internal var scopes: List<Scope>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
+        scopes = intent.extras?.getParcelableArrayList(ARG_SCOPES)
         setContentView(R.layout.tink_activity_main)
 
         // TODO: Confirm how and where this is done (perhaps in the activity that launches this one?)
