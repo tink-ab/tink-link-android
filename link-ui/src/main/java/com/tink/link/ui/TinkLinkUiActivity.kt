@@ -36,7 +36,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         ): Intent {
             if (user == null) {
                 require(market.isNotBlank() && locale.isNotBlank()) {
-                    throw IllegalArgumentException("Invalid market and locale parameters set for user creation")
+                    "Invalid market and locale parameters set for user creation"
                 }
             }
             return Intent(context, TinkLinkUiActivity::class.java)
