@@ -3,6 +3,7 @@ package com.tink.sample
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
 import com.tink.sample.configuration.Configuration
@@ -39,7 +40,8 @@ class MainLinkUiActivity : AppCompatActivity() {
                     styleResId = R.style.TinkStyle_ChewingGum,
                     scopes = listOf(Scope.AccountsRead),
                     market = "SE",
-                    locale = "sv_SE"
+                    locale = "sv_SE",
+                    authorizeUser = SHOULD_AUTHORIZE_USER
                 ),
                 REQUEST_CODE
             )
@@ -48,10 +50,31 @@ class MainLinkUiActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        //TODO("Do something with the result from the Tink Link UI")
+        if (requestCode == REQUEST_CODE) {
+            handleResultFromLinkUi(resultCode, data?.extras)
+        }
+    }
+
+    private fun handleResultFromLinkUi(resultCode: Int, data: Bundle?) {
+        if (resultCode == TinkLinkUiActivity.RESULT_SUCCESS) {
+            val authorizationCode =
+                data?.getString(TinkLinkUiActivity.RESULT_KEY_AUTHORIZATION_CODE)
+            if (!authorizationCode.isNullOrEmpty()) {
+                Toast.makeText(
+                    this,
+                    "Received user authorization code: $authorizationCode",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else if (SHOULD_AUTHORIZE_USER) {
+                Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     companion object {
         const val REQUEST_CODE = 100
+        const val SHOULD_AUTHORIZE_USER = false
     }
 }
