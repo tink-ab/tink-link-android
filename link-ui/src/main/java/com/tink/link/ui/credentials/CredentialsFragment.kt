@@ -71,6 +71,10 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             )
         }
 
+        (activity as? TinkLinkUiActivity)?.scopes?.let {
+            consentViewModel.initialize(it)
+        }
+
         consentViewModel.apply {
             showConsentInformation.observe(viewLifecycleOwner, Observer {
                 userGroup.visibility =

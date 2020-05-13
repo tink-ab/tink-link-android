@@ -5,12 +5,9 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
-import com.tink.link.createTemporaryUser
-import com.tink.link.getUserContext
 import com.tink.sample.configuration.Configuration
 import com.tink.link.ui.TinkLinkUiActivity
-import com.tink.service.handler.ResultHandler
-import com.tink.model.user.User
+import com.tink.model.user.Scope
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.synthetic.main.activity_main_link_ui.*
 
@@ -35,29 +32,18 @@ class MainLinkUiActivity : AppCompatActivity() {
 
         Tink.init(testTinkLinkConfig, applicationContext)
 
-        Tink.createTemporaryUser(
-            market = "SE",
-            locale = "sv_SE",
-            resultHandler = ResultHandler(
-                {
-                    Tink.setUser(it)
-                    linkUiButton.setOnClickListener {
-                        Tink.getUserContext()?.let {
-                            startActivityForResult(
-                                TinkLinkUiActivity.createIntent(this, R.style.TinkStyle_ChewingGum),
-                                REQUEST_CODE
-                            )
-                        }
-                    }
-                },
-                { }
+        linkUiButton.setOnClickListener {
+            startActivityForResult(
+                TinkLinkUiActivity.createIntent(
+                    context = this,
+                    styleResId = R.style.TinkStyle_ChewingGum,
+                    scopes = listOf(Scope.AccountsRead),
+                    market = "SE",
+                    locale = "sv_SE"
+                ),
+                REQUEST_CODE
             )
-        )
-
-    }
-
-    private fun getUser(): User {
-        TODO("Replace with implementation for getting a User using your preferred method.")
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -7,12 +7,31 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
+import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
 import com.tink.link.ui.providerlist.ProviderListFragment.Companion.getBundle
 import com.tink.model.provider.Provider
+import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
+import java.lang.IllegalArgumentException
 
-class MainFragment : Fragment(), TinkLinkConsumer {
+const val FRAGMENT_ARG_USER = "userArg"
+const val FRAGMENT_ARG_MARKET = "marketArg"
+const val FRAGMENT_ARG_LOCALE = "localeArg"
+
+class MainFragment : Fragment() {
+
+    private val user: User? by lazy {
+        arguments?.getParcelable<User>(FRAGMENT_ARG_USER)
+    }
+
+    private val market: String by lazy {
+        arguments?.getString(FRAGMENT_ARG_MARKET) ?: ""
+    }
+
+    private val locale: String by lazy {
+        arguments?.getString(FRAGMENT_ARG_LOCALE) ?: ""
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +42,31 @@ class MainFragment : Fragment(), TinkLinkConsumer {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        if (user == null) {
+            createUser {
+                launchLinkUiFlowForUser(it)
+            }
+        } else {
+            launchLinkUiFlowForUser(user!!)
+        }
+    }
+
+    private fun createUser(onUserCreateAction: (User) -> Unit) {
+        require(market.isNotBlank() && locale.isNotBlank()) {
+            throw IllegalArgumentException("Invalid market and locale parameters set for user creation")
+        }
+        Tink.createTemporaryUser(
+            market = market,
+            locale = locale,
+            resultHandler = ResultHandler(
+                onUserCreateAction,
+                { }
+            )
+        )
+    }
+
+    private fun launchLinkUiFlowForUser(user: User) {
+        Tink.setUser(user)
         Tink.getUserContext()?.providerRepository?.listProviders(
             handler = ResultHandler(
                 { providers: List<Provider> ->
@@ -34,7 +78,5 @@ class MainFragment : Fragment(), TinkLinkConsumer {
             ),
             includeDemoProviders = true
         )
-
-
     }
 }
