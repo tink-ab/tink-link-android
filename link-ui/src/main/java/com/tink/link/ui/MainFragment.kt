@@ -15,7 +15,23 @@ import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 import java.lang.IllegalArgumentException
 
+const val FRAGMENT_ARG_USER = "userArg"
+const val FRAGMENT_ARG_MARKET = "marketArg"
+const val FRAGMENT_ARG_LOCALE = "localeArg"
+
 class MainFragment : Fragment() {
+
+    private val user: User? by lazy {
+        arguments?.getParcelable<User>(FRAGMENT_ARG_USER)
+    }
+
+    private val market: String by lazy {
+        arguments?.getString(FRAGMENT_ARG_MARKET) ?: ""
+    }
+
+    private val locale: String by lazy {
+        arguments?.getString(FRAGMENT_ARG_LOCALE) ?: ""
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,20 +42,17 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val user = (activity as? TinkLinkUiActivity)?.user
         if (user == null) {
             createUser {
                 launchLinkUiFlowForUser(it)
             }
         } else {
-            launchLinkUiFlowForUser(user)
+            launchLinkUiFlowForUser(user!!)
         }
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
-        val market = (activity as? TinkLinkUiActivity)?.market
-        val locale = (activity as? TinkLinkUiActivity)?.locale
-        require(!market.isNullOrBlank() && !locale.isNullOrBlank()) {
+        require(market.isNotBlank() && locale.isNotBlank()) {
             throw IllegalArgumentException("Invalid market and locale parameters set for user creation")
         }
         Tink.createTemporaryUser(

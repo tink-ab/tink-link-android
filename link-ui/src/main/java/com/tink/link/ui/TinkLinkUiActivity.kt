@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import com.tink.core.Tink
 import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toArrayList
@@ -57,15 +58,15 @@ class TinkLinkUiActivity : AppCompatActivity() {
         requireNotNull(intent.extras?.getParcelableArrayList<Scope>(ARG_SCOPES))
     }
 
-    internal val user: User? by lazy {
+    private val user: User? by lazy {
         intent.extras?.getParcelable<User>(ARG_USER)
     }
 
-    internal val market: String by lazy {
+    private val market: String by lazy {
         intent.extras?.getString(ARG_MARKET) ?: ""
     }
 
-    internal val locale: String by lazy {
+    private val locale: String by lazy {
         intent.extras?.getString(ARG_LOCALE) ?: ""
     }
 
@@ -73,6 +74,14 @@ class TinkLinkUiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
         setContentView(R.layout.tink_activity_main)
+        findNavController(R.id.nav_host_fragment).setGraph(
+            R.navigation.tink_nav_graph,
+            bundleOf(
+                FRAGMENT_ARG_USER to user,
+                FRAGMENT_ARG_MARKET to market,
+                FRAGMENT_ARG_LOCALE to locale
+            )
+        )
 
         redirectIfAppropriate(intent)
     }
