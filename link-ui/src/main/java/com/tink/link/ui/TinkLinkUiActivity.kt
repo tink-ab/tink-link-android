@@ -25,6 +25,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_USER = "user"
         const val ARG_MARKET = "market"
         const val ARG_LOCALE = "locale"
+        const val ARG_AUTHORIZE_USER = "authorizeUser"
 
         fun createIntent(
             context: Context,
@@ -32,7 +33,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
             scopes: List<Scope> = listOf(Scope.AccountsRead), // TODO: Confirm if this should be the default
             user: User? = null,
             market: String = "",
-            locale: String = ""
+            locale: String = "",
+            authorizeUser: Boolean = false
         ): Intent {
             if (user == null) {
                 require(market.isNotBlank() && locale.isNotBlank()) {
@@ -47,7 +49,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
                             ARG_SCOPES to scopes.toArrayList(),
                             ARG_USER to user,
                             ARG_MARKET to market,
-                            ARG_LOCALE to locale
+                            ARG_LOCALE to locale,
+                            ARG_AUTHORIZE_USER to authorizeUser
                         )
                     )
                 }
@@ -69,6 +72,10 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
     private val locale: String by lazy {
         intent.extras?.getString(ARG_LOCALE) ?: ""
+    }
+
+    internal val authorizeUser: Boolean by lazy {
+        intent.extras?.getBoolean(ARG_AUTHORIZE_USER) ?: false
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
