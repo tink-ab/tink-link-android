@@ -75,6 +75,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         intent.extras?.getString(ARG_LOCALE) ?: ""
     }
 
+    // TODO: Inject this with dagger once it's ready
     internal val authorizeUser: Boolean by lazy {
         intent.extras?.getBoolean(ARG_AUTHORIZE_USER) ?: false
     }
