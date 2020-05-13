@@ -46,9 +46,7 @@ class MainFragment : Fragment() {
             market = market,
             locale = locale,
             resultHandler = ResultHandler(
-                {
-                    onUserCreateAction.invoke(it)
-                },
+                onUserCreateAction,
                 { }
             )
         )
