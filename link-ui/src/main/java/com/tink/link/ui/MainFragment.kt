@@ -13,6 +13,7 @@ import com.tink.link.ui.providerlist.ProviderListFragment.Companion.getBundle
 import com.tink.model.provider.Provider
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
+import java.lang.IllegalArgumentException
 
 class MainFragment : Fragment() {
 
@@ -38,21 +39,21 @@ class MainFragment : Fragment() {
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
-        whenNonNull(
-            (activity as? TinkLinkUiActivity)?.market,
-            (activity as? TinkLinkUiActivity)?.locale
-        ) { market, locale ->
-            Tink.createTemporaryUser(
-                market = market,
-                locale = locale,
-                resultHandler = ResultHandler(
-                    {
-                        onUserCreateAction.invoke(it)
-                    },
-                    { }
-                )
-            )
+        val market = (activity as? TinkLinkUiActivity)?.market
+        val locale = (activity as? TinkLinkUiActivity)?.locale
+        require(!market.isNullOrBlank() && !locale.isNullOrBlank()) {
+            throw IllegalArgumentException("Invalid market and locale parameters set for user creation")
         }
+        Tink.createTemporaryUser(
+            market = market,
+            locale = locale,
+            resultHandler = ResultHandler(
+                {
+                    onUserCreateAction.invoke(it)
+                },
+                { }
+            )
+        )
     }
 
     private fun launchLinkUiFlow() {
