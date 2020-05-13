@@ -54,6 +54,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         }
     }
 
+    // TODO: Inject this with dagger once it's ready
     internal val scopes: List<Scope> by lazy {
         requireNotNull(intent.extras?.getParcelableArrayList<Scope>(ARG_SCOPES))
     }
