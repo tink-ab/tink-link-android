@@ -53,7 +53,7 @@ class MainFragment : Fragment() {
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
         require(market.isNotBlank() && locale.isNotBlank()) {
-            throw IllegalArgumentException("Invalid market and locale parameters set for user creation")
+            "Invalid market and locale parameters set for user creation"
         }
         Tink.createTemporaryUser(
             market = market,
