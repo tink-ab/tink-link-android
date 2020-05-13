@@ -19,8 +19,9 @@ private val MainLinkUiActivity.testTinkLinkConfig
         redirectUri =
         Uri.Builder()
             .scheme(getString(R.string.tink_redirect_uri_scheme))
-            .encodedAuthority(getString(R.string.tink_redirect_uri_host) + ":" + getString(
-                R.string.tink_redirect_uri_port))
+            .encodedAuthority(
+                getString(R.string.tink_redirect_uri_host) + ":" + getString(R.string.tink_redirect_uri_port)
+            )
             .path(getString(R.string.tink_redirect_uri_path))
             .build()
     )
