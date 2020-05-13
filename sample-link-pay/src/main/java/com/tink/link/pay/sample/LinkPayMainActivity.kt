@@ -75,7 +75,7 @@ class LinkPayMainActivity : AppCompatActivity() {
         button.setOnClickListener {
             TransferContext(
                 Tink.requireComponent().transferService,
-                Tink.getUserContext()!!.credentialsRepository
+                Tink.requireComponent().credentialsService
             ).initiateTransfer(
                 Amount(ExactNumber(100, 1), "SEK"),
                 "", ""
@@ -102,7 +102,5 @@ class LinkPayMainActivity : AppCompatActivity() {
         }
 
         statusMessage.observe(this, Observer { statusText.text = it })
-
-
     }
 }
