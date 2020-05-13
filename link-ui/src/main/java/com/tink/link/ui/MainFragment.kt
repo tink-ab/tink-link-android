@@ -29,12 +29,10 @@ class MainFragment : Fragment() {
         val user = (activity as? TinkLinkUiActivity)?.user
         if (user == null) {
             createUser {
-                Tink.setUser(it)
-                launchLinkUiFlow()
+                launchLinkUiFlowForUser(it)
             }
         } else {
-            Tink.setUser(user)
-            launchLinkUiFlow()
+            launchLinkUiFlowForUser(user)
         }
     }
 
@@ -56,7 +54,8 @@ class MainFragment : Fragment() {
         )
     }
 
-    private fun launchLinkUiFlow() {
+    private fun launchLinkUiFlowForUser(user: User) {
+        Tink.setUser(user)
         Tink.getUserContext()?.providerRepository?.listProviders(
             handler = ResultHandler(
                 { providers: List<Provider> ->
