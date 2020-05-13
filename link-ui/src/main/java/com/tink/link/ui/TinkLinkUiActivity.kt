@@ -53,18 +53,25 @@ class TinkLinkUiActivity : AppCompatActivity() {
         }
     }
 
-    internal var scopes: List<Scope>? = null
-    internal var user: User? = null
-    internal var market: String = ""
-    internal var locale: String = ""
+    internal val scopes: List<Scope> by lazy {
+        requireNotNull(intent.extras?.getParcelableArrayList<Scope>(ARG_SCOPES))
+    }
+
+    internal val user: User? by lazy {
+        intent.extras?.getParcelable<User>(ARG_USER)
+    }
+
+    internal val market: String by lazy {
+        intent.extras?.getString(ARG_MARKET) ?: ""
+    }
+
+    internal val locale: String by lazy {
+        intent.extras?.getString(ARG_LOCALE) ?: ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
-        scopes = intent.extras?.getParcelableArrayList(ARG_SCOPES)
-        user = intent.extras?.getParcelable(ARG_USER)
-        market = intent.extras?.getString(ARG_MARKET) ?: ""
-        locale = intent.extras?.getString(ARG_LOCALE) ?: ""
         setContentView(R.layout.tink_activity_main)
 
         redirectIfAppropriate(intent)
