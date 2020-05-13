@@ -19,6 +19,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_SUCCESS = 101
         const val RESULT_CANCELLED = 102
         const val RESULT_FAILURE = 103
+        const val RESULT_KEY_AUTHORIZATION_CODE = "authorizationCode"
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
@@ -78,6 +79,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
         intent.extras?.getBoolean(ARG_AUTHORIZE_USER) ?: false
     }
 
+    internal var authorizationCode: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
@@ -106,7 +109,15 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     internal fun closeTinkLinkUi(resultCode: Int) {
-        setResult(resultCode)
+        if (resultCode == RESULT_SUCCESS && authorizeUser) {
+            val successIntent =
+                Intent().apply {
+                    putExtras(bundleOf(RESULT_KEY_AUTHORIZATION_CODE to authorizationCode))
+                }
+            setResult(resultCode, successIntent)
+        } else {
+            setResult(resultCode)
+        }
         finish()
     }
 }
