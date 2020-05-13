@@ -73,6 +73,11 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         (activity as? TinkLinkUiActivity)?.scopes?.let {
             consentViewModel.initialize(it)
+            viewModel.setScopes(it)
+        }
+
+        (activity as? TinkLinkUiActivity)?.authorizeUser?.let {
+            viewModel.authorizeUser = it
         }
 
         consentViewModel.apply {
@@ -231,6 +236,13 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                 val message =
                     statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
                 showError(message)
+            }
+        })
+
+        viewModel.authorizationCode.observe(viewLifecycleOwner, Observer { code ->
+            (activity as? TinkLinkUiActivity)?.let {
+                it.authorizationCode = code
+                viewModel.authorizationCodeSaved = true
             }
         })
     }

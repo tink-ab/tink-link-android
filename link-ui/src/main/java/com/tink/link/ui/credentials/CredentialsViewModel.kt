@@ -7,12 +7,14 @@ import com.tink.core.Tink
 import com.tink.link.ui.CombinedLiveData
 import com.tink.link.ui.Event
 import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.core.user.UserContext
 import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
+import com.tink.model.user.Scope
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
@@ -28,8 +30,17 @@ class CredentialsViewModel : ViewModel() {
 
     private val credentialsRepository: CredentialsRepository
 
+    private val userContext: UserContext = requireNotNull(Tink.getUserContext())
+
+    private val _authorizationCode = MutableLiveData<String>()
+    val authorizationCode: LiveData<String> = _authorizationCode
+
+    private var scopes: List<Scope> = emptyList()
+
+    internal var authorizationCodeSaved: Boolean = false
+    internal var authorizeUser: Boolean = false
+
     init {
-        val userContext = requireNotNull(Tink.getUserContext())
         credentialsRepository = userContext.credentialsRepository
     }
 
@@ -76,7 +87,12 @@ class CredentialsViewModel : ViewModel() {
                             credentials.statusPayload?.let { _errorEvent.postValue(Event(it)) }
                         }
 
-                        Credentials.Status.UPDATING -> _viewState.postValue(ViewState.UPDATING)
+                        Credentials.Status.UPDATING -> {
+                            _viewState.postValue(ViewState.UPDATING)
+                            if (authorizeUser && !authorizationCodeSaved) {
+                                authorizeUser(scopes)
+                            }
+                        }
                         Credentials.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
                         else -> {}
                     }
@@ -180,6 +196,22 @@ class CredentialsViewModel : ViewModel() {
                     _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
+            )
+        )
+    }
+
+    fun setScopes(scopes: List<Scope>) {
+        this.scopes = scopes
+    }
+
+    private fun authorizeUser(scopes: List<Scope>) {
+        userContext.authorize(
+            scopes.toSet(),
+            ResultHandler(
+                { authorizationCode ->
+                    _authorizationCode.postValue(authorizationCode)
+                },
+                { }
             )
         )
     }

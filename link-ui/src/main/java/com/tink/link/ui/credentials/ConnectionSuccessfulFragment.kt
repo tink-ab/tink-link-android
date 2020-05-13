@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import kotlinx.android.synthetic.main.tink_fragment_connection_successful.*
@@ -16,6 +18,8 @@ class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_
     private val providerDisplayName: String by lazy {
         requireNotNull(arguments?.getString(PROVIDER_DISPLAY_NAME_ARG))
     }
+
+    private val viewModel: CredentialsViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,6 +37,13 @@ class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_
         doneButton.setOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_SUCCESS)
         }
+
+        viewModel.authorizationCode.observe(viewLifecycleOwner, Observer { code ->
+            (activity as? TinkLinkUiActivity)?.let {
+                it.authorizationCode = code
+                viewModel.authorizationCodeSaved = true
+            }
+        })
     }
 
     companion object {
