@@ -28,11 +28,11 @@ class TransferContext @Inject constructor(
     ): TransferTask =
         TransferTask(
             CreateTransferDescriptor(
-                amount,
-                "se://1120700004704000?name=testAccount",
-                "sourceMessage",
-                "se://1078646804708704?name=testAccount",
-                "destinationMessage"
+                amount = amount,
+                sourceUri = sourceUri,
+                sourceMessage = "sourceMessage",
+                destinationUri = destinationUri,
+                destinationMessage = "destinationMessage"
             ),
             credentialsService, transferService, onStatusChanged
         ).also { it.start() }
