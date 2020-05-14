@@ -27,6 +27,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.math.BigDecimal
 
 class LinkPayMainActivity : AppCompatActivity() {
 
@@ -42,7 +43,8 @@ class LinkPayMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         sourceAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
-        destinationAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
+        destinationAdapter =
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
 
         Tink.init(
             TinkConfiguration(
@@ -83,11 +85,22 @@ class LinkPayMainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
+
+            val amount = amountInput.text.toString().takeUnless { it.isBlank() }?.toDouble()?.let {
+                val bigDecimal = BigDecimal.valueOf(it)
+                Amount(
+                    ExactNumber(
+                        bigDecimal.unscaledValue().toLong(),
+                        bigDecimal.scale().toLong()
+                    ), "SEK"
+                )
+            } ?: return@setOnClickListener
+
             TransferContext(
                 Tink.requireComponent().transferService,
                 Tink.requireComponent().credentialsService
             ).initiateTransfer(
-                Amount(ExactNumber(100, 1), "SEK"),
+                amount,
                 sourceDropdown.text.toString(),
                 destinationDropdown.text.toString()
             ) { status ->
@@ -95,7 +108,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 statusMessage.postValue(
                     when (status) {
                         TransferStatus.Done -> "Transfer Done"
-                        TransferStatus.Failed -> "Transfer Failed"
+                        is TransferStatus.Failed -> "Transfer Failed\n${status.reason}"
                         TransferStatus.Loading -> "Loading..."
                         is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
                     }
