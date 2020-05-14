@@ -3,6 +3,8 @@ package com.tink.link.pay.sample
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -21,14 +23,26 @@ import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LinkPayMainActivity : AppCompatActivity() {
 
-    val statusMessage = MutableLiveData<String>()
+    private val statusMessage = MutableLiveData<String>()
+
+    private var sourceDestinationUriMap: Map<String, List<String>> = emptyMap()
+
+    private lateinit var sourceAdapter: ArrayAdapter<String>
+    private lateinit var destinationAdapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        sourceAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
+        destinationAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
 
         Tink.init(
             TinkConfiguration(
@@ -55,10 +69,6 @@ class LinkPayMainActivity : AppCompatActivity() {
                 Tink.getUserContext()?.credentialsRepository?.listStream()?.subscribe(
                     object : StreamObserver<List<Credentials>> {
                         override fun onNext(value: List<Credentials>) {
-                            value.forEach {
-                                Log.d("Jan", "$it");
-                            }
-
                             value
                                 .find { it.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
                                 ?.thirdPartyAppAuthentication
@@ -78,11 +88,9 @@ class LinkPayMainActivity : AppCompatActivity() {
                 Tink.requireComponent().credentialsService
             ).initiateTransfer(
                 Amount(ExactNumber(100, 1), "SEK"),
-                "", ""
+                sourceDropdown.text.toString(),
+                destinationDropdown.text.toString()
             ) { status ->
-
-                Log.d("Jan", "New status: $status")
-
 
                 statusMessage.postValue(
                     when (status) {
@@ -102,5 +110,40 @@ class LinkPayMainActivity : AppCompatActivity() {
         }
 
         statusMessage.observe(this, Observer { statusText.text = it })
+
+        loadAccountsButton.setOnClickListener { loadAccounts() }
+
+        sourceDropdown.setAdapter(sourceAdapter)
+        destinationDropdown.setAdapter(destinationAdapter)
+
+        sourceDropdown.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, position: Int, _ ->
+
+                destinationAdapter.clear()
+                val destinations =
+                    sourceDestinationUriMap[sourceAdapter.getItem(position)] ?: emptyList()
+
+                destinationAdapter.addAll(destinations)
+                destinationAdapter.notifyDataSetChanged()
+            }
+    }
+
+    private fun loadAccounts() {
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val accounts = Tink.requireComponent().transferService.getSourceAccounts()
+
+            sourceDestinationUriMap =
+                accounts.mapNotNull {
+                    it.identifier?.let { sourceUri -> sourceUri to it.transferDestinations }
+                }.toMap()
+
+            withContext(Dispatchers.Main) {
+                destinationDropdown.clearListSelection()
+                sourceAdapter.clear()
+                sourceAdapter.addAll(sourceDestinationUriMap.keys)
+                sourceAdapter.notifyDataSetChanged()
+            }
+        }
     }
 }
