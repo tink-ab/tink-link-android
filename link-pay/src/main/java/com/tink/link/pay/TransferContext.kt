@@ -14,6 +14,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.math.sign
 
 class TransferContext @Inject constructor(
     private val transferService: TransferService,
@@ -62,29 +63,26 @@ class TransferTask(
     private var currentStatus: TransferStatus = TransferStatus.Loading
 
     fun start() {
+        currentStatus = TransferStatus.Loading
+        onStatusChanged(currentStatus)
 
         scope.launch {
 
             val initialSignableOperation = transferService.initiateTransfer(transferDescriptor)
 
+            val initialStatus = getStatusFromOperation(initialSignableOperation)
+
+            setStatus(initialStatus)
+
+            if (initialStatus == TransferStatus.Failed || initialStatus == TransferStatus.Done) {
+                return@launch
+            }
+
             while (true) {
                 val newOperation =
                     transferService.getTransferStatus(initialSignableOperation.underlyingId)
 
-                val newStatus: TransferStatus = when (newOperation.status) {
-                    SignableOperation.Status.CREATED,
-                    SignableOperation.Status.EXECUTING -> TransferStatus.Loading
-                    SignableOperation.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
-                    SignableOperation.Status.AWAITING_CREDENTIALS -> {
-                        val credentials =
-                            credentialsService.getCredentials(initialSignableOperation.credentialsId!!)
-                        getTransferStatusFromCredentials(credentials)
-
-                    }
-                    SignableOperation.Status.CANCELLED,
-                    SignableOperation.Status.FAILED -> TransferStatus.Failed
-                    SignableOperation.Status.EXECUTED -> TransferStatus.Done
-                }
+                val newStatus: TransferStatus = getStatusFromOperation(newOperation)
 
                 setStatus(newStatus)
 
@@ -97,10 +95,25 @@ class TransferTask(
         }
     }
 
-
     fun cancel() {
         scope.cancel()
     }
+
+    private suspend fun getStatusFromOperation(signableOperation: SignableOperation): TransferStatus =
+        when (signableOperation.status) {
+            SignableOperation.Status.CREATED,
+            SignableOperation.Status.EXECUTING -> TransferStatus.Loading
+            SignableOperation.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
+            SignableOperation.Status.AWAITING_CREDENTIALS -> {
+                val credentials =
+                    credentialsService.getCredentials(signableOperation.credentialsId!!)
+                getTransferStatusFromCredentials(credentials)
+
+            }
+            SignableOperation.Status.CANCELLED,
+            SignableOperation.Status.FAILED -> TransferStatus.Failed
+            SignableOperation.Status.EXECUTED -> TransferStatus.Done
+        }
 
     private fun setStatus(newStatus: TransferStatus) {
         if (isNewStatus(currentStatus, newStatus)) {
