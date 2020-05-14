@@ -31,6 +31,8 @@ publishing {
         tinkLink(MavenPublication) {
             artifact sourcesJar
             artifact javadocJar
+            artifact AAR_PATH
+
 
             artifactId POM_NAME
             version this.version

@@ -12,11 +12,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
-import com.tink.sample.TinkLinkConsumer
 import com.tink.sample.extensions.dpToPixels
 import com.tink.sample.extensions.hideKeyboard
 import com.tink.sample.extensions.launch
-import com.tink.sample.getRepositoryProvider
 import com.tink.model.provider.Provider
 import com.tink.sample.R
 import kotlinx.android.parcel.Parcelize
@@ -27,12 +25,13 @@ import timber.log.Timber
 private const val PROVIDER_ARGS = "PROVIDER"
 
 private const val UPDATE_ARGS = "UPDATE_ARGS"
+private const val MANUAL_AUTH_ARGS = "MANUAL_AUTH_ARGS"
 
 /**
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkConsumer {
+class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
@@ -40,6 +39,10 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
 
     private val updateArgs: CredentialsUpdateArgs? by lazy {
         arguments?.getParcelable<CredentialsUpdateArgs>(UPDATE_ARGS)
+    }
+
+    private val manualAuthArgs: CredentialsManualAuthArgs? by lazy {
+        arguments?.getParcelable<CredentialsManualAuthArgs>(MANUAL_AUTH_ARGS)
     }
 
     private val viewModel: CredentialsViewModel by viewModels()
@@ -76,10 +79,13 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
         })
 
         createCredentialsBtn.setOnClickListener {
-            if (updateArgs?.credentialsId.isNullOrEmpty()) {
-                createCredentials()
-            } else {
-                updateCredentials()
+            when {
+                updateArgs?.credentialsId?.isEmpty() == false -> updateCredentials()
+
+                manualAuthArgs?.credentialsId?.isEmpty() == false -> authenticateCredentials()
+
+                else -> createCredentials()
+
             }
         }
 
@@ -149,14 +155,12 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
                 .map { it.getFilledField() }
                 .toList()
 
-            getRepositoryProvider()?.credentialsRepository?.let {
-                // Pass the filled fields to the credentials repository to authorize the user.
-                viewModel.createCredentials(provider, fields, it) { error ->
-                    view?.let { view ->
-                        val message = error.localizedMessage ?: error.message
-                        ?: "Something went wrong. Please try again later."
-                        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                    }
+            // Pass the filled fields to the credentials repository to authorize the user.
+            viewModel.createCredentials(provider, fields) { error ->
+                view?.let { view ->
+                    val message = error.localizedMessage ?: error.message
+                    ?: "Something went wrong. Please try again later."
+                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
         }
@@ -173,30 +177,52 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials), TinkLinkCon
             .map { it.getFilledField() }
             .toList()
 
-        getRepositoryProvider()?.credentialsRepository?.let {
-            // Pass the filled fields to the credentials repository to authorize the user.
-            viewModel.updateCredentials(
-                requireNotNull(updateArgs).credentialsId,
-                provider,
-                fields,
-                it
-            ) { error ->
-                view?.let { view ->
-                    val message = error.localizedMessage ?: error.message
-                    ?: "Something went wrong. Please try again later."
-                    Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                }
+        // Pass the filled fields to the credentials repository to authorize the user.
+        viewModel.updateCredentials(
+            requireNotNull(updateArgs).credentialsId,
+            provider,
+            fields
+        ) { error ->
+            view?.let { view ->
+                val message = error.localizedMessage ?: error.message
+                ?: "Something went wrong. Please try again later."
+                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun authenticateCredentials() {
+
+        val id = requireNotNull(manualAuthArgs?.credentialsId)
+
+        viewModel.authenticateCredentials(id) { error ->
+            view?.let { view ->
+                val message = error.localizedMessage ?: error.message
+                ?: "Something went wrong. Please try again later."
+                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
             }
         }
     }
 
     companion object {
-        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
-            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
+        fun getBundle(
+            provider: Provider,
+            credentialsUpdateArgs: CredentialsUpdateArgs? = null,
+            credentialsManualAuthArgs: CredentialsManualAuthArgs? = null
+        ) = bundleOf(
+            PROVIDER_ARGS to provider,
+            UPDATE_ARGS to credentialsUpdateArgs,
+            MANUAL_AUTH_ARGS to credentialsManualAuthArgs
+        )
     }
 
     @Parcelize
     data class CredentialsUpdateArgs(
         val credentialsId: String, val fields: Map<String, String>
+    ) : Parcelable
+
+    @Parcelize
+    data class CredentialsManualAuthArgs(
+        val credentialsId: String
     ) : Parcelable
 }

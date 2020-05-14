@@ -31,12 +31,7 @@
 
 |
 
-##### [com.tink.service.authentication.AuthenticationService](../com.tink.service.authentication/-authentication-service/index.md)
-
-
-|
-
-##### [com.tink.service.authentication.user.Authorization](../com.tink.service.authentication.user/-authorization/index.md)
+##### [com.tink.model.user.Authorization](../com.tink.model.user/-authorization/index.md)
 
 
 |
@@ -79,17 +74,12 @@ If we have an id, it means we're updating an already existing budget.
 
 |
 
+##### [com.tink.service.category.CategoryRetrofitService](../com.tink.service.category/-category-retrofit-service.md)
+
+
+|
+
 ##### [com.tink.model.category.CategoryTree](../com.tink.model.category/-category-tree/index.md)
-
-
-|
-
-##### [com.tink.service.observer.ChangeObserver](../com.tink.service.observer/-change-observer/index.md)
-
-
-|
-
-##### [com.tink.service.network.ChannelConnector](../com.tink.service.network/-channel-connector/index.md)
 
 
 |
@@ -106,41 +96,41 @@ Context for handling things around user consent.
 
 |
 
-##### [com.tink.service.consent.ConsentServiceImpl](../com.tink.service.consent/-consent-service-impl/index.md)
-
-
-|
-
-##### [com.tink.model.credential.Credential](../com.tink.model.credential/-credential/index.md)
+##### [com.tink.model.credentials.Credentials](../com.tink.model.credentials/-credentials/index.md)
 
 This model represents how users are connected to a [Provider](../com.tink.model.provider/-provider/index.md) to access their financial data.
 
 
 |
 
-##### [com.tink.service.credential.CredentialCreationDescriptor](../com.tink.service.credential/-credential-creation-descriptor/index.md)
+##### [com.tink.service.credentials.CredentialsAuthenticateDescriptor](../com.tink.service.credentials/-credentials-authenticate-descriptor/index.md)
 
 
 |
 
-##### [com.tink.link.core.credentials.CredentialRepository](../com.tink.link.core.credentials/-credential-repository/index.md)
+##### [com.tink.service.credentials.CredentialsCreationDescriptor](../com.tink.service.credentials/-credentials-creation-descriptor/index.md)
+
+
+|
+
+##### [com.tink.service.credentials.CredentialsRefreshDescriptor](../com.tink.service.credentials/-credentials-refresh-descriptor/index.md)
+
+
+|
+
+##### [com.tink.link.core.credentials.CredentialsRepository](../com.tink.link.core.credentials/-credentials-repository/index.md)
 
 Repository for creating, accessing and modifying credentials.
 
 
 |
 
-##### [com.tink.service.credential.CredentialService](../com.tink.service.credential/-credential-service/index.md)
+##### [com.tink.service.credentials.CredentialsService](../com.tink.service.credentials/-credentials-service/index.md)
 
 
 |
 
-##### [com.tink.service.credential.CredentialServiceImpl](../com.tink.service.credential/-credential-service-impl/index.md)
-
-
-|
-
-##### [com.tink.service.credential.CredentialUpdateDescriptor](../com.tink.service.credential/-credential-update-descriptor/index.md)
+##### [com.tink.service.credentials.CredentialsUpdateDescriptor](../com.tink.service.credentials/-credentials-update-descriptor/index.md)
 
 
 |
@@ -202,11 +192,6 @@ All subclasses should be data classes or provide a meaningful `equals()` functio
 ##### [kotlin.collections.List](../com.tink.model.provider/kotlin.collections.-list/index.md)
 
 
-| (extensions in package com.tink.service.misc)
-
-##### [kotlin.collections.List](../com.tink.service.misc/kotlin.collections.-list/index.md)
-
-
 |
 
 ##### [com.tink.model.time.MonthPeriod](../com.tink.model.time/-month-period/index.md)
@@ -214,7 +199,9 @@ All subclasses should be data classes or provide a meaningful `equals()` functio
 
 |
 
-##### [com.tink.service.network.NetworkModule](../com.tink.service.network/-network-module/index.md)
+##### [com.tink.model.consent.OAuthClientDescription](../com.tink.model.consent/-o-auth-client-description/index.md)
+
+A description of the OAuth client and the data it will collect from the user.
 
 
 |
@@ -261,21 +248,23 @@ Repository for retrieving [Provider](../com.tink.model.provider/-provider/index.
 
 |
 
-##### [com.tink.service.provider.ProviderServiceImpl](../com.tink.service.provider/-provider-service-impl/index.md)
-
-
-|
-
 ##### [com.tink.model.provider.ProviderTreeNode](../com.tink.model.provider/-provider-tree-node/index.md)
 
 This class represents a tree structure of [FinancialInstitutionGroupNode](../com.tink.model.provider/-provider-tree-node/-financial-institution-group-node/index.md) objects with children.
-This eventually leads to a leaf object of type [CredentialTypeNode](../com.tink.model.provider/-provider-tree-node/-credential-type-node/index.md),
+This eventually leads to a leaf object of type [CredentialsTypeNode](../com.tink.model.provider/-provider-tree-node/-credentials-type-node/index.md),
 that contains more detailed [Provider](../com.tink.model.provider/-provider/index.md) data.
 
 
 |
 
 ##### [com.tink.model.budget.RecurringPeriodicity](../com.tink.model.budget/-recurring-periodicity.md)
+
+
+|
+
+##### [com.tink.model.credentials.RefreshableItem](../com.tink.model.credentials/-refreshable-item/index.md)
+
+Refreshable items are a way to limit which types of data should be aggregated from a provider.
 
 
 |
@@ -287,19 +276,24 @@ This is the basic wrapper for asynchronous callbacks in TinkLink.
 
 |
 
-##### [com.tink.service.authorization.Scope](../com.tink.service.authorization/-scope/index.md)
+##### [com.tink.model.user.Scope](../com.tink.model.user/-scope/index.md)
 
 
 |
 
-##### [com.tink.service.consent.ScopeDescription](../com.tink.service.consent/-scope-description/index.md)
+##### [com.tink.model.consent.ScopeDescription](../com.tink.model.consent/-scope-description/index.md)
 
-A title and description explaining a specific [Scope](../com.tink.service.authorization/-scope/index.md).
+A title and description explaining a specific [Scope](../com.tink.model.user/-scope/index.md).
 
 
 |
 
-##### [com.tink.service.ServiceModule](../com.tink.service/-service-module/index.md)
+##### [com.tink.service.di.ServiceComponent](../com.tink.service.di/-service-component/index.md)
+
+
+|
+
+##### [com.tink.service.di.ServiceScope](../com.tink.service.di/-service-scope/index.md)
 
 
 |
@@ -315,26 +309,6 @@ A title and description explaining a specific [Scope](../com.tink.service.author
 |
 
 ##### [com.tink.service.streaming.publisher.Stream](../com.tink.service.streaming.publisher/-stream/index.md)
-
-
-|
-
-##### [com.tink.service.streaming.StreamingError](../com.tink.service.streaming/-streaming-error/index.md)
-
-
-|
-
-##### [com.tink.service.streaming.StreamingEvent](../com.tink.service.streaming/-streaming-event/index.md)
-
-
-|
-
-##### [com.tink.service.streaming.publisher.StreamingHandler](../com.tink.service.streaming.publisher/-streaming-handler/index.md)
-
-
-|
-
-##### [com.tink.service.streaming.publisher.StreamingHandlerImpl](../com.tink.service.streaming.publisher/-streaming-handler-impl/index.md)
 
 
 |
@@ -385,7 +359,7 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 
 |
 
-##### [com.tink.service.network.TLSHelper](../com.tink.service.network/-t-l-s-helper/index.md)
+##### [com.tink.core.TinkScope](../com.tink.core/-tink-scope/index.md)
 
 
 |
@@ -405,7 +379,7 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 
 |
 
-##### [com.tink.service.authentication.user.User](../com.tink.service.authentication.user/-user/index.md)
+##### [com.tink.model.user.User](../com.tink.model.user/-user/index.md)
 
 
 |
@@ -417,7 +391,7 @@ Context for functionality that requires a user to be set.
 
 |
 
-##### [com.tink.service.authentication.UserCreationDescriptor](../com.tink.service.authentication/-user-creation-descriptor/index.md)
+##### [com.tink.service.authorization.UserCreationDescriptor](../com.tink.service.authorization/-user-creation-descriptor/index.md)
 
 
 |

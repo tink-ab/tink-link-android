@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`PollingHandler(pollingAction: (`[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<T>) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
+`PollingHandler(pollingAction: suspend (`[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<T>) -> `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)`)`
