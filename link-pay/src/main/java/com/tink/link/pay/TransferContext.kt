@@ -14,7 +14,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.math.sign
+import kotlin.RuntimeException
 
 class TransferContext @Inject constructor(
     private val transferService: TransferService,
@@ -42,7 +42,7 @@ class TransferContext @Inject constructor(
 sealed class TransferStatus {
 
     object Done : TransferStatus()
-    object Failed : TransferStatus()
+    class Failed(val reason: Throwable?) : TransferStatus()
     object Loading : TransferStatus()
 
     class AwaitingAuthentication(val credentials: Credentials) : TransferStatus()
@@ -55,8 +55,8 @@ class TransferTask(
     private val onStatusChanged: (TransferStatus) -> Unit
 ) {
 
-    private val errorHandler = CoroutineExceptionHandler { _, _ ->
-        onStatusChanged(TransferStatus.Failed)
+    private val errorHandler = CoroutineExceptionHandler { _, error ->
+        onStatusChanged(TransferStatus.Failed(error))
     }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
@@ -74,7 +74,7 @@ class TransferTask(
 
             setStatus(initialStatus)
 
-            if (initialStatus == TransferStatus.Failed || initialStatus == TransferStatus.Done) {
+            if (initialStatus is TransferStatus.Failed || initialStatus == TransferStatus.Done) {
                 return@launch
             }
 
@@ -86,7 +86,7 @@ class TransferTask(
 
                 setStatus(newStatus)
 
-                if (newStatus == TransferStatus.Failed || newStatus == TransferStatus.Done) {
+                if (newStatus is TransferStatus.Failed || newStatus == TransferStatus.Done) {
                     break
                 }
 
@@ -111,7 +111,7 @@ class TransferTask(
 
             }
             SignableOperation.Status.CANCELLED,
-            SignableOperation.Status.FAILED -> TransferStatus.Failed
+            SignableOperation.Status.FAILED -> TransferStatus.Failed(RuntimeException(signableOperation.statusMessage))
             SignableOperation.Status.EXECUTED -> TransferStatus.Done
         }
 
@@ -154,6 +154,6 @@ class TransferTask(
             Credentials.Status.SESSION_EXPIRED,
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.AUTHENTICATION_ERROR,
-            Credentials.Status.PERMANENT_ERROR -> TransferStatus.Failed
+            Credentials.Status.PERMANENT_ERROR -> TransferStatus.Failed(RuntimeException(credentials.statusPayload))
         }
 }
