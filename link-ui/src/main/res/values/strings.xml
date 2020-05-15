@@ -19,6 +19,17 @@
   <string name="tink_search">Search</string>
   <string name="tink_close">Close</string>
   <string name="tink_search_provider_hint">Search for a bank</string>
+  <!-- TODO: Confirm the text shown for capabilities -->
+  <string name="tink_provider_capability_transfers">Transfers</string>
+  <string name="tink_provider_capability_e_invoices">E-invoices</string>
+  <string name="tink_provider_capability_mortgage_aggregation">Mortgage aggregation</string>
+  <string name="tink_provider_capability_checking_accounts">Checking accounts</string>
+  <string name="tink_provider_capability_savings_accounts">Savings accounts</string>
+  <string name="tink_provider_capability_credit_cards">Credit cards</string>
+  <string name="tink_provider_capability_loans">Loans</string>
+  <string name="tink_provider_capability_investments">Investments</string>
+  <string name="tink_provider_capability_payments">Payments</string>
+  <string name="tink_provider_capability_identity_data">Identity data</string>
   <string name="tink_access_type_card_open_banking_title">Checking accounts</string>
   <string name="tink_access_type_card_open_banking_description">Including everyday accounts, such as your salary account</string>
   <string name="tink_access_type_card_open_banking_button_text">Add</string>
