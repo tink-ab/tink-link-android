@@ -14,7 +14,6 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import kotlin.RuntimeException
 
 class TransferContext @Inject constructor(
     private val transferService: TransferService,
@@ -26,7 +25,7 @@ class TransferContext @Inject constructor(
         sourceUri: String,
         destinationUri: String,
         onStatusChanged: (TransferStatus) -> Unit
-    ): TransferTask =
+    ): TransferTask = //Stream
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
@@ -41,11 +40,16 @@ class TransferContext @Inject constructor(
 
 sealed class TransferStatus {
 
-    object Done : TransferStatus()
-    class Failed(val reason: Throwable?) : TransferStatus()
+    object Success : TransferStatus()
+    class Failure(val reason: Reason) : TransferStatus()
     object Loading : TransferStatus()
 
     class AwaitingAuthentication(val credentials: Credentials) : TransferStatus()
+}
+
+sealed class Reason(val message: String?) {
+    class CredentialsError(message: String? = null) : Reason(message)
+    class TransferFailed(message: String? = null) : Reason(message)
 }
 
 class TransferTask(
@@ -56,7 +60,8 @@ class TransferTask(
 ) {
 
     private val errorHandler = CoroutineExceptionHandler { _, error ->
-        onStatusChanged(TransferStatus.Failed(error))
+        // onError
+        onStatusChanged(TransferStatus.Failure(Reason.TransferFailed()))
     }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
@@ -74,7 +79,7 @@ class TransferTask(
 
             setStatus(initialStatus)
 
-            if (initialStatus is TransferStatus.Failed || initialStatus == TransferStatus.Done) {
+            if (initialStatus is TransferStatus.Failure || initialStatus == TransferStatus.Success) {
                 return@launch
             }
 
@@ -86,7 +91,7 @@ class TransferTask(
 
                 setStatus(newStatus)
 
-                if (newStatus is TransferStatus.Failed || newStatus == TransferStatus.Done) {
+                if (newStatus is TransferStatus.Failure || newStatus == TransferStatus.Success) {
                     break
                 }
 
@@ -111,8 +116,11 @@ class TransferTask(
 
             }
             SignableOperation.Status.CANCELLED,
-            SignableOperation.Status.FAILED -> TransferStatus.Failed(RuntimeException(signableOperation.statusMessage))
-            SignableOperation.Status.EXECUTED -> TransferStatus.Done
+            SignableOperation.Status.FAILED -> TransferStatus.Failure(
+                Reason.TransferFailed(
+                    signableOperation.statusMessage.takeUnless { it.isBlank() })
+            )
+            SignableOperation.Status.EXECUTED -> TransferStatus.Success
         }
 
     private fun setStatus(newStatus: TransferStatus) {
@@ -154,6 +162,8 @@ class TransferTask(
             Credentials.Status.SESSION_EXPIRED,
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.AUTHENTICATION_ERROR,
-            Credentials.Status.PERMANENT_ERROR -> TransferStatus.Failed(RuntimeException(credentials.statusPayload))
+            Credentials.Status.PERMANENT_ERROR -> TransferStatus.Failure(
+                Reason.CredentialsError(credentials.statusPayload?.takeUnless { it.isBlank() })
+            )
         }
 }
