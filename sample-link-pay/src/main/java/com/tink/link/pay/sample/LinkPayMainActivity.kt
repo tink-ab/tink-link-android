@@ -107,12 +107,20 @@ class LinkPayMainActivity : AppCompatActivity() {
 
                 statusMessage.postValue(
                     when (status) {
-                        TransferStatus.Done -> "Transfer Done"
-                        is TransferStatus.Failed -> "Transfer Failed\n${status.reason}"
+                        TransferStatus.Success -> "Transfer Succeeded"
+                        is TransferStatus.Failure -> "Transfer Failed"
                         TransferStatus.Loading -> "Loading..."
                         is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
                     }
                 )
+
+                statusSubtitle.post {
+                    statusSubtitle.text = if(status is TransferStatus.Failure) {
+                       status.reason.message ?: ""
+                    } else {
+                        ""
+                    }
+                }
 
                 (status as? TransferStatus.AwaitingAuthentication)
                     ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }

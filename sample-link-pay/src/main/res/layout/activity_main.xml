@@ -12,6 +12,7 @@
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:hint="From"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
@@ -29,6 +30,7 @@
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:hint="To"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/sourceDropdownLayout">
@@ -44,6 +46,7 @@
   <com.google.android.material.textfield.TextInputLayout
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
     android:layout_width="0dp"
+    android:hint="Amount"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:layout_constraintEnd_toEndOf="parent"
@@ -59,15 +62,28 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textview.MaterialTextView
-    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
     android:id="@+id/statusText"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginHorizontal="24dp"
     android:text="No transfer initiated"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/statusSubtitle"
+    android:layout_width="0dp"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/statusText" />
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/button"
