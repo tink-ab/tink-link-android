@@ -2,4 +2,4 @@
 
 # getUser
 
-`@JvmStatic fun getUser(): `[`User`](../../com.tink.service.authentication.user/-user/index.md)`?`
+`@JvmStatic fun getUser(): `[`User`](../../com.tink.model.user/-user/index.md)`?`

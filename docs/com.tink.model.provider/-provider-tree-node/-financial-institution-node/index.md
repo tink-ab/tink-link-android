@@ -8,7 +8,9 @@ A parent node of the tree structure, with a list of [AccessTypeNode](../-access-
 
 ### Parameters
 
-`id` - The unique identifier of the financial institution.
+`financialInstitution` - The `financialInstitution` that this node represents.
+
+`accessTypes` - The list of child nodes.
 
 ### Constructors
 
@@ -20,7 +22,7 @@ A parent node of the tree structure, with a list of [AccessTypeNode](../-access-
 
 | Name | Summary |
 |---|---|
-| [accessTypes](access-types.md) | `val accessTypes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<AccessTypeNode>` |
-| [financialInstitution](financial-institution.md) | `val financialInstitution: FinancialInstitution` |
+| [accessTypes](access-types.md) | The list of child nodes.`val accessTypes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<AccessTypeNode>` |
+| [financialInstitution](financial-institution.md) | The `financialInstitution` that this node represents.`val financialInstitution: FinancialInstitution` |
 | [icon](icon.md) | An optional url linking to a visual description of the node.`val icon: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?` |
 | [name](name.md) | A textual description of the node.`val name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

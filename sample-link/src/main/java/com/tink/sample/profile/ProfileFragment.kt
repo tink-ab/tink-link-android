@@ -25,10 +25,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         adapter.onItemClickedListener = { credentialsId ->
             AlertDialog.Builder(context)
-                .setItems(arrayOf("Update", "Delete")) { _, selected: Int ->
+                .setItems(arrayOf("Update", "Authenticate", "Delete")) { _, selected: Int ->
                     when (selected) {
                         0 -> updateCredentials(credentialsId)
-                        1 -> deleteCredentials(credentialsId)
+                        1 -> authenticateCredentials(credentialsId)
+                        2 -> deleteCredentials(credentialsId)
                     }
                 }
                 .show()
@@ -73,6 +74,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 loader.visibility = View.GONE
                 loadingBackground.visibility = View.GONE
             }
+        }
+    }
+
+    private fun authenticateCredentials(id: String) {
+        viewModel.getProviderForCredentials(id)?.let {
+            findNavController().navigate(
+                R.id.credentialsFragment,
+                CredentialsFragment.getBundle(
+                    provider = it,
+                    credentialsManualAuthArgs = CredentialsFragment.CredentialsManualAuthArgs(id)
+                )
+            )
         }
     }
 

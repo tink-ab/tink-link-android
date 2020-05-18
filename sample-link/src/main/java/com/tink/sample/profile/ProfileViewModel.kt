@@ -97,6 +97,15 @@ class ProfileViewModel : ViewModel() {
             credentials.fields
         )
     }
+
+    fun getProviderForCredentials(credentialsId: String): Provider? {
+        val credentials = credentialsStream.value?.find { it.id == credentialsId } ?: return null
+        return providers.value?.find { it.name == credentials.providerName }
+    }
+
+    fun authenticateCredentials(id: String, completed: () -> Unit) {
+        credentialsRepository.authenticate(id, ResultHandler({ completed() }, { completed() }))
+    }
 }
 
 data class Connection(

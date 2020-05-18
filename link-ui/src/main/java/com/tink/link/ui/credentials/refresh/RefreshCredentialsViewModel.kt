@@ -113,7 +113,7 @@ class RefreshCredentialsViewModel : ViewModel() {
     fun refreshAll() {
         credentials.value?.map { it.id }?.let {
             credentialsRepository.refresh(
-                it,
+                it[0], // TODO: Update this when refresh functionality is implemented
                 ResultHandler({
                     Timber.d("Refresh success")
                 }, {

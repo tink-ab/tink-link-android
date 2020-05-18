@@ -13,5 +13,5 @@ A tree of [ProviderTreeNode](../-provider-tree-node/index.md) objects that will 
 
 
 
-[FinancialInstitutionGroupNode](../-provider-tree-node/-financial-institution-group-node/index.md) -&gt; [FinancialInstitutionNode](../-provider-tree-node/-financial-institution-node/index.md) -&gt; [AccessTypeNode](../-provider-tree-node/-access-type-node/index.md) -&gt; [CredentialTypeNode](../-provider-tree-node/-credential-type-node/index.md)
+[FinancialInstitutionGroupNode](../-provider-tree-node/-financial-institution-group-node/index.md) -&gt; [FinancialInstitutionNode](../-provider-tree-node/-financial-institution-node/index.md) -&gt; [AccessTypeNode](../-provider-tree-node/-access-type-node/index.md) -&gt; [CredentialsTypeNode](../-provider-tree-node/-credentials-type-node/index.md)
 
