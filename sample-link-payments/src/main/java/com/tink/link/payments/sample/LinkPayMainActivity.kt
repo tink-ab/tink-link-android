@@ -30,6 +30,7 @@ import java.math.BigDecimal
 class LinkPayMainActivity : AppCompatActivity() {
 
     private val statusMessage = MutableLiveData<String>()
+    private val statusSubtitleMessage = MutableLiveData<String>()
 
     private var sourceDestinationUriMap: Map<String, List<String>> = emptyMap()
 
@@ -104,16 +105,18 @@ class LinkPayMainActivity : AppCompatActivity() {
                     override fun onError(error: Throwable) {
                         statusMessage.postValue("Transfer Failed")
 
-                        statusSubtitle.post {
-                            statusSubtitle.text = if (error is TransferFailure) {
+                        statusSubtitleMessage.postValue(
+                            if (error is TransferFailure) {
                                 error.reason.message ?: ""
-                            } else ""
-                        }
+                            } else {
+                                ""
+                            }
+                        )
                     }
 
                     override fun onNext(value: TransferStatus) {
 
-                        statusSubtitle.post { statusSubtitle.text = "" }
+                        statusSubtitleMessage.postValue("")
 
                         statusMessage.postValue(
                             when (value) {
@@ -134,6 +137,7 @@ class LinkPayMainActivity : AppCompatActivity() {
         }
 
         statusMessage.observe(this, Observer { statusText.text = it })
+        statusSubtitleMessage.observe(this, Observer { statusSubtitle.text = it })
 
         loadAccountsButton.setOnClickListener { loadAccounts() }
 
