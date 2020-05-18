@@ -14,7 +14,7 @@ import com.tink.link.getUserContext
 import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
-import com.tink.link.payments.getTransferContext
+import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.configuration.Configuration
 import com.tink.link.payments.sample.extensions.launch
 import com.tink.model.credentials.Credentials
@@ -94,7 +94,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 )
             } ?: return@setOnClickListener
 
-            val subscription = Tink.getTransferContext().initiateTransfer(
+            val subscription = Tink.getTransferRepository().initiateTransfer(
                 amount,
                 sourceDropdown.text.toString(),
                 destinationDropdown.text.toString(),
@@ -154,7 +154,7 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun loadAccounts() {
 
-        Tink.getTransferContext().fetchAccounts(ResultHandler({ accounts ->
+        Tink.getTransferRepository().fetchAccounts(ResultHandler({ accounts ->
 
             sourceDestinationUriMap =
                 accounts.mapNotNull {

@@ -12,19 +12,19 @@ import com.tink.link.payments.di.TinkLinkPaymentsComponent
 object TinkLinkPayments {
 
     /**
-     * Fetches the [TransferContext] from Tink.
+     * Fetches the [TransferRepository] from Tink.
      *
      */
     @JvmStatic
-    fun getTransferContext() = Tink.getUserContext()
+    fun getTransferRepository() = Tink.getTransferRepository()
 
 }
 
 // For Kotlin
 
 /**
- * Fetches the [TransferContext] from Tink.
+ * Fetches the [TransferRepository] from Tink.
  *
  */
 @JvmSynthetic
-fun Tink.getTransferContext(): TransferContext = TinkLinkPaymentsComponent.instance.transferContext
+fun Tink.getTransferRepository(): TransferRepository = TinkLinkPaymentsComponent.instance.transferRepository

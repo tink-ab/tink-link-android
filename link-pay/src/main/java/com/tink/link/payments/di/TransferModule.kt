@@ -1,7 +1,7 @@
 package com.tink.link.payments.di
 
-import com.tink.link.payments.TransferContext
-import com.tink.link.payments.TransferContextImpl
+import com.tink.link.payments.TransferRepository
+import com.tink.link.payments.TransferRepositoryImpl
 import dagger.Binds
 import dagger.Module
 
@@ -9,5 +9,5 @@ import dagger.Module
 abstract class TransferModule {
 
     @Binds
-    internal abstract fun bindsTransferContext(implementation: TransferContextImpl): TransferContext
+    internal abstract fun bindsTransferRepository(implementation: TransferRepositoryImpl): TransferRepository
 }

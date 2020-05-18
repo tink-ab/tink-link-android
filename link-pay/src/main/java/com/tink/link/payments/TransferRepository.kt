@@ -15,7 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import javax.inject.Inject
 
-interface TransferContext {
+interface TransferRepository {
 
     fun initiateTransfer(
         amount: Amount,
@@ -28,10 +28,10 @@ interface TransferContext {
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
 }
 
-internal class TransferContextImpl @Inject constructor(
+internal class TransferRepositoryImpl @Inject constructor(
     private val transferService: TransferService,
     private val credentialsService: CredentialsService
-) : TransferContext {
+) : TransferRepository {
 
     override fun initiateTransfer(
         amount: Amount,
