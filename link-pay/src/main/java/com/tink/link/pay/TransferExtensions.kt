@@ -2,6 +2,7 @@ package com.tink.link.pay
 
 import com.tink.core.Tink
 import com.tink.link.getUserContext
+import com.tink.link.pay.di.TinkLinkPaymentsComponent
 
 
 /**

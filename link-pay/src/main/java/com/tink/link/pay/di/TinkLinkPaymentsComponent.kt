@@ -1,12 +1,13 @@
-package com.tink.link.pay
+package com.tink.link.pay.di
 
 import com.tink.core.Tink
 import com.tink.core.TinkComponent
+import com.tink.link.pay.TransferContext
 import dagger.Component
 
 @TinkLinkPaymentsScope
-@Component(dependencies = [TinkComponent::class])
-abstract class TinkLinkPaymentsComponent {
+@Component(dependencies = [TinkComponent::class], modules = [TransferModule::class])
+internal abstract class TinkLinkPaymentsComponent {
 
     abstract val transferContext: TransferContext
 

@@ -9,12 +9,21 @@ import com.tink.service.transfer.CreateTransferDescriptor
 import com.tink.service.transfer.TransferService
 import javax.inject.Inject
 
-class TransferContext @Inject constructor(
+interface TransferContext {
+    fun initiateTransfer(
+        amount: Amount,
+        sourceUri: String,
+        destinationUri: String,
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription
+}
+
+internal class TransferContextImpl @Inject constructor(
     private val transferService: TransferService,
     private val credentialsService: CredentialsService
-) {
+) : TransferContext{
 
-    fun initiateTransfer(
+    override fun initiateTransfer(
         amount: Amount,
         sourceUri: String,
         destinationUri: String,
