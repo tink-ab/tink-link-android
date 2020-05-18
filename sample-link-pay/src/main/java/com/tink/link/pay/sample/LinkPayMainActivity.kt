@@ -13,6 +13,7 @@ import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
 import com.tink.link.pay.TransferContext
 import com.tink.link.pay.TransferStatus
+import com.tink.link.pay.getTransferContext
 import com.tink.link.pay.sample.configuration.Configuration
 import com.tink.link.pay.sample.extensions.launch
 import com.tink.model.credentials.Credentials
@@ -96,10 +97,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 )
             } ?: return@setOnClickListener
 
-            val subscription = TransferContext(
-                Tink.requireComponent().transferService,
-                Tink.requireComponent().credentialsService
-            ).initiateTransfer(
+            val subscription = Tink.getTransferContext().initiateTransfer(
                 amount,
                 sourceDropdown.text.toString(),
                 destinationDropdown.text.toString(),
