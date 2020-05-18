@@ -1,1 +1,1 @@
-include(":app", ":link", ":link-pay", ":sample-link-pay")
+include(":app", ":link", ":link-payments", ":sample-link-payments")

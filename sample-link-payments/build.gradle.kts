@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":link-pay"))
+    implementation(project(":link-payments"))
     implementation(project(":link"))
 
     implementation(Dependencies.kotlin_stdlib)
