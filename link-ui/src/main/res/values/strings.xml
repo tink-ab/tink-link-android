@@ -6,7 +6,7 @@
   <string name="tink_redirect_uri_path">/callback</string>
   <string name="tink_provider_list_title">Choose your bank</string>
   <string name="tink_credentials_type_fragment_title">Sign in method</string>
-  <string name="tink_access_type_fragment_title">Add %s Account</string>
+  <string name="tink_access_type_fragment_title">Select account types</string>
   <string name="tink_create_credentials_button">Continue</string>
   <string name="tink_third_party_authentication_download_app_positive">Install</string>
   <string name="tink_third_party_authentication_download_app_negative">Cancel</string>
