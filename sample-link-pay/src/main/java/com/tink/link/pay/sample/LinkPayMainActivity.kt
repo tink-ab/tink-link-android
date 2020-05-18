@@ -96,38 +96,46 @@ class LinkPayMainActivity : AppCompatActivity() {
                 )
             } ?: return@setOnClickListener
 
-            TransferContext(
+            val subscription = TransferContext(
                 Tink.requireComponent().transferService,
                 Tink.requireComponent().credentialsService
             ).initiateTransfer(
                 amount,
                 sourceDropdown.text.toString(),
-                destinationDropdown.text.toString()
-            ) { status ->
+                destinationDropdown.text.toString(),
+                object : StreamObserver<TransferStatus> {
 
-                statusMessage.postValue(
-                    when (status) {
-                        TransferStatus.Success -> "Transfer Succeeded"
-                        is TransferStatus.Failure -> "Transfer Failed"
-                        TransferStatus.Loading -> "Loading..."
-                        is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
+                    override fun onError(error: Throwable) {
+                        statusMessage.postValue("Something went wrong")
                     }
-                )
 
-                statusSubtitle.post {
-                    statusSubtitle.text = if(status is TransferStatus.Failure) {
-                       status.reason.message ?: ""
-                    } else {
-                        ""
+                    override fun onNext(value: TransferStatus) {
+
+                        statusMessage.postValue(
+                            when (value) {
+                                TransferStatus.Success -> "Transfer Succeeded"
+                                is TransferStatus.Failure -> "Transfer Failed"
+                                TransferStatus.Loading -> "Loading..."
+                                is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
+                            }
+                        )
+
+                        statusSubtitle.post {
+                            statusSubtitle.text = if (value is TransferStatus.Failure) {
+                                value.reason.message ?: ""
+                            } else {
+                                ""
+                            }
+                        }
+
+                        (value as? TransferStatus.AwaitingAuthentication)
+                            ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
+                            ?.credentials
+                            ?.thirdPartyAppAuthentication
+                            ?.launch(this@LinkPayMainActivity)
                     }
                 }
-
-                (status as? TransferStatus.AwaitingAuthentication)
-                    ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                    ?.credentials
-                    ?.thirdPartyAppAuthentication
-                    ?.launch(this@LinkPayMainActivity)
-            }
+            )
         }
 
         statusMessage.observe(this, Observer { statusText.text = it })

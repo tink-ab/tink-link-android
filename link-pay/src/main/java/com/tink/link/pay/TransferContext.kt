@@ -4,6 +4,8 @@ import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.transfer.SignableOperation
 import com.tink.service.credentials.CredentialsService
+import com.tink.service.streaming.publisher.StreamObserver
+import com.tink.service.streaming.publisher.StreamSubscription
 import com.tink.service.transfer.CreateTransferDescriptor
 import com.tink.service.transfer.TransferService
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -24,8 +26,8 @@ class TransferContext @Inject constructor(
         amount: Amount,
         sourceUri: String,
         destinationUri: String,
-        onStatusChanged: (TransferStatus) -> Unit
-    ): TransferTask = //Stream
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription =
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
@@ -34,8 +36,10 @@ class TransferContext @Inject constructor(
                 destinationUri = destinationUri,
                 destinationMessage = "destinationMessage"
             ),
-            credentialsService, transferService, onStatusChanged
-        ).also { it.start() }
+            credentialsService,
+            transferService,
+            statusChangeObserver
+        )
 }
 
 sealed class TransferStatus {
@@ -52,24 +56,23 @@ sealed class Reason(val message: String?) {
     class TransferFailed(message: String? = null) : Reason(message)
 }
 
-class TransferTask(
+private class TransferTask(
     private val transferDescriptor: CreateTransferDescriptor,
     private val credentialsService: CredentialsService,
     private val transferService: TransferService,
-    private val onStatusChanged: (TransferStatus) -> Unit
-) {
+    private val streamObserver: StreamObserver<TransferStatus>
+) : StreamSubscription {
 
     private val errorHandler = CoroutineExceptionHandler { _, error ->
-        // onError
-        onStatusChanged(TransferStatus.Failure(Reason.TransferFailed()))
+        streamObserver.onError(error)
     }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
     private var currentStatus: TransferStatus = TransferStatus.Loading
 
-    fun start() {
+    init {
         currentStatus = TransferStatus.Loading
-        onStatusChanged(currentStatus)
+        streamObserver.onNext(currentStatus)
 
         scope.launch {
 
@@ -80,6 +83,7 @@ class TransferTask(
             setStatus(initialStatus)
 
             if (initialStatus is TransferStatus.Failure || initialStatus == TransferStatus.Success) {
+                streamObserver.onCompleted()
                 return@launch
             }
 
@@ -92,15 +96,17 @@ class TransferTask(
                 setStatus(newStatus)
 
                 if (newStatus is TransferStatus.Failure || newStatus == TransferStatus.Success) {
+                    streamObserver.onCompleted()
                     break
                 }
 
                 delay(2_000L)
             }
         }
+
     }
 
-    fun cancel() {
+    override fun unsubscribe() {
         scope.cancel()
     }
 
@@ -126,7 +132,7 @@ class TransferTask(
     private fun setStatus(newStatus: TransferStatus) {
         if (isNewStatus(currentStatus, newStatus)) {
             currentStatus = newStatus
-            onStatusChanged(currentStatus)
+            streamObserver.onNext(currentStatus)
         }
     }
 
