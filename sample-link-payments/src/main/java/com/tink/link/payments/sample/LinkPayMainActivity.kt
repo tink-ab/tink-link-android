@@ -54,92 +54,11 @@ class LinkPayMainActivity : AppCompatActivity() {
             applicationContext
         )
 
-        Tink.createTemporaryUser("SE", "en_US", ResultHandler({
-            Log.d(localClassName, "User created");
-            Tink.setUser(it)
-
-            Tink.getUserContext()?.credentialsRepository?.create(
-                "se-test-open-banking-redirect",
-                Credentials.Type.THIRD_PARTY_AUTHENTICATION,
-                emptyMap(),
-                ResultHandler({}, {})
-            )
-
-            var credentialsSubscription: StreamSubscription? = null
-            credentialsSubscription =
-                Tink.getUserContext()?.credentialsRepository?.listStream()?.subscribe(
-                    object : StreamObserver<List<Credentials>> {
-                        override fun onNext(value: List<Credentials>) {
-                            value
-                                .find { it.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                                ?.thirdPartyAppAuthentication
-                                ?.launch(this@LinkPayMainActivity)
-                                ?.also { credentialsSubscription?.unsubscribe() }
-                        }
-                    }
-                )
-        }, {
-            Log.e(localClassName, "Error:", it)
-        }))
-
-
-        button.setOnClickListener {
-
-            val amount = amountInput.text.toString().takeUnless { it.isBlank() }?.toDouble()?.let {
-                val bigDecimal = BigDecimal.valueOf(it)
-                Amount(
-                    ExactNumber(
-                        bigDecimal.unscaledValue().toLong(),
-                        bigDecimal.scale().toLong()
-                    ), "SEK"
-                )
-            } ?: return@setOnClickListener
-
-            val subscription = Tink.getTransferRepository().initiateTransfer(
-                amount,
-                sourceDropdown.text.toString(),
-                destinationDropdown.text.toString(),
-                TransferMessage(messageInput.text.toString()),
-                object : StreamObserver<TransferStatus> {
-
-                    override fun onError(error: Throwable) {
-                        statusMessage.postValue("Transfer Failed")
-
-                        statusSubtitleMessage.postValue(
-                            if (error is TransferFailure) {
-                                error.reason.message ?: ""
-                            } else {
-                                ""
-                            }
-                        )
-                    }
-
-                    override fun onNext(value: TransferStatus) {
-
-                        statusSubtitleMessage.postValue("")
-
-                        statusMessage.postValue(
-                            when (value) {
-                                TransferStatus.Success -> "Transfer Succeeded"
-                                TransferStatus.Loading -> "Loading..."
-                                is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
-                            }
-                        )
-
-                        (value as? TransferStatus.AwaitingAuthentication)
-                            ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                            ?.credentials
-                            ?.thirdPartyAppAuthentication
-                            ?.launch(this@LinkPayMainActivity)
-                    }
-                }
-            )
-        }
-
         statusMessage.observe(this, Observer { statusText.text = it })
         statusSubtitleMessage.observe(this, Observer { statusSubtitle.text = it })
 
         loadAccountsButton.setOnClickListener { loadAccounts() }
+        button.setOnClickListener { initiateTransfer() }
 
         sourceDropdown.setAdapter(sourceAdapter)
         destinationDropdown.setAdapter(destinationAdapter)
@@ -154,6 +73,42 @@ class LinkPayMainActivity : AppCompatActivity() {
                 destinationAdapter.addAll(destinations)
                 destinationAdapter.notifyDataSetChanged()
             }
+
+        createUser()
+    }
+
+    private fun createUser() =
+        Tink.createTemporaryUser("SE", "en_US", ResultHandler({
+            Log.d(localClassName, "User created")
+            Tink.setUser(it)
+
+            connectCredentials()
+
+        }, {
+            Log.e(localClassName, "Error:", it)
+        }))
+
+    private fun connectCredentials() {
+        Tink.getUserContext()?.credentialsRepository?.create(
+            "se-test-open-banking-redirect",
+            Credentials.Type.THIRD_PARTY_AUTHENTICATION,
+            emptyMap(),
+            ResultHandler({}, {})
+        )
+
+        var credentialsSubscription: StreamSubscription? = null
+        credentialsSubscription =
+            Tink.getUserContext()?.credentialsRepository?.listStream()?.subscribe(
+                object : StreamObserver<List<Credentials>> {
+                    override fun onNext(value: List<Credentials>) {
+                        value
+                            .find { it.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
+                            ?.thirdPartyAppAuthentication
+                            ?.launch(this@LinkPayMainActivity)
+                            ?.also { credentialsSubscription?.unsubscribe() }
+                    }
+                }
+            )
     }
 
     private fun loadAccounts() {
@@ -176,5 +131,58 @@ class LinkPayMainActivity : AppCompatActivity() {
         }, {
             statusMessage.postValue("Error loading accounts")
         }))
+    }
+
+    private fun initiateTransfer() {
+
+        val amount = amountInput.text.toString().takeUnless { it.isBlank() }?.toDouble()?.let {
+            val bigDecimal = BigDecimal.valueOf(it)
+            Amount(
+                ExactNumber(
+                    bigDecimal.unscaledValue().toLong(),
+                    bigDecimal.scale().toLong()
+                ), "SEK"
+            )
+        } ?: return
+
+        Tink.getTransferRepository().initiateTransfer(
+            amount,
+            sourceDropdown.text.toString(),
+            destinationDropdown.text.toString(),
+            TransferMessage(messageInput.text.toString()),
+            object : StreamObserver<TransferStatus> {
+
+                override fun onError(error: Throwable) {
+                    statusMessage.postValue("Transfer Failed")
+
+                    statusSubtitleMessage.postValue(
+                        if (error is TransferFailure) {
+                            error.reason.message ?: ""
+                        } else {
+                            ""
+                        }
+                    )
+                }
+
+                override fun onNext(value: TransferStatus) {
+
+                    statusSubtitleMessage.postValue("")
+
+                    statusMessage.postValue(
+                        when (value) {
+                            TransferStatus.Success -> "Transfer Succeeded"
+                            TransferStatus.Loading -> "Loading..."
+                            is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
+                        }
+                    )
+
+                    (value as? TransferStatus.AwaitingAuthentication)
+                        ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
+                        ?.credentials
+                        ?.thirdPartyAppAuthentication
+                        ?.launch(this@LinkPayMainActivity)
+                }
+            }
+        )
     }
 }
