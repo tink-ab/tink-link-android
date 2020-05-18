@@ -24,10 +24,6 @@ import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.math.BigDecimal
 
 class LinkPayMainActivity : AppCompatActivity() {
@@ -107,7 +103,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                         statusMessage.postValue("Transfer Failed")
 
                         statusSubtitle.post {
-                            statusSubtitle.text = if(error is TransferFailure) {
+                            statusSubtitle.text = if (error is TransferFailure) {
                                 error.reason.message ?: ""
                             } else ""
                         }
@@ -156,20 +152,23 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun loadAccounts() {
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val accounts = Tink.requireComponent().transferService.getSourceAccounts()
+        Tink.getTransferContext().fetchAccounts(ResultHandler({ accounts ->
 
             sourceDestinationUriMap =
                 accounts.mapNotNull {
-                    it.identifiers.firstOrNull()?.let { sourceUri -> sourceUri to it.transferDestinations }
+                    it.identifiers.firstOrNull()
+                        ?.let { sourceUri -> sourceUri to it.transferDestinations }
                 }.toMap()
 
-            withContext(Dispatchers.Main) {
+            destinationDropdown.post {
                 destinationDropdown.clearListSelection()
                 sourceAdapter.clear()
                 sourceAdapter.addAll(sourceDestinationUriMap.keys)
                 sourceAdapter.notifyDataSetChanged()
             }
-        }
+
+        }, {
+            statusMessage.postValue("Error loading accounts")
+        }))
     }
 }
