@@ -20,12 +20,20 @@ import com.tink.link.payments.sample.extensions.launch
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
+import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
+import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import kotlinx.android.synthetic.main.activity_main.*
 import java.math.BigDecimal
+
+private val configuration = TinkConfiguration(
+    Configuration.sampleEnvironment,
+    Configuration.sampleOAuthClientId,
+    Uri.parse("tinklink://sample/pay-callback")
+)
 
 class LinkPayMainActivity : AppCompatActivity() {
 
@@ -46,11 +54,7 @@ class LinkPayMainActivity : AppCompatActivity() {
             ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
 
         Tink.init(
-            TinkConfiguration(
-                Configuration.sampleEnvironment,
-                Configuration.sampleOAuthClientId,
-                Uri.parse("tinklink://sample/pay-callback")
-            ),
+            getConfigFromIntent() ?: configuration,
             applicationContext
         )
 
@@ -74,7 +78,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 destinationAdapter.notifyDataSetChanged()
             }
 
-        createUser()
+        getUserFromIntent()?.let(Tink::setUser) ?: createUser()
     }
 
     private fun createUser() =
@@ -184,5 +188,25 @@ class LinkPayMainActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    private fun getConfigFromIntent(): TinkConfiguration? =
+        intent?.getStringExtra(CLIENT_ID_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                TinkConfiguration(Environment.Production, it, configuration.redirectUri)
+            }
+
+    private fun getUserFromIntent(): User? =
+        intent
+            ?.getStringExtra(ACCESS_TOKEN_EXTRA)
+            ?.takeUnless { it.isEmpty() }
+            ?.let {
+                User.fromAccessToken(it)
+            }
+
+    companion object {
+        const val CLIENT_ID_EXTRA = "clientIdExtra"
+        const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
     }
 }

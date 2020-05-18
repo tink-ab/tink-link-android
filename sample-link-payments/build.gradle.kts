@@ -10,7 +10,7 @@ android {
     compileSdkVersion(Versions.compileSdk)
     buildToolsVersion(Versions.buildTools)
     defaultConfig {
-        applicationId = "com.tink.link.pay.sample"
+        applicationId = "com.tink.link.payments.sample"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
         versionCode = TinkLinkVersion.code
