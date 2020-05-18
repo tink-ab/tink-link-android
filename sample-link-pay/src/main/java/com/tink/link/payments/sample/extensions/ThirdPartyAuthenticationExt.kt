@@ -1,11 +1,9 @@
-package com.tink.link.pay.sample.extensions
+package com.tink.link.payments.sample.extensions
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.tink.link.R
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 
 fun ThirdPartyAppAuthentication.launch(activity: Activity, onCancel: (() -> Unit)? = null) {

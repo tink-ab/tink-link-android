@@ -1,4 +1,4 @@
-package com.tink.link.pay.sample
+package com.tink.link.payments.sample
 
 import android.net.Uri
 import android.os.Bundle
@@ -11,11 +11,11 @@ import androidx.lifecycle.Observer
 import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
-import com.tink.link.pay.TransferFailure
-import com.tink.link.pay.TransferStatus
-import com.tink.link.pay.getTransferContext
-import com.tink.link.pay.sample.configuration.Configuration
-import com.tink.link.pay.sample.extensions.launch
+import com.tink.link.payments.TransferFailure
+import com.tink.link.payments.TransferStatus
+import com.tink.link.payments.getTransferContext
+import com.tink.link.payments.sample.configuration.Configuration
+import com.tink.link.payments.sample.extensions.launch
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber

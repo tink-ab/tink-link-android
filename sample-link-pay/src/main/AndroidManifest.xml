@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.tink.link.pay.sample">
+  package="com.tink.link.payments.sample">
 
   <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,7 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity
-      android:name=".LinkPayMainActivity"
+      android:name="com.tink.link.payments.sample.LinkPayMainActivity"
       android:launchMode="singleTask">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

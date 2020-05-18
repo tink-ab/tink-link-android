@@ -1,8 +1,8 @@
-package com.tink.link.pay
+package com.tink.link.payments
 
 import com.tink.core.Tink
 import com.tink.link.getUserContext
-import com.tink.link.pay.di.TinkLinkPaymentsComponent
+import com.tink.link.payments.di.TinkLinkPaymentsComponent
 
 
 /**

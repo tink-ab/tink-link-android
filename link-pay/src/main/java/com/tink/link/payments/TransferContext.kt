@@ -1,4 +1,4 @@
-package com.tink.link.pay
+package com.tink.link.payments
 
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount

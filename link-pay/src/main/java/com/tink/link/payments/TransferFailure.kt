@@ -1,4 +1,4 @@
-package com.tink.link.pay
+package com.tink.link.payments
 
 class TransferFailure(val reason: Reason) : Throwable() {
 

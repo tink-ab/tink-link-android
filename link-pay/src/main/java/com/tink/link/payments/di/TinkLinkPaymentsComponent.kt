@@ -1,8 +1,8 @@
-package com.tink.link.pay.di
+package com.tink.link.payments.di
 
 import com.tink.core.Tink
 import com.tink.core.TinkComponent
-import com.tink.link.pay.TransferContext
+import com.tink.link.payments.TransferContext
 import dagger.Component
 
 @TinkLinkPaymentsScope

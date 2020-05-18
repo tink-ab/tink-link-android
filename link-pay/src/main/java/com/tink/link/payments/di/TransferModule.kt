@@ -1,7 +1,7 @@
-package com.tink.link.pay.di
+package com.tink.link.payments.di
 
-import com.tink.link.pay.TransferContext
-import com.tink.link.pay.TransferContextImpl
+import com.tink.link.payments.TransferContext
+import com.tink.link.payments.TransferContextImpl
 import dagger.Binds
 import dagger.Module
 
