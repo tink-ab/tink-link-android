@@ -12,6 +12,7 @@ import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
 import com.tink.link.pay.TransferContext
+import com.tink.link.pay.TransferFailure
 import com.tink.link.pay.TransferStatus
 import com.tink.link.pay.getTransferContext
 import com.tink.link.pay.sample.configuration.Configuration
@@ -104,27 +105,26 @@ class LinkPayMainActivity : AppCompatActivity() {
                 object : StreamObserver<TransferStatus> {
 
                     override fun onError(error: Throwable) {
-                        statusMessage.postValue("Something went wrong")
+                        statusMessage.postValue("Transfer Failed")
+
+                        statusSubtitle.post {
+                            statusSubtitle.text = if(error is TransferFailure) {
+                                error.reason.message ?: ""
+                            } else ""
+                        }
                     }
 
                     override fun onNext(value: TransferStatus) {
 
+                        statusSubtitle.post { statusSubtitle.text = "" }
+
                         statusMessage.postValue(
                             when (value) {
                                 TransferStatus.Success -> "Transfer Succeeded"
-                                is TransferStatus.Failure -> "Transfer Failed"
                                 TransferStatus.Loading -> "Loading..."
                                 is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
                             }
                         )
-
-                        statusSubtitle.post {
-                            statusSubtitle.text = if (value is TransferStatus.Failure) {
-                                value.reason.message ?: ""
-                            } else {
-                                ""
-                            }
-                        }
 
                         (value as? TransferStatus.AwaitingAuthentication)
                             ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }

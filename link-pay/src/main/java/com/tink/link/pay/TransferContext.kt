@@ -43,18 +43,11 @@ class TransferContext @Inject constructor(
 }
 
 sealed class TransferStatus {
-
     object Success : TransferStatus()
-    class Failure(val reason: Reason) : TransferStatus()
     object Loading : TransferStatus()
-
     class AwaitingAuthentication(val credentials: Credentials) : TransferStatus()
 }
 
-sealed class Reason(val message: String?) {
-    class CredentialsError(message: String? = null) : Reason(message)
-    class TransferFailed(message: String? = null) : Reason(message)
-}
 
 private class TransferTask(
     private val transferDescriptor: CreateTransferDescriptor,
@@ -82,10 +75,7 @@ private class TransferTask(
 
             setStatus(initialStatus)
 
-            if (initialStatus is TransferStatus.Failure || initialStatus == TransferStatus.Success) {
-                streamObserver.onCompleted()
-                return@launch
-            }
+            if (initialStatus == TransferStatus.Success) return@launch
 
             while (true) {
                 val newOperation =
@@ -95,15 +85,13 @@ private class TransferTask(
 
                 setStatus(newStatus)
 
-                if (newStatus is TransferStatus.Failure || newStatus == TransferStatus.Success) {
-                    streamObserver.onCompleted()
-                    break
-                }
+                if (newStatus == TransferStatus.Success) return@launch
 
                 delay(2_000L)
             }
         }
 
+        streamObserver.onCompleted()
     }
 
     override fun unsubscribe() {
@@ -122,8 +110,8 @@ private class TransferTask(
 
             }
             SignableOperation.Status.CANCELLED,
-            SignableOperation.Status.FAILED -> TransferStatus.Failure(
-                Reason.TransferFailed(
+            SignableOperation.Status.FAILED -> throw TransferFailure(
+                TransferFailure.Reason.TransferFailed(
                     signableOperation.statusMessage.takeUnless { it.isBlank() })
             )
             SignableOperation.Status.EXECUTED -> TransferStatus.Success
@@ -168,8 +156,16 @@ private class TransferTask(
             Credentials.Status.SESSION_EXPIRED,
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.AUTHENTICATION_ERROR,
-            Credentials.Status.PERMANENT_ERROR -> TransferStatus.Failure(
-                Reason.CredentialsError(credentials.statusPayload?.takeUnless { it.isBlank() })
+            Credentials.Status.PERMANENT_ERROR -> throw TransferFailure(
+                TransferFailure.Reason.CredentialsError(credentials.statusPayload?.takeUnless { it.isBlank() })
             )
         }
+}
+
+class TransferFailure(val reason: Reason) : Throwable() {
+
+    sealed class Reason(val message: String?) {
+        class CredentialsError(message: String? = null) : Reason(message)
+        class TransferFailed(message: String? = null) : Reason(message)
+    }
 }
