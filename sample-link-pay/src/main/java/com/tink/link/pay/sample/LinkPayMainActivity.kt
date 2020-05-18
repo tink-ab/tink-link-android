@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
-import com.tink.link.pay.TransferContext
 import com.tink.link.pay.TransferFailure
 import com.tink.link.pay.TransferStatus
 import com.tink.link.pay.getTransferContext
@@ -162,7 +161,7 @@ class LinkPayMainActivity : AppCompatActivity() {
 
             sourceDestinationUriMap =
                 accounts.mapNotNull {
-                    it.identifier?.let { sourceUri -> sourceUri to it.transferDestinations }
+                    it.identifiers.firstOrNull()?.let { sourceUri -> sourceUri to it.transferDestinations }
                 }.toMap()
 
             withContext(Dispatchers.Main) {
