@@ -21,6 +21,7 @@ interface TransferContext {
         amount: Amount,
         sourceUri: String,
         destinationUri: String,
+        message: TransferMessage,
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription
 
@@ -36,15 +37,16 @@ internal class TransferContextImpl @Inject constructor(
         amount: Amount,
         sourceUri: String,
         destinationUri: String,
+        message: TransferMessage,
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription =
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
                 sourceUri = sourceUri,
-                sourceMessage = "sourceMessage",
+                sourceMessage = message.sourceMessage ?: "", //TODO: Nullable?
                 destinationUri = destinationUri,
-                destinationMessage = "destinationMessage"
+                destinationMessage = message.destinationMessage
             ),
             credentialsService,
             transferService,
@@ -65,3 +67,5 @@ sealed class TransferStatus {
     object Loading : TransferStatus()
     class AwaitingAuthentication(val credentials: Credentials) : TransferStatus()
 }
+
+data class TransferMessage(val destinationMessage: String, val sourceMessage: String? = null)

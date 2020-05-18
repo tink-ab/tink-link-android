@@ -12,6 +12,7 @@ import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
 import com.tink.link.getUserContext
 import com.tink.link.payments.TransferFailure
+import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferContext
 import com.tink.link.payments.sample.configuration.Configuration
@@ -97,6 +98,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 amount,
                 sourceDropdown.text.toString(),
                 destinationDropdown.text.toString(),
+                TransferMessage(messageInput.text.toString()),
                 object : StreamObserver<TransferStatus> {
 
                     override fun onError(error: Throwable) {
