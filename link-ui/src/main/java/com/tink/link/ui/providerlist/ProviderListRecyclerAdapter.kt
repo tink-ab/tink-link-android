@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
+import com.tink.link.ui.extensions.capabilitiesText
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
@@ -59,7 +60,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
         title.text = when (item) {
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
-            is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
+            is ProviderTreeNode.AccessTypeNode -> item.capabilitiesText(title.context)
             is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription(title.context)
             is ProviderTreeNode.ProviderNode -> item.name
         }
