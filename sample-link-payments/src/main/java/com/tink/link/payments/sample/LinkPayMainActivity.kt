@@ -2,15 +2,12 @@ package com.tink.link.payments.sample
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.tink.core.Tink
-import com.tink.link.createTemporaryUser
-import com.tink.link.getUserContext
 import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
@@ -25,7 +22,6 @@ import com.tink.service.handler.ResultHandler
 import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
-import com.tink.service.streaming.publisher.StreamSubscription
 import kotlinx.android.synthetic.main.activity_main.*
 import java.math.BigDecimal
 
@@ -78,41 +74,12 @@ class LinkPayMainActivity : AppCompatActivity() {
                 destinationAdapter.notifyDataSetChanged()
             }
 
-        getUserFromIntent()?.let(Tink::setUser) ?: createUser()
+        val user = getUserFromIntent() ?: getUser()
+        Tink.setUser(user)
     }
 
-    private fun createUser() =
-        Tink.createTemporaryUser("SE", "en_US", ResultHandler({
-            Log.d(localClassName, "User created")
-            Tink.setUser(it)
-
-            connectCredentials()
-
-        }, {
-            Log.e(localClassName, "Error:", it)
-        }))
-
-    private fun connectCredentials() {
-        Tink.getUserContext()?.credentialsRepository?.create(
-            "se-test-open-banking-redirect",
-            Credentials.Type.THIRD_PARTY_AUTHENTICATION,
-            emptyMap(),
-            ResultHandler({}, {})
-        )
-
-        var credentialsSubscription: StreamSubscription? = null
-        credentialsSubscription =
-            Tink.getUserContext()?.credentialsRepository?.listStream()?.subscribe(
-                object : StreamObserver<List<Credentials>> {
-                    override fun onNext(value: List<Credentials>) {
-                        value
-                            .find { it.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                            ?.thirdPartyAppAuthentication
-                            ?.launch(this@LinkPayMainActivity)
-                            ?.also { credentialsSubscription?.unsubscribe() }
-                    }
-                }
-            )
+    private fun getUser(): User {
+        TODO("Replace with implementation for getting a User using your preferred method.")
     }
 
     private fun loadAccounts() {
@@ -132,8 +99,9 @@ class LinkPayMainActivity : AppCompatActivity() {
                 sourceAdapter.notifyDataSetChanged()
             }
 
-        }, {
+        }, {error ->
             statusMessage.postValue("Error loading accounts")
+            error.message?.takeUnless { it.isBlank() }.let(statusSubtitleMessage::postValue)
         }))
     }
 
