@@ -44,7 +44,7 @@ internal class TransferRepositoryImpl @Inject constructor(
             CreateTransferDescriptor(
                 amount = amount,
                 sourceUri = sourceUri,
-                sourceMessage = message.sourceMessage ?: "", //TODO: Nullable?
+                sourceMessage = message.sourceMessage,
                 destinationUri = destinationUri,
                 destinationMessage = message.destinationMessage
             ),
