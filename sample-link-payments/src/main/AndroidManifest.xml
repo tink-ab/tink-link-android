@@ -26,9 +26,9 @@
         <category android:name="android.intent.category.BROWSABLE" />
 
         <data
-          android:host="sample"
-          android:pathPrefix="/pay-callback"
-          android:scheme="tinklink" />
+          android:host="@string/payments_redirect_uri_host"
+          android:pathPrefix="@string/payments_redirect_uri_path"
+          android:scheme="@string/payments_redirect_uri_scheme" />
       </intent-filter>
     </activity>
   </application>

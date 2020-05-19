@@ -1,3 +1,6 @@
 <resources>
   <string name="app_name">Tink Link Pay Sample</string>
+  <string name="payments_redirect_uri_scheme">tinklink</string>
+  <string name="payments_redirect_uri_host">sample</string>
+  <string name="payments_redirect_uri_path">/payments-callback</string>
 </resources>
