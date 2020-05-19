@@ -106,7 +106,9 @@ class LinkPayMainActivity : AppCompatActivity() {
 
         }, { error ->
             statusMessage.postValue("Error loading accounts")
-            error.message?.takeUnless { it.isBlank() }.let(statusSubtitleMessage::postValue)
+            error.message
+                ?.takeUnless { it.isBlank() }
+                ?.let(statusSubtitleMessage::postValue)
         }))
     }
 
