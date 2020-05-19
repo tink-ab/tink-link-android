@@ -37,6 +37,9 @@ internal class ConsentViewModel() : ViewModel() {
         )
     }
 
+    val isUnverified: LiveData<Boolean> =
+        Transformations.map(_clientDescription) { it?.verified == false }
+
     val showConsentInformation: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.aggregator == false }
 

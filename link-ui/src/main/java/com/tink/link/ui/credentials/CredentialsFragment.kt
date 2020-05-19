@@ -89,6 +89,10 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                         View.GONE
                     }
             })
+            isUnverified.observe(viewLifecycleOwner, Observer {
+                unverifiedWarning.visibility =
+                    if (it == true) View.VISIBLE else View.GONE
+            })
         }
 
         provider.images?.icon?.let {
