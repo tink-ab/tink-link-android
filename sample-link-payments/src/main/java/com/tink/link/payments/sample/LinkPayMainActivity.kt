@@ -25,11 +25,16 @@ import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_main.*
 import java.math.BigDecimal
 
-private val configuration = TinkConfiguration(
-    Configuration.sampleEnvironment,
-    Configuration.sampleOAuthClientId,
-    Uri.parse("tinklink://sample/pay-callback")
-)
+private val LinkPayMainActivity.configuration
+    get() = TinkConfiguration(
+        Configuration.sampleEnvironment,
+        Configuration.sampleOAuthClientId,
+        Uri.Builder()
+            .scheme(getString(R.string.payments_redirect_uri_scheme))
+            .authority(getString(R.string.payments_redirect_uri_host))
+            .path(getString(R.string.payments_redirect_uri_path))
+            .build()
+    )
 
 class LinkPayMainActivity : AppCompatActivity() {
 
@@ -99,7 +104,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 sourceAdapter.notifyDataSetChanged()
             }
 
-        }, {error ->
+        }, { error ->
             statusMessage.postValue("Error loading accounts")
             error.message?.takeUnless { it.isBlank() }.let(statusSubtitleMessage::postValue)
         }))
