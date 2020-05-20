@@ -23,13 +23,9 @@ internal class TransferTask(
     private val streamObserver: StreamObserver<TransferStatus>
 ) : StreamSubscription {
 
-    private val errorHandler =
-        CoroutineExceptionHandler { _, error ->
-            streamObserver.onError(error)
-        }
+    private val errorHandler = CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
 
-    private val scope =
-        CoroutineScope(Dispatchers.IO + Job() + errorHandler)
+    private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
     private var currentStatus: TransferStatus = TransferStatus.Loading
         set(value) {
             if (isNewStatus(field, value)) {
@@ -103,19 +99,19 @@ internal class TransferTask(
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
             Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
             Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
-                TransferStatus.AwaitingAuthentication(
-                    credentials
-                )
+                TransferStatus.AwaitingAuthentication(credentials)
 
             Credentials.Status.DISABLED,
             Credentials.Status.DELETED,
-            null,
             Credentials.Status.SESSION_EXPIRED,
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.AUTHENTICATION_ERROR,
-            Credentials.Status.PERMANENT_ERROR -> throw TransferFailure(
-                TransferFailure.Reason.CredentialsError(
-                    credentials.statusPayload?.takeUnless { it.isBlank() })
+            Credentials.Status.PERMANENT_ERROR,
+            null ->
+                throw TransferFailure(
+                    TransferFailure.Reason.CredentialsError(
+                        credentials.statusPayload?.takeUnless { it.isBlank() }
+                    )
             )
         }
 }
