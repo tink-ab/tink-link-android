@@ -14,6 +14,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.properties.Delegates
 
 internal class TransferTask(
     private val transferDescriptor: CreateTransferDescriptor,
@@ -29,32 +30,24 @@ internal class TransferTask(
 
     private val scope =
         CoroutineScope(Dispatchers.IO + Job() + errorHandler)
-    private var currentStatus: TransferStatus =
-        TransferStatus.Loading
+    private var currentStatus: TransferStatus = TransferStatus.Loading
+        set(value) {
+            if (isNewStatus(field, value)) {
+                field = value
+                streamObserver.onNext(currentStatus)
+            }
+        }
 
     init {
-        currentStatus = TransferStatus.Loading
         streamObserver.onNext(currentStatus)
-
         scope.launch {
-
-            val initialSignableOperation = transferService.initiateTransfer(transferDescriptor)
-
-            val initialStatus = getStatusFromOperation(initialSignableOperation)
-
-            setStatus(initialStatus)
-
-            if (initialStatus == TransferStatus.Success) return@launch
+            var operation = transferService.initiateTransfer(transferDescriptor)
 
             while (true) {
-                val newOperation =
-                    transferService.getTransferStatus(initialSignableOperation.underlyingId)
+                currentStatus = operation.toTransferStatus()
+                if (currentStatus == TransferStatus.Success) return@launch
 
-                val newStatus: TransferStatus = getStatusFromOperation(newOperation)
-
-                setStatus(newStatus)
-
-                if (newStatus == TransferStatus.Success) return@launch
+                operation = transferService.getTransferStatus(operation.underlyingId)
 
                 delay(2_000L)
             }
@@ -67,31 +60,24 @@ internal class TransferTask(
         scope.cancel()
     }
 
-    private suspend fun getStatusFromOperation(signableOperation: SignableOperation): TransferStatus =
-        when (signableOperation.status) {
+    private suspend fun SignableOperation.toTransferStatus() =
+        when (status) {
             SignableOperation.Status.CREATED,
             SignableOperation.Status.EXECUTING -> TransferStatus.Loading
+
             SignableOperation.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
             SignableOperation.Status.AWAITING_CREDENTIALS -> {
                 val credentials =
-                    credentialsService.getCredentials(signableOperation.credentialsId!!)
+                    credentialsService.getCredentials(credentialsId!!)
                 getTransferStatusFromCredentials(credentials)
-
             }
+
             SignableOperation.Status.CANCELLED,
             SignableOperation.Status.FAILED -> throw TransferFailure(
-                TransferFailure.Reason.TransferFailed(
-                    signableOperation.statusMessage.takeUnless { it.isBlank() })
+                TransferFailure.Reason.TransferFailed(statusMessage.takeUnless { it.isBlank() })
             )
             SignableOperation.Status.EXECUTED -> TransferStatus.Success
         }
-
-    private fun setStatus(newStatus: TransferStatus) {
-        if (isNewStatus(currentStatus, newStatus)) {
-            currentStatus = newStatus
-            streamObserver.onNext(currentStatus)
-        }
-    }
 
     private fun isNewStatus(oldStatus: TransferStatus, newStatus: TransferStatus): Boolean {
 
