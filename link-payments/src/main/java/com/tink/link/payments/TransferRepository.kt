@@ -29,16 +29,17 @@ interface TransferRepository {
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
 }
 
-internal class TransferRepositoryImpl constructor(
+internal class TransferRepositoryImpl(
     private val transferService: TransferService,
     private val credentialsService: CredentialsService,
     private val dispatcher: CoroutineDispatcher
 ) : TransferRepository {
 
-    @Inject constructor(
+    @Inject
+    constructor(
         transferService: TransferService,
         credentialsService: CredentialsService
-    ): this(transferService, credentialsService, Dispatchers.IO)
+    ) : this(transferService, credentialsService, Dispatchers.IO)
 
     override fun initiateTransfer(
         amount: Amount,
