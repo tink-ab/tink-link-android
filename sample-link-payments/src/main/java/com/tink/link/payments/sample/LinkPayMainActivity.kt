@@ -14,15 +14,20 @@ import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.configuration.Configuration
 import com.tink.link.payments.sample.extensions.launch
+import com.tink.model.account.Account
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
+import com.tink.model.transfer.Beneficiary
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.math.BigDecimal
 
 private val LinkPayMainActivity.configuration
@@ -62,7 +67,11 @@ class LinkPayMainActivity : AppCompatActivity() {
         statusMessage.observe(this, Observer { statusText.text = it })
         statusSubtitleMessage.observe(this, Observer { statusSubtitle.text = it })
 
-        loadAccountsButton.setOnClickListener { loadAccounts() }
+        loadAccountsButton.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                buildSourceDestinationMap()
+            }
+        }
         button.setOnClickListener { initiateTransfer() }
 
         sourceDropdown.setAdapter(sourceAdapter)
@@ -87,29 +96,37 @@ class LinkPayMainActivity : AppCompatActivity() {
         TODO("Replace with implementation for getting a User using your preferred method.")
     }
 
-    private fun loadAccounts() {
+    private fun buildSourceDestinationMap() {
+        loadAccounts { accounts ->
+            loadBeneficiaries { beneficiaries ->
 
-        Tink.getTransferRepository().fetchAccounts(ResultHandler({ accounts ->
+                val beneficiariesByAccountId = beneficiaries.groupBy { it.accountId }
 
-            sourceDestinationUriMap =
-                accounts.mapNotNull {
-                    it.identifiers.firstOrNull()
-                        ?.let { sourceUri -> sourceUri to it.transferDestinations }
+                sourceDestinationUriMap = accounts.mapNotNull { account ->
+                    account.identifiers.firstOrNull()?.let { identifier ->
+                        identifier to (beneficiariesByAccountId[account.id]?.map { it.toUri() }
+                            ?: emptyList())
+                    }
                 }.toMap()
 
-            destinationDropdown.post {
-                destinationDropdown.clearListSelection()
-                sourceAdapter.clear()
-                sourceAdapter.addAll(sourceDestinationUriMap.keys)
-                sourceAdapter.notifyDataSetChanged()
+                destinationDropdown.post {
+                    destinationDropdown.clearListSelection()
+                    sourceAdapter.clear()
+                    sourceAdapter.addAll(sourceDestinationUriMap.keys)
+                    sourceAdapter.notifyDataSetChanged()
+                }
             }
+        }
+    }
 
-        }, { error ->
-            statusMessage.postValue("Error loading accounts")
-            error.message
-                ?.takeUnless { it.isBlank() }
-                ?.let(statusSubtitleMessage::postValue)
-        }))
+    private fun loadAccounts(onAccountsLoaded: (List<Account>) -> Unit) {
+        Tink.getTransferRepository()
+            .fetchAccounts(ResultHandler(onAccountsLoaded, ::handleError))
+    }
+
+    private fun loadBeneficiaries(onBeneficiariesLoaded: (List<Beneficiary>) -> Unit) {
+        Tink.getTransferRepository()
+            .fetchBeneficiaries(ResultHandler(onBeneficiariesLoaded, ::handleError))
     }
 
     private fun initiateTransfer() {
@@ -165,6 +182,10 @@ class LinkPayMainActivity : AppCompatActivity() {
         )
     }
 
+    private fun handleError(error: Throwable) {
+        // handle error
+    }
+
     private fun getConfigFromIntent(): TinkConfiguration? =
         intent?.getStringExtra(CLIENT_ID_EXTRA)
             ?.takeUnless { it.isEmpty() }
@@ -184,4 +205,8 @@ class LinkPayMainActivity : AppCompatActivity() {
         const val CLIENT_ID_EXTRA = "clientIdExtra"
         const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
     }
+}
+
+fun Beneficiary.toUri(): String {
+    return "$type://$accountNumber"
 }
