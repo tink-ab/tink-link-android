@@ -8,36 +8,49 @@
 
   <include layout="@layout/tink_layout_toolbar" />
 
-  <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/consentInformationTitle"
-    style="@style/tink_mega"
+  <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:layout_marginBottom="16dp"
-    android:text="@string/tink_consent_information_list_title" />
+    android:layout_height="match_parent">
 
-  <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/consentInformationDescription"
-    style="@style/tink_deci.primary"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:layout_marginBottom="16dp"
-    android:text="@string/tink_consent_information_list_description" />
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
 
-  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/scopeInfoList"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginEnd="24dp"
-    android:layout_marginBottom="16dp"
-    android:overScrollMode="never"
-    tools:listitem="@layout/tink_item_consent_scope" />
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/consentInformationTitle"
+        style="@style/tink_mega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/tink_consent_information_list_title" />
+
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/consentInformationDescription"
+        style="@style/tink_deci.primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/tink_consent_information_list_description" />
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scopeInfoList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:nestedScrollingEnabled="false"
+        tools:listitem="@layout/tink_item_consent_scope" />
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
