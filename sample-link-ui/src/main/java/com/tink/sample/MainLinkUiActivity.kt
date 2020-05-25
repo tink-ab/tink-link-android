@@ -9,6 +9,7 @@ import com.tink.core.Tink
 import com.tink.sample.configuration.Configuration
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
+import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.synthetic.main.activity_main_link_ui.*
 
@@ -40,13 +41,18 @@ class MainLinkUiActivity : AppCompatActivity() {
                     context = this,
                     styleResId = R.style.TinkStyle_ChewingGum,
                     scopes = listOf(Scope.AccountsRead),
+                    user = createdUser(),
                     market = "SE",
-                    locale = "sv_SE",
-                    authorizeUser = SHOULD_AUTHORIZE_USER
+                    locale = "sv_SE"
                 ),
                 REQUEST_CODE
             )
         }
+    }
+
+    private fun createdUser(): User? {
+        // This can be replaced with a created user for testing permanent user scenarios, etc.
+        return null
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -66,7 +72,7 @@ class MainLinkUiActivity : AppCompatActivity() {
                     "Received user authorization code: $authorizationCode",
                     Toast.LENGTH_LONG
                 ).show()
-            } else if (SHOULD_AUTHORIZE_USER) {
+            } else if (createdUser() == null) {
                 Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
@@ -76,6 +82,5 @@ class MainLinkUiActivity : AppCompatActivity() {
 
     companion object {
         const val REQUEST_CODE = 100
-        const val SHOULD_AUTHORIZE_USER = false
     }
 }

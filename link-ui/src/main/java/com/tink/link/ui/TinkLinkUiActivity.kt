@@ -11,7 +11,6 @@ import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.user.Scope
 import com.tink.model.user.User
-import java.lang.IllegalArgumentException
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
@@ -26,7 +25,6 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_USER = "user"
         const val ARG_MARKET = "market"
         const val ARG_LOCALE = "locale"
-        const val ARG_AUTHORIZE_USER = "authorizeUser"
 
         fun createIntent(
             context: Context,
@@ -34,8 +32,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
             scopes: List<Scope> = listOf(Scope.AccountsRead), // TODO: Confirm if this should be the default
             user: User? = null,
             market: String = "",
-            locale: String = "",
-            authorizeUser: Boolean = false
+            locale: String = ""
         ): Intent {
             if (user == null) {
                 require(market.isNotBlank() && locale.isNotBlank()) {
@@ -50,8 +47,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
                             ARG_SCOPES to scopes.toArrayList(),
                             ARG_USER to user,
                             ARG_MARKET to market,
-                            ARG_LOCALE to locale,
-                            ARG_AUTHORIZE_USER to authorizeUser
+                            ARG_LOCALE to locale
                         )
                     )
                 }
@@ -76,9 +72,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     // TODO: Inject this with dagger once it's ready
-    internal val authorizeUser: Boolean by lazy {
-        intent.extras?.getBoolean(ARG_AUTHORIZE_USER) ?: false
-    }
+    internal val authorizeUser: Boolean by lazy { user == null }
 
     internal var authorizationCode: String? = null
 
