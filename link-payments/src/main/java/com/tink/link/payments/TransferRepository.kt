@@ -4,6 +4,7 @@ import com.tink.link.payments.coroutines.launchForResult
 import com.tink.model.account.Account
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
+import com.tink.model.transfer.Beneficiary
 import com.tink.service.credentials.CredentialsService
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
@@ -26,6 +27,8 @@ interface TransferRepository {
     ): StreamSubscription
 
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
+
+    fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>)
 }
 
 internal class TransferRepositoryImpl @Inject constructor(
@@ -58,6 +61,12 @@ internal class TransferRepositoryImpl @Inject constructor(
         // TODO: Inject dispatcher?
         CoroutineScope(Dispatchers.IO + Job()).launchForResult(resultHandler) {
             transferService.getSourceAccounts()
+        }
+    }
+
+    override fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>) {
+        CoroutineScope(Dispatchers.IO + Job()).launchForResult(resultHandler) {
+            transferService.getBeneficiaries()
         }
     }
 }
