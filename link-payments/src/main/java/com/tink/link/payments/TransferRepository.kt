@@ -10,6 +10,7 @@ import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import com.tink.service.transfer.CreateTransferDescriptor
 import com.tink.service.transfer.TransferService
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -28,10 +29,17 @@ interface TransferRepository {
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
 }
 
-internal class TransferRepositoryImpl @Inject constructor(
+internal class TransferRepositoryImpl(
     private val transferService: TransferService,
-    private val credentialsService: CredentialsService
+    private val credentialsService: CredentialsService,
+    private val dispatcher: CoroutineDispatcher
 ) : TransferRepository {
+
+    @Inject
+    constructor(
+        transferService: TransferService,
+        credentialsService: CredentialsService
+    ) : this(transferService, credentialsService, Dispatchers.IO)
 
     override fun initiateTransfer(
         amount: Amount,
@@ -55,8 +63,7 @@ internal class TransferRepositoryImpl @Inject constructor(
 
 
     override fun fetchAccounts(resultHandler: ResultHandler<List<Account>>) {
-        // TODO: Inject dispatcher?
-        CoroutineScope(Dispatchers.IO + Job()).launchForResult(resultHandler) {
+        CoroutineScope(dispatcher + Job()).launchForResult(resultHandler) {
             transferService.getSourceAccounts()
         }
     }

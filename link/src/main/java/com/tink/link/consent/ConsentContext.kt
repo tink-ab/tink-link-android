@@ -6,6 +6,7 @@ import com.tink.model.consent.OAuthClientDescription
 import com.tink.model.user.Scope
 import com.tink.service.consent.ConsentService
 import com.tink.service.handler.ResultHandler
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -15,11 +16,15 @@ import javax.inject.Inject
 /**
  * Context for handling things around user consent.
  */
-class ConsentContext @Inject constructor(
-    private val consentService: ConsentService
+class ConsentContext(
+    private val consentService: ConsentService,
+    dispatcher: CoroutineDispatcher
 ) {
 
-    val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    @Inject
+    constructor(consentService: ConsentService) : this(consentService, Dispatchers.IO)
+
+    private val scope = CoroutineScope(dispatcher + SupervisorJob())
 
     /**
      * Get a link to the Terms & Conditions for Tink Link.
