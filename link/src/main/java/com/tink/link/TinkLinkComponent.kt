@@ -5,7 +5,7 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
-import com.tink.link.core.authentication.AccessRepository
+import com.tink.link.core.access.AccessRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.model.user.Scope
