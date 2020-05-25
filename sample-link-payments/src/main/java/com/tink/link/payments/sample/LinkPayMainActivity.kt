@@ -3,7 +3,6 @@ package com.tink.link.payments.sample
 import android.net.Uri
 import android.os.Bundle
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -46,18 +45,26 @@ class LinkPayMainActivity : AppCompatActivity() {
     private val statusMessage = MutableLiveData<String>()
     private val statusSubtitleMessage = MutableLiveData<String>()
 
-    private var sourceDestinationUriMap: Map<String, List<String>> = emptyMap()
+    private var sourceDestinationUriMap: Map<Account, List<Beneficiary>> = emptyMap()
 
-    private lateinit var sourceAdapter: ArrayAdapter<String>
-    private lateinit var destinationAdapter: ArrayAdapter<String>
+    private lateinit var sourceAdapter: DropdownItemAdapter<Account>
+    private lateinit var destinationAdapter: DropdownItemAdapter<Beneficiary>
+
+    private var selectedAccount: Account? = null
+    private var selectedBeneficiary: Beneficiary? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sourceAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
+        sourceAdapter =
+            DropdownItemAdapter(this, android.R.layout.simple_spinner_dropdown_item) {
+                it?.name ?: ""
+            }
         destinationAdapter =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
+            DropdownItemAdapter(this, android.R.layout.simple_spinner_dropdown_item) {
+                it?.name ?: ""
+            }
 
         Tink.init(
             getConfigFromIntent() ?: configuration,
@@ -81,11 +88,25 @@ class LinkPayMainActivity : AppCompatActivity() {
             AdapterView.OnItemClickListener { _, _, position: Int, _ ->
 
                 destinationAdapter.clear()
-                val destinations =
-                    sourceDestinationUriMap[sourceAdapter.getItem(position)] ?: emptyList()
+
+                val account = sourceAdapter.getItem(position) ?: return@OnItemClickListener
+
+                val destinations = sourceDestinationUriMap[account] ?: emptyList()
 
                 destinationAdapter.addAll(destinations)
                 destinationAdapter.notifyDataSetChanged()
+
+                sourceDropdown.setText(account.name)
+                selectedAccount = account
+            }
+
+        destinationDropdown.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, position: Int, _ ->
+
+                val beneficiary = destinationAdapter.getItem(position) ?: return@OnItemClickListener
+
+                destinationDropdown.setText(beneficiary.name)
+                selectedBeneficiary = beneficiary
             }
 
         val user = getUserFromIntent() ?: getUser()
@@ -102,11 +123,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
                 val beneficiariesByAccountId = beneficiaries.groupBy { it.accountId }
 
-                sourceDestinationUriMap = accounts.mapNotNull { account ->
-                    account.identifiers.firstOrNull()?.let { identifier ->
-                        identifier to (beneficiariesByAccountId[account.id]?.map { it.toUri() }
-                            ?: emptyList())
-                    }
+                sourceDestinationUriMap = accounts.map {
+                    it to (beneficiariesByAccountId[it.id] ?: emptyList())
                 }.toMap()
 
                 destinationDropdown.post {
@@ -141,10 +159,13 @@ class LinkPayMainActivity : AppCompatActivity() {
             )
         } ?: return
 
+        val sourceUri = selectedAccount?.identifiers?.firstOrNull() ?: return
+        val beneficiaryUri = selectedBeneficiary?.uri ?: return
+
         Tink.getTransferRepository().initiateTransfer(
             amount,
-            sourceDropdown.text.toString(),
-            destinationDropdown.text.toString(),
+            sourceUri,
+            beneficiaryUri,
             TransferMessage(messageInput.text.toString()),
             object : StreamObserver<TransferStatus> {
 
@@ -205,8 +226,4 @@ class LinkPayMainActivity : AppCompatActivity() {
         const val CLIENT_ID_EXTRA = "clientIdExtra"
         const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
     }
-}
-
-fun Beneficiary.toUri(): String {
-    return "$type://$accountNumber"
 }
