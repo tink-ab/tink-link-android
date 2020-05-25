@@ -155,7 +155,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 ExactNumber(
                     bigDecimal.unscaledValue().toLong(),
                     bigDecimal.scale().toLong()
-                ), "SEK"
+                ), "EUR"
             )
         } ?: return
 
