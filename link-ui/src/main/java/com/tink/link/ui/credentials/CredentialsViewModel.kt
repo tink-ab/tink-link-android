@@ -207,7 +207,9 @@ class CredentialsViewModel : ViewModel() {
                 { authorizationCode ->
                     _authorizationCode.postValue(authorizationCode)
                 },
-                { }
+                {
+                    // TODO: Error handling
+                }
             )
         )
     }
