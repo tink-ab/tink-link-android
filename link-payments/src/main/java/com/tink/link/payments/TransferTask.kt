@@ -1,5 +1,6 @@
 package com.tink.link.payments
 
+import com.tink.link.authentication.AuthOperation
 import com.tink.model.credentials.Credentials
 import com.tink.model.transfer.SignableOperation
 import com.tink.service.credentials.CredentialsService
@@ -14,7 +15,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlin.properties.Delegates
 
 internal class TransferTask(
     private val transferDescriptor: CreateTransferDescriptor,
@@ -76,13 +76,10 @@ internal class TransferTask(
         }
 
     private fun isNewStatus(oldStatus: TransferStatus, newStatus: TransferStatus): Boolean {
-
-        if (oldStatus is TransferStatus.AwaitingAuthentication && newStatus is TransferStatus.AwaitingAuthentication) {
-            if (oldStatus.credentials.status != newStatus.credentials.status)
-                return true
-            if (oldStatus.credentials.statusUpdated < newStatus.credentials.statusUpdated)
-                return true
-            return false
+        if (oldStatus is TransferStatus.AwaitingAuthentication &&
+            newStatus is TransferStatus.AwaitingAuthentication
+        ) {
+            return newStatus.operation.isNewerThan(oldStatus.operation)
         }
 
         return oldStatus != newStatus
@@ -97,9 +94,15 @@ internal class TransferTask(
             Credentials.Status.UPDATED -> TransferStatus.Loading
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
-            Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
+            Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->
+                TransferStatus.AwaitingAuthentication(
+                    AuthOperation.ThirdPartyAuthentication(credentials)
+                )
+
             Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
-                TransferStatus.AwaitingAuthentication(credentials)
+                TransferStatus.AwaitingAuthentication(
+                    AuthOperation.SupplementalInformation(credentials)
+                )
 
             Credentials.Status.DISABLED,
             Credentials.Status.DELETED,

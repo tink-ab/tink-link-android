@@ -1,12 +1,9 @@
 package com.tink.link.payments
 
-import android.widget.Button
-import android.widget.EditText
 import com.tink.link.authentication.AuthOperation
 import com.tink.link.payments.coroutines.launchForResult
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
-import com.tink.model.misc.Field
 import com.tink.model.transfer.Beneficiary
 import com.tink.service.credentials.CredentialsService
 import com.tink.service.handler.ResultHandler
@@ -88,46 +85,3 @@ sealed class TransferStatus {
 }
 
 data class TransferMessage(val destinationMessage: String, val sourceMessage: String? = null)
-
-fun customerTransferStreamOnNext(status: TransferStatus) {
-    when (status) {
-        is TransferStatus.AwaitingAuthentication -> {
-            customerHandleOperation(status.operation)
-
-        }
-    }
-}
-
-fun customerHandleOperation(operation: AuthOperation) {
-
-    when (operation) {
-        is AuthOperation.SupplementalInformation -> {
-            setupFields {
-                operation.submit(it)
-                operation.cancel()
-            }
-        }
-
-        is AuthOperation.ThirdPartyAuthentication -> {
-            operation.launch(activity = null!!,
-                onAppNotInstalled = {
-                },
-                onAppNeedsUpgrade = {
-                })
-        }
-    }
-}
-
-
-fun setupFields(fields: List<Field>, onSubmit: (fields: Map<String, String>) -> Unit) {
-
-    val field1 = EditText()
-    val field2 = EditText()
-
-    val button = Button(null)
-
-    button.setOnClickListener {
-        onSubmit(mapOf(field1.text...))
-    }
-
-}

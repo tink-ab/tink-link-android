@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthOperation
 import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
@@ -188,10 +189,12 @@ class LinkPayMainActivity : AppCompatActivity() {
                     )
 
                     (value as? TransferStatus.AwaitingAuthentication)
-                        ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                        ?.credentials
-                        ?.thirdPartyAppAuthentication
-                        ?.launch(this@LinkPayMainActivity)
+                        ?.let { it.operation as? AuthOperation.ThirdPartyAuthentication }
+                        ?.launch(
+                            this@LinkPayMainActivity,
+                            {},
+                            {}
+                        )
                 }
             }
         )
