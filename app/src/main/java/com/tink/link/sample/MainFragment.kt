@@ -25,7 +25,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
 
         // Set a user on the Tink instance:
         Tink.setUser(getUserFromIntent() ?: getUser())
-        findNavController().navigate(R.id.profileFragment)
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToProfileFragment())
     }
 
     /**
