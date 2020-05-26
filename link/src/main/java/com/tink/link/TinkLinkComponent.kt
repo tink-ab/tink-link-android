@@ -51,6 +51,10 @@ internal abstract class TinkLinkComponent {
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 
+    internal fun requireUserContext(): UserContext = checkNotNull(getUserContext()) {
+        "User was not set. Call Tink.setUser to set the user before calling this."
+    }
+
     internal fun createTemporaryUser(
         market: String,
         locale: String,
