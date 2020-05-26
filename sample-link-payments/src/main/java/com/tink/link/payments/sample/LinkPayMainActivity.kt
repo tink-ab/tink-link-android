@@ -27,7 +27,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.math.BigDecimal
 
 private val LinkPayMainActivity.configuration
     get() = TinkConfiguration(
@@ -149,15 +148,10 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun initiateTransfer() {
 
-        val amount = amountInput.text.toString().takeUnless { it.isBlank() }?.toDouble()?.let {
-            val bigDecimal = BigDecimal.valueOf(it)
-            Amount(
-                ExactNumber(
-                    bigDecimal.unscaledValue().toLong(),
-                    bigDecimal.scale().toLong()
-                ), "EUR"
-            )
-        } ?: return
+        val amount = amountInput.text.toString()
+            .takeUnless { it.isBlank() }
+            ?.let { Amount(ExactNumber(it.toDouble()), "EUR") }
+            ?: return
 
         val sourceUri = selectedAccount?.identifiers?.firstOrNull() ?: return
         val beneficiaryUri = selectedBeneficiary?.uri ?: return
