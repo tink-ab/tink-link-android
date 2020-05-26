@@ -73,7 +73,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         (activity as? TinkLinkUiActivity)?.scopes?.let {
             consentViewModel.initialize(it)
-            viewModel.setScopes(it)
+            viewModel.scopes = it
         }
 
         (activity as? TinkLinkUiActivity)?.authorizeUser?.let {

@@ -35,7 +35,7 @@ class CredentialsViewModel : ViewModel() {
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
 
-    private var scopes: List<Scope> = emptyList()
+    internal var scopes: List<Scope> = emptyList()
 
     internal var authorizationCodeSaved: Boolean = false
     internal var authorizeUser: Boolean = false
@@ -198,10 +198,6 @@ class CredentialsViewModel : ViewModel() {
                 }
             )
         )
-    }
-
-    fun setScopes(scopes: List<Scope>) {
-        this.scopes = scopes
     }
 
     private fun authorizeUser(scopes: List<Scope>) {
