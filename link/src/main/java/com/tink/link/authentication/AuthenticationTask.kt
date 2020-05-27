@@ -14,9 +14,23 @@ import com.tink.service.handler.ResultHandler
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * Represents an authentication that needs to be completed by the user.
+ *
+ * The possible values are [SupplementalInformation] and [ThirdPartyAppAuthentication]
+ */
 sealed class AuthenticationTask : Parcelable {
     internal abstract val credentials: Credentials
 
+    /**
+     * Indicates that there is additional information required from the user to proceed. This can
+     * for example be an OTP sent via SMS or authetication app.
+     * First the [fields] should be made accessible to the user for example as text input fields.
+     * Then [submit] should be called as soon as the fields have been validated and the user is
+     * ready to send the information.
+     *
+     * @param fields The fields that need to be displayed to the user for input
+     */
     @Parcelize
     data class SupplementalInformation(
         override val credentials: Credentials
@@ -27,17 +41,38 @@ sealed class AuthenticationTask : Parcelable {
                 require(it.isNotEmpty()) { "Supplemental information fields were empty." }
             }
 
+        /**
+         * Submit supplemental information for the authentication to Tink
+         * Should be called as soon as the fields have been validated and the user is
+         * ready to send the information.
+         *
+         * @param filledFields A key-value map of the supplemental information. The key should
+         * always be [Field.name] from [fields] and the value should be the user input of that
+         * field.
+         */
         fun submit(filledFields: Map<String, String>, resultHandler: ResultHandler<Unit>) {
             Tink.requireUserContext().credentialsRepository
                 .supplementInformation(credentials.id, filledFields, resultHandler)
         }
 
+        /**
+         * Cancel the ongoing supplemental information task. This can be used to fail the
+         * authentication should the user back out of the authentication. If not called, the
+         * authentication will time out on its own. This is a shortcut to be able to get into a
+         * failed state faster and thus be able to retry more quickly.
+         */
         fun cancel(resultHandler: ResultHandler<Unit>) {
             Tink.requireUserContext().credentialsRepository
                 .cancelSupplementalInformation(credentials.id, resultHandler)
         }
     }
 
+    /**
+     * Indicates that there is an authentication in a third party app or in the browser necessary
+     * to proceed with the authentication.
+     * The user can be sent to redirected by calling [launch], or you can provide a custom redirection
+     * logic with the use of the data in [thirdPartyAppAuthentication]
+     */
     @Parcelize
     data class ThirdPartyAuthentication(
         override val credentials: Credentials
@@ -47,6 +82,11 @@ sealed class AuthenticationTask : Parcelable {
             "Third party authentication data could not be found."
         }
 
+        /**
+         * Try to redirect the user to the third party app for authentication.
+         *
+         * @return a [LaunchResult] that indicates if the user was successfully redirected.
+         */
         fun launch(
             activity: Activity
         ): LaunchResult {
@@ -106,11 +146,27 @@ sealed class AuthenticationTask : Parcelable {
                 ?.takeIf { it.versionCode < thirdPartyAuthenticationAndroid.requiredMinimumVersion }
                 ?.let { true } ?: false
 
+        /**
+         * Indicates if the user was successfully redirected when [launch] was called.
+         *
+         * Possible values are [Success], [AppNotInstalled], and [AppNeedsUpgrade]
+         *
+         */
         sealed class LaunchResult : Parcelable {
 
+            /**
+             * The user should have successfully been redirected to the third party app.
+             */
             @Parcelize
             object Success : LaunchResult()
 
+            /**
+             * The app necessary for authentication is not installed on the users device.
+             *
+             * Properties [packageName], [title], and [message] can be used for example to show
+             * a dialog to the user prompting to install the app.
+             *
+             */
             @Parcelize
             data class AppNotInstalled(
                 val packageName: String,
@@ -118,6 +174,14 @@ sealed class AuthenticationTask : Parcelable {
                 val message: String
             ) : LaunchResult()
 
+            /**
+             * The app necessary for authentication is installed on the users device but needs to
+             * be updated.
+             *
+             * Properties [packageName], [title], and [message] can be used for example to show
+             * a dialog to the user prompting to upgrade the app.
+             *
+             */
             @Parcelize
             data class AppNeedsUpgrade(
                 val packageName: String,
@@ -127,6 +191,11 @@ sealed class AuthenticationTask : Parcelable {
         }
     }
 
+    /**
+     * Helper function comparing two [AuthenticationTask]s to see if one is newer than
+     * that the other. This can be used to determine if a new update should be sent.
+     * This is for internal use in the Tink Sdk and it should not be necessary to use it otherwise.
+     */
     fun isNewerThan(other: AuthenticationTask): Boolean {
         return credentials.statusUpdated > other.credentials.statusUpdated
     }
