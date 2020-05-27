@@ -79,8 +79,15 @@ internal class TransferRepositoryImpl(
         message: TransferMessage,
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription {
-        val sourceAccountUri = sourceAccount.identifiers.firstOrNull() ?: "tink://${sourceAccount.id}"
-        return initiateTransfer(amount, sourceAccountUri, beneficiary.uri, message, statusChangeObserver)
+        val sourceAccountUri =
+            sourceAccount.identifiers.firstOrNull() ?: "tink://${sourceAccount.id}"
+        return initiateTransfer(
+            amount,
+            sourceAccountUri,
+            beneficiary.uri,
+            message,
+            statusChangeObserver
+        )
     }
 
     override fun fetchAccounts(resultHandler: ResultHandler<List<Account>>) {
