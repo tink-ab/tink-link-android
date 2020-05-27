@@ -48,23 +48,18 @@ sealed class AuthenticationTask : Parcelable {
         }
 
         fun launch(
-            activity: Activity,
-            onAppNotInstalled: (AppInfo) -> Unit,
-            onAppNeedsUpgrade: (AppInfo) -> Unit
-        ) {
+            activity: Activity
+        ): LaunchResult {
             with(thirdPartyAppAuthentication) {
                 val thirdPartyAuthenticationAndroid = requireNotNull(android)
                 val packageName = thirdPartyAuthenticationAndroid.packageName
 
                 if (appNeedsUpgrade(activity, thirdPartyAuthenticationAndroid)) {
-                    onAppNeedsUpgrade(
-                        AppInfo(
-                            packageName = packageName,
-                            title = upgradeTitle,
-                            message = upgradeMessage
-                        )
+                    return LaunchResult.AppNeedsUpgrade(
+                        packageName = packageName,
+                        title = upgradeTitle,
+                        message = upgradeMessage
                     )
-                    return@launch
                 }
 
                 // Creates a launch intent from the intent uri
@@ -80,22 +75,20 @@ sealed class AuthenticationTask : Parcelable {
                     activity.startActivityForResult(thirdPartyIntent, 0)
                 } catch (exception: ActivityNotFoundException) {
                     // See if it works by package name instead.
-                    val launchByPackageIntent = activity.packageManager
-                        .getLaunchIntentForPackage(packageName)
+                    val launchByPackageIntent =
+                        activity.packageManager.getLaunchIntentForPackage(packageName)
                     if (launchByPackageIntent != null) {
                         activity.startActivityForResult(launchByPackageIntent, 0)
                     } else {
                         // The activity was not found on the device.
-                        onAppNotInstalled(
-                            AppInfo(
-                                packageName = packageName,
-                                title = downloadTitle,
-                                message = downloadMessage
-                            )
+                        return LaunchResult.AppNotInstalled(
+                            packageName = packageName,
+                            title = downloadTitle,
+                            message = downloadMessage
                         )
-                        return@launch
                     }
                 }
+                return LaunchResult.Success
             }
         }
 
@@ -113,12 +106,25 @@ sealed class AuthenticationTask : Parcelable {
                 ?.takeIf { it.versionCode < thirdPartyAuthenticationAndroid.requiredMinimumVersion }
                 ?.let { true } ?: false
 
-        @Parcelize
-        data class AppInfo(
-            val packageName: String,
-            val title: String,
-            val message: String
-        ) : Parcelable
+        sealed class LaunchResult : Parcelable {
+
+            @Parcelize
+            object Success : LaunchResult()
+
+            @Parcelize
+            data class AppNotInstalled(
+                val packageName: String,
+                val title: String,
+                val message: String
+            ) : LaunchResult()
+
+            @Parcelize
+            data class AppNeedsUpgrade(
+                val packageName: String,
+                val title: String,
+                val message: String
+            ) : LaunchResult()
+        }
     }
 
     fun isNewerThan(other: AuthenticationTask): Boolean {

@@ -186,13 +186,13 @@ class LinkPayMainActivity : AppCompatActivity() {
                         }
                     )
 
-                    (value as? TransferStatus.AwaitingAuthentication)
+                    val launchResult = (value as? TransferStatus.AwaitingAuthentication)
                         ?.let { it.operation as? AuthenticationTask.ThirdPartyAuthentication }
-                        ?.launch(
-                            this@LinkPayMainActivity,
-                            {},
-                            {}
-                        )
+                        ?.launch(this@LinkPayMainActivity)
+
+                    if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
+                        // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    }
                 }
             }
         )
