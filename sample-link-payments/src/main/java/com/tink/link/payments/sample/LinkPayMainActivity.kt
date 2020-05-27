@@ -27,6 +27,7 @@ import kotlinx.android.synthetic.main.activity_link_pay_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 private val LinkPayMainActivity.configuration
     get() = TinkConfiguration(
@@ -115,7 +116,7 @@ class LinkPayMainActivity : AppCompatActivity() {
         loadAccounts { accounts ->
             loadBeneficiaries { beneficiaries ->
 
-                val beneficiariesByAccountId = beneficiaries.groupBy { it.accountId }
+                val beneficiariesByAccountId = beneficiaries.groupBy { it.ownerAccountId }
 
                 sourceDestinationUriMap = accounts.map {
                     it to (beneficiariesByAccountId[it.id] ?: emptyList())
@@ -195,7 +196,7 @@ class LinkPayMainActivity : AppCompatActivity() {
     }
 
     private fun handleError(error: Throwable) {
-        // handle error
+        Timber.e(error)
     }
 
     private fun getConfigFromIntent(): TinkConfiguration? =
