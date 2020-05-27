@@ -152,13 +152,13 @@ class LinkPayMainActivity : AppCompatActivity() {
             ?.let { Amount(ExactNumber(it.toDouble()), "EUR") }
             ?: return
 
-        val sourceUri = selectedAccount?.identifiers?.firstOrNull() ?: return
-        val beneficiaryUri = selectedBeneficiary?.uri ?: return
+        val sourceAccount = selectedAccount ?: return
+        val beneficiary = selectedBeneficiary ?: return
 
         Tink.getTransferRepository().initiateTransfer(
             amount,
-            sourceUri,
-            beneficiaryUri,
+            sourceAccount,
+            beneficiary,
             TransferMessage(messageInput.text.toString()),
             object : StreamObserver<TransferStatus> {
 

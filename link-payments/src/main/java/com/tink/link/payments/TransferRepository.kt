@@ -21,8 +21,16 @@ interface TransferRepository {
 
     fun initiateTransfer(
         amount: Amount,
-        sourceUri: String,
-        destinationUri: String,
+        sourceAccountUri: String,
+        beneficiaryUri: String,
+        message: TransferMessage,
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription
+
+    fun initiateTransfer(
+        amount: Amount,
+        sourceAccount: Account,
+        beneficiary: Beneficiary,
         message: TransferMessage,
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription
@@ -46,17 +54,17 @@ internal class TransferRepositoryImpl(
 
     override fun initiateTransfer(
         amount: Amount,
-        sourceUri: String,
-        destinationUri: String,
+        sourceAccountUri: String,
+        beneficiaryUri: String,
         message: TransferMessage,
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription =
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
-                sourceUri = sourceUri,
+                sourceUri = sourceAccountUri,
                 sourceMessage = message.sourceMessage,
-                destinationUri = destinationUri,
+                destinationUri = beneficiaryUri,
                 destinationMessage = message.destinationMessage
             ),
             credentialsService,
@@ -64,6 +72,23 @@ internal class TransferRepositoryImpl(
             statusChangeObserver
         )
 
+    override fun initiateTransfer(
+        amount: Amount,
+        sourceAccount: Account,
+        beneficiary: Beneficiary,
+        message: TransferMessage,
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription {
+        val sourceAccountUri =
+            sourceAccount.identifiers.firstOrNull() ?: "tink://${sourceAccount.id}"
+        return initiateTransfer(
+            amount,
+            sourceAccountUri,
+            beneficiary.uri,
+            message,
+            statusChangeObserver
+        )
+    }
 
     override fun fetchAccounts(resultHandler: ResultHandler<List<Account>>) {
         CoroutineScope(dispatcher + Job()).launchForResult(resultHandler) {
