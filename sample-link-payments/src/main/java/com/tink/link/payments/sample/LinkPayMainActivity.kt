@@ -3,6 +3,7 @@ package com.tink.link.payments.sample
 import android.net.Uri
 import android.os.Bundle
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
