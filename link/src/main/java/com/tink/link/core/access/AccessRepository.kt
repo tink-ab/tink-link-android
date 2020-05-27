@@ -1,4 +1,4 @@
-package com.tink.link.core.authentication
+package com.tink.link.core.access
 
 import com.tink.link.coroutines.launchForResult
 import com.tink.model.user.Scope

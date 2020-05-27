@@ -1,8 +1,8 @@
 package com.tink.link.payments
 
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.coroutines.launchForResult
 import com.tink.model.account.Account
-import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.transfer.Beneficiary
 import com.tink.service.credentials.CredentialsService
@@ -81,7 +81,7 @@ internal class TransferRepositoryImpl(
 sealed class TransferStatus {
     object Success : TransferStatus()
     object Loading : TransferStatus()
-    class AwaitingAuthentication(val credentials: Credentials) : TransferStatus()
+    class AwaitingAuthentication(val operation: AuthenticationTask) : TransferStatus()
 }
 
 data class TransferMessage(val destinationMessage: String, val sourceMessage: String? = null)

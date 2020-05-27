@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.configuration.Configuration
-import com.tink.link.payments.sample.extensions.launch
 import com.tink.model.account.Account
-import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
 import com.tink.model.transfer.Beneficiary
@@ -187,11 +186,13 @@ class LinkPayMainActivity : AppCompatActivity() {
                         }
                     )
 
-                    (value as? TransferStatus.AwaitingAuthentication)
-                        ?.takeIf { it.credentials.status == Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION }
-                        ?.credentials
-                        ?.thirdPartyAppAuthentication
+                    val launchResult = (value as? TransferStatus.AwaitingAuthentication)
+                        ?.let { it.operation as? AuthenticationTask.ThirdPartyAuthentication }
                         ?.launch(this@LinkPayMainActivity)
+
+                    if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
+                        // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    }
                 }
             }
         )

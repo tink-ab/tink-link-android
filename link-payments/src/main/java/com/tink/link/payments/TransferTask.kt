@@ -1,5 +1,6 @@
 package com.tink.link.payments
 
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.model.credentials.Credentials
 import com.tink.model.transfer.SignableOperation
 import com.tink.service.credentials.CredentialsService
@@ -14,7 +15,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlin.properties.Delegates
 
 internal class TransferTask(
     private val transferDescriptor: CreateTransferDescriptor,
@@ -23,7 +23,8 @@ internal class TransferTask(
     private val streamObserver: StreamObserver<TransferStatus>
 ) : StreamSubscription {
 
-    private val errorHandler = CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
+    private val errorHandler =
+        CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
     private var currentStatus: TransferStatus = TransferStatus.Loading
@@ -76,13 +77,10 @@ internal class TransferTask(
         }
 
     private fun isNewStatus(oldStatus: TransferStatus, newStatus: TransferStatus): Boolean {
-
-        if (oldStatus is TransferStatus.AwaitingAuthentication && newStatus is TransferStatus.AwaitingAuthentication) {
-            if (oldStatus.credentials.status != newStatus.credentials.status)
-                return true
-            if (oldStatus.credentials.statusUpdated < newStatus.credentials.statusUpdated)
-                return true
-            return false
+        if (oldStatus is TransferStatus.AwaitingAuthentication &&
+            newStatus is TransferStatus.AwaitingAuthentication
+        ) {
+            return newStatus.operation.isNewerThan(oldStatus.operation)
         }
 
         return oldStatus != newStatus
@@ -97,9 +95,15 @@ internal class TransferTask(
             Credentials.Status.UPDATED -> TransferStatus.Loading
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
-            Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
+            Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->
+                TransferStatus.AwaitingAuthentication(
+                    AuthenticationTask.ThirdPartyAuthentication(credentials)
+                )
+
             Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
-                TransferStatus.AwaitingAuthentication(credentials)
+                TransferStatus.AwaitingAuthentication(
+                    AuthenticationTask.SupplementalInformation(credentials)
+                )
 
             Credentials.Status.DISABLED,
             Credentials.Status.DELETED,
@@ -112,6 +116,6 @@ internal class TransferTask(
                     TransferFailure.Reason.CredentialsError(
                         credentials.statusPayload?.takeUnless { it.isBlank() }
                     )
-            )
+                )
         }
 }
