@@ -14,13 +14,13 @@ import com.tink.service.handler.ResultHandler
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
-sealed class AuthOperation : Parcelable {
+sealed class AuthenticationTask : Parcelable {
     internal abstract val credentials: Credentials
 
     @Parcelize
     data class SupplementalInformation(
         override val credentials: Credentials
-    ) : AuthOperation() {
+    ) : AuthenticationTask() {
         @IgnoredOnParcel
         val fields: List<Field> = credentials.supplementalInformation
             .also {
@@ -41,7 +41,7 @@ sealed class AuthOperation : Parcelable {
     @Parcelize
     data class ThirdPartyAuthentication(
         override val credentials: Credentials
-    ) : AuthOperation() {
+    ) : AuthenticationTask() {
         @IgnoredOnParcel
         val thirdPartyAppAuthentication = requireNotNull(credentials.thirdPartyAppAuthentication) {
             "Third party authentication data could not be found."
@@ -121,7 +121,7 @@ sealed class AuthOperation : Parcelable {
         ) : Parcelable
     }
 
-    fun isNewerThan(other: AuthOperation): Boolean {
+    fun isNewerThan(other: AuthenticationTask): Boolean {
         return credentials.statusUpdated > other.credentials.statusUpdated
     }
 }

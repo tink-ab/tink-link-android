@@ -1,6 +1,6 @@
 package com.tink.link.payments
 
-import com.tink.link.authentication.AuthOperation
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.model.credentials.Credentials
 import com.tink.model.transfer.SignableOperation
 import com.tink.service.credentials.CredentialsService
@@ -97,12 +97,12 @@ internal class TransferTask(
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
             Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->
                 TransferStatus.AwaitingAuthentication(
-                    AuthOperation.ThirdPartyAuthentication(credentials)
+                    AuthenticationTask.ThirdPartyAuthentication(credentials)
                 )
 
             Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
                 TransferStatus.AwaitingAuthentication(
-                    AuthOperation.SupplementalInformation(credentials)
+                    AuthenticationTask.SupplementalInformation(credentials)
                 )
 
             Credentials.Status.DISABLED,
