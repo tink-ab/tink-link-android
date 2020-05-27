@@ -27,6 +27,14 @@ interface TransferRepository {
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription
 
+    fun initiateTransfer(
+        amount: Amount,
+        sourceAccount: Account,
+        beneficiary: Beneficiary,
+        message: TransferMessage,
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription
+
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
 
     fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>)
@@ -64,6 +72,16 @@ internal class TransferRepositoryImpl(
             statusChangeObserver
         )
 
+    override fun initiateTransfer(
+        amount: Amount,
+        sourceAccount: Account,
+        beneficiary: Beneficiary,
+        message: TransferMessage,
+        statusChangeObserver: StreamObserver<TransferStatus>
+    ): StreamSubscription {
+        val sourceAccountUri = sourceAccount.identifiers.firstOrNull() ?: "tink://${sourceAccount.id}"
+        return initiateTransfer(amount, sourceAccountUri, beneficiary.uri, message, statusChangeObserver)
+    }
 
     override fun fetchAccounts(resultHandler: ResultHandler<List<Account>>) {
         CoroutineScope(dispatcher + Job()).launchForResult(resultHandler) {
