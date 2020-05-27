@@ -116,7 +116,7 @@ class LinkPayMainActivity : AppCompatActivity() {
         loadAccounts { accounts ->
             loadBeneficiaries { beneficiaries ->
 
-                val beneficiariesByAccountId = beneficiaries.groupBy { it.accountId }
+                val beneficiariesByAccountId = beneficiaries.groupBy { it.ownerAccountId }
 
                 sourceDestinationUriMap = accounts.map {
                     it to (beneficiariesByAccountId[it.id] ?: emptyList())
