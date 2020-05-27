@@ -45,24 +45,18 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private var sourceDestinationUriMap: Map<Account, List<Beneficiary>> = emptyMap()
 
-    private lateinit var sourceAdapter: DropdownItemAdapter<Account>
-    private lateinit var destinationAdapter: DropdownItemAdapter<Beneficiary>
+    private lateinit var sourceAdapter: ArrayAdapter<AccountItem>
+    private lateinit var destinationAdapter: ArrayAdapter<BeneficiaryItem>
 
-    private var selectedAccount: Account? = null
-    private var selectedBeneficiary: Beneficiary? = null
+    private var selectedAccount: AccountItem? = null
+    private var selectedBeneficiary: BeneficiaryItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_link_pay_main)
 
-        sourceAdapter =
-            DropdownItemAdapter(this, android.R.layout.simple_spinner_dropdown_item) {
-                it?.name ?: ""
-            }
-        destinationAdapter =
-            DropdownItemAdapter(this, android.R.layout.simple_spinner_dropdown_item) {
-                it?.name ?: ""
-            }
+        sourceAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item)
+        destinationAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item)
 
         Tink.init(
             getConfigFromIntent() ?: configuration,
@@ -87,23 +81,24 @@ class LinkPayMainActivity : AppCompatActivity() {
 
                 destinationAdapter.clear()
 
-                val account = sourceAdapter.getItem(position) ?: return@OnItemClickListener
+                val item = sourceAdapter.getItem(position) ?: return@OnItemClickListener
+                val account = item.account
 
                 val destinations = sourceDestinationUriMap[account] ?: emptyList()
 
-                destinationAdapter.addAll(destinations)
+                destinationAdapter.addAll(destinations.map { BeneficiaryItem(it) })
                 destinationAdapter.notifyDataSetChanged()
 
-                sourceDropdown.setText(account.name)
-                selectedAccount = account
+                if (selectedAccount != item) {
+                    selectedAccount = item
+                    selectedBeneficiary = null
+                    destinationDropdown.setText("")
+                }
             }
 
         destinationDropdown.onItemClickListener =
             AdapterView.OnItemClickListener { _, _, position: Int, _ ->
-
                 val beneficiary = destinationAdapter.getItem(position) ?: return@OnItemClickListener
-
-                destinationDropdown.setText(beneficiary.name)
                 selectedBeneficiary = beneficiary
             }
 
@@ -128,7 +123,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 destinationDropdown.post {
                     destinationDropdown.clearListSelection()
                     sourceAdapter.clear()
-                    sourceAdapter.addAll(sourceDestinationUriMap.keys)
+                    sourceAdapter.addAll(sourceDestinationUriMap.keys.map { AccountItem(it) })
                     sourceAdapter.notifyDataSetChanged()
                 }
             }
@@ -152,8 +147,8 @@ class LinkPayMainActivity : AppCompatActivity() {
             ?.let { Amount(ExactNumber(it.toDouble()), "EUR") }
             ?: return
 
-        val sourceAccount = selectedAccount ?: return
-        val beneficiary = selectedBeneficiary ?: return
+        val sourceAccount = selectedAccount?.account ?: return
+        val beneficiary = selectedBeneficiary?.beneficiary ?: return
 
         Tink.getTransferRepository().initiateTransfer(
             amount,
@@ -221,4 +216,11 @@ class LinkPayMainActivity : AppCompatActivity() {
         const val CLIENT_ID_EXTRA = "clientIdExtra"
         const val ACCESS_TOKEN_EXTRA = "accessTokenExtra"
     }
+}
+
+data class AccountItem(val account: Account) {
+    override fun toString(): String = account.name
+}
+data class BeneficiaryItem(val beneficiary: Beneficiary) {
+    override fun toString(): String = beneficiary.name
 }
