@@ -13,9 +13,7 @@ import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.configuration.Configuration
-import com.tink.link.payments.sample.extensions.launch
 import com.tink.model.account.Account
-import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
 import com.tink.model.transfer.Beneficiary

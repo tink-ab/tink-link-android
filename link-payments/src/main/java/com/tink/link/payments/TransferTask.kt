@@ -23,7 +23,8 @@ internal class TransferTask(
     private val streamObserver: StreamObserver<TransferStatus>
 ) : StreamSubscription {
 
-    private val errorHandler = CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
+    private val errorHandler =
+        CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
     private var currentStatus: TransferStatus = TransferStatus.Loading
@@ -115,6 +116,6 @@ internal class TransferTask(
                     TransferFailure.Reason.CredentialsError(
                         credentials.statusPayload?.takeUnless { it.isBlank() }
                     )
-            )
+                )
         }
 }

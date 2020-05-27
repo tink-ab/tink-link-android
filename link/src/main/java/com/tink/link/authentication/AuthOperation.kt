@@ -14,7 +14,7 @@ import com.tink.service.handler.ResultHandler
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
-sealed class AuthOperation: Parcelable {
+sealed class AuthOperation : Parcelable {
     internal abstract val credentials: Credentials
 
     @Parcelize
@@ -24,7 +24,7 @@ sealed class AuthOperation: Parcelable {
         @IgnoredOnParcel
         val fields: List<Field> = credentials.supplementalInformation
             .also {
-                require(it.isNotEmpty()) { "Supplemental information fields were empty."}
+                require(it.isNotEmpty()) { "Supplemental information fields were empty." }
             }
 
         fun submit(filledFields: Map<String, String>, resultHandler: ResultHandler<Unit>) {
