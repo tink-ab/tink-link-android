@@ -41,7 +41,7 @@ interface TransferRepository {
      *
      * @return a [StreamSubscription]. Calling [unsubscribe][StreamSubscription.unsubscribe] on it
      * will cancel polling of the transfer status. No more updates will be passed to the
-     * [statusChangeObserver]
+     * [statusChangeObserver].
      *
      */
     fun initiateTransfer(
