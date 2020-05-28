@@ -155,7 +155,7 @@ sealed class AuthenticationTask : Parcelable {
         sealed class LaunchResult : Parcelable {
 
             /**
-             * The user should have successfully been redirected to the third party app.
+             * The user has successfully been redirected to the third party app.
              */
             @Parcelize
             object Success : LaunchResult()
