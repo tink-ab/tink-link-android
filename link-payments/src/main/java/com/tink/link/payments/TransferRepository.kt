@@ -162,7 +162,7 @@ internal class TransferRepositoryImpl(
 sealed class TransferStatus {
 
     /**
-     * The status was successfully sent to the users bank for processing.
+     * The status was successfully sent to the user's bank for processing.
      */
     object Success : TransferStatus()
 
