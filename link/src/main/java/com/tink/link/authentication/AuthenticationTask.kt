@@ -164,7 +164,7 @@ sealed class AuthenticationTask : Parcelable {
             object Success : LaunchResult()
 
             /**
-             * The app necessary for authentication is not installed on the users device.
+             * The app necessary for authentication is not installed on the user's device.
              *
              * Properties [packageName], [title], and [message] can be used for example to show
              * a dialog to the user prompting to install the app.

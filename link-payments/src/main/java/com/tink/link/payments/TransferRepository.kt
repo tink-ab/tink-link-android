@@ -155,7 +155,7 @@ internal class TransferRepositoryImpl(
 }
 
 /**
- * The status of a transfer
+ * The status of a transfer.
  * Possible values are [Success], [Loading], and [AwaitingAuthentication]
  */
 sealed class TransferStatus {
