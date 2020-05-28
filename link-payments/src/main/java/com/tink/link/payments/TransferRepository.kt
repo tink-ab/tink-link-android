@@ -56,7 +56,7 @@ interface TransferRepository {
      * Initiate a new transfer
      *
      * @param amount The amount that should be transferred. Its [currencyCode][Amount.currencyCode]
-     * should be the same as the source accounts currency.
+     * should be the same as the source account's currency.
      * @param sourceAccount The source account of this transfer. See [fetchAccounts].
      * @param beneficiary The beneficiary of this transfer. See [fetchBeneficiaries].
      * @param message The message used for the transfer.
