@@ -60,7 +60,7 @@ internal class TransferTask(
     private suspend fun SignableOperation.toTransferStatus() =
         when (status) {
             SignableOperation.Status.CREATED,
-            SignableOperation.Status.EXECUTING -> TransferStatus.Loading(statusMessage.nonBlankOrNull())
+            SignableOperation.Status.EXECUTING -> TransferStatus.Loading(statusMessage.ifBlank { null })
 
             SignableOperation.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
             SignableOperation.Status.AWAITING_CREDENTIALS -> {
@@ -71,9 +71,9 @@ internal class TransferTask(
 
             SignableOperation.Status.CANCELLED,
             SignableOperation.Status.FAILED -> throw TransferFailure(
-                TransferFailure.Reason.TransferFailed(statusMessage.nonBlankOrNull())
+                TransferFailure.Reason.TransferFailed(statusMessage.ifBlank { null })
             )
-            SignableOperation.Status.EXECUTED -> TransferStatus.Success(statusMessage.nonBlankOrNull())
+            SignableOperation.Status.EXECUTED -> TransferStatus.Success(statusMessage.ifBlank { null })
         }
 
     private fun isNewStatus(oldStatus: TransferStatus, newStatus: TransferStatus): Boolean {
@@ -114,10 +114,8 @@ internal class TransferTask(
             null ->
                 throw TransferFailure(
                     TransferFailure.Reason.CredentialsError(
-                        credentials.statusPayload?.nonBlankOrNull()
+                        credentials.statusPayload?.ifBlank { null }
                     )
                 )
         }
 }
-
-private fun String.nonBlankOrNull() = takeUnless { it.isBlank() }
