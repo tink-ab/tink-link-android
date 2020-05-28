@@ -113,9 +113,9 @@ internal class TransferRepositoryImpl(
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
-                sourceUri = sourceAccountUri,
+                sourceAccountUri = sourceAccountUri,
                 sourceMessage = message.sourceMessage,
-                destinationUri = beneficiaryUri,
+                beneficiaryUri = beneficiaryUri,
                 destinationMessage = message.destinationMessage
             ),
             credentialsService,
