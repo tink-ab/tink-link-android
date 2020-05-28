@@ -183,9 +183,9 @@ sealed class TransferStatus {
 /**
  * The message for a transfer.
  *
- * @param destinationMessage (required). This is the message that will be displayed to the
+ * @param destinationMessage This is the message that will be displayed to the
  * recipient of the transfer.
- * @param sourceMessage (optional). This is the message that will be displayed on the source
+ * @param sourceMessage This is the message that will be displayed on the source
  * source account. If not provided it will be the same as [destinationMessage].
  */
 data class TransferMessage(val destinationMessage: String, val sourceMessage: String? = null)
