@@ -42,7 +42,7 @@ sealed class AuthenticationTask : Parcelable {
             }
 
         /**
-         * Submit supplemental information for the authentication to Tink
+         * Submit supplemental information for the authentication to Tink.
          * Should be called as soon as the fields have been validated and the user is
          * ready to send the information.
          *
