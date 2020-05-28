@@ -166,7 +166,7 @@ sealed class TransferStatus {
     object Success : TransferStatus()
 
     /**
-     * The transfer is currently being processed by Tink. There is currently no user action
+     * The transfer is being processed by Tink. There is currently no user action
      * required.
      */
     object Loading : TransferStatus()
