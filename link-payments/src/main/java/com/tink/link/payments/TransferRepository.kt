@@ -82,7 +82,6 @@ interface TransferRepository {
 
     /**
      * Fetch all accounts of the user that are suitable to pick as the source of a transfer.
-     *
      */
     fun fetchAccounts(resultHandler: ResultHandler<List<Account>>)
 

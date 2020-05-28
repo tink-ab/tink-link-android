@@ -29,12 +29,15 @@ sealed class AuthenticationTask : Parcelable {
      * Then [submit] should be called as soon as the fields have been validated and the user is
      * ready to send the information.
      *
-     * @param fields The fields that need to be displayed to the user for input
      */
     @Parcelize
     data class SupplementalInformation(
         override val credentials: Credentials
     ) : AuthenticationTask() {
+
+        /**
+         * The fields that need to be displayed to the user for input
+         */
         @IgnoredOnParcel
         val fields: List<Field> = credentials.supplementalInformation
             .also {
