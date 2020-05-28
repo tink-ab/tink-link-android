@@ -80,7 +80,7 @@ internal class TransferTask(
         if (oldStatus is TransferStatus.AwaitingAuthentication &&
             newStatus is TransferStatus.AwaitingAuthentication
         ) {
-            return newStatus.operation.isNewerThan(oldStatus.operation)
+            return newStatus.authenticationTask.isNewerThan(oldStatus.authenticationTask)
         }
 
         return oldStatus != newStatus

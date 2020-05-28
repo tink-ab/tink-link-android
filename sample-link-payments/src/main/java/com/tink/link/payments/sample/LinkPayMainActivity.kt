@@ -184,7 +184,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                     )
 
                     val launchResult = (value as? TransferStatus.AwaitingAuthentication)
-                        ?.let { it.operation as? AuthenticationTask.ThirdPartyAuthentication }
+                        ?.let { it.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication }
                         ?.launch(this@LinkPayMainActivity)
 
                     if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
