@@ -68,11 +68,6 @@ class LinkPayMainActivity : AppCompatActivity() {
         statusMessage.observe(this, Observer { statusText.text = it })
         statusSubtitleMessage.observe(this, Observer { statusSubtitle.text = it })
 
-        loadAccountsButton.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                buildSourceDestinationMap()
-            }
-        }
         button.setOnClickListener { initiateTransfer() }
 
         sourceDropdown.setAdapter(sourceAdapter)
@@ -106,6 +101,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
         val user = getUserFromIntent() ?: getUser()
         Tink.setUser(user)
+
+        buildSourceDestinationMap()
     }
 
     private fun getUser(): User {
