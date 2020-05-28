@@ -162,14 +162,18 @@ sealed class TransferStatus {
 
     /**
      * The status was successfully sent to the user's bank for processing.
+     *
+     * @param message A message containing details about the status.
      */
-    object Success : TransferStatus()
+    data class Success(val message: String? = null) : TransferStatus()
 
     /**
      * The transfer is being processed by Tink. There is currently no user action
      * required.
+     *
+     * @param message A message containing details about the status.
      */
-    object Loading : TransferStatus()
+    data class Loading(val message: String? = null) : TransferStatus()
 
     /**
      * There is an outstanding authentication waiting that needs to be completed by the user to

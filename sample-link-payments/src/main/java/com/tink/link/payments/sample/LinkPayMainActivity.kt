@@ -167,12 +167,18 @@ class LinkPayMainActivity : AppCompatActivity() {
 
                 override fun onNext(value: TransferStatus) {
 
-                    statusSubtitleMessage.postValue("")
+                    statusSubtitleMessage.postValue(
+                        when(value) {
+                            is TransferStatus.Success -> value.message
+                            is TransferStatus.Loading -> value.message
+                            is TransferStatus.AwaitingAuthentication -> null
+                        } ?: ""
+                    )
 
                     statusMessage.postValue(
                         when (value) {
-                            TransferStatus.Success -> "Transfer Succeeded"
-                            TransferStatus.Loading -> "Loading..."
+                            is TransferStatus.Success -> "Transfer Succeeded"
+                            is TransferStatus.Loading -> "Loading..."
                             is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
                         }
                     )

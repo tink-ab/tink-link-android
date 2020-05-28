@@ -27,7 +27,7 @@ internal class TransferTask(
         CoroutineExceptionHandler { _, error -> streamObserver.onError(error) }
 
     private val scope = CoroutineScope(Dispatchers.IO + Job() + errorHandler)
-    private var currentStatus: TransferStatus = TransferStatus.Loading
+    private var currentStatus: TransferStatus = TransferStatus.Loading()
         set(value) {
             if (isNewStatus(field, value)) {
                 field = value
@@ -42,7 +42,7 @@ internal class TransferTask(
 
             while (true) {
                 currentStatus = operation.toTransferStatus()
-                if (currentStatus == TransferStatus.Success) return@launch
+                if (currentStatus is TransferStatus.Success) return@launch
 
                 operation = transferService.getTransferStatus(operation.underlyingId)
 
@@ -60,7 +60,7 @@ internal class TransferTask(
     private suspend fun SignableOperation.toTransferStatus() =
         when (status) {
             SignableOperation.Status.CREATED,
-            SignableOperation.Status.EXECUTING -> TransferStatus.Loading
+            SignableOperation.Status.EXECUTING -> TransferStatus.Loading(statusMessage.nonBlankOrNull())
 
             SignableOperation.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
             SignableOperation.Status.AWAITING_CREDENTIALS -> {
@@ -71,9 +71,9 @@ internal class TransferTask(
 
             SignableOperation.Status.CANCELLED,
             SignableOperation.Status.FAILED -> throw TransferFailure(
-                TransferFailure.Reason.TransferFailed(statusMessage.takeUnless { it.isBlank() })
+                TransferFailure.Reason.TransferFailed(statusMessage.nonBlankOrNull())
             )
-            SignableOperation.Status.EXECUTED -> TransferStatus.Success
+            SignableOperation.Status.EXECUTED -> TransferStatus.Success(statusMessage.nonBlankOrNull())
         }
 
     private fun isNewStatus(oldStatus: TransferStatus, newStatus: TransferStatus): Boolean {
@@ -92,7 +92,7 @@ internal class TransferTask(
             Credentials.Status.CREATED,
             Credentials.Status.AUTHENTICATING,
             Credentials.Status.UPDATING,
-            Credentials.Status.UPDATED -> TransferStatus.Loading
+            Credentials.Status.UPDATED -> TransferStatus.Loading()
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
             Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->
@@ -114,8 +114,10 @@ internal class TransferTask(
             null ->
                 throw TransferFailure(
                     TransferFailure.Reason.CredentialsError(
-                        credentials.statusPayload?.takeUnless { it.isBlank() }
+                        credentials.statusPayload?.nonBlankOrNull()
                     )
                 )
         }
 }
+
+private fun String.nonBlankOrNull() = takeUnless { it.isBlank() }
