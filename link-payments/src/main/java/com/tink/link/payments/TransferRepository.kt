@@ -113,9 +113,9 @@ internal class TransferRepositoryImpl(
         TransferTask(
             CreateTransferDescriptor(
                 amount = amount,
-                sourceUri = sourceAccountUri,
+                sourceAccountUri = sourceAccountUri,
                 sourceMessage = message.sourceMessage,
-                destinationUri = beneficiaryUri,
+                beneficiaryUri = beneficiaryUri,
                 destinationMessage = message.destinationMessage
             ),
             credentialsService,
@@ -162,22 +162,26 @@ sealed class TransferStatus {
 
     /**
      * The status was successfully sent to the user's bank for processing.
+     *
+     * @param message a message containing details about the status.
      */
-    object Success : TransferStatus()
+    data class Success(val message: String? = null) : TransferStatus()
 
     /**
      * The transfer is being processed by Tink. There is currently no user action
      * required.
+     *
+     * @param message a message containing details about the status.
      */
-    object Loading : TransferStatus()
+    data class Loading(val message: String? = null) : TransferStatus()
 
     /**
      * There is an outstanding authentication waiting that needs to be completed by the user to
      * proceed with the transfer.
      *
-     * @property operation the authentication that needs to be completed by the user.
+     * @property authenticationTask the authentication that needs to be completed by the user.
      */
-    class AwaitingAuthentication(val operation: AuthenticationTask) : TransferStatus()
+    class AwaitingAuthentication(val authenticationTask: AuthenticationTask) : TransferStatus()
 }
 
 /**

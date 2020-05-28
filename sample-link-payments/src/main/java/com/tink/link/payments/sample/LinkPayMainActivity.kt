@@ -24,9 +24,6 @@ import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val LinkPayMainActivity.configuration
@@ -170,18 +167,24 @@ class LinkPayMainActivity : AppCompatActivity() {
 
                 override fun onNext(value: TransferStatus) {
 
-                    statusSubtitleMessage.postValue("")
+                    statusSubtitleMessage.postValue(
+                        when(value) {
+                            is TransferStatus.Success -> value.message
+                            is TransferStatus.Loading -> value.message
+                            is TransferStatus.AwaitingAuthentication -> null
+                        } ?: ""
+                    )
 
                     statusMessage.postValue(
                         when (value) {
-                            TransferStatus.Success -> "Transfer Succeeded"
-                            TransferStatus.Loading -> "Loading..."
-                            is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
+                            is TransferStatus.Success -> "Transfer Succeeded"
+                            is TransferStatus.Loading -> "Loading..."
+                            is TransferStatus.AwaitingAuthentication -> "Awaiting authentication..."
                         }
                     )
 
                     val launchResult = (value as? TransferStatus.AwaitingAuthentication)
-                        ?.let { it.operation as? AuthenticationTask.ThirdPartyAuthentication }
+                        ?.let { it.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication }
                         ?.launch(this@LinkPayMainActivity)
 
                     if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
