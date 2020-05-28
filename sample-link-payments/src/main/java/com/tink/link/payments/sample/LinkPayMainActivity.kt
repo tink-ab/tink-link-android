@@ -179,7 +179,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                         when (value) {
                             is TransferStatus.Success -> "Transfer Succeeded"
                             is TransferStatus.Loading -> "Loading..."
-                            is TransferStatus.AwaitingAuthentication -> "Awaiting authentication"
+                            is TransferStatus.AwaitingAuthentication -> "Awaiting authentication..."
                         }
                     )
 
