@@ -11,7 +11,6 @@ import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.user.Scope
 import com.tink.model.user.User
-import java.lang.IllegalArgumentException
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
@@ -19,6 +18,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_SUCCESS = 101
         const val RESULT_CANCELLED = 102
         const val RESULT_FAILURE = 103
+        const val RESULT_KEY_AUTHORIZATION_CODE = "authorizationCode"
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
@@ -71,6 +71,11 @@ class TinkLinkUiActivity : AppCompatActivity() {
         intent.extras?.getString(ARG_LOCALE) ?: ""
     }
 
+    // TODO: Inject this with dagger once it's ready
+    internal val authorizeUser: Boolean by lazy { user == null }
+
+    internal var authorizationCode: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
@@ -99,7 +104,15 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     internal fun closeTinkLinkUi(resultCode: Int) {
-        setResult(resultCode)
+        if (resultCode == RESULT_SUCCESS && authorizeUser) {
+            val successIntent =
+                Intent().apply {
+                    putExtras(bundleOf(RESULT_KEY_AUTHORIZATION_CODE to authorizationCode))
+                }
+            setResult(resultCode, successIntent)
+        } else {
+            setResult(resultCode)
+        }
         finish()
     }
 }
