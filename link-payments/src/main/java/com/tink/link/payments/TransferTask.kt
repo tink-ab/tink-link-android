@@ -113,7 +113,7 @@ internal class TransferTask(
             Credentials.Status.PERMANENT_ERROR,
             null ->
                 throw TransferFailure(
-                    TransferFailure.Reason.CredentialsError(
+                    TransferFailure.Reason.AuthenticationError(
                         credentials.statusPayload?.ifBlank { null }
                     )
                 )
