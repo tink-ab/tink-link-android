@@ -25,6 +25,7 @@ import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
 import timber.log.Timber
+import java.util.regex.Pattern
 
 private val LinkPayMainActivity.configuration
     get() = TinkConfiguration(
@@ -143,13 +144,16 @@ class LinkPayMainActivity : AppCompatActivity() {
             ?.let { Amount(ExactNumber(it.toDouble()), "EUR") }
             ?: return
 
-        val sourceAccount = selectedAccount?.account ?: return
-        val beneficiary = selectedBeneficiary?.beneficiary ?: return
+        val sourceAccountUri = selectedAccount?.account?.identifiers?.firstOrNull() ?: return
+        val beneficiaryUri = destinationDropdown.text.toString()
+            .takeIf { Pattern.compile(".+://.+").matcher(it).matches() }
+            ?: return
+
 
         Tink.getTransferRepository().initiateTransfer(
             amount,
-            sourceAccount,
-            beneficiary,
+            sourceAccountUri,
+            beneficiaryUri,
             TransferMessage(messageInput.text.toString()),
             object : StreamObserver<TransferStatus> {
 
@@ -224,5 +228,5 @@ data class AccountItem(val account: Account) {
     override fun toString(): String = account.name
 }
 data class BeneficiaryItem(val beneficiary: Beneficiary) {
-    override fun toString(): String = beneficiary.name
+    override fun toString(): String = beneficiary.uri
 }
