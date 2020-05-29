@@ -224,5 +224,5 @@ data class AccountItem(val account: Account) {
     override fun toString(): String = account.name
 }
 data class BeneficiaryItem(val beneficiary: Beneficiary) {
-    override fun toString(): String = beneficiary.name
+    override fun toString(): String = beneficiary.uri
 }
