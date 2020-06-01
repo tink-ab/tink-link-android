@@ -5,12 +5,12 @@
 `sealed class ProviderTreeNode : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html)
 
 This class represents a tree structure of [FinancialInstitutionGroupNode](-financial-institution-group-node/index.md) objects with children.
-This eventually leads to a leaf object of type [CredentialsTypeNode](-credentials-type-node/index.md),
+This eventually leads to a leaf object of type [ProviderNode](-provider-node/index.md),
 that contains more detailed [Provider](../-provider/index.md) data.
 
 The tree will always follow the structure:
 
-[FinancialInstitutionGroupNode](-financial-institution-group-node/index.md) -&gt; [FinancialInstitutionNode](-financial-institution-node/index.md) -&gt; [AccessTypeNode](-access-type-node/index.md) -&gt; [CredentialsTypeNode](-credentials-type-node/index.md)
+[FinancialInstitutionGroupNode](-financial-institution-group-node/index.md) -&gt; [FinancialInstitutionNode](-financial-institution-node/index.md) -&gt; [AccessTypeNode](-access-type-node/index.md) -&gt; [CredentialsTypeNode](-credentials-type-node/index.md) -&gt; [ProviderNode](-provider-node/index.md)
 
 ### Types
 

@@ -2,4 +2,4 @@
 
 # ownership
 
-`val ownership: `[`ExactNumber`](../../com.tink.model.misc/-exact-number/index.md)
+`val ownership: `[`ExactNumber`](../../com.tink.model.misc/-exact-number/index.md)`?`
