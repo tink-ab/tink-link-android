@@ -55,7 +55,7 @@ object Dependencies {
         const val test_assertj = "org.assertj:assertj-core:3.11.1"
     }
 
-    const val material_components = "com.google.android.material:material:1.1.0-beta01"
+    const val material_components = "com.google.android.material:material:1.2.0-alpha06"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.12"
@@ -65,10 +65,7 @@ object Dependencies {
     const val picasso = "com.squareup.picasso:picasso:2.71828"
 
     object Tink {
-        private const val coreVersion = "0.3.1"
-        const val service = "com.tink:service:$coreVersion"
+        private const val coreVersion = "0.4.0"
         const val core = "com.tink:core:$coreVersion"
-        const val rest = "com.tink:rest:$coreVersion"
-        const val models = "com.tink:models:$coreVersion"
     }
 }

@@ -6,7 +6,7 @@
   app:startDestination="@id/mainFragment">
   <fragment
     android:id="@+id/mainFragment"
-    android:name="com.tink.link.MainFragment"
+    android:name="com.tink.link.sample.MainFragment"
     android:label="MainFragment"
     tools:layout="@layout/fragment_main">
     <action
@@ -20,7 +20,7 @@
   </fragment>
   <fragment
     android:id="@+id/providerListFragment"
-    android:name="com.tink.link.providerlist.ProviderListFragment"
+    android:name="com.tink.link.sample.providerlist.ProviderListFragment"
     tools:layout="@layout/layout_provider_tree_node_list">
     <action
       android:id="@+id/action_providerListFragment_to_financialInstitutionListFragment"
@@ -28,7 +28,7 @@
   </fragment>
   <fragment
     android:id="@+id/financialInstitutionListFragment"
-    android:name="com.tink.link.financialinstitution.FinancialInstitutionListFragment"
+    android:name="com.tink.link.sample.financialinstitution.FinancialInstitutionListFragment"
     android:label="FinancialInstitutionListFragment"
     tools:layout="@layout/fragment_financial_institution_list">
     <action
@@ -37,7 +37,7 @@
   </fragment>
   <fragment
     android:id="@+id/accessTypeListFragment"
-    android:name="com.tink.link.accesstype.AccessTypeListFragment"
+    android:name="com.tink.link.sample.accesstype.AccessTypeListFragment"
     android:label="AccessTypeListFragment"
     tools:layout="@layout/fragment_access_type_list">
     <action
@@ -46,7 +46,7 @@
   </fragment>
   <fragment
     android:id="@+id/credentialsTypeListFragment"
-    android:name="com.tink.link.credentialstype.CredentialsTypeListFragment"
+    android:name="com.tink.link.sample.credentialstype.CredentialsTypeListFragment"
     android:label="CredentialsTypeListFragment"
     tools:layout="@layout/fragment_credentials_type_list">
     <action
@@ -55,12 +55,12 @@
   </fragment>
   <fragment
     android:id="@+id/credentialsFragment"
-    android:name="com.tink.link.credentials.CredentialsFragment"
+    android:name="com.tink.link.sample.credentials.CredentialsFragment"
     android:label="CredentialsFragment"
     tools:layout="@layout/fragment_credentials" />
   <fragment
     android:id="@+id/providerNodeFragment"
-    android:name="com.tink.link.providernode.ProviderNodeFragment"
+    android:name="com.tink.link.sample.providernode.ProviderNodeFragment"
     android:label="ProviderNodeFragment"
     tools:layout="@layout/fragment_provider_node">
     <action
@@ -69,7 +69,7 @@
   </fragment>
   <fragment
     android:id="@+id/profileFragment"
-    android:name="com.tink.link.profile.ProfileFragment"
+    android:name="com.tink.link.sample.profile.ProfileFragment"
     android:label="ProfileFragment"
     tools:layout="@layout/fragment_profile">
     <action
@@ -78,6 +78,6 @@
   </fragment>
   <fragment
     android:id="@+id/refreshCredentialsFragment"
-    android:name="com.tink.link.credentials.refresh.RefreshCredentialsFragment"
+    android:name="com.tink.link.sample.credentials.refresh.RefreshCredentialsFragment"
     android:label="RefreshCredentialsFragment" />
 </navigation>
