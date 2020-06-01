@@ -1,12 +1,21 @@
 $dokka.format:gfm
 $dokka.linkExtension:md
 $dokka.location:com.tink.model.provider$toProviderTree(kotlin.collections.List((com.tink.model.provider.Provider)))com.tink.model.provider/kotlin.collections.-list/to-provider-tree.md
+$dokka.location:com.tink.service.account$toCoreModel(com.tink.rest.models.Account)com.tink.service.account/com.tink.rest.models.-account/to-core-model.md
+$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.StatusEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-status-enum/to-core-model.md
+$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.ThirdPartyAuthentication)com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/to-core-model.md
+$dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.TypeEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/to-core-model.md
+$dokka.location:com.tink.service.misc$toAmount(com.tink.rest.models.CurrencyDenominatedAmount)com.tink.service.misc/com.tink.rest.models.-currency-denominated-amount/to-amount.md
+$dokka.location:com.tink.service.transfer$toCoreModel(com.tink.rest.models.SignableOperation)com.tink.service.transfer/com.tink.rest.models.-signable-operation/to-core-model.md
 com.tink.core
 com.tink.core.provider
 com.tink.link
+com.tink.link.authentication
 com.tink.link.consent
 com.tink.link.core.credentials
 com.tink.link.core.user
+com.tink.link.payments
+com.tink.link.payments.di
 com.tink.model
 com.tink.model.account
 com.tink.model.authentication
@@ -21,6 +30,7 @@ com.tink.model.relations
 com.tink.model.statistic
 com.tink.model.time
 com.tink.model.transaction
+com.tink.model.transfer
 com.tink.model.user
 com.tink.service.account
 com.tink.service.authentication
@@ -30,7 +40,9 @@ com.tink.service.consent
 com.tink.service.credentials
 com.tink.service.di
 com.tink.service.handler
+com.tink.service.misc
 com.tink.service.network
 com.tink.service.provider
 com.tink.service.streaming
 com.tink.service.streaming.publisher
+com.tink.service.transfer

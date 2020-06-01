@@ -8,6 +8,9 @@ dokka {
             path = "$rootDir/link/src"
         }
         sourceRoot {
+            path = "$rootDir/link-payments/src"
+        }
+        sourceRoot {
             path = "$rootDir/../tink-sdk-core-android/core/src"
         }
         sourceRoot {

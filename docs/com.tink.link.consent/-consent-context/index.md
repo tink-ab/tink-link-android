@@ -10,13 +10,7 @@ Context for handling things around user consent.
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | Context for handling things around user consent.`ConsentContext(consentService: `[`ConsentService`](../../com.tink.service.consent/-consent-service/index.md)`)` |
-
-### Properties
-
-| Name | Summary |
-|---|---|
-| [scope](scope.md) | `val scope: CoroutineScope` |
+| [&lt;init&gt;](-init-.md) | `ConsentContext(consentService: `[`ConsentService`](../../com.tink.service.consent/-consent-service/index.md)`)`<br>Context for handling things around user consent.`ConsentContext(consentService: `[`ConsentService`](../../com.tink.service.consent/-consent-service/index.md)`, dispatcher: CoroutineDispatcher)` |
 
 ### Functions
 

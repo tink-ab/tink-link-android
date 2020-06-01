@@ -2,4 +2,4 @@
 
 # type
 
-`val type: Type`
+`val type: Type?`
