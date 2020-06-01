@@ -3,7 +3,6 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("org.jetbrains.dokka").version(Versions.dokka)
     id("com.jfrog.bintray")
 }
 
@@ -27,10 +26,6 @@ android {
         }
     }
 
-}
-
-apply {
-    from("../dokka-config.gradle")
 }
 
 dependencies {
@@ -64,21 +59,3 @@ if (project.hasProperty("kapt")) {
 }
 
 apply(from = "../publishing.gradle")
-
-tasks {
-    dokka {
-        doFirst {
-            println("Deleting old /docs")
-            delete("../docs")
-        }
-        doLast {
-            println("Copying docs from /docs/link to /docs")
-            copy {
-                from("../docs/link")
-                into("../docs")
-            }
-            println("Deleting /docs/link")
-            delete("../docs/link")
-        }
-    }
-}
