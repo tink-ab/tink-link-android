@@ -8,4 +8,11 @@
 
 | Name | Summary |
 |---|---|
-| [update](update.md) | `abstract fun update(descriptor: `[`UpdateAccountDescriptor`](../-update-account-descriptor/index.md)`, handler: `[`ResultHandler`](../../com.tink.service.handler/-result-handler/index.md)`<`[`Account`](../../com.tink.model.account/-account/index.md)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [listAccounts](list-accounts.md) | `abstract suspend fun listAccounts(): `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Account`](../../com.tink.model.account/-account/index.md)`>` |
+| [update](update.md) | `abstract suspend fun update(descriptor: `[`UpdateAccountDescriptor`](../-update-account-descriptor/index.md)`): `[`Account`](../../com.tink.model.account/-account/index.md) |
+
+### Inheritors
+
+| Name | Summary |
+|---|---|
+| [AccountServiceImpl](../-account-service-impl/index.md) | `class AccountServiceImpl : `[`AccountService`](./index.md) |
