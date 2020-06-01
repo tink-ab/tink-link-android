@@ -1,8 +1,8 @@
 object TinkLinkVersion {
 
     private const val major = 0
-    private const val minor = 10
-    private const val patch = 1
+    private const val minor = 11
+    private const val patch = 0
 
     const val name = "$major.$minor.$patch"
 

@@ -20,6 +20,15 @@ object TinkLink {
     @JvmStatic
     fun getUserContext() = Tink.getUserContext()
 
+
+    /**
+     * Fetches the [UserContext] from Tink if a user is set.
+     *
+     * If no user is set, this will throw an [IllegalStateException]
+     */
+    @JvmStatic
+    fun requireUserContext() = Tink.requireUserContext()
+
     /**
      * Authenticate an existing user with an authentication code.
      *
@@ -51,6 +60,14 @@ object TinkLink {
  */
 @JvmSynthetic
 fun Tink.getUserContext(): UserContext? = TinkLinkComponent.instance.getUserContext()
+
+/**
+ * Fetches the [UserContext] from Tink if a user is set.
+ *
+ * If no user is set, this will throw an [IllegalStateException]
+ */
+@JvmSynthetic
+fun Tink.requireUserContext(): UserContext = TinkLinkComponent.instance.requireUserContext()
 
 /**
  * Authenticate an existing user with an authentication code.
