@@ -11,7 +11,7 @@ object Versions {
     const val coroutines = "1.2.1"
     const val retrofit = "2.6.2"
     const val rxjava = "2.1.9"
-    const val navigation = "2.1.0-rc01"
+    const val navigation = "2.2.2"
     const val dokka = "0.10.1"
 }
 
