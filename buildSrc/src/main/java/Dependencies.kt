@@ -4,7 +4,7 @@ object Versions {
     const val minSdk = 21
     const val targetSdk = 29
 
-    const val kotlin = "1.3.60"
+    const val kotlin = "1.3.72"
     const val lifecycle = "2.0.0"
     const val dagger = "2.16"
     const val androidx = "1.0.2"
