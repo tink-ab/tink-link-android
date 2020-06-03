@@ -28,7 +28,7 @@ internal class CredentialsTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.title = getString(R.string.tink_credentials_type_fragment_title)
+        toolbar.title = getString(R.string.provider_select_credentials_type_title)
     }
 
     /**

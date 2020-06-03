@@ -6,8 +6,14 @@
   <string name="tink_redirect_uri_path">/callback</string>
   <string name="provider_list_title">Choose bank</string>
   <string name="provider_list_search_hint">Search for bank or card</string>
-  <string name="tink_credentials_type_fragment_title">Sign in method</string>
-  <string name="tink_access_type_fragment_title">Select account types</string>
+  <string name="provider_select_credentials_type_title">Sign in method</string>
+  <string name="provider_select_credentials_type_password_default_description">Password</string>
+  <string name="provider_select_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
+  <string name="provider_select_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
+  <string name="provider_select_credentials_type_keyfob_default_description">Key Fob</string>
+  <string name="provider_select_credentials_type_fraud_default_description">Fraud</string>
+  <string name="provider_select_credentials_type_unknown_default_description">Unknown</string>
+  <string name="tink_access_type_fragment_title">Add %s Account</string>
   <string name="tink_create_credentials_button">Continue</string>
   <string name="tink_third_party_authentication_download_app_positive">Install</string>
   <string name="tink_third_party_authentication_download_app_negative">Cancel</string>
@@ -25,7 +31,6 @@
   <string name="tink_access_type_card_other_title">Other account types</string>
   <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
   <string name="tink_access_type_card_other_button_text">Add</string>
-  <string name="tink_search_provider_hint">Search for a bank</string>
   <string name="tink_provider_capability_transfers">transfers</string>
   <string name="tink_provider_capability_e_invoices">e-invoices</string>
   <string name="tink_provider_capability_mortgage_aggregation">mortgages</string>
@@ -36,12 +41,6 @@
   <string name="tink_provider_capability_investments">investments</string>
   <string name="tink_provider_capability_payments">payments</string>
   <string name="tink_provider_capability_identity_data">identity information</string>
-  <string name="tink_credentials_type_password_default_description">Password</string>
-  <string name="tink_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
-  <string name="tink_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
-  <string name="tink_credentials_type_keyfob_default_description">Key Fob</string>
-  <string name="tink_credentials_type_fraud_default_description">Fraud</string>
-  <string name="tink_credentials_type_unknown_default_description">Unknown</string>
   <string name="tink_consent_information">%1$s will obtain some of your financial information. %2$s</string>
   <string name="tink_credentials_unverified_warning_text">Unverified - This solution is only made for development purposes. Do not enter your bank credentials unless you trust the developer.</string>
   <string name="tink_consent_information_read_more">Read More</string>
