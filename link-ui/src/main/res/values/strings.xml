@@ -35,6 +35,9 @@
   <string name="supplemental_information_qr_code_error">There is a problem with loading the QR code. Please try again later.</string>
   <string name="credentials_status_authorizing">Authorizing…</string>
   <string name="credentials_status_updating">Connecting to %s, please wait…</string>
+  <string name="connection_success_title">Connection successful</string>
+  <string name="connection_success_description">Your accounts have been successfully added to %s</string>
+  <string name="connection_success_done_button">Done</string>
   <string name="cancel_button">Cancel</string>
   <string name="ok_button">OK</string>
   <string name="error_unknown">Something went wrong. Please try again later.</string>
@@ -62,7 +65,4 @@
   <string name="tink_provider_capability_investments">investments</string>
   <string name="tink_provider_capability_payments">payments</string>
   <string name="tink_provider_capability_identity_data">identity information</string>
-  <string name="tink_connection_successful_title">Connection successful</string>
-  <string name="tink_connection_successful_description">Your accounts have been successfully added to %s</string>
-  <string name="tink_connection_successful_done_button">Done</string>
 </resources>
