@@ -64,7 +64,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.title = provider.displayName
+        toolbar.title = getString(R.string.credentials_authentication_title)
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
@@ -106,10 +106,10 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         bankName.text = provider.displayName
 
-        val readMoreText = getString(R.string.tink_consent_information_read_more)
+        val readMoreText = getString(R.string.credentials_consent_information_read_more)
         consentInformation.text =
             getString(
-                R.string.tink_consent_information,
+                R.string.credentials_consent_information_text,
                 getString(R.string.tink_app_name),
                 readMoreText
             ).convertCallToActionText(
@@ -181,13 +181,13 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
             when (state) {
                 CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
-                    showLoading(getString(R.string.tink_credentials_status_authorizing_text))
+                    showLoading(getString(R.string.credentials_status_authorizing))
                 }
 
                 CredentialsViewModel.ViewState.UPDATING -> {
                     showLoading(
                         getString(
-                            R.string.tink_credentials_status_updating_text,
+                            R.string.credentials_status_updating,
                             provider.displayName
                         )
                     )
@@ -211,7 +211,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
                         viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        showError(getString(R.string.tink_third_party_authentication_download_app_negative_error))
+                        showError(getString(R.string.third_party_authentication_download_app_cancel_error))
                     }
                 }
             }
@@ -234,7 +234,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { statusPayload ->
                 val message =
-                    statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
+                    statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.error_unknown)
                 showError(message)
             }
         })
@@ -249,20 +249,20 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
         val termsText = getString(
-            R.string.tink_terms_policy_information,
-            getString(R.string.tink_terms_and_conditions),
-            getString(R.string.tink_privacy_policy)
+            R.string.credentials_terms_text,
+            getString(R.string.credentials_terms_and_conditions),
+            getString(R.string.credentials_privacy_policy)
         )
         termsAndConditionsText.setTextWithLinks(
             fullText = termsText,
             links = listOf(
                 LinkInfo(
                     termsAndConditionsUrl.toString(),
-                    getString(R.string.tink_terms_and_conditions)
+                    getString(R.string.credentials_terms_and_conditions)
                 ),
                 LinkInfo(
                     privacyPolicyUrl.toString(),
-                    getString(R.string.tink_privacy_policy)
+                    getString(R.string.credentials_privacy_policy)
                 )
             )
         )
@@ -302,7 +302,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private fun createCredentials() {
         if (areFieldsValid()) {
-            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
+            showLoading(getString(R.string.credentials_status_authorizing))
             hideKeyboard()
 
             val fields = credentialsFields.children
@@ -312,7 +312,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
             viewModel.createCredentials(provider, fields) { error ->
                 val message = error.localizedMessage ?: error.message
-                ?: getString(R.string.tink_error_unknown)
+                ?: getString(R.string.error_unknown)
                 showError(message)
             }
         }
@@ -347,7 +347,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private fun updateCredentials(credentialsId: String) {
         if (areFieldsValid()) {
-            showLoading(getString(R.string.tink_credentials_status_authorizing_text))
+            showLoading(getString(R.string.credentials_status_authorizing))
             hideKeyboard()
         }
 
@@ -358,7 +358,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         viewModel.updateCredentials(credentialsId, fields) { error ->
             val message = error.localizedMessage ?: error.message
-            ?: getString(R.string.tink_error_unknown)
+            ?: getString(R.string.error_unknown)
             showError(message)
         }
     }
@@ -373,7 +373,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                     .newInstance(intent)
                     .show(childFragmentManager, null)
             } else {
-                showError(getString(R.string.tink_error_unknown))
+                showError(getString(R.string.error_unknown))
             }
         }
     }

@@ -49,7 +49,7 @@ private fun showInstallDialog(
             setTitle(title)
             setMessage(message)
             setPositiveButton(
-                activity.getString(R.string.tink_third_party_authentication_download_app_positive)
+                activity.getString(R.string.third_party_authentication_download_app_install_button)
             ) { _, _ ->
                 val intent = Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
@@ -58,7 +58,7 @@ private fun showInstallDialog(
                 activity.startActivity(intent)
             }
             setNegativeButton(
-                activity.getString(R.string.tink_third_party_authentication_download_app_negative)
+                activity.getString(R.string.cancel_button)
             ) { _, _ -> onCancel?.invoke() }
         }
         .show()

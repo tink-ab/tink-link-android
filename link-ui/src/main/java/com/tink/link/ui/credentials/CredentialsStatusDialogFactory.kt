@@ -27,10 +27,10 @@ internal object CredentialsStatusDialogFactory {
                 cancelButton.text =
                     if (type == Type.LOADING) {
                         loadingProgress.visibility = View.VISIBLE
-                        context.getString(R.string.tink_credentials_status_dialog_cancel_button)
+                        context.getString(R.string.cancel_button)
                     } else {
                         loadingProgress.visibility = View.GONE
-                        context.getString(R.string.tink_credentials_status_dialog_ok_button)
+                        context.getString(R.string.ok_button)
                     }
                 cancelButton.setOnClickListener {
                     onDismiss?.invoke()

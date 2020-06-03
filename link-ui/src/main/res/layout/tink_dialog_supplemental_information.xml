@@ -11,7 +11,7 @@
     style="@style/tink_mega"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="@string/tink_credentials_supplemental_information"
+    android:text="@string/supplemental_information_title"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="32dp"
     android:layout_marginEnd="32dp"
-    android:text="@string/tink_credentials_supplemental_information_cancel_button"
+    android:text="@string/cancel_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toStartOf="@id/submitButton"
     app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
@@ -44,7 +44,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="32dp"
-    android:text="@string/tink_credentials_supplemental_information_submit_button"
+    android:text="@string/supplemental_information_submit_button"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="@id/supplementalInformationTitle"
     app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
