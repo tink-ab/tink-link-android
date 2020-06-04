@@ -37,7 +37,7 @@ class MainFragment : Fragment(), TinkLinkConsumer {
      * @see [getUserByAuthenticationCode]
      */
     private fun getUser(): User {
-        TODO("Replace with implementation for getting a User using your preferred method.")
+        return getUserByAccessToken("eyJhbGciOiJFUzI1NiIsImtpZCI6IjliMzIyNTYyLTc1OTUtNGRjNy1hYjI3LWZmZGJiMDY5NDlkOCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTEyOTEzMDMsImlhdCI6MTU5MTI4NDEwMywiaXNzIjoidGluazovL2F1dGgiLCJqdGkiOiI0ODU5ZjYwYy1lMDk4LTRlZmUtOGYxYi0yZTAyMDI0YzYxYzIiLCJvcmlnaW4iOiJtYWluIiwic2NvcGVzIjpbImludmVzdG1lbnRzOnJlYWQiLCJ0cmFuc2FjdGlvbnM6Y2F0ZWdvcml6ZSIsImNhdGVnb3JpZXM6cmVhZCIsInVzZXI6cmVhZCIsInN0YXRpc3RpY3M6cmVhZCIsImFjY291bnRzOnJlYWQiLCJjcmVkZW50aWFsczpyZWFkIiwidHJhbnNhY3Rpb25zOnJlYWQiLCJpbnNpZ2h0czpyZWFkIiwiaWRlbnRpdHk6cmVhZCIsImJ1ZGdldHM6cmVhZCJdLCJzdWIiOiJ0aW5rOi8vYXV0aC91c2VyL2FjMGNhMjJmOGMxMjQ0MTg5Y2JhMGE0NTdiMjdhNzljIiwidGluazovL2FwcC9pZCI6ImM2ZWUwMGZlOGEwYzRhYjE5MzBmYzkyMGFlMjk1YjdmIn0.OeF0aPaU6H9yvPd6licplK9nbbK1oMDPpMW_SmMIOvMdtio6Mh6MfdPqSU2yJCnNoysFKStt_2QzBjbtX2wLnQ")
     }
 
     /**

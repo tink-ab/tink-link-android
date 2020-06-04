@@ -10,10 +10,10 @@
 
 Before running the example project, you need to configure the following:
 
-1. Create a `src/main/java/com/tink/link/configuration/Configuration.kt` with the following:
+1. Create a `src/main/java/com/tink/link/sample/configuration/Configuration.kt` with the following:
 
    ```kotlin
-   package com.tink.link.configuration
+   package com.tink.link.sample.configuration
 
    import com.tink.service.network.Environment
 

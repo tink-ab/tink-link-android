@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">tink-link-android</string>
+  <string name="app_name">Sample Tink Link</string>
 
   <string name="redirect_uri_scheme">http</string>
   <string name="redirect_uri_host">localhost</string>
