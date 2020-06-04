@@ -4,8 +4,7 @@
     <string name="provider_select_credentials_type_title">Inloggningsmetod</string>
     <string name="provider_select_credentials_type_password_default_description">Lösenord</string>
     <string name="provider_select_credentials_type_mobile_bank_id_default_description">Mobilt BankID</string>
-    <!-- TODO: Translation needed -->
-    <string name="provider_select_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
+    <string name="provider_select_credentials_type_third_party_authentication_default_description">Tredjepart-autentisering</string>
     <string name="provider_select_credentials_type_keyfob_default_description">Key Fob</string>
     <string name="provider_select_credentials_type_fraud_default_description">Fraud</string>
     <string name="provider_select_credentials_type_unknown_default_description">Unknown</string>
@@ -16,7 +15,7 @@
     <string name="credentials_continue_button">Fortsätt</string>
     <string name="credentials_bankid_button">Öppna BankID</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
-    <string name="credentials_bankId_other_device_button">Open Bank ID on another device</string>
+    <string name="credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <string name="credentials_terms_text">Genom att använda tjänsten godkänner du Tinks %1$s and %2$s</string>
     <string name="credentials_terms_and_conditions">Användarvillkor</string>
     <string name="credentials_privacy_policy">Integritetspolicy</string>
@@ -29,8 +28,7 @@
     <string name="supplemental_information_submit_button">Skicka</string>
     <string name="supplemental_information_qr_code_title">Öppna BankID-appen</string>
     <string name="supplemental_information_qr_code_description">Öppna BankID appen och läs av QR-koden för att autentisera dig.</string>
-    <!-- TODO: Translation needed -->
-    <string name="supplemental_information_qr_code_error">There is a problem with loading the QR code. Please try again later.</string>
+    <string name="supplemental_information_qr_code_error">QR koden gick inte att hämta. Försök igen senare.</string>
     <string name="credentials_status_authorizing">Autentiserar…</string>
     <string name="credentials_status_updating">Ansluter till %s, vänligen vänta…</string>
     <string name="connection_success_title">Anslutningen lyckades</string>
@@ -38,8 +36,7 @@
     <string name="connection_success_done_button">Klar</string>
     <string name="cancel_button">Avbryt</string>
     <string name="ok_button">OK</string>
-    <!-- TODO: Translation needed -->
-    <string name="error_unknown">Something went wrong. Please try again later.</string>
+    <string name="error_unknown">Något gick fel. Försök igen senare.</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
     <string name="tink_access_type_fragment_title">Add %s Account</string>
     <string name="tink_refresh_headline">Refresh</string>
