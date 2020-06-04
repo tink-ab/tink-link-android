@@ -22,7 +22,6 @@ object Dependencies {
         const val constraint_layout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val test_runner = "androidx.test:runner:1.2.0"
         const val test_espresso = "androidx.test.espresso:espresso-core:3.2.0"
-        const val lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
         const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     }

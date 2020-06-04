@@ -46,8 +46,6 @@ dependencies {
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
 
-    implementation(Dependencies.Androidx.lifecycle_extensions)
-
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
 
