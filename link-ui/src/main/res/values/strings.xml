@@ -27,7 +27,6 @@
   <string name="consent_information_title">We will collect the following data from you</string>
   <string name="consent_information_description">By following through this service, we will collect financial data from you. These are the data points we will collect from you:</string>
   <string name="third_party_authentication_download_app_install_button">Install</string>
-  <string name="third_party_authentication_download_app_cancel_error">The third party authentication app needs to be installed to continue.</string>
   <string name="supplemental_information_title">Supplemental Information</string>
   <string name="supplemental_information_submit_button">Submit</string>
   <string name="supplemental_information_qr_code_title">Open the Bank ID app</string>

@@ -211,7 +211,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                 activity?.let {
                     thirdPartyAuthentication.launch(it) {
                         viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        showError(getString(R.string.third_party_authentication_download_app_cancel_error))
                     }
                 }
             }

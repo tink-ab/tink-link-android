@@ -22,8 +22,6 @@
     <string name="consent_information_title">Vi samlar in följande uppgifter om dig</string>
     <string name="consent_information_description">Genom att använda denna tjänst samlar vi in finansuppgifter om dig. Vi samlar in följande datapunkter:</string>
     <string name="third_party_authentication_download_app_install_button">Installera</string>
-    <!-- TODO: Translation needed -->
-    <string name="third_party_authentication_download_app_cancel_error">The third party authentication app needs to be installed to continue.</string>
     <string name="supplemental_information_title">Tilläggsinformation</string>
     <string name="supplemental_information_submit_button">Skicka</string>
     <string name="supplemental_information_qr_code_title">Öppna BankID-appen</string>
