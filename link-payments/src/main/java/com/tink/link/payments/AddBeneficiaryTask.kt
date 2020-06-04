@@ -93,7 +93,7 @@ internal class AddBeneficiaryTask(
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.AUTHENTICATION_ERROR,
             Credentials.Status.PERMANENT_ERROR,
-            null -> TODO("Error handling")
+            null -> throw AddBeneficiaryFailure(credentials.statusPayload?.ifBlank { null })
         }
 
     override fun unsubscribe() {
