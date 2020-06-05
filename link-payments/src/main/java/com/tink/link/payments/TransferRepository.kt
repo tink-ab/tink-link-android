@@ -9,6 +9,7 @@ import com.tink.service.credentials.CredentialsService
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
+import com.tink.service.transfer.CreateBeneficiaryDescriptor
 import com.tink.service.transfer.CreateTransferDescriptor
 import com.tink.service.transfer.TransferService
 import kotlinx.coroutines.CoroutineDispatcher
@@ -89,6 +90,18 @@ interface TransferRepository {
      * Fetch all beneficiaries of the user.
      */
     fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>)
+
+    /**
+     * Add a new beneficiary
+     */
+    fun addBeneficiary(
+        ownerAccountId: String,
+        credentialsId: String,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription
 }
 
 internal class TransferRepositoryImpl(
@@ -152,6 +165,23 @@ internal class TransferRepositoryImpl(
             transferService.getBeneficiaries()
         }
     }
+
+    override fun addBeneficiary(
+        ownerAccountId: String,
+        credentialsId: String,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription =
+        AddBeneficiaryTask(
+            CreateBeneficiaryDescriptor(
+                ownerAccountId, credentialsId, accountNumber, accountNumberType, name
+            ),
+            credentialsService,
+            transferService,
+            streamObserver
+        )
 }
 
 /**
