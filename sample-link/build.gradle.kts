@@ -10,7 +10,7 @@ android {
     compileSdkVersion(Versions.compileSdk)
     buildToolsVersion(Versions.buildTools)
     defaultConfig {
-        applicationId = "com.tink.link"
+        applicationId = "com.tink.link.sample"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
         versionCode = TinkLinkVersion.code
@@ -36,9 +36,6 @@ dependencies {
     implementation(Dependencies.Androidx.appcompat)
     implementation(Dependencies.Androidx.core_ktx)
     implementation(Dependencies.Androidx.constraint_layout)
-    testImplementation(Dependencies.junit)
-    androidTestImplementation(Dependencies.Androidx.test_runner)
-    androidTestImplementation(Dependencies.Androidx.test_espresso)
 
     implementation(Dependencies.Dagger.core)
     implementation(Dependencies.Dagger.dagger_android)
@@ -48,8 +45,6 @@ dependencies {
 
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
-
-    implementation(Dependencies.Androidx.lifecycle_extensions)
 
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
