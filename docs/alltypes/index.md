@@ -8,10 +8,22 @@
 
 ##### [com.tink.model.account.Account](../com.tink.model.account/-account/index.md)
 
+An account could either be a debit account, a credit card, a loan or mortgage.
+
+
+| (extensions in package com.tink.service.account)
+
+##### [com.tink.rest.models.Account](../com.tink.service.account/com.tink.rest.models.-account/index.md)
+
 
 |
 
 ##### [com.tink.service.account.AccountService](../com.tink.service.account/-account-service/index.md)
+
+
+|
+
+##### [com.tink.service.account.AccountServiceImpl](../com.tink.service.account/-account-service-impl/index.md)
 
 
 |
@@ -31,7 +43,21 @@
 
 |
 
+##### [com.tink.link.authentication.AuthenticationTask](../com.tink.link.authentication/-authentication-task/index.md)
+
+Represents an authentication that needs to be completed by the user.
+
+
+|
+
 ##### [com.tink.model.user.Authorization](../com.tink.model.user/-authorization/index.md)
+
+
+|
+
+##### [com.tink.model.transfer.Beneficiary](../com.tink.model.transfer/-beneficiary/index.md)
+
+A beneficiary of a transfer
 
 
 |
@@ -96,6 +122,11 @@ Context for handling things around user consent.
 
 |
 
+##### [com.tink.service.transfer.CreateTransferDescriptor](../com.tink.service.transfer/-create-transfer-descriptor/index.md)
+
+
+|
+
 ##### [com.tink.model.credentials.Credentials](../com.tink.model.credentials/-credentials/index.md)
 
 This model represents how users are connected to a [Provider](../com.tink.model.provider/-provider/index.md) to access their financial data.
@@ -131,6 +162,11 @@ Repository for creating, accessing and modifying credentials.
 |
 
 ##### [com.tink.service.credentials.CredentialsUpdateDescriptor](../com.tink.service.credentials/-credentials-update-descriptor/index.md)
+
+
+| (extensions in package com.tink.service.misc)
+
+##### [com.tink.rest.models.CurrencyDenominatedAmount](../com.tink.service.misc/com.tink.rest.models.-currency-denominated-amount/index.md)
 
 
 |
@@ -251,7 +287,7 @@ Repository for retrieving [Provider](../com.tink.model.provider/-provider/index.
 ##### [com.tink.model.provider.ProviderTreeNode](../com.tink.model.provider/-provider-tree-node/index.md)
 
 This class represents a tree structure of [FinancialInstitutionGroupNode](../com.tink.model.provider/-provider-tree-node/-financial-institution-group-node/index.md) objects with children.
-This eventually leads to a leaf object of type [CredentialsTypeNode](../com.tink.model.provider/-provider-tree-node/-credentials-type-node/index.md),
+This eventually leads to a leaf object of type [ProviderNode](../com.tink.model.provider/-provider-tree-node/-provider-node/index.md),
 that contains more detailed [Provider](../com.tink.model.provider/-provider/index.md) data.
 
 
@@ -298,12 +334,27 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 
 |
 
+##### [com.tink.model.transfer.SignableOperation](../com.tink.model.transfer/-signable-operation/index.md)
+
+
+| (extensions in package com.tink.service.transfer)
+
+##### [com.tink.rest.models.SignableOperation](../com.tink.service.transfer/com.tink.rest.models.-signable-operation/index.md)
+
+
+|
+
 ##### [com.tink.model.statistic.Statistic](../com.tink.model.statistic/-statistic/index.md)
 
 
 |
 
 ##### [com.tink.model.statistic.StatisticTree](../com.tink.model.statistic/-statistic-tree/index.md)
+
+
+| (extensions in package com.tink.service.credentials)
+
+##### [com.tink.rest.models.Credentials.StatusEnum](../com.tink.service.credentials/com.tink.rest.models.-credentials.-status-enum/index.md)
 
 
 |
@@ -333,6 +384,11 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 This model contains information required for third party authentication flow.
 
 
+| (extensions in package com.tink.service.credentials)
+
+##### [com.tink.rest.models.Credentials.ThirdPartyAuthentication](../com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/index.md)
+
+
 |
 
 ##### [com.tink.core.Tink](../com.tink.core/-tink/index.md)
@@ -359,6 +415,13 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 
 |
 
+##### [com.tink.link.payments.TinkLinkPayments](../com.tink.link.payments/-tink-link-payments/index.md)
+
+This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-tink/index.md) when using Kotlin
+
+
+|
+
 ##### [com.tink.core.TinkScope](../com.tink.core/-tink-scope/index.md)
 
 
@@ -370,6 +433,48 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 |
 
 ##### [com.tink.model.transaction.TransactionDetails](../com.tink.model.transaction/-transaction-details/index.md)
+
+
+|
+
+##### [com.tink.link.payments.TransferFailure](../com.tink.link.payments/-transfer-failure/index.md)
+
+
+|
+
+##### [com.tink.link.payments.TransferMessage](../com.tink.link.payments/-transfer-message/index.md)
+
+The message for a transfer.
+
+
+|
+
+##### [com.tink.link.payments.di.TransferModule](../com.tink.link.payments.di/-transfer-module/index.md)
+
+
+|
+
+##### [com.tink.link.payments.TransferRepository](../com.tink.link.payments/-transfer-repository/index.md)
+
+Repository for initiating transfers and retrieving the necessary input for that action.
+
+
+|
+
+##### [com.tink.service.transfer.TransferService](../com.tink.service.transfer/-transfer-service/index.md)
+
+
+|
+
+##### [com.tink.link.payments.TransferStatus](../com.tink.link.payments/-transfer-status/index.md)
+
+The status of a transfer.
+Possible values are [Success](../com.tink.link.payments/-transfer-status/-success/index.md), [Loading](../com.tink.link.payments/-transfer-status/-loading/index.md), and [AwaitingAuthentication](../com.tink.link.payments/-transfer-status/-awaiting-authentication/index.md)
+
+
+| (extensions in package com.tink.service.credentials)
+
+##### [com.tink.rest.models.Credentials.TypeEnum](../com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/index.md)
 
 
 |
