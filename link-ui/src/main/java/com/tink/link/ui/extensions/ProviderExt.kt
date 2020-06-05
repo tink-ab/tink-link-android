@@ -12,7 +12,7 @@ internal fun ProviderTreeNode.AccessTypeNode.capabilitiesText(
 ): String =
     capabilities()
         .toDisplayText(context)
-        .joinToString(separator = separator) { it.text.toLowerCase(Locale.getDefault()) }
+        .joinToString(separator = separator) { it.text }
         .capitalize()
 
 internal fun ProviderTreeNode.AccessTypeNode.capabilities() =
