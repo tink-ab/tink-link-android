@@ -10,10 +10,10 @@
 
 Before running the example project, you need to configure the following:
 
-1. Create a `src/main/java/com/tink/sample/configuration/Configuration.kt` with the following:
+1. Create a `src/main/java/com/tink/link/sample/configuration/Configuration.kt` with the following:
 
    ```kotlin
-   package com.tink.sample.configuration
+   package com.tink.link.sample.configuration
 
    import com.tink.service.network.Environment
 
@@ -24,7 +24,7 @@ Before running the example project, you need to configure the following:
    ```
 
 2. Set a valid user access token. If you don't have one already, please follow our [guide](https://docs.tink.com/resources/getting-started/get-access-token) on how to generate a new API token. Note that these can expire, so make sure that you're using one that's currently active.
-   Open [`src/main/java/com/tink/sample/MainFragment.kt`](src/main/java/com/tink/sample/MainFragment.kt) and adapt getUser:
+   Open [`src/main/java/com/tink/link/sample/MainFragment.kt`](src/main/java/com/tink/link/sample/MainFragment.kt) and adapt getUser:
    ```kotlin
    private fun getUser(): User {
        return getUserByAccessToken("{ACCESS_TOKEN}")

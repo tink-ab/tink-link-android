@@ -45,8 +45,6 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
-    implementation(Dependencies.Androidx.lifecycle_extensions)
-
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
 

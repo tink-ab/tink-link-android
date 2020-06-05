@@ -81,6 +81,14 @@ tasks {
             }
             println("Deleting /docs/link")
             delete("../docs/link")
+
+            println("Copying docs from /docs/link-payments to /docs")
+            copy {
+                from("../docs/link-payments")
+                into("../docs")
+            }
+            println("Deleting /docs/link-payments")
+            delete("../docs/link-payments")
         }
     }
 }

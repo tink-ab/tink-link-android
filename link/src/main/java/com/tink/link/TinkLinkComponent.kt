@@ -5,7 +5,7 @@ import com.tink.core.Tink
 import com.tink.core.TinkComponent
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.consent.ConsentContext
-import com.tink.link.core.authentication.AccessRepository
+import com.tink.link.core.access.AccessRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.model.user.Scope
@@ -50,6 +50,10 @@ internal abstract class TinkLinkComponent {
     }
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
+
+    internal fun requireUserContext(): UserContext = checkNotNull(getUserContext()) {
+        "User was not set. Call Tink.setUser to set the user before calling this."
+    }
 
     internal fun createTemporaryUser(
         market: String,

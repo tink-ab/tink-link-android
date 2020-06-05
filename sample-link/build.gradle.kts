@@ -24,22 +24,18 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
-    implementation("com.tink:link:${TinkLinkVersion.name}")
+    implementation(project(":link"))
 
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
     implementation(Dependencies.Androidx.core_ktx)
     implementation(Dependencies.Androidx.constraint_layout)
-    testImplementation(Dependencies.junit)
-    androidTestImplementation(Dependencies.Androidx.test_runner)
-    androidTestImplementation(Dependencies.Androidx.test_espresso)
 
     implementation(Dependencies.Dagger.core)
     implementation(Dependencies.Dagger.dagger_android)
@@ -49,8 +45,6 @@ dependencies {
 
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
-
-    implementation(Dependencies.Androidx.lifecycle_extensions)
 
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
