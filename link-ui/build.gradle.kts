@@ -28,6 +28,10 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     resourcePrefix("tink_")
 }
 
