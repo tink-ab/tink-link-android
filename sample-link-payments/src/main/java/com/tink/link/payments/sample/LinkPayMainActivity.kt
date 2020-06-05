@@ -5,14 +5,17 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
+import com.tink.link.payments.sample.beneficiary.AddBeneficiaryDialog
 import com.tink.link.payments.sample.configuration.Configuration
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
@@ -26,6 +29,7 @@ import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
 import timber.log.Timber
 import java.util.regex.Pattern
+import kotlin.properties.Delegates
 
 private val LinkPayMainActivity.configuration
     get() = TinkConfiguration(
@@ -50,6 +54,12 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private var selectedAccount: AccountItem? = null
     private var selectedBeneficiary: BeneficiaryItem? = null
+
+    private var accounts by Delegates.observable<List<Account>?>(null) { _, _, newValue ->
+        lifecycleScope.launchWhenCreated {
+            addBeneficiaryButton.isEnabled = !newValue.isNullOrEmpty()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +111,13 @@ class LinkPayMainActivity : AppCompatActivity() {
         Tink.setUser(user)
 
         buildSourceDestinationMap()
+
+        addBeneficiaryButton.setOnClickListener {
+            accounts?.let {
+                AddBeneficiaryDialog.newInstance(it)
+                    .show(supportFragmentManager, null)
+            }
+        }
     }
 
     private fun getUser(): User {
@@ -109,6 +126,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun buildSourceDestinationMap() {
         loadAccounts { accounts ->
+            this.accounts = accounts
+
             loadBeneficiaries { beneficiaries ->
 
                 val beneficiariesByAccountId = beneficiaries.groupBy { it.ownerAccountId }
