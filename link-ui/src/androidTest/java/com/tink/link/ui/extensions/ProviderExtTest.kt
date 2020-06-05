@@ -52,7 +52,9 @@ internal class ProviderExtTest {
     fun capability_matches_display_text() {
         val accessTypeNode =
             accessTypeNodeWithCapabilities(listOf(Provider.Capability.CHECKING_ACCOUNTS))
-        assertThat(accessTypeNode.capabilitiesText(context)).isEqualTo(context.getString(R.string.tink_provider_capability_checking_accounts))
+        val checkingAccountsText =
+            context.getString(R.string.tink_provider_capability_checking_accounts).capitalize()
+        assertThat(accessTypeNode.capabilitiesText(context)).isEqualTo(checkingAccountsText)
     }
 
     @Test
@@ -67,8 +69,10 @@ internal class ProviderExtTest {
         val displayText: String =
             listOf(
                 context.getString(R.string.tink_provider_capability_checking_accounts),
-                context.getString(R.string.tink_provider_capability_credit_cards).toLowerCase()
-            ).joinToString(separator)
+                context.getString(R.string.tink_provider_capability_credit_cards)
+            )
+                .joinToString(separator)
+                .capitalize()
         assertThat(
             accessTypeNode.capabilitiesText(context, separator)
         ).isEqualTo(displayText)
@@ -79,9 +83,11 @@ internal class ProviderExtTest {
         val accessTypeNode =
             accessTypeNodeWithCapabilities(listOf(Provider.Capability.CHECKING_ACCOUNTS))
         val separator = " | "
+        val checkingAccountsText =
+            context.getString(R.string.tink_provider_capability_checking_accounts).capitalize()
         assertThat(
             accessTypeNode.capabilitiesText(context, separator)
-        ).isEqualTo(context.getString(R.string.tink_provider_capability_checking_accounts))
+        ).isEqualTo(checkingAccountsText)
     }
 
     @Test
@@ -92,10 +98,12 @@ internal class ProviderExtTest {
                 Provider.Capability.CHECKING_ACCOUNTS
             )
         )
+        val checkingAccountsText =
+            context.getString(R.string.tink_provider_capability_checking_accounts).capitalize()
         val separator = " | "
         assertThat(
             accessTypeNode.capabilitiesText(context, separator)
-        ).isEqualTo(context.getString(R.string.tink_provider_capability_checking_accounts))
+        ).isEqualTo(checkingAccountsText)
     }
 
     @Test
@@ -110,8 +118,10 @@ internal class ProviderExtTest {
         val displayText =
             listOf(
                 context.getString(R.string.tink_provider_capability_checking_accounts),
-                context.getString(R.string.tink_provider_capability_credit_cards).toLowerCase()
-            ).joinToString(separator)
+                context.getString(R.string.tink_provider_capability_credit_cards)
+            )
+                .joinToString(separator)
+                .capitalize()
         assertThat(
             accessTypeNode.capabilitiesText(context, separator)
         ).isEqualTo(displayText)
@@ -125,10 +135,12 @@ internal class ProviderExtTest {
                 Provider.Capability.CHECKING_ACCOUNTS
             )
         )
+        val checkingAccountsText =
+            context.getString(R.string.tink_provider_capability_checking_accounts).capitalize()
         val separator = " | "
         assertThat(
             accessTypeNode.capabilitiesText(context, separator)
-        ).isEqualTo(context.getString(R.string.tink_provider_capability_checking_accounts))
+        ).isEqualTo(checkingAccountsText)
     }
 
     @Test
