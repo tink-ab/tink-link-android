@@ -27,7 +27,6 @@ internal fun ProviderTreeNode.AccessTypeNode.capabilities() =
         .filterCapabilities()
         .distinct()
 
-// TODO: Confirm if this filtering is necessary or the capabilities to filter
 internal fun List<Provider.Capability>.filterCapabilities() =
     this.filterNot {
         it == Provider.Capability.TRANSFERS
