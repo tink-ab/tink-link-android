@@ -35,19 +35,14 @@ internal class AddBeneficiaryTask(
         }
 
     init {
-
         scope.launch {
 
             transferService.addBeneficiary(descriptor)
 
             while (true) {
-
                 val credentials = credentialsService.getCredentials(descriptor.credentialsId)
-
                 currentStatus = getStatusFromCredentials(credentials)
-
                 if (currentStatus is AddBeneficiaryStatus.Success) return@launch
-
                 delay(2_000L)
             }
         }
