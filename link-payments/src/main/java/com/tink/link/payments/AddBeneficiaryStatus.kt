@@ -24,10 +24,8 @@ sealed class AddBeneficiaryStatus {
     data class Loading(val message: String? = null) : AddBeneficiaryStatus()
 
     /**
-     * There is an outstanding authentication waiting that needs to be completed by the user to
-     * proceed with adding the beneficiary.
-     *
-     * @property authenticationTask the authentication that needs to be completed by the user.
+     * There is an outstanding [authentication][authenticationTask] waiting that needs to be
+     * completed by the user to proceed with adding the beneficiary.
      */
     class AwaitingAuthentication(val authenticationTask: AuthenticationTask) :
         AddBeneficiaryStatus()
