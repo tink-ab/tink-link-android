@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.AddBeneficiaryStatus
@@ -18,7 +20,7 @@ import com.tink.link.payments.sample.R
 import com.tink.model.account.Account
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.dialog_add_beneficiary.*
-import kotlin.properties.Delegates
+import timber.log.Timber
 
 
 private const val ADD_BENEFICIARY_ACCOUNTS = "ADD_BENEFICIARY_ACCOUNTS"
@@ -31,9 +33,7 @@ class AddBeneficiaryDialog : DialogFragment() {
 
     private lateinit var sourceAdapter: ArrayAdapter<AccountItem>
     private lateinit var selectedAccount: AccountItem
-    private var loading by Delegates.observable(false) { _, oldValue, newValue ->
-        // TODO: show loading status
-    }
+    private val loading = MutableLiveData<Boolean>().apply { value = false }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +72,7 @@ class AddBeneficiaryDialog : DialogFragment() {
             }
 
         addBeneficiaryButton.setOnClickListener {
-            if (loading) return@setOnClickListener
+            if (loading.value == true) return@setOnClickListener
 
             Tink.getTransferRepository().addBeneficiary(
                 ownerAccountId = selectedAccount.account.id,
@@ -83,13 +83,14 @@ class AddBeneficiaryDialog : DialogFragment() {
                 streamObserver = object : StreamObserver<AddBeneficiaryStatus> {
                     override fun onNext(value: AddBeneficiaryStatus) {
                         when (value) {
-                            is AddBeneficiaryStatus.Loading -> loading = true
+                            is AddBeneficiaryStatus.Loading -> {
+                            }
+
                             is AddBeneficiaryStatus.Success -> {
-                                loading = false
                                 dismiss()
                             }
+
                             is AddBeneficiaryStatus.AwaitingAuthentication -> {
-                                loading = true
                                 val launchResult = (value.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication)
                                     ?.launch(requireActivity())
 
@@ -98,6 +99,14 @@ class AddBeneficiaryDialog : DialogFragment() {
                                 }
                             }
                         }
+                    }
+
+                    override fun onError(error: Throwable) {
+                        loading.postValue(false)
+                    }
+
+                    override fun onCompleted() {
+                        loading.postValue(false)
                     }
                 }
             )
