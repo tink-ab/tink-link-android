@@ -3,16 +3,19 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools">
 
   <com.google.android.material.textfield.TextInputLayout
     android:id="@+id/ownerAccountDropdownLayout"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="48dp"
     android:hint="Owner account"
-    app:layout_constraintVertical_chainStyle="packed"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -74,8 +77,7 @@
     android:hint="Name"
     app:layout_constraintTop_toBottomOf="@id/accountNumberLayout"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/addBeneficiaryButton">
+    app:layout_constraintEnd_toEndOf="parent">
 
     <com.google.android.material.textfield.TextInputEditText
       android:id="@+id/name"
@@ -85,13 +87,26 @@
 
   </com.google.android.material.textfield.TextInputLayout>
 
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/statusText"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:gravity="center"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+    app:layout_constraintBottom_toTopOf="@id/addBeneficiaryButton"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/nameLayout"
+    app:layout_constraintVertical_bias="0.3"
+    tools:text="Some very important status" />
+
   <com.google.android.material.button.MaterialButton
     android:id="@+id/addBeneficiaryButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
+    android:layout_marginBottom="32dp"
     android:text="Add Beneficiary"
-    app:layout_constraintTop_toBottomOf="@id/nameLayout"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toStartOf="@id/cancelButton"
     app:layout_constraintBottom_toBottomOf="parent"/>
