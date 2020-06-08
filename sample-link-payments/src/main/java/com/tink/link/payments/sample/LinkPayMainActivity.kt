@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.TransferFailure
@@ -29,7 +28,6 @@ import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
 import timber.log.Timber
 import java.util.regex.Pattern
-import kotlin.properties.Delegates
 
 private val LinkPayMainActivity.configuration
     get() = TinkConfiguration(
@@ -55,11 +53,7 @@ class LinkPayMainActivity : AppCompatActivity() {
     private var selectedAccount: AccountItem? = null
     private var selectedBeneficiary: BeneficiaryItem? = null
 
-    private var accounts by Delegates.observable<List<Account>?>(null) { _, _, newValue ->
-        lifecycleScope.launchWhenCreated {
-            addBeneficiaryButton.isEnabled = !newValue.isNullOrEmpty()
-        }
-    }
+    private val accounts = MutableLiveData<List<Account>>().apply { value = emptyList() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,11 +106,20 @@ class LinkPayMainActivity : AppCompatActivity() {
 
         buildSourceDestinationMap()
 
+        accounts.observe(this, Observer {
+            addBeneficiaryButton.isEnabled = !it.isNullOrEmpty()
+        })
+
         addBeneficiaryButton.setOnClickListener {
-            accounts?.let {
-                AddBeneficiaryDialog.newInstance(it)
-                    .show(supportFragmentManager, null)
-            }
+            accounts.value
+                ?.takeIf { it.isNotEmpty() }
+                ?.let {
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+
+                    AddBeneficiaryDialog.newInstance(it)
+                        .show(transaction, null)
+                }
         }
     }
 
@@ -126,7 +129,7 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun buildSourceDestinationMap() {
         loadAccounts { accounts ->
-            this.accounts = accounts
+            this.accounts.postValue(accounts)
 
             loadBeneficiaries { beneficiaries ->
 
