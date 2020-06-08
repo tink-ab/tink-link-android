@@ -146,8 +146,8 @@ class AddBeneficiaryDialog : DialogFragment() {
 
     companion object {
         fun newInstance(accounts: List<Account>): AddBeneficiaryDialog {
-            return AddBeneficiaryDialog().also {
-                it.arguments = bundleOf(ADD_BENEFICIARY_ACCOUNTS to ArrayList(accounts))
+            return AddBeneficiaryDialog().apply {
+                arguments = bundleOf(ADD_BENEFICIARY_ACCOUNTS to ArrayList(accounts))
             }
         }
     }
