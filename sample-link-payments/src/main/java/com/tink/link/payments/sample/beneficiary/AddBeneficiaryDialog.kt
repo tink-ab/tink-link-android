@@ -87,7 +87,15 @@ class AddBeneficiaryDialog : DialogFragment() {
                             }
 
                             is AddBeneficiaryStatus.Success -> {
-                                dismiss()
+
+                                lifecycleScope.launchWhenResumed {
+                                    Toast.makeText(
+                                        activity,
+                                        "Beneficiary successfully added",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    dismiss()
+                                }
                             }
 
                             is AddBeneficiaryStatus.AwaitingAuthentication -> {
@@ -103,6 +111,14 @@ class AddBeneficiaryDialog : DialogFragment() {
 
                     override fun onError(error: Throwable) {
                         loading.postValue(false)
+
+                        lifecycleScope.launchWhenResumed {
+                            Toast.makeText(
+                                activity,
+                                "Failed with message: $error",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
 
                     override fun onCompleted() {
