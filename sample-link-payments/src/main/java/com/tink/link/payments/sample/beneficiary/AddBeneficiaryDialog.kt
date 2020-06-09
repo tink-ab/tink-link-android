@@ -13,16 +13,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.tink.core.Tink
-import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.AddBeneficiaryStatus
 import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.AccountItem
+import com.tink.link.payments.sample.LinkPayMainActivity
 import com.tink.link.payments.sample.R
 import com.tink.model.account.Account
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.dialog_add_beneficiary.*
 import kotlinx.android.synthetic.main.dialog_add_beneficiary.view.*
-
 
 private const val ADD_BENEFICIARY_ACCOUNTS = "ADD_BENEFICIARY_ACCOUNTS"
 
@@ -105,12 +104,9 @@ class AddBeneficiaryDialog : DialogFragment() {
 
                             is AddBeneficiaryStatus.AwaitingAuthentication -> {
                                 statusText.postValue("Awaiting authentication...")
-                                val launchResult = (value.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication)
-                                    ?.launch(requireActivity())
 
-                                if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
-                                    // Something went wrong when launching, show dialog prompt to install or upgrade app
-                                }
+                                (activity as? LinkPayMainActivity)
+                                    ?.handleAuthenticationTask(value.authenticationTask)
                             }
                         }
                     }

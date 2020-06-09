@@ -4,6 +4,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
@@ -16,6 +17,7 @@ import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
 import com.tink.link.payments.sample.beneficiary.AddBeneficiaryDialog
 import com.tink.link.payments.sample.configuration.Configuration
+import com.tink.link.payments.sample.credentials.SupplementalInformationFragment
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
@@ -209,12 +211,8 @@ class LinkPayMainActivity : AppCompatActivity() {
                         }
                     )
 
-                    val launchResult = (value as? TransferStatus.AwaitingAuthentication)
-                        ?.let { it.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication }
-                        ?.launch(this@LinkPayMainActivity)
-
-                    if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
-                        // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    if (value is (TransferStatus.AwaitingAuthentication)) {
+                        handleAuthenticationTask(value.authenticationTask)
                     }
                 }
             }
@@ -223,6 +221,24 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun handleError(error: Throwable) {
         Timber.e(error)
+    }
+
+    internal fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
+        when (authenticationTask) {
+            is AuthenticationTask.ThirdPartyAuthentication -> {
+                val launchResult = authenticationTask.launch(this)
+
+                if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
+                    // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    Toast.makeText(this, "Couldn't launch third party app", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            is AuthenticationTask.SupplementalInformation -> {
+                SupplementalInformationFragment.newInstance(authenticationTask)
+                    .show(supportFragmentManager, null)
+            }
+        }
     }
 
     private fun getConfigFromIntent(): TinkConfiguration? =
