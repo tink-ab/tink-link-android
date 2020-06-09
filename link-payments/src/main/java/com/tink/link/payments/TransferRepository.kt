@@ -172,7 +172,7 @@ internal class TransferRepositoryImpl(
     }
 
     override fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>) {
-        CoroutineScope(Dispatchers.IO + Job()).launchForResult(resultHandler) {
+        CoroutineScope(dispatcher + Job()).launchForResult(resultHandler) {
             transferService.getBeneficiaries()
         }
     }
