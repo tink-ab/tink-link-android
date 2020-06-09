@@ -17,15 +17,9 @@ class SupplementalInformationViewModel : ViewModel() {
     private val _supplementalFields = MutableLiveData<List<Field>>()
     val supplementalFields: LiveData<List<Field>> = _supplementalFields
 
-    private val credentialsRepository: CredentialsRepository
-
-    init {
-        val userContext = requireNotNull(Tink.getUserContext())
-        credentialsRepository = userContext.credentialsRepository
-    }
-
     fun setData(authenticationTask: AuthenticationTask.SupplementalInformation) {
         this.authenticationTask = authenticationTask
+        _supplementalFields.value =  authenticationTask.fields
     }
 
     fun sendSupplementalInformation(
