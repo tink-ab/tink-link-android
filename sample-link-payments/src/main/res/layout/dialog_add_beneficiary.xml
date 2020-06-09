@@ -1,83 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".LinkPayMainActivity">
+  xmlns:tools="http://schemas.android.com/tools">
 
   <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/sourceDropdownLayout"
+    android:id="@+id/ownerAccountDropdownLayout"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:hint="From"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="48dp"
+    android:hint="Owner account"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/accountNumberTypeLayout">
 
     <AutoCompleteTextView
-      android:id="@+id/sourceDropdown"
+      android:id="@+id/ownerAccountDropdown"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:inputType="none" />
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/destinationDropdownLayout"
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:hint="To"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/sourceDropdownLayout">
-
-    <AutoCompleteTextView
-      android:id="@+id/destinationDropdown"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:inputType="textUri" />
-
-  </com.google.android.material.textfield.TextInputLayout>
-
-  <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/amountInputLayout"
+    android:id="@+id/accountNumberTypeLayout"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:hint="Amount (in €)"
-    app:layout_constraintEnd_toEndOf="parent"
+    android:hint="Account number type"
+    app:layout_constraintTop_toBottomOf="@id/ownerAccountDropdownLayout"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/destinationDropdownLayout">
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/accountNumberLayout">
 
     <com.google.android.material.textfield.TextInputEditText
-      android:id="@+id/amountInput"
+      android:id="@+id/accountNumberType"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="numberDecimal" />
+      android:inputType="text" />
 
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/accountNumberLayout"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:hint="Message"
-    app:layout_constraintEnd_toEndOf="parent"
+    android:hint="Account Number"
+    app:layout_constraintTop_toBottomOf="@id/accountNumberTypeLayout"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/amountInputLayout">
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/nameLayout">
 
     <com.google.android.material.textfield.TextInputEditText
-      android:id="@+id/messageInput"
+      android:id="@+id/accountNumber"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:inputType="text"
-      android:text="message" />
+      android:inputType="text" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/nameLayout"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:hint="Name"
+    app:layout_constraintTop_toBottomOf="@id/accountNumberLayout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text" />
 
   </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,45 +91,32 @@
     android:id="@+id/statusText"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
+    android:layout_marginHorizontal="16dp"
     android:gravity="center"
-    android:text="No transfer initiated"
     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-  <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/statusSubtitle"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:gravity="center"
-    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+    app:layout_constraintBottom_toTopOf="@id/addBeneficiaryButton"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/statusText" />
+    app:layout_constraintTop_toBottomOf="@id/nameLayout"
+    app:layout_constraintVertical_bias="0.3"
+    tools:text="Some very important status" />
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/addBeneficiaryButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="24dp"
-    android:enabled="false"
+    android:layout_marginBottom="32dp"
     android:text="Add Beneficiary"
-    app:layout_constraintBottom_toTopOf="@id/button"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/cancelButton"
+    app:layout_constraintBottom_toBottomOf="parent"/>
 
   <com.google.android.material.button.MaterialButton
-    android:id="@+id/button"
+    android:id="@+id/cancelButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="24dp"
-    android:text="Make transfer"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
-
+    android:text="Cancel"
+    app:layout_constraintTop_toTopOf="@id/addBeneficiaryButton"
+    app:layout_constraintStart_toEndOf="@id/addBeneficiaryButton"
+    app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

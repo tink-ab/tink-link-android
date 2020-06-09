@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.tink.core.Tink
@@ -13,6 +14,7 @@ import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
+import com.tink.link.payments.sample.beneficiary.AddBeneficiaryDialog
 import com.tink.link.payments.sample.configuration.Configuration
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
@@ -50,6 +52,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private var selectedAccount: AccountItem? = null
     private var selectedBeneficiary: BeneficiaryItem? = null
+
+    private val accounts = MutableLiveData<List<Account>>().apply { value = emptyList() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +105,22 @@ class LinkPayMainActivity : AppCompatActivity() {
         Tink.setUser(user)
 
         buildSourceDestinationMap()
+
+        accounts.observe(this, Observer {
+            addBeneficiaryButton.isEnabled = !it.isNullOrEmpty()
+        })
+
+        addBeneficiaryButton.setOnClickListener {
+            accounts.value
+                ?.takeIf { it.isNotEmpty() }
+                ?.let {
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+
+                    AddBeneficiaryDialog.newInstance(it)
+                        .show(transaction, null)
+                }
+        }
     }
 
     private fun getUser(): User {
@@ -109,6 +129,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun buildSourceDestinationMap() {
         loadAccounts { accounts ->
+            this.accounts.postValue(accounts)
+
             loadBeneficiaries { beneficiaries ->
 
                 val beneficiariesByAccountId = beneficiaries.groupBy { it.ownerAccountId }
