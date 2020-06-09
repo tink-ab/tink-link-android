@@ -1,6 +1,10 @@
 package com.tink.link.payments
 
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.payments.TransferStatus.AwaitingAuthentication
+import com.tink.link.payments.TransferStatus.Loading
+import com.tink.link.payments.TransferStatus.Success
+import com.tink.link.payments.codeexamples.addBeneficiaryExample
 import com.tink.link.payments.coroutines.launchForResult
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
@@ -93,6 +97,8 @@ interface TransferRepository {
 
     /**
      * Add a new beneficiary
+     *
+     * @sample addBeneficiaryExample
      */
     fun addBeneficiary(
         ownerAccountId: String,
