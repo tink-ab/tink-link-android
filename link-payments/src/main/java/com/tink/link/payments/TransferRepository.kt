@@ -102,6 +102,17 @@ interface TransferRepository {
         name: String,
         streamObserver: StreamObserver<AddBeneficiaryStatus>
     ): StreamSubscription
+
+    /**
+     * Add a new beneficiary
+     */
+    fun addBeneficiary(
+        ownerAccount: Account,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription
 }
 
 internal class TransferRepositoryImpl(
@@ -181,6 +192,22 @@ internal class TransferRepositoryImpl(
             credentialsService,
             transferService,
             streamObserver
+        )
+
+    override fun addBeneficiary(
+        ownerAccount: Account,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription =
+        addBeneficiary(
+            ownerAccountId = ownerAccount.id,
+            credentialsId = ownerAccount.credentialsId,
+            accountNumber = accountNumber,
+            accountNumberType = accountNumberType,
+            name = name,
+            streamObserver = streamObserver
         )
 }
 
