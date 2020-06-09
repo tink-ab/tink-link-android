@@ -6,22 +6,20 @@ import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.sample.R
-import com.tink.model.misc.Field
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
-private const val CREDENTIALS_ID_ARG = "CREDENTIALS_ID_ARG"
-
-private const val SUPPLEMENTAL_FIELDS_ARG = "SUPPLEMENTAL_FIELDS_ARG"
+private const val ARG_AUTHENTICATION_TASK = "CREDENTIALS_ID_ARG"
 
 class SupplementalInformationFragment : DialogFragment() {
 
-    private val credentialsId: String by lazy {
-        requireNotNull(arguments?.getString(CREDENTIALS_ID_ARG))
-    }
-
-    private val supplementalFields: ArrayList<Field> by lazy {
-        requireNotNull(arguments?.getParcelableArrayList<Field>(SUPPLEMENTAL_FIELDS_ARG))
+    private val authenticationTask: AuthenticationTask.SupplementalInformation by lazy {
+        requireNotNull(
+            arguments?.getParcelable<AuthenticationTask.SupplementalInformation>(
+                ARG_AUTHENTICATION_TASK
+            )
+        )
     }
 
     private val supplementalInformationViewModel: SupplementalInformationViewModel by viewModels()
@@ -29,7 +27,7 @@ class SupplementalInformationFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, android.R.style.Theme_Material_Dialog_Alert)
-        supplementalInformationViewModel.setData(credentialsId, supplementalFields)
+        supplementalInformationViewModel.setData(authenticationTask)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -73,13 +71,9 @@ class SupplementalInformationFragment : DialogFragment() {
     }
 
     companion object {
-        fun newInstance(credentialsId: String, supplementalFields: List<Field>) =
+
+        fun newInstance(authenticationTask: AuthenticationTask.SupplementalInformation) =
             SupplementalInformationFragment()
-                .apply {
-                    arguments = bundleOf(
-                        CREDENTIALS_ID_ARG to credentialsId,
-                        SUPPLEMENTAL_FIELDS_ARG to supplementalFields
-                    )
-                }
+                .apply { arguments = bundleOf(ARG_AUTHENTICATION_TASK to authenticationTask) }
     }
 }

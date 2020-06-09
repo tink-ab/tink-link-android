@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
 import com.tink.model.misc.Field
@@ -11,7 +12,7 @@ import com.tink.service.handler.ResultHandler
 
 class SupplementalInformationViewModel : ViewModel() {
 
-    private val credentialsId = MutableLiveData<String>()
+    private lateinit var authenticationTask: AuthenticationTask.SupplementalInformation
 
     private val _supplementalFields = MutableLiveData<List<Field>>()
     val supplementalFields: LiveData<List<Field>> = _supplementalFields
@@ -23,9 +24,8 @@ class SupplementalInformationViewModel : ViewModel() {
         credentialsRepository = userContext.credentialsRepository
     }
 
-    fun setData(credentialsId: String, supplementalFields: List<Field>) {
-        this.credentialsId.value = credentialsId
-        _supplementalFields.value = supplementalFields
+    fun setData(authenticationTask: AuthenticationTask.SupplementalInformation) {
+        this.authenticationTask = authenticationTask
     }
 
     fun sendSupplementalInformation(
@@ -33,21 +33,10 @@ class SupplementalInformationViewModel : ViewModel() {
         onSuccess: (Unit) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        credentialsId.value?.let { id ->
-            credentialsRepository.supplementInformation(
-                id,
-                fields.toFieldMap(),
-                ResultHandler(onSuccess, onError)
-            )
-        }
+        authenticationTask.submit(fields.toFieldMap(), ResultHandler(onSuccess, onError))
     }
 
     fun cancelSupplementalInformation() {
-        credentialsId.value?.let {
-            credentialsRepository.cancelSupplementalInformation(
-                it,
-                ResultHandler({}, {})
-            )
-        }
+        authenticationTask.cancel(ResultHandler({}, {}))
     }
 }
