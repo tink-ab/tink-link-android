@@ -10,7 +10,7 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.payments.sample.R
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
-private const val ARG_AUTHENTICATION_TASK = "CREDENTIALS_ID_ARG"
+private const val ARG_AUTHENTICATION_TASK = "ARG_AUTHENTICATION_TASK"
 
 class SupplementalInformationFragment : DialogFragment() {
 
