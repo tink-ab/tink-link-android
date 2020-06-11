@@ -36,12 +36,20 @@ internal class AddBeneficiaryTask(
 
     init {
         scope.launch {
+            val initialCredentialsStatusUpdated =
+                credentialsService.getCredentials(descriptor.credentialsId).statusUpdated
+
             transferService.addBeneficiary(descriptor)
 
             while (true) {
                 val credentials = credentialsService.getCredentials(descriptor.credentialsId)
-                currentStatus = getStatusFromCredentials(credentials)
-                if (currentStatus is AddBeneficiaryStatus.Success) break
+                    .takeIf { it.statusUpdated.isAfter(initialCredentialsStatusUpdated) }
+
+                if (credentials != null) {
+                    // We have a valid credentials with a new status
+                    currentStatus = getStatusFromCredentials(credentials)
+                    if (currentStatus is AddBeneficiaryStatus.Success) break
+                }
                 delay(2_000L)
             }
 
@@ -65,9 +73,9 @@ internal class AddBeneficiaryTask(
         when (credentials.status) {
             Credentials.Status.UNKNOWN,
             Credentials.Status.CREATED,
+            Credentials.Status.UPDATING,
             Credentials.Status.AUTHENTICATING -> AddBeneficiaryStatus.Loading()
 
-            Credentials.Status.UPDATING,
             Credentials.Status.UPDATED -> AddBeneficiaryStatus.Success()
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
