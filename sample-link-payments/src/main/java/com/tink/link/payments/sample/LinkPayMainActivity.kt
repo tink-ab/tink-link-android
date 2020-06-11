@@ -28,6 +28,7 @@ import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
+import retrofit2.HttpException
 import timber.log.Timber
 import java.util.regex.Pattern
 
@@ -153,12 +154,18 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun loadAccounts(onAccountsLoaded: (List<Account>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchAccounts(ResultHandler(onAccountsLoaded, ::handleError))
+            .fetchAccounts(ResultHandler(
+                onAccountsLoaded,
+                { handleError("Error when fetching accounts", it) }
+            ))
     }
 
     private fun loadBeneficiaries(onBeneficiariesLoaded: (List<Beneficiary>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchBeneficiaries(ResultHandler(onBeneficiariesLoaded, ::handleError))
+            .fetchBeneficiaries(ResultHandler(
+                onBeneficiariesLoaded,
+                { handleError("Error when fetching beneficiaries", it) }
+            ))
     }
 
     private fun initiateTransfer() {
@@ -219,7 +226,14 @@ class LinkPayMainActivity : AppCompatActivity() {
         )
     }
 
-    private fun handleError(error: Throwable) {
+    private fun handleError(message: String, error: Throwable) {
+        // Show error to user
+        statusMessage.postValue(message)
+        if (error is HttpException) {
+            // Got some HttpException, show more details
+            statusSubtitleMessage.postValue(error.toString())
+        }
+
         Timber.e(error)
     }
 
