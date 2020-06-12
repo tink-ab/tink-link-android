@@ -4,5 +4,5 @@
 
 `val accountNumber: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
 
-The account number of the beneficiary, for example the BG/PG number or the IBAN
+The account number for the beneficiary. The structure of this field depends on the [accountNumberType](account-number-type.md).
 

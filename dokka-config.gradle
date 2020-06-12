@@ -19,5 +19,6 @@ dokka {
         sourceRoot {
             path = "$rootDir/../tink-sdk-core-android/service/src"
         }
+        samples = ["$rootDir/link-payments/src/main/java/com/tink/link/payments/codeexamples".toString()]
     }
 }
