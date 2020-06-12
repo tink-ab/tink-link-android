@@ -29,13 +29,33 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/credentialsIdLayout"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:hint="Credentials id (optional)"
+    app:layout_constraintTop_toBottomOf="@id/ownerAccountDropdownLayout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/accountNumberTypeLayout">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/credentialsId"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
     android:id="@+id/accountNumberTypeLayout"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:hint="Account number type"
-    app:layout_constraintTop_toBottomOf="@id/ownerAccountDropdownLayout"
+    app:layout_constraintTop_toBottomOf="@id/credentialsIdLayout"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintBottom_toTopOf="@id/accountNumberLayout">
