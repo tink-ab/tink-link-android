@@ -76,9 +76,13 @@ class AddBeneficiaryDialog : DialogFragment() {
             if (loading.value == true) return@setOnClickListener
             statusText.postValue("Loading...")
 
+            val credentialsId = this.credentialsId.text?.toString()
+                ?.takeIf { it.isNotBlank() }
+                ?: selectedAccount.account.credentialsId
+
             Tink.getTransferRepository().addBeneficiary(
                 ownerAccountId = selectedAccount.account.id,
-                credentialsId = selectedAccount.account.credentialsId,
+                credentialsId = credentialsId,
                 accountNumberType = accountNumberType.text.toString(),
                 accountNumber = accountNumber.text.toString(),
                 name = name.text.toString(),
