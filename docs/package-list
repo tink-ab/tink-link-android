@@ -6,7 +6,6 @@ $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Cr
 $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.ThirdPartyAuthentication)com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/to-core-model.md
 $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.TypeEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/to-core-model.md
 $dokka.location:com.tink.service.misc$toAmount(com.tink.rest.models.CurrencyDenominatedAmount)com.tink.service.misc/com.tink.rest.models.-currency-denominated-amount/to-amount.md
-$dokka.location:com.tink.service.transfer$toCoreModel(com.tink.rest.models.SignableOperation)com.tink.service.transfer/com.tink.rest.models.-signable-operation/to-core-model.md
 com.tink.core
 com.tink.core.provider
 com.tink.link

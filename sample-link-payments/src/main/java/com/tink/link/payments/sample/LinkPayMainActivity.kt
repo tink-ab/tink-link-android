@@ -4,7 +4,9 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.tink.core.Tink
@@ -13,7 +15,9 @@ import com.tink.link.payments.TransferFailure
 import com.tink.link.payments.TransferMessage
 import com.tink.link.payments.TransferStatus
 import com.tink.link.payments.getTransferRepository
+import com.tink.link.payments.sample.beneficiary.AddBeneficiaryDialog
 import com.tink.link.payments.sample.configuration.Configuration
+import com.tink.link.payments.sample.credentials.SupplementalInformationFragment
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
 import com.tink.model.misc.ExactNumber
@@ -24,6 +28,7 @@ import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.streaming.publisher.StreamObserver
 import kotlinx.android.synthetic.main.activity_link_pay_main.*
+import retrofit2.HttpException
 import timber.log.Timber
 import java.util.regex.Pattern
 
@@ -50,6 +55,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private var selectedAccount: AccountItem? = null
     private var selectedBeneficiary: BeneficiaryItem? = null
+
+    private val accounts = MutableLiveData<List<Account>>().apply { value = emptyList() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,6 +108,22 @@ class LinkPayMainActivity : AppCompatActivity() {
         Tink.setUser(user)
 
         buildSourceDestinationMap()
+
+        accounts.observe(this, Observer {
+            addBeneficiaryButton.isEnabled = !it.isNullOrEmpty()
+        })
+
+        addBeneficiaryButton.setOnClickListener {
+            accounts.value
+                ?.takeIf { it.isNotEmpty() }
+                ?.let {
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+
+                    AddBeneficiaryDialog.newInstance(it)
+                        .show(transaction, null)
+                }
+        }
     }
 
     private fun getUser(): User {
@@ -109,6 +132,8 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun buildSourceDestinationMap() {
         loadAccounts { accounts ->
+            this.accounts.postValue(accounts)
+
             loadBeneficiaries { beneficiaries ->
 
                 val beneficiariesByAccountId = beneficiaries.groupBy { it.ownerAccountId }
@@ -129,12 +154,18 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun loadAccounts(onAccountsLoaded: (List<Account>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchAccounts(ResultHandler(onAccountsLoaded, ::handleError))
+            .fetchAccounts(ResultHandler(
+                onAccountsLoaded,
+                { handleError("Error when fetching accounts", it) }
+            ))
     }
 
     private fun loadBeneficiaries(onBeneficiariesLoaded: (List<Beneficiary>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchBeneficiaries(ResultHandler(onBeneficiariesLoaded, ::handleError))
+            .fetchBeneficiaries(ResultHandler(
+                onBeneficiariesLoaded,
+                { handleError("Error when fetching beneficiaries", it) }
+            ))
     }
 
     private fun initiateTransfer() {
@@ -187,20 +218,41 @@ class LinkPayMainActivity : AppCompatActivity() {
                         }
                     )
 
-                    val launchResult = (value as? TransferStatus.AwaitingAuthentication)
-                        ?.let { it.authenticationTask as? AuthenticationTask.ThirdPartyAuthentication }
-                        ?.launch(this@LinkPayMainActivity)
-
-                    if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
-                        // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    if (value is (TransferStatus.AwaitingAuthentication)) {
+                        handleAuthenticationTask(value.authenticationTask)
                     }
                 }
             }
         )
     }
 
-    private fun handleError(error: Throwable) {
+    private fun handleError(message: String, error: Throwable) {
+        // Show error to user
+        statusMessage.postValue(message)
+        if (error is HttpException) {
+            // Got some HttpException, show more details
+            statusSubtitleMessage.postValue(error.toString())
+        }
+
         Timber.e(error)
+    }
+
+    internal fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
+        when (authenticationTask) {
+            is AuthenticationTask.ThirdPartyAuthentication -> {
+                val launchResult = authenticationTask.launch(this)
+
+                if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
+                    // Something went wrong when launching, show dialog prompt to install or upgrade app
+                    Toast.makeText(this, "Couldn't launch third party app", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            is AuthenticationTask.SupplementalInformation -> {
+                SupplementalInformationFragment.newInstance(authenticationTask)
+                    .show(supportFragmentManager, null)
+            }
+        }
     }
 
     private fun getConfigFromIntent(): TinkConfiguration? =

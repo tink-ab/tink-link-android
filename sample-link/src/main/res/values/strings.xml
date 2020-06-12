@@ -1,0 +1,25 @@
+<resources>
+  <string name="app_name">Sample Tink Link</string>
+
+  <string name="redirect_uri_scheme">http</string>
+  <string name="redirect_uri_host">localhost</string>
+  <string name="redirect_uri_port">3000</string>
+  <string name="redirect_uri_path">/callback</string>
+
+  <string name="provider_list_title">Choose your bank</string>
+  <string name="financial_institution_fragment_title">Choose financial institution</string>
+  <string name="credentials_fragment_title">Enter your credentials</string>
+  <string name="credentials_type_fragment_title">Choose credentials type</string>
+  <string name="access_type_fragment_title">Sign in method</string>
+  <string name="access_type_fragment_subtitle">What method would you like to connect with?</string>
+  <string name="create_credentials_button">Continue</string>
+  <string name="provider_node_fragment_title">Choose provider</string>
+  <string name="third_party_authentication_download_app_positive">Install</string>
+  <string name="third_party_authentication_download_app_negative">Cancel</string>
+  <string name="third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
+  <string name="refresh_headline">Refresh</string>
+  <string name="refresh_all_button">Refresh All</string>
+  <string name="profile_headline">Credentials</string>
+  <string name="refresh_button">Refresh</string>
+  <string name="add_credentials_button">Add bank</string>
+</resources>
