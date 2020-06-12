@@ -4,5 +4,5 @@
 
 `val name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
 
-The name of the beneficiary
+The name chosen by the user for this beneficiary.
 
