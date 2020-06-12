@@ -64,7 +64,7 @@ object Dependencies {
     const val picasso = "com.squareup.picasso:picasso:2.71828"
 
     object Tink {
-        private const val coreVersion = "0.4.0"
+        private const val coreVersion = "0.5.0"
         const val core = "com.tink:core:$coreVersion"
     }
 }
