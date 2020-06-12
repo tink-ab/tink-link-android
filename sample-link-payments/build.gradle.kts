@@ -23,6 +23,10 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -45,8 +49,6 @@ dependencies {
 
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
-
-    implementation(Dependencies.Androidx.lifecycle_extensions)
 
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
