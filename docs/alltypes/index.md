@@ -8,8 +8,6 @@
 
 ##### [com.tink.model.account.Account](../com.tink.model.account/-account/index.md)
 
-An account could either be a debit account, a credit card, a loan or mortgage.
-
 
 | (extensions in package com.tink.service.account)
 
@@ -24,6 +22,19 @@ An account could either be a debit account, a credit card, a loan or mortgage.
 |
 
 ##### [com.tink.service.account.AccountServiceImpl](../com.tink.service.account/-account-service-impl/index.md)
+
+
+|
+
+##### [com.tink.link.payments.AddBeneficiaryFailure](../com.tink.link.payments/-add-beneficiary-failure/index.md)
+
+
+|
+
+##### [com.tink.link.payments.AddBeneficiaryStatus](../com.tink.link.payments/-add-beneficiary-status/index.md)
+
+The status of a transfer.
+Possible values are [Success](../com.tink.link.payments/-add-beneficiary-status/-success/index.md), [Loading](../com.tink.link.payments/-add-beneficiary-status/-loading/index.md), and [AwaitingAuthentication](../com.tink.link.payments/-add-beneficiary-status/-awaiting-authentication/index.md)
 
 
 |
@@ -57,7 +68,8 @@ Represents an authentication that needs to be completed by the user.
 
 ##### [com.tink.model.transfer.Beneficiary](../com.tink.model.transfer/-beneficiary/index.md)
 
-A beneficiary of a transfer
+A beneficiary is a payment or transfer destination account which has been authorized by the bank.
+Each beneficiary belongs to an account, which means that the given account can send money to that beneficiary.
 
 
 |
@@ -118,6 +130,13 @@ Context for handling things around user consent.
 |
 
 ##### [com.tink.service.consent.ConsentService](../com.tink.service.consent/-consent-service/index.md)
+
+
+|
+
+##### [com.tink.service.transfer.CreateBeneficiaryDescriptor](../com.tink.service.transfer/-create-beneficiary-descriptor/index.md)
+
+Descriptor to create a beneficiary of a transfer
 
 
 |
@@ -272,6 +291,13 @@ thus helping the end user make the correct decision on which provider to choose.
 
 |
 
+##### [com.tink.service.provider.ProviderFilter](../com.tink.service.provider/-provider-filter/index.md)
+
+A filter to describe which providers should be included in the response
+
+
+|
+
 ##### [com.tink.core.provider.ProviderRepository](../com.tink.core.provider/-provider-repository/index.md)
 
 Repository for retrieving [Provider](../com.tink.model.provider/-provider/index.md)s
@@ -335,11 +361,6 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 |
 
 ##### [com.tink.model.transfer.SignableOperation](../com.tink.model.transfer/-signable-operation/index.md)
-
-
-| (extensions in package com.tink.service.transfer)
-
-##### [com.tink.rest.models.SignableOperation](../com.tink.service.transfer/com.tink.rest.models.-signable-operation/index.md)
 
 
 |

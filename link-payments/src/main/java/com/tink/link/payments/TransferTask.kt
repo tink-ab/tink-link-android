@@ -59,6 +59,7 @@ internal class TransferTask(
 
     private suspend fun SignableOperation.toTransferStatus() =
         when (status) {
+            SignableOperation.Status.UNKNOWN,
             SignableOperation.Status.CREATED,
             SignableOperation.Status.EXECUTING -> TransferStatus.Loading(statusMessage.ifBlank { null })
 
