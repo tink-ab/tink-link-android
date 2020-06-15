@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.providerlist.ProviderListRecyclerAdapter
+import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
@@ -64,5 +65,8 @@ abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(la
         }
     }
 
+    /**
+     * Navigate to the [ProviderNodeFragment]
+     */
     abstract fun navigateToNode(node: ProviderTreeNode)
 }

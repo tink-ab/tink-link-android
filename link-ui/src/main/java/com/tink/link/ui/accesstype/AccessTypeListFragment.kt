@@ -6,7 +6,6 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.toArrayList
-import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
@@ -31,9 +30,6 @@ class AccessTypeListFragment :
         toolbar.title = getString(R.string.tink_access_type_fragment_title)
     }
 
-    /**
-     * Navigate to the [ProviderNodeFragment]
-     */
     override fun navigateToNode(node: ProviderTreeNode) {
         findNavController().navigate(
             R.id.credentialsTypeListFragment,
