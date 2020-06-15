@@ -17,8 +17,8 @@ internal fun ProviderTreeNode.AccessTypeNode.capabilitiesText(
 
 internal fun ProviderTreeNode.AccessTypeNode.capabilities() =
     credentialsTypes
-        .flatMap { credentialTypeNode ->
-            credentialTypeNode
+        .flatMap { credentialsTypeNode ->
+            credentialsTypeNode
                 .providers
                 .flatMap { providerNode ->
                     providerNode.provider.capabilities
