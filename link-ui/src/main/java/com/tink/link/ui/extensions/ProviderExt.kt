@@ -4,7 +4,6 @@ import android.content.Context
 import com.tink.link.ui.R
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
-import java.util.Locale
 
 internal fun ProviderTreeNode.AccessTypeNode.capabilitiesText(
     context: Context,
