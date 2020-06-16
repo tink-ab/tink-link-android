@@ -59,10 +59,4 @@
   <string name="tink_add_credentials_button">Add bank</string>
   <string name="tink_search">Search</string>
   <string name="tink_close">Close</string>
-  <string name="tink_access_type_card_open_banking_title">Checking accounts</string>
-  <string name="tink_access_type_card_open_banking_description">Including everyday accounts, such as your salary account</string>
-  <string name="tink_access_type_card_open_banking_button_text">Add</string>
-  <string name="tink_access_type_card_other_title">Other account types</string>
-  <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
-  <string name="tink_access_type_card_other_button_text">Add</string>
 </resources>
