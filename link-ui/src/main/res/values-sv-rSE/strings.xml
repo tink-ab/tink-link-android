@@ -1,6 +1,17 @@
 <resources>
     <string name="provider_list_title">Välj bank</string>
     <string name="provider_list_search_hint">Sök efter banker eller kort</string>
+    <string name="provider_select_access_type_title">Lägg till %s</string>
+    <string name="provider_capability_transfers">överföringar</string>
+    <string name="provider_capability_e_invoices">e-fakturor</string>
+    <string name="provider_capability_mortgage_aggregation">bolån</string>
+    <string name="provider_capability_checking_accounts">vargagskonton</string>
+    <string name="provider_capability_savings_accounts">sparkonton</string>
+    <string name="provider_capability_credit_cards">kreditkort</string>
+    <string name="provider_capability_loans">lån</string>
+    <string name="provider_capability_investments">investeringar</string>
+    <string name="provider_capability_payments">betalningar</string>
+    <string name="provider_capability_identity_data">personlig information</string>
     <string name="provider_select_credentials_type_title">Inloggningsmetod</string>
     <string name="provider_select_credentials_type_password_default_description">Lösenord</string>
     <string name="provider_select_credentials_type_mobile_bank_id_default_description">Mobilt BankID</string>
@@ -36,7 +47,6 @@
     <string name="ok_button">OK</string>
     <string name="error_unknown">Något gick fel. Försök igen senare.</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
-    <string name="provider_select_access_type_title">Lägg till %s</string>
     <string name="tink_refresh_headline">Refresh</string>
     <string name="tink_refresh_all_button">Refresh All</string>
     <string name="tink_profile_headline">Credentials</string>
@@ -50,14 +60,4 @@
     <string name="tink_access_type_card_other_title">Other account types</string>
     <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
     <string name="tink_access_type_card_other_button_text">Add</string>
-    <string name="provider_capability_transfers">överföringar</string>
-    <string name="provider_capability_e_invoices">e-fakturor</string>
-    <string name="provider_capability_mortgage_aggregation">bolån</string>
-    <string name="provider_capability_checking_accounts">vargagskonton</string>
-    <string name="provider_capability_savings_accounts">sparkonton</string>
-    <string name="provider_capability_credit_cards">kreditkort</string>
-    <string name="provider_capability_loans">lån</string>
-    <string name="provider_capability_investments">investeringar</string>
-    <string name="provider_capability_payments">betalningar</string>
-    <string name="provider_capability_identity_data">personlig information</string>
 </resources>

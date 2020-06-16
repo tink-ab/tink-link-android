@@ -6,6 +6,17 @@
   <string name="tink_redirect_uri_path" translatable="false">/callback</string>
   <string name="provider_list_title">Choose bank</string>
   <string name="provider_list_search_hint">Search for bank or card</string>
+  <string name="provider_select_access_type_title">Add %s</string>
+  <string name="provider_capability_transfers">transfers</string>
+  <string name="provider_capability_e_invoices">e-invoices</string>
+  <string name="provider_capability_mortgage_aggregation">mortgages</string>
+  <string name="provider_capability_checking_accounts">current accounts</string>
+  <string name="provider_capability_savings_accounts">savings accounts</string>
+  <string name="provider_capability_credit_cards">credit cards</string>
+  <string name="provider_capability_loans">loans</string>
+  <string name="provider_capability_investments">investments</string>
+  <string name="provider_capability_payments">payments</string>
+  <string name="provider_capability_identity_data">identity information</string>
   <string name="provider_select_credentials_type_title">Sign in method</string>
   <string name="provider_select_credentials_type_password_default_description">Password</string>
   <string name="provider_select_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
@@ -41,7 +52,6 @@
   <string name="ok_button">OK</string>
   <string name="error_unknown">Something went wrong. Please try again later.</string>
   <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
-  <string name="provider_select_access_type_title">Add %s</string>
   <string name="tink_refresh_headline">Refresh</string>
   <string name="tink_refresh_all_button">Refresh All</string>
   <string name="tink_profile_headline">Credentials</string>
@@ -55,14 +65,4 @@
   <string name="tink_access_type_card_other_title">Other account types</string>
   <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
   <string name="tink_access_type_card_other_button_text">Add</string>
-  <string name="provider_capability_transfers">transfers</string>
-  <string name="provider_capability_e_invoices">e-invoices</string>
-  <string name="provider_capability_mortgage_aggregation">mortgages</string>
-  <string name="provider_capability_checking_accounts">current accounts</string>
-  <string name="provider_capability_savings_accounts">savings accounts</string>
-  <string name="provider_capability_credit_cards">credit cards</string>
-  <string name="provider_capability_loans">loans</string>
-  <string name="provider_capability_investments">investments</string>
-  <string name="provider_capability_payments">payments</string>
-  <string name="provider_capability_identity_data">identity information</string>
 </resources>
