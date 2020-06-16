@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  * Fragment responsible for displaying a list of financial institution groups.
  * This is the root level of the tree.
  */
-class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
+internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
 
     private var providerAdapter: ProviderListRecyclerAdapter? = null
 

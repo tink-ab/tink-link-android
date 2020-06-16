@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  *
  * @see [ProviderTreeNode.AccessTypeNode]
  */
-class CredentialsTypeListFragment :
+internal class CredentialsTypeListFragment :
     ProviderTreeNodeFragment(R.layout.tink_fragment_credentials_type_list) {
 
     private val toolbarTitle: String by lazy {

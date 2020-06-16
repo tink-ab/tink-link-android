@@ -39,7 +39,7 @@ class MainLinkUiActivity : AppCompatActivity() {
             startActivityForResult(
                 TinkLinkUiActivity.createIntent(
                     context = this,
-                    styleResId = R.style.TinkStyle_ChewingGum,
+                    styleResId = R.style.TinkLinkUiStyle,
                     scopes = listOf(Scope.AccountsRead),
                     user = createdUser(),
                     market = "SE",
