@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  *
  * @see [ProviderTreeNode.FinancialInstitutionGroupNode]
  */
-class FinancialInstitutionListFragment :
+internal class FinancialInstitutionListFragment :
     ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
 
     private val toolbarTitle: String by lazy {

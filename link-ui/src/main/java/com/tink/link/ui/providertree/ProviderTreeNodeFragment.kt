@@ -18,7 +18,7 @@ internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
 /**
  * Abstract helper class for declaring a fragment used to display a list of [ProviderTreeNode] objects.
  */
-abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes) {
+internal abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes) {
 
     private var providerAdapter: ProviderListRecyclerAdapter? = null
 
