@@ -32,4 +32,6 @@ subprojects {
     tasks {
         withType(Javadoc::class).all { enabled = false }
     }
+
+    apply { from("../ktlint.gradle") }
 }
