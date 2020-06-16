@@ -6,7 +6,7 @@ steps:
         run: app
         config: .buildkite/docker-compose.gradle.yml
   - name: ':gradle: Build'
-    command: .buildkite/run-assemble-debug.sh
+    command: .buildkite/run-assemble.sh
     plugins:
       docker-compose#v2.5.1:
         run: app
