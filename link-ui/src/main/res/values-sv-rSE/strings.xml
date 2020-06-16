@@ -50,4 +50,14 @@
     <string name="tink_access_type_card_other_title">Other account types</string>
     <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
     <string name="tink_access_type_card_other_button_text">Add</string>
+    <string name="provider_capability_transfers">överföringar</string>
+    <string name="provider_capability_e_invoices">e-fakturor</string>
+    <string name="provider_capability_mortgage_aggregation">bolån</string>
+    <string name="provider_capability_checking_accounts">vargagskonton</string>
+    <string name="provider_capability_savings_accounts">sparkonton</string>
+    <string name="provider_capability_credit_cards">kreditkort</string>
+    <string name="provider_capability_loans">lån</string>
+    <string name="provider_capability_investments">investeringar</string>
+    <string name="provider_capability_payments">betalningar</string>
+    <string name="provider_capability_identity_data">personlig information</string>
 </resources>
