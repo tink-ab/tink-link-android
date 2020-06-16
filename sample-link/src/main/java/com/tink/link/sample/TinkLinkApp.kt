@@ -14,12 +14,12 @@ class TinkLinkApp : Application() {
         Timber.plant(getTimberTree())
     }
 
-    private fun getTimberTree() = if(BuildConfig.DEBUG) {
+    private fun getTimberTree() = if (BuildConfig.DEBUG) {
         Timber.DebugTree()
     } else {
         object : Timber.Tree() {
             override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
-                //NOOP
+                // NOOP
             }
         }
     }

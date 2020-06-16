@@ -57,26 +57,30 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
             findNavController().navigateUp()
         }
 
-
         val fields = provider.fields.map { field ->
             updateArgs?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
         }
 
         viewModel.setFields(fields)
 
-        viewModel.fields.observe(viewLifecycleOwner, Observer { fields ->
-            if (credentialsFields.childCount > 0) {
-                credentialsFields.removeAllViews()
+        viewModel.fields.observe(
+            viewLifecycleOwner,
+            Observer { fields ->
+                if (credentialsFields.childCount > 0) {
+                    credentialsFields.removeAllViews()
+                }
+                for (field in fields) {
+                    credentialsFields
+                        .addView(
+                            CredentialsField(requireContext())
+                                .also {
+                                    it.updatePadding(bottom = resources.dpToPixels(32))
+                                    it.setupField(field)
+                                }
+                        )
+                }
             }
-            for (field in fields) {
-                credentialsFields
-                    .addView(CredentialsField(requireContext())
-                        .also {
-                            it.updatePadding(bottom = resources.dpToPixels(32))
-                            it.setupField(field)
-                        })
-            }
-        })
+        )
 
         createCredentialsBtn.setOnClickListener {
             when {
@@ -85,50 +89,64 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
                 manualAuthArgs?.credentialsId?.isEmpty() == false -> authenticateCredentials()
 
                 else -> createCredentials()
-
             }
         }
 
-        viewModel.credentials.observe(viewLifecycleOwner, Observer {
-            Timber.d(it.toString())
-        })
-
-        viewModel.createdCredentials.observe(viewLifecycleOwner, Observer { credentials ->
-            Timber.d("Received update for credentials ${credentials.id}")
-            status.text = "Status = ${credentials.status?.name}"
-            statusPayload.text = credentials.statusPayload
-        })
-
-        viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
-            when (state) {
-                CredentialsViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
-                CredentialsViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
-                CredentialsViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
-                else -> {
-                }
+        viewModel.credentials.observe(
+            viewLifecycleOwner,
+            Observer {
+                Timber.d(it.toString())
             }
-        })
+        )
 
-        viewModel.thirdPartyAuthenticationEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
-                activity?.let {
-                    thirdPartyAuthentication.launch(it) {
-                        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        Snackbar.make(
-                            view,
-                            R.string.third_party_authentication_download_app_negative_error,
-                            Snackbar.LENGTH_LONG
-                        ).show()
+        viewModel.createdCredentials.observe(
+            viewLifecycleOwner,
+            Observer { credentials ->
+                Timber.d("Received update for credentials ${credentials.id}")
+                status.text = "Status = ${credentials.status?.name}"
+                statusPayload.text = credentials.statusPayload
+            }
+        )
+
+        viewModel.viewState.observe(
+            viewLifecycleOwner,
+            Observer { state ->
+                when (state) {
+                    CredentialsViewModel.ViewState.UPDATING -> loadingGroup.visibility = View.VISIBLE
+                    CredentialsViewModel.ViewState.UPDATED -> loadingProgress.visibility = View.GONE
+                    CredentialsViewModel.ViewState.NOT_LOADING -> loadingGroup.visibility = View.GONE
+                    else -> {
                     }
                 }
             }
-        })
+        )
 
-        viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { statusPayload ->
-                Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
+        viewModel.thirdPartyAuthenticationEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
+                    activity?.let {
+                        thirdPartyAuthentication.launch(it) {
+                            viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+                            Snackbar.make(
+                                view,
+                                R.string.third_party_authentication_download_app_negative_error,
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+                }
             }
-        })
+        )
+
+        viewModel.errorEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { statusPayload ->
+                    Snackbar.make(view, statusPayload, Snackbar.LENGTH_LONG).show()
+                }
+            }
+        )
     }
 
     private fun validateFields() {
@@ -159,7 +177,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
             viewModel.createCredentials(provider, fields) { error ->
                 view?.let { view ->
                     val message = error.localizedMessage ?: error.message
-                    ?: "Something went wrong. Please try again later."
+                        ?: "Something went wrong. Please try again later."
                     Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
                 }
             }
@@ -185,7 +203,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
         ) { error ->
             view?.let { view ->
                 val message = error.localizedMessage ?: error.message
-                ?: "Something went wrong. Please try again later."
+                    ?: "Something went wrong. Please try again later."
                 Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
             }
         }
@@ -198,7 +216,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
         viewModel.authenticateCredentials(id) { error ->
             view?.let { view ->
                 val message = error.localizedMessage ?: error.message
-                ?: "Something went wrong. Please try again later."
+                    ?: "Something went wrong. Please try again later."
                 Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
             }
         }
@@ -218,7 +236,8 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
 
     @Parcelize
     data class CredentialsUpdateArgs(
-        val credentialsId: String, val fields: Map<String, String>
+        val credentialsId: String,
+        val fields: Map<String, String>
     ) : Parcelable
 
     @Parcelize
