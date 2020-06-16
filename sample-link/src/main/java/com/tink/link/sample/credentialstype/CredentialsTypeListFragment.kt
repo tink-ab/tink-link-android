@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
-import kotlinx.android.synthetic.main.layout_toolbar.*
 import com.tink.link.sample.R
 import com.tink.link.sample.extensions.toArrayList
+import com.tink.link.sample.providernode.ProviderNodeFragment
 import com.tink.link.sample.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.sample.providertree.ARG_PROVIDER_TREE
 import com.tink.link.sample.providertree.ProviderTreeNodeFragment
-import com.tink.link.sample.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
+import kotlinx.android.synthetic.main.layout_provider_tree_node_list.*
+import kotlinx.android.synthetic.main.layout_toolbar.*
 
 /**
  * Fragment responsible for displaying a list of credentials types that belongs to the same access type.

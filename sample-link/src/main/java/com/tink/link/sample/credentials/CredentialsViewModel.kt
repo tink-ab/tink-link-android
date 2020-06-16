@@ -196,14 +196,16 @@ class CredentialsViewModel : ViewModel() {
         onError: (Throwable) -> Unit
     ) {
         credentialsId.postValue(id)
-        credentialsRepository.authenticate(id,
+        credentialsRepository.authenticate(
+            id,
             ResultHandler(
                 { fetchCredentials() }, // Start streaming credentials
                 {
                     _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
-            ))
+            )
+        )
     }
 
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }

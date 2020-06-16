@@ -1,0 +1,8 @@
+version: '2'
+services:
+  app:
+    image: gcr.io/tink-containers/android:v1
+    working_dir: /application
+    volumes:
+      - ..:/application
+      - $HOME/agent-cache/$BUILDKITE_AGENT_NAME/bazel-cache:/root/.gradle

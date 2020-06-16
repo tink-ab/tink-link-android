@@ -49,11 +49,15 @@ class MainFragment : Fragment(), TinkLinkConsumer {
      * Example of fetching a user from an authentication code.
      */
     private fun getUserByAuthenticationCode(code: String) {
-        Tink.authenticateUser(code, ResultHandler(
-            { user: User ->
-                // Do something with the user
-            }, {}
-        ))
+        Tink.authenticateUser(
+            code,
+            ResultHandler(
+                { user: User ->
+                    // Do something with the user
+                },
+                {}
+            )
+        )
     }
 
     private fun getUserFromIntent(): User? =
