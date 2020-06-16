@@ -109,9 +109,12 @@ class LinkPayMainActivity : AppCompatActivity() {
 
         buildSourceDestinationMap()
 
-        accounts.observe(this, Observer {
-            addBeneficiaryButton.isEnabled = !it.isNullOrEmpty()
-        })
+        accounts.observe(
+            this,
+            Observer {
+                addBeneficiaryButton.isEnabled = !it.isNullOrEmpty()
+            }
+        )
 
         addBeneficiaryButton.setOnClickListener {
             accounts.value
@@ -154,18 +157,22 @@ class LinkPayMainActivity : AppCompatActivity() {
 
     private fun loadAccounts(onAccountsLoaded: (List<Account>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchAccounts(ResultHandler(
-                onAccountsLoaded,
-                { handleError("Error when fetching accounts", it) }
-            ))
+            .fetchAccounts(
+                ResultHandler(
+                    onAccountsLoaded,
+                    { handleError("Error when fetching accounts", it) }
+                )
+            )
     }
 
     private fun loadBeneficiaries(onBeneficiariesLoaded: (List<Beneficiary>) -> Unit) {
         Tink.getTransferRepository()
-            .fetchBeneficiaries(ResultHandler(
-                onBeneficiariesLoaded,
-                { handleError("Error when fetching beneficiaries", it) }
-            ))
+            .fetchBeneficiaries(
+                ResultHandler(
+                    onBeneficiariesLoaded,
+                    { handleError("Error when fetching beneficiaries", it) }
+                )
+            )
     }
 
     private fun initiateTransfer() {
@@ -179,7 +186,6 @@ class LinkPayMainActivity : AppCompatActivity() {
         val beneficiaryUri = destinationDropdown.text.toString()
             .takeIf { Pattern.compile(".+://.+").matcher(it).matches() }
             ?: return
-
 
         Tink.getTransferRepository().initiateTransfer(
             amount,
@@ -203,7 +209,7 @@ class LinkPayMainActivity : AppCompatActivity() {
                 override fun onNext(value: TransferStatus) {
 
                     statusSubtitleMessage.postValue(
-                        when(value) {
+                        when (value) {
                             is TransferStatus.Success -> value.message
                             is TransferStatus.Loading -> value.message
                             is TransferStatus.AwaitingAuthentication -> null

@@ -139,9 +139,12 @@ class AddBeneficiaryDialog : DialogFragment() {
             dismiss()
         }
 
-        statusText.observe(this, Observer {
-            view.statusText.text = it
-        })
+        statusText.observe(
+            this,
+            Observer {
+                view.statusText.text = it
+            }
+        )
     }
 
     companion object {
@@ -151,5 +154,4 @@ class AddBeneficiaryDialog : DialogFragment() {
             }
         }
     }
-
 }
