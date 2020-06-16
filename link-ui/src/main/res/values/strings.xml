@@ -55,14 +55,14 @@
   <string name="tink_access_type_card_other_title">Other account types</string>
   <string name="tink_access_type_card_other_description">Including saving accounts, credit cards, loans, investments and personal information</string>
   <string name="tink_access_type_card_other_button_text">Add</string>
-  <string name="tink_provider_capability_transfers">transfers</string>
-  <string name="tink_provider_capability_e_invoices">e-invoices</string>
-  <string name="tink_provider_capability_mortgage_aggregation">mortgages</string>
-  <string name="tink_provider_capability_checking_accounts">current accounts</string>
-  <string name="tink_provider_capability_savings_accounts">savings accounts</string>
-  <string name="tink_provider_capability_credit_cards">credit cards</string>
-  <string name="tink_provider_capability_loans">loans</string>
-  <string name="tink_provider_capability_investments">investments</string>
-  <string name="tink_provider_capability_payments">payments</string>
-  <string name="tink_provider_capability_identity_data">identity information</string>
+  <string name="provider_capability_transfers">transfers</string>
+  <string name="provider_capability_e_invoices">e-invoices</string>
+  <string name="provider_capability_mortgage_aggregation">mortgages</string>
+  <string name="provider_capability_checking_accounts">current accounts</string>
+  <string name="provider_capability_savings_accounts">savings accounts</string>
+  <string name="provider_capability_credit_cards">credit cards</string>
+  <string name="provider_capability_loans">loans</string>
+  <string name="provider_capability_investments">investments</string>
+  <string name="provider_capability_payments">payments</string>
+  <string name="provider_capability_identity_data">identity information</string>
 </resources>
