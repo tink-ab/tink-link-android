@@ -44,22 +44,14 @@ class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
             adapter.connections = it
         })
 
-        viewModel.providers.observe(viewLifecycleOwner, Observer { providerList ->
-            addBankButton.post {
-                if (providerList.isNotEmpty()) {
-
-                    addBankButton.isEnabled = true
-                    addBankButton.setOnClickListener {
-                        findNavController().navigate(
-                            R.id.action_profileFragment_to_providerListFragment,
-                            ProviderListFragment.getBundle(providerList)
-                        )
-                    }
-                } else {
-                    addBankButton.isEnabled = false
-                }
+        addBankButton.post {
+            addBankButton.isEnabled = true
+            addBankButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_profileFragment_to_providerListFragment
+                )
             }
-        })
+        }
         loadingBackground.setOnTouchListener { _, _ -> true } // Prevent click-through
         refreshButton.setOnClickListener { findNavController().navigate(R.id.refreshCredentialsFragment) }
     }

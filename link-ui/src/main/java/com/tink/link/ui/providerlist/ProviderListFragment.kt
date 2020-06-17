@@ -5,6 +5,9 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
@@ -13,10 +16,7 @@ import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
-import com.tink.link.ui.providertree.ProviderTreeNodeFragment
-import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
-import com.tink.model.provider.toProviderTree
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
@@ -24,13 +24,11 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.*
  * Fragment responsible for displaying a list of financial institution groups.
  * This is the root level of the tree.
  */
-internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fragment_provider_list) {
+internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_list) {
 
     private var providerAdapter: ProviderListRecyclerAdapter? = null
 
-    private val providerList: List<ProviderTreeNode> by lazy {
-        requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))
-    }
+    private val viewModel: ProviderListViewModel by viewModels()
 
     private var queryString: String = ""
 
@@ -41,18 +39,23 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         with(providers) {
             layoutManager = LinearLayoutManager(requireContext())
             providerAdapter = ProviderListRecyclerAdapter().apply {
-                providers = providerList
                 onItemClickedListener = ::navigateToNode
             }
             adapter = providerAdapter
         }
+
+        viewModel.providers.observe(viewLifecycleOwner, Observer {
+            providerAdapter?.providers = it
+        })
+
+        setupToolbar()
     }
 
-    override fun setupToolbar() {
-        super.setupToolbar()
+    private fun setupToolbar() {
         toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search)
         val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
@@ -70,7 +73,7 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
                 setQuery(queryString, false)
                 isIconified = false
             }
-            setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String): Boolean {
                     search(query)
                     return true
@@ -84,26 +87,12 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
         }
     }
 
-    private fun search(searchText: String) {
-        queryString = searchText
-        val filteredProviders =
-                queryString
-                    .takeIf { it.isNotBlank() && it.length >= 3 }
-                    ?.let { query ->
-                        providerList.filter {
-                            it.name?.contains(query, ignoreCase = true) ?: false
-                        }
-                    }
-                    ?: providerList
-        providerAdapter?.apply {
-            providers = filteredProviders
-        }
-    }
+    private fun search(searchText: String) = viewModel.search(searchText)
 
     /**
      * Navigate to the [FinancialInstitutionListFragment].
      */
-    override fun navigateToNode(node: ProviderTreeNode) {
+    private fun navigateToNode(node: ProviderTreeNode) {
         findNavController().navigate(
             R.id.action_providerListFragment_to_financialInstitutionListFragment,
             bundleOf(
@@ -122,12 +111,5 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
 
     companion object {
         internal const val QUERY = "query"
-        /**
-         * Create an arguments bundle.
-         *
-         * This transforms the [providers] list into a list of [ProviderTreeNode] objects.
-         */
-        fun getBundle(providers: List<Provider>) =
-            bundleOf(ARG_PROVIDER_TREE to providers.toProviderTree().toArrayList())
     }
 }
