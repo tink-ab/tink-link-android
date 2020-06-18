@@ -10,14 +10,14 @@ import com.tink.model.provider.toProviderTree
 
 internal class ProviderListViewModel : ViewModel() {
 
-    private var allProviders = Transformations.map(ProviderDataSource) {
+    private val query = MutableLiveData<String>()
+    private val path = MutableLiveData<ProviderListPath>()
+
+    private val allProviders = Transformations.map(ProviderDataSource) {
         it.toProviderTree()
     }
 
-    private var path = MutableLiveData<ProviderListPath>()
-
-    private val _providers = MediatorLiveData<List<ProviderTreeNode>>().apply {
-
+    private val providersByPath = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
 
             val allProviders = allProviders.value ?: return
@@ -29,16 +29,33 @@ internal class ProviderListViewModel : ViewModel() {
         }
         addSource(path) { update() }
         addSource(allProviders) { update() }
-
     }
-    val providers: LiveData<List<ProviderTreeNode>> = _providers
 
-    fun search(query: String) {
-       // TODO
+    private val filteredProviders = MediatorLiveData<List<ProviderTreeNode>>().apply {
+        fun update() {
+            val providers = providersByPath.value ?: return
+            val query = query.value ?: ""
+
+            val filteredProviders =
+                if (query.isNotBlank() && query.length >= 3) {
+                    providers.filter { it.name?.contains(query, ignoreCase = true) ?: false }
+                } else {
+                    providers
+                }
+
+            if (filteredProviders != value) {
+                value = filteredProviders
+            }
+        }
+        addSource(providersByPath) { update() }
+        addSource(query) { update() }
     }
+
+    val providers: LiveData<List<ProviderTreeNode>> = filteredProviders
+
+    fun search(query: String) = this.query.postValue(query)
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
-
 
     // TODO nicify code
     private fun applyPath(

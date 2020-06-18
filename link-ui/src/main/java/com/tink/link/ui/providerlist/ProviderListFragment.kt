@@ -34,6 +34,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         arguments?.getParcelable<ProviderListPath>(ARG_PATH) ?: ProviderListPath()
     }
 
+    private val toolbarTitle: String? by lazy {
+        arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         queryString = savedInstanceState?.getString(QUERY) ?: ""
@@ -60,14 +64,18 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     private fun setupToolbar() {
-        toolbar.setTitle(R.string.tink_provider_list_title)
+        toolbarTitle?.let(toolbar::setTitle) ?: toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search)
         val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
         DrawableCompat.setTint(
             searchMenuItem.icon,
             requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
         )
-        setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
+        if (path.shouldShowSearch()) {
+            setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
+        } else {
+            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
+        }
     }
 
     private fun setupSearch(searchView: SearchView) {
@@ -91,7 +99,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         }
     }
 
-    private fun search(searchText: String) = viewModel.search(searchText)
+    private fun search(searchText: String) {
+        queryString = searchText
+        viewModel.search(searchText)
+    }
 
     /**
      * Navigate to the [FinancialInstitutionListFragment].
@@ -111,7 +122,8 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             findNavController().navigate(
                 R.id.action_providerListFragment_next,
                 bundleOf(
-                    ARG_PATH to newPath
+                    ARG_PATH to newPath,
+                    ARG_PROVIDER_TOOLBAR_TITLE to node.name
                 )
             )
         }
@@ -127,5 +139,15 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     companion object {
         internal const val QUERY = "query"
         internal const val ARG_PATH = "arg_path"
+        internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
     }
 }
+
+/**
+ * Only show search for the first two levels
+ */
+private fun ProviderListPath.shouldShowSearch() =
+    financialInstitutionNodeByFinancialInstitution == null
+            && accessTypeNodeByType == null
+            && credentialsTypeNodeByType == null
+            && providerNodeByProvider == null
