@@ -57,57 +57,33 @@ internal class ProviderListViewModel : ViewModel() {
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
 
-    // TODO nicify code
     private fun applyPath(
         providers: List<ProviderTreeNode>,
         path: ProviderListPath
     ): List<ProviderTreeNode> {
-        var result = providers
 
-        val financialInstitutionGroupName = path.financialInstitutionGroupNodeByName
-        if (financialInstitutionGroupName != null) {
-            result = result
-                .findFinancialInstitutionGroupNode(path.financialInstitutionGroupNodeByName)
-                ?.financialInstitutions ?: return result
-        } else {
-            return result
-        }
+        val financialInstitutions = path.financialInstitutionGroupNodeByName?.let {
+            providers.findFinancialInstitutionGroupNode(it)?.financialInstitutions
+        } ?: return providers
 
-        val financialInstitution = path.financialInstitutionNodeByFinancialInstitution
-        if (financialInstitution != null) {
-            result = result
-                .firstOrNull { it.financialInstitution == path.financialInstitutionNodeByFinancialInstitution }
-                ?.accessTypes ?: return result
-        } else {
-            return result
-        }
+        val accessTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
+            financialInstitutions.firstOrNull { it.financialInstitution == pathItem }?.accessTypes
+        } ?: return financialInstitutions
 
-        val accessType = path.accessTypeNodeByType
-        if (accessType != null) {
-            result = result.firstOrNull { it.type == path.accessTypeNodeByType }
-                ?.credentialsTypes ?: return result
-        } else {
-            return result
-        }
+        val credentialsTypes = path.accessTypeNodeByType?.let { pathItem ->
+            accessTypes.firstOrNull { it.type == pathItem }?.credentialsTypes
+        } ?: return accessTypes
 
-        val credentialsType = path.credentialsTypeNodeByType
-        return if (credentialsType != null) {
-            result.firstOrNull { it.type == credentialsType }
-                ?.providers ?: result
-        } else {
-            result
-        }
+        return path.credentialsTypeNodeByType?.let { pathItem ->
+            credentialsTypes.firstOrNull { it.type == pathItem }?.providers
+        } ?: credentialsTypes
     }
 
     private fun List<ProviderTreeNode>.findFinancialInstitutionGroupNode(
         name: String?
     ): ProviderTreeNode.FinancialInstitutionGroupNode? {
-        return firstOrNullWithCorrectType { it.name == name }
-    }
-
-    private inline fun <A : Any, reified B : A> List<A>.firstOrNullWithCorrectType(predicate: (B) -> Boolean): B? {
         for (element in this) {
-            if (element is B && predicate(element)) {
+            if (element is ProviderTreeNode.FinancialInstitutionGroupNode && element.name == name) {
                 return element
             }
         }
