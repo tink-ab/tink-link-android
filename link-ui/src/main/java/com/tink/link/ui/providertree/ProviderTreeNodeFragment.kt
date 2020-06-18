@@ -4,15 +4,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.providerlist.ProviderListRecyclerAdapter
+import com.tink.link.ui.providerlist.ProviderListViewModel
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_layout_provider_tree_node_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
 internal const val ARG_PROVIDER_TREE = "ARG_PROVIDER_TREE"
+internal const val ARG_PROVIDER_SELECTION_PATH = "ARG_PROVIDER_SELECTION_PATH"
 internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
 
 /**
@@ -21,6 +24,8 @@ internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
 internal abstract class ProviderTreeNodeFragment(@LayoutRes layoutRes: Int) : Fragment(layoutRes) {
 
     private var providerAdapter: ProviderListRecyclerAdapter? = null
+
+    private val viewModel: ProviderListViewModel by viewModels()
 
     private val providerList: List<ProviderTreeNode> by lazy {
         requireNotNull(arguments?.getParcelableArrayList<ProviderTreeNode>(ARG_PROVIDER_TREE))

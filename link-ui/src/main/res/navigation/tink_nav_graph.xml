@@ -25,6 +25,9 @@
     <action
       android:id="@+id/action_providerListFragment_to_financialInstitutionListFragment"
       app:destination="@id/financialInstitutionListFragment" />
+    <action
+      android:id="@+id/action_providerListFragment_next"
+      app:destination="@id/providerListFragment" />
   </fragment>
   <fragment
     android:id="@+id/financialInstitutionListFragment"
@@ -66,7 +69,7 @@
     android:id="@+id/connectionSuccessfulFragment"
     android:name="com.tink.link.ui.credentials.ConnectionSuccessfulFragment"
     android:label="ConnectionSuccessfulFragment"
-    tools:layout="@layout/tink_fragment_connection_successful"/>
+    tools:layout="@layout/tink_fragment_connection_successful" />
   <fragment
     android:id="@+id/providerNodeFragment"
     android:name="com.tink.link.ui.providernode.ProviderNodeFragment"

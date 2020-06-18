@@ -11,11 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
+import com.tink.link.ui.credentials.CredentialsFragment
 import com.tink.link.ui.extensions.getColorFromAttr
-import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
-import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
-import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
@@ -32,6 +30,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
     private var queryString: String = ""
 
+    private val path: ProviderListPath by lazy {
+        arguments?.getParcelable<ProviderListPath>(ARG_PATH) ?: ProviderListPath()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         queryString = savedInstanceState?.getString(QUERY) ?: ""
@@ -47,6 +49,8 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             }
             adapter = providerAdapter
         }
+
+        viewModel.setPath(path)
 
         viewModel.providers.observe(viewLifecycleOwner, Observer {
             providerAdapter?.providers = it
@@ -93,13 +97,24 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
      * Navigate to the [FinancialInstitutionListFragment].
      */
     private fun navigateToNode(node: ProviderTreeNode) {
-        findNavController().navigate(
-            R.id.action_providerListFragment_to_financialInstitutionListFragment,
-            bundleOf(
-                ARG_PROVIDER_TREE to (node as ProviderTreeNode.FinancialInstitutionGroupNode).financialInstitutions.toArrayList(),
-                ARG_PROVIDER_TOOLBAR_TITLE to node.name
+
+        val newPath = path.append(node)
+
+        if (newPath.isFullPathToProvider) {
+            findNavController().navigate(
+                R.id.credentialsFragment,
+                CredentialsFragment.getBundle(
+                    newPath.providerNodeByProvider!!
+                )
             )
-        )
+        } else {
+            findNavController().navigate(
+                R.id.action_providerListFragment_next,
+                bundleOf(
+                    ARG_PATH to newPath
+                )
+            )
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -111,5 +126,6 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
     companion object {
         internal const val QUERY = "query"
+        internal const val ARG_PATH = "arg_path"
     }
 }
