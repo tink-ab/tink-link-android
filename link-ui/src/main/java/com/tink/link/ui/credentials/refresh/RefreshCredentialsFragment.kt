@@ -29,29 +29,35 @@ class RefreshCredentialsFragment : Fragment(R.layout.tink_fragment_refresh_crede
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
 
-        viewModel.refreshInfo.observe(viewLifecycleOwner, Observer { list ->
-            adapter.models = list
-        })
+        viewModel.refreshInfo.observe(
+            viewLifecycleOwner,
+            Observer { list ->
+                adapter.models = list
+            }
+        )
 
-        viewModel.infoRequiredEvent.observe(viewLifecycleOwner, Observer { event ->
+        viewModel.infoRequiredEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
 
-            event?.getContentIfNotHandled()?.let { credentials ->
-                when (credentials.status) {
-                    Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
-                    Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION ->
-                        credentials.thirdPartyAppAuthentication?.launch(requireActivity()) {
-                            // User cancelled authorization
+                event?.getContentIfNotHandled()?.let { credentials ->
+                    when (credentials.status) {
+                        Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION,
+                        Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION ->
+                            credentials.thirdPartyAppAuthentication?.launch(requireActivity()) {
+                                // User cancelled authorization
+                            }
+
+                        Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
+                            showSupplementalInfoDialog(credentials)
+
+                        else -> {
+                            // Event handling not applicable
                         }
-
-                    Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
-                        showSupplementalInfoDialog(credentials)
-
-                    else -> {
-                        // Event handling not applicable
                     }
                 }
             }
-        })
+        )
 
         refreshButton.setOnClickListener { viewModel.refreshAll() }
     }
@@ -59,7 +65,6 @@ class RefreshCredentialsFragment : Fragment(R.layout.tink_fragment_refresh_crede
     private fun showSupplementalInfoDialog(credentials: Credentials) {
 
         val credentialsFields = LinearLayout(requireContext())
-
 
         val params = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,

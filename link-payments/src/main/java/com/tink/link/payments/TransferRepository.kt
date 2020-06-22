@@ -1,6 +1,10 @@
 package com.tink.link.payments
 
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.payments.TransferStatus.AwaitingAuthentication
+import com.tink.link.payments.TransferStatus.Loading
+import com.tink.link.payments.TransferStatus.Success
+import com.tink.link.payments.codeexamples.addBeneficiaryExample
 import com.tink.link.payments.coroutines.launchForResult
 import com.tink.model.account.Account
 import com.tink.model.misc.Amount
@@ -9,6 +13,7 @@ import com.tink.service.credentials.CredentialsService
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
+import com.tink.service.transfer.CreateBeneficiaryDescriptor
 import com.tink.service.transfer.CreateTransferDescriptor
 import com.tink.service.transfer.TransferService
 import kotlinx.coroutines.CoroutineDispatcher
@@ -79,7 +84,6 @@ interface TransferRepository {
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription
 
-
     /**
      * Fetch all accounts of the user that are suitable to pick as the source of a transfer.
      */
@@ -89,6 +93,31 @@ interface TransferRepository {
      * Fetch all beneficiaries of the user.
      */
     fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>)
+
+    /**
+     * Add a new beneficiary
+     *
+     * @sample addBeneficiaryExample
+     */
+    fun addBeneficiary(
+        ownerAccountId: String,
+        credentialsId: String,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription
+
+    /**
+     * Add a new beneficiary
+     */
+    fun addBeneficiary(
+        ownerAccount: Account,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription
 }
 
 internal class TransferRepositoryImpl(
@@ -148,10 +177,43 @@ internal class TransferRepositoryImpl(
     }
 
     override fun fetchBeneficiaries(resultHandler: ResultHandler<List<Beneficiary>>) {
-        CoroutineScope(Dispatchers.IO + Job()).launchForResult(resultHandler) {
+        CoroutineScope(dispatcher + Job()).launchForResult(resultHandler) {
             transferService.getBeneficiaries()
         }
     }
+
+    override fun addBeneficiary(
+        ownerAccountId: String,
+        credentialsId: String,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription =
+        AddBeneficiaryTask(
+            CreateBeneficiaryDescriptor(
+                ownerAccountId, credentialsId, accountNumber, accountNumberType, name
+            ),
+            credentialsService,
+            transferService,
+            streamObserver
+        )
+
+    override fun addBeneficiary(
+        ownerAccount: Account,
+        accountNumber: String,
+        accountNumberType: String,
+        name: String,
+        streamObserver: StreamObserver<AddBeneficiaryStatus>
+    ): StreamSubscription =
+        addBeneficiary(
+            ownerAccountId = ownerAccount.id,
+            credentialsId = ownerAccount.credentialsId,
+            accountNumber = accountNumber,
+            accountNumberType = accountNumberType,
+            name = name,
+            streamObserver = streamObserver
+        )
 }
 
 /**

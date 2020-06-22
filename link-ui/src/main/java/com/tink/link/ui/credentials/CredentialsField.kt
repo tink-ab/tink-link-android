@@ -40,7 +40,7 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
         this.field = field
         updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         textInputLayout.hint = field.attributes.description +
-                " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
+            " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
         textInputLayout.placeholderText = field.attributes.hint
 
@@ -72,7 +72,6 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
                     if (it is Field.ValidationResult.ValidationError) it.errorMessage else null
             }
             .let { it == Field.ValidationResult.Valid }
-
 
     override fun getFilledField(): Field {
         return field.copy(value = textInputEditText.text.toString())

@@ -28,10 +28,10 @@ internal fun ProviderTreeNode.AccessTypeNode.capabilities() =
 
 internal fun List<Provider.Capability>.filterCapabilities() =
     this.filterNot {
-        it == Provider.Capability.TRANSFERS
-                || it == Provider.Capability.PAYMENTS
-                || it == Provider.Capability.MORTGAGE_AGGREGATION
-                || it == Provider.Capability.UNKNOWN
+        it == Provider.Capability.TRANSFERS ||
+            it == Provider.Capability.PAYMENTS ||
+            it == Provider.Capability.MORTGAGE_AGGREGATION ||
+            it == Provider.Capability.UNKNOWN
     }
 
 internal fun List<Provider.Capability>.toDisplayText(context: Context) =
