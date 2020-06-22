@@ -20,7 +20,8 @@ internal object ProviderDataSource : LiveData<List<Provider>>() {
                 },
                 {
                     // TODO: Error handling
-                }),
+                }
+            ),
             filter = ProviderFilter(includeDemoProviders = true)
         )
     }

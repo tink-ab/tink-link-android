@@ -56,9 +56,12 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
         viewModel.setPath(path)
 
-        viewModel.providers.observe(viewLifecycleOwner, Observer {
-            providerAdapter?.providers = it
-        })
+        viewModel.providers.observe(
+            viewLifecycleOwner,
+            Observer {
+                providerAdapter?.providers = it
+            }
+        )
 
         setupToolbar()
     }
@@ -147,7 +150,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
  * Only show search for the first two levels
  */
 private fun ProviderListPath.shouldShowSearch() =
-    financialInstitutionNodeByFinancialInstitution == null
-            && accessTypeNodeByType == null
-            && credentialsTypeNodeByType == null
-            && providerNodeByProvider == null
+    financialInstitutionNodeByFinancialInstitution == null &&
+        accessTypeNodeByType == null &&
+        credentialsTypeNodeByType == null &&
+        providerNodeByProvider == null

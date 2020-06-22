@@ -19,7 +19,6 @@ internal class ProviderListViewModel : ViewModel() {
 
     private val providersByPath = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
-
             val allProviders = allProviders.value ?: return
             val path = path.value ?: return
 

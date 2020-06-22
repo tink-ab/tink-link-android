@@ -17,12 +17,11 @@ internal data class ProviderListPath(
 ) : Parcelable {
 
     @IgnoredOnParcel
-    val isFullPathToProvider = financialInstitutionGroupNodeByName != null
-            && financialInstitutionNodeByFinancialInstitution != null
-            && accessTypeNodeByType != null
-            && credentialsTypeNodeByType != null
-            && providerNodeByProvider != null
-
+    val isFullPathToProvider = financialInstitutionGroupNodeByName != null &&
+        financialInstitutionNodeByFinancialInstitution != null &&
+        accessTypeNodeByType != null &&
+        credentialsTypeNodeByType != null &&
+        providerNodeByProvider != null
 
     private fun appendRecursiveIfOnlyOneChild(
         childList: List<ProviderTreeNode>
@@ -56,4 +55,3 @@ internal data class ProviderListPath(
             }
         }
 }
-

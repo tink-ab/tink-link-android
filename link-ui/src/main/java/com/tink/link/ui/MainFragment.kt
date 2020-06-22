@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
-import com.tink.link.getUserContext
-import com.tink.model.provider.Provider
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 

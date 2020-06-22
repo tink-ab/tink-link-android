@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.credentials.CredentialsFragment
-import com.tink.link.ui.providerlist.ProviderListFragment
 import kotlinx.android.synthetic.main.tink_fragment_profile.*
 
 class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
