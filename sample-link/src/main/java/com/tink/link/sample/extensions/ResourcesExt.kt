@@ -3,7 +3,6 @@ package com.tink.link.sample.extensions
 import android.content.res.Resources
 import android.util.TypedValue
 
-
 fun Resources.dpToPixels(dp: Int): Int {
     return dpToPixels(dp.toFloat())
 }

@@ -22,7 +22,8 @@ import kotlin.properties.Delegates
 /**
  * RecyclerView adapter that shows a list of [ProviderTreeNode] objects.
  */
-class ProviderListRecyclerAdapter : RecyclerView.Adapter<ProviderViewHolder>(),
+class ProviderListRecyclerAdapter :
+    RecyclerView.Adapter<ProviderViewHolder>(),
     OnViewHolderClickedListener {
 
     var providers: List<ProviderTreeNode> by Delegates.observable(emptyList()) { _, _, _ -> notifyDataSetChanged() }
@@ -95,10 +96,10 @@ private fun Provider.AccessType.getDescription() =
 
 private fun Credentials.Type.getDescription(context: Context) =
     when (this) {
-        Credentials.Type.UNKNOWN -> context.getString(R.string.tink_credentials_type_unknown_default_description)
-        Credentials.Type.PASSWORD -> context.getString(R.string.tink_credentials_type_password_default_description)
-        Credentials.Type.MOBILE_BANKID -> context.getString(R.string.tink_credentials_type_mobile_bank_id_default_description)
-        Credentials.Type.THIRD_PARTY_AUTHENTICATION -> context.getString(R.string.tink_credentials_type_third_party_authentication_default_description)
-        Credentials.Type.KEYFOB -> context.getString(R.string.tink_credentials_type_keyfob_default_description)
-        Credentials.Type.FRAUD -> context.getString(R.string.tink_credentials_type_fraud_default_description)
+        Credentials.Type.UNKNOWN -> context.getString(R.string.tink_provider_select_credentials_type_unknown_default_description)
+        Credentials.Type.PASSWORD -> context.getString(R.string.tink_provider_select_credentials_type_password_default_description)
+        Credentials.Type.MOBILE_BANKID -> context.getString(R.string.tink_provider_select_credentials_type_mobile_bank_id_default_description)
+        Credentials.Type.THIRD_PARTY_AUTHENTICATION -> context.getString(R.string.tink_provider_select_credentials_type_third_party_authentication_default_description)
+        Credentials.Type.KEYFOB -> context.getString(R.string.tink_provider_select_credentials_type_keyfob_default_description)
+        Credentials.Type.FRAUD -> context.getString(R.string.tink_provider_select_credentials_type_fraud_default_description)
     }

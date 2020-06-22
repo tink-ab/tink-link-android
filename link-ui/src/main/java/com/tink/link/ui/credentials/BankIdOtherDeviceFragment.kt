@@ -32,7 +32,7 @@ class BankIdOtherDeviceFragment : DialogFragment() {
                 Toast
                     .makeText(
                         context,
-                        getString(R.string.tink_credentials_qr_code_error_message),
+                        getString(R.string.tink_supplemental_information_qr_code_error),
                         Toast.LENGTH_SHORT
                     )
                     .show()

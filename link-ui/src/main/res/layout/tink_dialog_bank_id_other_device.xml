@@ -14,7 +14,7 @@
     style="@style/tink_mega"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:text="@string/tink_credentials_supplemental_information"
+    android:text="@string/tink_supplemental_information_title"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
     android:gravity="center_horizontal"
-    android:text="@string/tink_credentials_qr_code_title"
+    android:text="@string/tink_supplemental_information_qr_code_title"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/qrCode" />
@@ -51,7 +51,7 @@
     android:layout_marginTop="16dp"
     android:gravity="center_horizontal"
     android:paddingBottom="32dp"
-    android:text="@string/tink_credentials_qr_code_description"
+    android:text="@string/tink_supplemental_information_qr_code_description"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/qrCodeTitle" />

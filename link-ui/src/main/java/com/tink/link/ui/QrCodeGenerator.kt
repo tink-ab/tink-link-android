@@ -32,7 +32,6 @@ internal object QrCodeGenerator {
                 }
             }
             return bitmap
-
         } catch (exception: WriterException) {
             return null
         }

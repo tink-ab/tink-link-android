@@ -11,7 +11,8 @@ import com.tink.link.ui.viewholders.OnViewHolderClickedListener
 import kotlinx.android.synthetic.main.tink_item_credentials_row.view.*
 import kotlin.properties.Delegates
 
-class CredentialsRowAdapter : RecyclerView.Adapter<CredentialsRowViewHolder>(),
+class CredentialsRowAdapter :
+    RecyclerView.Adapter<CredentialsRowViewHolder>(),
     OnViewHolderClickedListener {
 
     var connections: List<Connection> by Delegates.observable(emptyList()) { _, _, _ -> notifyDataSetChanged() }

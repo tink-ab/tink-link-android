@@ -30,7 +30,7 @@ class CredentialsField : LinearLayout {
     fun setupField(field: Field) {
         this.field = field
         description.text = field.attributes.description +
-                " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
+            " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
         textInputLayout.helperText = field.attributes.helpText
 
@@ -61,7 +61,6 @@ class CredentialsField : LinearLayout {
                     if (it is Field.ValidationResult.ValidationError) it.errorMessage else null
             }
             .let { it == Field.ValidationResult.Valid }
-
 
     fun getFilledField(): Field {
         return field.copy(value = textInputEditText.text.toString())

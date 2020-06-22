@@ -6,10 +6,10 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.link.ui.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.ui.providertree.ARG_PROVIDER_TREE
 import com.tink.link.ui.providertree.ProviderTreeNodeFragment
-import com.tink.link.ui.providernode.ProviderNodeFragment
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
 
@@ -28,7 +28,7 @@ internal class CredentialsTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.title = getString(R.string.tink_credentials_type_fragment_title)
+        toolbar.title = getString(R.string.tink_provider_select_credentials_type_title)
     }
 
     /**

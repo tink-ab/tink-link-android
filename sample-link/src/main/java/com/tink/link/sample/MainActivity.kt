@@ -5,8 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
-import com.tink.link.sample.configuration.Configuration
 import com.tink.link.getUserContext
+import com.tink.link.sample.configuration.Configuration
 import com.tink.service.network.Environment
 import com.tink.service.network.TinkConfiguration
 
@@ -15,11 +15,11 @@ private val MainActivity.testTinkLinkConfig
         environment = Configuration.sampleEnvironment,
         oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
-        Uri.Builder()
-            .scheme(getString(R.string.redirect_uri_scheme))
-            .encodedAuthority(getString(R.string.redirect_uri_host) + ":" + getString(R.string.redirect_uri_port))
-            .path(getString(R.string.redirect_uri_path))
-            .build()
+            Uri.Builder()
+                .scheme(getString(R.string.redirect_uri_scheme))
+                .encodedAuthority(getString(R.string.redirect_uri_host) + ":" + getString(R.string.redirect_uri_port))
+                .path(getString(R.string.redirect_uri_path))
+                .build()
     )
 
 class MainActivity : AppCompatActivity() {

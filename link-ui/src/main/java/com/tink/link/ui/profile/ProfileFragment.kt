@@ -40,9 +40,12 @@ class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.connections.observe(viewLifecycleOwner, Observer {
-            adapter.connections = it
-        })
+        viewModel.connections.observe(
+            viewLifecycleOwner,
+            Observer {
+                adapter.connections = it
+            }
+        )
 
         addBankButton.post {
             addBankButton.isEnabled = true

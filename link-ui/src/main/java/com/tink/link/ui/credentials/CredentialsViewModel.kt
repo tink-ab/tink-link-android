@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
-import com.tink.link.ui.CombinedLiveData
-import com.tink.link.ui.Event
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.link.getUserContext
+import com.tink.link.ui.CombinedLiveData
+import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
@@ -186,7 +186,7 @@ class CredentialsViewModel : ViewModel() {
 
         credentialsRepository.update(
             id,
-            "", //TODO: provider name
+            "", // TODO: provider name
             fields.toFieldMap(),
             ResultHandler(
                 {

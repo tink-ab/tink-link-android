@@ -6,11 +6,6 @@
 
 | Name | Summary |
 |---|---|
+| [CreateBeneficiaryDescriptor](-create-beneficiary-descriptor/index.md) | Descriptor to create a beneficiary of a transfer`data class CreateBeneficiaryDescriptor` |
 | [CreateTransferDescriptor](-create-transfer-descriptor/index.md) | `data class CreateTransferDescriptor` |
 | [TransferService](-transfer-service/index.md) | `interface TransferService` |
-
-### Extensions for External Classes
-
-| Name | Summary |
-|---|---|
-| [com.tink.rest.models.SignableOperation](com.tink.rest.models.-signable-operation/index.md) |  |

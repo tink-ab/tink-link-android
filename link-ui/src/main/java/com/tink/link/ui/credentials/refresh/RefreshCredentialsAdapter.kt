@@ -4,8 +4,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.R
+import com.tink.link.ui.extensions.inflate
 import kotlinx.android.synthetic.main.tink_item_credentials_refresh_row.view.*
 import kotlinx.android.synthetic.main.tink_item_credentials_row.view.logo
 import kotlinx.android.synthetic.main.tink_item_credentials_row.view.providerName

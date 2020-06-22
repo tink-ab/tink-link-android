@@ -27,7 +27,7 @@ internal class AccessTypeListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.title = getString(R.string.tink_access_type_fragment_title)
+        toolbar.title = getString(R.string.tink_provider_select_access_type_title, toolbarTitle)
     }
 
     override fun navigateToNode(node: ProviderTreeNode) {
