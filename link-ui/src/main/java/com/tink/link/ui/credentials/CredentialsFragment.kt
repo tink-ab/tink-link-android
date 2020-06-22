@@ -21,8 +21,8 @@ import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
-import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.setTextWithLinks
+import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
@@ -81,23 +81,32 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         }
 
         consentViewModel.apply {
-            showConsentInformation.observe(viewLifecycleOwner, Observer {
-                userGroup.visibility =
-                    if (it == true) View.VISIBLE else View.GONE
-            })
-            showTermsAndConditions.observe(viewLifecycleOwner, Observer {
-                termsAndConditionsText.visibility =
-                    if (it == true) {
-                        setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
-                        View.VISIBLE
-                    } else {
-                        View.GONE
-                    }
-            })
-            isUnverified.observe(viewLifecycleOwner, Observer {
-                unverifiedWarning.visibility =
-                    if (it == true) View.VISIBLE else View.GONE
-            })
+            showConsentInformation.observe(
+                viewLifecycleOwner,
+                Observer {
+                    userGroup.visibility =
+                        if (it == true) View.VISIBLE else View.GONE
+                }
+            )
+            showTermsAndConditions.observe(
+                viewLifecycleOwner,
+                Observer {
+                    termsAndConditionsText.visibility =
+                        if (it == true) {
+                            setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
+                }
+            )
+            isUnverified.observe(
+                viewLifecycleOwner,
+                Observer {
+                    unverifiedWarning.visibility =
+                        if (it == true) View.VISIBLE else View.GONE
+                }
+            )
         }
 
         provider.images?.icon?.let {
@@ -125,14 +134,17 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         viewModel.setFields(fields)
 
-        viewModel.fields.observe(viewLifecycleOwner, Observer { fieldList ->
-            if (credentialsFields.childCount > 0) {
-                credentialsFields.removeAllViews()
+        viewModel.fields.observe(
+            viewLifecycleOwner,
+            Observer { fieldList ->
+                if (credentialsFields.childCount > 0) {
+                    credentialsFields.removeAllViews()
+                }
+                for (field in fieldList) {
+                    credentialsFields.addView(field.toView(requireContext()))
+                }
             }
-            for (field in fieldList) {
-                credentialsFields.addView(field.toView(requireContext()))
-            }
-        })
+        )
 
         if (provider.helpText.isNotBlank()) {
             providerHelpText.visibility = View.VISIBLE
@@ -167,83 +179,107 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         }
 
-        viewModel.credentials.observe(viewLifecycleOwner, Observer {
-            Timber.d(it.toString())
-        })
-
-        viewModel.createdCredentials.observe(viewLifecycleOwner, Observer { credentials ->
-            // TODO: Remove
-            Timber.d("Received update for credentials ${credentials.id}")
-            Timber.d("Status = ${credentials.status?.name}")
-            Timber.d("Status = ${credentials.statusPayload}")
-        })
-
-        viewModel.viewState.observe(viewLifecycleOwner, Observer { state ->
-            when (state) {
-                CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
-                    showLoading(getString(R.string.tink_credentials_status_authorizing))
-                }
-
-                CredentialsViewModel.ViewState.UPDATING -> {
-                    showLoading(
-                        getString(
-                            R.string.tink_credentials_status_updating,
-                            provider.displayName
-                        )
-                    )
-                }
-
-                CredentialsViewModel.ViewState.UPDATED -> {
-                    statusDialog?.dismiss()
-                    showConnectionSuccessfulScreen()
-                }
-
-                CredentialsViewModel.ViewState.NOT_LOADING -> {
-                    statusDialog?.dismiss()
-                }
-
-                else -> { }
+        viewModel.credentials.observe(
+            viewLifecycleOwner,
+            Observer {
+                Timber.d(it.toString())
             }
-        })
+        )
 
-        viewModel.thirdPartyAuthenticationEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
-                activity?.let {
-                    thirdPartyAuthentication.launch(it) {
-                        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+        viewModel.createdCredentials.observe(
+            viewLifecycleOwner,
+            Observer { credentials ->
+                // TODO: Remove
+                Timber.d("Received update for credentials ${credentials.id}")
+                Timber.d("Status = ${credentials.status?.name}")
+                Timber.d("Status = ${credentials.statusPayload}")
+            }
+        )
+
+        viewModel.viewState.observe(
+            viewLifecycleOwner,
+            Observer { state ->
+                when (state) {
+                    CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
+                        showLoading(getString(R.string.tink_credentials_status_authorizing))
+                    }
+
+                    CredentialsViewModel.ViewState.UPDATING -> {
+                        showLoading(
+                            getString(
+                                R.string.tink_credentials_status_updating,
+                                provider.displayName
+                            )
+                        )
+                    }
+
+                    CredentialsViewModel.ViewState.UPDATED -> {
+                        statusDialog?.dismiss()
+                        showConnectionSuccessfulScreen()
+                    }
+
+                    CredentialsViewModel.ViewState.NOT_LOADING -> {
+                        statusDialog?.dismiss()
+                    }
+
+                    else -> { }
+                }
+            }
+        )
+
+        viewModel.thirdPartyAuthenticationEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
+                    activity?.let {
+                        thirdPartyAuthentication.launch(it) {
+                            viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+                        }
                     }
                 }
             }
-        })
+        )
 
-        viewModel.mobileBankIdAuthenticationEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
-                launchBankIdAuthentication(thirdPartyAuthentication)
-            }
-        })
-
-        viewModel.supplementalInformationEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { supplementalInformation ->
-                viewModel.credentialsId.value?.let { credentialsId ->
-                    showSupplementalInfoDialog(credentialsId, supplementalInformation)
+        viewModel.mobileBankIdAuthenticationEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
+                    launchBankIdAuthentication(thirdPartyAuthentication)
                 }
             }
-        })
+        )
 
-        viewModel.errorEvent.observe(viewLifecycleOwner, Observer { event ->
-            event.getContentIfNotHandled()?.let { statusPayload ->
-                val message =
-                    statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
-                showError(message)
+        viewModel.supplementalInformationEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { supplementalInformation ->
+                    viewModel.credentialsId.value?.let { credentialsId ->
+                        showSupplementalInfoDialog(credentialsId, supplementalInformation)
+                    }
+                }
             }
-        })
+        )
 
-        viewModel.authorizationCode.observe(viewLifecycleOwner, Observer { code ->
-            (activity as? TinkLinkUiActivity)?.let {
-                it.authorizationCode = code
-                viewModel.authorizationCodeSaved = true
+        viewModel.errorEvent.observe(
+            viewLifecycleOwner,
+            Observer { event ->
+                event.getContentIfNotHandled()?.let { statusPayload ->
+                    val message =
+                        statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
+                    showError(message)
+                }
             }
-        })
+        )
+
+        viewModel.authorizationCode.observe(
+            viewLifecycleOwner,
+            Observer { code ->
+                (activity as? TinkLinkUiActivity)?.let {
+                    it.authorizationCode = code
+                    viewModel.authorizationCodeSaved = true
+                }
+            }
+        )
     }
 
     private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
@@ -311,7 +347,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
             viewModel.createCredentials(provider, fields) { error ->
                 val message = error.localizedMessage ?: error.message
-                ?: getString(R.string.tink_error_unknown)
+                    ?: getString(R.string.tink_error_unknown)
                 showError(message)
             }
         }
@@ -357,7 +393,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
         viewModel.updateCredentials(credentialsId, fields) { error ->
             val message = error.localizedMessage ?: error.message
-            ?: getString(R.string.tink_error_unknown)
+                ?: getString(R.string.tink_error_unknown)
             showError(message)
         }
     }
@@ -390,6 +426,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     @Parcelize
     data class CredentialsUpdateArgs(
-        val credentialsId: String, val fields: Map<String, String>
+        val credentialsId: String,
+        val fields: Map<String, String>
     ) : Parcelable
 }

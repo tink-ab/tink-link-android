@@ -38,12 +38,15 @@ class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_SUCCESS)
         }
 
-        viewModel.authorizationCode.observe(viewLifecycleOwner, Observer { code ->
-            (activity as? TinkLinkUiActivity)?.let {
-                it.authorizationCode = code
-                viewModel.authorizationCodeSaved = true
+        viewModel.authorizationCode.observe(
+            viewLifecycleOwner,
+            Observer { code ->
+                (activity as? TinkLinkUiActivity)?.let {
+                    it.authorizationCode = code
+                    viewModel.authorizationCodeSaved = true
+                }
             }
-        })
+        )
     }
 
     companion object {

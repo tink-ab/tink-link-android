@@ -70,7 +70,7 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
                 setQuery(queryString, false)
                 isIconified = false
             }
-            setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String): Boolean {
                     search(query)
                     return true
@@ -87,14 +87,14 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
     private fun search(searchText: String) {
         queryString = searchText
         val filteredProviders =
-                queryString
-                    .takeIf { it.isNotBlank() && it.length >= 3 }
-                    ?.let { query ->
-                        providerList.filter {
-                            it.name?.contains(query, ignoreCase = true) ?: false
-                        }
+            queryString
+                .takeIf { it.isNotBlank() && it.length >= 3 }
+                ?.let { query ->
+                    providerList.filter {
+                        it.name?.contains(query, ignoreCase = true) ?: false
                     }
-                    ?: providerList
+                }
+                ?: providerList
         providerAdapter?.apply {
             providers = filteredProviders
         }

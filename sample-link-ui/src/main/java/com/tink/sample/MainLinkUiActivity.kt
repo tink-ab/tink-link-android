@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
-import com.tink.sample.configuration.Configuration
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import com.tink.sample.configuration.Configuration
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.synthetic.main.activity_main_link_ui.*
 
@@ -18,13 +18,13 @@ private val MainLinkUiActivity.testTinkLinkConfig
         environment = Configuration.sampleEnvironment,
         oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
-        Uri.Builder()
-            .scheme(getString(R.string.tink_redirect_uri_scheme))
-            .encodedAuthority(
-                getString(R.string.tink_redirect_uri_host) + ":" + getString(R.string.tink_redirect_uri_port)
-            )
-            .path(getString(R.string.tink_redirect_uri_path))
-            .build()
+            Uri.Builder()
+                .scheme(getString(R.string.tink_redirect_uri_scheme))
+                .encodedAuthority(
+                    getString(R.string.tink_redirect_uri_host) + ":" + getString(R.string.tink_redirect_uri_port)
+                )
+                .path(getString(R.string.tink_redirect_uri_path))
+                .build()
     )
 
 class MainLinkUiActivity : AppCompatActivity() {

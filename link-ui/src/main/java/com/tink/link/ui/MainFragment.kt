@@ -74,7 +74,8 @@ class MainFragment : Fragment() {
                         R.id.action_mainFragment_to_providerListFragment,
                         getBundle(providers)
                     )
-                }, {}
+                },
+                {}
             ),
             filter = ProviderFilter(includeDemoProviders = true)
         )

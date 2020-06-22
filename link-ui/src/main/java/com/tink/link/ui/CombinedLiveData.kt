@@ -27,11 +27,14 @@ class CombinedLiveData<S1 : Any, S2 : Any, R : Any>(
 
     override fun observe(owner: LifecycleOwner, observer: Observer<in R>) {
         super.observe(owner, observer)
-        backingLiveData.observe(owner, Observer { newValue ->
-            if (value != newValue) {
-                // Only transmit updates for new, non-null values.
-                newValue?.let { this@CombinedLiveData.postValue(it) }
+        backingLiveData.observe(
+            owner,
+            Observer { newValue ->
+                if (value != newValue) {
+                    // Only transmit updates for new, non-null values.
+                    newValue?.let { this@CombinedLiveData.postValue(it) }
+                }
             }
-        })
+        )
     }
 }

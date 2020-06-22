@@ -40,26 +40,32 @@ class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewModel.connections.observe(viewLifecycleOwner, Observer {
-            adapter.connections = it
-        })
+        viewModel.connections.observe(
+            viewLifecycleOwner,
+            Observer {
+                adapter.connections = it
+            }
+        )
 
-        viewModel.providers.observe(viewLifecycleOwner, Observer { providerList ->
-            addBankButton.post {
-                if (providerList.isNotEmpty()) {
+        viewModel.providers.observe(
+            viewLifecycleOwner,
+            Observer { providerList ->
+                addBankButton.post {
+                    if (providerList.isNotEmpty()) {
 
-                    addBankButton.isEnabled = true
-                    addBankButton.setOnClickListener {
-                        findNavController().navigate(
-                            R.id.action_profileFragment_to_providerListFragment,
-                            ProviderListFragment.getBundle(providerList)
-                        )
+                        addBankButton.isEnabled = true
+                        addBankButton.setOnClickListener {
+                            findNavController().navigate(
+                                R.id.action_profileFragment_to_providerListFragment,
+                                ProviderListFragment.getBundle(providerList)
+                            )
+                        }
+                    } else {
+                        addBankButton.isEnabled = false
                     }
-                } else {
-                    addBankButton.isEnabled = false
                 }
             }
-        })
+        )
         loadingBackground.setOnTouchListener { _, _ -> true } // Prevent click-through
         refreshButton.setOnClickListener { findNavController().navigate(R.id.refreshCredentialsFragment) }
     }
