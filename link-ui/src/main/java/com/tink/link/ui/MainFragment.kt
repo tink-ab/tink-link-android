@@ -13,7 +13,7 @@ import com.tink.link.ui.providerlist.ProviderListFragment.Companion.getBundle
 import com.tink.model.provider.Provider
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
-import java.lang.IllegalArgumentException
+import com.tink.service.provider.ProviderFilter
 
 const val FRAGMENT_ARG_USER = "userArg"
 const val FRAGMENT_ARG_MARKET = "marketArg"
@@ -76,7 +76,7 @@ class MainFragment : Fragment() {
                     )
                 }, {}
             ),
-            includeDemoProviders = true
+            filter = ProviderFilter(includeDemoProviders = true)
         )
     }
 }

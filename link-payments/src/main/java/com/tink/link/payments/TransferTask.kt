@@ -42,15 +42,15 @@ internal class TransferTask(
 
             while (true) {
                 currentStatus = operation.toTransferStatus()
-                if (currentStatus is TransferStatus.Success) return@launch
+                if (currentStatus is TransferStatus.Success) break
 
                 operation = transferService.getTransferStatus(operation.underlyingId)
 
                 delay(2_000L)
             }
-        }
 
-        streamObserver.onCompleted()
+            streamObserver.onCompleted()
+        }
     }
 
     override fun unsubscribe() {
@@ -59,6 +59,7 @@ internal class TransferTask(
 
     private suspend fun SignableOperation.toTransferStatus() =
         when (status) {
+            SignableOperation.Status.UNKNOWN,
             SignableOperation.Status.CREATED,
             SignableOperation.Status.EXECUTING -> TransferStatus.Loading(statusMessage.ifBlank { null })
 

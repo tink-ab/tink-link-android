@@ -17,6 +17,7 @@ The status of the operation. [CANCELLED](-c-a-n-c-e-l-l-e-d.md), [FAILED](-f-a-i
 | [FAILED](-f-a-i-l-e-d.md) |  |
 | [EXECUTED](-e-x-e-c-u-t-e-d.md) |  |
 | [AWAITING_THIRD_PARTY_APP_AUTHENTICATION](-a-w-a-i-t-i-n-g_-t-h-i-r-d_-p-a-r-t-y_-a-p-p_-a-u-t-h-e-n-t-i-c-a-t-i-o-n.md) |  |
+| [UNKNOWN](-u-n-k-n-o-w-n.md) |  |
 
 ### Functions
 

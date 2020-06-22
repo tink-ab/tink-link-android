@@ -10,6 +10,7 @@ import com.tink.link.getUserContext
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
+import com.tink.service.provider.ProviderFilter
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
@@ -49,7 +50,7 @@ class ProfileViewModel : ViewModel() {
                 onSuccess = { providerStream.postValue(it) },
                 onError = { /*handle error */ }
             ),
-            includeDemoProviders = true
+            ProviderFilter(includeDemoProviders = true)
         )
     }
 

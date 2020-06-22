@@ -46,7 +46,6 @@ internal abstract class TinkLinkComponent {
         override fun authorize(scopes: Set<Scope>, resultHandler: ResultHandler<String>) {
             accessRepository.authorize(scopes, resultHandler)
         }
-
     }
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
@@ -94,4 +93,3 @@ internal interface Repositories {
 
 @javax.inject.Scope
 internal annotation class TinkLinkScope
-

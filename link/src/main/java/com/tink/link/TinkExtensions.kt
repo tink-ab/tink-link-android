@@ -5,7 +5,6 @@ import com.tink.link.core.user.UserContext
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
-
 /**
  * This is for Java compatibility only. Use extensions on [Tink] when using Kotlin
  */
@@ -19,7 +18,6 @@ object TinkLink {
      */
     @JvmStatic
     fun getUserContext() = Tink.getUserContext()
-
 
     /**
      * Fetches the [UserContext] from Tink if a user is set.

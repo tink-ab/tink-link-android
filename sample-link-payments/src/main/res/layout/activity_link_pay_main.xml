@@ -106,6 +106,17 @@
     app:layout_constraintTop_toBottomOf="@id/statusText" />
 
   <com.google.android.material.button.MaterialButton
+    android:id="@+id/addBeneficiaryButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="24dp"
+    android:enabled="false"
+    android:text="Add Beneficiary"
+    app:layout_constraintBottom_toTopOf="@id/button"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <com.google.android.material.button.MaterialButton
     android:id="@+id/button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
