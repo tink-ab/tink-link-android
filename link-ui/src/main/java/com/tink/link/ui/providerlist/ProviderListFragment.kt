@@ -34,10 +34,6 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         arguments?.getParcelable<ProviderListPath>(ARG_PATH) ?: ProviderListPath()
     }
 
-    private val toolbarTitle: String? by lazy {
-        arguments?.getString(ARG_PROVIDER_TOOLBAR_TITLE)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         queryString = savedInstanceState?.getString(QUERY) ?: ""
@@ -74,7 +70,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     private fun setupToolbar() {
-        toolbarTitle?.let(toolbar::setTitle) ?: toolbar.setTitle(R.string.tink_provider_list_title)
+        toolbar.title = getToolbarTitleFromPath(path)
         toolbar.inflateMenu(R.menu.tink_menu_search)
         val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
         DrawableCompat.setTint(
@@ -135,10 +131,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         } else {
             findNavController().navigate(
                 R.id.action_providerListFragment_next,
-                bundleOf(
-                    ARG_PATH to newPath,
-                    ARG_PROVIDER_TOOLBAR_TITLE to node.name
-                )
+                bundleOf(ARG_PATH to newPath)
             )
         }
     }
@@ -153,8 +146,24 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     companion object {
         internal const val QUERY = "query"
         internal const val ARG_PATH = "arg_path"
-        internal const val ARG_PROVIDER_TOOLBAR_TITLE = "ARG_PROVIDER_TOOLBAR_TITLE"
     }
+
+    private fun getToolbarTitleFromPath(path: ProviderListPath): String =
+        when {
+            path.credentialsTypeNodeByType != null ->
+                path.financialInstitutionNodeByFinancialInstitution?.name ?: ""
+
+            path.accessTypeNodeByType != null ->
+                getString(R.string.tink_provider_select_credentials_type_title)
+
+            path.financialInstitutionNodeByFinancialInstitution != null ->
+                getString(R.string.tink_provider_select_access_type_title)
+
+            path.financialInstitutionGroupNodeByName != null ->
+                path.financialInstitutionGroupNodeByName
+
+            else -> getString(R.string.tink_provider_list_title)
+        }
 }
 
 /**

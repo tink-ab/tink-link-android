@@ -6,7 +6,7 @@
   <string name="tink_redirect_uri_path" translatable="false">/callback</string>
   <string name="tink_provider_list_title">Choose bank</string>
   <string name="tink_provider_list_search_hint">Search for bank or card</string>
-  <string name="tink_provider_select_access_type_title">Add %s</string>
+  <string name="tink_provider_select_access_type_title">Select account types</string>
   <string name="tink_provider_capability_transfers">transfers</string>
   <string name="tink_provider_capability_e_invoices">e-invoices</string>
   <string name="tink_provider_capability_mortgage_aggregation">mortgages</string>
