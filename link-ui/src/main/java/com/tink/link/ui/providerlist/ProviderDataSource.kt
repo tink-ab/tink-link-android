@@ -5,6 +5,7 @@ import com.tink.core.Tink
 import com.tink.link.getUserContext
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
+import com.tink.service.provider.ProviderFilter
 
 // TODO: Scope to activity lifecycle (with dagger)
 internal object ProviderDataSource : LiveData<List<Provider>>() {
@@ -20,7 +21,7 @@ internal object ProviderDataSource : LiveData<List<Provider>>() {
                 {
                     // TODO: Error handling
                 }),
-            includeDemoProviders = true
+            filter = ProviderFilter(includeDemoProviders = true)
         )
     }
 }

@@ -80,7 +80,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
     private fun setupSearch(searchView: SearchView) {
         searchView.apply {
-            queryHint = getString(R.string.tink_search_provider_hint)
+            queryHint = getString(R.string.tink_provider_list_search_hint)
             if (queryString.isNotEmpty()) {
                 setQuery(queryString, false)
                 isIconified = false
