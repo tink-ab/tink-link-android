@@ -111,9 +111,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
      * Navigate to the [FinancialInstitutionListFragment].
      */
     private fun navigateToNode(node: ProviderTreeNode) {
-
         val newPath = path.append(node)
-
         if (newPath.isFullPathToProvider) {
             findNavController().navigate(
                 R.id.credentialsFragment,
