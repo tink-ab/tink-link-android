@@ -13,9 +13,11 @@ internal class ProviderListViewModel : ViewModel() {
     private val query = MutableLiveData<String>()
     private val path = MutableLiveData<ProviderListPath>()
 
-    private val allProviders = Transformations.map(ProviderDataSource) {
+    private val allProviders = Transformations.map(ProviderDataSource.providers) {
         it.toProviderTree()
     }
+
+    val loading: LiveData<Boolean> = ProviderDataSource.loading
 
     private val providersByPath = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {

@@ -63,6 +63,13 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             }
         )
 
+        viewModel.loading.observe(
+            viewLifecycleOwner,
+            Observer {
+                loader?.visibility = if (it != false) View.VISIBLE else View.GONE
+            }
+        )
+
         setupToolbar()
     }
 
