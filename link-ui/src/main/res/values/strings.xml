@@ -1,24 +1,12 @@
 <resources>
-  <string name="tink_app_name">link-ui</string>
-  <string name="tink_redirect_uri_scheme">http</string>
-  <string name="tink_redirect_uri_host">localhost</string>
-  <string name="tink_redirect_uri_port">3000</string>
-  <string name="tink_redirect_uri_path">/callback</string>
-  <string name="tink_provider_list_title">Choose your bank</string>
-  <string name="tink_credentials_type_fragment_title">Sign in method</string>
-  <string name="tink_access_type_fragment_title">Select account types</string>
-  <string name="tink_create_credentials_button">Continue</string>
-  <string name="tink_third_party_authentication_download_app_positive">Install</string>
-  <string name="tink_third_party_authentication_download_app_negative">Cancel</string>
-  <string name="tink_third_party_authentication_download_app_negative_error">The third party authentication app needs to be installed to continue.</string>
-  <string name="tink_refresh_headline">Refresh</string>
-  <string name="tink_refresh_all_button">Refresh All</string>
-  <string name="tink_profile_headline">Credentials</string>
-  <string name="tink_refresh_button">Refresh</string>
-  <string name="tink_add_credentials_button">Add bank</string>
-  <string name="tink_search">Search</string>
-  <string name="tink_close">Close</string>
-  <string name="tink_search_provider_hint">Search for a bank</string>
+  <string name="tink_app_name" translatable="false">link-ui</string>
+  <string name="tink_redirect_uri_scheme" translatable="false">http</string>
+  <string name="tink_redirect_uri_host" translatable="false">localhost</string>
+  <string name="tink_redirect_uri_port" translatable="false">3000</string>
+  <string name="tink_redirect_uri_path" translatable="false">/callback</string>
+  <string name="tink_provider_list_title">Choose bank</string>
+  <string name="tink_provider_list_search_hint">Search for bank or card</string>
+  <string name="tink_provider_select_access_type_title">Add %s</string>
   <string name="tink_provider_capability_transfers">transfers</string>
   <string name="tink_provider_capability_e_invoices">e-invoices</string>
   <string name="tink_provider_capability_mortgage_aggregation">mortgages</string>
@@ -29,34 +17,46 @@
   <string name="tink_provider_capability_investments">investments</string>
   <string name="tink_provider_capability_payments">payments</string>
   <string name="tink_provider_capability_identity_data">identity information</string>
-  <string name="tink_credentials_type_password_default_description">Password</string>
-  <string name="tink_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
-  <string name="tink_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
-  <string name="tink_credentials_type_keyfob_default_description">Key Fob</string>
-  <string name="tink_credentials_type_fraud_default_description">Fraud</string>
-  <string name="tink_credentials_type_unknown_default_description">Unknown</string>
-  <string name="tink_consent_information">%1$s will obtain some of your financial information. %2$s</string>
+  <string name="tink_provider_select_credentials_type_title">Sign in method</string>
+  <string name="tink_provider_select_credentials_type_password_default_description">Password</string>
+  <string name="tink_provider_select_credentials_type_mobile_bank_id_default_description">Mobile BankID</string>
+  <string name="tink_provider_select_credentials_type_third_party_authentication_default_description">Third Party Authentication</string>
+  <string name="tink_provider_select_credentials_type_keyfob_default_description">Key Fob</string>
+  <string name="tink_provider_select_credentials_type_fraud_default_description">Fraud</string>
+  <string name="tink_provider_select_credentials_type_unknown_default_description">Unknown</string>
+  <string name="tink_credentials_authentication_title">Authentication</string>
+  <string name="tink_credentials_consent_information_text">%1$s will obtain some of your financial information. %2$s</string>
+  <string name="tink_credentials_consent_information_read_more">Read More</string>
   <string name="tink_credentials_unverified_warning_text">Unverified - This solution is only made for development purposes. Do not enter your bank credentials unless you trust the developer.</string>
-  <string name="tink_consent_information_read_more">Read More</string>
-  <string name="tink_consent_information_list_title">We will collect the following data from you</string>
-  <string name="tink_consent_information_list_description">By following through this service, we will collect financial data from you. These are the data points we will collect from you:</string>
-  <string name="tink_terms_policy_information">By using the service, you agree to Tink’s %1$s and %2$s</string>
-  <string name="tink_terms_and_conditions">Terms and Conditions</string>
-  <string name="tink_privacy_policy">Privacy Policy</string>
-  <string name="tink_credentials_bankId_button">Open Bank ID</string>
+  <string name="tink_credentials_continue_button">Continue</string>
+  <string name="tink_credentials_bankid_button">Open Bank ID</string>
+  <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
   <string name="tink_credentials_bankId_other_device_button">Open Bank ID on another device</string>
-  <string name="tink_connection_successful_title">Connection successful</string>
-  <string name="tink_connection_successful_description">Your accounts have been successfully added to %s</string>
-  <string name="tink_connection_successful_done_button">Done</string>
+  <string name="tink_credentials_terms_text">By using the service, you agree to Tink’s %1$s and %2$s</string>
+  <string name="tink_credentials_terms_and_conditions">Terms and Conditions</string>
+  <string name="tink_credentials_privacy_policy">Privacy Policy</string>
+  <string name="tink_consent_information_title">We will collect the following data from you</string>
+  <string name="tink_consent_information_description">By following through this service, we will collect financial data from you. These are the data points we will collect from you:</string>
+  <string name="tink_third_party_authentication_download_app_install_button">Install</string>
+  <string name="tink_supplemental_information_title">Supplemental Information</string>
+  <string name="tink_supplemental_information_submit_button">Submit</string>
+  <string name="tink_supplemental_information_qr_code_title">Open the Bank ID app</string>
+  <string name="tink_supplemental_information_qr_code_description">Open the Mobile Bank ID app and scan this QR code to authenticate</string>
+  <string name="tink_supplemental_information_qr_code_error">There is a problem with loading the QR code. Please try again later.</string>
+  <string name="tink_credentials_status_authorizing">Authorizing…</string>
+  <string name="tink_credentials_status_updating">Connecting to %s, please wait…</string>
+  <string name="tink_connection_success_title">Connection successful</string>
+  <string name="tink_connection_success_description">Your accounts have been successfully added to %s</string>
+  <string name="tink_connection_success_done_button">Done</string>
+  <string name="tink_cancel_button">Cancel</string>
+  <string name="tink_ok_button">OK</string>
   <string name="tink_error_unknown">Something went wrong. Please try again later.</string>
-  <string name="tink_credentials_supplemental_information">Supplemental Information</string>
-  <string name="tink_credentials_supplemental_information_submit_button">Submit</string>
-  <string name="tink_credentials_supplemental_information_cancel_button">Cancel</string>
-  <string name="tink_credentials_qr_code_title">Open the Bank ID app</string>
-  <string name="tink_credentials_qr_code_description">Open the Mobile Bank ID app and scan this QR code to authenticate</string>
-  <string name="tink_credentials_qr_code_error_message">There is a problem with loading the QR code. Please try again later.</string>
-  <string name="tink_credentials_status_authorizing_text">Authorizing…</string>
-  <string name="tink_credentials_status_updating_text">Connecting to %s, please wait…</string>
-  <string name="tink_credentials_status_dialog_cancel_button">Cancel</string>
-  <string name="tink_credentials_status_dialog_ok_button">OK</string>
+  <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
+  <string name="tink_refresh_headline">Refresh</string>
+  <string name="tink_refresh_all_button">Refresh All</string>
+  <string name="tink_profile_headline">Credentials</string>
+  <string name="tink_refresh_button">Refresh</string>
+  <string name="tink_add_credentials_button">Add bank</string>
+  <string name="tink_search">Search</string>
+  <string name="tink_close">Close</string>
 </resources>
