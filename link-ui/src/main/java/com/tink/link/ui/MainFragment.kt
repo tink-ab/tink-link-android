@@ -8,12 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
 import com.tink.link.createTemporaryUser
-import com.tink.link.getUserContext
-import com.tink.link.ui.providerlist.ProviderListFragment.Companion.getBundle
-import com.tink.model.provider.Provider
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
-import com.tink.service.provider.ProviderFilter
 
 const val FRAGMENT_ARG_USER = "userArg"
 const val FRAGMENT_ARG_MARKET = "marketArg"
@@ -67,17 +63,6 @@ class MainFragment : Fragment() {
 
     private fun launchLinkUiFlowForUser(user: User) {
         Tink.setUser(user)
-        Tink.getUserContext()?.providerRepository?.listProviders(
-            handler = ResultHandler(
-                { providers: List<Provider> ->
-                    findNavController().navigate(
-                        R.id.action_mainFragment_to_providerListFragment,
-                        getBundle(providers)
-                    )
-                },
-                {}
-            ),
-            filter = ProviderFilter(includeDemoProviders = true)
-        )
+        findNavController().navigate(R.id.action_mainFragment_to_providerListFragment)
     }
 }

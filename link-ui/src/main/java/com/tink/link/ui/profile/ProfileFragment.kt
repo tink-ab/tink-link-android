@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.credentials.CredentialsFragment
-import com.tink.link.ui.providerlist.ProviderListFragment
 import kotlinx.android.synthetic.main.tink_fragment_profile.*
 
 class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
@@ -47,25 +46,14 @@ class ProfileFragment : Fragment(R.layout.tink_fragment_profile) {
             }
         )
 
-        viewModel.providers.observe(
-            viewLifecycleOwner,
-            Observer { providerList ->
-                addBankButton.post {
-                    if (providerList.isNotEmpty()) {
-
-                        addBankButton.isEnabled = true
-                        addBankButton.setOnClickListener {
-                            findNavController().navigate(
-                                R.id.action_profileFragment_to_providerListFragment,
-                                ProviderListFragment.getBundle(providerList)
-                            )
-                        }
-                    } else {
-                        addBankButton.isEnabled = false
-                    }
-                }
+        addBankButton.post {
+            addBankButton.isEnabled = true
+            addBankButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_profileFragment_to_providerListFragment
+                )
             }
-        )
+        }
         loadingBackground.setOnTouchListener { _, _ -> true } // Prevent click-through
         refreshButton.setOnClickListener { findNavController().navigate(R.id.refreshCredentialsFragment) }
     }

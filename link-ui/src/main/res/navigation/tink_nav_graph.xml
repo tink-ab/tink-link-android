@@ -23,35 +23,8 @@
     android:name="com.tink.link.ui.providerlist.ProviderListFragment"
     tools:layout="@layout/tink_layout_provider_tree_node_list">
     <action
-      android:id="@+id/action_providerListFragment_to_financialInstitutionListFragment"
-      app:destination="@id/financialInstitutionListFragment" />
-  </fragment>
-  <fragment
-    android:id="@+id/financialInstitutionListFragment"
-    android:name="com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment"
-    android:label="FinancialInstitutionListFragment"
-    tools:layout="@layout/tink_fragment_provider_list">
-    <action
-      android:id="@+id/action_financialInstitutionListFragment_to_accessTypeListFragment"
-      app:destination="@id/accessTypeListFragment" />
-  </fragment>
-  <fragment
-    android:id="@+id/accessTypeListFragment"
-    android:name="com.tink.link.ui.accesstype.AccessTypeListFragment"
-    android:label="AccessTypeListFragment"
-    tools:layout="@layout/tink_fragment_access_type_list">
-    <action
-      android:id="@+id/action_accessTypeListFragment_to_credentialsTypeListFragment"
-      app:destination="@id/credentialsTypeListFragment" />
-  </fragment>
-  <fragment
-    android:id="@+id/credentialsTypeListFragment"
-    android:name="com.tink.link.ui.credentialstype.CredentialsTypeListFragment"
-    android:label="CredentialsTypeListFragment"
-    tools:layout="@layout/tink_fragment_credentials_type_list">
-    <action
-      android:id="@+id/action_credentialsTypeListFragment_to_providerNodeFragment"
-      app:destination="@id/providerNodeFragment" />
+      android:id="@+id/action_providerListFragment_next"
+      app:destination="@id/providerListFragment" />
   </fragment>
   <fragment
     android:id="@+id/credentialsFragment"
@@ -66,16 +39,7 @@
     android:id="@+id/connectionSuccessfulFragment"
     android:name="com.tink.link.ui.credentials.ConnectionSuccessfulFragment"
     android:label="ConnectionSuccessfulFragment"
-    tools:layout="@layout/tink_fragment_connection_successful"/>
-  <fragment
-    android:id="@+id/providerNodeFragment"
-    android:name="com.tink.link.ui.providernode.ProviderNodeFragment"
-    android:label="ProviderNodeFragment"
-    tools:layout="@layout/tink_fragment_provider_node">
-    <action
-      android:id="@+id/action_providerNodeFragment_to_credentialsFragment"
-      app:destination="@id/credentialsFragment" />
-  </fragment>
+    tools:layout="@layout/tink_fragment_connection_successful" />
   <fragment
     android:id="@+id/consentInformationFragment"
     android:name="com.tink.link.ui.credentials.ConsentInformationFragment"
