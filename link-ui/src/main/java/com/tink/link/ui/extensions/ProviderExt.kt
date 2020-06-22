@@ -40,54 +40,54 @@ internal fun List<Provider.Capability>.toDisplayText(context: Context) =
 internal fun Provider.Capability.toDisplayText(context: Context): CapabilityDisplayText =
     when (this) {
         Provider.Capability.TRANSFERS ->
-            CapabilityDisplayText(1, context.getString(R.string.provider_capability_transfers))
+            CapabilityDisplayText(1, context.getString(R.string.tink_provider_capability_transfers))
 
         Provider.Capability.MORTGAGE_AGGREGATION ->
             CapabilityDisplayText(
                 2,
-                context.getString(R.string.provider_capability_mortgage_aggregation)
+                context.getString(R.string.tink_provider_capability_mortgage_aggregation)
             )
 
         Provider.Capability.CHECKING_ACCOUNTS ->
             CapabilityDisplayText(
                 3,
-                context.getString(R.string.provider_capability_checking_accounts)
+                context.getString(R.string.tink_provider_capability_checking_accounts)
             )
 
         Provider.Capability.SAVINGS_ACCOUNTS ->
             CapabilityDisplayText(
                 4,
-                context.getString(R.string.provider_capability_savings_accounts)
+                context.getString(R.string.tink_provider_capability_savings_accounts)
             )
 
         Provider.Capability.CREDIT_CARDS ->
             CapabilityDisplayText(
                 5,
-                context.getString(R.string.provider_capability_credit_cards)
+                context.getString(R.string.tink_provider_capability_credit_cards)
             )
 
         Provider.Capability.INVESTMENTS ->
             CapabilityDisplayText(
                 6,
-                context.getString(R.string.provider_capability_investments)
+                context.getString(R.string.tink_provider_capability_investments)
             )
 
         Provider.Capability.LOANS ->
-            CapabilityDisplayText(7, context.getString(R.string.provider_capability_loans))
+            CapabilityDisplayText(7, context.getString(R.string.tink_provider_capability_loans))
 
         Provider.Capability.PAYMENTS ->
-            CapabilityDisplayText(8, context.getString(R.string.provider_capability_payments))
+            CapabilityDisplayText(8, context.getString(R.string.tink_provider_capability_payments))
 
         Provider.Capability.IDENTITY_DATA ->
             CapabilityDisplayText(
                 9,
-                context.getString(R.string.provider_capability_identity_data)
+                context.getString(R.string.tink_provider_capability_identity_data)
             )
 
         Provider.Capability.EINVOICES ->
             CapabilityDisplayText(
                 10,
-                context.getString(R.string.provider_capability_e_invoices)
+                context.getString(R.string.tink_provider_capability_e_invoices)
             )
 
         Provider.Capability.UNKNOWN -> CapabilityDisplayText(11, "")

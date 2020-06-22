@@ -53,7 +53,7 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
 
     override fun setupToolbar() {
         super.setupToolbar()
-        toolbar.setTitle(R.string.provider_list_title)
+        toolbar.setTitle(R.string.tink_provider_list_title)
         toolbar.inflateMenu(R.menu.tink_menu_search)
         val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
         DrawableCompat.setTint(
@@ -65,7 +65,7 @@ internal class ProviderListFragment : ProviderTreeNodeFragment(R.layout.tink_fra
 
     private fun setupSearch(searchView: SearchView) {
         searchView.apply {
-            queryHint = getString(R.string.provider_list_search_hint)
+            queryHint = getString(R.string.tink_provider_list_search_hint)
             if (queryString.isNotEmpty()) {
                 setQuery(queryString, false)
                 isIconified = false
