@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
 import com.tink.link.ui.credentials.CredentialsFragment
 import com.tink.link.ui.extensions.getColorFromAttr
-import com.tink.link.ui.financialinstitution.FinancialInstitutionListFragment
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
@@ -115,7 +114,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     /**
-     * Navigate to the [FinancialInstitutionListFragment].
+     * Navigate to the next node.
      */
     private fun navigateToNode(node: ProviderTreeNode) {
         val newPath = path.append(node)
