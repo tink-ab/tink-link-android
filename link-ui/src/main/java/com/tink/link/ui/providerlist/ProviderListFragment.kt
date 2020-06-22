@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.credentials.CredentialsFragment
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.model.provider.ProviderTreeNode
@@ -84,6 +85,12 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
         } else {
             toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
+        }
+
+        toolbar.setNavigationOnClickListener {
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
         }
     }
 
