@@ -103,7 +103,14 @@ class CredentialsViewModel : ViewModel() {
     fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
 
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
-    val viewState: LiveData<ViewState> = _viewState
+    val viewState: LiveData<ViewState> =
+        CombinedLiveData(_viewState, _authorizationCode) { viewState, code ->
+            if (code.isNullOrEmpty() && viewState == ViewState.UPDATED) {
+                ViewState.UPDATING
+            } else {
+                viewState
+            }
+        }
 
     private val _mobileBankIdAuthenticationEvent =
         MutableLiveData<Event<ThirdPartyAppAuthentication>>()
@@ -212,7 +219,7 @@ class CredentialsViewModel : ViewModel() {
                     currentlyAuthorizing = false
                 },
                 {
-                    // TODO: Error handling
+                    _errorEvent.postValue(Event(it.localizedMessage ?: ""))
                     currentlyAuthorizing = false
                 }
             )
