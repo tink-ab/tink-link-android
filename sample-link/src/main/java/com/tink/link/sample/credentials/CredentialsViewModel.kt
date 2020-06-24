@@ -24,56 +24,14 @@ class CredentialsViewModel : ViewModel() {
 
     private val credentialsId = MutableLiveData<String>()
 
-    /**
-     * Combines the output of [credentialsId] and [credentials] to a [LiveData] that holds the
-     * [Credentials] with the id held in [credentialsId].
-     *
-     * As a side-effect, it also updates our view state based on the status of the credentials.
-     */
-    val createdCredentials = CombinedLiveData(credentialsId, credentials) { id, list ->
-        list.firstOrNull { it.id == id }
-            ?.also { credentials ->
-                when (credentials.status) {
-                    Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
-                    Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
-                        credentials.thirdPartyAppAuthentication
-                            ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
-                            ?.also { _viewState.postValue(ViewState.UPDATING) }
-                    }
-
-                    Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                        setFields(credentials.supplementalInformation)
-                        _viewState.postValue(ViewState.NOT_LOADING)
-                    }
-
-                    Credentials.Status.AUTHENTICATION_ERROR,
-                    Credentials.Status.TEMPORARY_ERROR,
-                    Credentials.Status.PERMANENT_ERROR -> {
-                        _viewState.postValue(ViewState.NOT_LOADING)
-                        credentials.statusPayload
-                            ?.let { _errorEvent.postValue(Event(it)) }
-                    }
-
-                    Credentials.Status.UPDATING -> _viewState.postValue(ViewState.UPDATING)
-                    Credentials.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
-                    else -> {
-                    }
-                }
-            }
-    }
 
     fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
 
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = _viewState
 
-    private val _thirdPartyAuthenticationEvent =
-        MutableLiveData<Event<ThirdPartyAppAuthentication>>()
-    val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
-        _thirdPartyAuthenticationEvent
-
-    private val _errorEvent = MutableLiveData<Event<String>>()
-    val errorEvent: LiveData<Event<String>> = _errorEvent
+    private val _statusText = MutableLiveData<String>()
+    val statusText: LiveData<String> = _statusText
 
     private val _fields = MutableLiveData<List<Field>>()
     val fields: LiveData<List<Field>> = _fields
@@ -104,32 +62,37 @@ class CredentialsViewModel : ViewModel() {
     fun createCredentials(
         provider: Provider,
         fields: List<Field>,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        createdCredentials.value
-            ?.takeIf { it.status == Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
-            ?.let {
-                supplementalInformation(
-                    credentialsId = it.id,
-                    fields = fields,
-                    onError = onError
-                )
-                return
-            }
         credentialsRepository.create(
             provider.name,
             provider.credentialsType,
             fields.toFieldMap(),
-            ResultHandler(
-                { credentials ->
-                    fetchCredentials() // Start streaming credentials
-                    credentialsId.postValue(credentials.id)
-                },
-                {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(it)
+            object : StreamObserver<CredentialsStatus> {
+                override fun onNext(value: CredentialsStatus) {
+                    when (value) {
+                        is CredentialsStatus.Success -> {
+                            _statusText.postValue(value.message)
+                            _viewState.postValue(ViewState.UPDATED)
+                        }
+                        is CredentialsStatus.Loading -> {
+                            _statusText.postValue(value.message)
+                            _viewState.postValue(ViewState.UPDATING)
+                        }
+
+                        is CredentialsStatus.AwaitingAuthentication -> {
+                            _viewState.postValue(ViewState.UPDATING)
+                            onAwaitingAuthentication(value.authenticationTask)
+                        }
+                    }
                 }
-            )
+
+                override fun onError(error: Throwable) {
+                    _viewState.postValue(ViewState.NOT_LOADING)
+                    onError(error)
+                }
+            }
         )
     }
 
@@ -165,16 +128,6 @@ class CredentialsViewModel : ViewModel() {
 
         credentialsId.value = id
 
-        createdCredentials.value
-            ?.takeIf { it.status == Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION }
-            ?.let {
-                supplementalInformation(
-                    credentialsId = it.id,
-                    fields = fields,
-                    onError = onError
-                )
-                return
-            }
         credentialsRepository.update(
             id,
             provider.name,
@@ -210,5 +163,3 @@ class CredentialsViewModel : ViewModel() {
 
     enum class ViewState { NOT_LOADING, UPDATING, UPDATED }
 }
-
-private fun List<Field>.toFieldMap() = map { it.name to it.value }.toMap()
