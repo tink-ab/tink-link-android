@@ -89,7 +89,7 @@ class CredentialsViewModel : ViewModel() {
 
                         Credentials.Status.UPDATING -> {
                             _viewState.postValue(ViewState.UPDATING)
-                            if (authorizeUser && !authorizationCodeSaved) {
+                            if (authorizeUser && !authorizationCodeSaved && !currentlyAuthorizing) {
                                 authorizeUser(scopes)
                             }
                         }
@@ -200,15 +200,20 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
+    var currentlyAuthorizing = false
+
     private fun authorizeUser(scopes: List<Scope>) {
+        currentlyAuthorizing = true
         userContext.authorize(
             scopes.toSet(),
             ResultHandler(
                 { authorizationCode ->
                     _authorizationCode.postValue(authorizationCode)
+                    currentlyAuthorizing = false
                 },
                 {
                     // TODO: Error handling
+                    currentlyAuthorizing = false
                 }
             )
         )
