@@ -1,6 +1,7 @@
 package com.tink.link.ui.credentials
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
@@ -19,6 +20,7 @@ import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
+import java.util.concurrent.atomic.AtomicBoolean
 
 class CredentialsViewModel : ViewModel() {
 
@@ -37,7 +39,6 @@ class CredentialsViewModel : ViewModel() {
 
     internal var scopes: List<Scope> = emptyList()
 
-    internal var authorizationCodeSaved: Boolean = false
     internal var authorizeUser: Boolean = false
 
     init {
@@ -89,12 +90,13 @@ class CredentialsViewModel : ViewModel() {
 
                         Credentials.Status.UPDATING -> {
                             _viewState.postValue(ViewState.UPDATING)
-                            if (authorizeUser && !authorizationCodeSaved) {
+                            if (authorizeUser && !authorizationDone.get()) {
                                 authorizeUser(scopes)
                             }
                         }
                         Credentials.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
-                        else -> {}
+                        else -> {
+                        }
                     }
                 }
             }
@@ -103,7 +105,23 @@ class CredentialsViewModel : ViewModel() {
     fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
 
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
-    val viewState: LiveData<ViewState> = _viewState
+
+    val viewState: LiveData<ViewState> = MediatorLiveData<ViewState>().apply {
+        fun update() {
+            val viewState = _viewState.value ?: return
+            value =
+                if (authorizeUser &&
+                    _authorizationCode.value.isNullOrEmpty() &&
+                    viewState == ViewState.UPDATED
+                ) {
+                    ViewState.UPDATING
+                } else {
+                    viewState
+                }
+        }
+        addSource(_viewState) { update() }
+        addSource(_authorizationCode) { if (authorizeUser) update() }
+    }
 
     private val _mobileBankIdAuthenticationEvent =
         MutableLiveData<Event<ThirdPartyAppAuthentication>>()
@@ -181,7 +199,6 @@ class CredentialsViewModel : ViewModel() {
         fields: List<Field>,
         onError: (Throwable) -> Unit
     ) {
-
         _credentialsId.value = id
 
         credentialsRepository.update(
@@ -200,18 +217,26 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
+    private var currentlyAuthorizing = AtomicBoolean(false)
+    private var authorizationDone = AtomicBoolean(false)
+
     private fun authorizeUser(scopes: List<Scope>) {
-        userContext.authorize(
-            scopes.toSet(),
-            ResultHandler(
-                { authorizationCode ->
-                    _authorizationCode.postValue(authorizationCode)
-                },
-                {
-                    // TODO: Error handling
-                }
+        if (currentlyAuthorizing.compareAndSet(false, true)) {
+            userContext.authorize(
+                scopes.toSet(),
+                ResultHandler(
+                    { authorizationCode ->
+                        authorizationDone.set(true)
+                        currentlyAuthorizing.set(false)
+                        _authorizationCode.postValue(authorizationCode)
+                    },
+                    {
+                        _errorEvent.postValue(Event(it.localizedMessage ?: ""))
+                        currentlyAuthorizing.set(false)
+                    }
+                )
             )
-        )
+        }
     }
 
     enum class ViewState {

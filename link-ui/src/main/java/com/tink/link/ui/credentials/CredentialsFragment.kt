@@ -276,7 +276,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             Observer { code ->
                 (activity as? TinkLinkUiActivity)?.let {
                     it.authorizationCode = code
-                    viewModel.authorizationCodeSaved = true
                 }
             }
         )
