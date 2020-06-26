@@ -39,7 +39,6 @@ class CredentialsViewModel : ViewModel() {
 
     internal var scopes: List<Scope> = emptyList()
 
-    internal var authorizationCodeSaved: Boolean = false
     internal var authorizeUser: Boolean = false
 
     init {
