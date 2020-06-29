@@ -32,13 +32,24 @@
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginStart="12dp"
-    android:layout_marginEnd="32dp"
+    android:layout_marginEnd="16dp"
     android:gravity="center_vertical"
     app:layout_constraintBottom_toBottomOf="@+id/logo"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/tinkLogo"
     app:layout_constraintStart_toEndOf="@+id/logo"
     app:layout_constraintTop_toTopOf="@+id/logo"
     tools:text="Bank Name" />
+
+  <ImageView
+    android:id="@+id/tinkLogo"
+    android:layout_width="40dp"
+    android:layout_height="20dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/tink_logo"
+    android:backgroundTint="?tink_textColorPrimary"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
   <View
     android:id="@+id/dottedLine"
