@@ -3,7 +3,6 @@ package com.tink.link.sample.credentials
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.View
-import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.core.view.forEach
@@ -18,12 +17,10 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.sample.R
 import com.tink.link.sample.extensions.dpToPixels
 import com.tink.link.sample.extensions.hideKeyboard
-import com.tink.link.sample.extensions.launch
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_credentials.*
 import kotlinx.android.synthetic.main.layout_toolbar.toolbar
-import timber.log.Timber
 
 private const val PROVIDER_ARGS = "PROVIDER"
 
@@ -149,15 +146,40 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
                 provider = provider,
                 fields = fields,
                 onAwaitingAuthentication = ::handleAuthenticationTask,
-                onError = { error ->
-                    view?.let { view ->
-                        val message = error.localizedMessage ?: error.message
-                        ?: "Something went wrong. Please try again later."
-                        Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-                    }
-                }
+                onError = ::handleError
             )
         }
+    }
+
+    private fun updateCredentials() {
+        if (areFieldsValid()) {
+            loadingGroup.visibility = View.VISIBLE
+            hideKeyboard()
+        }
+
+        val fields = credentialsFields.children
+            .filterIsInstance(CredentialsField::class.java)
+            .map { it.getFilledField() }
+            .toList()
+
+        // Pass the filled fields to the credentials repository to authorize the user.
+        viewModel.updateCredentials(
+            id = requireNotNull(updateArgs).credentialsId,
+            provider = provider,
+            fields = fields,
+            onAwaitingAuthentication = ::handleAuthenticationTask,
+            onError = ::handleError
+        )
+    }
+
+    private fun authenticateCredentials() {
+        val id = requireNotNull(manualAuthArgs?.credentialsId)
+
+        viewModel.authenticateCredentials(
+            id = id,
+            onAwaitingAuthentication = ::handleAuthenticationTask,
+            onError = ::handleError
+        )
     }
 
     private fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
@@ -183,41 +205,11 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
         }
     }
 
-    private fun updateCredentials() {
-        if (areFieldsValid()) {
-            loadingGroup.visibility = View.VISIBLE
-            hideKeyboard()
-        }
-
-        val fields = credentialsFields.children
-            .filterIsInstance(CredentialsField::class.java)
-            .map { it.getFilledField() }
-            .toList()
-
-        // Pass the filled fields to the credentials repository to authorize the user.
-        viewModel.updateCredentials(
-            requireNotNull(updateArgs).credentialsId,
-            provider,
-            fields
-        ) { error ->
-            view?.let { view ->
-                val message = error.localizedMessage ?: error.message
-                    ?: "Something went wrong. Please try again later."
-                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-            }
-        }
-    }
-
-    private fun authenticateCredentials() {
-
-        val id = requireNotNull(manualAuthArgs?.credentialsId)
-
-        viewModel.authenticateCredentials(id) { error ->
-            view?.let { view ->
-                val message = error.localizedMessage ?: error.message
-                    ?: "Something went wrong. Please try again later."
-                Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
-            }
+    private fun handleError(error: Throwable) {
+        view?.let { view ->
+            val message = error.localizedMessage ?: error.message
+            ?: "Something went wrong. Please try again later."
+            Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
         }
     }
 

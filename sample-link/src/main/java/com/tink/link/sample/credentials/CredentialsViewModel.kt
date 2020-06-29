@@ -4,11 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.getUserContext
-import com.tink.link.sample.CombinedLiveData
-import com.tink.link.sample.Event
-import com.tink.model.authentication.ThirdPartyAppAuthentication
-import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
@@ -18,12 +16,6 @@ import com.tink.service.streaming.publisher.StreamSubscription
 class CredentialsViewModel : ViewModel() {
 
     private val credentialsRepository = requireNotNull(Tink.getUserContext()?.credentialsRepository)
-
-    private val _credentials = MutableLiveData<List<Credentials>>()
-    val credentials: LiveData<List<Credentials>> = _credentials
-
-    private val credentialsId = MutableLiveData<String>()
-
 
     fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
 
@@ -39,21 +31,39 @@ class CredentialsViewModel : ViewModel() {
     fun setFields(fields: List<Field>) = _fields.postValue(fields)
 
     private var streamSubscription: StreamSubscription? = null
+        set(value) {
+            field?.unsubscribe()
+            field = value
+        }
 
-    /**
-     * Stream credentials from the repository and post updates to [_credentials].
-     */
-    private fun fetchCredentials() {
-        streamSubscription?.unsubscribe()
-        streamSubscription = credentialsRepository.listStream().subscribe(
-            object : StreamObserver<List<Credentials>> {
-                override fun onNext(value: List<Credentials>) {
-                    if (_credentials.value != value) {
-                        _credentials.postValue(value)
+    private fun getCredentialsStreamObserver(
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
+        onError: (Throwable) -> Unit
+    ): StreamObserver<CredentialsStatus> {
+        return object : StreamObserver<CredentialsStatus> {
+            override fun onNext(value: CredentialsStatus) {
+                when (value) {
+                    is CredentialsStatus.Success -> {
+                        _statusText.postValue(value.message)
+                        _viewState.postValue(ViewState.UPDATED)
+                    }
+                    is CredentialsStatus.Loading -> {
+                        _statusText.postValue(value.message)
+                        _viewState.postValue(ViewState.UPDATING)
+                    }
+
+                    is CredentialsStatus.AwaitingAuthentication -> {
+                        _viewState.postValue(ViewState.UPDATING)
+                        onAwaitingAuthentication(value.authenticationTask)
                     }
                 }
             }
-        )
+
+            override fun onError(error: Throwable) {
+                _viewState.postValue(ViewState.NOT_LOADING)
+                onError(error)
+            }
+        }
     }
 
     /**
@@ -65,34 +75,11 @@ class CredentialsViewModel : ViewModel() {
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        credentialsRepository.create(
+        streamSubscription = credentialsRepository.create(
             provider.name,
             provider.credentialsType,
             fields.toFieldMap(),
-            object : StreamObserver<CredentialsStatus> {
-                override fun onNext(value: CredentialsStatus) {
-                    when (value) {
-                        is CredentialsStatus.Success -> {
-                            _statusText.postValue(value.message)
-                            _viewState.postValue(ViewState.UPDATED)
-                        }
-                        is CredentialsStatus.Loading -> {
-                            _statusText.postValue(value.message)
-                            _viewState.postValue(ViewState.UPDATING)
-                        }
-
-                        is CredentialsStatus.AwaitingAuthentication -> {
-                            _viewState.postValue(ViewState.UPDATING)
-                            onAwaitingAuthentication(value.authenticationTask)
-                        }
-                    }
-                }
-
-                override fun onError(error: Throwable) {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(error)
-                }
-            }
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
 
@@ -123,41 +110,25 @@ class CredentialsViewModel : ViewModel() {
         id: String,
         provider: Provider,
         fields: List<Field>,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-
-        credentialsId.value = id
-
-        credentialsRepository.update(
+        streamSubscription = credentialsRepository.update(
             id,
             provider.name,
             fields.toFieldMap(),
-            ResultHandler(
-                { credentials ->
-                    fetchCredentials() // Start streaming credentials
-                },
-                {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(it)
-                }
-            )
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
 
     fun authenticateCredentials(
         id: String,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        credentialsId.postValue(id)
-        credentialsRepository.authenticate(
+        streamSubscription = credentialsRepository.authenticate(
             id,
-            ResultHandler(
-                { fetchCredentials() }, // Start streaming credentials
-                {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(it)
-                }
-            )
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
 
