@@ -22,7 +22,6 @@ import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
-import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toView
 import com.tink.model.authentication.ThirdPartyAppAuthentication
@@ -145,16 +144,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                 }
             }
         )
-
-        if (provider.helpText.isNotBlank()) {
-            providerHelpText.visibility = View.VISIBLE
-            providerHelpTextBackground.visibility = View.VISIBLE
-            providerHelpText.setTextWithUrlMarkdown(provider.helpText)
-            providerHelpText.movementMethod = LinkMovementMethod.getInstance()
-        } else {
-            providerHelpText.visibility = View.GONE
-            providerHelpTextBackground.visibility = View.GONE
-        }
 
         if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
             createCredentialsBtn.visibility = View.GONE
