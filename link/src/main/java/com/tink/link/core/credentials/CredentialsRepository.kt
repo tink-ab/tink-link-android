@@ -63,7 +63,7 @@ class CredentialsRepository @Inject constructor(
         statusChangeObserver: StreamObserver<CredentialsStatus>,
         items: Set<RefreshableItem>? = null
     ): StreamSubscription {
-        return CredentialsTask(
+        return CreateCredentialsTask(
             CredentialsCreationDescriptor(
                 providerName,
                 credentialsType,
@@ -83,24 +83,29 @@ class CredentialsRepository @Inject constructor(
      *
      * @param credentialsId Identifier for the [Credentials] that is being updated
      * @param fields The map of [Field] name and value pairs for the [Credentials]
-     * @param resultHandler The [ResultHandler] for processing error and success callbacks
+     * @param statusChangeObserver An observer which will receive callbacks when there are
+     * updates to the status of the credentials. Successful and intermediate status will be posted in
+     * [onNext][StreamObserver.onNext], whereas failures and errors will be passed as [Throwable]
+     * via [onError][StreamObserver.onError]. If the creation finished successfully, you will also
+     * receive a call to [onCompleted][StreamObserver.onCompleted], after which there will be no other
+     * calls to this stream observer.
      */
     fun update(
         credentialsId: String,
         providerName: String,
         fields: Map<String, String>,
-        resultHandler: ResultHandler<Credentials>
-    ) {
-        scope.launchForResult(resultHandler) {
-            service.update(
-                CredentialsUpdateDescriptor(
-                    id = credentialsId,
-                    providerName = providerName,
-                    fields = fields,
-                    appUri = tinkConfiguration.redirectUri
-                )
-            )
-        }
+        statusChangeObserver: StreamObserver<CredentialsStatus>
+    ): StreamSubscription {
+        return UpdateCredentialsTask(
+            CredentialsUpdateDescriptor(
+                id = credentialsId,
+                providerName = providerName,
+                fields = fields,
+                appUri = tinkConfiguration.redirectUri
+            ),
+            service,
+            statusChangeObserver
+        )
     }
 
     /**
@@ -136,16 +141,25 @@ class CredentialsRepository @Inject constructor(
      * Manually authenticates the [Credentials] matching the id. This is only applicable for PSD2 credentials.
      *
      * @param credentialsId Identifier for the [Credentials] that is being authenticated
+     * @param statusChangeObserver An observer which will receive callbacks when there are
+     * updates to the status of the credentials. Successful and intermediate status will be posted in
+     * [onNext][StreamObserver.onNext], whereas failures and errors will be passed as [Throwable]
+     * via [onError][StreamObserver.onError]. If the creation finished successfully, you will also
+     * receive a call to [onCompleted][StreamObserver.onCompleted], after which there will be no other
+     * calls to this stream observer.
      */
-    fun authenticate(credentialsId: String, resultHandler: ResultHandler<Unit>) {
-        scope.launchForResult(resultHandler) {
-            service.authenticate(
-                CredentialsAuthenticateDescriptor(
-                    id = credentialsId,
-                    appUri = tinkConfiguration.redirectUri
-                )
-            )
-        }
+    fun authenticate(
+        credentialsId: String,
+        statusChangeObserver: StreamObserver<CredentialsStatus>
+    ): StreamSubscription {
+        return AuthenticateCredentialsTask(
+            descriptor = CredentialsAuthenticateDescriptor(
+                id = credentialsId,
+                appUri = tinkConfiguration.redirectUri
+            ),
+            credentialsService = service,
+            streamObserver = statusChangeObserver
+        )
     }
 
     private fun enable(credentialsId: String, resultHandler: ResultHandler<Unit>) {

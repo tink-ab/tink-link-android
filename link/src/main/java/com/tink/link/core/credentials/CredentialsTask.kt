@@ -2,8 +2,10 @@ package com.tink.link.core.credentials
 
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.model.credentials.Credentials
+import com.tink.service.credentials.CredentialsAuthenticateDescriptor
 import com.tink.service.credentials.CredentialsCreationDescriptor
 import com.tink.service.credentials.CredentialsService
+import com.tink.service.credentials.CredentialsUpdateDescriptor
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -14,10 +16,43 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-internal class CredentialsTask(
-    private val descriptor: CredentialsCreationDescriptor,
+internal class CreateCredentialsTask(
+    descriptor: CredentialsCreationDescriptor,
+    credentialsService: CredentialsService,
+    streamObserver: StreamObserver<CredentialsStatus>
+): CredentialsTask(
+    credentialsService = credentialsService,
+    streamObserver = streamObserver,
+    credentialsAction = { credentialsService.create(descriptor) }
+)
+
+internal class UpdateCredentialsTask(
+    descriptor: CredentialsUpdateDescriptor,
+    credentialsService: CredentialsService,
+    streamObserver: StreamObserver<CredentialsStatus>
+): CredentialsTask(
+    credentialsService = credentialsService,
+    streamObserver = streamObserver,
+    credentialsAction = { credentialsService.update(descriptor) }
+)
+
+internal class AuthenticateCredentialsTask(
+    descriptor: CredentialsAuthenticateDescriptor,
+    credentialsService: CredentialsService,
+    streamObserver: StreamObserver<CredentialsStatus>
+): CredentialsTask(
+    credentialsService = credentialsService,
+    streamObserver = streamObserver,
+    credentialsAction = {
+        credentialsService.authenticate(descriptor)
+        credentialsService.getCredentials(descriptor.id)
+    }
+)
+
+internal abstract class CredentialsTask(
     private val credentialsService: CredentialsService,
-    private val streamObserver: StreamObserver<CredentialsStatus>
+    private val streamObserver: StreamObserver<CredentialsStatus>,
+    private val credentialsAction: suspend () -> Credentials
 ) : StreamSubscription {
 
     private val errorHandler =
@@ -34,7 +69,7 @@ internal class CredentialsTask(
 
     init {
         scope.launch {
-            val initialCredentials = credentialsService.create(descriptor)
+            val initialCredentials = credentialsAction()
             var previousStatusUpdated = initialCredentials.statusUpdated
 
             while (true) {
