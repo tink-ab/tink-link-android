@@ -73,6 +73,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             }
         )
 
+        retryButton.setOnClickListener {
+            viewModel.refresh()
+        }
+
         setupToolbar()
     }
 
