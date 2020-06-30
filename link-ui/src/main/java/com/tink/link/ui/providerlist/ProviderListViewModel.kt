@@ -60,7 +60,7 @@ internal class ProviderListViewModel : ViewModel() {
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
 
-    fun refresh() = ProviderDataSource.providers.refresh()
+    fun refresh() = ProviderDataSource.providers.update()
 
     private fun applyPath(
         providers: List<ProviderTreeNode>,
