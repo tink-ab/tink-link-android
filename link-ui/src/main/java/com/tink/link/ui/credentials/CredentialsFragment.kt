@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.core.view.children
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
@@ -33,6 +35,7 @@ import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private const val PROVIDER_ARGS = "PROVIDER"
@@ -347,11 +350,12 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             viewModel.createCredentials(provider, fields) { error ->
                 val message = error.localizedMessage ?: error.message
                     ?: getString(R.string.tink_error_unknown)
-                showError(message)
+                lifecycleScope.launchWhenStarted { showError(message) }
             }
         }
     }
 
+    @UiThread
     private fun showError(message: String) {
         statusDialog?.dismiss()
         statusDialog = CredentialsStatusDialogFactory
@@ -393,7 +397,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         viewModel.updateCredentials(credentialsId, fields) { error ->
             val message = error.localizedMessage ?: error.message
                 ?: getString(R.string.tink_error_unknown)
-            showError(message)
+            lifecycleScope.launchWhenStarted { showError(message) }
         }
     }
 
