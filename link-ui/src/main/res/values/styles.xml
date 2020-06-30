@@ -12,6 +12,7 @@
     <item name="tink_colorOnPrimary">#ffffff</item>
     <item name="tink_colorSecondary">#ff427783</item>
     <item name="tink_colorError">#ff0000</item>
+    <item name="tink_colorWarning">#FEAF27</item>
     <item name="tink_textColorPrimary">#ff262626</item>
     <item name="tink_textColorPrimaryDisabled">#ffa7a7a7</item>
     <item name="tink_textColorSecondary">#ff808080</item>
