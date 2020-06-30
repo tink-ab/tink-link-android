@@ -1,7 +1,8 @@
 package com.tink.link.ui.providerlist
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import com.tink.core.Tink
 import com.tink.link.getUserContext
 import com.tink.model.provider.Provider
@@ -21,7 +22,7 @@ internal object ProviderDataSource {
                         postValue(it)
                     },
                     {
-                        // TODO: Error handling
+                        isError.postValue(true)
                     }
                 ),
                 filter = ProviderFilter(includeDemoProviders = true)
@@ -29,5 +30,13 @@ internal object ProviderDataSource {
         }
     }
 
-    val loading: LiveData<Boolean> = Transformations.map(providers) { it == null }
+    val isError: MutableLiveData<Boolean> = MutableLiveData(false)
+
+    val loading: LiveData<Boolean> = MediatorLiveData<Boolean>().apply {
+        fun update() {
+            value = providers.value == null && isError.value == false
+        }
+        addSource(providers) { update() }
+        addSource(isError) { update() }
+    }
 }
