@@ -10,6 +10,7 @@
     <attr name="tink_colorSecondary" format="color|reference"/>
     <attr name="tink_colorError" format="color|reference" />
     <attr name="tink_colorOnError" format="color|reference" />
+    <attr name="tink_colorWarning" format="color|reference" />
     <attr name="tink_textColorPrimary" format="color|reference" />
     <attr name="tink_textColorPrimaryDisabled" format="color|reference" />
     <attr name="tink_textColorPrimaryVariant" format="color|reference" />
