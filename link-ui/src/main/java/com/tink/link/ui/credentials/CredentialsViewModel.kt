@@ -13,6 +13,8 @@ import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
+import com.tink.model.credentials.RefreshableItem
+import com.tink.model.credentials.plus
 import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import com.tink.model.user.Scope
@@ -185,7 +187,8 @@ class CredentialsViewModel : ViewModel() {
                     _viewState.postValue(ViewState.NOT_LOADING)
                     onError(it)
                 }
-            )
+            ),
+            createRefreshableItems(scopes, provider.capabilities)
         )
     }
 
@@ -257,3 +260,52 @@ private fun Credentials.toStatusModel() =
 
 private fun CredentialsStatusModel.isNewStatus(other: CredentialsStatusModel) =
     status != other.status || statusUpdated < other.statusUpdated
+
+internal fun createRefreshableItems(
+    scopes: List<Scope>,
+    providerCapabilities: List<Provider.Capability>
+) =
+    mutableSetOf<RefreshableItem>().apply {
+        // Add default refreshable items - accounts, e-invoices and transfer destinations
+        addAll(RefreshableItem.accounts() + RefreshableItem.EINVOICES + RefreshableItem.TRANSFER_DESTINATIONS)
+        if (scopes.containsTransactions()) addAll(RefreshableItem.transactions())
+        if (scopes.containsIdentityData()) add(RefreshableItem.IDENTITY_DATA)
+    }
+        .intersect(providerCapabilities.toRefreshableItems())
+
+private fun List<Scope>.containsTransactions() =
+    contains(Scope.TransactionsRead) ||
+        contains(Scope.CustomScope("transactions:write")) || // TODO: Add to scope sealed class
+        contains(Scope.CustomScope("transactions:categorize")) // TODO: Add to scope sealed class
+
+private fun List<Scope>.containsIdentityData() =
+    contains(Scope.IdentityRead) || contains(Scope.CustomScope("identity:write")) // TODO: Add to scope sealed class
+
+private fun List<Provider.Capability>.toRefreshableItems(): Set<RefreshableItem> {
+    val refreshableItems = mutableSetOf<RefreshableItem>()
+    if (contains(Provider.Capability.CHECKING_ACCOUNTS)) {
+        refreshableItems.addAll(RefreshableItem.CHECKING_ACCOUNTS + RefreshableItem.CHECKING_TRANSACTIONS)
+    }
+    if (contains(Provider.Capability.SAVINGS_ACCOUNTS)) {
+        refreshableItems.addAll(RefreshableItem.SAVING_ACCOUNTS + RefreshableItem.SAVING_TRANSACTIONS)
+    }
+    if (contains(Provider.Capability.CREDIT_CARDS)) {
+        refreshableItems.addAll(RefreshableItem.CREDITCARD_ACCOUNTS + RefreshableItem.CREDITCARD_TRANSACTIONS)
+    }
+    if (contains(Provider.Capability.LOANS)) {
+        refreshableItems.addAll(RefreshableItem.LOAN_ACCOUNTS + RefreshableItem.LOAN_TRANSACTIONS)
+    }
+    if (contains(Provider.Capability.INVESTMENTS)) {
+        refreshableItems.addAll(RefreshableItem.INVESTMENT_ACCOUNTS + RefreshableItem.INVESTMENT_TRANSACTIONS)
+    }
+    if (contains(Provider.Capability.EINVOICES)) {
+        refreshableItems.add(RefreshableItem.EINVOICES)
+    }
+    if (contains(Provider.Capability.TRANSFERS)) {
+        refreshableItems.add(RefreshableItem.TRANSFER_DESTINATIONS)
+    }
+    if (contains(Provider.Capability.IDENTITY_DATA)) {
+        refreshableItems.add(RefreshableItem.IDENTITY_DATA)
+    }
+    return refreshableItems
+}
