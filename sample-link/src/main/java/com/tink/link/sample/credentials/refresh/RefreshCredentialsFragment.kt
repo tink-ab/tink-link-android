@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.sample.R
 import com.tink.link.sample.credentials.CredentialsField
-import com.tink.link.sample.credentials.MutableCredentialsField
 import com.tink.link.sample.credentials.toView
 import com.tink.link.sample.extensions.dpToPixels
 import com.tink.link.sample.extensions.launch

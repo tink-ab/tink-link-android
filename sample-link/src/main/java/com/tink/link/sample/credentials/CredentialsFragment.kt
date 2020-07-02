@@ -205,7 +205,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
     private fun handleError(error: Throwable) {
         view?.let { view ->
             val message = error.localizedMessage ?: error.message
-            ?: "Something went wrong. Please try again later."
+                ?: "Something went wrong. Please try again later."
             Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
         }
     }

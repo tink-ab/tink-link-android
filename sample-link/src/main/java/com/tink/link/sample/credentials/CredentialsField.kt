@@ -44,7 +44,7 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
         this.field = field
         updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         textInputLayout.hint = field.attributes.description +
-                " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
+            " (optional)".takeIf { field.validationRules.isOptional }.orEmpty()
 
         textInputLayout.placeholderText = field.attributes.hint
 

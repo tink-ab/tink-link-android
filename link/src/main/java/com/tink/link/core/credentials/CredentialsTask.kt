@@ -20,7 +20,7 @@ internal class CreateCredentialsTask(
     descriptor: CredentialsCreationDescriptor,
     credentialsService: CredentialsService,
     streamObserver: StreamObserver<CredentialsStatus>
-): CredentialsTask(
+) : CredentialsTask(
     credentialsService = credentialsService,
     streamObserver = streamObserver,
     credentialsAction = { credentialsService.create(descriptor) }
@@ -30,7 +30,7 @@ internal class UpdateCredentialsTask(
     descriptor: CredentialsUpdateDescriptor,
     credentialsService: CredentialsService,
     streamObserver: StreamObserver<CredentialsStatus>
-): CredentialsTask(
+) : CredentialsTask(
     credentialsService = credentialsService,
     streamObserver = streamObserver,
     credentialsAction = { credentialsService.update(descriptor) }
@@ -40,7 +40,7 @@ internal class AuthenticateCredentialsTask(
     descriptor: CredentialsAuthenticateDescriptor,
     credentialsService: CredentialsService,
     streamObserver: StreamObserver<CredentialsStatus>
-): CredentialsTask(
+) : CredentialsTask(
     credentialsService = credentialsService,
     streamObserver = streamObserver,
     credentialsAction = {
