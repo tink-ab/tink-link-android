@@ -6,7 +6,6 @@
   <string name="tink_redirect_uri_path" translatable="false">/callback</string>
   <string name="tink_provider_list_title">Choose bank</string>
   <string name="tink_provider_list_search_hint">Search for bank or card</string>
-  <!-- TODO: Swedish translation -->
   <string name="tink_provider_list_error_title">We are sorry, but we could not load any banks at the moment</string>
   <string name="tink_provider_list_error_description">This could be a temporary error, please try again and see if the problem persists.</string>
   <string name="tink_provider_list_error_retry_button">Try again</string>
