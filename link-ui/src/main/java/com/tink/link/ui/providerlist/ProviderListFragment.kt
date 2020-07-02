@@ -69,7 +69,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         viewModel.isError.observe(
             viewLifecycleOwner,
             Observer {
-                errorGroup?.visibility = if (it != false) View.VISIBLE else View.GONE
+                errorGroup?.visibility = if (it == true) View.VISIBLE else View.GONE
             }
         )
 
