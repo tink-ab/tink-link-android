@@ -72,11 +72,8 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
                 for (field in fields) {
                     credentialsFields
                         .addView(
-                            MutableCredentialsField(requireContext())
-                                .also {
-                                    it.updatePadding(bottom = resources.dpToPixels(32))
-                                    it.setupField(field)
-                                }
+                            field.toView(requireContext())
+                                .also { it.updatePadding(bottom = resources.dpToPixels(32)) }
                         )
                 }
             }

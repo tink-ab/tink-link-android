@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.sample.R
 import com.tink.link.sample.credentials.CredentialsField
 import com.tink.link.sample.credentials.MutableCredentialsField
+import com.tink.link.sample.credentials.toView
 import com.tink.link.sample.extensions.dpToPixels
 import com.tink.link.sample.extensions.launch
 import com.tink.model.credentials.Credentials
@@ -80,11 +81,8 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
         for (field in credentials.supplementalInformation) {
             credentialsFields
                 .addView(
-                    MutableCredentialsField(requireContext())
-                        .also {
-                            it.updatePadding(bottom = resources.dpToPixels(32))
-                            it.setupField(field)
-                        }
+                    field.toView(requireContext())
+                        .also { it.updatePadding(bottom = resources.dpToPixels(32)) }
                 )
         }
 
