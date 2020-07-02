@@ -275,11 +275,11 @@ internal fun createRefreshableItems(
 
 private fun List<Scope>.containsTransactions() =
     contains(Scope.TransactionsRead) ||
-            contains(Scope.CustomScope("transactions:write")) || //TODO: Add to scope sealed class
-            contains(Scope.CustomScope("transactions:categorize")) //TODO: Add to scope sealed class
+        contains(Scope.CustomScope("transactions:write")) || // TODO: Add to scope sealed class
+        contains(Scope.CustomScope("transactions:categorize")) // TODO: Add to scope sealed class
 
 private fun List<Scope>.containsIdentityData() =
-    contains(Scope.IdentityRead) || contains(Scope.CustomScope("identity:write")) //TODO: Add to scope sealed class
+    contains(Scope.IdentityRead) || contains(Scope.CustomScope("identity:write")) // TODO: Add to scope sealed class
 
 private fun List<Provider.Capability>.toRefreshableItems(): Set<RefreshableItem> {
     val refreshableItems = mutableSetOf<RefreshableItem>()

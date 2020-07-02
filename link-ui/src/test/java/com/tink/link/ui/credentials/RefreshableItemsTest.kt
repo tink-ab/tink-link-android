@@ -32,9 +32,9 @@ internal class RefreshableItemsTest {
             createRefreshableItems(scopeAccounts, capabilityAll)
         ).containsOnlyElementsOf(
             RefreshableItem.CHECKING_ACCOUNTS +
-                    RefreshableItem.SAVING_ACCOUNTS +
-                    RefreshableItem.EINVOICES +
-                    RefreshableItem.TRANSFER_DESTINATIONS
+                RefreshableItem.SAVING_ACCOUNTS +
+                RefreshableItem.EINVOICES +
+                RefreshableItem.TRANSFER_DESTINATIONS
         )
     }
 
@@ -44,11 +44,11 @@ internal class RefreshableItemsTest {
             createRefreshableItems(scopesAccountsTransactions, capabilityAll)
         ).containsOnlyElementsOf(
             RefreshableItem.CHECKING_ACCOUNTS +
-                    RefreshableItem.SAVING_ACCOUNTS +
-                    RefreshableItem.CHECKING_TRANSACTIONS +
-                    RefreshableItem.SAVING_TRANSACTIONS +
-                    RefreshableItem.EINVOICES +
-                    RefreshableItem.TRANSFER_DESTINATIONS
+                RefreshableItem.SAVING_ACCOUNTS +
+                RefreshableItem.CHECKING_TRANSACTIONS +
+                RefreshableItem.SAVING_TRANSACTIONS +
+                RefreshableItem.EINVOICES +
+                RefreshableItem.TRANSFER_DESTINATIONS
         )
     }
 
@@ -58,9 +58,9 @@ internal class RefreshableItemsTest {
             createRefreshableItems(scopesAccountsTransactions, capabilityAccountsOnly)
         ).containsOnlyElementsOf(
             RefreshableItem.CHECKING_ACCOUNTS +
-                    RefreshableItem.SAVING_ACCOUNTS +
-                    RefreshableItem.CHECKING_TRANSACTIONS +
-                    RefreshableItem.SAVING_TRANSACTIONS
+                RefreshableItem.SAVING_ACCOUNTS +
+                RefreshableItem.CHECKING_TRANSACTIONS +
+                RefreshableItem.SAVING_TRANSACTIONS
         )
     }
 }
