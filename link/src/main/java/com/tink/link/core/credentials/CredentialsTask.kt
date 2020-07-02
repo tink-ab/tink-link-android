@@ -135,4 +135,4 @@ internal abstract class CredentialsTask(
     }
 }
 
-class CredentialsFailure(message: String ? = null) : Throwable(message)
+class CredentialsFailure(message: String? = null) : Throwable(message)
