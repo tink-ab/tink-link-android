@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <public name="tink_app_name" type="string" />
-  <public name="tink_redirect_uri_scheme" type="string" />
-  <public name="tink_redirect_uri_host" type="string" />
-  <public name="tink_redirect_uri_port" type="string" />
-  <public name="tink_redirect_uri_path" type="string" />
 </resources>

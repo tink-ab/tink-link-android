@@ -19,11 +19,8 @@ private val MainLinkUiActivity.testTinkLinkConfig
         oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
             Uri.Builder()
-                .scheme(getString(R.string.tink_redirect_uri_scheme))
-                .encodedAuthority(
-                    getString(R.string.tink_redirect_uri_host) + ":" + getString(R.string.tink_redirect_uri_port)
-                )
-                .path(getString(R.string.tink_redirect_uri_path))
+                .scheme(getString(R.string.redirect_uri_scheme))
+                .encodedAuthority(getString(R.string.redirect_uri_host))
                 .build()
     )
 

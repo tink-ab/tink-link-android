@@ -1,9 +1,5 @@
 <resources>
   <string name="tink_app_name" translatable="false">link-ui</string>
-  <string name="tink_redirect_uri_scheme" translatable="false">http</string>
-  <string name="tink_redirect_uri_host" translatable="false">localhost</string>
-  <string name="tink_redirect_uri_port" translatable="false">3000</string>
-  <string name="tink_redirect_uri_path" translatable="false">/callback</string>
   <string name="tink_provider_list_title">Choose bank</string>
   <string name="tink_provider_list_search_hint">Search for bank or card</string>
   <string name="tink_provider_list_error_title">Unfortunately, we can’t show any banks right now</string>
