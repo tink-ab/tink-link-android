@@ -5,7 +5,9 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
 import com.tink.link.getUserContext
 import com.tink.link.ui.CombinedLiveData
@@ -149,6 +151,43 @@ class CredentialsViewModel : ViewModel() {
     fun setFields(fields: List<Field>) = _fields.postValue(fields)
 
     private var streamSubscription: StreamSubscription? = null
+        set(value) {
+            field?.unsubscribe()
+            field = value
+        }
+
+    private fun getCredentialsStreamObserver(
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
+        onError: (Throwable) -> Unit
+    ): StreamObserver<CredentialsStatus> {
+        return object : StreamObserver<CredentialsStatus> {
+            override fun onNext(value: CredentialsStatus) {
+                when (value) {
+                    is CredentialsStatus.Success -> _viewState.postValue(ViewState.UPDATED)
+                    is CredentialsStatus.Loading -> {
+                        _viewState.postValue(ViewState.UPDATING)
+                        if (authorizeUser && !authorizationDone.get()) {
+                            authorizeUser(scopes)
+                        }
+                    }
+
+                    is CredentialsStatus.AwaitingAuthentication -> {
+                        if (value.authenticationTask is AuthenticationTask.SupplementalInformation) {
+                            _viewState.postValue(ViewState.NOT_LOADING)
+                        } else {
+                            _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                        }
+                        onAwaitingAuthentication(value.authenticationTask)
+                    }
+                }
+            }
+
+            override fun onError(error: Throwable) {
+                _viewState.postValue(ViewState.NOT_LOADING)
+                onError(error)
+            }
+        }
+    }
 
     /**
      * Stream credentials from the repository and post updates to [_credentials].
@@ -172,22 +211,14 @@ class CredentialsViewModel : ViewModel() {
     fun createCredentials(
         provider: Provider,
         fields: List<Field>,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        credentialsRepository.create(
+        streamSubscription = credentialsRepository.create(
             provider.name,
             provider.credentialsType,
             fields.toFieldMap(),
-            ResultHandler(
-                { credentials ->
-                    fetchCredentials() // Start streaming credentials
-                    _credentialsId.postValue(credentials.id)
-                },
-                {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(it)
-                }
-            ),
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError),
             createRefreshableItems(scopes, provider.capabilities)
         )
     }
@@ -200,23 +231,14 @@ class CredentialsViewModel : ViewModel() {
     fun updateCredentials(
         id: String,
         fields: List<Field>,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
-        _credentialsId.value = id
-
-        credentialsRepository.update(
+        streamSubscription = credentialsRepository.update(
             id,
             "", // TODO: provider name
             fields.toFieldMap(),
-            ResultHandler(
-                {
-                    fetchCredentials() // Start streaming credentials
-                },
-                {
-                    _viewState.postValue(ViewState.NOT_LOADING)
-                    onError(it)
-                }
-            )
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
 
