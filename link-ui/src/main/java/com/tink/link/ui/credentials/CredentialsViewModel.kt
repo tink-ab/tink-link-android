@@ -118,6 +118,11 @@ class CredentialsViewModel : ViewModel() {
                     _authorizationCode.value.isNullOrEmpty() &&
                     viewState == ViewState.UPDATED
                 ) {
+                    if (authorizeUser && !authorizationDone.get() && !currentlyAuthorizing.get()) {
+                        // RC Fallback: We should authorize but didn't start it yet.
+                        // This is due to never entering "loading" state (polling timer).
+                        authorizeUser(scopes)
+                    }
                     ViewState.UPDATING
                 } else {
                     viewState
