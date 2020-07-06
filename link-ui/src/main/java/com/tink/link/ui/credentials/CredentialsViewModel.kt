@@ -235,13 +235,14 @@ class CredentialsViewModel : ViewModel() {
 
     fun updateCredentials(
         id: String,
+        provider: Provider,
         fields: List<Field>,
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
         streamSubscription = credentialsRepository.update(
             id,
-            "", // TODO: provider name
+            provider.name,
             fields.toFieldMap(),
             getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
