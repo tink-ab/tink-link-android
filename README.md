@@ -53,8 +53,29 @@ This should be the same redirect URI that is registered in the list of allowed r
 Tink.init(config, applicationContext)
 ```
 
+## Integrating Tink Link UI into your application
+Tink Link UI contains a predefined flow, a single entrypoint and configurable UI style, which can be used to bootstrap your application fast, suitable for customer aggregating with temporary users.
+
+1. As a prerequisite, Tink Link UI requires Tink Link to be installed and initialized in your application. To do this, please follow the previous steps mentioned above to configure and set up Tink Link.
+
+2. Add dependency on the latest version: 
+
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-link-android?color=%230E9EC2)](https://github.com/tink-ab/tink-link-android/releases/latest)
+
+```groovy
+dependencies {
+     implementation "com.tink:link:<version>"
+     implementation "com.tink:link-ui:<version>"
+ }
+```
+
+## Tutorials
+- [Tink Link Tutorial](https://docs.tink.com/resources/tutorials/tink-link-sdk-android-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
+- [Tink Link UI Tutorial] This tutorial outlines how to configure and use Tink Link UI in your application. // TODO
+
 ## Examples
-- [Usage Examples](https://docs.tink.com/resources/tutorials/tink-link-sdk-android-tutorial#usage-examples) This section outlines how to use the different classes and types provided with Tink Link.
+- [Tink Link Sample](/sample-link)
+- [Tink Link UI Sample](/sample-link-ui)
 
 ## Developer documentation
 - [Tink Link Android Reference](https://tink-ab.github.io/tink-link-android/)

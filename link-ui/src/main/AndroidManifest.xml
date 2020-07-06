@@ -11,10 +11,10 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
         <data
-          android:host="@string/tink_redirect_uri_host"
-          android:pathPrefix="@string/tink_redirect_uri_path"
-          android:port="@string/tink_redirect_uri_port"
-          android:scheme="@string/tink_redirect_uri_scheme" />
+          android:host="localhost"
+          android:pathPrefix="/callback"
+          android:port="3000"
+          android:scheme="http" />
       </intent-filter>
     </activity>
 
