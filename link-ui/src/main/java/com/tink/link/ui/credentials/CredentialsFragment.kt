@@ -62,6 +62,12 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private var bankIdActionType: Int = BANK_ID_ACTION_SAME_DEVICE
     private var statusDialog: AlertDialog? = null
+    private var statusDialogInfo: StatusDialogInfo? = null
+
+    private data class StatusDialogInfo(
+        val message: String,
+        val type: CredentialsStatusDialogFactory.Type
+    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -293,20 +299,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
     }
 
     @UiThread
-    private fun showError(message: String) {
-        statusDialog?.dismiss()
-        statusDialog = CredentialsStatusDialogFactory
-            .createDialog(
-                requireContext(),
-                CredentialsStatusDialogFactory.Type.ERROR,
-                message
-            ) {
-                statusDialog?.dismiss()
-            }
-            .also { it.show() }
-    }
-
-    @UiThread
     private fun showInstallDialog(
         title: String,
         message: String,
@@ -336,19 +328,33 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         }
     }
 
-    private fun showLoading(message: String, onCancel: (() -> Unit)? = null) {
+    @UiThread
+    private fun showStatusDialog(message: String, type: CredentialsStatusDialogFactory.Type) {
+        val newStatusDialogInfo = StatusDialogInfo(message, type)
+
+        // Don't dismiss and show same dialog if it's already showing
+        if (statusDialog?.isShowing == true && statusDialogInfo == newStatusDialogInfo) return
+
         statusDialog?.dismiss()
         statusDialog = CredentialsStatusDialogFactory
             .createDialog(
                 requireContext(),
-                CredentialsStatusDialogFactory.Type.LOADING,
+                type,
                 message
             ) {
-                onCancel?.invoke()
                 statusDialog?.dismiss()
             }
             .also { it.show() }
+        statusDialogInfo = newStatusDialogInfo
     }
+
+    @UiThread
+    private fun showError(message: String) =
+        showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
+
+    @UiThread
+    private fun showLoading(message: String) =
+        showStatusDialog(message, CredentialsStatusDialogFactory.Type.LOADING)
 
     private fun updateCredentials(credentialsId: String) {
         if (areFieldsValid()) {
