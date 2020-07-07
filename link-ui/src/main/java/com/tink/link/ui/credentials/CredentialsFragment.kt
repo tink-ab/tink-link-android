@@ -299,36 +299,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
     }
 
     @UiThread
-    private fun showInstallDialog(
-        title: String,
-        message: String,
-        packageName: String,
-        onCancel: (() -> Unit)? = null
-    ) {
-        lifecycleScope.launchWhenStarted {
-            val activity = requireActivity()
-            MaterialAlertDialogBuilder(activity)
-                .apply {
-                    setTitle(title)
-                    setMessage(message)
-                    setPositiveButton(
-                        activity.getString(R.string.tink_third_party_authentication_download_app_install_button)
-                    ) { _, _ ->
-                        val intent = Intent(Intent.ACTION_VIEW).apply {
-                            data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
-                            setPackage("com.android.vending")
-                        }
-                        activity.startActivity(intent)
-                    }
-                    setNegativeButton(
-                        activity.getString(R.string.tink_cancel_button)
-                    ) { _, _ -> onCancel?.invoke() }
-                }
-                .show()
-        }
-    }
-
-    @UiThread
     private fun showStatusDialog(message: String, type: CredentialsStatusDialogFactory.Type) {
         val newStatusDialogInfo = StatusDialogInfo(message, type)
 
@@ -438,6 +408,37 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         }
     }
+
+    @UiThread
+    private fun showInstallDialog(
+        title: String,
+        message: String,
+        packageName: String,
+        onCancel: (() -> Unit)? = null
+    ) {
+        lifecycleScope.launchWhenStarted {
+            val activity = requireActivity()
+            MaterialAlertDialogBuilder(activity)
+                .apply {
+                    setTitle(title)
+                    setMessage(message)
+                    setPositiveButton(
+                        activity.getString(R.string.tink_third_party_authentication_download_app_install_button)
+                    ) { _, _ ->
+                        val intent = Intent(Intent.ACTION_VIEW).apply {
+                            data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                            setPackage("com.android.vending")
+                        }
+                        activity.startActivity(intent)
+                    }
+                    setNegativeButton(
+                        activity.getString(R.string.tink_cancel_button)
+                    ) { _, _ -> onCancel?.invoke() }
+                }
+                .show()
+        }
+    }
+
     private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
             R.id.connectionSuccessfulFragment,
