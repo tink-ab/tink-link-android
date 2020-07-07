@@ -10,11 +10,8 @@ import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
 import com.tink.link.getUserContext
-import com.tink.link.ui.CombinedLiveData
 import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
-import com.tink.model.authentication.ThirdPartyAppAuthentication
-import com.tink.model.credentials.Credentials
 import com.tink.model.credentials.RefreshableItem
 import com.tink.model.credentials.plus
 import com.tink.model.misc.Field
@@ -23,16 +20,9 @@ import com.tink.model.user.Scope
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
-import org.threeten.bp.Instant
 import java.util.concurrent.atomic.AtomicBoolean
 
 class CredentialsViewModel : ViewModel() {
-
-    private val _credentials = MutableLiveData<List<Credentials>>()
-    val credentials: LiveData<List<Credentials>> = _credentials
-
-    private val _credentialsId = MutableLiveData<String>()
-    val credentialsId: LiveData<String> = _credentialsId
 
     private val credentialsRepository: CredentialsRepository
 
@@ -42,68 +32,10 @@ class CredentialsViewModel : ViewModel() {
     val authorizationCode: LiveData<String> = _authorizationCode
 
     internal var scopes: List<Scope> = emptyList()
-
     internal var authorizeUser: Boolean = false
 
     init {
         credentialsRepository = userContext.credentialsRepository
-    }
-
-    private var credentialsStatus: CredentialsStatusModel? = null
-
-    /**
-     * Combines the output of [credentialsId] and [credentials] to a [LiveData] that holds the
-     * [Credentials] with the id held in [credentialsId].
-     *
-     * As a side-effect, it also updates our view state based on the status of the credentials.
-     */
-    val createdCredentials = CombinedLiveData(credentialsId, credentials) { id, list ->
-        list.firstOrNull { it.id == id }
-            ?.also { credentials ->
-                val newStatusModel = credentials.toStatusModel()
-                val oldStatusModel = credentialsStatus
-                if (oldStatusModel == null || oldStatusModel.isNewStatus(newStatusModel)) {
-                    credentialsStatus = newStatusModel
-                    when (credentials.status) {
-                        Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION -> {
-                            credentials.thirdPartyAppAuthentication
-                                ?.let { _mobileBankIdAuthenticationEvent.postValue(Event(it)) }
-                                ?.also {
-                                    _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
-                                }
-                        }
-                        Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION -> {
-                            credentials.thirdPartyAppAuthentication
-                                ?.let { _thirdPartyAuthenticationEvent.postValue(Event(it)) }
-                                ?.also {
-                                    _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
-                                }
-                        }
-
-                        Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION -> {
-                            _supplementalInformationEvent.postValue(Event(credentials.supplementalInformation))
-                            _viewState.postValue(ViewState.NOT_LOADING)
-                        }
-
-                        Credentials.Status.AUTHENTICATION_ERROR,
-                        Credentials.Status.TEMPORARY_ERROR,
-                        Credentials.Status.PERMANENT_ERROR -> {
-                            _viewState.postValue(ViewState.NOT_LOADING)
-                            credentials.statusPayload?.let { _errorEvent.postValue(Event(it)) }
-                        }
-
-                        Credentials.Status.UPDATING -> {
-                            _viewState.postValue(ViewState.UPDATING)
-                            if (authorizeUser && !authorizationDone.get()) {
-                                authorizeUser(scopes)
-                            }
-                        }
-                        Credentials.Status.UPDATED -> _viewState.postValue(ViewState.UPDATED)
-                        else -> {
-                        }
-                    }
-                }
-            }
     }
 
     fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
@@ -131,21 +63,6 @@ class CredentialsViewModel : ViewModel() {
         addSource(_viewState) { update() }
         addSource(_authorizationCode) { if (authorizeUser) update() }
     }
-
-    private val _mobileBankIdAuthenticationEvent =
-        MutableLiveData<Event<ThirdPartyAppAuthentication>>()
-    val mobileBankIdAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
-        _mobileBankIdAuthenticationEvent
-
-    private val _thirdPartyAuthenticationEvent =
-        MutableLiveData<Event<ThirdPartyAppAuthentication>>()
-    val thirdPartyAuthenticationEvent: LiveData<Event<ThirdPartyAppAuthentication>> =
-        _thirdPartyAuthenticationEvent
-
-    private val _supplementalInformationEvent =
-        MutableLiveData<Event<List<Field>>>()
-    val supplementalInformationEvent: LiveData<Event<List<Field>>> =
-        _supplementalInformationEvent
 
     private val _errorEvent = MutableLiveData<Event<String>>()
     val errorEvent: LiveData<Event<String>> = _errorEvent
@@ -192,22 +109,6 @@ class CredentialsViewModel : ViewModel() {
                 onError(error)
             }
         }
-    }
-
-    /**
-     * Stream credentials from the repository and post updates to [_credentials].
-     */
-    private fun fetchCredentials() {
-        streamSubscription?.unsubscribe()
-        streamSubscription = credentialsRepository.listStream().subscribe(
-            object : StreamObserver<List<Credentials>> {
-                override fun onNext(value: List<Credentials>) {
-                    if (_credentials.value != value) {
-                        _credentials.postValue(value)
-                    }
-                }
-            }
-        )
     }
 
     /**
@@ -277,17 +178,6 @@ class CredentialsViewModel : ViewModel() {
         UPDATED,
     }
 }
-
-data class CredentialsStatusModel(
-    val status: Credentials.Status?,
-    val statusUpdated: Instant
-)
-
-private fun Credentials.toStatusModel() =
-    CredentialsStatusModel(status, statusUpdated)
-
-private fun CredentialsStatusModel.isNewStatus(other: CredentialsStatusModel) =
-    status != other.status || statusUpdated < other.statusUpdated
 
 internal fun createRefreshableItems(
     scopes: List<Scope>,

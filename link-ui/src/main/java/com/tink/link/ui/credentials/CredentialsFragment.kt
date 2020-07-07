@@ -35,7 +35,6 @@ import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
-import timber.log.Timber
 
 private const val PROVIDER_ARGS = "PROVIDER"
 
@@ -171,23 +170,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         }
 
-        viewModel.credentials.observe(
-            viewLifecycleOwner,
-            Observer {
-                Timber.d(it.toString())
-            }
-        )
-
-        viewModel.createdCredentials.observe(
-            viewLifecycleOwner,
-            Observer { credentials ->
-                // TODO: Remove
-                Timber.d("Received update for credentials ${credentials.id}")
-                Timber.d("Status = ${credentials.status?.name}")
-                Timber.d("Status = ${credentials.statusPayload}")
-            }
-        )
-
         viewModel.viewState.observe(
             viewLifecycleOwner,
             Observer { state ->
@@ -273,7 +255,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
     }
 
     private fun submitFilledFields() {
-        val credentialsId = updateArgs?.credentialsId ?: viewModel.credentialsId.value
+        val credentialsId = updateArgs?.credentialsId
         if (credentialsId.isNullOrEmpty()) {
             createCredentials()
         } else {
