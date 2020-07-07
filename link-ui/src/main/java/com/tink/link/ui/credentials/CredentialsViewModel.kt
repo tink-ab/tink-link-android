@@ -23,25 +23,16 @@ import com.tink.service.streaming.publisher.StreamSubscription
 import java.util.concurrent.atomic.AtomicBoolean
 
 class CredentialsViewModel : ViewModel() {
-
-    private val credentialsRepository: CredentialsRepository
+    internal var scopes: List<Scope> = emptyList()
+    internal var authorizeUser: Boolean = false
 
     private val userContext: UserContext = requireNotNull(Tink.getUserContext())
+    private val credentialsRepository: CredentialsRepository = userContext.credentialsRepository
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
 
-    internal var scopes: List<Scope> = emptyList()
-    internal var authorizeUser: Boolean = false
-
-    init {
-        credentialsRepository = userContext.credentialsRepository
-    }
-
-    fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
-
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
-
     val viewState: LiveData<ViewState> = MediatorLiveData<ViewState>().apply {
         fun update() {
             val viewState = _viewState.value ?: return
@@ -70,13 +61,14 @@ class CredentialsViewModel : ViewModel() {
     private val _fields = MutableLiveData<List<Field>>()
     val fields: LiveData<List<Field>> = _fields
 
-    fun setFields(fields: List<Field>) = _fields.postValue(fields)
-
     private var streamSubscription: StreamSubscription? = null
         set(value) {
             field?.unsubscribe()
             field = value
         }
+
+    fun setFields(fields: List<Field>) = _fields.postValue(fields)
+    fun updateViewState(viewState: ViewState) = _viewState.postValue(viewState)
 
     private fun getCredentialsStreamObserver(
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
@@ -129,11 +121,6 @@ class CredentialsViewModel : ViewModel() {
         )
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        streamSubscription?.unsubscribe()
-    }
-
     fun updateCredentials(
         id: String,
         provider: Provider,
@@ -169,6 +156,11 @@ class CredentialsViewModel : ViewModel() {
                 )
             )
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        streamSubscription?.unsubscribe()
     }
 
     enum class ViewState {

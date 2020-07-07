@@ -379,9 +379,9 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             when (authenticationTask) {
                 is AuthenticationTask.ThirdPartyAuthentication -> {
                     val androidData = authenticationTask.thirdPartyAppAuthentication.android!!
-                    val isBankId = androidData.intent
-                        .startsWith("bankid://")
-                    if (isBankId) {
+
+                    if (androidData.intent.startsWith("bankid://")) {
+                        // Handle Mobile BankID separately.
                         launchBankIdAuthentication(authenticationTask)
                         return@launchWhenResumed
                     }
