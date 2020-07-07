@@ -86,11 +86,7 @@ class CredentialsViewModel : ViewModel() {
                     }
 
                     is CredentialsStatus.AwaitingAuthentication -> {
-                        if (value.authenticationTask is AuthenticationTask.SupplementalInformation) {
-                            _viewState.postValue(ViewState.NOT_LOADING)
-                        } else {
-                            _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
-                        }
+                        _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
                         onAwaitingAuthentication(value.authenticationTask)
                     }
                 }
