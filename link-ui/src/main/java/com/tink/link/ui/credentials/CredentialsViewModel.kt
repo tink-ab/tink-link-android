@@ -78,6 +78,7 @@ class CredentialsViewModel : ViewModel() {
             override fun onNext(value: CredentialsStatus) {
                 when (value) {
                     is CredentialsStatus.Success -> _viewState.postValue(ViewState.UPDATED)
+
                     is CredentialsStatus.Loading -> {
                         _viewState.postValue(ViewState.UPDATING)
                         if (authorizeUser && !authorizationDone.get()) {
