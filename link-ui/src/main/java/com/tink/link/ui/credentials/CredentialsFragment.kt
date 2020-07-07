@@ -384,34 +384,41 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         lifecycleScope.launchWhenResumed {
             when (authenticationTask) {
                 is AuthenticationTask.ThirdPartyAuthentication -> {
-                    val androidData = authenticationTask.thirdPartyAppAuthentication.android!!
-
-                    if (androidData.intent.startsWith("bankid://")) {
-                        // Handle Mobile BankID separately.
-                        launchBankIdAuthentication(authenticationTask)
-                        return@launchWhenResumed
-                    }
-
-                    val launchResult = authenticationTask.launch(requireActivity())
-                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-
-                    if (launchResult !is LaunchResult.Success) {
-                        // Something went wrong when launching, show dialog prompt to install or upgrade app
-                        val needsUpgrade = launchResult is LaunchResult.AppNeedsUpgrade
-                        authenticationTask.thirdPartyAppAuthentication.let {
-                            showInstallDialog(
-                                title = if (needsUpgrade) it.upgradeTitle else it.downloadTitle,
-                                message = if (needsUpgrade) it.upgradeMessage else it.downloadMessage,
-                                packageName = androidData.packageName
-                            ) {
-                                viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                            }
-                        }
-                    }
+                    handleThirdPartyAuthentication(authenticationTask)
                 }
+
                 is AuthenticationTask.SupplementalInformation -> {
                     SupplementalInformationFragment.newInstance(authenticationTask)
                         .show(childFragmentManager, null)
+                }
+            }
+        }
+    }
+
+    private fun handleThirdPartyAuthentication(
+        authenticationTask: AuthenticationTask.ThirdPartyAuthentication
+    ) {
+        val androidData = authenticationTask.thirdPartyAppAuthentication.android!!
+
+        if (androidData.intent.startsWith("bankid://")) {
+            // Handle Mobile BankID separately.
+            launchBankIdAuthentication(authenticationTask)
+            return
+        }
+
+        val launchResult = authenticationTask.launch(requireActivity())
+        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+
+        if (launchResult !is LaunchResult.Success) {
+            // Something went wrong when launching, show dialog prompt to install or upgrade app
+            val needsUpgrade = launchResult is LaunchResult.AppNeedsUpgrade
+            authenticationTask.thirdPartyAppAuthentication.let {
+                showInstallDialog(
+                    title = if (needsUpgrade) it.upgradeTitle else it.downloadTitle,
+                    message = if (needsUpgrade) it.upgradeMessage else it.downloadMessage,
+                    packageName = androidData.packageName
+                ) {
+                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
                 }
             }
         }
