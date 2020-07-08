@@ -1,5 +1,6 @@
 package com.tink.link.ui.credentials
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
@@ -16,26 +17,24 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
+import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
-import com.tink.link.ui.extensions.launch
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toView
-import com.tink.model.authentication.ThirdPartyAppAuthentication
 import com.tink.model.credentials.Credentials
-import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
-import kotlinx.coroutines.launch
-import timber.log.Timber
 
 private const val PROVIDER_ARGS = "PROVIDER"
 
@@ -63,6 +62,12 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private var bankIdActionType: Int = BANK_ID_ACTION_SAME_DEVICE
     private var statusDialog: AlertDialog? = null
+    private var statusDialogInfo: StatusDialogInfo? = null
+
+    private data class StatusDialogInfo(
+        val message: String,
+        val type: CredentialsStatusDialogFactory.Type
+    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -171,23 +176,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         }
 
-        viewModel.credentials.observe(
-            viewLifecycleOwner,
-            Observer {
-                Timber.d(it.toString())
-            }
-        )
-
-        viewModel.createdCredentials.observe(
-            viewLifecycleOwner,
-            Observer { credentials ->
-                // TODO: Remove
-                Timber.d("Received update for credentials ${credentials.id}")
-                Timber.d("Status = ${credentials.status?.name}")
-                Timber.d("Status = ${credentials.statusPayload}")
-            }
-        )
-
         viewModel.viewState.observe(
             viewLifecycleOwner,
             Observer { state ->
@@ -215,39 +203,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                     }
 
                     else -> { }
-                }
-            }
-        )
-
-        viewModel.thirdPartyAuthenticationEvent.observe(
-            viewLifecycleOwner,
-            Observer { event ->
-                event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
-                    activity?.let {
-                        thirdPartyAuthentication.launch(it) {
-                            viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                        }
-                    }
-                }
-            }
-        )
-
-        viewModel.mobileBankIdAuthenticationEvent.observe(
-            viewLifecycleOwner,
-            Observer { event ->
-                event.getContentIfNotHandled()?.let { thirdPartyAuthentication ->
-                    launchBankIdAuthentication(thirdPartyAuthentication)
-                }
-            }
-        )
-
-        viewModel.supplementalInformationEvent.observe(
-            viewLifecycleOwner,
-            Observer { event ->
-                event.getContentIfNotHandled()?.let { supplementalInformation ->
-                    viewModel.credentialsId.value?.let { credentialsId ->
-                        showSupplementalInfoDialog(credentialsId, supplementalInformation)
-                    }
                 }
             }
         )
@@ -305,14 +260,8 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
         )
     }
 
-    private fun showSupplementalInfoDialog(credentialsId: String, supplementalFields: List<Field>) {
-        SupplementalInformationFragment
-            .newInstance(credentialsId, supplementalFields)
-            .show(childFragmentManager, null)
-    }
-
     private fun submitFilledFields() {
-        val credentialsId = updateArgs?.credentialsId ?: viewModel.credentialsId.value
+        val credentialsId = updateArgs?.credentialsId
         if (credentialsId.isNullOrEmpty()) {
             createCredentials()
         } else {
@@ -336,41 +285,46 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                 .map { it.getFilledField() }
                 .toList()
 
-            viewModel.createCredentials(provider, fields) { error ->
-                val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
-                lifecycleScope.launchWhenStarted { showError(message) }
-            }
+            viewModel.createCredentials(
+                provider = provider,
+                fields = fields,
+                onAwaitingAuthentication = ::handleAuthenticationTask,
+                onError = { error ->
+                    val message = error.localizedMessage ?: error.message
+                        ?: getString(R.string.tink_error_unknown)
+                    lifecycleScope.launchWhenStarted { showError(message) }
+                }
+            )
         }
     }
 
     @UiThread
-    private fun showError(message: String) {
+    private fun showStatusDialog(message: String, type: CredentialsStatusDialogFactory.Type) {
+        val newStatusDialogInfo = StatusDialogInfo(message, type)
+
+        // Don't dismiss and show same dialog if it's already showing
+        if (statusDialog?.isShowing == true && statusDialogInfo == newStatusDialogInfo) return
+
         statusDialog?.dismiss()
         statusDialog = CredentialsStatusDialogFactory
             .createDialog(
                 requireContext(),
-                CredentialsStatusDialogFactory.Type.ERROR,
+                type,
                 message
             ) {
                 statusDialog?.dismiss()
             }
             .also { it.show() }
+        statusDialogInfo = newStatusDialogInfo
     }
 
-    private fun showLoading(message: String, onCancel: (() -> Unit)? = null) {
-        statusDialog?.dismiss()
-        statusDialog = CredentialsStatusDialogFactory
-            .createDialog(
-                requireContext(),
-                CredentialsStatusDialogFactory.Type.LOADING,
-                message
-            ) {
-                onCancel?.invoke()
-                statusDialog?.dismiss()
-            }
-            .also { it.show() }
-    }
+    @UiThread
+    private fun showError(message: String) =
+        showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
+
+    @UiThread
+    private fun showLoading(message: String) =
+        showStatusDialog(message, CredentialsStatusDialogFactory.Type.LOADING)
 
     private fun updateCredentials(credentialsId: String) {
         if (areFieldsValid()) {
@@ -383,18 +337,68 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             .map { it.getFilledField() }
             .toList()
 
-        viewModel.updateCredentials(credentialsId, fields) { error ->
-            val message = error.localizedMessage ?: error.message
-                ?: getString(R.string.tink_error_unknown)
-            lifecycleScope.launchWhenStarted { showError(message) }
+        viewModel.updateCredentials(
+            id = credentialsId,
+            provider = provider,
+            fields = fields,
+            onAwaitingAuthentication = ::handleAuthenticationTask,
+            onError = { error ->
+                val message = error.localizedMessage ?: error.message
+                    ?: getString(R.string.tink_error_unknown)
+                lifecycleScope.launchWhenStarted { showError(message) }
+            }
+        )
+    }
+
+    private fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
+        lifecycleScope.launchWhenResumed {
+            when (authenticationTask) {
+                is AuthenticationTask.ThirdPartyAuthentication -> {
+                    handleThirdPartyAuthentication(authenticationTask)
+                }
+
+                is AuthenticationTask.SupplementalInformation -> {
+                    SupplementalInformationFragment.newInstance(authenticationTask)
+                        .show(childFragmentManager, null)
+                }
+            }
         }
     }
 
-    private fun launchBankIdAuthentication(thirdPartyAppAuthentication: ThirdPartyAppAuthentication) {
+    private fun handleThirdPartyAuthentication(
+        authenticationTask: AuthenticationTask.ThirdPartyAuthentication
+    ) {
+        val androidData = authenticationTask.thirdPartyAppAuthentication.android!!
+
+        if (androidData.intent.startsWith("bankid://")) {
+            // Handle Mobile BankID separately.
+            launchBankIdAuthentication(authenticationTask)
+            return
+        }
+
+        val launchResult = authenticationTask.launch(requireActivity())
+        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+
+        if (launchResult !is LaunchResult.Success) {
+            // Something went wrong when launching, show dialog prompt to install or upgrade app
+            val needsUpgrade = launchResult is LaunchResult.AppNeedsUpgrade
+            authenticationTask.thirdPartyAppAuthentication.let {
+                showInstallDialog(
+                    title = if (needsUpgrade) it.upgradeTitle else it.downloadTitle,
+                    message = if (needsUpgrade) it.upgradeMessage else it.downloadMessage,
+                    packageName = androidData.packageName
+                ) {
+                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+                }
+            }
+        }
+    }
+
+    private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
-            thirdPartyAppAuthentication.launch(requireActivity(), {})
+            authenticationTask.launch(requireActivity())
         } else {
-            val intent = thirdPartyAppAuthentication.android?.intent
+            val intent = authenticationTask.thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
                 BankIdOtherDeviceFragment
                     .newInstance(intent)
@@ -404,6 +408,37 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             }
         }
     }
+
+    @UiThread
+    private fun showInstallDialog(
+        title: String,
+        message: String,
+        packageName: String,
+        onCancel: (() -> Unit)? = null
+    ) {
+        lifecycleScope.launchWhenStarted {
+            val activity = requireActivity()
+            MaterialAlertDialogBuilder(activity)
+                .apply {
+                    setTitle(title)
+                    setMessage(message)
+                    setPositiveButton(
+                        activity.getString(R.string.tink_third_party_authentication_download_app_install_button)
+                    ) { _, _ ->
+                        val intent = Intent(Intent.ACTION_VIEW).apply {
+                            data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                            setPackage("com.android.vending")
+                        }
+                        activity.startActivity(intent)
+                    }
+                    setNegativeButton(
+                        activity.getString(R.string.tink_cancel_button)
+                    ) { _, _ -> onCancel?.invoke() }
+                }
+                .show()
+        }
+    }
+
     private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
             R.id.connectionSuccessfulFragment,

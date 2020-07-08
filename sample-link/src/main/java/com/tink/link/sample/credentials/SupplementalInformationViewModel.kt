@@ -1,10 +1,9 @@
-package com.tink.link.ui.credentials
+package com.tink.link.sample.credentials
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.link.authentication.AuthenticationTask
-import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.misc.Field
 import com.tink.service.handler.ResultHandler
 

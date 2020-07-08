@@ -1,4 +1,4 @@
-package com.tink.link.ui.credentials
+package com.tink.link.sample.credentials
 
 import android.app.Dialog
 import android.os.Bundle
@@ -7,8 +7,7 @@ import androidx.core.view.children
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import com.tink.link.authentication.AuthenticationTask
-import com.tink.link.ui.R
-import com.tink.link.ui.extensions.toView
+import com.tink.link.sample.R
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
 private const val ARG_AUTHENTICATION_TASK = "ARG_AUTHENTICATION_TASK"
@@ -27,7 +26,7 @@ class SupplementalInformationFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.Tink_MaterialAlertDialogStyle)
+        setStyle(STYLE_NORMAL, android.R.style.Theme_Material_Dialog_Alert)
         supplementalInformationViewModel.setData(authenticationTask)
     }
 
