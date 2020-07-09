@@ -376,7 +376,6 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             return
         }
 
-        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
         authenticationTask.launch(requireActivity())
             .handleLaunchResult()
     }
