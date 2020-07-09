@@ -143,11 +143,15 @@ sealed class AuthenticationTask : Parcelable {
             activity: Activity,
             thirdPartyAuthenticationAndroid: ThirdPartyAppAuthentication.Android
         ): Boolean =
-            thirdPartyAuthenticationAndroid.packageName
-                .takeIf { it.isNotBlank() }
-                ?.let { activity.packageManager.getPackageInfo(it, 0) }
-                ?.takeIf { it.versionCode < thirdPartyAuthenticationAndroid.requiredMinimumVersion }
-                ?.let { true } ?: false
+            try {
+                thirdPartyAuthenticationAndroid.packageName
+                    .takeIf { it.isNotBlank() }
+                    ?.let { activity.packageManager.getPackageInfo(it, 0) }
+                    ?.takeIf { it.versionCode < thirdPartyAuthenticationAndroid.requiredMinimumVersion }
+                    ?.let { true } ?: false
+            } catch (e: PackageManager.NameNotFoundException) {
+                false
+            }
 
         /**
          * Indicates if the user was successfully redirected when [launch] was called.
