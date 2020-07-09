@@ -376,22 +376,9 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             return
         }
 
-        val launchResult = authenticationTask.launch(requireActivity())
         viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-
-        if (launchResult !is LaunchResult.Success) {
-            // Something went wrong when launching, show dialog prompt to install or upgrade app
-            val needsUpgrade = launchResult is LaunchResult.AppNeedsUpgrade
-            authenticationTask.thirdPartyAppAuthentication.let {
-                showInstallDialog(
-                    title = if (needsUpgrade) it.upgradeTitle else it.downloadTitle,
-                    message = if (needsUpgrade) it.upgradeMessage else it.downloadMessage,
-                    packageName = androidData.packageName
-                ) {
-                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                }
-            }
-        }
+        authenticationTask.launch(requireActivity())
+            .handleLaunchResult()
     }
 
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
@@ -405,6 +392,19 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                     .show(childFragmentManager, null)
             } else {
                 showError(getString(R.string.tink_error_unknown))
+            }
+        }
+    }
+
+    private fun LaunchResult.handleLaunchResult() {
+        if (this !is LaunchResult.Success && this is LaunchResult.LaunchInfo) {
+            // Something went wrong when launching, show dialog prompt to install or upgrade app
+            showInstallDialog(
+                title = title,
+                message = message,
+                packageName = packageName
+            ) {
+                viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
             }
         }
     }
