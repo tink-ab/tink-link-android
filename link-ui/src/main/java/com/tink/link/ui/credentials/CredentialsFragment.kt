@@ -384,6 +384,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
             authenticationTask.launch(requireActivity())
+                .handleLaunchResult()
         } else {
             val intent = authenticationTask.thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
