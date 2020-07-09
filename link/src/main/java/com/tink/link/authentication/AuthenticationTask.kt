@@ -3,6 +3,7 @@ package com.tink.link.authentication
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Parcelable
 import com.tink.core.Tink
@@ -176,10 +177,10 @@ sealed class AuthenticationTask : Parcelable {
              */
             @Parcelize
             data class AppNotInstalled(
-                val packageName: String,
-                val title: String,
-                val message: String
-            ) : LaunchResult()
+                override val packageName: String,
+                override val title: String,
+                override val message: String
+            ) : LaunchResult(), LaunchInfo
 
             /**
              * The app necessary for authentication is installed on the users device but needs to
@@ -191,10 +192,20 @@ sealed class AuthenticationTask : Parcelable {
              */
             @Parcelize
             data class AppNeedsUpgrade(
-                val packageName: String,
-                val title: String,
+                override val packageName: String,
+                override val title: String,
+                override val message: String
+            ) : LaunchResult(), LaunchInfo
+
+            /**
+            * Properties [packageName], [title], and [message] can be used for example to show
+            * a dialog to the user prompting to upgrade the app.
+            */
+            interface LaunchInfo {
+                val packageName: String
+                val title: String
                 val message: String
-            ) : LaunchResult()
+            }
         }
     }
 
