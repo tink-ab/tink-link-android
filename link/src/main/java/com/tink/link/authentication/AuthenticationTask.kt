@@ -198,9 +198,9 @@ sealed class AuthenticationTask : Parcelable {
             ) : LaunchResult(), LaunchInfo
 
             /**
-            * Properties [packageName], [title], and [message] can be used for example to show
-            * a dialog to the user prompting to upgrade the app.
-            */
+             * Properties [packageName], [title], and [message] can be used for example to show
+             * a dialog to the user prompting to upgrade the app.
+             */
             interface LaunchInfo {
                 val packageName: String
                 val title: String
