@@ -186,7 +186,7 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
                     val launchResult = authenticationTask.launch(requireActivity())
                     viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
 
-                    if (launchResult !is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Success) {
+                    if (launchResult is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error) {
                         // Something went wrong when launching, show dialog prompt to install or upgrade app
                         view?.let { view ->
                             Snackbar.make(view, "Couldn't launch third party app", Snackbar.LENGTH_SHORT)

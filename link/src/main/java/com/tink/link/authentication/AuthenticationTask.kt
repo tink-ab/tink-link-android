@@ -95,11 +95,12 @@ sealed class AuthenticationTask : Parcelable {
             activity: Activity
         ): LaunchResult {
             with(thirdPartyAppAuthentication) {
+                // TODO: Should this handle bankid somehow?
                 val thirdPartyAuthenticationAndroid = requireNotNull(android)
                 val packageName = thirdPartyAuthenticationAndroid.packageName
 
                 if (appNeedsUpgrade(activity, thirdPartyAuthenticationAndroid)) {
-                    return LaunchResult.AppNeedsUpgrade(
+                    return LaunchResult.Error.AppNeedsUpgrade(
                         packageName = packageName,
                         title = upgradeTitle,
                         message = upgradeMessage
@@ -125,7 +126,7 @@ sealed class AuthenticationTask : Parcelable {
                         activity.startActivityForResult(launchByPackageIntent, 0)
                     } else {
                         // The activity was not found on the device.
-                        return LaunchResult.AppNotInstalled(
+                        return LaunchResult.Error.AppNotInstalled(
                             packageName = packageName,
                             title = downloadTitle,
                             message = downloadMessage
@@ -157,8 +158,7 @@ sealed class AuthenticationTask : Parcelable {
         /**
          * Indicates if the user was successfully redirected when [launch] was called.
          *
-         * Possible values are [Success], [AppNotInstalled], and [AppNeedsUpgrade]
-         *
+         * Possible values are [Success] and [Error]
          */
         sealed class LaunchResult : Parcelable {
 
@@ -169,42 +169,45 @@ sealed class AuthenticationTask : Parcelable {
             object Success : LaunchResult()
 
             /**
-             * The app necessary for authentication is not installed on the user's device.
+             * There was an error when launching the third party app.
              *
              * Properties [packageName], [title], and [message] can be used for example to show
-             * a dialog to the user prompting to install the app.
+             * a dialog to the user prompting to install or upgrading the app.
              *
+             * @see AppNotInstalled
+             * @see AppNeedsUpgrade
              */
-            @Parcelize
-            data class AppNotInstalled(
-                override val packageName: String,
-                override val title: String,
-                override val message: String
-            ) : LaunchResult(), LaunchInfo
+            sealed class Error : LaunchResult() {
+                abstract val packageName: String
+                abstract val title: String
+                abstract val message: String
 
-            /**
-             * The app necessary for authentication is installed on the users device but needs to
-             * be updated.
-             *
-             * Properties [packageName], [title], and [message] can be used for example to show
-             * a dialog to the user prompting to upgrade the app.
-             *
-             */
-            @Parcelize
-            data class AppNeedsUpgrade(
-                override val packageName: String,
-                override val title: String,
-                override val message: String
-            ) : LaunchResult(), LaunchInfo
+                /**
+                 * The app necessary for authentication is not installed on the user's device.
+                 *
+                 * Properties [packageName], [title], and [message] can be used for example to show
+                 * a dialog to the user prompting to install the app.
+                 */
+                @Parcelize
+                data class AppNotInstalled(
+                    override val packageName: String,
+                    override val title: String,
+                    override val message: String
+                ) : Error()
 
-            /**
-             * Properties [packageName], [title], and [message] can be used for example to show
-             * a dialog to the user prompting to upgrade the app.
-             */
-            interface LaunchInfo {
-                val packageName: String
-                val title: String
-                val message: String
+                /**
+                 * The app necessary for authentication is installed on the users device but needs to
+                 * be updated.
+                 *
+                 * Properties [packageName], [title], and [message] can be used for example to show
+                 * a dialog to the user prompting to upgrade the app.
+                 */
+                @Parcelize
+                data class AppNeedsUpgrade(
+                    override val packageName: String,
+                    override val title: String,
+                    override val message: String
+                ) : Error()
             }
         }
     }

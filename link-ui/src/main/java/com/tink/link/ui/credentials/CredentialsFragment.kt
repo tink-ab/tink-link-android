@@ -397,7 +397,7 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
     }
 
     private fun LaunchResult.handleLaunchResult() {
-        if (this !is LaunchResult.Success && this is LaunchResult.LaunchInfo) {
+        if (this is LaunchResult.Error) {
             // Something went wrong when launching, show dialog prompt to install or upgrade app
             showInstallDialog(
                 title = title,
