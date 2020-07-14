@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
+import com.tink.link.ui.LinkUser
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
 import com.tink.model.user.User
@@ -33,14 +34,15 @@ class MainLinkUiActivity : AppCompatActivity() {
         Tink.init(testTinkLinkConfig, applicationContext)
 
         linkUiButton.setOnClickListener {
+            val linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
+                ?: LinkUser.TemporaryUser(market = "SE", locale = "sv_SE")
+
             startActivityForResult(
                 TinkLinkUiActivity.createIntent(
                     context = this,
-                    styleResId = R.style.TinkLinkUiStyle,
+                    linkUser = linkUser,
                     scopes = listOf(Scope.AccountsRead),
-                    user = createdUser(),
-                    market = "SE",
-                    locale = "sv_SE"
+                    styleResId = R.style.TinkLinkUiStyle
                 ),
                 REQUEST_CODE
             )
