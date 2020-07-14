@@ -376,27 +376,14 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
             return
         }
 
-        val launchResult = authenticationTask.launch(requireActivity())
-        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-
-        if (launchResult !is LaunchResult.Success) {
-            // Something went wrong when launching, show dialog prompt to install or upgrade app
-            val needsUpgrade = launchResult is LaunchResult.AppNeedsUpgrade
-            authenticationTask.thirdPartyAppAuthentication.let {
-                showInstallDialog(
-                    title = if (needsUpgrade) it.upgradeTitle else it.downloadTitle,
-                    message = if (needsUpgrade) it.upgradeMessage else it.downloadMessage,
-                    packageName = androidData.packageName
-                ) {
-                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                }
-            }
-        }
+        authenticationTask.launch(requireActivity())
+            .also { handleLaunchResult(it) }
     }
 
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
             authenticationTask.launch(requireActivity())
+                .also { handleLaunchResult(it) }
         } else {
             val intent = authenticationTask.thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
@@ -405,6 +392,19 @@ class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
                     .show(childFragmentManager, null)
             } else {
                 showError(getString(R.string.tink_error_unknown))
+            }
+        }
+    }
+
+    private fun handleLaunchResult(result: LaunchResult) {
+        if (result is LaunchResult.Error) {
+            // Something went wrong when launching, show dialog prompt to install or upgrade app
+            showInstallDialog(
+                title = result.title,
+                message = result.message,
+                packageName = result.packageName
+            ) {
+                viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
             }
         }
     }
