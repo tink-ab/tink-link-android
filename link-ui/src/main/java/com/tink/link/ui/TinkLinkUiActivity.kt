@@ -75,9 +75,9 @@ class TinkLinkUiActivity : AppCompatActivity() {
                         ARG_SCOPES to scopes.toArrayList()
                     )
 
-                    if (linkUser is LinkUser.ExistingUser) {
+                    if (linkUser is ExistingUser) {
                         bundle.putParcelable(ARG_USER, linkUser.user)
-                    } else if (linkUser is LinkUser.TemporaryUser) {
+                    } else if (linkUser is TemporaryUser) {
                         bundle.putString(ARG_MARKET, linkUser.market)
                         bundle.putString(ARG_LOCALE, linkUser.locale)
                     }
