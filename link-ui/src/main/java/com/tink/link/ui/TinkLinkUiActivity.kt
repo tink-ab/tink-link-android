@@ -17,7 +17,6 @@ import com.tink.model.user.Scope
 import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
 import kotlinx.android.parcel.Parcelize
-import java.util.Locale
 
 /**
  * Activity used for displaying the full Tink Link UI flow.
@@ -27,8 +26,8 @@ import java.util.Locale
  * and [RESULT_FAILURE].
  *
  * If a [temporary user][TemporaryUser] is used for the flow,
- * the [successful result][RESULT_SUCCESS] will also have an authorization code ([String])
- * bundled with the key [RESULT_KEY_AUTHORIZATION_CODE].
+ * the [successful result][RESULT_SUCCESS] will also have an authorization code (String) bundled
+ * with the key [RESULT_KEY_AUTHORIZATION_CODE].
  *
  * @sample tinkLinkUIExample
  */
@@ -165,21 +164,11 @@ sealed class LinkUser : Parcelable {
      * used in the flow. The [market] determines what providers will be available to the user,
      * and the [locale] determines which language is used on a backend level.
      *
-     * The frontend translations (UI parts) are unaffected by the [locale] passed here and are
-     * instead determined by [Locale.getDefault] (as usual).
-     * We currently support English (default) and Swedish.
+     * We recommend that the [locale] is set to the same as is used in the user's phone so that the
+     * user is not faced with a mix of languages.
      *
-     * The supported backend locales are:
-     * `da_DK`,
-     * `en_GB`,
-     * `en_US` (default),
-     * `fr_FR`,
-     * `nl_NL`,
-     * `no_NO`,
-     * `sv_SE`,
-     * `pt_PT`
-     *
-     * If an unsupported [locale] is passed, the default will be used.
+     * @param locale Locale for the user. Defaults to default locale for the user's market. Example: "sv_SE"
+     * @param market Market specific code for the user as a ISO 3166-1 country code. Example: "SE"
      */
     @Parcelize
     data class TemporaryUser(val market: String, val locale: String) : LinkUser()
