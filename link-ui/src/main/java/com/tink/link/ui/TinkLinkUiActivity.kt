@@ -51,9 +51,6 @@ class TinkLinkUiActivity : AppCompatActivity() {
          *
          * This helper method makes sure that all required values are set.
          *
-         * Note that the [scopes] need to be a subset of the scopes enabled for the client id set
-         * in the [TinkConfiguration] that was used in [Tink.init].
-         *
          * @param linkUser Information about the user to be used in the flow.
          * @param scopes Needs to be a subset of the scopes enabled for the client id set
          * in the [TinkConfiguration] that was used in [Tink.init].
