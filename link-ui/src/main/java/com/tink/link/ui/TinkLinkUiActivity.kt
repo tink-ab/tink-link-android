@@ -116,7 +116,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 }
 
-sealed class LinkUser: Parcelable {
+sealed class LinkUser : Parcelable {
 
     @Parcelize
     data class ExistingUser(val user: User) : LinkUser()
