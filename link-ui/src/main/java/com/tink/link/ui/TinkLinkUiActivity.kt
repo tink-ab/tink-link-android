@@ -3,6 +3,7 @@ package com.tink.link.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
@@ -11,6 +12,7 @@ import com.tink.link.getUserContext
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import kotlinx.android.parcel.Parcelize
 
 class TinkLinkUiActivity : AppCompatActivity() {
 
@@ -28,28 +30,25 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
         fun createIntent(
             context: Context,
-            styleResId: Int? = R.style.TinkLinkUiStyle,
-            scopes: List<Scope> = listOf(Scope.AccountsRead), // TODO: Confirm if this should be the default
-            user: User? = null,
-            market: String = "",
-            locale: String = ""
+            linkUser: LinkUser,
+            scopes: List<Scope>,
+            styleResId: Int? = R.style.TinkLinkUiStyle
         ): Intent {
-            if (user == null) {
-                require(market.isNotBlank() && locale.isNotBlank()) {
-                    "Invalid market and locale parameters set for user creation"
-                }
-            }
             return Intent(context, TinkLinkUiActivity::class.java)
                 .apply {
-                    putExtras(
-                        bundleOf(
-                            ARG_STYLE to styleResId,
-                            ARG_SCOPES to scopes.toArrayList(),
-                            ARG_USER to user,
-                            ARG_MARKET to market,
-                            ARG_LOCALE to locale
-                        )
+                    val bundle = bundleOf(
+                        ARG_STYLE to styleResId,
+                        ARG_SCOPES to scopes.toArrayList()
                     )
+
+                    if (linkUser is LinkUser.ExistingUser) {
+                        bundle.putParcelable(ARG_USER, linkUser.user)
+                    } else if (linkUser is LinkUser.TemporaryUser) {
+                        bundle.putString(ARG_MARKET, linkUser.market)
+                        bundle.putString(ARG_LOCALE, linkUser.locale)
+                    }
+
+                    putExtras(bundle)
                 }
         }
     }
@@ -115,4 +114,13 @@ class TinkLinkUiActivity : AppCompatActivity() {
         }
         finish()
     }
+}
+
+sealed class LinkUser : Parcelable {
+
+    @Parcelize
+    data class ExistingUser(val user: User) : LinkUser()
+
+    @Parcelize
+    data class TemporaryUser(val market: String, val locale: String) : LinkUser()
 }
