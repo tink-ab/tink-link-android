@@ -9,11 +9,28 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.tink.core.Tink
 import com.tink.link.getUserContext
+import com.tink.link.ui.LinkUser.ExistingUser
+import com.tink.link.ui.LinkUser.TemporaryUser
+import com.tink.link.ui.codeexamples.tinkLinkUIExample
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import com.tink.service.network.TinkConfiguration
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * Activity used for displaying the full Tink Link UI flow.
+ *
+ * Results will be passed with [setResult] and can be observed with the usual methods,
+ * such as [onActivityResult]. Possible results are [RESULT_SUCCESS], [RESULT_CANCELLED],
+ * and [RESULT_FAILURE].
+ *
+ * If a [temporary user][TemporaryUser] is used for the flow,
+ * the [successful result][RESULT_SUCCESS] will also have an authorization code (String) bundled
+ * with the key [RESULT_KEY_AUTHORIZATION_CODE].
+ *
+ * @sample tinkLinkUIExample
+ */
 class TinkLinkUiActivity : AppCompatActivity() {
 
     companion object {
@@ -28,6 +45,19 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_MARKET = "market"
         const val ARG_LOCALE = "locale"
 
+        /**
+         * Creates an intent for use when starting this activity.
+         *
+         * This helper method makes sure that all required values are set.
+         *
+         * @param linkUser Information about the user to be used in the flow.
+         * @param scopes Needs to be a subset of the scopes enabled for the client id set
+         * in the [TinkConfiguration] that was used in [Tink.init].
+         * @param styleResId Optional style for changing the appearance of the flow.
+         * See our [configuration guide][TODO: Tutorial link] for more information on how to use this styling.
+         * The default value is [R.style.TinkLinkUiStyle].
+         */
+        @JvmOverloads
         fun createIntent(
             context: Context,
             linkUser: LinkUser,
@@ -41,9 +71,9 @@ class TinkLinkUiActivity : AppCompatActivity() {
                         ARG_SCOPES to scopes.toArrayList()
                     )
 
-                    if (linkUser is LinkUser.ExistingUser) {
+                    if (linkUser is ExistingUser) {
                         bundle.putParcelable(ARG_USER, linkUser.user)
-                    } else if (linkUser is LinkUser.TemporaryUser) {
+                    } else if (linkUser is TemporaryUser) {
                         bundle.putString(ARG_MARKET, linkUser.market)
                         bundle.putString(ARG_LOCALE, linkUser.locale)
                     }
@@ -116,11 +146,30 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Use this to let Tink Link UI know if it should use an [existing user][ExistingUser] or
+ * create a [temporary user][TemporaryUser].
+ */
 sealed class LinkUser : Parcelable {
 
+    /**
+     * Pass this to the [TinkLinkUiActivity.createIntent] function to use an existing user for the
+     * flow.
+     */
     @Parcelize
     data class ExistingUser(val user: User) : LinkUser()
 
+    /**
+     * Pass this to the [TinkLinkUiActivity.createIntent] function to create a temporary user to be
+     * used in the flow. The [market] determines what providers will be available to the user,
+     * and the [locale] determines which language is used on a backend level.
+     *
+     * We recommend that the [locale] is set to the same as is used in the user's phone so that the
+     * user is not faced with a mix of languages.
+     *
+     * @param locale Locale for the user. Defaults to default locale for the user's market. Example: "sv_SE"
+     * @param market Market specific code for the user as a ISO 3166-1 country code. Example: "SE"
+     */
     @Parcelize
     data class TemporaryUser(val market: String, val locale: String) : LinkUser()
 }
