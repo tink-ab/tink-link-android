@@ -54,7 +54,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param scopes Needs to be a subset of the scopes enabled for the client id set
          * in the [TinkConfiguration] that was used in [Tink.init].
          * @param styleResId Optional style for changing the appearance of the flow.
-         * See our [configuration guide][TODO: Tutorial link] for more information on how to use this styling.
+         * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
          */
         @JvmOverloads
