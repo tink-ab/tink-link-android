@@ -24,6 +24,7 @@ object Dependencies {
         const val test_espresso = "androidx.test.espresso:espresso-core:3.2.0"
         const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+        const val browser = "androidx.browser:browser:1.2.0"
     }
 
     object Coroutines {
@@ -63,6 +64,7 @@ object Dependencies {
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.71828"
     const val ktlint = "com.pinterest:ktlint:0.37.1"
+    const val zxing = "com.google.zxing:core:3.4.0"
 
     object Tink {
         private const val coreVersion = "0.5.0"
