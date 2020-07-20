@@ -62,20 +62,24 @@ class MainLinkUiActivity : AppCompatActivity() {
     }
 
     private fun handleResultFromLinkUi(resultCode: Int, data: Bundle?) {
-        if (resultCode == TinkLinkUiActivity.RESULT_SUCCESS) {
-            val authorizationCode =
-                data?.getString(TinkLinkUiActivity.RESULT_KEY_AUTHORIZATION_CODE)
-            if (!authorizationCode.isNullOrEmpty()) {
-                Toast.makeText(
-                    this,
-                    "Received user authorization code: $authorizationCode",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else if (createdUser() == null) {
-                Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
+        when (resultCode) {
+            TinkLinkUiActivity.RESULT_SUCCESS -> {
+                val authorizationCode =
+                    data?.getString(TinkLinkUiActivity.RESULT_KEY_AUTHORIZATION_CODE)
+                if (!authorizationCode.isNullOrEmpty()) {
+                    Toast.makeText(
+                        this,
+                        "Received user authorization code: $authorizationCode",
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else if (createdUser() == null) {
+                    Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
+                }
             }
+            TinkLinkUiActivity.RESULT_CANCELLED -> { /* Handle cancellation */ }
+            TinkLinkUiActivity.RESULT_FAILURE -> { /* Handle error */ }
         }
     }
 
