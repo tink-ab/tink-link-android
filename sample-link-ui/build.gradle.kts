@@ -31,7 +31,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":link"))
     implementation(project(":link-ui"))
 
     implementation(Dependencies.kotlin_stdlib)
