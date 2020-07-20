@@ -40,7 +40,7 @@ apply {
 }
 
 dependencies {
-    implementation(project(":link"))
+    api(project(":link"))
 
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
