@@ -163,6 +163,11 @@ This model represents how users are connected to a [Provider](../com.tink.model.
 
 |
 
+##### [com.tink.link.core.credentials.CredentialsFailure](../com.tink.link.core.credentials/-credentials-failure/index.md)
+
+
+|
+
 ##### [com.tink.service.credentials.CredentialsRefreshDescriptor](../com.tink.service.credentials/-credentials-refresh-descriptor/index.md)
 
 
@@ -176,6 +181,14 @@ Repository for creating, accessing and modifying credentials.
 |
 
 ##### [com.tink.service.credentials.CredentialsService](../com.tink.service.credentials/-credentials-service/index.md)
+
+
+|
+
+##### [com.tink.link.core.credentials.CredentialsStatus](../com.tink.link.core.credentials/-credentials-status/index.md)
+
+The status of a Credentials.
+Possible values are [Success](../com.tink.link.core.credentials/-credentials-status/-success/index.md), [Loading](../com.tink.link.core.credentials/-credentials-status/-loading/index.md), and [AwaitingAuthentication](../com.tink.link.core.credentials/-credentials-status/-awaiting-authentication/index.md)
 
 
 |

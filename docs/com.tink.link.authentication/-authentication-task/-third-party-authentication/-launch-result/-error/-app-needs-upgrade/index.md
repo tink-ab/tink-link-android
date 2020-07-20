@@ -1,8 +1,8 @@
-[link](../../../../../index.md) / [com.tink.link.authentication](../../../../index.md) / [AuthenticationTask](../../../index.md) / [ThirdPartyAuthentication](../../index.md) / [LaunchResult](../index.md) / [AppNeedsUpgrade](./index.md)
+[link](../../../../../../index.md) / [com.tink.link.authentication](../../../../../index.md) / [AuthenticationTask](../../../../index.md) / [ThirdPartyAuthentication](../../../index.md) / [LaunchResult](../../index.md) / [Error](../index.md) / [AppNeedsUpgrade](./index.md)
 
 # AppNeedsUpgrade
 
-`data class AppNeedsUpgrade : LaunchResult`
+`data class AppNeedsUpgrade : Error`
 
 The app necessary for authentication is installed on the users device but needs to
 be updated.
