@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-./gradlew link:assemble link-payment:assemble
+./gradlew link:assemble link-payment:assemble link-ui:assemble
