@@ -47,7 +47,7 @@ private const val BANK_ID_ACTION_OTHER_DEVICE = 2
  * Responsible for displaying the fields that the user should fill their credentials into
  * to authorize use of the [Provider].
  */
-class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
+internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
     private val provider: Provider by lazy {
         requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))

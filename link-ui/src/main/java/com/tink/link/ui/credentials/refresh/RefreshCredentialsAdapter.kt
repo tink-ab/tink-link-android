@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.tink_item_credentials_row.view.logo
 import kotlinx.android.synthetic.main.tink_item_credentials_row.view.providerName
 import kotlin.properties.Delegates
 
-class RefreshCredentialsAdapter : RecyclerView.Adapter<RefreshCredentialsRow>() {
+internal class RefreshCredentialsAdapter : RecyclerView.Adapter<RefreshCredentialsRow>() {
 
     var models: List<RefreshModel> by Delegates.observable(emptyList()) { _, _, _ -> notifyDataSetChanged() }
 
@@ -28,7 +28,7 @@ class RefreshCredentialsAdapter : RecyclerView.Adapter<RefreshCredentialsRow>() 
     }
 }
 
-class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) {
+internal class RefreshCredentialsRow(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(model: RefreshModel) {
         itemView.providerName.text = model.label
         itemView.status.text = model.status

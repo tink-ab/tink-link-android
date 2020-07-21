@@ -3,7 +3,7 @@ package com.tink.link.ui
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
-class Event<out T>(private val content: T) {
+internal class Event<out T>(private val content: T) {
 
     @get:JvmName("hasBeenHandled")
     var hasBeenHandled = false

@@ -19,7 +19,7 @@ import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
 import timber.log.Timber
 
-class RefreshCredentialsViewModel : ViewModel() {
+internal class RefreshCredentialsViewModel : ViewModel() {
 
     private val credentials = MutableLiveData<List<Credentials>>()
     private val providers = MutableLiveData<List<Provider>>()
@@ -194,9 +194,9 @@ private data class CredentialsStatusModel(
     val statusUpdated: Instant
 )
 
-enum class CredentialsRefreshState { LOADING, DONE, INFO_REQUIRED }
+internal enum class CredentialsRefreshState { LOADING, DONE, INFO_REQUIRED }
 
-data class RefreshModel(
+internal data class RefreshModel(
     val label: String,
     val status: String,
     val id: String,

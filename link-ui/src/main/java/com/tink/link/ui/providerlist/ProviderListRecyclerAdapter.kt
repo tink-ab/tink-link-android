@@ -22,7 +22,7 @@ import kotlin.properties.Delegates
 /**
  * RecyclerView adapter that shows a list of [ProviderTreeNode] objects.
  */
-class ProviderListRecyclerAdapter :
+internal class ProviderListRecyclerAdapter :
     RecyclerView.Adapter<ProviderViewHolder>(),
     OnViewHolderClickedListener {
 
@@ -51,7 +51,7 @@ class ProviderListRecyclerAdapter :
  * View holder for a [ProviderTreeNode].
  * Displays a user-friendly name based on the type of node.
  */
-class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListener) :
+internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListener) :
     ClickableViewHolder(itemView, clickListener) {
 
     private val title: TextView = itemView.findViewById(R.id.title)

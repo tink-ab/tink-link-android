@@ -95,7 +95,7 @@ private class TinkCallToActionSpan(
 }
 
 @VisibleForTesting
-class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
+internal class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
     override fun updateDrawState(textPaint: TextPaint) {
         textPaint.apply {
             isUnderlineText = true

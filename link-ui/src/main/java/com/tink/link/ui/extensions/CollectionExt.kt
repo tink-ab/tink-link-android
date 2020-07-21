@@ -1,3 +1,3 @@
 package com.tink.link.ui.extensions
 
-fun <T> Collection<T>.toArrayList() = ArrayList(this)
+internal fun <T> Collection<T>.toArrayList() = ArrayList(this)

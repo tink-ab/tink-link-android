@@ -8,7 +8,7 @@ import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.misc.Field
 import com.tink.service.handler.ResultHandler
 
-class SupplementalInformationViewModel : ViewModel() {
+internal class SupplementalInformationViewModel : ViewModel() {
 
     private lateinit var authenticationTask: AuthenticationTask.SupplementalInformation
 
