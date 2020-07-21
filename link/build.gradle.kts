@@ -74,6 +74,7 @@ tasks {
             delete("../docs")
         }
         doLast {
+            // Link
             println("Copying docs from /docs/link to /docs")
             copy {
                 from("../docs/link")
@@ -82,6 +83,7 @@ tasks {
             println("Deleting /docs/link")
             delete("../docs/link")
 
+            // Link-Payments
             println("Copying docs from /docs/link-payments to /docs")
             copy {
                 from("../docs/link-payments")
@@ -89,6 +91,15 @@ tasks {
             }
             println("Deleting /docs/link-payments")
             delete("../docs/link-payments")
+
+            // Link-UI
+            println("Copying docs from /docs/link-ui to /docs")
+            copy {
+                from("../docs/link-ui")
+                into("../docs")
+            }
+            println("Deleting /docs/link-ui")
+            delete("../docs/link-ui")
         }
     }
 }

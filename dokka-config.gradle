@@ -11,6 +11,9 @@ dokka {
             path = "$rootDir/link-payments/src"
         }
         sourceRoot {
+            path = "$rootDir/link-ui/src"
+        }
+        sourceRoot {
             path = "$rootDir/../tink-sdk-core-android/core/src"
         }
         sourceRoot {

@@ -1,8 +1,8 @@
-[link](../../../../../index.md) / [com.tink.link.authentication](../../../../index.md) / [AuthenticationTask](../../../index.md) / [ThirdPartyAuthentication](../../index.md) / [LaunchResult](../index.md) / [AppNotInstalled](./index.md)
+[link](../../../../../../index.md) / [com.tink.link.authentication](../../../../../index.md) / [AuthenticationTask](../../../../index.md) / [ThirdPartyAuthentication](../../../index.md) / [LaunchResult](../../index.md) / [Error](../index.md) / [AppNotInstalled](./index.md)
 
 # AppNotInstalled
 
-`data class AppNotInstalled : LaunchResult`
+`data class AppNotInstalled : Error`
 
 The app necessary for authentication is not installed on the user's device.
 

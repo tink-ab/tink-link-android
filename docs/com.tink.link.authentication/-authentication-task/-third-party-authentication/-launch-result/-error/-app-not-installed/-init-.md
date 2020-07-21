@@ -1,4 +1,4 @@
-[link](../../../../../index.md) / [com.tink.link.authentication](../../../../index.md) / [AuthenticationTask](../../../index.md) / [ThirdPartyAuthentication](../../index.md) / [LaunchResult](../index.md) / [AppNotInstalled](index.md) / [&lt;init&gt;](./-init-.md)
+[link](../../../../../../index.md) / [com.tink.link.authentication](../../../../../index.md) / [AuthenticationTask](../../../../index.md) / [ThirdPartyAuthentication](../../../index.md) / [LaunchResult](../../index.md) / [Error](../index.md) / [AppNotInstalled](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

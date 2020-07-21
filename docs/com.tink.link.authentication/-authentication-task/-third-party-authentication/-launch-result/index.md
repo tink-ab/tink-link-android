@@ -6,12 +6,11 @@
 
 Indicates if the user was successfully redirected when [launch](../launch.md) was called.
 
-Possible values are [Success](-success.md), [AppNotInstalled](-app-not-installed/index.md), and [AppNeedsUpgrade](-app-needs-upgrade/index.md)
+Possible values are [Success](-success.md) and [Error](-error/index.md)
 
 ### Types
 
 | Name | Summary |
 |---|---|
-| [AppNeedsUpgrade](-app-needs-upgrade/index.md) | The app necessary for authentication is installed on the users device but needs to be updated.`data class AppNeedsUpgrade : LaunchResult` |
-| [AppNotInstalled](-app-not-installed/index.md) | The app necessary for authentication is not installed on the user's device.`data class AppNotInstalled : LaunchResult` |
+| [Error](-error/index.md) | There was an error when launching the third party app.`sealed class Error : LaunchResult` |
 | [Success](-success.md) | The user has successfully been redirected to the third party app.`object Success : LaunchResult` |

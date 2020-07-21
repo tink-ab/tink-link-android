@@ -35,10 +35,6 @@ android {
     resourcePrefix("tink_")
 }
 
-apply {
-    from("../dokka-config.gradle")
-}
-
 dependencies {
     api(project(":link"))
 
