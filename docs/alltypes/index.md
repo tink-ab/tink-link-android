@@ -255,6 +255,14 @@ All subclasses should be data classes or provide a meaningful `equals()` functio
 ##### [com.tink.model.insights.InsightType](../com.tink.model.insights/-insight-type/index.md)
 
 
+|
+
+##### [com.tink.link.ui.LinkUser](../com.tink.link.ui/-link-user/index.md)
+
+Use this to let Tink Link UI know if it should use an [existing user](../com.tink.link.ui/-link-user/-existing-user/index.md) or
+create a [temporary user](../com.tink.link.ui/-link-user/-temporary-user/index.md).
+
+
 | (extensions in package com.tink.model.provider)
 
 ##### [kotlin.collections.List](../com.tink.model.provider/kotlin.collections.-list/index.md)
@@ -452,6 +460,13 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 ##### [com.tink.link.payments.TinkLinkPayments](../com.tink.link.payments/-tink-link-payments/index.md)
 
 This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-tink/index.md) when using Kotlin
+
+
+|
+
+##### [com.tink.link.ui.TinkLinkUiActivity](../com.tink.link.ui/-tink-link-ui-activity/index.md)
+
+Activity used for displaying the full Tink Link UI flow.
 
 
 |
