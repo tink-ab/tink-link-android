@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
 private const val ARG_AUTHENTICATION_TASK = "ARG_AUTHENTICATION_TASK"
 
-class SupplementalInformationFragment : DialogFragment() {
+internal class SupplementalInformationFragment : DialogFragment() {
 
     private val authenticationTask: AuthenticationTask.SupplementalInformation by lazy {
         requireNotNull(

@@ -15,7 +15,7 @@ const val FRAGMENT_ARG_USER = "userArg"
 const val FRAGMENT_ARG_MARKET = "marketArg"
 const val FRAGMENT_ARG_LOCALE = "localeArg"
 
-class MainFragment : Fragment() {
+internal class MainFragment : Fragment() {
 
     private val user: User? by lazy {
         arguments?.getParcelable<User>(FRAGMENT_ARG_USER)

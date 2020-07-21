@@ -22,7 +22,7 @@ import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import java.util.concurrent.atomic.AtomicBoolean
 
-class CredentialsViewModel : ViewModel() {
+internal class CredentialsViewModel : ViewModel() {
     internal var scopes: List<Scope> = emptyList()
     internal var authorizeUser: Boolean = false
 

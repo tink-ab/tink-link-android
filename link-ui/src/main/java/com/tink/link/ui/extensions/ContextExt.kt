@@ -5,7 +5,7 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 
 @JvmOverloads
-fun Context.getColorFromAttr(
+internal fun Context.getColorFromAttr(
     @AttrRes attrColor: Int,
     typedValue: TypedValue = TypedValue(),
     resolveRefs: Boolean = true

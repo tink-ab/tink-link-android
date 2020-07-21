@@ -3,7 +3,7 @@ package com.tink.link.ui.viewholders
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class ClickableViewHolder(
+internal abstract class ClickableViewHolder(
     itemView: View,
     onClickListener: OnViewHolderClickedListener
 ) : RecyclerView.ViewHolder(itemView) {
@@ -12,7 +12,7 @@ abstract class ClickableViewHolder(
     }
 }
 
-interface OnViewHolderClickedListener : View.OnClickListener {
+internal interface OnViewHolderClickedListener : View.OnClickListener {
     override fun onClick(view: View) {
         (view.parent as? RecyclerView)
             ?.findContainingViewHolder(view)

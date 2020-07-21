@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.tink_dialog_bank_id_other_device.*
 
 private const val BANK_ID_URI_ARG = "BANK_ID_URI_ARG"
 
-class BankIdOtherDeviceFragment : DialogFragment() {
+internal class BankIdOtherDeviceFragment : DialogFragment() {
 
     private val bankIdUri: String by lazy {
         requireNotNull(arguments?.getString(BANK_ID_URI_ARG))

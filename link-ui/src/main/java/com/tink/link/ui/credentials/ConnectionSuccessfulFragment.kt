@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 
 private const val PROVIDER_DISPLAY_NAME_ARG = "PROVIDER_DISPLAY_NAME"
 
-class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_successful) {
+internal class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_connection_successful) {
 
     private val providerDisplayName: String by lazy {
         requireNotNull(arguments?.getString(PROVIDER_DISPLAY_NAME_ARG))
