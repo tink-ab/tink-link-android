@@ -101,7 +101,7 @@ internal abstract class CredentialsTask(
         return oldStatus != newStatus
     }
 
-    private fun Credentials.toCredentialsStatus() =
+    private suspend fun Credentials.toCredentialsStatus() =
         when (status) {
             Credentials.Status.UNKNOWN,
             Credentials.Status.CREATED,
@@ -125,9 +125,20 @@ internal abstract class CredentialsTask(
             Credentials.Status.DELETED,
             Credentials.Status.SESSION_EXPIRED,
             Credentials.Status.TEMPORARY_ERROR,
-            Credentials.Status.AUTHENTICATION_ERROR,
             Credentials.Status.PERMANENT_ERROR,
             null -> throw CredentialsFailure(statusPayload?.ifBlank { null })
+
+            Credentials.Status.AUTHENTICATION_ERROR -> {
+                if (this@CredentialsTask is CreateCredentialsTask) {
+                    try {
+                        // Delete if we fail to authenticate creation of new Credentials.
+                        credentialsService.delete(id)
+                    } catch (e: Exception) {
+                        // Fail silently since the user didn't initiate this.
+                    }
+                }
+                throw CredentialsFailure(statusPayload?.ifBlank { null })
+            }
         }
 
     override fun unsubscribe() {
