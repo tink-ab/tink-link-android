@@ -130,8 +130,12 @@ internal abstract class CredentialsTask(
 
             Credentials.Status.AUTHENTICATION_ERROR -> {
                 if (this@CredentialsTask is CreateCredentialsTask) {
-                    // Delete if we fail to authenticate creation of new Credentials.
-                    credentialsService.delete(id)
+                    try {
+                        // Delete if we fail to authenticate creation of new Credentials.
+                        credentialsService.delete(id)
+                    } catch (e: Exception) {
+                        // Fail silently since the user didn't initiate this.
+                    }
                 }
                 throw CredentialsFailure(statusPayload?.ifBlank { null })
             }
