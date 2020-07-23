@@ -55,7 +55,7 @@ object Dependencies {
         const val test_assertj = "org.assertj:assertj-core:3.11.1"
     }
 
-    const val material_components = "com.google.android.material:material:1.2.0-alpha06"
+    const val material_components = "com.google.android.material:material:1.2.0-rc01"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.12"
