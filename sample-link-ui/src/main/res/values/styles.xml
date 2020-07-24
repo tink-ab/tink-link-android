@@ -1,0 +1,36 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+  </style>
+
+  <style name="TinkStyle_Strict" parent="TinkLinkUiStyle">
+    <item name="tink_colorBackground">#F7F7F8</item>
+    <item name="tink_colorSecondary">#333439</item>
+    <item name="tink_colorPrimary">#333439</item>
+    <item name="tink_colorOnPrimary">#ffffff</item>
+  </style>
+
+  <style name="TinkStyle_ChewingGum" parent="TinkLinkUiStyle">
+    <item name="tink_colorBackground">#29262A</item>
+    <item name="tink_colorSurface">#343035</item>
+    <item name="tink_colorSecondary">#e8a9e0</item>
+    <item name="tink_colorPrimary">#e8a9e0</item>
+    <item name="tink_colorOnPrimary">#343035</item>
+    <item name="tink_dividerColor">#2B2B2B</item>
+    <item name="tink_textColorPrimary">#FFFFFF</item>
+    <item name="tink_textColorSecondary">#FFFFFF</item>
+    <item name="tink_textColorTertiary">#FFFFFF</item>
+    <item name="tink_rippleColor">#20FFFFFF</item>
+  </style>
+
+  <!--  Comment in for testing font overrides-->
+<!--    <item name="tink_font_bold" type="font">@font/lobster</item>-->
+<!--    <item name="tink_font_semi_bold" type="font">@font/lobster</item>-->
+<!--    <item name="tink_font_regular" type="font">@font/lobster</item>-->
+
+</resources>

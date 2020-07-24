@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="?tink_colorBackground"
+  android:paddingStart="24dp"
+  android:paddingTop="24dp"
+  android:paddingEnd="24dp"
+  android:paddingBottom="32dp">
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/title"
+    style="@style/tink_mega"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/tink_supplemental_information_title"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+    android:id="@+id/qrCode"
+    android:layout_width="@dimen/tink_qr_code_size"
+    android:layout_height="@dimen/tink_qr_code_size"
+    android:layout_marginTop="76dp"
+    android:background="@drawable/tink_qr_code_background"
+    android:padding="8dp"
+    android:scaleType="centerInside"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/title" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/qrCodeTitle"
+    style="@style/tink_hecto.bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:gravity="center_horizontal"
+    android:text="@string/tink_supplemental_information_qr_code_title"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/qrCode" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/qrCodeDescription"
+    style="@style/tink_deci.primary"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:gravity="center_horizontal"
+    android:paddingBottom="32dp"
+    android:text="@string/tink_supplemental_information_qr_code_description"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/qrCodeTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
