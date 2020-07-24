@@ -1,9 +1,7 @@
 package com.tink.link.payments
 
 import com.tink.core.Tink
-import com.tink.link.getUserContext
 import com.tink.link.payments.di.TinkLinkPaymentsComponent
-
 
 /**
  * This is for Java compatibility only. Use extensions on [Tink] when using Kotlin
@@ -17,7 +15,6 @@ object TinkLinkPayments {
      */
     @JvmStatic
     fun getTransferRepository() = Tink.getTransferRepository()
-
 }
 
 // For Kotlin

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/mainFragment">
+  <fragment
+    android:id="@+id/mainFragment"
+    android:name="com.tink.link.ui.MainFragment"
+    android:label="MainFragment"
+    tools:layout="@layout/tink_fragment_main">
+    <action
+      android:id="@+id/action_mainFragment_to_providerListFragment"
+      app:destination="@id/providerListFragment"
+      app:popUpTo="@+id/nav_graph" />
+  </fragment>
+  <fragment
+    android:id="@+id/providerListFragment"
+    android:name="com.tink.link.ui.providerlist.ProviderListFragment"
+    tools:layout="@layout/tink_layout_provider_tree_node_list">
+    <action
+      android:id="@+id/action_providerListFragment_next"
+      app:destination="@id/providerListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/credentialsFragment"
+    android:name="com.tink.link.ui.credentials.CredentialsFragment"
+    android:label="CredentialsFragment"
+    tools:layout="@layout/tink_fragment_credentials">
+    <action
+      android:id="@+id/action_credentialsFragment_to_consentInformationFragment"
+      app:destination="@id/consentInformationFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/connectionSuccessfulFragment"
+    android:name="com.tink.link.ui.credentials.ConnectionSuccessfulFragment"
+    android:label="ConnectionSuccessfulFragment"
+    tools:layout="@layout/tink_fragment_connection_successful" />
+  <fragment
+    android:id="@+id/consentInformationFragment"
+    android:name="com.tink.link.ui.credentials.ConsentInformationFragment"
+    android:label="ConsentInformationFragment"
+    tools:layout="@layout/tink_fragment_consent_information" />
+</navigation>

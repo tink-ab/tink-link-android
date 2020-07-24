@@ -1,0 +1,21 @@
+#!/bin/bash
+set -xe
+
+if [ "$BUILDKITE_PIPELINE_SLUG" = "android-tink-link" ]; then
+  # Needed to merge target branch and for commit tagging
+  export GIT_AUTHOR_NAME=Buildkite
+  export GIT_AUTHOR_EMAIL=buildkite@tink.se
+  export GIT_COMMITTER_NAME=Buildkite
+  export GIT_COMMITTER_EMAIL=buildkite@tink.se
+
+  merge() {
+    git fetch origin "$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+    git merge --no-commit "origin/$BUILDKITE_PULL_REQUEST_BASE_BRANCH"
+    git status
+  }
+
+  if [ "$BUILDKITE_PULL_REQUEST" != false ]
+  then
+    merge
+  fi
+fi

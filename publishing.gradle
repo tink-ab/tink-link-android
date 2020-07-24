@@ -84,12 +84,12 @@ publishing {
 }
 
 // Bintray
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def bintray_username = hasProperty('BINTRAY_USER') ? BINTRAY_USER : ""
+def bintray_apikey = hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : ""
 
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = bintray_username
+    key = bintray_apikey
 
     setPublications('tinkLink')
     setConfigurations('archives')

@@ -84,7 +84,6 @@ interface TransferRepository {
         statusChangeObserver: StreamObserver<TransferStatus>
     ): StreamSubscription
 
-
     /**
      * Fetch all accounts of the user that are suitable to pick as the source of a transfer.
      */

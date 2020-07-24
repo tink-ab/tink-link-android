@@ -13,6 +13,7 @@
 | [com.tink.link.core.user](com.tink.link.core.user/index.md) |  |
 | [com.tink.link.payments](com.tink.link.payments/index.md) |  |
 | [com.tink.link.payments.di](com.tink.link.payments.di/index.md) |  |
+| [com.tink.link.ui](com.tink.link.ui/index.md) |  |
 | [com.tink.model](com.tink.model/index.md) |  |
 | [com.tink.model.account](com.tink.model.account/index.md) |  |
 | [com.tink.model.authentication](com.tink.model.authentication/index.md) |  |

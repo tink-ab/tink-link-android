@@ -15,6 +15,7 @@ com.tink.link.core.credentials
 com.tink.link.core.user
 com.tink.link.payments
 com.tink.link.payments.di
+com.tink.link.ui
 com.tink.model
 com.tink.model.account
 com.tink.model.authentication

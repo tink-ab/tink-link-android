@@ -11,6 +11,9 @@ dokka {
             path = "$rootDir/link-payments/src"
         }
         sourceRoot {
+            path = "$rootDir/link-ui/src"
+        }
+        sourceRoot {
             path = "$rootDir/../tink-sdk-core-android/core/src"
         }
         sourceRoot {
@@ -19,6 +22,9 @@ dokka {
         sourceRoot {
             path = "$rootDir/../tink-sdk-core-android/service/src"
         }
-        samples = ["$rootDir/link-payments/src/main/java/com/tink/link/payments/codeexamples".toString()]
+        samples = [
+                "$rootDir/link-payments/src/main/java/com/tink/link/payments/codeexamples".toString(),
+                "$rootDir/link-ui/src/main/java/com/tink/link/ui/codeexamples".toString()
+        ]
     }
 }
