@@ -43,7 +43,10 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Creates a new [Credentials] object.
+     * Creates a new [Credentials] object. If the user fails to authenticate the [Credentials]
+     * (for example writing the wrong password) a [delete] will be triggered.
+     * Note that the delete is performed asynchronously and is thus not guaranteed to have completed
+     * when the [statusChangeObserver] calls [onError][StreamObserver.onError].
      *
      * @param providerName Identifier for the [Provider]. See [Provider.name]
      * @param credentialsType The [Credentials.Type] used to authenticate the user to the financial institution
