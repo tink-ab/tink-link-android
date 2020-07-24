@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="tink_h2_text_size">17sp</dimen>
+  <dimen name="tink_h2_line_height">24sp</dimen>
+  <dimen name="tink_deci_text_size">15sp</dimen>
+  <dimen name="tink_deci_line_height">20sp</dimen>
+  <dimen name="tink_giga_text_size">25sp</dimen>
+  <dimen name="tink_giga_line_height">32sp</dimen>
+  <dimen name="tink_hecto_text_size">17sp</dimen>
+  <dimen name="tink_hecto_line_height">24sp</dimen>
+  <dimen name="tink_mega_text_size">21sp</dimen>
+  <dimen name="tink_mega_line_height">28sp</dimen>
+  <dimen name="tink_micro_text_size">13sp</dimen>
+  <dimen name="tink_micro_line_height">18sp</dimen>
+  <dimen name="tink_nano_text_size">11sp</dimen>
+  <dimen name="tink_nano_line_height">16sp</dimen>
+  <dimen name="tink_tera_text_size">35sp</dimen>
+  <dimen name="tink_tera_line_height">40sp</dimen>
+  <dimen name="tink_peta_text_size">45sp</dimen>
+  <dimen name="tink_peta_line_height">48sp</dimen>
+
+  <dimen name="tink_dialog_padding">24dp</dimen>
+  <dimen name="tink_credentials_field_padding_bottom">20dp</dimen>
+
+  <dimen name="tink_qr_code_size">156dp</dimen>
+
+  <dimen name="tink_credentials_qr_code_width">156dp</dimen>
+  <dimen name="tink_credentials_qr_code_height">156dp</dimen>
+
+</resources>

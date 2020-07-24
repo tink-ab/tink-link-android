@@ -5,7 +5,7 @@
 `data class SupplementalInformation : `[`AuthenticationTask`](../index.md)
 
 Indicates that there is additional information required from the user to proceed. This can
-for example be an OTP sent via SMS or authetication app.
+for example be an OTP sent via SMS or authentication app.
 First the [fields](fields.md) should be made accessible to the user for example as text input fields.
 Then [submit](submit.md) should be called as soon as the fields have been validated and the user is
 ready to send the information.
@@ -14,7 +14,7 @@ ready to send the information.
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | Indicates that there is additional information required from the user to proceed. This can for example be an OTP sent via SMS or authetication app. First the [fields](fields.md) should be made accessible to the user for example as text input fields. Then [submit](submit.md) should be called as soon as the fields have been validated and the user is ready to send the information.`SupplementalInformation(credentials: `[`Credentials`](../../../com.tink.model.credentials/-credentials/index.md)`)` |
+| [&lt;init&gt;](-init-.md) | Indicates that there is additional information required from the user to proceed. This can for example be an OTP sent via SMS or authentication app. First the [fields](fields.md) should be made accessible to the user for example as text input fields. Then [submit](submit.md) should be called as soon as the fields have been validated and the user is ready to send the information.`SupplementalInformation(credentials: `[`Credentials`](../../../com.tink.model.credentials/-credentials/index.md)`)` |
 
 ### Properties
 

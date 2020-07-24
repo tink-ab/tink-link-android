@@ -18,7 +18,8 @@ import kotlin.properties.Delegates
 /**
  * RecyclerView adapter that shows a list of [ProviderTreeNode] objects.
  */
-class ProviderListRecyclerAdapter : RecyclerView.Adapter<ProviderViewHolder>(),
+class ProviderListRecyclerAdapter :
+    RecyclerView.Adapter<ProviderViewHolder>(),
     OnViewHolderClickedListener {
 
     var providers: List<ProviderTreeNode> by Delegates.observable(emptyList()) { _, _, _ -> notifyDataSetChanged() }

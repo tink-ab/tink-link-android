@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:bottom="132dp"
+    android:left="0dp"
+    android:right="132dp"
+    android:top="0dp">
+    <rotate
+      android:drawable="@drawable/tink_qr_code_edge"
+      android:fromDegrees="90"
+      android:toDegrees="0" />
+  </item>
+  <item
+    android:bottom="132dp"
+    android:left="132dp"
+    android:right="0dp"
+    android:top="0dp">
+    <rotate
+      android:drawable="@drawable/tink_qr_code_edge"
+      android:fromDegrees="180"
+      android:toDegrees="0" />
+  </item>
+  <item
+    android:bottom="0dp"
+    android:left="0dp"
+    android:right="132dp"
+    android:top="132dp">
+    <rotate
+      android:drawable="@drawable/tink_qr_code_edge"
+      android:fromDegrees="0"
+      android:toDegrees="0" />
+  </item>
+  <item
+    android:bottom="0dp"
+    android:left="132dp"
+    android:right="0dp"
+    android:top="132dp">
+    <rotate
+      android:drawable="@drawable/tink_qr_code_edge"
+      android:fromDegrees="270"
+      android:toDegrees="0" />
+  </item>
+</layer-list>

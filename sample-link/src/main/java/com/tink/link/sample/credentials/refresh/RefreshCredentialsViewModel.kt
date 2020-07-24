@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
-import com.tink.link.sample.Event
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.getUserContext
+import com.tink.link.sample.Event
 import com.tink.link.sample.whenNonNull
 import com.tink.model.credentials.Credentials
 import com.tink.model.misc.Field
@@ -40,19 +40,22 @@ class RefreshCredentialsViewModel : ViewModel() {
 
         credentialsSubscription =
             credentialsRepository.listStream().subscribe(object :
-                StreamObserver<List<Credentials>> {
-                override fun onNext(value: List<Credentials>) {
-                    credentialsListUpdate(value)
-                    credentials.postValue(value)
-                }
-            })
+                    StreamObserver<List<Credentials>> {
+                    override fun onNext(value: List<Credentials>) {
+                        credentialsListUpdate(value)
+                        credentials.postValue(value)
+                    }
+                })
 
         providerRepository.listProviders(
-            ResultHandler({
-                providers.postValue(it)
-            }, {
-                // Error
-            })
+            ResultHandler(
+                {
+                    providers.postValue(it)
+                },
+                {
+                    // Error
+                }
+            )
         )
     }
 
@@ -98,7 +101,7 @@ class RefreshCredentialsViewModel : ViewModel() {
                     if (old.id != new.id || old.toStatusModel().isNewStatus(new.toStatusModel())) {
                         value = new
                     }
-                } ?: if (value != it) { //one of both is null, set value
+                } ?: if (value != it) { // one of both is null, set value
                     value = it
                 }
             }
@@ -116,11 +119,14 @@ class RefreshCredentialsViewModel : ViewModel() {
             ?.forEach { credentials ->
                 credentialsRepository.refresh(
                     credentials.id,
-                    ResultHandler({
-                        Timber.d("Refresh success for $credentials")
-                    }, {
-                        Timber.d("Refresh error for $credentials")
-                    })
+                    ResultHandler(
+                        {
+                            Timber.d("Refresh success for $credentials")
+                        },
+                        {
+                            Timber.d("Refresh error for $credentials")
+                        }
+                    )
                 )
             }
     }
@@ -156,7 +162,6 @@ class RefreshCredentialsViewModel : ViewModel() {
                     iconUri = provider?.images?.icon
                 )
             }
-
         }
         addSource(credentials) { update() }
         addSource(providers) { update() }
