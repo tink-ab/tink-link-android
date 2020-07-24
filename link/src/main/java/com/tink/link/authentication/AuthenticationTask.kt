@@ -25,7 +25,7 @@ sealed class AuthenticationTask : Parcelable {
 
     /**
      * Indicates that there is additional information required from the user to proceed. This can
-     * for example be an OTP sent via SMS or authetication app.
+     * for example be an OTP sent via SMS or authentication app.
      * First the [fields] should be made accessible to the user for example as text input fields.
      * Then [submit] should be called as soon as the fields have been validated and the user is
      * ready to send the information.
