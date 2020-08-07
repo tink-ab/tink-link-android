@@ -7,26 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
+import com.tink.link.authenticateUser
 import com.tink.link.createTemporaryUser
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
-const val FRAGMENT_ARG_USER = "userArg"
-const val FRAGMENT_ARG_MARKET = "marketArg"
-const val FRAGMENT_ARG_LOCALE = "localeArg"
+const val FRAGMENT_ARG_LINK_USER = "linkUserArg"
 
 internal class MainFragment : Fragment() {
 
-    private val user: User? by lazy {
-        arguments?.getParcelable<User>(FRAGMENT_ARG_USER)
-    }
-
-    private val market: String by lazy {
-        arguments?.getString(FRAGMENT_ARG_MARKET) ?: ""
-    }
-
-    private val locale: String by lazy {
-        arguments?.getString(FRAGMENT_ARG_LOCALE) ?: ""
+    private val linkUser: LinkUser by lazy {
+        requireNotNull(arguments?.getParcelable<LinkUser>(FRAGMENT_ARG_LINK_USER))
     }
 
     override fun onCreateView(
@@ -38,16 +29,16 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        if (user == null) {
-            createUser {
-                launchLinkUiFlowForUser(it)
-            }
-        } else {
-            launchLinkUiFlowForUser(user!!)
+        when (linkUser) {
+            is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
+            is LinkUser.UnAuthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
+            is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
         }
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
+        val market = (linkUser as LinkUser.TemporaryUser).market
+        val locale = (linkUser as LinkUser.TemporaryUser).locale
         require(market.isNotBlank() && locale.isNotBlank()) {
             "Invalid market and locale parameters set for user creation"
         }
@@ -56,6 +47,20 @@ internal class MainFragment : Fragment() {
             locale = locale,
             resultHandler = ResultHandler(
                 onUserCreateAction,
+                { }
+            )
+        )
+    }
+
+    private fun authenticateUser(onUserAuthenticateAction: (User) -> Unit) {
+        val authorizationCode = (linkUser as LinkUser.UnAuthenticatedUser).authorizationCode
+        require(authorizationCode.isNotBlank()) {
+            "Invalid authorization code set for user authentication"
+        }
+        Tink.authenticateUser(
+            authenticationCode = authorizationCode,
+            resultHandler = ResultHandler(
+                onUserAuthenticateAction,
                 { }
             )
         )

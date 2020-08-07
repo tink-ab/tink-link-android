@@ -9,7 +9,6 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.tink.core.Tink
 import com.tink.link.getUserContext
-import com.tink.link.ui.LinkUser.ExistingUser
 import com.tink.link.ui.LinkUser.TemporaryUser
 import com.tink.link.ui.codeexamples.tinkLinkUIExample
 import com.tink.link.ui.extensions.toArrayList
@@ -41,9 +40,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
-        const val ARG_USER = "user"
-        const val ARG_MARKET = "market"
-        const val ARG_LOCALE = "locale"
+        const val ARG_LINK_USER = "linkUser"
 
         /**
          * Creates an intent for use when starting this activity.
@@ -70,14 +67,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
                         ARG_STYLE to styleResId,
                         ARG_SCOPES to scopes.toArrayList()
                     )
-
-                    if (linkUser is ExistingUser) {
-                        bundle.putParcelable(ARG_USER, linkUser.user)
-                    } else if (linkUser is TemporaryUser) {
-                        bundle.putString(ARG_MARKET, linkUser.market)
-                        bundle.putString(ARG_LOCALE, linkUser.locale)
-                    }
-
+                    bundle.putParcelable(ARG_LINK_USER, linkUser)
                     putExtras(bundle)
                 }
         }
@@ -88,20 +78,12 @@ class TinkLinkUiActivity : AppCompatActivity() {
         requireNotNull(intent.extras?.getParcelableArrayList<Scope>(ARG_SCOPES))
     }
 
-    private val user: User? by lazy {
-        intent.extras?.getParcelable<User>(ARG_USER)
-    }
-
-    private val market: String by lazy {
-        intent.extras?.getString(ARG_MARKET) ?: ""
-    }
-
-    private val locale: String by lazy {
-        intent.extras?.getString(ARG_LOCALE) ?: ""
+    private val linkUser: LinkUser by lazy {
+        requireNotNull(intent.extras?.getParcelable<LinkUser>(ARG_LINK_USER))
     }
 
     // TODO: Inject this with dagger once it's ready
-    internal val authorizeUser: Boolean by lazy { user == null }
+    internal val authorizeUser: Boolean by lazy { linkUser is TemporaryUser }
 
     internal var authorizationCode: String? = null
 
@@ -112,9 +94,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         findNavController(R.id.nav_host_fragment).setGraph(
             R.navigation.tink_nav_graph,
             bundleOf(
-                FRAGMENT_ARG_USER to user,
-                FRAGMENT_ARG_MARKET to market,
-                FRAGMENT_ARG_LOCALE to locale
+                FRAGMENT_ARG_LINK_USER to linkUser
             )
         )
 
@@ -158,6 +138,15 @@ sealed class LinkUser : Parcelable {
      */
     @Parcelize
     data class ExistingUser(val user: User) : LinkUser()
+
+    /**
+     * Pass this to the [TinkLinkUiActivity.createIntent] function to authenticate the permanent user
+     * to be used in the flow.
+     *
+     * @param authorizationCode The authorization code from delegation to use for authentication
+     */
+    @Parcelize
+    data class UnAuthenticatedUser(val authorizationCode: String) : LinkUser()
 
     /**
      * Pass this to the [TinkLinkUiActivity.createIntent] function to create a temporary user to be
