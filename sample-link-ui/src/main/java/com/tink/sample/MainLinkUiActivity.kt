@@ -35,6 +35,7 @@ class MainLinkUiActivity : AppCompatActivity() {
 
         linkUiButton.setOnClickListener {
             val linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
+                ?: authorizationCode()?.let { LinkUser.UnauthenticatedUser(it) }
                 ?: LinkUser.TemporaryUser(market = "SE", locale = "sv_SE")
 
             startActivityForResult(
@@ -51,6 +52,11 @@ class MainLinkUiActivity : AppCompatActivity() {
 
     private fun createdUser(): User? {
         // This can be replaced with a created user for testing permanent user scenarios, etc.
+        return null
+    }
+
+    private fun authorizationCode(): String? {
+        // This can be replaced with an authorization code from delegate for authenticating a permanent user.
         return null
     }
 
