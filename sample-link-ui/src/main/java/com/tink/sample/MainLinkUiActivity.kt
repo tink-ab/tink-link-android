@@ -35,7 +35,7 @@ class MainLinkUiActivity : AppCompatActivity() {
 
         linkUiButton.setOnClickListener {
             val linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
-                ?: authorizationCode()?.let { LinkUser.UnAuthenticatedUser(it) }
+                ?: authorizationCode()?.let { LinkUser.UnauthenticatedUser(it) }
                 ?: LinkUser.TemporaryUser(market = "SE", locale = "sv_SE")
 
             startActivityForResult(

@@ -146,7 +146,7 @@ sealed class LinkUser : Parcelable {
      * @param authorizationCode The authorization code from delegation to use for authentication
      */
     @Parcelize
-    data class UnAuthenticatedUser(val authorizationCode: String) : LinkUser()
+    data class UnauthenticatedUser(val authorizationCode: String) : LinkUser()
 
     /**
      * Pass this to the [TinkLinkUiActivity.createIntent] function to create a temporary user to be

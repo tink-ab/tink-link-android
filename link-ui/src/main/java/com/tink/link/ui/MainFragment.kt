@@ -31,7 +31,7 @@ internal class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         when (linkUser) {
             is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
-            is LinkUser.UnAuthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
+            is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
             is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
         }
     }
@@ -53,7 +53,7 @@ internal class MainFragment : Fragment() {
     }
 
     private fun authenticateUser(onUserAuthenticateAction: (User) -> Unit) {
-        val authorizationCode = (linkUser as LinkUser.UnAuthenticatedUser).authorizationCode
+        val authorizationCode = (linkUser as LinkUser.UnauthenticatedUser).authorizationCode
         require(authorizationCode.isNotBlank()) {
             "Invalid authorization code set for user authentication"
         }
