@@ -1,11 +1,11 @@
 <resources>
 
   <!-- Base application theme. -->
-  <style name="Tink_AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+  <style name="Tink_AppTheme" parent="Theme.MaterialComponents.Light">
     <!-- Customize your theme here. -->
   </style>
 
-  <style name="TinkLinkUiStyle" parent="Theme.MaterialComponents">
+  <style name="TinkLinkUiStyle" parent="Theme.MaterialComponents.NoActionBar">
     <item name="tink_colorBackground">#ffffff</item>
     <item name="tink_colorSurface">#ffffff</item>
     <item name="tink_colorPrimary">#ff427783</item>
