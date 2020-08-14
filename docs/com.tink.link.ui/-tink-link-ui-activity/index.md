@@ -48,11 +48,9 @@ activity.startActivityForResult(
 
 | Name | Summary |
 |---|---|
-| [ARG_LOCALE](-a-r-g_-l-o-c-a-l-e.md) | `const val ARG_LOCALE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ARG_MARKET](-a-r-g_-m-a-r-k-e-t.md) | `const val ARG_MARKET: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.md) | `const val ARG_LINK_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.md) | `const val ARG_SCOPES: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_STYLE](-a-r-g_-s-t-y-l-e.md) | `const val ARG_STYLE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ARG_USER](-a-r-g_-u-s-e-r.md) | `const val ARG_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [RESULT_CANCELLED](-r-e-s-u-l-t_-c-a-n-c-e-l-l-e-d.md) | `const val RESULT_CANCELLED: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [RESULT_FAILURE](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md) | `const val RESULT_FAILURE: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [RESULT_KEY_AUTHORIZATION_CODE](-r-e-s-u-l-t_-k-e-y_-a-u-t-h-o-r-i-z-a-t-i-o-n_-c-o-d-e.md) | `const val RESULT_KEY_AUTHORIZATION_CODE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
