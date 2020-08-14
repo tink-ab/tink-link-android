@@ -27,6 +27,8 @@ private val MainLinkUiActivity.testTinkLinkConfig
 
 class MainLinkUiActivity : AppCompatActivity() {
 
+    var linkUser: LinkUser? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_link_ui)
@@ -34,14 +36,14 @@ class MainLinkUiActivity : AppCompatActivity() {
         Tink.init(testTinkLinkConfig, applicationContext)
 
         linkUiButton.setOnClickListener {
-            val linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
+            linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
                 ?: authorizationCode()?.let { LinkUser.UnauthenticatedUser(it) }
                 ?: LinkUser.TemporaryUser(market = "SE", locale = "sv_SE")
 
             startActivityForResult(
                 TinkLinkUiActivity.createIntent(
                     context = this,
-                    linkUser = linkUser,
+                    linkUser = linkUser!!,
                     scopes = listOf(Scope.AccountsRead),
                     styleResId = R.style.TinkLinkUiStyle
                 ),
@@ -78,7 +80,7 @@ class MainLinkUiActivity : AppCompatActivity() {
                         "Received user authorization code: $authorizationCode",
                         Toast.LENGTH_LONG
                     ).show()
-                } else if (createdUser() == null) {
+                } else if (linkUser is LinkUser.TemporaryUser) {
                     Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
