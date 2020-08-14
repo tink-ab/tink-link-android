@@ -13,6 +13,4 @@
 
 | Name | Summary |
 |---|---|
-| [FRAGMENT_ARG_LOCALE](-f-r-a-g-m-e-n-t_-a-r-g_-l-o-c-a-l-e.md) | `const val FRAGMENT_ARG_LOCALE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [FRAGMENT_ARG_MARKET](-f-r-a-g-m-e-n-t_-a-r-g_-m-a-r-k-e-t.md) | `const val FRAGMENT_ARG_MARKET: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [FRAGMENT_ARG_USER](-f-r-a-g-m-e-n-t_-a-r-g_-u-s-e-r.md) | `const val FRAGMENT_ARG_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [FRAGMENT_ARG_LINK_USER](-f-r-a-g-m-e-n-t_-a-r-g_-l-i-n-k_-u-s-e-r.md) | `const val FRAGMENT_ARG_LINK_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
