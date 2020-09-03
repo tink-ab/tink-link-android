@@ -5,7 +5,6 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.tink.link.sample.R
-import com.tink.link.sample.accesstype.AccessTypeListFragment
 import com.tink.link.sample.extensions.toArrayList
 import com.tink.link.sample.providertree.ARG_PROVIDER_TOOLBAR_TITLE
 import com.tink.link.sample.providertree.ARG_PROVIDER_TREE
@@ -35,14 +34,14 @@ class FinancialInstitutionListFragment :
     }
 
     /**
-     * Navigate to the [AccessTypeListFragment].
+     * Navigate to the [AuthenticationUserTypeListFragment].
      */
     override fun navigateToNode(node: ProviderTreeNode) {
         val selectedInstitution = node as ProviderTreeNode.FinancialInstitutionNode
         findNavController().navigate(
-            R.id.accessTypeListFragment,
+            R.id.authenticationUserTypeListFragment,
             bundleOf(
-                ARG_PROVIDER_TREE to selectedInstitution.accessTypes.toArrayList(),
+                ARG_PROVIDER_TREE to selectedInstitution.authenticationUserTypes.toArrayList(),
                 ARG_PROVIDER_TOOLBAR_TITLE to selectedInstitution.name
             )
         )

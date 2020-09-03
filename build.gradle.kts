@@ -17,6 +17,8 @@ buildscript {
 
 allprojects {
     repositories {
+        // TODO: Remove this when the new version of core is used
+        mavenLocal()
         google()
         jcenter()
     }
