@@ -71,9 +71,13 @@ internal class ProviderListViewModel : ViewModel() {
             providers.findFinancialInstitutionGroupNode(it)?.financialInstitutions
         } ?: return providers
 
-        val accessTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
-            financialInstitutions.firstOrNull { it.financialInstitution == pathItem }?.accessTypes
+        val authenticationUserTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
+            financialInstitutions.firstOrNull { it.financialInstitution == pathItem }?.authenticationUserTypes
         } ?: return financialInstitutions
+
+        val accessTypes = path.authenticationUserTypeNodeByType?.let { pathItem ->
+            authenticationUserTypes.firstOrNull { it.authenticationUserType == pathItem }?.accessTypes
+        } ?: return authenticationUserTypes
 
         val credentialsTypes = path.accessTypeNodeByType?.let { pathItem ->
             accessTypes.firstOrNull { it.type == pathItem }?.credentialsTypes
