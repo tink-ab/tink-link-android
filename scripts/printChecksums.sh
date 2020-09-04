@@ -14,8 +14,8 @@ while getopts o: flag; do
   esac
 done
 
-names=(link link-payments)
-artifacts=(aar aar)
+names=(link link-payments link-ui)
+artifacts=(aar aar aar)
 
 for index in ${!names[*]}; do
   name=${names[$index]}
