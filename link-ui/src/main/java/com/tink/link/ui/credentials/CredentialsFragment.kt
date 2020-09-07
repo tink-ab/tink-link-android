@@ -439,7 +439,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                     setTitle(title)
                     setMessage(message)
                     setPositiveButton(
-                        activity.getString(R.string.tink_third_party_authentication_download_app_install_button)
+                        activity.getString(R.string.tink_third_party_authentication_download_app_button)
                     ) { _, _ ->
                         val intent = Intent(Intent.ACTION_VIEW).apply {
                             data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
