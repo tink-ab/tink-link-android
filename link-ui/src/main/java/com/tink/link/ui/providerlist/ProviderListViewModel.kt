@@ -5,6 +5,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
 
@@ -72,7 +73,10 @@ internal class ProviderListViewModel : ViewModel() {
         } ?: return providers
 
         val authenticationUserTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
-            financialInstitutions.firstOrNull { it.financialInstitution == pathItem }?.authenticationUserTypes
+            financialInstitutions
+                .firstOrNull { it.financialInstitution == pathItem }
+                ?.authenticationUserTypes
+                ?.filterNot { it.authenticationUserType == Provider.AuthenticationUserType.UNKNOWN }
         } ?: return financialInstitutions
 
         val accessTypes = path.authenticationUserTypeNodeByType?.let { pathItem ->
