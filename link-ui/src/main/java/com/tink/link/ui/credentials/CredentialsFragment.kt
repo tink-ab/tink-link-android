@@ -383,7 +383,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
             authenticationTask.launch(requireActivity())
-                .also { handleLaunchResult(it) }
+                .also {
+                    handleBankIdLaunchResult(
+                        bankIdUri = authenticationTask.thirdPartyAppAuthentication.android!!.intent,
+                        result = it
+                    )
+                }
         } else {
             val intent = authenticationTask.thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
@@ -393,6 +398,23 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             } else {
                 showError(getString(R.string.tink_error_unknown))
             }
+        }
+    }
+
+    private fun handleBankIdLaunchResult(bankIdUri: String, result: LaunchResult) {
+        if (result is LaunchResult.Error) {
+            // Something went wrong when launching, show dialog prompt to install or upgrade app
+            showInstallDialog(
+                title = result.title,
+                message = result.message,
+                packageName = result.packageName,
+                onCancel = {
+                    BankIdOtherDeviceFragment
+                        .newInstance(bankIdUri)
+                        .show(childFragmentManager, null)
+                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+                }
+            )
         }
     }
 
