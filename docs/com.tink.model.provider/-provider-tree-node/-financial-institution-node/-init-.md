@@ -2,12 +2,12 @@
 
 # &lt;init&gt;
 
-`FinancialInstitutionNode(financialInstitution: FinancialInstitution, accessTypes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<AccessTypeNode>)`
+`FinancialInstitutionNode(financialInstitution: FinancialInstitution, authenticationUserTypes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<AuthenticationUserTypeNode>)`
 
-A parent node of the tree structure, with a list of [AccessTypeNode](../-access-type-node/index.md) children.
+A parent node of the tree structure, with a list of [AuthenticationUserTypeNode](../-authentication-user-type-node/index.md) children.
 
 ### Parameters
 
 `financialInstitution` - The `financialInstitution` that this node represents.
 
-`accessTypes` - The list of child nodes.
+`authenticationUserTypes` - The list of child nodes.

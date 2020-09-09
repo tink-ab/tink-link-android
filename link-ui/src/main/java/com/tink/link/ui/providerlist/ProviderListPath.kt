@@ -11,6 +11,7 @@ import kotlinx.android.parcel.Parcelize
 internal data class ProviderListPath(
     val financialInstitutionGroupNodeByName: String? = null,
     val financialInstitutionNodeByFinancialInstitution: Provider.FinancialInstitution? = null,
+    val authenticationUserTypeNodeByType: Provider.AuthenticationUserType? = null,
     val accessTypeNodeByType: Provider.AccessType? = null,
     val credentialsTypeNodeByType: Credentials.Type? = null,
     val providerNodeByProvider: Provider? = null
@@ -19,6 +20,7 @@ internal data class ProviderListPath(
     @IgnoredOnParcel
     val isFullPathToProvider = financialInstitutionGroupNodeByName != null &&
         financialInstitutionNodeByFinancialInstitution != null &&
+        authenticationUserTypeNodeByType != null &&
         accessTypeNodeByType != null &&
         credentialsTypeNodeByType != null &&
         providerNodeByProvider != null
@@ -40,6 +42,10 @@ internal data class ProviderListPath(
             }
             is ProviderTreeNode.FinancialInstitutionNode -> {
                 copy(financialInstitutionNodeByFinancialInstitution = node.financialInstitution)
+                    .appendRecursiveIfOnlyOneChild(node.authenticationUserTypes)
+            }
+            is ProviderTreeNode.AuthenticationUserTypeNode -> {
+                copy(authenticationUserTypeNodeByType = node.authenticationUserType)
                     .appendRecursiveIfOnlyOneChild(node.accessTypes)
             }
             is ProviderTreeNode.AccessTypeNode -> {
