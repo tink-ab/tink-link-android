@@ -381,6 +381,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
+        // Currently this is always TRUE. But it can be removed once the BankID button UX is properly updated
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
             authenticationTask.launch(requireActivity())
                 .also {
