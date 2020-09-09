@@ -33,7 +33,7 @@
     <string name="tink_consent_information_description">Wenn Sie diesen Service in Anspruch nehmen, sammeln wir Finanzdaten von Ihnen. Dies sind die Datenpunkte, die wir von Ihnen erfassen werden:</string>
     <string name="tink_third_party_authentication_download_app_button">Herunterladen</string>
     <string name="tink_supplemental_information_title">Zusatzinformationen</string>
-    <string name="tink_supplemental_information_submit_button">Einreichen</string>
+    <string name="tink_supplemental_information_submit_button">Abschicken</string>
     <string name="tink_supplemental_information_qr_code_title">BankID-App öffnen</string>
     <string name="tink_supplemental_information_qr_code_description">Öffnen Sie die App Mobile Bank ID und scannen Sie diesen QR-Code zur Authentifizierung.</string>
     <string name="tink_supplemental_information_qr_code_error">Fehler beim Laden des QR-Codes. Bitte später erneut versuchen.</string>
@@ -46,7 +46,7 @@
     <string name="tink_connection_success_done_button">Fertig</string>
     <string name="tink_cancel_button">Abbrechen</string>
     <string name="tink_ok_button">OK</string>
-    <string name="tink_error_unknown">Vorübergehender Fehler.</string>
+    <string name="tink_error_unknown">Etwas ist schief gegangen.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
