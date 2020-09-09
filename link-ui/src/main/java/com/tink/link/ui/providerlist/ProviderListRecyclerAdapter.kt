@@ -61,16 +61,18 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
         title.text = when (item) {
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
+            is ProviderTreeNode.AuthenticationUserTypeNode -> item.authenticationUserType.getDescription(title.context)
             is ProviderTreeNode.AccessTypeNode -> item.capabilitiesText(title.context)
             is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription(title.context)
             is ProviderTreeNode.ProviderNode -> item.name
         }
 
-        if (item is ProviderTreeNode.CredentialsTypeNode) {
-            val iconRes = when (item.type) {
-                Credentials.Type.MOBILE_BANKID -> R.drawable.tink_bankid
-                else -> R.drawable.tink_code
-            }
+        val iconRes = when (item) {
+            is ProviderTreeNode.CredentialsTypeNode -> item.iconResource()
+            is ProviderTreeNode.AuthenticationUserTypeNode -> item.iconResource()
+            else -> null
+        }
+        if (iconRes != null) {
             logo.apply {
                 setImageResource(iconRes)
                 imageTintList =
@@ -87,11 +89,26 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
     }
 }
 
-private fun Provider.AccessType.getDescription() =
+private fun ProviderTreeNode.CredentialsTypeNode.iconResource(): Int =
+    when (type) {
+        Credentials.Type.MOBILE_BANKID -> R.drawable.tink_bankid
+        else -> R.drawable.tink_code
+    }
+
+private fun ProviderTreeNode.AuthenticationUserTypeNode.iconResource(): Int =
+    when (authenticationUserType) {
+        Provider.AuthenticationUserType.PERSONAL -> R.drawable.tink_personal
+        Provider.AuthenticationUserType.BUSINESS -> R.drawable.tink_business
+        Provider.AuthenticationUserType.CORPORATE -> R.drawable.tink_corporate
+        Provider.AuthenticationUserType.UNKNOWN -> R.drawable.tink_personal
+    }
+
+private fun Provider.AuthenticationUserType.getDescription(context: Context): String =
     when (this) {
-        Provider.AccessType.OPEN_BANKING -> "Open Banking"
-        Provider.AccessType.UNKNOWN,
-        Provider.AccessType.OTHER -> "Other"
+        Provider.AuthenticationUserType.UNKNOWN -> context.getString(R.string.tink_provider_select_authentication_user_type_unknown)
+        Provider.AuthenticationUserType.PERSONAL -> context.getString(R.string.tink_provider_select_authentication_user_type_personal)
+        Provider.AuthenticationUserType.BUSINESS -> context.getString(R.string.tink_provider_select_authentication_user_type_business)
+        Provider.AuthenticationUserType.CORPORATE -> context.getString(R.string.tink_provider_select_authentication_user_type_corporate)
     }
 
 private fun Credentials.Type.getDescription(context: Context) =

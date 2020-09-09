@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.tink.link.sample.R
+import com.tink.link.sample.authenticationusertype.getDescription
 import com.tink.link.sample.extensions.inflate
 import com.tink.link.sample.viewholders.ClickableViewHolder
 import com.tink.link.sample.viewholders.OnViewHolderClickedListener
@@ -57,6 +58,7 @@ class ProviderViewHolder(itemView: View, clickListener: OnViewHolderClickedListe
         title.text = when (item) {
             is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
             is ProviderTreeNode.FinancialInstitutionNode -> item.name
+            is ProviderTreeNode.AuthenticationUserTypeNode -> item.authenticationUserType.getDescription()
             is ProviderTreeNode.AccessTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription()
             is ProviderTreeNode.ProviderNode -> item.name

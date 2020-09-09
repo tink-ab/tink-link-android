@@ -4,6 +4,10 @@
     <string name="tink_provider_list_error_title">Tyvärr kan vi inte visa några banker just nu</string>
     <string name="tink_provider_list_error_description">Det kan vara ett tillfälligt fel. Försök igen och se om problemet kvarstår.</string>
     <string name="tink_provider_list_error_retry_button">Försök igen</string>
+    <string name="tink_provider_select_authentication_user_type_title">Inloggningstyp</string>
+    <string name="tink_provider_select_authentication_user_type_personal">Logga in som privatkund</string>
+    <string name="tink_provider_select_authentication_user_type_business">Logga in som företagskund</string>
+    <string name="tink_provider_select_authentication_user_type_corporate">Företag</string>
     <string name="tink_provider_select_access_type_title">Välj kontotyp</string>
     <string name="tink_provider_capability_transfers">överföringar</string>
     <string name="tink_provider_capability_e_invoices">e-fakturor</string>

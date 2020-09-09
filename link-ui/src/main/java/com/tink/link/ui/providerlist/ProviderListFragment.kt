@@ -167,8 +167,11 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             path.accessTypeNodeByType != null ->
                 getString(R.string.tink_provider_select_credentials_type_title)
 
-            path.financialInstitutionNodeByFinancialInstitution != null ->
+            path.authenticationUserTypeNodeByType != null ->
                 getString(R.string.tink_provider_select_access_type_title)
+
+            path.financialInstitutionNodeByFinancialInstitution != null ->
+                getString(R.string.tink_provider_select_authentication_user_type_title)
 
             path.financialInstitutionGroupNodeByName != null ->
                 path.financialInstitutionGroupNodeByName
@@ -182,6 +185,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
  */
 private fun ProviderListPath.shouldShowSearch() =
     financialInstitutionNodeByFinancialInstitution == null &&
+        authenticationUserTypeNodeByType == null &&
         accessTypeNodeByType == null &&
         credentialsTypeNodeByType == null &&
         providerNodeByProvider == null

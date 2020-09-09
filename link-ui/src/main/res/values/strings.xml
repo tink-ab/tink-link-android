@@ -5,6 +5,11 @@
   <string name="tink_provider_list_error_title">Unfortunately, we can’t show any banks right now</string>
   <string name="tink_provider_list_error_description">This could be a temporary error, please try again and see if the problem persists.</string>
   <string name="tink_provider_list_error_retry_button">Try again</string>
+  <string name="tink_provider_select_authentication_user_type_title">Login type</string>
+  <string name="tink_provider_select_authentication_user_type_personal">Personal</string>
+  <string name="tink_provider_select_authentication_user_type_business">Business</string>
+  <string name="tink_provider_select_authentication_user_type_corporate">Corporate</string>
+  <string name="tink_provider_select_authentication_user_type_unknown" translatable="false">Unknown</string>
   <string name="tink_provider_select_access_type_title">Select account types</string>
   <string name="tink_provider_capability_transfers">transfers</string>
   <string name="tink_provider_capability_e_invoices">e-invoices</string>
