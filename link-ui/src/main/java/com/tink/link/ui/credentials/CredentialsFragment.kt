@@ -403,18 +403,11 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private fun handleBankIdLaunchResult(bankIdUri: String, result: LaunchResult) {
         if (result is LaunchResult.Error) {
-            // Something went wrong when launching, show dialog prompt to install or upgrade app
-            showInstallDialog(
-                title = result.title,
-                message = result.message,
-                packageName = result.packageName,
-                onCancel = {
-                    BankIdOtherDeviceFragment
-                        .newInstance(bankIdUri)
-                        .show(childFragmentManager, null)
-                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
-                }
-            )
+            // Something went wrong when launching the BankID app, show QR code instead
+            BankIdOtherDeviceFragment
+                .newInstance(bankIdUri)
+                .show(childFragmentManager, null)
+            viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
         }
     }
 
