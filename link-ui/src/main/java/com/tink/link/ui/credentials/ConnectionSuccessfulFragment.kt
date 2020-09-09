@@ -30,7 +30,7 @@ internal class ConnectionSuccessfulFragment : Fragment(R.layout.tink_fragment_co
 
         successMessage.text =
             getString(
-                R.string.tink_connection_success_description,
+                R.string.tink_connection_success_create_description,
                 getString(R.string.tink_app_name)
             )
 

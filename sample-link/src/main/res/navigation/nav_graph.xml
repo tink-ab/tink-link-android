@@ -32,7 +32,16 @@
     android:label="FinancialInstitutionListFragment"
     tools:layout="@layout/fragment_financial_institution_list">
     <action
-      android:id="@+id/action_financialInstitutionListFragment_to_accessTypeListFragment"
+      android:id="@+id/action_financialInstitutionListFragment_to_authenticationUserTypeListFragment"
+      app:destination="@id/authenticationUserTypeListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/authenticationUserTypeListFragment"
+    android:name="com.tink.link.sample.authenticationusertype.AuthenticationUserTypeListFragment"
+    android:label="AuthenticationUserTypeListFragment"
+    tools:layout="@layout/fragment_authentication_user_type_list">
+    <action
+      android:id="@+id/action_authenticationUserTypeListFragment_to_accessTypeListFragment"
       app:destination="@id/accessTypeListFragment" />
   </fragment>
   <fragment

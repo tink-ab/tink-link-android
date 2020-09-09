@@ -381,9 +381,15 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun launchBankIdAuthentication(authenticationTask: AuthenticationTask.ThirdPartyAuthentication) {
+        // Currently this is always TRUE. But it can be removed once the BankID button UX is properly updated
         if (bankIdActionType == BANK_ID_ACTION_SAME_DEVICE) {
             authenticationTask.launch(requireActivity())
-                .also { handleLaunchResult(it) }
+                .also {
+                    handleBankIdLaunchResult(
+                        bankIdUri = authenticationTask.thirdPartyAppAuthentication.android!!.intent,
+                        result = it
+                    )
+                }
         } else {
             val intent = authenticationTask.thirdPartyAppAuthentication.android?.intent
             if (!intent.isNullOrEmpty()) {
@@ -393,6 +399,16 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             } else {
                 showError(getString(R.string.tink_error_unknown))
             }
+        }
+    }
+
+    private fun handleBankIdLaunchResult(bankIdUri: String, result: LaunchResult) {
+        if (result is LaunchResult.Error) {
+            // Something went wrong when launching the BankID app, show QR code instead
+            BankIdOtherDeviceFragment
+                .newInstance(bankIdUri)
+                .show(childFragmentManager, null)
+            viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
         }
     }
 
@@ -423,7 +439,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                     setTitle(title)
                     setMessage(message)
                     setPositiveButton(
-                        activity.getString(R.string.tink_third_party_authentication_download_app_install_button)
+                        activity.getString(R.string.tink_third_party_authentication_download_app_button)
                     ) { _, _ ->
                         val intent = Intent(Intent.ACTION_VIEW).apply {
                             data = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
