@@ -46,7 +46,7 @@
     <string name="tink_connection_success_done_button">Ferdig</string>
     <string name="tink_cancel_button">Avbryt</string>
     <string name="tink_ok_button">OK</string>
-    <string name="tink_error_unknown">Midlertidig feil.</string>
+    <string name="tink_error_unknown">Noe gikk galt.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->

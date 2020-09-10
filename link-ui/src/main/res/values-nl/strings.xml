@@ -33,7 +33,7 @@
     <string name="tink_consent_information_description">Door verder te gaan met deze dienst, zullen wij financiële gegevens over je verzamelen. Dit zijn de datapunten die we over je verzamelen:</string>
     <string name="tink_third_party_authentication_download_app_button">Downloaden</string>
     <string name="tink_supplemental_information_title">Aanvullende informatie</string>
-    <string name="tink_supplemental_information_submit_button">Indienen</string>
+    <string name="tink_supplemental_information_submit_button">Verzenden</string>
     <string name="tink_supplemental_information_qr_code_title">Open de BankID-app</string>
     <string name="tink_supplemental_information_qr_code_description">Open de mobiele Bank ID-app en scan deze QR-code ter verificatie.</string>
     <string name="tink_supplemental_information_qr_code_error">Er is een fout opgetreden bij het laden van de QR-code. Probeer het later opnieuw.</string>
@@ -46,7 +46,7 @@
     <string name="tink_connection_success_done_button">Klaar</string>
     <string name="tink_cancel_button">Annuleren</string>
     <string name="tink_ok_button">OK</string>
-    <string name="tink_error_unknown">Tijdelijke fout.</string>
+    <string name="tink_error_unknown">Er is iets misgegaan.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->
