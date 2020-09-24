@@ -25,9 +25,13 @@ import kotlinx.android.parcel.Parcelize
  * such as [onActivityResult]. Possible results are [RESULT_SUCCESS], [RESULT_CANCELLED],
  * and [RESULT_FAILURE].
  *
- * If a [temporary user][TemporaryUser] is used for the flow,
- * the [successful result][RESULT_SUCCESS] will also have an authorization code (String) bundled
- * with the key [RESULT_KEY_AUTHORIZATION_CODE].
+ * For a [successful result][RESULT_SUCCESS], a [TinkLinkResult] is returned as data bundled
+ * with the key [RESULT_DATA].
+ * If a [temporary user][TemporaryUser] is used for the flow, the result data is of type [TinkLinkResult.Temporary]
+ * which includes the authorization code (String) and the [Credentials] connected to the user.
+ * If a permanent user is used for the flow (either [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser]),
+ * the result data is of type [TinkLinkResult.Permanent] which includes the [Credentials] connected
+ * to the user.
  *
  * @sample tinkLinkUIExample
  */
@@ -177,14 +181,30 @@ sealed class LinkUser : Parcelable {
     data class TemporaryUser(val market: String, val locale: String) : LinkUser()
 }
 
+/**
+ * The result data that is returned from the Tink Link UI flow.
+ * Possible values are [Temporary] and [Permanent]
+ */
 sealed class TinkLinkResult : Parcelable {
 
+    /**
+     * The data returned when a [LinkUser.TemporaryUser] is used in the Tink Link UI flow.
+     *
+     * @param authorizationCode Authorization code from authorizing the user towards a new set of scopes
+     * @param credentials [Credentials] connected to the user
+     */
     @Parcelize
     data class Temporary(
         val authorizationCode: String,
         val credentials: Credentials
     ) : TinkLinkResult()
 
+    /**
+     * The data returned when a [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser] is used
+     * in the Tink Link UI flow.
+     *
+     * @param credentials [Credentials] connected to the user
+     */
     @Parcelize
     data class Permanent(val credentials: Credentials) : TinkLinkResult()
 }
