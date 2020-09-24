@@ -12,6 +12,7 @@ import com.tink.link.getUserContext
 import com.tink.link.ui.LinkUser.TemporaryUser
 import com.tink.link.ui.codeexamples.tinkLinkUIExample
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.model.credentials.Credentials
 import com.tink.model.user.Scope
 import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
@@ -86,6 +87,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
     internal val authorizeUser: Boolean by lazy { linkUser is TemporaryUser }
 
     internal var authorizationCode: String? = null
+
+    internal var credentials: Credentials? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
