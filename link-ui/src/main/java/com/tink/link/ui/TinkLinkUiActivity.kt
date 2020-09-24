@@ -37,7 +37,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_SUCCESS = 101
         const val RESULT_CANCELLED = 102
         const val RESULT_FAILURE = 103
-        const val RESULT_KEY_AUTHORIZATION_CODE = "authorizationCode"
+        const val RESULT_DATA = "resultData"
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
@@ -116,17 +116,28 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     internal fun closeTinkLinkUi(resultCode: Int) {
-        if (resultCode == RESULT_SUCCESS && authorizeUser) {
-            val successIntent =
-                Intent().apply {
-                    putExtras(bundleOf(RESULT_KEY_AUTHORIZATION_CODE to authorizationCode))
+        if (resultCode == RESULT_SUCCESS) {
+            getTinkLinkResult()
+                ?.let { result ->
+                    val successIntent =
+                        Intent().apply { putExtras(bundleOf(RESULT_DATA to result)) }
+                    setResult(resultCode, successIntent)
                 }
-            setResult(resultCode, successIntent)
+                ?: setResult(RESULT_FAILURE)
         } else {
             setResult(resultCode)
         }
         finish()
     }
+
+    private fun getTinkLinkResult(): TinkLinkResult? =
+        if (authorizeUser) {
+            whenNonNull(authorizationCode, credentials) { authorizationCode, credentials ->
+                TinkLinkResult.Temporary(authorizationCode, credentials)
+            }
+        } else {
+            credentials?.let { TinkLinkResult.Permanent(it) }
+        }
 }
 
 /**
@@ -164,4 +175,16 @@ sealed class LinkUser : Parcelable {
      */
     @Parcelize
     data class TemporaryUser(val market: String, val locale: String) : LinkUser()
+}
+
+sealed class TinkLinkResult : Parcelable {
+
+    @Parcelize
+    data class Temporary(
+        val authorizationCode: String,
+        val credentials: Credentials
+    ) : TinkLinkResult()
+
+    @Parcelize
+    data class Permanent(val credentials: Credentials) : TinkLinkResult()
 }
