@@ -72,7 +72,7 @@ class MainLinkUiActivity : AppCompatActivity() {
         when (resultCode) {
             TinkLinkUiActivity.RESULT_SUCCESS -> {
                 when (val result = data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)) {
-                    is TinkLinkResult.Temporary -> {
+                    is TinkLinkResult.TemporaryUser -> {
                         Toast.makeText(
                             this,
                             "credentialsId: ${result.credentials.id}, authorizationCode: ${result.authorizationCode}",
@@ -80,7 +80,7 @@ class MainLinkUiActivity : AppCompatActivity() {
                         ).show()
                     }
 
-                    is TinkLinkResult.Permanent -> {
+                    is TinkLinkResult.PermanentUser -> {
                         Toast.makeText(
                             this,
                             "credentialsId: ${result.credentials.id}",

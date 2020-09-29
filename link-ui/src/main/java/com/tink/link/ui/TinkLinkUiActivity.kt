@@ -27,10 +27,10 @@ import kotlinx.android.parcel.Parcelize
  *
  * For a [successful result][RESULT_SUCCESS], a [TinkLinkResult] is returned as data bundled
  * with the key [RESULT_DATA].
- * If a [temporary user][TemporaryUser] is used for the flow, the result data is of type [TinkLinkResult.Temporary]
+ * If a [temporary user][TemporaryUser] is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser]
  * which includes the authorization code (String) and the [Credentials] connected to the user.
  * If a permanent user is used for the flow (either [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser]),
- * the result data is of type [TinkLinkResult.Permanent] which includes the [Credentials] connected
+ * the result data is of type [TinkLinkResult.PermanentUser] which includes the [Credentials] connected
  * to the user.
  *
  * @sample tinkLinkUIExample
@@ -137,10 +137,10 @@ class TinkLinkUiActivity : AppCompatActivity() {
     private fun getTinkLinkResult(): TinkLinkResult? =
         if (authorizeUser) {
             whenNonNull(authorizationCode, credentials) { authorizationCode, credentials ->
-                TinkLinkResult.Temporary(authorizationCode, credentials)
+                TinkLinkResult.TemporaryUser(authorizationCode, credentials)
             }
         } else {
-            credentials?.let { TinkLinkResult.Permanent(it) }
+            credentials?.let { TinkLinkResult.PermanentUser(it) }
         }
 }
 
@@ -183,7 +183,7 @@ sealed class LinkUser : Parcelable {
 
 /**
  * The result data that is returned from the Tink Link UI flow.
- * Possible values are [Temporary] and [Permanent]
+ * Possible values are [TemporaryUser] and [PermanentUser]
  */
 sealed class TinkLinkResult : Parcelable {
 
@@ -194,7 +194,7 @@ sealed class TinkLinkResult : Parcelable {
      * @param credentials [Credentials] connected to the user
      */
     @Parcelize
-    data class Temporary(
+    data class TemporaryUser(
         val authorizationCode: String,
         val credentials: Credentials
     ) : TinkLinkResult()
@@ -206,5 +206,5 @@ sealed class TinkLinkResult : Parcelable {
      * @param credentials [Credentials] connected to the user
      */
     @Parcelize
-    data class Permanent(val credentials: Credentials) : TinkLinkResult()
+    data class PermanentUser(val credentials: Credentials) : TinkLinkResult()
 }
