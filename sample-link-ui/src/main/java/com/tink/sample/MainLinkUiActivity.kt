@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
 import com.tink.link.ui.LinkUser
+import com.tink.link.ui.TinkLinkResult
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
 import com.tink.model.user.User
@@ -27,8 +28,6 @@ private val MainLinkUiActivity.testTinkLinkConfig
 
 class MainLinkUiActivity : AppCompatActivity() {
 
-    var linkUser: LinkUser? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_link_ui)
@@ -36,14 +35,14 @@ class MainLinkUiActivity : AppCompatActivity() {
         Tink.init(testTinkLinkConfig, applicationContext)
 
         linkUiButton.setOnClickListener {
-            linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
+            val linkUser = createdUser()?.let { LinkUser.ExistingUser(it) }
                 ?: authorizationCode()?.let { LinkUser.UnauthenticatedUser(it) }
                 ?: LinkUser.TemporaryUser(market = "SE", locale = "sv_SE")
 
             startActivityForResult(
                 TinkLinkUiActivity.createIntent(
                     context = this,
-                    linkUser = linkUser!!,
+                    linkUser = linkUser,
                     scopes = listOf(Scope.AccountsRead),
                     styleResId = R.style.TinkLinkUiStyle
                 ),
@@ -72,18 +71,24 @@ class MainLinkUiActivity : AppCompatActivity() {
     private fun handleResultFromLinkUi(resultCode: Int, data: Bundle?) {
         when (resultCode) {
             TinkLinkUiActivity.RESULT_SUCCESS -> {
-                val authorizationCode =
-                    data?.getString(TinkLinkUiActivity.RESULT_KEY_AUTHORIZATION_CODE)
-                if (!authorizationCode.isNullOrEmpty()) {
-                    Toast.makeText(
-                        this,
-                        "Received user authorization code: $authorizationCode",
-                        Toast.LENGTH_LONG
-                    ).show()
-                } else if (linkUser is LinkUser.TemporaryUser) {
-                    Toast.makeText(this, "Error: Invalid authorization code", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "Connection successful", Toast.LENGTH_SHORT).show()
+                when (val result = data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)) {
+                    is TinkLinkResult.TemporaryUser -> {
+                        Toast.makeText(
+                            this,
+                            "credentialsId: ${result.credentials.id}, authorizationCode: ${result.authorizationCode}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                    is TinkLinkResult.PermanentUser -> {
+                        Toast.makeText(
+                            this,
+                            "credentialsId: ${result.credentials.id}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+
+                    else -> Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
             TinkLinkUiActivity.RESULT_CANCELLED -> { /* Handle cancellation */ }

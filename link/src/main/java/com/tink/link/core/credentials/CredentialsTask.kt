@@ -108,7 +108,7 @@ internal abstract class CredentialsTask(
             Credentials.Status.UPDATING,
             Credentials.Status.AUTHENTICATING -> CredentialsStatus.Loading(status.toString())
 
-            Credentials.Status.UPDATED -> CredentialsStatus.Success(status.toString())
+            Credentials.Status.UPDATED -> CredentialsStatus.Success(status.toString(), this)
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
             Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->

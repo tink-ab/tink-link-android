@@ -12,6 +12,7 @@ import com.tink.link.getUserContext
 import com.tink.link.ui.LinkUser.TemporaryUser
 import com.tink.link.ui.codeexamples.tinkLinkUIExample
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.model.credentials.Credentials
 import com.tink.model.user.Scope
 import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
@@ -24,9 +25,13 @@ import kotlinx.android.parcel.Parcelize
  * such as [onActivityResult]. Possible results are [RESULT_SUCCESS], [RESULT_CANCELLED],
  * and [RESULT_FAILURE].
  *
- * If a [temporary user][TemporaryUser] is used for the flow,
- * the [successful result][RESULT_SUCCESS] will also have an authorization code (String) bundled
- * with the key [RESULT_KEY_AUTHORIZATION_CODE].
+ * For a [successful result][RESULT_SUCCESS], a [TinkLinkResult] is returned as data bundled
+ * with the key [RESULT_DATA].
+ * If a [temporary user][TemporaryUser] is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser]
+ * which includes the authorization code (String) and the [Credentials] connected to the user.
+ * If a permanent user is used for the flow (either [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser]),
+ * the result data is of type [TinkLinkResult.PermanentUser] which includes the [Credentials] connected
+ * to the user.
  *
  * @sample tinkLinkUIExample
  */
@@ -36,7 +41,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_SUCCESS = 101
         const val RESULT_CANCELLED = 102
         const val RESULT_FAILURE = 103
-        const val RESULT_KEY_AUTHORIZATION_CODE = "authorizationCode"
+        const val RESULT_DATA = "resultData"
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
@@ -87,6 +92,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
     internal var authorizationCode: String? = null
 
+    internal var credentials: Credentials? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
@@ -113,17 +120,28 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     internal fun closeTinkLinkUi(resultCode: Int) {
-        if (resultCode == RESULT_SUCCESS && authorizeUser) {
-            val successIntent =
-                Intent().apply {
-                    putExtras(bundleOf(RESULT_KEY_AUTHORIZATION_CODE to authorizationCode))
+        if (resultCode == RESULT_SUCCESS) {
+            getTinkLinkResult()
+                ?.let { result ->
+                    val successIntent =
+                        Intent().apply { putExtras(bundleOf(RESULT_DATA to result)) }
+                    setResult(resultCode, successIntent)
                 }
-            setResult(resultCode, successIntent)
+                ?: setResult(RESULT_FAILURE)
         } else {
             setResult(resultCode)
         }
         finish()
     }
+
+    private fun getTinkLinkResult(): TinkLinkResult? =
+        if (authorizeUser) {
+            whenNonNull(authorizationCode, credentials) { authorizationCode, credentials ->
+                TinkLinkResult.TemporaryUser(authorizationCode, credentials)
+            }
+        } else {
+            credentials?.let { TinkLinkResult.PermanentUser(it) }
+        }
 }
 
 /**
@@ -161,4 +179,32 @@ sealed class LinkUser : Parcelable {
      */
     @Parcelize
     data class TemporaryUser(val market: String, val locale: String) : LinkUser()
+}
+
+/**
+ * The result data that is returned from the Tink Link UI flow.
+ * Possible values are [TemporaryUser] and [PermanentUser]
+ */
+sealed class TinkLinkResult : Parcelable {
+
+    /**
+     * The data returned when a [LinkUser.TemporaryUser] is used in the Tink Link UI flow.
+     *
+     * @param authorizationCode Authorization code from authorizing the user towards a new set of scopes
+     * @param credentials [Credentials] connected to the user
+     */
+    @Parcelize
+    data class TemporaryUser(
+        val authorizationCode: String,
+        val credentials: Credentials
+    ) : TinkLinkResult()
+
+    /**
+     * The data returned when a [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser] is used
+     * in the Tink Link UI flow.
+     *
+     * @param credentials [Credentials] connected to the user
+     */
+    @Parcelize
+    data class PermanentUser(val credentials: Credentials) : TinkLinkResult()
 }
