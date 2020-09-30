@@ -21,6 +21,7 @@
     <attr name="tink_snackbarColor" format="color|reference"/>
     <attr name="tink_colorOnSnackBar" format="color|reference"/>
     <attr name="tink_rippleColor" format="color|reference"/>
+    <attr name="tink_buttonStyle" format="reference" />
   </declare-styleable>
 
 </resources>
