@@ -14,7 +14,7 @@
     <item name="lineHeight">@dimen/tink_deci_line_height</item>
   </style>
 
-  <style name="tink_button" parent="Widget.MaterialComponents.Button">
+  <style name="Tink_ButtonStyle" parent="Widget.MaterialComponents.Button">
     <item name="iconTint">?tink_colorOnPrimary</item>
     <item name="backgroundTint">?tink_colorPrimary</item>
     <item name="android:textColor">?tink_colorOnPrimary</item>
