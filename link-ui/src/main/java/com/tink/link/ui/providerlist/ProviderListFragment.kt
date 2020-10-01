@@ -95,14 +95,18 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     private fun setupToolbar() {
-        toolbar.title = getToolbarTitleFromPath(path)
+        toolbar.title = if (providerSelection is ProviderSelection.SingleProvider) {
+            ""
+        } else {
+            getToolbarTitleFromPath(path)
+        }
         toolbar.inflateMenu(R.menu.tink_menu_search)
         val searchMenuItem = toolbar.menu.findItem(R.id.search_button)
         DrawableCompat.setTint(
             searchMenuItem.icon,
             requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
         )
-        if (path.shouldShowSearch()) {
+        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
             setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
         } else {
             toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
