@@ -23,6 +23,7 @@
     <item name="tink_colorOnSnackBar">#ffffff</item>
     <item name="tink_rippleColor">#20444444</item>
     <item name="tink_buttonStyle">@style/Tink_ButtonStyle</item>
+    <item name="tink_textButtonStyle">@style/Tink_TextButtonStyle</item>
   </style>
 
   <style name="Tink_ToolbarStyle">
