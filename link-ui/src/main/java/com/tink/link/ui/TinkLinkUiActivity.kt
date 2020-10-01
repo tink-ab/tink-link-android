@@ -16,6 +16,7 @@ import com.tink.model.credentials.Credentials
 import com.tink.model.user.Scope
 import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
+import com.tink.service.provider.ProviderFilter
 import kotlinx.android.parcel.Parcelize
 
 /**
@@ -46,6 +47,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
         const val ARG_LINK_USER = "linkUser"
+        const val ARG_PROVIDER_SELECTION = "providerSelection"
 
         /**
          * Creates an intent for use when starting this activity.
@@ -58,19 +60,23 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param styleResId Optional style for changing the appearance of the flow.
          * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
+         * @param providerSelection Optional selection used to specify if you want to show a
+         * [single provider][ProviderSelection.SingleProvider] or a [list of providers][ProviderSelection.ProviderList].
          */
         @JvmOverloads
         fun createIntent(
             context: Context,
             linkUser: LinkUser,
             scopes: List<Scope>,
-            styleResId: Int? = R.style.TinkLinkUiStyle
+            styleResId: Int? = R.style.TinkLinkUiStyle,
+            providerSelection: ProviderSelection = ProviderSelection.ProviderList()
         ): Intent {
             return Intent(context, TinkLinkUiActivity::class.java)
                 .apply {
                     val bundle = bundleOf(
                         ARG_STYLE to styleResId,
-                        ARG_SCOPES to scopes.toArrayList()
+                        ARG_SCOPES to scopes.toArrayList(),
+                        ARG_PROVIDER_SELECTION to providerSelection
                     )
                     bundle.putParcelable(ARG_LINK_USER, linkUser)
                     putExtras(bundle)
@@ -87,6 +93,10 @@ class TinkLinkUiActivity : AppCompatActivity() {
         requireNotNull(intent.extras?.getParcelable<LinkUser>(ARG_LINK_USER))
     }
 
+    private val providerSelection: ProviderSelection by lazy {
+        requireNotNull(intent.extras?.getParcelable<ProviderSelection>(ARG_PROVIDER_SELECTION))
+    }
+
     // TODO: Inject this with dagger once it's ready
     internal val authorizeUser: Boolean by lazy { linkUser is TemporaryUser }
 
@@ -101,7 +111,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
         findNavController(R.id.nav_host_fragment).setGraph(
             R.navigation.tink_nav_graph,
             bundleOf(
-                FRAGMENT_ARG_LINK_USER to linkUser
+                FRAGMENT_ARG_LINK_USER to linkUser,
+                FRAGMENT_ARG_PROVIDER_SELECTION to providerSelection
             )
         )
 
@@ -207,4 +218,24 @@ sealed class TinkLinkResult : Parcelable {
      */
     @Parcelize
     data class PermanentUser(val credentials: Credentials) : TinkLinkResult()
+}
+
+/**
+ * Used as an argument for the [TinkLinkUiActivity] to specify if you want to select a
+ * [single provider][SingleProvider] or a [list of providers][ProviderList].
+ */
+sealed class ProviderSelection : Parcelable {
+
+    /**
+     * Adapt the UI to launch directly into a single provider with a unique [name] identifier.
+     * This will launch the create credentials view directly and skip the provider list selection.
+     */
+    @Parcelize
+    data class SingleProvider(val name: String): ProviderSelection()
+
+    /**
+     * Show a provider list selection in the UI. This allows you to also specify an optional [filter].
+     */
+    @Parcelize
+    data class ProviderList(val filter: ProviderFilter = ProviderFilter()): ProviderSelection()
 }

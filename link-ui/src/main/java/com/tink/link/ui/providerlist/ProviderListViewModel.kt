@@ -5,9 +5,11 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.tink.link.ui.ProviderSelection
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
+import com.tink.service.provider.ProviderFilter
 
 internal class ProviderListViewModel : ViewModel() {
 
@@ -61,8 +63,6 @@ internal class ProviderListViewModel : ViewModel() {
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
 
-    fun refresh() = ProviderDataSource.providers.update()
-
     private fun applyPath(
         providers: List<ProviderTreeNode>,
         path: ProviderListPath
@@ -102,4 +102,7 @@ internal class ProviderListViewModel : ViewModel() {
         }
         return null
     }
+
+    fun updateProvidersFromSelection(selection: ProviderSelection) =
+        ProviderDataSource.updateProvidersFromSelection(selection)
 }

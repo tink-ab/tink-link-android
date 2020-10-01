@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.credentials.CredentialsFragment
@@ -17,6 +18,8 @@ import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
+
+const val FRAGMENT_ARG_PROVIDER_SELECTION = "providerSelectionArg"
 
 /**
  * Fragment responsible for displaying a list of financial institution groups.
@@ -34,6 +37,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         arguments?.getParcelable<ProviderListPath>(ARG_PATH) ?: ProviderListPath()
     }
 
+    private val providerSelection: ProviderSelection by lazy {
+        requireNotNull(arguments?.getParcelable<ProviderSelection>(FRAGMENT_ARG_PROVIDER_SELECTION))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         queryString = savedInstanceState?.getString(QUERY) ?: ""
@@ -45,7 +52,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         with(providers) {
             layoutManager = LinearLayoutManager(requireContext())
             providerAdapter = ProviderListRecyclerAdapter().apply {
-                onItemClickedListener = ::navigateToNode
+                onItemClickedListener = { navigateToNode(it) }
             }
             adapter = providerAdapter
         }
@@ -56,6 +63,11 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             viewLifecycleOwner,
             Observer {
                 providerAdapter?.providers = it
+                if (it.size == 1) {
+                    // The list consists only of a single provider.
+                    val node = it.first()
+                    navigateToNode(node, providerSelection is ProviderSelection.SingleProvider)
+                }
             }
         )
 
@@ -73,8 +85,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             }
         )
 
+        viewModel.updateProvidersFromSelection(providerSelection)
+
         retryButton.setOnClickListener {
-            viewModel.refresh()
+            viewModel.updateProvidersFromSelection(providerSelection)
         }
 
         setupToolbar()
@@ -130,11 +144,16 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     /**
      * Navigate to the next node.
      */
-    private fun navigateToNode(node: ProviderTreeNode) {
+    private fun navigateToNode(node: ProviderTreeNode, singleProvider: Boolean = false) {
         val newPath = path.append(node)
         if (newPath.isFullPathToProvider) {
+            val action = if (singleProvider) {
+                R.id.action_providerListFragment_to_credentialsFragment_single_provider
+            } else {
+                R.id.action_providerListFragment_to_credentialsFragment
+            }
             findNavController().navigate(
-                R.id.credentialsFragment,
+                action,
                 CredentialsFragment.getBundle(
                     newPath.providerNodeByProvider!!
                 )
@@ -142,7 +161,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         } else {
             findNavController().navigate(
                 R.id.action_providerListFragment_next,
-                bundleOf(ARG_PATH to newPath)
+                bundleOf(
+                    ARG_PATH to newPath,
+                    FRAGMENT_ARG_PROVIDER_SELECTION to providerSelection
+                )
             )
         }
     }
