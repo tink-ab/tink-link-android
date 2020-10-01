@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
 import com.tink.link.ui.LinkUser
+import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.TinkLinkResult
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
@@ -44,7 +45,8 @@ class MainLinkUiActivity : AppCompatActivity() {
                     context = this,
                     linkUser = linkUser,
                     scopes = listOf(Scope.AccountsRead),
-                    styleResId = R.style.TinkLinkUiStyle
+                    styleResId = R.style.TinkLinkUiStyle,
+                    providerSelection = ProviderSelection.ProviderList()
                 ),
                 REQUEST_CODE
             )
