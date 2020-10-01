@@ -6,12 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.tink.core.Tink
 import com.tink.link.getUserContext
-import com.tink.link.ui.AutoFetchLiveData
 import com.tink.link.ui.ProviderSelection
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
-import com.tink.service.provider.ProviderFilter
-import kotlinx.coroutines.selects.select
 
 // TODO: Scope to activity lifecycle (with dagger)
 internal object ProviderDataSource {
@@ -37,7 +34,7 @@ internal object ProviderDataSource {
         if (selection is ProviderSelection.SingleProvider) {
             Tink.getUserContext()?.providerRepository?.getProvider(
                 resultHandler = ResultHandler(
-                    { providers.postValue( if(it != null) listOf(it) else emptyList()) },
+                    { providers.postValue(if (it != null) listOf(it) else emptyList()) },
                     { providers.postValue(emptyList()) }
                 ),
                 providerName = selection.name

@@ -231,11 +231,11 @@ sealed class ProviderSelection : Parcelable {
      * This will launch the create credentials view directly and skip the provider list selection.
      */
     @Parcelize
-    data class SingleProvider(val name: String): ProviderSelection()
+    data class SingleProvider(val name: String) : ProviderSelection()
 
     /**
      * Show a provider list selection in the UI. This allows you to also specify an optional [filter].
      */
     @Parcelize
-    data class ProviderList(val filter: ProviderFilter = ProviderFilter()): ProviderSelection()
+    data class ProviderList(val filter: ProviderFilter = ProviderFilter()) : ProviderSelection()
 }

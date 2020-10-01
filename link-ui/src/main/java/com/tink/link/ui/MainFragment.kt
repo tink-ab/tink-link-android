@@ -12,7 +12,6 @@ import com.tink.link.authenticateUser
 import com.tink.link.createTemporaryUser
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
-import com.tink.service.provider.ProviderFilter
 
 const val FRAGMENT_ARG_LINK_USER = "linkUserArg"
 const val FRAGMENT_ARG_PROVIDER_SELECTION = "providerSelectionArg"

@@ -9,7 +9,6 @@ import com.tink.link.ui.ProviderSelection
 import com.tink.model.provider.Provider
 import com.tink.model.provider.ProviderTreeNode
 import com.tink.model.provider.toProviderTree
-import com.tink.service.provider.ProviderFilter
 
 internal class ProviderListViewModel : ViewModel() {
 
