@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
@@ -13,11 +14,16 @@ import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
 
 const val FRAGMENT_ARG_LINK_USER = "linkUserArg"
+const val FRAGMENT_ARG_PROVIDER_SELECTION = "providerSelectionArg"
 
 internal class MainFragment : Fragment() {
 
     private val linkUser: LinkUser by lazy {
         requireNotNull(arguments?.getParcelable<LinkUser>(FRAGMENT_ARG_LINK_USER))
+    }
+
+    private val providerSelection: ProviderSelection by lazy {
+        requireNotNull(arguments?.getParcelable<ProviderSelection>(FRAGMENT_ARG_PROVIDER_SELECTION))
     }
 
     override fun onCreateView(
@@ -68,6 +74,9 @@ internal class MainFragment : Fragment() {
 
     private fun launchLinkUiFlowForUser(user: User) {
         Tink.setUser(user)
-        findNavController().navigate(R.id.action_mainFragment_to_providerListFragment)
+        findNavController().navigate(
+            R.id.action_mainFragment_to_providerListFragment,
+            bundleOf(FRAGMENT_ARG_PROVIDER_SELECTION to providerSelection)
+        )
     }
 }

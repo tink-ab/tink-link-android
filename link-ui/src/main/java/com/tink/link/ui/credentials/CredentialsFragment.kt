@@ -226,6 +226,15 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 }
             }
         )
+
+        viewModel.credentials.observe(
+            viewLifecycleOwner,
+            Observer { credentials ->
+                (activity as? TinkLinkUiActivity)?.let {
+                    it.credentials = credentials
+                }
+            }
+        )
     }
 
     private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {

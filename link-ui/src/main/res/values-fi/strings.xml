@@ -46,7 +46,7 @@
     <string name="tink_connection_success_done_button">Valmis</string>
     <string name="tink_cancel_button">Peruuta</string>
     <string name="tink_ok_button">OK</string>
-    <string name="tink_error_unknown">Tilapäinen virhe.</string>
+    <string name="tink_error_unknown">Jokin meni vikaan.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->

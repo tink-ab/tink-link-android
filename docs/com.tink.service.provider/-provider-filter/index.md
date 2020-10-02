@@ -2,7 +2,7 @@
 
 # ProviderFilter
 
-`data class ProviderFilter`
+`data class ProviderFilter : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html)
 
 A filter to describe which providers should be included in the response
 
