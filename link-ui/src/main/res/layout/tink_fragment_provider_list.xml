@@ -92,7 +92,7 @@
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/retryButton"
-    style="@style/tink_button"
+    style="?tink_buttonStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingStart="28dp"

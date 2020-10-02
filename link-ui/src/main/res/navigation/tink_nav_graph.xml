@@ -21,6 +21,14 @@
     <action
       android:id="@+id/action_providerListFragment_next"
       app:destination="@id/providerListFragment" />
+    <action
+      android:id="@+id/action_providerListFragment_to_credentialsFragment_single_provider"
+      app:destination="@id/credentialsFragment"
+      app:popUpToInclusive="true"
+      app:popUpTo="@id/nav_graph" />
+    <action
+      android:id="@+id/action_providerListFragment_to_credentialsFragment"
+      app:destination="@id/credentialsFragment" />
   </fragment>
   <fragment
     android:id="@+id/credentialsFragment"

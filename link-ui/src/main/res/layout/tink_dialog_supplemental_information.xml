@@ -28,7 +28,7 @@
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/cancelButton"
-    style="@style/tink_textButton"
+    style="?tink_textButtonStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="32dp"
@@ -40,7 +40,7 @@
 
   <com.google.android.material.button.MaterialButton
     android:id="@+id/submitButton"
-    style="@style/tink_textButton"
+    style="?tink_textButtonStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="32dp"

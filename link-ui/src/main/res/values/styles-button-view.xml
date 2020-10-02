@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="tink_textButton" parent="Widget.MaterialComponents.Button.TextButton">
+  <style name="Tink_TextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
     <item name="android:textColor">?tink_colorPrimary</item>
     <item name="android:fontFamily">@font/tink_font_semi_bold</item>
     <item name="android:textSize">@dimen/tink_hecto_text_size</item>
@@ -9,12 +9,7 @@
     <item name="rippleColor">?tink_rippleColor</item>
   </style>
 
-  <style name="tink_textButton.deci" parent="@style/tink_textButton">
-    <item name="android:textSize">@dimen/tink_deci_text_size</item>
-    <item name="lineHeight">@dimen/tink_deci_line_height</item>
-  </style>
-
-  <style name="tink_button" parent="Widget.MaterialComponents.Button">
+  <style name="Tink_ButtonStyle" parent="Widget.MaterialComponents.Button">
     <item name="iconTint">?tink_colorOnPrimary</item>
     <item name="backgroundTint">?tink_colorPrimary</item>
     <item name="android:textColor">?tink_colorOnPrimary</item>
