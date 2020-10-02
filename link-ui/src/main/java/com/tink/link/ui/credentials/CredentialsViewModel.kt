@@ -12,6 +12,7 @@ import com.tink.link.core.user.UserContext
 import com.tink.link.getUserContext
 import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
+import com.tink.model.credentials.Credentials
 import com.tink.model.credentials.RefreshableItem
 import com.tink.model.credentials.plus
 import com.tink.model.misc.Field
@@ -28,6 +29,9 @@ internal class CredentialsViewModel : ViewModel() {
 
     private val userContext: UserContext = requireNotNull(Tink.getUserContext())
     private val credentialsRepository: CredentialsRepository = userContext.credentialsRepository
+
+    private val _credentials = MutableLiveData<Credentials>()
+    val credentials: LiveData<Credentials> = _credentials
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
@@ -77,7 +81,10 @@ internal class CredentialsViewModel : ViewModel() {
         return object : StreamObserver<CredentialsStatus> {
             override fun onNext(value: CredentialsStatus) {
                 when (value) {
-                    is CredentialsStatus.Success -> _viewState.postValue(ViewState.UPDATED)
+                    is CredentialsStatus.Success -> {
+                        _credentials.postValue(value.credentials)
+                        _viewState.postValue(ViewState.UPDATED)
+                    }
 
                     is CredentialsStatus.Loading -> {
                         _viewState.postValue(ViewState.UPDATING)

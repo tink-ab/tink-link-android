@@ -33,7 +33,7 @@
     <string name="tink_consent_information_description">Ao continuar através deste serviço, iremos recolher os seus dados financeiros. Estes são os seus dados que iremos recolher:</string>
     <string name="tink_third_party_authentication_download_app_button">Transferir</string>
     <string name="tink_supplemental_information_title">Informação adicional</string>
-    <string name="tink_supplemental_information_submit_button">Enviar</string>
+    <string name="tink_supplemental_information_submit_button">Submeter</string>
     <string name="tink_supplemental_information_qr_code_title">Abra a aplicação BankID</string>
     <string name="tink_supplemental_information_qr_code_description">Abra a aplicação móvel Bank ID e digitalize este código QR para autenticar.</string>
     <string name="tink_supplemental_information_qr_code_error">Ocorreu um erro ao carregar o código QR. Por favor, tente novamente mais tarde.</string>
@@ -46,7 +46,7 @@
     <string name="tink_connection_success_done_button">Concluído</string>
     <string name="tink_cancel_button">Cancelar</string>
     <string name="tink_ok_button">OK</string>
-    <string name="tink_error_unknown">Erro temporário.</string>
+    <string name="tink_error_unknown">Aconteceu algo de errado.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
     <!-- TODO: The following strings will be updated once the implementation is changed/updated -->

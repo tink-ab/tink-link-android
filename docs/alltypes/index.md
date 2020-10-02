@@ -326,6 +326,14 @@ Repository for retrieving [Provider](../com.tink.model.provider/-provider/index.
 
 |
 
+##### [com.tink.link.ui.ProviderSelection](../com.tink.link.ui/-provider-selection/index.md)
+
+Used as an argument for the [TinkLinkUiActivity](../com.tink.link.ui/-tink-link-ui-activity/index.md) to specify if you want to select a
+[single provider](../com.tink.link.ui/-provider-selection/-single-provider/index.md) or a [list of providers](../com.tink.link.ui/-provider-selection/-provider-list/index.md).
+
+
+|
+
 ##### [com.tink.service.provider.ProviderService](../com.tink.service.provider/-provider-service/index.md)
 
 
@@ -460,6 +468,14 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 ##### [com.tink.link.payments.TinkLinkPayments](../com.tink.link.payments/-tink-link-payments/index.md)
 
 This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-tink/index.md) when using Kotlin
+
+
+|
+
+##### [com.tink.link.ui.TinkLinkResult](../com.tink.link.ui/-tink-link-result/index.md)
+
+The result data that is returned from the Tink Link UI flow.
+Possible values are [TemporaryUser](../com.tink.link.ui/-tink-link-result/-temporary-user/index.md) and [PermanentUser](../com.tink.link.ui/-tink-link-result/-permanent-user/index.md)
 
 
 |
