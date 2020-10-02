@@ -10,9 +10,13 @@ Results will be passed with [setResult](#) and can be observed with the usual me
 such as [onActivityResult](#). Possible results are [RESULT_SUCCESS](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md), [RESULT_CANCELLED](-r-e-s-u-l-t_-c-a-n-c-e-l-l-e-d.md),
 and [RESULT_FAILURE](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md).
 
-If a [temporary user](../-link-user/-temporary-user/index.md) is used for the flow,
-the [successful result](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md) will also have an authorization code (String) bundled
-with the key [RESULT_KEY_AUTHORIZATION_CODE](-r-e-s-u-l-t_-k-e-y_-a-u-t-h-o-r-i-z-a-t-i-o-n_-c-o-d-e.md).
+For a [successful result](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md), a [TinkLinkResult](../-tink-link-result/index.md) is returned as data bundled
+with the key [RESULT_DATA](-r-e-s-u-l-t_-d-a-t-a.md).
+If a [temporary user](../-link-user/-temporary-user/index.md) is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser](../-tink-link-result/-temporary-user/index.md)
+which includes the authorization code (String) and the [Credentials](../../com.tink.model.credentials/-credentials/index.md) connected to the user.
+If a permanent user is used for the flow (either [LinkUser.ExistingUser](../-link-user/-existing-user/index.md) or [LinkUser.UnauthenticatedUser](../-link-user/-unauthenticated-user/index.md)),
+the result data is of type [TinkLinkResult.PermanentUser](../-tink-link-result/-permanent-user/index.md) which includes the [Credentials](../../com.tink.model.credentials/-credentials/index.md) connected
+to the user.
 
 ``` kotlin
 Tink.init(testTinkLinkConfig, applicationContext)

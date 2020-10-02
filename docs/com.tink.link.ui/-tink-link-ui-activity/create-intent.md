@@ -2,7 +2,7 @@
 
 # createIntent
 
-`@JvmOverloads fun createIntent(context: `[`Context`](https://developer.android.com/reference/android/content/Context.html)`, linkUser: `[`LinkUser`](../-link-user/index.md)`, scopes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Scope`](../../com.tink.model.user/-scope/index.md)`>, styleResId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`? = R.style.TinkLinkUiStyle): `[`Intent`](https://developer.android.com/reference/android/content/Intent.html)
+`@JvmOverloads fun createIntent(context: `[`Context`](https://developer.android.com/reference/android/content/Context.html)`, linkUser: `[`LinkUser`](../-link-user/index.md)`, scopes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Scope`](../../com.tink.model.user/-scope/index.md)`>, styleResId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`? = R.style.TinkLinkUiStyle, providerSelection: `[`ProviderSelection`](../-provider-selection/index.md)` = ProviderSelection.ProviderList()): `[`Intent`](https://developer.android.com/reference/android/content/Intent.html)
 
 Creates an intent for use when starting this activity.
 
@@ -18,3 +18,6 @@ in the [TinkConfiguration](../../com.tink.service.network/-tink-configuration/in
 `styleResId` - Optional style for changing the appearance of the flow.
 See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
 The default value is [R.style.TinkLinkUiStyle](#).
+
+`providerSelection` - Optional selection used to specify if you want to show a
+[single provider](../-provider-selection/-single-provider/index.md) or a [list of providers](../-provider-selection/-provider-list/index.md).
