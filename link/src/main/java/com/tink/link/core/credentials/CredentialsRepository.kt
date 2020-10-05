@@ -115,17 +115,30 @@ class CredentialsRepository @Inject constructor(
      * Refreshes all [Credentials] objects matching the list of ids.
      *
      * @param credentialsId Id of the [Credentials] that are being refreshed
-     * @param resultHandler The [ResultHandler] for processing error and success callbacks
+     * @param authenticate Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)
+     * @param statusChangeObserver An observer which will receive callbacks when there are
+     * updates to the status of the credentials. Successful and intermediate status will be posted in
+     * [onNext][StreamObserver.onNext], whereas failures and errors will be passed as [Throwable]
+     * via [onError][StreamObserver.onError]. If the creation finished successfully, you will also
+     * receive a call to [onCompleted][StreamObserver.onCompleted], after which there will be no other
+     * calls to this stream observer.
      * @param items A list of [RefreshableItem] representing the data types to aggregate from the Provider. If omitted, all data types are aggregated.
      */
     fun refresh(
         credentialsId: String,
-        resultHandler: ResultHandler<Unit>,
+        authenticate: Boolean,
+        statusChangeObserver: StreamObserver<CredentialsStatus>,
         items: Set<RefreshableItem>? = null
-    ) {
-        scope.launchForResult(resultHandler) {
-            service.refresh(CredentialsRefreshDescriptor(credentialsId, items))
-        }
+    ): StreamSubscription {
+        return RefreshCredentialsTask(
+            descriptor = CredentialsRefreshDescriptor(
+                id = credentialsId,
+                refreshableItems = items,
+                authenticate = authenticate
+            ),
+            credentialsService = service,
+            streamObserver = statusChangeObserver
+        )
     }
 
     /**
