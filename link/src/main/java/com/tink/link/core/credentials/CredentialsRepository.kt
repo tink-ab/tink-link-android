@@ -165,6 +165,16 @@ class CredentialsRepository @Inject constructor(
         )
     }
 
+    /**
+     * Gets the [Credentials] matching the id.
+     * @param credentialsId Identifier for the [Credentials] to get (required)
+     */
+    fun getCredentials(credentialsId: String, resultHandler: ResultHandler<Credentials>) {
+        scope.launchForResult(resultHandler) {
+            service.getCredentials(credentialsId)
+        }
+    }
+
     private fun enable(credentialsId: String, resultHandler: ResultHandler<Unit>) {
         scope.launchForResult(resultHandler) {
             service.enable(credentialsId)
