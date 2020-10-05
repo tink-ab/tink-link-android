@@ -4,6 +4,7 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.model.credentials.Credentials
 import com.tink.service.credentials.CredentialsAuthenticateDescriptor
 import com.tink.service.credentials.CredentialsCreationDescriptor
+import com.tink.service.credentials.CredentialsRefreshDescriptor
 import com.tink.service.credentials.CredentialsService
 import com.tink.service.credentials.CredentialsUpdateDescriptor
 import com.tink.service.streaming.publisher.StreamObserver
@@ -45,6 +46,19 @@ internal class AuthenticateCredentialsTask(
     streamObserver = streamObserver,
     credentialsAction = {
         credentialsService.authenticate(descriptor)
+        credentialsService.getCredentials(descriptor.id)
+    }
+)
+
+internal class RefreshCredentialsTask(
+    descriptor: CredentialsRefreshDescriptor,
+    credentialsService: CredentialsService,
+    streamObserver: StreamObserver<CredentialsStatus>
+) : CredentialsTask(
+    credentialsService = credentialsService,
+    streamObserver = streamObserver,
+    credentialsAction = {
+        credentialsService.refresh(descriptor)
         credentialsService.getCredentials(descriptor.id)
     }
 )
