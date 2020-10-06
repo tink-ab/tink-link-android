@@ -11,8 +11,8 @@
     <string name="tink_provider_select_access_type_title">Seleccionar tipos de cuentas</string>
     <string name="tink_provider_capability_transfers">transferencias</string>
     <string name="tink_provider_capability_e_invoices">facturas electrónicas</string>
-    <string name="tink_provider_capability_mortgage_aggregation">agrupación de hipotecas</string>
-    <string name="tink_provider_capability_checking_accounts">comprobando cuentas</string>
+    <string name="tink_provider_capability_mortgage_aggregation">agregación de hipotecas</string>
+    <string name="tink_provider_capability_checking_accounts">cuentas corrientes</string>
     <string name="tink_provider_capability_savings_accounts">cuentas de ahorro</string>
     <string name="tink_provider_capability_credit_cards">tarjetas de crédito</string>
     <string name="tink_provider_capability_loans">préstamos</string>
