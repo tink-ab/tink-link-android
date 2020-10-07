@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
-import com.tink.link.ui.credentials.CredentialsFragment
+import com.tink.link.ui.credentials.CredentialsOperationType
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
@@ -152,16 +152,17 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         val newPath = path.append(node)
         if (newPath.isFullPathToProvider) {
             val action = if (singleProvider) {
-                R.id.action_providerListFragment_to_credentialsFragment_single_provider
-            } else {
-                R.id.action_providerListFragment_to_credentialsFragment
-            }
-            findNavController().navigate(
-                action,
-                CredentialsFragment.getBundle(
-                    newPath.providerNodeByProvider!!
+                ProviderListFragmentDirections.actionProviderListFragmentToCredentialsFragmentSingleProvider(
+                    operationType = CredentialsOperationType.CREATE,
+                    provider = newPath.providerNodeByProvider!!
                 )
-            )
+            } else {
+                ProviderListFragmentDirections.actionProviderListFragmentToCredentialsFragment(
+                    operationType = CredentialsOperationType.CREATE,
+                    provider = newPath.providerNodeByProvider!!
+                )
+            }
+            findNavController().navigate(action)
         } else {
             findNavController().navigate(
                 R.id.action_providerListFragment_next,

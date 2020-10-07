@@ -140,6 +140,30 @@ internal class CredentialsViewModel : ViewModel() {
         )
     }
 
+    fun authenticateCredentials(
+        id: String,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
+        onError: (Throwable) -> Unit
+    ) {
+        streamSubscription = credentialsRepository.authenticate(
+            id,
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
+        )
+    }
+
+    fun refreshCredentials(
+        id: String,
+        authenticate: Boolean,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit,
+        onError: (Throwable) -> Unit
+    ) {
+        streamSubscription = credentialsRepository.refresh(
+            id,
+            authenticate,
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
+        )
+    }
+
     private var currentlyAuthorizing = AtomicBoolean(false)
     private var authorizationDone = AtomicBoolean(false)
 
