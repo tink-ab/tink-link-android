@@ -520,8 +520,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
-            R.id.connectionSuccessfulFragment,
-            ConnectionSuccessfulFragment.getBundle(provider.displayName)
+            CredentialsFragmentDirections.actionCredentialsFragmentToConnectionSuccessfulFragment(
+                providerDisplayName = provider.displayName,
+                isNewCredentialsCreated = credentialsOperationType == CredentialsOperationType.CREATE
+            )
         )
     }
 

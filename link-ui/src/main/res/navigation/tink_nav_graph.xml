@@ -97,12 +97,25 @@
     <action
       android:id="@+id/action_credentialsFragment_to_consentInformationFragment"
       app:destination="@id/consentInformationFragment" />
+    <action
+      android:id="@+id/action_credentialsFragment_to_connectionSuccessfulFragment"
+      app:destination="@id/connectionSuccessfulFragment"
+      app:popUpTo="@id/nav_graph"
+      app:popUpToInclusive="true" />
   </fragment>
   <fragment
     android:id="@+id/connectionSuccessfulFragment"
     android:name="com.tink.link.ui.credentials.ConnectionSuccessfulFragment"
     android:label="ConnectionSuccessfulFragment"
-    tools:layout="@layout/tink_fragment_connection_successful" />
+    tools:layout="@layout/tink_fragment_connection_successful">
+    <argument
+      android:name="providerDisplayName"
+      app:argType="string" />
+    <argument
+      android:name="isNewCredentialsCreated"
+      android:defaultValue="false"
+      app:argType="boolean" />
+  </fragment>
   <fragment
     android:id="@+id/consentInformationFragment"
     android:name="com.tink.link.ui.credentials.ConsentInformationFragment"
