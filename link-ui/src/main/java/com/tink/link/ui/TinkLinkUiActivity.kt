@@ -47,7 +47,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
         const val ARG_LINK_USER = "linkUser"
-        const val ARG_PROVIDER_SELECTION = "providerSelection"
+        const val ARG_CREDENTIALS_OPERATION = "credentialsOperation"
 
         /**
          * Creates an intent for use when starting this activity.
@@ -60,8 +60,6 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param styleResId Optional style for changing the appearance of the flow.
          * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
-         * @param providerSelection Optional selection used to specify if you want to show a
-         * [single provider][ProviderSelection.SingleProvider] or a [list of providers][ProviderSelection.ProviderList].
          */
         @JvmOverloads
         fun createIntent(
@@ -69,16 +67,16 @@ class TinkLinkUiActivity : AppCompatActivity() {
             linkUser: LinkUser,
             scopes: List<Scope>,
             styleResId: Int? = R.style.TinkLinkUiStyle,
-            providerSelection: ProviderSelection = ProviderSelection.ProviderList()
+            credentialsOperation: CredentialsOperation = CredentialsOperation.Create()
         ): Intent {
             return Intent(context, TinkLinkUiActivity::class.java)
                 .apply {
                     val bundle = bundleOf(
                         ARG_STYLE to styleResId,
                         ARG_SCOPES to scopes.toArrayList(),
-                        ARG_PROVIDER_SELECTION to providerSelection
+                        ARG_LINK_USER to linkUser,
+                        ARG_CREDENTIALS_OPERATION to credentialsOperation
                     )
-                    bundle.putParcelable(ARG_LINK_USER, linkUser)
                     putExtras(bundle)
                 }
         }
@@ -93,8 +91,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
         requireNotNull(intent.extras?.getParcelable<LinkUser>(ARG_LINK_USER))
     }
 
-    private val providerSelection: ProviderSelection by lazy {
-        requireNotNull(intent.extras?.getParcelable<ProviderSelection>(ARG_PROVIDER_SELECTION))
+    private val credentialsOperation: CredentialsOperation by lazy {
+        requireNotNull(intent.extras?.getParcelable<CredentialsOperation>(ARG_CREDENTIALS_OPERATION))
     }
 
     // TODO: Inject this with dagger once it's ready
@@ -112,7 +110,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
             R.navigation.tink_nav_graph,
             bundleOf(
                 FRAGMENT_ARG_LINK_USER to linkUser,
-                FRAGMENT_ARG_PROVIDER_SELECTION to providerSelection
+                FRAGMENT_ARG_CREDENTIALS_OPERATION to credentialsOperation
             )
         )
 
@@ -238,4 +236,26 @@ sealed class ProviderSelection : Parcelable {
      */
     @Parcelize
     data class ProviderList(val filter: ProviderFilter = ProviderFilter()) : ProviderSelection()
+}
+
+sealed class CredentialsOperation : Parcelable {
+
+    open val credentialsId: String? = null
+
+    @Parcelize
+    data class Create(
+        val providerSelection: ProviderSelection = ProviderSelection.ProviderList()
+    ) : CredentialsOperation()
+
+    @Parcelize
+    data class Authenticate(override val credentialsId: String) : CredentialsOperation()
+
+    @Parcelize
+    data class Refresh(
+        override val credentialsId: String,
+        val authenticate: Boolean = false
+    ) : CredentialsOperation()
+
+    @Parcelize
+    data class Update(override val credentialsId: String) : CredentialsOperation()
 }
