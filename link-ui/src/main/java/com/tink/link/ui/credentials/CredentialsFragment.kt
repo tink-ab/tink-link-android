@@ -526,17 +526,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             )
         )
     }
-
-//    companion object {
-//        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
-//            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
-//    }
-
-//    @Parcelize
-//    data class CredentialsUpdateArgs(
-//        val credentialsId: String,
-//        val fields: Map<String, String>
-//    ) : Parcelable
 }
 
 enum class CredentialsOperationType {
