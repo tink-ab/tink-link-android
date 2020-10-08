@@ -60,6 +60,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param styleResId Optional style for changing the appearance of the flow.
          * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
+         * @param credentialsOperation The type of credentials operation to be performed
          */
         @JvmOverloads
         fun createIntent(
@@ -238,24 +239,53 @@ sealed class ProviderSelection : Parcelable {
     data class ProviderList(val filter: ProviderFilter = ProviderFilter()) : ProviderSelection()
 }
 
+/**
+ * Used as an argument for the [TinkLinkUiActivity] to specify the type of credentials operation
+ * to be performed using Tink Link UI.
+ * Possible values are [Create], [Update], [Refresh] and [Authenticate].
+ * Please note that you need to have permanent users enabled for [Update], [Refresh]
+ * and [Authenticate] operations.
+ */
 sealed class CredentialsOperation : Parcelable {
 
     open val credentialsId: String? = null
 
+    /**
+     * Pass this to the [TinkLinkUiActivity.createIntent] function to create credentials.
+     *
+     * @param providerSelection Optional selection used to specify if you want to show a
+     * [single provider][ProviderSelection.SingleProvider] or a [list of providers][ProviderSelection.ProviderList].
+     */
     @Parcelize
     data class Create(
         val providerSelection: ProviderSelection = ProviderSelection.ProviderList()
     ) : CredentialsOperation()
 
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to authenticate credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be authenticated
+     */
     @Parcelize
     data class Authenticate(override val credentialsId: String) : CredentialsOperation()
 
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to refresh credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be refreshed
+     * @param authenticate Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)
+     */
     @Parcelize
     data class Refresh(
         override val credentialsId: String,
         val authenticate: Boolean = false
     ) : CredentialsOperation()
 
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to update credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be updated
+     */
     @Parcelize
     data class Update(override val credentialsId: String) : CredentialsOperation()
 }
