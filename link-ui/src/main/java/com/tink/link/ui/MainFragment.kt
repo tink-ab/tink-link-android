@@ -127,8 +127,7 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Update -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentUpdate(
-                        credentialsId = credentialsToProvider.credentials.id,
-                        credentialsFields = CredentialsUpdateFields(credentialsToProvider.credentials.fields),
+                        credentials = credentialsToProvider.credentials,
                         operationType = operation.operationType(),
                         provider = credentialsToProvider.provider
                     )
@@ -138,7 +137,7 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Authenticate -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentAuthenticate(
-                        credentialsId = credentialsToProvider.credentials.id,
+                        credentials = credentialsToProvider.credentials,
                         operationType = operation.operationType(),
                         provider = credentialsToProvider.provider
                     )
@@ -148,7 +147,7 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Refresh -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentRefresh(
-                        credentialsId = credentialsToProvider.credentials.id,
+                        credentials = credentialsToProvider.credentials,
                         operationType = operation.operationType(),
                         provider = credentialsToProvider.provider,
                         authenticate = operation.authenticate

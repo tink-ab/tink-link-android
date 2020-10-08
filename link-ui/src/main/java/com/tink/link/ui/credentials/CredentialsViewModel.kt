@@ -21,6 +21,7 @@ import com.tink.model.user.Scope
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
+import org.threeten.bp.Instant
 import java.util.concurrent.atomic.AtomicBoolean
 
 internal class CredentialsViewModel : ViewModel() {
@@ -152,15 +153,18 @@ internal class CredentialsViewModel : ViewModel() {
     }
 
     fun refreshCredentials(
-        id: String,
-        authenticate: Boolean,
+        credentials: Credentials,
+        forceAuthenticate: Boolean,
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
         onError: (Throwable) -> Unit
     ) {
         streamSubscription = credentialsRepository.refresh(
-            id,
-            authenticate,
-            getCredentialsStreamObserver(onAwaitingAuthentication, onError)
+            credentialsId = credentials.id,
+            authenticate = credentials
+                .sessionExpiryDate
+                ?.let { it <= Instant.now()  } //Set authenticate to TRUE if session has expired
+                ?: forceAuthenticate,
+            statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
 

@@ -22,12 +22,8 @@
       app:destination="@id/credentialsFragment"
       app:popUpTo="@+id/nav_graph">
       <argument
-        android:name="credentialsId"
-        app:argType="string"
-        app:nullable="false" />
-      <argument
-        android:name="credentialsFields"
-        app:argType="com.tink.link.ui.credentials.CredentialsUpdateFields"
+        android:name="credentials"
+        app:argType="com.tink.model.credentials.Credentials"
         app:nullable="false" />
     </action>
     <action
@@ -35,8 +31,8 @@
       app:destination="@id/credentialsFragment"
       app:popUpTo="@+id/nav_graph">
       <argument
-        android:name="credentialsId"
-        app:argType="string"
+        android:name="credentials"
+        app:argType="com.tink.model.credentials.Credentials"
         app:nullable="false" />
     </action>
     <action
@@ -44,8 +40,8 @@
       app:destination="@id/credentialsFragment"
       app:popUpTo="@+id/nav_graph">
       <argument
-        android:name="credentialsId"
-        app:argType="string"
+        android:name="credentials"
+        app:argType="com.tink.model.credentials.Credentials"
         app:nullable="false" />
       <argument
         android:name="authenticate"
@@ -81,14 +77,9 @@
       android:name="provider"
       app:argType="com.tink.model.provider.Provider" />
     <argument
-      android:name="credentialsId"
+      android:name="credentials"
       android:defaultValue="@null"
-      app:argType="string"
-      app:nullable="true" />
-    <argument
-      android:name="credentialsFields"
-      android:defaultValue="@null"
-      app:argType="com.tink.link.ui.credentials.CredentialsUpdateFields"
+      app:argType="com.tink.model.credentials.Credentials"
       app:nullable="true" />
     <argument
       android:name="authenticate"

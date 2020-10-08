@@ -51,8 +51,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private val credentialsOperationType: CredentialsOperationType by lazy { arguments.operationType }
     private val provider: Provider by lazy { arguments.provider }
-    private val credentialsId: String? by lazy { arguments.credentialsId }
-    private val credentialsUpdateFields: CredentialsUpdateFields? by lazy { arguments.credentialsFields }
+    private val credentials: Credentials? by lazy { arguments.credentials }
     private val authenticate: Boolean by lazy { arguments.authenticate }
 
     private val viewModel: CredentialsViewModel by activityViewModels()
@@ -206,7 +205,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         consentInformation.movementMethod = LinkMovementMethod.getInstance()
 
         val fields = provider.fields.map { field ->
-            credentialsUpdateFields?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
+            credentials?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
         }
 
         viewModel.setFields(fields)
@@ -257,11 +256,11 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
         }
-        credentialsId?.let { id ->
+        credentials?.let { credentials ->
             when (credentialsOperationType) {
                 CredentialsOperationType.AUTHENTICATE -> {
                     viewModel.authenticateCredentials(
-                        id = id,
+                        id = credentials.id,
                         onAwaitingAuthentication = ::handleAuthenticationTask,
                         onError = { error ->
                             val message = error.localizedMessage ?: error.message
@@ -273,8 +272,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
                 CredentialsOperationType.REFRESH -> {
                     viewModel.refreshCredentials(
-                        id = id,
-                        authenticate = authenticate,
+                        credentials = credentials,
+                        forceAuthenticate = authenticate,
                         onAwaitingAuthentication = ::handleAuthenticationTask,
                         onError = { error ->
                             val message = error.localizedMessage ?: error.message
@@ -325,7 +324,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         when (credentialsOperationType) {
             CredentialsOperationType.CREATE -> createCredentials()
             CredentialsOperationType.UPDATE -> {
-                credentialsId?.let { updateCredentials(it) }
+                credentials?.id?.let { updateCredentials(it) }
             }
 
             else -> { }
