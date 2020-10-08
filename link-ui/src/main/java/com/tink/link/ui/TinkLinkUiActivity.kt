@@ -60,7 +60,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param styleResId Optional style for changing the appearance of the flow.
          * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
-         * @param credentialsOperation The type of credentials operation to be performed
+         * @param credentialsOperation The type of credentials operation to be performed.
+         * The default value is [CredentialsOperation.Create]
          */
         @JvmOverloads
         fun createIntent(
