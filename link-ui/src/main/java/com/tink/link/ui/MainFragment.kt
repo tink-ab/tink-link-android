@@ -15,7 +15,6 @@ import com.tink.link.authenticateUser
 import com.tink.link.createTemporaryUser
 import com.tink.link.ui.credentials.CredentialsOperationType
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
-import com.tink.link.ui.credentials.CredentialsUpdateFields
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
@@ -102,24 +101,30 @@ internal class MainFragment : Fragment() {
             }
         }
 
-        viewModel.credentialsToProvider.observe(viewLifecycleOwner, Observer { credentialsToProvider ->
-            launchFlowForCredentials(credentialsToProvider)
-        })
+        viewModel.credentialsToProvider.observe(
+            viewLifecycleOwner,
+            Observer { credentialsToProvider ->
+                launchFlowForCredentials(credentialsToProvider)
+            }
+        )
 
-        viewModel.onError.observe(viewLifecycleOwner, Observer { message ->
-            statusDialog = CredentialsStatusDialogFactory
-                .createDialog(
-                    requireContext(),
-                    CredentialsStatusDialogFactory.Type.ERROR,
-                    getString(R.string.tink_error_unknown)
-                ) {
-                    statusDialog?.dismiss()
-                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                        TinkLinkUiActivity.RESULT_FAILURE
-                    )
-                }
-                .also { it.show() }
-        })
+        viewModel.onError.observe(
+            viewLifecycleOwner,
+            Observer { message ->
+                statusDialog = CredentialsStatusDialogFactory
+                    .createDialog(
+                        requireContext(),
+                        CredentialsStatusDialogFactory.Type.ERROR,
+                        getString(R.string.tink_error_unknown)
+                    ) {
+                        statusDialog?.dismiss()
+                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                            TinkLinkUiActivity.RESULT_FAILURE
+                        )
+                    }
+                    .also { it.show() }
+            }
+        )
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {

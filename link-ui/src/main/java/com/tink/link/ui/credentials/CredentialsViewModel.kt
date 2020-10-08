@@ -162,7 +162,7 @@ internal class CredentialsViewModel : ViewModel() {
             credentialsId = credentials.id,
             authenticate = credentials
                 .sessionExpiryDate
-                ?.let { it <= Instant.now()  } //Set authenticate to TRUE if session has expired
+                ?.let { it <= Instant.now() } // Set authenticate to TRUE if session has expired
                 ?: forceAuthenticate,
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
