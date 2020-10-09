@@ -264,6 +264,7 @@ sealed class CredentialsOperation : Parcelable {
 
     /**
      * Pass this to [TinkLinkUiActivity.createIntent] function to authenticate credentials.
+     * This operation is limited to open banking credentials.
      *
      * @param credentialsId Id of the [Credentials] to be authenticated
      */
