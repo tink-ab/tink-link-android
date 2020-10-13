@@ -38,7 +38,7 @@ internal class MainViewModel : ViewModel() {
                                         CredentialsToProvider(credentials, provider)
                                     )
                                 } else {
-                                    _onError.postValue(NoSuchElementException())
+                                    _onError.postValue(NoSuchElementException("Could not find a provider with that name."))
                                 }
                             },
                             {
