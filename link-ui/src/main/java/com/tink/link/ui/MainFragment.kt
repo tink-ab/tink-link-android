@@ -128,40 +128,35 @@ internal class MainFragment : Fragment() {
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {
-        when (val operation = credentialsOperation) {
+        val operationArgs = when (val operation = credentialsOperation) {
             is CredentialsOperation.Update -> {
-                findNavController().navigate(
-                    MainFragmentDirections.actionMainFragmentToCredentialsFragmentUpdate(
-                        CredentialsOperationArgs.Update(
-                            provider = credentialsToProvider.provider,
-                            credentials = credentialsToProvider.credentials
-                        )
-                    )
+                CredentialsOperationArgs.Update(
+                    provider = credentialsToProvider.provider,
+                    credentials = credentialsToProvider.credentials
                 )
             }
 
             is CredentialsOperation.Authenticate -> {
-                findNavController().navigate(
-                    MainFragmentDirections.actionMainFragmentToCredentialsFragmentAuthenticate(
-                        CredentialsOperationArgs.Authenticate(
-                            provider = credentialsToProvider.provider,
-                            credentials = credentialsToProvider.credentials
-                        )
-                    )
+                CredentialsOperationArgs.Authenticate(
+                    provider = credentialsToProvider.provider,
+                    credentials = credentialsToProvider.credentials
                 )
             }
 
             is CredentialsOperation.Refresh -> {
-                findNavController().navigate(
-                    MainFragmentDirections.actionMainFragmentToCredentialsFragmentRefresh(
-                        CredentialsOperationArgs.Refresh(
-                            provider = credentialsToProvider.provider,
-                            credentials = credentialsToProvider.credentials,
-                            authenticate = operation.authenticate
-                        )
-                    )
+                CredentialsOperationArgs.Refresh(
+                    provider = credentialsToProvider.provider,
+                    credentials = credentialsToProvider.credentials,
+                    authenticate = operation.authenticate
                 )
             }
+
+            else -> null
+        }
+        if (operationArgs != null) {
+            findNavController().navigate(
+                MainFragmentDirections.actionMainFragmentToCredentialsFragment(operationArgs)
+            )
         }
     }
 }
