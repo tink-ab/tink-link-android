@@ -7,6 +7,10 @@
 Adapt the UI to launch directly into a single provider with a unique [name](name.md) identifier.
 This will launch the create credentials view directly and skip the provider list selection.
 
+### Exceptions
+
+`IllegalArgumentException` - If [name](name.md) is empty.
+
 ### Constructors
 
 | Name | Summary |
