@@ -68,9 +68,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         super.onViewCreated(view, savedInstanceState)
         toolbar.title = getString(R.string.tink_credentials_authentication_title)
         toolbar.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                TinkLinkUiActivity.RESULT_CANCELLED
-            )
+            cancelLinkUi()
         }
 
         when (credentialsOperationArgs) {
@@ -256,9 +254,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         statusMessage.text =
             getString(R.string.tink_credentials_status_updating, provider.displayName)
         cancelButton.setOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                TinkLinkUiActivity.RESULT_CANCELLED
-            )
+            cancelLinkUi()
         }
         when (val operationArgs = credentialsOperationArgs) {
             is CredentialsOperationArgs.Authenticate -> {
@@ -374,9 +370,18 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 message
             ) {
                 statusDialog?.dismiss()
+                if (type == CredentialsStatusDialogFactory.Type.ERROR) {
+                    cancelLinkUi()
+                }
             }
             .also { it.show() }
         statusDialogInfo = newStatusDialogInfo
+    }
+
+    private fun cancelLinkUi() {
+        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+            TinkLinkUiActivity.RESULT_CANCELLED
+        )
     }
 
     @UiThread
