@@ -110,7 +110,7 @@ internal class MainFragment : Fragment() {
 
         viewModel.onError.observe(
             viewLifecycleOwner,
-            Observer { message ->
+            Observer { _ ->
                 statusDialog = CredentialsStatusDialogFactory
                     .createDialog(
                         requireContext(),

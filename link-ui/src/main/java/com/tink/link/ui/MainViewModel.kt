@@ -21,8 +21,8 @@ internal class MainViewModel : ViewModel() {
     private val _credentialsToProvider: MutableLiveData<CredentialsToProvider> = MutableLiveData()
     val credentialsToProvider: LiveData<CredentialsToProvider> = _credentialsToProvider
 
-    private val _onError: MutableLiveData<Unit> = MutableLiveData()
-    val onError: LiveData<Unit> = _onError
+    private val _onError: MutableLiveData<Throwable> = MutableLiveData()
+    val onError: LiveData<Throwable> = _onError
 
     fun setCredentialsId(credentialsId: String) {
         credentialsRepository.getCredentials(
@@ -33,21 +33,22 @@ internal class MainViewModel : ViewModel() {
                         credentials.providerName,
                         ResultHandler(
                             { provider ->
-                                provider?.let {
+                                if (provider != null) {
                                     _credentialsToProvider.postValue(
-                                        CredentialsToProvider(credentials, it)
+                                        CredentialsToProvider(credentials, provider)
                                     )
+                                } else {
+                                    _onError.postValue(NoSuchElementException())
                                 }
-                                    ?: _onError.postValue(Unit)
                             },
                             {
-                                _onError.postValue(Unit)
+                                _onError.postValue(it)
                             }
                         )
                     )
                 },
                 {
-                    _onError.postValue(Unit)
+                    _onError.postValue(it)
                 }
             )
         )
