@@ -55,7 +55,7 @@ internal class MainViewModel : ViewModel() {
     }
 }
 
-data class CredentialsToProvider(
+internal data class CredentialsToProvider(
     val credentials: Credentials,
     val provider: Provider
 )
