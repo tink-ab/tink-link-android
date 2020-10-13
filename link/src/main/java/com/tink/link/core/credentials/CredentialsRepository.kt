@@ -179,8 +179,7 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Gets the [Credentials] matching the id.
-     * @param credentialsId Identifier for the [Credentials] to get (required)
+     * Gets the [Credentials] matching the [credentialsId].
      */
     fun getCredentials(credentialsId: String, resultHandler: ResultHandler<Credentials>) {
         scope.launchForResult(resultHandler) {
