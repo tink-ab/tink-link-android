@@ -49,10 +49,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private val arguments: CredentialsFragmentArgs by navArgs()
 
-    private val credentialsOperationType: CredentialsOperationType by lazy { arguments.operationType }
-    private val provider: Provider by lazy { arguments.provider }
-    private val credentials: Credentials? by lazy { arguments.credentials }
-    private val authenticate: Boolean by lazy { arguments.authenticate }
+    private val credentialsOperationArgs: CredentialsOperationArgs by lazy { arguments.operationArgs }
+    private val provider: Provider by lazy { credentialsOperationArgs.provider }
 
     private val viewModel: CredentialsViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
@@ -75,12 +73,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             )
         }
 
-        when (credentialsOperationType) {
-            CredentialsOperationType.CREATE,
-            CredentialsOperationType.UPDATE -> { showFullCredentialsFlow() }
+        when (credentialsOperationArgs) {
+            is CredentialsOperationArgs.Create,
+            is CredentialsOperationArgs.Update -> { showFullCredentialsFlow() }
 
-            CredentialsOperationType.AUTHENTICATE,
-            CredentialsOperationType.REFRESH -> { showAuthenticateFlow() }
+            is CredentialsOperationArgs.Authenticate,
+            is CredentialsOperationArgs.Refresh -> { showAuthenticateFlow() }
         }
 
         (activity as? TinkLinkUiActivity)?.scopes?.let {
@@ -205,7 +203,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         consentInformation.movementMethod = LinkMovementMethod.getInstance()
 
         val fields = provider.fields.map { field ->
-            credentials?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
+            credentialsOperationArgs
+                .takeIf { it is CredentialsOperationArgs.Update }
+                ?.let { operationArgs ->
+                    (operationArgs as CredentialsOperationArgs.Update).credentials.fields[field.name]
+                        ?.let { field.copy(value = it) }
+                }
+                ?: field
         }
 
         viewModel.setFields(fields)
@@ -256,35 +260,33 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
         }
-        credentials?.let { credentials ->
-            when (credentialsOperationType) {
-                CredentialsOperationType.AUTHENTICATE -> {
-                    viewModel.authenticateCredentials(
-                        id = credentials.id,
-                        onAwaitingAuthentication = ::handleAuthenticationTask,
-                        onError = { error ->
-                            val message = error.localizedMessage ?: error.message
-                                ?: getString(R.string.tink_error_unknown)
-                            lifecycleScope.launchWhenStarted { showError(message) }
-                        }
-                    )
-                }
-
-                CredentialsOperationType.REFRESH -> {
-                    viewModel.refreshCredentials(
-                        credentials = credentials,
-                        forceAuthenticate = authenticate,
-                        onAwaitingAuthentication = ::handleAuthenticationTask,
-                        onError = { error ->
-                            val message = error.localizedMessage ?: error.message
-                                ?: getString(R.string.tink_error_unknown)
-                            lifecycleScope.launchWhenStarted { showError(message) }
-                        }
-                    )
-                }
-
-                else -> { }
+        when (val operationArgs = credentialsOperationArgs) {
+            is CredentialsOperationArgs.Authenticate -> {
+                viewModel.authenticateCredentials(
+                    id = operationArgs.credentials.id,
+                    onAwaitingAuthentication = ::handleAuthenticationTask,
+                    onError = { error ->
+                        val message = error.localizedMessage ?: error.message
+                        ?: getString(R.string.tink_error_unknown)
+                        lifecycleScope.launchWhenStarted { showError(message) }
+                    }
+                )
             }
+
+            is CredentialsOperationArgs.Refresh -> {
+                viewModel.refreshCredentials(
+                    credentials = operationArgs.credentials,
+                    forceAuthenticate = operationArgs.authenticate,
+                    onAwaitingAuthentication = ::handleAuthenticationTask,
+                    onError = { error ->
+                        val message = error.localizedMessage ?: error.message
+                        ?: getString(R.string.tink_error_unknown)
+                        lifecycleScope.launchWhenStarted { showError(message) }
+                    }
+                )
+            }
+
+            else -> { }
         }
     }
 
@@ -321,12 +323,9 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun submitFilledFields() {
-        when (credentialsOperationType) {
-            CredentialsOperationType.CREATE -> createCredentials()
-            CredentialsOperationType.UPDATE -> {
-                credentials?.id?.let { updateCredentials(it) }
-            }
-
+        when (val operationArgs = credentialsOperationArgs) {
+            is CredentialsOperationArgs.Create -> createCredentials()
+            is CredentialsOperationArgs.Update -> updateCredentials(operationArgs.credentials.id)
             else -> { }
         }
     }
@@ -521,18 +520,32 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         findNavController().navigate(
             CredentialsFragmentDirections.actionCredentialsFragmentToConnectionSuccessfulFragment(
                 providerDisplayName = provider.displayName,
-                isNewCredentialsCreated = credentialsOperationType == CredentialsOperationType.CREATE
+                isNewCredentialsCreated = credentialsOperationArgs is CredentialsOperationArgs.Create
             )
         )
     }
 }
 
-enum class CredentialsOperationType {
-    CREATE,
-    UPDATE,
-    AUTHENTICATE,
-    REFRESH
-}
+sealed class CredentialsOperationArgs : Parcelable {
 
-@Parcelize
-data class CredentialsUpdateFields(val fields: Map<String, String>) : Parcelable
+    abstract val provider: Provider
+
+    @Parcelize
+    data class Create(override val provider: Provider) : CredentialsOperationArgs()
+
+    @Parcelize
+    data class Update(override val provider: Provider, val credentials: Credentials) :
+        CredentialsOperationArgs()
+
+    @Parcelize
+    data class Refresh(
+        override val provider: Provider,
+        val credentials: Credentials,
+        val authenticate: Boolean
+    ) :
+        CredentialsOperationArgs()
+
+    @Parcelize
+    data class Authenticate(override val provider: Provider, val credentials: Credentials) :
+        CredentialsOperationArgs()
+}

@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
 import com.tink.link.authenticateUser
 import com.tink.link.createTemporaryUser
-import com.tink.link.ui.credentials.CredentialsOperationType
+import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
 import com.tink.model.user.User
@@ -132,9 +132,10 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Update -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentUpdate(
-                        credentials = credentialsToProvider.credentials,
-                        operationType = operation.operationType(),
-                        provider = credentialsToProvider.provider
+                        CredentialsOperationArgs.Update(
+                            provider = credentialsToProvider.provider,
+                            credentials = credentialsToProvider.credentials
+                        )
                     )
                 )
             }
@@ -142,9 +143,10 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Authenticate -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentAuthenticate(
-                        credentials = credentialsToProvider.credentials,
-                        operationType = operation.operationType(),
-                        provider = credentialsToProvider.provider
+                        CredentialsOperationArgs.Authenticate(
+                            provider = credentialsToProvider.provider,
+                            credentials = credentialsToProvider.credentials
+                        )
                     )
                 )
             }
@@ -152,21 +154,14 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Refresh -> {
                 findNavController().navigate(
                     MainFragmentDirections.actionMainFragmentToCredentialsFragmentRefresh(
-                        credentials = credentialsToProvider.credentials,
-                        operationType = operation.operationType(),
-                        provider = credentialsToProvider.provider,
-                        authenticate = operation.authenticate
+                        CredentialsOperationArgs.Refresh(
+                            provider = credentialsToProvider.provider,
+                            credentials = credentialsToProvider.credentials,
+                            authenticate = operation.authenticate
+                        )
                     )
                 )
             }
         }
     }
-
-    private fun CredentialsOperation.operationType() =
-        when (this) {
-            is CredentialsOperation.Create -> CredentialsOperationType.CREATE
-            is CredentialsOperation.Update -> CredentialsOperationType.UPDATE
-            is CredentialsOperation.Authenticate -> CredentialsOperationType.AUTHENTICATE
-            is CredentialsOperation.Refresh -> CredentialsOperationType.REFRESH
-        }
 }

@@ -20,34 +20,15 @@
     <action
       android:id="@+id/action_mainFragment_to_credentialsFragment_update"
       app:destination="@id/credentialsFragment"
-      app:popUpTo="@+id/nav_graph">
-      <argument
-        android:name="credentials"
-        app:argType="com.tink.model.credentials.Credentials"
-        app:nullable="false" />
-    </action>
+      app:popUpTo="@+id/nav_graph" />
     <action
       android:id="@+id/action_mainFragment_to_credentialsFragment_authenticate"
       app:destination="@id/credentialsFragment"
-      app:popUpTo="@+id/nav_graph">
-      <argument
-        android:name="credentials"
-        app:argType="com.tink.model.credentials.Credentials"
-        app:nullable="false" />
-    </action>
+      app:popUpTo="@+id/nav_graph" />
     <action
       android:id="@+id/action_mainFragment_to_credentialsFragment_refresh"
       app:destination="@id/credentialsFragment"
-      app:popUpTo="@+id/nav_graph">
-      <argument
-        android:name="credentials"
-        app:argType="com.tink.model.credentials.Credentials"
-        app:nullable="false" />
-      <argument
-        android:name="authenticate"
-        app:argType="boolean"
-        android:defaultValue="false" />
-    </action>
+      app:popUpTo="@+id/nav_graph" />
   </fragment>
   <fragment
     android:id="@+id/providerListFragment"
@@ -71,20 +52,8 @@
     android:label="CredentialsFragment"
     tools:layout="@layout/tink_fragment_credentials">
     <argument
-      android:name="operationType"
-      app:argType="com.tink.link.ui.credentials.CredentialsOperationType" />
-    <argument
-      android:name="provider"
-      app:argType="com.tink.model.provider.Provider" />
-    <argument
-      android:name="credentials"
-      android:defaultValue="@null"
-      app:argType="com.tink.model.credentials.Credentials"
-      app:nullable="true" />
-    <argument
-      android:name="authenticate"
-      app:argType="boolean"
-      android:defaultValue="false" />
+      android:name="operationArgs"
+      app:argType="com.tink.link.ui.credentials.CredentialsOperationArgs" />
     <action
       android:id="@+id/action_credentialsFragment_to_consentInformationFragment"
       app:destination="@id/consentInformationFragment" />
