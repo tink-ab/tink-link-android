@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.core.Tink
+import com.tink.link.ui.CredentialsOperation
 import com.tink.link.ui.LinkUser
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.TinkLinkResult
@@ -46,7 +47,7 @@ class MainLinkUiActivity : AppCompatActivity() {
                     linkUser = linkUser,
                     scopes = listOf(Scope.AccountsRead),
                     styleResId = R.style.TinkLinkUiStyle,
-                    providerSelection = ProviderSelection.ProviderList()
+                    credentialsOperation = CredentialsOperation.Create(ProviderSelection.ProviderList())
                 ),
                 REQUEST_CODE
             )

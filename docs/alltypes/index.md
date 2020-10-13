@@ -168,6 +168,17 @@ This model represents how users are connected to a [Provider](../com.tink.model.
 
 |
 
+##### [com.tink.link.ui.CredentialsOperation](../com.tink.link.ui/-credentials-operation/index.md)
+
+Used as an argument for the [TinkLinkUiActivity](../com.tink.link.ui/-tink-link-ui-activity/index.md) to specify the type of credentials operation
+to be performed using Tink Link UI.
+Possible values are [Create](../com.tink.link.ui/-credentials-operation/-create/index.md), [Update](../com.tink.link.ui/-credentials-operation/-update/index.md), [Refresh](../com.tink.link.ui/-credentials-operation/-refresh/index.md) and [Authenticate](../com.tink.link.ui/-credentials-operation/-authenticate/index.md).
+Please note that you need to have permanent users enabled for [Update](../com.tink.link.ui/-credentials-operation/-update/index.md), [Refresh](../com.tink.link.ui/-credentials-operation/-refresh/index.md)
+and [Authenticate](../com.tink.link.ui/-credentials-operation/-authenticate/index.md) operations.
+
+
+|
+
 ##### [com.tink.service.credentials.CredentialsRefreshDescriptor](../com.tink.service.credentials/-credentials-refresh-descriptor/index.md)
 
 

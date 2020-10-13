@@ -229,9 +229,17 @@ sealed class ProviderSelection : Parcelable {
     /**
      * Adapt the UI to launch directly into a single provider with a unique [name] identifier.
      * This will launch the create credentials view directly and skip the provider list selection.
+     *
+     * @throws IllegalArgumentException If [name] is empty.
      */
     @Parcelize
-    data class SingleProvider(val name: String) : ProviderSelection()
+    data class SingleProvider(val name: String) : ProviderSelection() {
+        init {
+            if (name.isEmpty()) {
+                throw IllegalArgumentException("The name identifier can not be empty.")
+            }
+        }
+    }
 
     /**
      * Show a provider list selection in the UI. This allows you to also specify an optional [filter].
