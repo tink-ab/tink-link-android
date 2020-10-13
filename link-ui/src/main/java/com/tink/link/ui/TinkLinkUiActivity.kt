@@ -47,7 +47,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
         const val ARG_LINK_USER = "linkUser"
-        const val ARG_PROVIDER_SELECTION = "providerSelection"
+        const val ARG_CREDENTIALS_OPERATION = "credentialsOperation"
 
         /**
          * Creates an intent for use when starting this activity.
@@ -60,8 +60,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
          * @param styleResId Optional style for changing the appearance of the flow.
          * See our [configuration guide](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial#customizing-the-appearance).
          * The default value is [R.style.TinkLinkUiStyle].
-         * @param providerSelection Optional selection used to specify if you want to show a
-         * [single provider][ProviderSelection.SingleProvider] or a [list of providers][ProviderSelection.ProviderList].
+         * @param credentialsOperation The type of credentials operation to be performed.
+         * The default value is [CredentialsOperation.Create]
          */
         @JvmOverloads
         fun createIntent(
@@ -69,16 +69,16 @@ class TinkLinkUiActivity : AppCompatActivity() {
             linkUser: LinkUser,
             scopes: List<Scope>,
             styleResId: Int? = R.style.TinkLinkUiStyle,
-            providerSelection: ProviderSelection = ProviderSelection.ProviderList()
+            credentialsOperation: CredentialsOperation = CredentialsOperation.Create()
         ): Intent {
             return Intent(context, TinkLinkUiActivity::class.java)
                 .apply {
                     val bundle = bundleOf(
                         ARG_STYLE to styleResId,
                         ARG_SCOPES to scopes.toArrayList(),
-                        ARG_PROVIDER_SELECTION to providerSelection
+                        ARG_LINK_USER to linkUser,
+                        ARG_CREDENTIALS_OPERATION to credentialsOperation
                     )
-                    bundle.putParcelable(ARG_LINK_USER, linkUser)
                     putExtras(bundle)
                 }
         }
@@ -93,8 +93,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
         requireNotNull(intent.extras?.getParcelable<LinkUser>(ARG_LINK_USER))
     }
 
-    private val providerSelection: ProviderSelection by lazy {
-        requireNotNull(intent.extras?.getParcelable<ProviderSelection>(ARG_PROVIDER_SELECTION))
+    private val credentialsOperation: CredentialsOperation by lazy {
+        requireNotNull(intent.extras?.getParcelable<CredentialsOperation>(ARG_CREDENTIALS_OPERATION))
     }
 
     // TODO: Inject this with dagger once it's ready
@@ -112,7 +112,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
             R.navigation.tink_nav_graph,
             bundleOf(
                 FRAGMENT_ARG_LINK_USER to linkUser,
-                FRAGMENT_ARG_PROVIDER_SELECTION to providerSelection
+                FRAGMENT_ARG_CREDENTIALS_OPERATION to credentialsOperation
             )
         )
 
@@ -229,13 +229,73 @@ sealed class ProviderSelection : Parcelable {
     /**
      * Adapt the UI to launch directly into a single provider with a unique [name] identifier.
      * This will launch the create credentials view directly and skip the provider list selection.
+     *
+     * @throws IllegalArgumentException If [name] is empty.
      */
     @Parcelize
-    data class SingleProvider(val name: String) : ProviderSelection()
+    data class SingleProvider(val name: String) : ProviderSelection() {
+        init {
+            if (name.isEmpty()) {
+                throw IllegalArgumentException("The name identifier can not be empty.")
+            }
+        }
+    }
 
     /**
      * Show a provider list selection in the UI. This allows you to also specify an optional [filter].
      */
     @Parcelize
     data class ProviderList(val filter: ProviderFilter = ProviderFilter()) : ProviderSelection()
+}
+
+/**
+ * Used as an argument for the [TinkLinkUiActivity] to specify the type of credentials operation
+ * to be performed using Tink Link UI.
+ * Possible values are [Create], [Update], [Refresh] and [Authenticate].
+ * Please note that you need to have permanent users enabled for [Update], [Refresh]
+ * and [Authenticate] operations.
+ */
+sealed class CredentialsOperation : Parcelable {
+
+    open val credentialsId: String? = null
+
+    /**
+     * Pass this to the [TinkLinkUiActivity.createIntent] function to create credentials.
+     *
+     * @param providerSelection Optional selection used to specify if you want to show a
+     * [single provider][ProviderSelection.SingleProvider] or a [list of providers][ProviderSelection.ProviderList].
+     */
+    @Parcelize
+    data class Create(
+        val providerSelection: ProviderSelection = ProviderSelection.ProviderList()
+    ) : CredentialsOperation()
+
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to authenticate credentials.
+     * This operation is limited to open banking credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be authenticated
+     */
+    @Parcelize
+    data class Authenticate(override val credentialsId: String) : CredentialsOperation()
+
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to refresh credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be refreshed
+     * @param authenticate Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)
+     */
+    @Parcelize
+    data class Refresh(
+        override val credentialsId: String,
+        val authenticate: Boolean = false
+    ) : CredentialsOperation()
+
+    /**
+     * Pass this to [TinkLinkUiActivity.createIntent] function to update credentials.
+     *
+     * @param credentialsId Id of the [Credentials] to be updated
+     */
+    @Parcelize
+    data class Update(override val credentialsId: String) : CredentialsOperation()
 }

@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">QR koden gick inte att hämta. Försök igen senare.</string>
     <string name="tink_credentials_status_authorizing">Autentiserar…</string>
     <string name="tink_credentials_status_updating">Ansluter till %s, vänligen vänta…</string>
+    <string name="tink_credentials_status_updating_fallback">Ansluter. Vänligen vänta…</string>
     <string name="tink_connection_success_create_title">Anslutningen lyckades</string>
     <string name="tink_connection_success_create_description">Anslutning till %s har upprättats.</string>
     <string name="tink_connection_success_update_title">Uppdateringen lyckades</string>

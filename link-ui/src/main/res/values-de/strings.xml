@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">Fehler beim Laden des QR-Codes. Bitte später erneut versuchen.</string>
     <string name="tink_credentials_status_authorizing">Autorisierung…</string>
     <string name="tink_credentials_status_updating">Verbindung zu %s. Bitte warten…</string>
+    <string name="tink_credentials_status_updating_fallback">Verbindung. Bitte warten…</string>
     <string name="tink_connection_success_create_title">Verbindung erfolgreich</string>
     <string name="tink_connection_success_create_description">Ihr Konto wurde erfolgreich mit %s verbunden.</string>
     <string name="tink_connection_success_update_title">Erfolgreich aktualisiert</string>

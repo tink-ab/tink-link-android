@@ -1,14 +1,14 @@
 object Versions {
-    const val compileSdk = 29
-    const val buildTools = "29.0.2"
+    const val compileSdk = 30
+    const val buildTools = "29.0.3"
     const val minSdk = 21
-    const val targetSdk = 29
+    const val targetSdk = 30
 
-    const val kotlin = "1.3.72"
-    const val lifecycle = "2.0.0"
+    const val kotlin = "1.4.10"
     const val dagger = "2.16"
-    const val androidx = "1.0.2"
-    const val coroutines = "1.2.1"
+    const val androidx_appcompat = "1.2.0"
+    const val androidx_core_ktx = "1.3.2"
+    const val coroutines = "1.3.9"
     const val retrofit = "2.6.2"
     const val rxjava = "2.1.9"
     const val navigation = "2.2.2"
@@ -17,8 +17,8 @@ object Versions {
 
 object Dependencies {
     object Androidx {
-        const val appcompat = "androidx.appcompat:appcompat:${Versions.androidx}"
-        const val core_ktx = "androidx.core:core-ktx:${Versions.androidx}"
+        const val appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
+        const val core_ktx = "androidx.core:core-ktx:${Versions.androidx_core_ktx}"
         const val constraint_layout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val test_runner = "androidx.test:runner:1.2.0"
         const val test_espresso = "androidx.test.espresso:espresso-core:3.2.0"
@@ -55,7 +55,7 @@ object Dependencies {
         const val test_assertj = "org.assertj:assertj-core:3.11.1"
     }
 
-    const val material_components = "com.google.android.material:material:1.2.0-rc01"
+    const val material_components = "com.google.android.material:material:1.2.1"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.12"
