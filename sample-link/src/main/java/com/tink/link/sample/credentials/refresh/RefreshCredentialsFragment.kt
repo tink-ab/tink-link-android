@@ -10,9 +10,13 @@ import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.sample.R
 import com.tink.link.sample.credentials.CredentialsField
+import com.tink.link.sample.credentials.SupplementalInformationFragment
 import com.tink.link.sample.credentials.toView
 import com.tink.link.sample.extensions.dpToPixels
 import com.tink.link.sample.extensions.launch
@@ -61,7 +65,9 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
             }
         )
 
-        refreshButton.setOnClickListener { viewModel.refreshAll() }
+        refreshButton.setOnClickListener {
+            viewModel.refreshAll(onAwaitingAuthentication = ::handleAuthenticationTask)
+        }
     }
 
     private fun showSupplementalInfoDialog(credentials: Credentials) {
@@ -100,5 +106,27 @@ class RefreshCredentialsFragment : Fragment(R.layout.fragment_refresh_credential
             }
             .setView(credentialsFields)
             .show()
+    }
+
+    private fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
+        lifecycleScope.launchWhenResumed {
+            when (authenticationTask) {
+                is AuthenticationTask.ThirdPartyAuthentication -> {
+                    val launchResult = authenticationTask.launch(requireActivity())
+
+                    if (launchResult is AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error) {
+                        // Something went wrong when launching, show dialog prompt to install or upgrade app
+                        view?.let { view ->
+                            Snackbar.make(view, "Couldn't launch third party app", Snackbar.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
+                }
+                is AuthenticationTask.SupplementalInformation -> {
+                    SupplementalInformationFragment.newInstance(authenticationTask)
+                        .show(parentFragmentManager, null)
+                }
+            }
+        }
     }
 }

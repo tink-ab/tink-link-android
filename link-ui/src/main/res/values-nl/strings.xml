@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">Er is een fout opgetreden bij het laden van de QR-code. Probeer het later opnieuw.</string>
     <string name="tink_credentials_status_authorizing">Bezig met autoriseren…</string>
     <string name="tink_credentials_status_updating">Er wordt verbinding gemaakt met %s, een ogenblikje graag…</string>
+    <string name="tink_credentials_status_updating_fallback">Er wordt verbinding gemaakt, een ogenblikje graag…</string>
     <string name="tink_connection_success_create_title">Koppelen is gelukt</string>
     <string name="tink_connection_success_create_description">Je rekening is met succes gekoppeld aan %s.</string>
     <string name="tink_connection_success_update_title">Bijwerken is gelukt</string>

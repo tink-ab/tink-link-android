@@ -8,7 +8,6 @@ import android.text.method.LinkMovementMethod
 import android.view.View
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
-import androidx.core.os.bundleOf
 import androidx.core.view.children
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
@@ -17,6 +16,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
@@ -33,12 +33,10 @@ import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
+import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCredentialsLayout
 import kotlinx.android.synthetic.main.tink_layout_consent.*
+import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
-
-private const val PROVIDER_ARGS = "PROVIDER"
-
-private const val UPDATE_ARGS = "UPDATE_ARGS"
 
 private const val BANK_ID_ACTION_SAME_DEVICE = 1
 private const val BANK_ID_ACTION_OTHER_DEVICE = 2
@@ -49,13 +47,10 @@ private const val BANK_ID_ACTION_OTHER_DEVICE = 2
  */
 internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials) {
 
-    private val provider: Provider by lazy {
-        requireNotNull(arguments?.getParcelable<Provider>(PROVIDER_ARGS))
-    }
+    private val arguments: CredentialsFragmentArgs by navArgs()
 
-    private val updateArgs: CredentialsUpdateArgs? by lazy {
-        arguments?.getParcelable<CredentialsUpdateArgs>(UPDATE_ARGS)
-    }
+    private val credentialsOperationArgs: CredentialsOperationArgs by lazy { arguments.operationArgs }
+    private val provider: Provider by lazy { credentialsOperationArgs.provider }
 
     private val viewModel: CredentialsViewModel by activityViewModels()
     private val consentViewModel: ConsentViewModel by viewModels()
@@ -78,6 +73,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             )
         }
 
+        when (credentialsOperationArgs) {
+            is CredentialsOperationArgs.Create,
+            is CredentialsOperationArgs.Update -> { showFullCredentialsFlow() }
+
+            is CredentialsOperationArgs.Authenticate,
+            is CredentialsOperationArgs.Refresh -> { showAuthenticateFlow() }
+        }
+
         (activity as? TinkLinkUiActivity)?.scopes?.let {
             consentViewModel.initialize(it)
             viewModel.scopes = it
@@ -85,95 +88,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         (activity as? TinkLinkUiActivity)?.authorizeUser?.let {
             viewModel.authorizeUser = it
-        }
-
-        consentViewModel.apply {
-            showConsentInformation.observe(
-                viewLifecycleOwner,
-                Observer {
-                    userGroup.visibility =
-                        if (it == true) View.VISIBLE else View.GONE
-                }
-            )
-            showTermsAndConditions.observe(
-                viewLifecycleOwner,
-                Observer {
-                    termsAndConditionsText.visibility =
-                        if (it == true) {
-                            setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
-                            View.VISIBLE
-                        } else {
-                            View.GONE
-                        }
-                }
-            )
-            isUnverified.observe(
-                viewLifecycleOwner,
-                Observer {
-                    unverifiedWarning.visibility =
-                        if (it == true) View.VISIBLE else View.GONE
-                }
-            )
-        }
-
-        provider.images?.icon?.let {
-            Picasso.get().load(it).into(logo)
-        }
-
-        bankName.text = provider.displayName
-
-        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
-        consentInformation.text =
-            getString(
-                R.string.tink_credentials_consent_information_text,
-                getString(R.string.tink_app_name),
-                readMoreText
-            ).convertCallToActionText(
-                ctaText = readMoreText,
-                action = { showConsentInformation() },
-                context = requireContext()
-            )
-        consentInformation.movementMethod = LinkMovementMethod.getInstance()
-
-        val fields = provider.fields.map { field ->
-            updateArgs?.fields?.get(field.name)?.let { field.copy(value = it) } ?: field
-        }
-
-        viewModel.setFields(fields)
-
-        viewModel.fields.observe(
-            viewLifecycleOwner,
-            Observer { fieldList ->
-                if (credentialsFields.childCount > 0) {
-                    credentialsFields.removeAllViews()
-                }
-                for (field in fieldList) {
-                    credentialsFields.addView(field.toView(requireContext()))
-                }
-            }
-        )
-
-        if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
-            createCredentialsBtn.visibility = View.GONE
-            bankIdButtonGroup.visibility = View.VISIBLE
-        }
-
-        bankIdButton.setOnClickListener {
-            bankIdActionType = BANK_ID_ACTION_SAME_DEVICE
-            submitFilledFields()
-        }
-
-        bankIdOtherDeviceButton.setOnClickListener {
-            bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
-            submitFilledFields()
-        }
-
-        createCredentialsBtn.setOnClickListener { submitFilledFields() }
-
-        footer.post {
-            bottomSpacer.updateLayoutParams {
-                height = footer.height
-            }
         }
 
         viewModel.viewState.observe(
@@ -237,6 +151,145 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         )
     }
 
+    private fun showFullCredentialsFlow() {
+        authenticateCredentialsLayout.visibility = View.GONE
+        addCredentialsLayout.visibility = View.VISIBLE
+        consentViewModel.apply {
+            showConsentInformation.observe(
+                viewLifecycleOwner,
+                Observer {
+                    userGroup.visibility =
+                        if (it == true) View.VISIBLE else View.GONE
+                }
+            )
+            showTermsAndConditions.observe(
+                viewLifecycleOwner,
+                Observer {
+                    termsAndConditionsText.visibility =
+                        if (it == true) {
+                            setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
+                }
+            )
+            isUnverified.observe(
+                viewLifecycleOwner,
+                Observer {
+                    unverifiedWarning.visibility =
+                        if (it == true) View.VISIBLE else View.GONE
+                }
+            )
+        }
+
+        provider.images?.icon?.let {
+            Picasso.get().load(it).into(logo)
+        }
+
+        bankName.text = provider.displayName
+
+        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
+        consentInformation.text =
+            getString(
+                R.string.tink_credentials_consent_information_text,
+                getString(R.string.tink_app_name),
+                readMoreText
+            ).convertCallToActionText(
+                ctaText = readMoreText,
+                action = { showConsentInformation() },
+                context = requireContext()
+            )
+        consentInformation.movementMethod = LinkMovementMethod.getInstance()
+
+        val fields = provider.fields.map { field ->
+            credentialsOperationArgs
+                .takeIf { it is CredentialsOperationArgs.Update }
+                ?.let { operationArgs ->
+                    (operationArgs as CredentialsOperationArgs.Update).credentials.fields[field.name]
+                        ?.let { field.copy(value = it) }
+                }
+                ?: field
+        }
+
+        viewModel.setFields(fields)
+
+        viewModel.fields.observe(
+            viewLifecycleOwner,
+            Observer { fieldList ->
+                if (credentialsFields.childCount > 0) {
+                    credentialsFields.removeAllViews()
+                }
+                for (field in fieldList) {
+                    credentialsFields.addView(field.toView(requireContext()))
+                }
+            }
+        )
+
+        if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
+            createCredentialsBtn.visibility = View.GONE
+            bankIdButtonGroup.visibility = View.VISIBLE
+        }
+
+        bankIdButton.setOnClickListener {
+            bankIdActionType = BANK_ID_ACTION_SAME_DEVICE
+            submitFilledFields()
+        }
+
+        bankIdOtherDeviceButton.setOnClickListener {
+            bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
+            submitFilledFields()
+        }
+
+        createCredentialsBtn.setOnClickListener { submitFilledFields() }
+
+        footer.post {
+            bottomSpacer.updateLayoutParams {
+                height = footer.height
+            }
+        }
+    }
+
+    private fun showAuthenticateFlow() {
+        addCredentialsLayout.visibility = View.GONE
+        authenticateCredentialsLayout.visibility = View.VISIBLE
+        statusMessage.text =
+            getString(R.string.tink_credentials_status_updating, provider.displayName)
+        cancelButton.setOnClickListener {
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
+        }
+        when (val operationArgs = credentialsOperationArgs) {
+            is CredentialsOperationArgs.Authenticate -> {
+                viewModel.authenticateCredentials(
+                    id = operationArgs.credentials.id,
+                    onAwaitingAuthentication = ::handleAuthenticationTask,
+                    onError = { error ->
+                        val message = error.localizedMessage ?: error.message
+                            ?: getString(R.string.tink_error_unknown)
+                        lifecycleScope.launchWhenStarted { showError(message) }
+                    }
+                )
+            }
+
+            is CredentialsOperationArgs.Refresh -> {
+                viewModel.refreshCredentials(
+                    credentials = operationArgs.credentials,
+                    forceAuthenticate = operationArgs.authenticate,
+                    onAwaitingAuthentication = ::handleAuthenticationTask,
+                    onError = { error ->
+                        val message = error.localizedMessage ?: error.message
+                            ?: getString(R.string.tink_error_unknown)
+                        lifecycleScope.launchWhenStarted { showError(message) }
+                    }
+                )
+            }
+
+            else -> { }
+        }
+    }
+
     private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
         val termsText = getString(
             R.string.tink_credentials_terms_text,
@@ -270,11 +323,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun submitFilledFields() {
-        val credentialsId = updateArgs?.credentialsId
-        if (credentialsId.isNullOrEmpty()) {
-            createCredentials()
-        } else {
-            updateCredentials(credentialsId)
+        when (val operationArgs = credentialsOperationArgs) {
+            is CredentialsOperationArgs.Create -> createCredentials()
+            is CredentialsOperationArgs.Update -> updateCredentials(operationArgs.credentials.id)
+            else -> { }
         }
     }
 
@@ -466,19 +518,34 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private fun showConnectionSuccessfulScreen() {
         findNavController().navigate(
-            R.id.connectionSuccessfulFragment,
-            ConnectionSuccessfulFragment.getBundle(provider.displayName)
+            CredentialsFragmentDirections.actionCredentialsFragmentToConnectionSuccessfulFragment(
+                providerDisplayName = provider.displayName,
+                isNewCredentialsCreated = credentialsOperationArgs is CredentialsOperationArgs.Create
+            )
         )
     }
+}
 
-    companion object {
-        fun getBundle(provider: Provider, credentialsUpdateArgs: CredentialsUpdateArgs? = null) =
-            bundleOf(PROVIDER_ARGS to provider, UPDATE_ARGS to credentialsUpdateArgs)
-    }
+sealed class CredentialsOperationArgs : Parcelable {
+
+    abstract val provider: Provider
 
     @Parcelize
-    data class CredentialsUpdateArgs(
-        val credentialsId: String,
-        val fields: Map<String, String>
-    ) : Parcelable
+    data class Create(override val provider: Provider) : CredentialsOperationArgs()
+
+    @Parcelize
+    data class Update(override val provider: Provider, val credentials: Credentials) :
+        CredentialsOperationArgs()
+
+    @Parcelize
+    data class Refresh(
+        override val provider: Provider,
+        val credentials: Credentials,
+        val authenticate: Boolean
+    ) :
+        CredentialsOperationArgs()
+
+    @Parcelize
+    data class Authenticate(override val provider: Provider, val credentials: Credentials) :
+        CredentialsOperationArgs()
 }

@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">QR-koodin latauksessa tapahtui virhe. Yritä myöhemmin uudelleen.</string>
     <string name="tink_credentials_status_authorizing">Valtuutetaan…</string>
     <string name="tink_credentials_status_updating">Muodostetaan yhteyttä %s-palveluun, odota…</string>
+    <string name="tink_credentials_status_updating_fallback">Muodostetaan yhteyttä, odota…</string>
     <string name="tink_connection_success_create_title">Yhteyden muodostaminen onnistui</string>
     <string name="tink_connection_success_create_description">Tilisi yhdistäminen %s-palveluun onnistui.</string>
     <string name="tink_connection_success_update_title">Päivitys onnistui</string>

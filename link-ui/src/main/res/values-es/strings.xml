@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">Se produjo un error al cargar el código QR. Vuelve a intentarlo más tarde.</string>
     <string name="tink_credentials_status_authorizing">Autorizando…</string>
     <string name="tink_credentials_status_updating">Conectando con %s, espera…</string>
+    <string name="tink_credentials_status_updating_fallback">Conectando, espera…</string>
     <string name="tink_connection_success_create_title">Conexión establecida</string>
     <string name="tink_connection_success_create_description">Tu cuenta se ha conectado correctamente a %s.</string>
     <string name="tink_connection_success_update_title">Actualización correcta</string>
