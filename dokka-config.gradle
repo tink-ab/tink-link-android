@@ -26,5 +26,9 @@ dokka {
                 "$rootDir/link-payments/src/main/java/com/tink/link/payments/codeexamples".toString(),
                 "$rootDir/link-ui/src/main/java/com/tink/link/ui/codeexamples".toString()
         ]
+        perPackageOption {
+            prefix = "com.tink.link.ui.credentials" // will match internal and all sub-packages of it
+            suppress = true
+        }
     }
 }

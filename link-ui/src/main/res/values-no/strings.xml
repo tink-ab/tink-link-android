@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">Det oppstod en feil ved innlasting av QR-koden. Prøv igjen senere.</string>
     <string name="tink_credentials_status_authorizing">Godkjenner…</string>
     <string name="tink_credentials_status_updating">Kobler til %s. Vent litt…</string>
+    <string name="tink_credentials_status_updating_fallback">Kobler til, vennligst vent…</string>
     <string name="tink_connection_success_create_title">Tilkoblingen var vellykket</string>
     <string name="tink_connection_success_create_description">Kontoen din er nå koblet til %s.</string>
     <string name="tink_connection_success_update_title">Oppdateringen var vellykket</string>
