@@ -52,8 +52,8 @@ activity.startActivityForResult(
 
 | Name | Summary |
 |---|---|
+| [ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.md) | `const val ARG_CREDENTIALS_OPERATION: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.md) | `const val ARG_LINK_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ARG_PROVIDER_SELECTION](-a-r-g_-p-r-o-v-i-d-e-r_-s-e-l-e-c-t-i-o-n.md) | `const val ARG_PROVIDER_SELECTION: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.md) | `const val ARG_SCOPES: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_STYLE](-a-r-g_-s-t-y-l-e.md) | `const val ARG_STYLE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [RESULT_CANCELLED](-r-e-s-u-l-t_-c-a-n-c-e-l-l-e-d.md) | `const val RESULT_CANCELLED: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
@@ -65,4 +65,4 @@ activity.startActivityForResult(
 
 | Name | Summary |
 |---|---|
-| [createIntent](create-intent.md) | Creates an intent for use when starting this activity.`fun createIntent(context: `[`Context`](https://developer.android.com/reference/android/content/Context.html)`, linkUser: `[`LinkUser`](../-link-user/index.md)`, scopes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Scope`](../../com.tink.model.user/-scope/index.md)`>, styleResId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`? = R.style.TinkLinkUiStyle, providerSelection: `[`ProviderSelection`](../-provider-selection/index.md)` = ProviderSelection.ProviderList()): `[`Intent`](https://developer.android.com/reference/android/content/Intent.html) |
+| [createIntent](create-intent.md) | Creates an intent for use when starting this activity.`fun createIntent(context: `[`Context`](https://developer.android.com/reference/android/content/Context.html)`, linkUser: `[`LinkUser`](../-link-user/index.md)`, scopes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`Scope`](../../com.tink.model.user/-scope/index.md)`>, styleResId: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`? = R.style.TinkLinkUiStyle, credentialsOperation: `[`CredentialsOperation`](../-credentials-operation/index.md)` = CredentialsOperation.Create()): `[`Intent`](https://developer.android.com/reference/android/content/Intent.html) |

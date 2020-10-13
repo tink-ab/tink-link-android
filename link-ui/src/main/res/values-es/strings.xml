@@ -11,8 +11,8 @@
     <string name="tink_provider_select_access_type_title">Seleccionar tipos de cuentas</string>
     <string name="tink_provider_capability_transfers">transferencias</string>
     <string name="tink_provider_capability_e_invoices">facturas electrónicas</string>
-    <string name="tink_provider_capability_mortgage_aggregation">agrupación de hipotecas</string>
-    <string name="tink_provider_capability_checking_accounts">comprobando cuentas</string>
+    <string name="tink_provider_capability_mortgage_aggregation">agregación de hipotecas</string>
+    <string name="tink_provider_capability_checking_accounts">cuentas corrientes</string>
     <string name="tink_provider_capability_savings_accounts">cuentas de ahorro</string>
     <string name="tink_provider_capability_credit_cards">tarjetas de crédito</string>
     <string name="tink_provider_capability_loans">préstamos</string>
@@ -39,6 +39,7 @@
     <string name="tink_supplemental_information_qr_code_error">Se produjo un error al cargar el código QR. Vuelve a intentarlo más tarde.</string>
     <string name="tink_credentials_status_authorizing">Autorizando…</string>
     <string name="tink_credentials_status_updating">Conectando con %s, espera…</string>
+    <string name="tink_credentials_status_updating_fallback">Conectando, espera…</string>
     <string name="tink_connection_success_create_title">Conexión establecida</string>
     <string name="tink_connection_success_create_description">Tu cuenta se ha conectado correctamente a %s.</string>
     <string name="tink_connection_success_update_title">Actualización correcta</string>

@@ -6,7 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
+import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.core.credentials.CredentialsRepository
+import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.getUserContext
 import com.tink.link.sample.Event
 import com.tink.link.sample.whenNonNull
@@ -114,21 +116,43 @@ class RefreshCredentialsViewModel : ViewModel() {
                 ?.let { Event(it) }
         }
 
-    fun refreshAll() {
+    fun refreshAll(
+        forceAuthenticate: Boolean = false,
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit
+    ) {
         credentials.value
             ?.forEach { credentials ->
                 credentialsRepository.refresh(
                     credentials.id,
-                    ResultHandler(
-                        {
-                            Timber.d("Refresh success for $credentials")
-                        },
-                        {
-                            Timber.d("Refresh error for $credentials")
-                        }
-                    )
+                    credentials
+                        .sessionExpiryDate
+                        ?.let { it <= Instant.now() }
+                        ?: forceAuthenticate,
+                    getCredentialsStreamObserver(onAwaitingAuthentication)
                 )
             }
+    }
+
+    private fun getCredentialsStreamObserver(
+        onAwaitingAuthentication: (AuthenticationTask) -> Unit
+    ): StreamObserver<CredentialsStatus> {
+        return object : StreamObserver<CredentialsStatus> {
+            override fun onNext(value: CredentialsStatus) {
+                when (value) {
+                    is CredentialsStatus.Success -> {
+                        Timber.d("Refresh success for ${value.credentials}")
+                    }
+
+                    is CredentialsStatus.AwaitingAuthentication -> {
+                        onAwaitingAuthentication(value.authenticationTask)
+                    }
+                }
+            }
+
+            override fun onError(error: Throwable) {
+                Timber.d("Refresh error for $credentials")
+            }
+        }
     }
 
     fun sendSupplementalInformation(credentialsId: String, fields: List<Field>) {
