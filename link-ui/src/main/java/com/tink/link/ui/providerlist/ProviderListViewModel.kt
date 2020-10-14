@@ -15,6 +15,10 @@ internal class ProviderListViewModel : ViewModel() {
     private val query = MutableLiveData<String>()
     private val path = MutableLiveData<ProviderListPath>()
 
+    init {
+        ProviderDataSource.clear()
+    }
+
     private val allProviders = Transformations.map(ProviderDataSource.providers) {
         it?.toProviderTree()
     }

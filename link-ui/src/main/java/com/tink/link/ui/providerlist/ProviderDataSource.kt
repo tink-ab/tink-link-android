@@ -49,4 +49,9 @@ internal object ProviderDataSource {
             )
         }
     }
+
+    fun clear() {
+        this.selection = null
+        providers.value = null
+    }
 }
