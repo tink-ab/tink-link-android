@@ -31,6 +31,7 @@ internal object ProviderDataSource {
 
     fun updateProvidersFromSelection(selection: ProviderSelection) {
         if (selection == this.selection) return // No new selection. Use same value.
+        this.selection = selection
         if (selection is ProviderSelection.SingleProvider) {
             Tink.getUserContext()?.providerRepository?.getProvider(
                 resultHandler = ResultHandler(
