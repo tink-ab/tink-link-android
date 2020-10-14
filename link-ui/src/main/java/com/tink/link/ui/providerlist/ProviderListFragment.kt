@@ -6,6 +6,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -29,7 +30,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
     private var providerAdapter: ProviderListRecyclerAdapter? = null
 
-    private val viewModel: ProviderListViewModel by viewModels()
+    private val viewModel: ProviderListViewModel by activityViewModels()
 
     private var queryString: String = ""
 
