@@ -4,13 +4,11 @@
 
 `fun update(credentialsId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, providerName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, fields: `[`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>, statusChangeObserver: `[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<`[`CredentialsStatus`](../-credentials-status/index.md)`>): `[`StreamSubscription`](../../com.tink.service.streaming.publisher/-stream-subscription/index.md)
 
-Updates the [Credentials](../../com.tink.model.credentials/-credentials/index.md) matching the id.
+Updates the [Credentials](../../com.tink.model.credentials/-credentials/index.md) matching the [credentialsId](update.md#com.tink.link.core.credentials.CredentialsRepository$update(kotlin.String, kotlin.String, kotlin.collections.Map((kotlin.String, )), com.tink.service.streaming.publisher.StreamObserver((com.tink.link.core.credentials.CredentialsStatus)))/credentialsId).
 
 You can only update the value of a [Field](../../com.tink.model.misc/-field/index.md) that is mutable.
 
 ### Parameters
-
-`credentialsId` - Identifier for the [Credentials](../../com.tink.model.credentials/-credentials/index.md) that is being updated
 
 `fields` - The map of [Field](../../com.tink.model.misc/-field/index.md) name and value pairs for the [Credentials](../../com.tink.model.credentials/-credentials/index.md)
 

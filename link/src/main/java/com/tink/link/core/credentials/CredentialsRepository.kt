@@ -80,11 +80,10 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Updates the [Credentials] matching the id.
+     * Updates the [Credentials] matching the [credentialsId].
      *
      * You can only update the value of a [Field] that is mutable.
      *
-     * @param credentialsId Identifier for the [Credentials] that is being updated
      * @param fields The map of [Field] name and value pairs for the [Credentials]
      * @param statusChangeObserver An observer which will receive callbacks when there are
      * updates to the status of the credentials. Successful and intermediate status will be posted in
@@ -112,9 +111,8 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Refreshes all [Credentials] objects matching the list of ids.
+     * Refreshes the [Credentials] matching the [credentialsId].
      *
-     * @param credentialsId Id of the [Credentials] that are being refreshed
      * @param authenticate Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)
      * @param statusChangeObserver An observer which will receive callbacks when there are
      * updates to the status of the credentials. Successful and intermediate status will be posted in
@@ -142,9 +140,8 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Deletes the [Credentials] matching the id.
+     * Deletes the [Credentials] matching the [credentialsId].
      *
-     * @param credentialsId Identifier for the [Credentials] that is being deleted
      * @param resultHandler The [ResultHandler] for processing error and success callbacks
      */
     fun delete(credentialsId: String, resultHandler: ResultHandler<Unit>) {
@@ -154,9 +151,8 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Manually authenticates the [Credentials] matching the id. This is only applicable for PSD2 credentials.
+     * Manually authenticates the [Credentials] matching the [credentialsId]. This is only applicable for PSD2 credentials.
      *
-     * @param credentialsId Identifier for the [Credentials] that is being authenticated
      * @param statusChangeObserver An observer which will receive callbacks when there are
      * updates to the status of the credentials. Successful and intermediate status will be posted in
      * [onNext][StreamObserver.onNext], whereas failures and errors will be passed as [Throwable]
@@ -200,9 +196,8 @@ class CredentialsRepository @Inject constructor(
     }
 
     /**
-     * Submits the supplemental information required to authenticate the [Credentials] matching the id.
+     * Submits the supplemental information required to authenticate the [Credentials] matching the [credentialsId].
      *
-     * @param credentialsId Identifier for the [Credentials] that is being authenticated
      * @param information The map of [Field] name and value pairs representing the supplemental information to be sent
      * @param handler The [ResultHandler] for processing error and success callbacks
      */

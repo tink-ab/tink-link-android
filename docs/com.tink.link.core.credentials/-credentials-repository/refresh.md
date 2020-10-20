@@ -4,11 +4,9 @@
 
 `fun refresh(credentialsId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, authenticate: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, statusChangeObserver: `[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<`[`CredentialsStatus`](../-credentials-status/index.md)`>, items: `[`Set`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)`<`[`RefreshableItem`](../../com.tink.model.credentials/-refreshable-item/index.md)`>? = null): `[`StreamSubscription`](../../com.tink.service.streaming.publisher/-stream-subscription/index.md)
 
-Refreshes all [Credentials](../../com.tink.model.credentials/-credentials/index.md) objects matching the list of ids.
+Refreshes the [Credentials](../../com.tink.model.credentials/-credentials/index.md) matching the [credentialsId](refresh.md#com.tink.link.core.credentials.CredentialsRepository$refresh(kotlin.String, kotlin.Boolean, com.tink.service.streaming.publisher.StreamObserver((com.tink.link.core.credentials.CredentialsStatus)), kotlin.collections.Set((com.tink.model.credentials.RefreshableItem)))/credentialsId).
 
 ### Parameters
-
-`credentialsId` - Id of the [Credentials](../../com.tink.model.credentials/-credentials/index.md) that are being refreshed
 
 `authenticate` - Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)
 
