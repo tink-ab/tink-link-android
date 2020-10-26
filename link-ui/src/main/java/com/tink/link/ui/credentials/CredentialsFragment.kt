@@ -181,6 +181,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                         if (it == true) View.VISIBLE else View.GONE
                 }
             )
+            showTinkLogo.observe(
+                viewLifecycleOwner,
+                Observer {
+                    tinkLogo.visibility =
+                        if (it == true) View.VISIBLE else View.GONE
+                }
+            )
         }
 
         provider.images?.icon?.let {

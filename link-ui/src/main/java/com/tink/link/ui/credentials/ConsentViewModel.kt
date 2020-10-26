@@ -43,6 +43,9 @@ internal class ConsentViewModel() : ViewModel() {
     val showConsentInformation: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.aggregator == false }
 
+    val showTinkLogo: LiveData<Boolean> =
+        Transformations.map(_clientDescription) { it?.aggregator == false }
+
     val showTermsAndConditions: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.aggregator == false }
 }
