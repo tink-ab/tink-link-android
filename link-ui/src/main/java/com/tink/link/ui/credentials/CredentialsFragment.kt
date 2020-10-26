@@ -92,7 +92,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.viewState.observe(
             viewLifecycleOwner,
-            Observer { state ->
+            { state ->
                 when (state) {
                     CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
                         showLoading(getString(R.string.tink_credentials_status_authorizing))
@@ -123,7 +123,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.errorEvent.observe(
             viewLifecycleOwner,
-            Observer { event ->
+            { event ->
                 event.getContentIfNotHandled()?.let { statusPayload ->
                     val message =
                         statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
@@ -134,7 +134,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.authorizationCode.observe(
             viewLifecycleOwner,
-            Observer { code ->
+            { code ->
                 (activity as? TinkLinkUiActivity)?.let {
                     it.authorizationCode = code
                 }
@@ -143,7 +143,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.credentials.observe(
             viewLifecycleOwner,
-            Observer { credentials ->
+            { credentials ->
                 (activity as? TinkLinkUiActivity)?.let {
                     it.credentials = credentials
                 }
@@ -157,20 +157,20 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         consentViewModel.apply {
             showConsentInformation.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     userGroup.visibility =
                         if (it == true) View.VISIBLE else View.GONE
                 }
             )
             clientName.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     setConsentInformation(it)
                 }
             )
             showTermsAndConditions.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     termsAndConditionsText.visibility =
                         if (it == true) {
                             setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
@@ -182,14 +182,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             )
             isUnverified.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     unverifiedWarning.visibility =
                         if (it == true) View.VISIBLE else View.GONE
                 }
             )
             showTinkLogo.observe(
                 viewLifecycleOwner,
-                Observer {
+                {
                     tinkLogo.visibility =
                         if (it == true) View.VISIBLE else View.GONE
                 }
@@ -216,7 +216,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.fields.observe(
             viewLifecycleOwner,
-            Observer { fieldList ->
+            { fieldList ->
                 if (credentialsFields.childCount > 0) {
                     credentialsFields.removeAllViews()
                 }
