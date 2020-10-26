@@ -90,109 +90,81 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             viewModel.authorizeUser = it
         }
 
-        viewModel.viewState.observe(
-            viewLifecycleOwner,
-            { state ->
-                when (state) {
-                    CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
-                        showLoading(getString(R.string.tink_credentials_status_authorizing))
-                    }
+        viewModel.viewState.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                CredentialsViewModel.ViewState.WAITING_FOR_AUTHENTICATION -> {
+                    showLoading(getString(R.string.tink_credentials_status_authorizing))
+                }
 
-                    CredentialsViewModel.ViewState.UPDATING -> {
-                        showLoading(
-                            getString(
-                                R.string.tink_credentials_status_updating,
-                                provider.displayName
-                            )
+                CredentialsViewModel.ViewState.UPDATING -> {
+                    showLoading(
+                        getString(
+                            R.string.tink_credentials_status_updating,
+                            provider.displayName
                         )
-                    }
-
-                    CredentialsViewModel.ViewState.UPDATED -> {
-                        statusDialog?.dismiss()
-                        showConnectionSuccessfulScreen()
-                    }
-
-                    CredentialsViewModel.ViewState.NOT_LOADING -> {
-                        statusDialog?.dismiss()
-                    }
-
-                    else -> { }
+                    )
                 }
-            }
-        )
 
-        viewModel.errorEvent.observe(
-            viewLifecycleOwner,
-            { event ->
-                event.getContentIfNotHandled()?.let { statusPayload ->
-                    val message =
-                        statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
-                    showError(message)
+                CredentialsViewModel.ViewState.UPDATED -> {
+                    statusDialog?.dismiss()
+                    showConnectionSuccessfulScreen()
                 }
-            }
-        )
 
-        viewModel.authorizationCode.observe(
-            viewLifecycleOwner,
-            { code ->
-                (activity as? TinkLinkUiActivity)?.let {
-                    it.authorizationCode = code
+                CredentialsViewModel.ViewState.NOT_LOADING -> {
+                    statusDialog?.dismiss()
                 }
-            }
-        )
 
-        viewModel.credentials.observe(
-            viewLifecycleOwner,
-            { credentials ->
-                (activity as? TinkLinkUiActivity)?.let {
-                    it.credentials = credentials
-                }
+                else -> { }
             }
-        )
+        }
+
+        viewModel.errorEvent.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let { statusPayload ->
+                val message =
+                    statusPayload.takeUnless { it.isBlank() } ?: getString(R.string.tink_error_unknown)
+                showError(message)
+            }
+        }
+
+        viewModel.authorizationCode.observe(viewLifecycleOwner) { code ->
+            (activity as? TinkLinkUiActivity)?.let {
+                it.authorizationCode = code
+            }
+        }
+
+        viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
+            (activity as? TinkLinkUiActivity)?.let {
+                it.credentials = credentials
+            }
+        }
     }
 
     private fun showFullCredentialsFlow() {
         authenticateCredentialsLayout.visibility = View.GONE
         addCredentialsLayout.visibility = View.VISIBLE
         consentViewModel.apply {
-            showConsentInformation.observe(
-                viewLifecycleOwner,
-                {
-                    userGroup.visibility =
-                        if (it == true) View.VISIBLE else View.GONE
-                }
-            )
-            clientName.observe(
-                viewLifecycleOwner,
-                {
-                    setConsentInformation(it)
-                }
-            )
-            showTermsAndConditions.observe(
-                viewLifecycleOwner,
-                {
-                    termsAndConditionsText.visibility =
-                        if (it == true) {
-                            setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
-                            View.VISIBLE
-                        } else {
-                            View.GONE
-                        }
-                }
-            )
-            isUnverified.observe(
-                viewLifecycleOwner,
-                {
-                    unverifiedWarning.visibility =
-                        if (it == true) View.VISIBLE else View.GONE
-                }
-            )
-            showTinkLogo.observe(
-                viewLifecycleOwner,
-                {
-                    tinkLogo.isVisible = it
-                }
-            )
+            showConsentInformation.observe(viewLifecycleOwner) {
+                userGroup.visibility = if (it == true) View.VISIBLE else View.GONE
+            }
+            clientName.observe(viewLifecycleOwner) {
+                setConsentInformation(it)
+            }
+            showTermsAndConditions.observe(viewLifecycleOwner) {
+                termsAndConditionsText.visibility =
+                    if (it == true) {
+                        setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
+                        View.VISIBLE
+                    } else {
+                        View.GONE
+                    }
+            }
+            isUnverified.observe(viewLifecycleOwner) {
+                unverifiedWarning.visibility =
+                    if (it == true) View.VISIBLE else View.GONE
+            }
+            showTinkLogo.observe(viewLifecycleOwner) {
+                tinkLogo.isVisible = it
+            }
         }
 
         provider.images?.icon?.let {
@@ -213,17 +185,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         viewModel.setFields(fields)
 
-        viewModel.fields.observe(
-            viewLifecycleOwner,
-            { fieldList ->
-                if (credentialsFields.childCount > 0) {
-                    credentialsFields.removeAllViews()
-                }
-                for (field in fieldList) {
-                    credentialsFields.addView(field.toView(requireContext()))
-                }
+        viewModel.fields.observe(viewLifecycleOwner) { fieldList ->
+            if (credentialsFields.childCount > 0) {
+                credentialsFields.removeAllViews()
             }
-        )
+            for (field in fieldList) {
+                credentialsFields.addView(field.toView(requireContext()))
+            }
+        }
 
         if (provider.credentialsType == Credentials.Type.MOBILE_BANKID) {
             createCredentialsBtn.visibility = View.GONE
