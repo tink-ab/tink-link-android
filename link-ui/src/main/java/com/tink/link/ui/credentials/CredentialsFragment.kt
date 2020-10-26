@@ -9,6 +9,7 @@ import android.view.View
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
+import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -190,8 +191,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             showTinkLogo.observe(
                 viewLifecycleOwner,
                 {
-                    tinkLogo.visibility =
-                        if (it == true) View.VISIBLE else View.GONE
+                    tinkLogo.isVisible = it
                 }
             )
         }
