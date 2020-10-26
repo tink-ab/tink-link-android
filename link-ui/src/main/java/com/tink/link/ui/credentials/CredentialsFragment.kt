@@ -162,6 +162,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                         if (it == true) View.VISIBLE else View.GONE
                 }
             )
+            clientName.observe(
+                viewLifecycleOwner,
+                Observer {
+                    setConsentInformation(it)
+                }
+            )
             showTermsAndConditions.observe(
                 viewLifecycleOwner,
                 Observer {
@@ -195,19 +201,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
 
         bankName.text = provider.displayName
-
-        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
-        consentInformation.text =
-            getString(
-                R.string.tink_credentials_consent_information_text,
-                getString(R.string.tink_app_name),
-                readMoreText
-            ).convertCallToActionText(
-                ctaText = readMoreText,
-                action = { showConsentInformation() },
-                context = requireContext()
-            )
-        consentInformation.movementMethod = LinkMovementMethod.getInstance()
 
         val fields = provider.fields.map { field ->
             credentialsOperationArgs
@@ -295,6 +288,21 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
             else -> { }
         }
+    }
+
+    private fun setConsentInformation(clientName: String) {
+        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
+        consentInformation.text =
+            getString(
+                R.string.tink_credentials_consent_information_text,
+                clientName,
+                readMoreText
+            ).convertCallToActionText(
+                ctaText = readMoreText,
+                action = { showConsentInformation() },
+                context = requireContext()
+            )
+        consentInformation.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
