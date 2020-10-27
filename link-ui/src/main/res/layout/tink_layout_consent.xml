@@ -57,6 +57,7 @@
     android:layout_marginTop="20dp"
     android:background="@drawable/tink_logo"
     android:backgroundTint="?tink_textColorPrimary"
+    android:visibility="gone"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 

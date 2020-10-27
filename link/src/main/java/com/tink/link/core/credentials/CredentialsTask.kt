@@ -77,26 +77,35 @@ internal abstract class CredentialsTask(
         set(value) {
             if (isNewStatus(field, value)) {
                 field = value
+                // Push status update to StreamObserver
                 streamObserver.onNext(currentStatus)
             }
         }
 
     init {
         scope.launch {
-            val initialCredentials = credentialsAction()
+            val initialCredentials: Credentials = credentialsAction()
             var previousStatusUpdated = initialCredentials.statusUpdated
 
-            while (true) {
-                val credentials = credentialsService.getCredentials(initialCredentials.id)
-                    .takeIf { it.statusUpdated.isAfter(previousStatusUpdated) }
+            // First credentials will always be non-null.
+            var credentials: Credentials? = initialCredentials
 
+            // Start polling for Credentials status changes, and push updates to streamObserver
+            while (true) {
+                // Handle first credentials status and all subsequent status changes
                 if (credentials != null) {
-                    // We have a valid credentials with a new status
+                    // We have a valid credentials with a new status. Update streamObserver.
                     currentStatus = credentials.toCredentialsStatus()
                     previousStatusUpdated = credentials.statusUpdated
                     if (currentStatus is CredentialsStatus.Success) break
                 }
+
                 delay(2_000L)
+
+                // Fetch credentials and compare new status to previous.
+                // If it's unchanged, this will be null.
+                credentials = credentialsService.getCredentials(initialCredentials.id)
+                    .takeIf { it.statusUpdated.isAfter(previousStatusUpdated) }
             }
 
             streamObserver.onCompleted()
