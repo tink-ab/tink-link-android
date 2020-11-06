@@ -18,7 +18,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
@@ -34,7 +33,6 @@ import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCredentialsLayout
-import kotlinx.android.synthetic.main.tink_layout_consent.*
 import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 
@@ -66,11 +64,16 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.title = getString(R.string.tink_credentials_authentication_title)
+        toolbar.title = provider.displayName
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
+        }
+
+        provider.images?.icon?.let {
+            // TODO: Add icon to toolbar
+            //Picasso.get().load(it).into(logo)
         }
 
         when (credentialsOperationArgs) {
@@ -143,20 +146,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         authenticateCredentialsLayout.visibility = View.GONE
         addCredentialsLayout.visibility = View.VISIBLE
         consentViewModel.apply {
-            showConsentInformation.observe(viewLifecycleOwner) {
-                userGroup.visibility = if (it == true) View.VISIBLE else View.GONE
-            }
-            clientName.observe(viewLifecycleOwner) {
-                setConsentInformation(it)
-            }
-            showTermsAndConditions.observe(viewLifecycleOwner) {
-                termsAndConditionsText.visibility =
-                    if (it == true) {
-                        setTermsAndConditions(termsAndConditionsUrl, privacyPolicyUrl)
-                        View.VISIBLE
-                    } else {
-                        View.GONE
-                    }
+            clientDescription.observe(viewLifecycleOwner) {
+                if (showTermsAndConsent(it)) {
+                    termsAndConsentText.visibility = View.VISIBLE
+                    setTermsAndConsentText(termsAndConditionsUrl, privacyPolicyUrl, it.clientName)
+                } else {
+                    termsAndConsentText.visibility = View.GONE
+                }
             }
             isUnverified.observe(viewLifecycleOwner) {
                 unverifiedWarning.visibility =
@@ -166,12 +162,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 tinkLogo.isVisible = it
             }
         }
-
-        provider.images?.icon?.let {
-            Picasso.get().load(it).into(logo)
-        }
-
-        bankName.text = provider.displayName
 
         val fields = provider.fields.map { field ->
             credentialsOperationArgs
@@ -258,28 +248,18 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
     }
 
-    private fun setConsentInformation(clientName: String) {
-        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
-        consentInformation.text =
-            getString(
-                R.string.tink_credentials_consent_information_text,
-                clientName,
-                readMoreText
-            ).convertCallToActionText(
-                ctaText = readMoreText,
-                action = { showConsentInformation() },
-                context = requireContext()
-            )
-        consentInformation.movementMethod = LinkMovementMethod.getInstance()
-    }
-
-    private fun setTermsAndConditions(termsAndConditionsUrl: Uri, privacyPolicyUrl: Uri) {
+    private fun setTermsAndConsentText(
+        termsAndConditionsUrl: Uri,
+        privacyPolicyUrl: Uri,
+        clientName: String?
+    ) {
+        // TODO: Nicify setting of link texts
         val termsText = getString(
             R.string.tink_credentials_terms_text,
             getString(R.string.tink_credentials_terms_and_conditions),
             getString(R.string.tink_credentials_privacy_policy)
         )
-        termsAndConditionsText.setTextWithLinks(
+        termsAndConsentText.setTextWithLinks(
             fullText = termsText,
             links = listOf(
                 LinkInfo(
@@ -292,7 +272,21 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 )
             )
         )
-        termsAndConditionsText.movementMethod = LinkMovementMethod.getInstance()
+        if (clientName != null) {
+            val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
+            termsAndConsentText.append(
+                getString(
+                    R.string.tink_credentials_consent_information_text,
+                    clientName,
+                    readMoreText
+                ).convertCallToActionText(
+                    ctaText = readMoreText,
+                    action = { showConsentInformation() },
+                    context = requireContext()
+                )
+            )
+        }
+        termsAndConsentText.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun showConsentInformation() {
