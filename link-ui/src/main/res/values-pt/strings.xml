@@ -22,9 +22,9 @@
     <string name="tink_provider_select_credentials_type_title">método de início de sessão</string>
     <string name="tink_credentials_authentication_title">Autenticação</string>
     <string name="tink_credentials_consent_information_text">%1$s vai receber alguma da sua informação financeira. %2$s</string>
-    <string name="tink_credentials_consent_information_read_more">Leia mais</string>
+    <string name="tink_credentials_consent_information_read_more">Ver detalhes</string>
     <string name="tink_credentials_unverified_warning_text">Por verificar - esta solução apenas está construída para fins de desenvolvimento. Não introduza as credenciais do seu banco se não confiar no desenvolvedor.</string>
-    <string name="tink_credentials_continue_button">Continuar</string>
+    <string name="tink_credentials_continue_button">Iniciar sessão</string>
     <string name="tink_credentials_bankid_button">Abrir BankID</string>
     <string name="tink_credentials_terms_text">Ao usar o serviço, concorda com os %1$s e %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Termos e condições</string>

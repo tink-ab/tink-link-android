@@ -22,9 +22,9 @@
     <string name="tink_provider_select_credentials_type_title">anmeldemethode</string>
     <string name="tink_credentials_authentication_title">Authentifizierung</string>
     <string name="tink_credentials_consent_information_text">%1$s wird einige Ihrer finanziellen Informationen einholen. %2$s</string>
-    <string name="tink_credentials_consent_information_read_more">Mehr erfahren</string>
+    <string name="tink_credentials_consent_information_read_more">Details anzeigen</string>
     <string name="tink_credentials_unverified_warning_text">Unverifiziert - Diese Lösung ist nur für Entwicklungszwecke gedacht. Geben Sie Ihre Bankdaten nur dann ein, wenn Sie dem Entwickler vertrauen.</string>
-    <string name="tink_credentials_continue_button">Weiter</string>
+    <string name="tink_credentials_continue_button">Anmelden</string>
     <string name="tink_credentials_bankid_button">BankID öffnen</string>
     <string name="tink_credentials_terms_text">Mit der Nutzung dieses Services akzeptieren Sie die %1$s und %2$s von Tink. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Nutzungsbedingungen</string>
