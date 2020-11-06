@@ -18,6 +18,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
@@ -33,7 +34,8 @@ import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
 import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCredentialsLayout
 import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
-import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
+import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.*
+import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.view.*
 
 private const val BANK_ID_ACTION_SAME_DEVICE = 1
 private const val BANK_ID_ACTION_OTHER_DEVICE = 2
@@ -63,8 +65,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.title = provider.displayName
-        toolbar.setNavigationOnClickListener {
+        toolbarWithLogo.toolbarTitleView.text = provider.displayName
+        toolbarWithLogo.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
@@ -72,7 +74,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         provider.images?.icon?.let {
             // TODO: Add icon to toolbar
-            //Picasso.get().load(it).into(logo)
+            Picasso.get().load(it).into(toolbarWithLogo.logoView)
         }
 
         when (credentialsOperationArgs) {
