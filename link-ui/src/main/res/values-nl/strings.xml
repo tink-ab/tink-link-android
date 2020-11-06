@@ -26,7 +26,7 @@
     <string name="tink_credentials_unverified_warning_text">Niet geverifieerd. Deze oplossing is alleen bedoeld voor ontwikkelingsdoeleinden. Voer geen bankgegevens in, tenzij je de ontwikkelaar vertrouwt.</string>
     <string name="tink_credentials_continue_button">Volgende</string>
     <string name="tink_credentials_bankid_button">BankID openen</string>
-    <string name="tink_credentials_terms_text">Door de dienst te gebruiken, ga je akkoord met de %1$s en het %2$s van Tink</string>
+    <string name="tink_credentials_terms_text">Door de dienst te gebruiken, ga je akkoord met de %1$s en het %2$s van Tink. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">algemene voorwaarden</string>
     <string name="tink_credentials_privacy_policy">privacybeleid</string>
     <string name="tink_consent_information_title">We verzamelen de volgende gegevens over je</string>

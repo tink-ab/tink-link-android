@@ -26,7 +26,7 @@
     <string name="tink_credentials_unverified_warning_text">Overifierad - Den här lösningen är endast gjord i utvecklingssyfte. Ange inte dina inloggningsuppgifter om du inte litar på utvecklaren.</string>
     <string name="tink_credentials_continue_button">Fortsätt</string>
     <string name="tink_credentials_bankid_button">Öppna BankID</string>
-    <string name="tink_credentials_terms_text">Genom att använda tjänsten godkänner du Tinks %1$s and %2$s</string>
+    <string name="tink_credentials_terms_text">Genom att använda tjänsten godkänner du Tinks %1$s and %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Användarvillkor</string>
     <string name="tink_credentials_privacy_policy">Integritetspolicy</string>
     <string name="tink_consent_information_title">Vi samlar in följande uppgifter om dig</string>

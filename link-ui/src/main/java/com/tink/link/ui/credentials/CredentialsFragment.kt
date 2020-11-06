@@ -23,7 +23,6 @@ import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.LinkInfo
-import com.tink.link.ui.extensions.convertCallToActionText
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.toArrayList
@@ -253,39 +252,44 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         privacyPolicyUrl: Uri,
         clientName: String?
     ) {
-        // TODO: Nicify setting of link texts
+        val links = mutableListOf<LinkInfo>(
+            LinkInfo.Url(
+                getString(R.string.tink_credentials_terms_and_conditions),
+                termsAndConditionsUrl.toString()
+            ),
+            LinkInfo.Url(
+                getString(R.string.tink_credentials_privacy_policy),
+                privacyPolicyUrl.toString(),
+            )
+        )
+        val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
+        var consentText = ""
+        // Add consent text if client name is not null
+        clientName
+            ?.let {
+                consentText = getString(
+                    R.string.tink_credentials_consent_information_text,
+                    it,
+                    getString(R.string.tink_credentials_consent_information_read_more)
+                )
+                // Add CTA text to list of links to be shown in the final text
+                links.add(
+                    LinkInfo.CallToAction(
+                        displayText = readMoreText,
+                        action = { showConsentInformation() }
+                    )
+                )
+            }
         val termsText = getString(
             R.string.tink_credentials_terms_text,
             getString(R.string.tink_credentials_terms_and_conditions),
-            getString(R.string.tink_credentials_privacy_policy)
+            getString(R.string.tink_credentials_privacy_policy),
+            consentText
         )
         termsAndConsentText.setTextWithLinks(
             fullText = termsText,
-            links = listOf(
-                LinkInfo(
-                    termsAndConditionsUrl.toString(),
-                    getString(R.string.tink_credentials_terms_and_conditions)
-                ),
-                LinkInfo(
-                    privacyPolicyUrl.toString(),
-                    getString(R.string.tink_credentials_privacy_policy)
-                )
-            )
+            links = links
         )
-        if (clientName != null) {
-            val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
-            termsAndConsentText.append(
-                getString(
-                    R.string.tink_credentials_consent_information_text,
-                    clientName,
-                    readMoreText
-                ).convertCallToActionText(
-                    ctaText = readMoreText,
-                    action = { showConsentInformation() },
-                    context = requireContext()
-                )
-            )
-        }
         termsAndConsentText.movementMethod = LinkMovementMethod.getInstance()
     }
 

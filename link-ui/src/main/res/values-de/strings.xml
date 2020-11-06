@@ -26,7 +26,7 @@
     <string name="tink_credentials_unverified_warning_text">Unverifiziert - Diese Lösung ist nur für Entwicklungszwecke gedacht. Geben Sie Ihre Bankdaten nur dann ein, wenn Sie dem Entwickler vertrauen.</string>
     <string name="tink_credentials_continue_button">Weiter</string>
     <string name="tink_credentials_bankid_button">BankID öffnen</string>
-    <string name="tink_credentials_terms_text">Mit der Nutzung dieses Services akzeptieren Sie die %1$s und %2$s von Tink</string>
+    <string name="tink_credentials_terms_text">Mit der Nutzung dieses Services akzeptieren Sie die %1$s und %2$s von Tink. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Nutzungsbedingungen</string>
     <string name="tink_credentials_privacy_policy">Datenschutzrichtlinie</string>
     <string name="tink_consent_information_title">Wir werden die folgenden Daten von Ihnen erfassen</string>

@@ -16,35 +16,30 @@ import androidx.core.content.res.ResourcesCompat
 import com.tink.link.ui.R
 import java.util.regex.Pattern
 
-internal fun String.convertCallToActionText(
-    ctaText: String,
-    action: () -> Unit,
-    context: Context
-): CharSequence {
-    val startIndex = indexOf(ctaText)
-    val spannableString = SpannableString.valueOf(this)
-        .apply {
-            setSpan(
-                TinkCallToActionSpan(context, action),
-                startIndex,
-                startIndex + ctaText.length,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-        }
-    return SpannedString(spannableString)
-}
-
 internal fun TextView.setTextWithLinks(fullText: String, links: List<LinkInfo>) {
     val spannableString = SpannableString.valueOf(fullText)
         .apply {
             for (link in links) {
-                val startIndex = indexOf(link.linkText)
-                setSpan(
-                    TinkUrlSpan(link.url, context),
-                    startIndex,
-                    startIndex + link.linkText.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-                )
+                val startIndex = indexOf(link.displayText)
+                when (link) {
+                    is LinkInfo.Url -> {
+                        setSpan(
+                            TinkUrlSpan(link.url, context),
+                            startIndex,
+                            startIndex + link.displayText.length,
+                            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+
+                    is LinkInfo.CallToAction -> {
+                        setSpan(
+                            TinkCallToActionSpan(context, link.action),
+                            startIndex,
+                            startIndex + link.displayText.length,
+                            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+                }
             }
         }
     text = SpannedString(spannableString)
@@ -61,13 +56,13 @@ internal fun String.convertUrlMarkdownToSpan(context: Context): SpannableString 
         val url = matcher.toMatchResult().group(2)
         val startIndex = matcher.start(1) - 1
         if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
-            val linkInfo = LinkInfo(url, linkText)
+            val linkInfo = LinkInfo.Url(url, linkText)
             val fullText = matcher.replaceAll(linkText)
             return SpannableString.valueOf(fullText).apply {
                 setSpan(
                     TinkUrlSpan(linkInfo.url, context),
                     startIndex,
-                    startIndex + linkInfo.linkText.length,
+                    startIndex + linkInfo.displayText.length,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
             }
@@ -112,4 +107,11 @@ internal class TinkUrlSpan(url: String, val context: Context) : URLSpan(url) {
     }
 }
 
-internal data class LinkInfo(val url: String, val linkText: String)
+internal sealed class LinkInfo {
+
+    abstract val displayText: String
+
+    data class Url(override val displayText: String, val url: String): LinkInfo()
+
+    data class CallToAction(override val displayText: String, val action: () -> Unit) : LinkInfo()
+}

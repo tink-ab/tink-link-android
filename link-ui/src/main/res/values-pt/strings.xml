@@ -26,7 +26,7 @@
     <string name="tink_credentials_unverified_warning_text">Por verificar - esta solução apenas está construída para fins de desenvolvimento. Não introduza as credenciais do seu banco se não confiar no desenvolvedor.</string>
     <string name="tink_credentials_continue_button">Continuar</string>
     <string name="tink_credentials_bankid_button">Abrir BankID</string>
-    <string name="tink_credentials_terms_text">Ao usar o serviço, concorda com os %1$s e %2$s</string>
+    <string name="tink_credentials_terms_text">Ao usar o serviço, concorda com os %1$s e %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Termos e condições</string>
     <string name="tink_credentials_privacy_policy">Política de privacidade</string>
     <string name="tink_consent_information_title">Iremos recolher os seguintes dados seus</string>
