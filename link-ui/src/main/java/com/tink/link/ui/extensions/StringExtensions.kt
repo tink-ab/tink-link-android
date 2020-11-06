@@ -111,7 +111,7 @@ internal sealed class LinkInfo {
 
     abstract val displayText: String
 
-    data class Url(override val displayText: String, val url: String): LinkInfo()
+    data class Url(override val displayText: String, val url: String) : LinkInfo()
 
     data class CallToAction(override val displayText: String, val action: () -> Unit) : LinkInfo()
 }
