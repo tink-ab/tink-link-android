@@ -23,6 +23,7 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.extensions.*
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
@@ -198,6 +199,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         bankIdOtherDeviceButton.setOnClickListener {
             bankIdActionType = BANK_ID_ACTION_OTHER_DEVICE
             submitFilledFields()
+        }
+
+        if (provider.helpText.isNotBlank()) {
+            providerHelpText.visibility = View.VISIBLE
+            providerHelpText.setTextWithUrlMarkdown(provider.helpText)
+            providerHelpText.movementMethod = LinkMovementMethod.getInstance()
+        } else {
+            providerHelpText.visibility = View.GONE
         }
 
         createCredentialsBtn.setOnClickListener { submitFilledFields() }
