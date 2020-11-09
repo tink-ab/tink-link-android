@@ -23,10 +23,10 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
-import com.tink.link.ui.extensions.*
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
+import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toView
 import com.tink.model.credentials.Credentials
