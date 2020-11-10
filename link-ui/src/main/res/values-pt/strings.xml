@@ -30,6 +30,8 @@
     <string name="tink_credentials_terms_text">Ao usar o serviço, concorda com os %1$s e %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">Termos e condições</string>
     <string name="tink_credentials_privacy_policy">Política de privacidade</string>
+    <string name="tink_credentials_field_validation_error_maxLengthLimit">Este campo não pode ter mais de %d caracteres</string>
+    <string name="tink_credentials_field_validation_error_minLengthLimit">Este campo deve ter, pelo menos, %d caracteres</string>
     <string name="tink_consent_information_title">Iremos recolher os seguintes dados seus</string>
     <string name="tink_consent_information_description">Ao continuar através deste serviço, iremos recolher os seus dados financeiros. Estes são os seus dados que iremos recolher:</string>
     <string name="tink_third_party_authentication_download_app_button">Transferir</string>

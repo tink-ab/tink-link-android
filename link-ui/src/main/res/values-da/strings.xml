@@ -30,6 +30,8 @@
     <string name="tink_credentials_terms_text">Ved at bruge denne tjeneste accepterer du Tinks %1$s and %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">vilkår og betingelser</string>
     <string name="tink_credentials_privacy_policy">fortrolighedspolitik</string>
+    <string name="tink_credentials_field_validation_error_maxLengthLimit">Dette felt kan ikke ære længere end %d</string>
+    <string name="tink_credentials_field_validation_error_minLengthLimit">Dette felt skal indeholde mindst %d tegn</string>
     <string name="tink_consent_information_title">Vi indsamler følgende data fra dig</string>
     <string name="tink_consent_information_description">Ved at følge denne tjeneste indsamler vi finansielle data fra dig. Dette er de datapunkter, vi indsamler fra dig:</string>
     <string name="tink_third_party_authentication_download_app_button">Download</string>
