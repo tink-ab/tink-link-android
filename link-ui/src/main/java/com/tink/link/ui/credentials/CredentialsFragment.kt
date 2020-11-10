@@ -74,7 +74,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
 
         provider.images?.icon?.let {
-            // TODO: Add icon to toolbar
             Picasso.get().load(it).into(toolbarWithLogo.logoView)
         }
 
