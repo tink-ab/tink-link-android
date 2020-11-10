@@ -24,6 +24,7 @@
     <string name="tink_credentials_consent_information_text">%1$s saa joitakin taloudellisia tietojasi. %2$s</string>
     <string name="tink_credentials_consent_information_read_more">Näytä tiedot</string>
     <string name="tink_credentials_unverified_warning_text">Varmistamaton - Tämä ratkaisu on tehty vain kehitystarkoituksiin. Älä anna tunnistetietoja pankkiisi, jos et luota kehittäjään.</string>
+    <string name="tink_credentials_empty_fields_login">Kirjaudu sisään %s-palveluun, niin voit jatkaa</string>
     <string name="tink_credentials_continue_button">Kirjaudu sisään</string>
     <string name="tink_credentials_bankid_button">Avaa BankID</string>
     <string name="tink_credentials_terms_text">Palvelua käyttämällä hyväksyt Tinkin %1$s and %2$s. %3$s</string>

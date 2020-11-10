@@ -164,6 +164,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
+        if (provider.fields.isEmpty()) {
+            showEmptyFieldsFlow()
+        } else {
+            emptyFieldsGroup.isVisible = false
+            credentialsFieldsHelpTextGroup.isVisible = true
+        }
+
         val fields = provider.fields.map { field ->
             credentialsOperationArgs
                 .takeIf { it is CredentialsOperationArgs.Update }
@@ -215,6 +222,16 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 height = footer.height
             }
         }
+    }
+
+    private fun showEmptyFieldsFlow() {
+        credentialsFieldsHelpTextGroup.isVisible = false
+        emptyFieldsGroup.isVisible = true
+        provider.images?.icon?.let {
+            Picasso.get().load(it).into(emptyFieldsBankLogo)
+        }
+        emptyFieldsLoginText.text =
+                getString(R.string.tink_credentials_empty_fields_login, provider.displayName)
     }
 
     private fun showAuthenticateFlow() {

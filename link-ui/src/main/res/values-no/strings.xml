@@ -24,6 +24,7 @@
     <string name="tink_credentials_consent_information_text">%1$s vil samle inn noen av dine finansielle opplysninger. %2$s</string>
     <string name="tink_credentials_consent_information_read_more">Vis detaljer</string>
     <string name="tink_credentials_unverified_warning_text">Ikke verifisert. Denne løsningen er bare til utviklingsformål. Ikke oppgi bankinformasjonen din med mindre du stoler på utvikleren.</string>
+    <string name="tink_credentials_empty_fields_login">Logg på %s for å fortsette</string>
     <string name="tink_credentials_continue_button">Logg på</string>
     <string name="tink_credentials_bankid_button">Åpne BankID</string>
     <string name="tink_credentials_terms_text">Ved at du bruker denne tjenesten, godtar du Tinks %1$s and %2$s. %3$s</string>

@@ -24,6 +24,7 @@
     <string name="tink_credentials_consent_information_text">%1$s zal wat financiële gegevens over je verzamelen. %2$s</string>
     <string name="tink_credentials_consent_information_read_more">Details bekijken</string>
     <string name="tink_credentials_unverified_warning_text">Niet geverifieerd. Deze oplossing is alleen bedoeld voor ontwikkelingsdoeleinden. Voer geen bankgegevens in, tenzij je de ontwikkelaar vertrouwt.</string>
+    <string name="tink_credentials_empty_fields_login">Log in bij %s om verder te gaan</string>
     <string name="tink_credentials_continue_button">Inloggen</string>
     <string name="tink_credentials_bankid_button">BankID openen</string>
     <string name="tink_credentials_terms_text">Door de dienst te gebruiken, ga je akkoord met de %1$s en het %2$s van Tink. %3$s</string>
