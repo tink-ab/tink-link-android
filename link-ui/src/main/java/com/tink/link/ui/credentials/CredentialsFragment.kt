@@ -231,7 +231,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             Picasso.get().load(it).into(emptyFieldsBankLogo)
         }
         emptyFieldsLoginText.text =
-                getString(R.string.tink_credentials_empty_fields_login, provider.displayName)
+            getString(R.string.tink_credentials_empty_fields_login, provider.displayName)
     }
 
     private fun showAuthenticateFlow() {
