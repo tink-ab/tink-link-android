@@ -275,21 +275,20 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         val readMoreText = getString(R.string.tink_credentials_consent_information_read_more)
         var consentText = ""
         // Add consent text if client name is not null
-        clientName
-            ?.let {
-                consentText = getString(
-                    R.string.tink_credentials_consent_information_text,
-                    it,
-                    getString(R.string.tink_credentials_consent_information_read_more)
+        if (clientName != null) {
+            consentText = getString(
+                R.string.tink_credentials_consent_information_text,
+                clientName,
+                getString(R.string.tink_credentials_consent_information_read_more)
+            )
+            // Add CTA text to list of links to be shown in the final text
+            links.add(
+                LinkInfo.CallToAction(
+                    displayText = readMoreText,
+                    action = { showConsentInformation() }
                 )
-                // Add CTA text to list of links to be shown in the final text
-                links.add(
-                    LinkInfo.CallToAction(
-                        displayText = readMoreText,
-                        action = { showConsentInformation() }
-                    )
-                )
-            }
+            )
+        }
         val termsText = getString(
             R.string.tink_credentials_terms_text,
             getString(R.string.tink_credentials_terms_and_conditions),
