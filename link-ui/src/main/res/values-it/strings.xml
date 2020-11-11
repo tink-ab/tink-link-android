@@ -22,11 +22,11 @@
     <string name="tink_provider_select_credentials_type_title">Metodo di accesso</string>
     <string name="tink_credentials_authentication_title">Autenticazione</string>
     <string name="tink_credentials_consent_information_text">%1$s acquisirà alcune delle tue informazioni finanziarie. %2$s</string>
-    <string name="tink_credentials_consent_information_read_more">Altre informazioni</string>
+    <string name="tink_credentials_consent_information_read_more">Guarda i dettagli</string>
     <string name="tink_credentials_unverified_warning_text">Non verificato: questa soluzione è stata realizzata esclusivamente a scopo di sviluppo. Non inserire le tue credenziali bancarie a meno che non ti fidi dello sviluppatore.</string>
-    <string name="tink_credentials_continue_button">Continua la modifica</string>
+    <string name="tink_credentials_continue_button">Accedi</string>
     <string name="tink_credentials_bankid_button">Apri BankID</string>
-    <string name="tink_credentials_terms_text">Utilizzando il servizio, accetti i Termini e condizioni di Tink e %1$s sulla %2$s</string>
+    <string name="tink_credentials_terms_text">Utilizzando il servizio, accetti i Termini e condizioni di Tink e %1$s sulla %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">l\'Informativa</string>
     <string name="tink_credentials_privacy_policy">privacy</string>
     <string name="tink_consent_information_title">Acquisiremo i seguenti dati</string>

@@ -20,6 +20,7 @@ internal class ConsentViewModel() : ViewModel() {
     val privacyPolicyUrl = consentContext.privacyPolicy()
 
     private val _clientDescription = MutableLiveData<OAuthClientDescription>()
+    val clientDescription: LiveData<OAuthClientDescription> = _clientDescription
 
     val scopeDescriptions: MutableList<ScopeDescription> = mutableListOf()
 
@@ -40,14 +41,9 @@ internal class ConsentViewModel() : ViewModel() {
     val isUnverified: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.verified == false }
 
-    val showConsentInformation: LiveData<Boolean> =
-        Transformations.map(_clientDescription) { it?.aggregator == false }
-
-    val clientName: LiveData<String> = Transformations.map(_clientDescription) { it?.clientName }
-
     val showTinkLogo: LiveData<Boolean> =
         Transformations.map(_clientDescription) { it?.aggregator == false }
 
-    val showTermsAndConditions: LiveData<Boolean> =
-        Transformations.map(_clientDescription) { it?.aggregator == false }
+    fun showTermsAndConsent(clientDescription: OAuthClientDescription) =
+        !clientDescription.aggregator
 }
