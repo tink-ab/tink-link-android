@@ -69,7 +69,27 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
         getFilledField().validate()
             .also {
                 textInputLayout.error =
-                    if (it is Field.ValidationResult.ValidationError) it.errorMessage else null
+                    if (it is Field.ValidationResult.ValidationError) {
+                        when (it) {
+                            is Field.ValidationResult.ValidationError.Invalid -> {
+                                it.errorMessage
+                            }
+
+                            is Field.ValidationResult.ValidationError.MaxLengthLimit -> {
+                                context.getString(
+                                    R.string.tink_credentials_field_validation_error_maxLengthLimit,
+                                    field.validationRules.maxLength
+                                )
+                            }
+
+                            is Field.ValidationResult.ValidationError.MinLengthLimit -> {
+                                context.getString(
+                                    R.string.tink_credentials_field_validation_error_minLengthLimit,
+                                    field.validationRules.minLength
+                                )
+                            }
+                        }
+                    } else null
             }
             .let { it == Field.ValidationResult.Valid }
 

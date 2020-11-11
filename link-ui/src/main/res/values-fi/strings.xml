@@ -30,6 +30,8 @@
     <string name="tink_credentials_terms_text">Palvelua käyttämällä hyväksyt Tinkin %1$s and %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">käyttöehdot</string>
     <string name="tink_credentials_privacy_policy">tietosuojakäytännön</string>
+    <string name="tink_credentials_field_validation_error_maxLengthLimit">Tässä kentässä saa olla enintään %d merkkiä</string>
+    <string name="tink_credentials_field_validation_error_minLengthLimit">Tässä kentässä on oltava vähintään %d merkkiä</string>
     <string name="tink_consent_information_title">Keräämme seuraavat sinua koskevat tiedot</string>
     <string name="tink_consent_information_description">Kun käytät tätä palvelua, keräämme sinua koskevia taloudellisia tietoja. Keräämme nämä sinua koskevat tiedot:</string>
     <string name="tink_third_party_authentication_download_app_button">Lataa</string>

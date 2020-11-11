@@ -30,6 +30,8 @@
     <string name="tink_credentials_terms_text">Door de dienst te gebruiken, ga je akkoord met de %1$s en het %2$s van Tink. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">algemene voorwaarden</string>
     <string name="tink_credentials_privacy_policy">privacybeleid</string>
+    <string name="tink_credentials_field_validation_error_maxLengthLimit">Dit veld mag niet langer zijn dan %d tekens</string>
+    <string name="tink_credentials_field_validation_error_minLengthLimit">Dit veld moet minimaal %d tekens bevatten</string>
     <string name="tink_consent_information_title">We verzamelen de volgende gegevens over je</string>
     <string name="tink_consent_information_description">Door verder te gaan met deze dienst, zullen wij financiële gegevens over je verzamelen. Dit zijn de datapunten die we over je verzamelen:</string>
     <string name="tink_third_party_authentication_download_app_button">Downloaden</string>

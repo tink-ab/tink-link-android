@@ -30,6 +30,8 @@
     <string name="tink_credentials_terms_text">Utilizzando il servizio, accetti i Termini e condizioni di Tink e %1$s sulla %2$s. %3$s</string>
     <string name="tink_credentials_terms_and_conditions">l\'Informativa</string>
     <string name="tink_credentials_privacy_policy">privacy</string>
+    <string name="tink_credentials_field_validation_error_maxLengthLimit">Questo campo non può superare i %d caratteri</string>
+    <string name="tink_credentials_field_validation_error_minLengthLimit">Questo campo deve contenere almeno %d caratteri</string>
     <string name="tink_consent_information_title">Acquisiremo i seguenti dati</string>
     <string name="tink_consent_information_description">Proseguendo nella fruizione di questo servizio, acquisiremo i tuoi dati finanziari. Questi sono i dati che acquisiremo:</string>
     <string name="tink_third_party_authentication_download_app_button">Download</string>
