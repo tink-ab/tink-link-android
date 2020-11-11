@@ -22,7 +22,7 @@
     <string name="tink_provider_select_credentials_type_title">Inloggningsmetod</string>
     <string name="tink_credentials_authentication_title">Autentiseringen</string>
     <string name="tink_credentials_consent_information_text">%1$s kommer att få dina ekonomiska uppgifter. %2$s</string>
-    <string name="tink_credentials_consent_information_read_more">Visa detaljuppgifter</string>
+    <string name="tink_credentials_consent_information_read_more">Visa detaljer</string>
     <string name="tink_credentials_unverified_warning_text">Overifierad - Den här lösningen är endast gjord i utvecklingssyfte. Ange inte dina inloggningsuppgifter om du inte litar på utvecklaren.</string>
     <string name="tink_credentials_continue_button">Logga in</string>
     <string name="tink_credentials_bankid_button">Öppna BankID</string>
