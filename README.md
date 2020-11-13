@@ -70,8 +70,8 @@ dependencies {
 ```
 
 ## Tutorials
-- [Tink Link Tutorial](https://docs.tink.com/resources/tutorials/tink-link-sdk-android-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
-- [Tink Link UI Tutorial](https://docs.tink.com/resources/tutorials/tink-link-ui-sdk-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
+- [Tink Link Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-headless-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
+- [Tink Link UI Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
 
 ## Examples
 - [Tink Link Sample](/sample-link)
