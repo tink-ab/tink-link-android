@@ -63,6 +63,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             viewLifecycleOwner,
             Observer {
                 providerAdapter?.providers = it
+                updateSearchView()
                 if (it.size == 1) {
                     // The list consists only of a single provider.
                     val node = it.first()
@@ -106,16 +107,21 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             searchMenuItem.icon,
             requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
         )
-        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
-            setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
-        } else {
-            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
-        }
+        updateSearchView()
 
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
+        }
+    }
+
+    private fun updateSearchView() {
+        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
+            setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
+            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.VISIBLE
+        } else {
+            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
         }
     }
 
