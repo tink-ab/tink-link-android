@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.extensions.inflate
 import com.tink.model.consent.ScopeDescription
 import kotlinx.android.synthetic.main.tink_fragment_consent_information.*
@@ -30,6 +31,11 @@ internal class ConsentInformationFragment : Fragment(R.layout.tink_fragment_cons
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar.title = toolbarTitle
+        toolbar.setNavigationOnClickListener {
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_CANCELLED
+            )
+        }
         with(scopeInfoList) {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ScopeListAdapter().apply { data = scopeList }
