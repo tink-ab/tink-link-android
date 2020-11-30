@@ -3,6 +3,7 @@ package com.tink.link
 import com.tink.core.Tink
 import com.tink.link.core.user.UserContext
 import com.tink.model.user.User
+import com.tink.model.user.UserInfo
 import com.tink.service.handler.ResultHandler
 
 /**
@@ -47,6 +48,12 @@ object TinkLink {
      */
     fun createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) =
         Tink.createTemporaryUser(market, locale, resultHandler)
+
+    /**
+     * Fetches the [UserInfo] for an authenticated user.
+     */
+    @JvmStatic
+    fun getUserInfo(resultHandler: ResultHandler<UserInfo>) = Tink.getUserInfo(resultHandler)
 }
 
 // For Kotlin
@@ -75,6 +82,13 @@ fun Tink.requireUserContext(): UserContext = TinkLinkComponent.instance.requireU
 @JvmSynthetic
 fun Tink.authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) =
     TinkLinkComponent.instance.authenticateUser(authenticationCode, resultHandler)
+
+/**
+ * Fetches the [UserInfo] for an authenticated user.
+ */
+@JvmSynthetic
+fun Tink.getUserInfo(resultHandler: ResultHandler<UserInfo>) =
+    TinkLinkComponent.instance.getUserInfo(resultHandler)
 
 @JvmSynthetic
 fun Tink.getConsentContext() = TinkLinkComponent.instance.consentContext
