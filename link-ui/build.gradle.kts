@@ -18,6 +18,8 @@ android {
         versionCode = TinkLinkVersion.code
         versionName = TinkLinkVersion.name
 
+        buildConfigField("String", "libraryVersion", "\"$versionName\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
