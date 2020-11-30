@@ -24,6 +24,7 @@ import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
@@ -351,6 +352,11 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         if (areFieldsValid()) {
             showLoading(getString(R.string.tink_credentials_status_authorizing))
             hideKeyboard()
+
+            TinkLinkTracker.trackInteraction(
+                InteractionEvent.SUBMIT_CREDENTIALS,
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+            )
 
             val fields = credentialsFields.children
                 .filterIsInstance(CredentialsField::class.java)
