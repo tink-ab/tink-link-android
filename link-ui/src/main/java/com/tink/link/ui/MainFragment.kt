@@ -17,6 +17,7 @@ import com.tink.link.createTemporaryUser
 import com.tink.link.getUserInfo
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.AppInfo
+import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
@@ -127,7 +128,10 @@ internal class MainFragment : Fragment() {
                             TinkLinkUiActivity.RESULT_FAILURE
                         )
                     }
-                    .also { it.show() }
+                    .also {
+                        it.show()
+                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                    }
             }
         )
     }

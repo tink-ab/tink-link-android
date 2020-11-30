@@ -23,6 +23,8 @@ import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
@@ -72,6 +74,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
         }
+
+        TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN)
 
         provider.images?.icon?.let {
             Picasso.get().load(it).into(toolbarWithLogo.logoView)
@@ -387,8 +391,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     @UiThread
-    private fun showError(message: String) =
+    private fun showError(message: String) {
         showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
+        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+    }
 
     @UiThread
     private fun showLoading(message: String) =
@@ -398,24 +404,29 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         if (areFieldsValid()) {
             showLoading(getString(R.string.tink_credentials_status_authorizing))
             hideKeyboard()
-        }
 
-        val fields = credentialsFields.children
-            .filterIsInstance(CredentialsField::class.java)
-            .map { it.getFilledField() }
-            .toList()
+            TinkLinkTracker.trackInteraction(
+                InteractionEvent.SUBMIT_CREDENTIALS,
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+            )
 
-        viewModel.updateCredentials(
-            id = credentialsId,
-            provider = provider,
-            fields = fields,
-            onAwaitingAuthentication = ::handleAuthenticationTask,
-            onError = { error ->
-                val message = error.localizedMessage ?: error.message
+            val fields = credentialsFields.children
+                .filterIsInstance(CredentialsField::class.java)
+                .map { it.getFilledField() }
+                .toList()
+
+            viewModel.updateCredentials(
+                id = credentialsId,
+                provider = provider,
+                fields = fields,
+                onAwaitingAuthentication = ::handleAuthenticationTask,
+                onError = { error ->
+                    val message = error.localizedMessage ?: error.message
                     ?: getString(R.string.tink_error_unknown)
-                lifecycleScope.launchWhenStarted { showError(message) }
-            }
-        )
+                    lifecycleScope.launchWhenStarted { showError(message) }
+                }
+            )
+        }
     }
 
     private fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
@@ -428,6 +439,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 is AuthenticationTask.SupplementalInformation -> {
                     SupplementalInformationFragment.newInstance(authenticationTask)
                         .show(childFragmentManager, null)
+                    TinkLinkTracker.trackScreen(ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN)
                 }
             }
         }
