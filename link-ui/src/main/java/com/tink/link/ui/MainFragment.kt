@@ -1,5 +1,6 @@
 package com.tink.link.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,9 @@ import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
 import com.tink.link.authenticateUser
 import com.tink.link.createTemporaryUser
+import com.tink.link.getUserInfo
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
@@ -86,6 +90,7 @@ internal class MainFragment : Fragment() {
 
     private fun launchLinkUiFlowForUser(user: User) {
         Tink.setUser(user)
+        setupInternalTracker(requireContext())
         when (val operation = credentialsOperation) {
             is CredentialsOperation.Create -> {
                 findNavController().navigate(
@@ -158,5 +163,38 @@ internal class MainFragment : Fragment() {
                 MainFragmentDirections.actionMainFragmentToCredentialsFragment(operationArgs)
             )
         }
+    }
+
+    private fun setupInternalTracker(context: Context) {
+        Tink.getUserInfo(
+            resultHandler = ResultHandler(
+                { userInfo ->
+                    TinkLinkTracker.initialize(
+                        clientId = Tink.getConfiguration()?.oAuthClientId ?: "",
+                        userId = userInfo.id,
+                        appInfo = getAppInfo(context),
+                        operation = credentialsOperation
+                    )
+                },
+                { }
+            )
+        )
+    }
+
+    private fun getAppInfo(context: Context): AppInfo {
+        val versionName = BuildConfig.libraryVersion
+        val appPackageName = context.packageName
+        val appPackageInfo = context.packageManager.getPackageInfo(
+            appPackageName,
+            0
+        )
+        val appVersionName = appPackageInfo.versionName
+        val appName = appPackageInfo.applicationInfo.loadLabel(context.packageManager)
+        return AppInfo(
+            version = versionName,
+            appName = appName.toString(),
+            appPackageName = appPackageName,
+            appVersion = appVersionName
+        )
     }
 }
