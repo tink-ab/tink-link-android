@@ -13,6 +13,7 @@ object Versions {
     const val rxjava = "2.1.9"
     const val navigation = "2.2.2"
     const val dokka = "0.10.1"
+    const val moshi = "1.9.2"
 }
 
 object Dependencies {
@@ -53,6 +54,10 @@ object Dependencies {
         const val test_junit_params = "org.junit.jupiter:junit-jupiter-params:5.2.0"
         const val test_mockk = "io.mockk:mockk:1.8.7"
         const val test_assertj = "org.assertj:assertj-core:3.11.1"
+    }
+
+    object Moshi {
+        const val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
     }
 
     const val material_components = "com.google.android.material:material:1.2.1"
