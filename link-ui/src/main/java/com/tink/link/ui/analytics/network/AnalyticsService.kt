@@ -11,6 +11,7 @@ import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.service.network.Environment
 import okhttp3.OkHttpClient
 import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.format.DateTimeFormatter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.ByteArrayInputStream
@@ -101,7 +102,7 @@ internal object AnalyticsService {
                     userId = userId,
                     flow = flowInfo?.flow?.name ?: "",
                     view = screenEvent.name,
-                    timestamp = ZonedDateTime.now().toString()
+                    timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
                 )
             )
         )
@@ -124,7 +125,7 @@ internal object AnalyticsService {
                     userId = userId,
                     label = null,
                     view = screenEvent.name,
-                    timestamp = ZonedDateTime.now().toString(),
+                    timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
                     product = product,
                     action = interactionEvent.name,
                     device = DEVICE
