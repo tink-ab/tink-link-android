@@ -3,10 +3,9 @@ package com.tink.link.ui.analytics.models
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = false)
 internal enum class AnalyticsEventTypeDto(val value: String) {
     @Json(name = "VIEW_EVENT") VIEW_EVENT("VIEW_EVENT"),
-    @Json(name = "INTERACTION_EVENT") INTERACTION_EVENT("INTERACTION_EVENT"),
+    @Json(name = "INTERACTION_EVENT") INTERACTION_EVENT("INTERACTION_EVENT")
 }
 
 @JsonClass(generateAdapter = true)
@@ -43,7 +42,6 @@ internal data class InteractionEventDto(
     @Json(name = "device") @field:Json(name = "device") var device: String
 )
 
-@JsonClass(generateAdapter = false)
 internal enum class ProductDto(val value: String) {
     @Json(name = "UNDEFINED") UNDEFINED("UNDEFINED"),
     @Json(name = "AUTHORIZE") AUTHORIZE("AUTHORIZE"),
