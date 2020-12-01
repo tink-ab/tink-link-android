@@ -1,13 +1,13 @@
 package com.tink.link.ui.analytics.network
 
 import com.tink.link.ui.analytics.models.AnalyticsEventTypeDto
+import com.tink.link.ui.analytics.models.AnalyticsFlowInfo
+import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.InteractionEventDto
 import com.tink.link.ui.analytics.models.ProductDto
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ViewEventDto
-import com.tink.link.ui.analytics.models.AnalyticsFlowInfo
-import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.service.network.Environment
 import okhttp3.OkHttpClient
 import org.threeten.bp.ZonedDateTime

@@ -32,4 +32,3 @@ internal data class InteractionEventRequest(
     @Json(name = "type") @field:Json(name = "type") var type: AnalyticsEventTypeDto? = null,
     @Json(name = "interactionEvent") @field:Json(name = "interactionEvent") var interactionEvent: InteractionEventDto? = null
 )
-

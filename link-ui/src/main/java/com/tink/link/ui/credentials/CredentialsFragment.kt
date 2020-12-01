@@ -428,7 +428,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 onAwaitingAuthentication = ::handleAuthenticationTask,
                 onError = { error ->
                     val message = error.localizedMessage ?: error.message
-                    ?: getString(R.string.tink_error_unknown)
+                        ?: getString(R.string.tink_error_unknown)
                     lifecycleScope.launchWhenStarted { showError(message) }
                 }
             )
