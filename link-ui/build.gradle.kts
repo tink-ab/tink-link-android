@@ -72,19 +72,6 @@ dependencies {
     implementation(Dependencies.zxing)
 }
 
-// Workaround for https://youtrack.jetbrains.com/issue/KT-32804
-// See thread: https://github.com/google/dagger/issues/1449
-if (project.hasProperty("kapt")) {
-    // Reference for 'kapt' DSL: https://kotlinlang.org/docs/reference/kapt.html#java-compiler-options
-    kapt {
-        // we expect this closure to run over a org.jetbrains.kotlin.gradle.plugin.KaptExtension
-        javacOptions {
-            option("-source", "8")
-            option("-target", "8")
-        }
-    }
-}
-
 apply(from = "../publishing.gradle")
 
 tasks {
