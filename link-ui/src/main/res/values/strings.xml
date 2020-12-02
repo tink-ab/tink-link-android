@@ -50,6 +50,7 @@
   <string name="tink_connection_success_done_button">Done</string>
   <string name="tink_cancel_button">Cancel</string>
   <string name="tink_ok_button">OK</string>
+  <string name="tink_error_credentials_already_exists">You already have a connection to this bank or service.</string>
   <string name="tink_error_unknown">Something went wrong. Please try again later.</string>
   <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
   <string name="tink_credentials_bankId_other_device_button">Open Bank ID on another device</string>

@@ -61,4 +61,5 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+  <string name="tink_error_credentials_already_exists">Vous avez déjà une connexion à cette banque ou ce service.</string>
 </resources>
