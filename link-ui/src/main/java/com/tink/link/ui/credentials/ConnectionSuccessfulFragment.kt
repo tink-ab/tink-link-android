@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ScreenEvent
 import kotlinx.android.synthetic.main.tink_fragment_connection_successful.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 
@@ -28,6 +30,8 @@ internal class ConnectionSuccessfulFragment :
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_SUCCESS)
         }
+
+        TinkLinkTracker.trackScreen(ScreenEvent.SUCCESS_SCREEN)
 
         successTitle.text =
             if (isNewCredentialsCreated) {
