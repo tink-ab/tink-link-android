@@ -505,15 +505,25 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     private fun handleLaunchResult(result: LaunchResult) {
         if (result is LaunchResult.Error) {
             // Something went wrong when launching, show dialog prompt to install or upgrade app
-            showInstallDialog(
-                title = result.title,
-                message = result.message,
-                packageName = result.packageName
-            ) {
-                viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+            if (result.containsInstallInfo()) {
+                showInstallDialog(
+                    title = result.title,
+                    message = result.message,
+                    packageName = result.packageName
+                ) {
+                    viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+                }
+            } else {
+                // Show default authentication app download required message
+                lifecycleScope.launchWhenStarted {
+                    showError(getString(R.string.tink_error_download_authentication_app_required))
+                }
             }
         }
     }
+
+    private fun LaunchResult.Error.containsInstallInfo(): Boolean =
+        title.isNotBlank() && message.isNotBlank() && packageName.isNotBlank()
 
     @UiThread
     private fun showInstallDialog(
@@ -524,7 +534,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     ) {
         lifecycleScope.launchWhenStarted {
             val activity = requireActivity()
-            MaterialAlertDialogBuilder(activity)
+            MaterialAlertDialogBuilder(activity, R.style.Tink_InstallDialogStyle)
                 .apply {
                     setTitle(title)
                     setMessage(message)
