@@ -50,6 +50,7 @@
     <string name="tink_connection_success_done_button">Terminé</string>
     <string name="tink_cancel_button">Annuler</string>
     <string name="tink_ok_button">OK</string>
+    <string name="tink_error_credentials_already_exists">Vous avez déjà une connexion à cette banque ou ce service.</string>
     <string name="tink_error_unknown">Une erreur s\'est produite.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
@@ -61,5 +62,4 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
-  <string name="tink_error_credentials_already_exists">Vous avez déjà une connexion à cette banque ou ce service.</string>
 </resources>
