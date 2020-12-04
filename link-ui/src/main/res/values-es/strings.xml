@@ -51,6 +51,7 @@
     <string name="tink_cancel_button">Cancelar</string>
     <string name="tink_ok_button">Aceptar</string>
     <string name="tink_error_credentials_already_exists">Ya tienes una conexión a este banco o servicio.</string>
+    <string name="tink_error_download_authentication_app_required">App de autenticación requerida</string>
     <string name="tink_error_unknown">Se ha producido un error.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
