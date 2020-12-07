@@ -582,6 +582,11 @@ Context for functionality that requires a user to be set.
 
 |
 
+##### [com.tink.model.user.UserInfo](../com.tink.model.user/-user-info/index.md)
+
+
+|
+
 ##### [com.tink.model.user.UserProfile](../com.tink.model.user/-user-profile/index.md)
 
 
