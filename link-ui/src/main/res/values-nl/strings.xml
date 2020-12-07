@@ -51,8 +51,7 @@
     <string name="tink_cancel_button">Annuleren</string>
     <string name="tink_ok_button">OK</string>
     <string name="tink_error_credentials_already_exists">Je hebt al een koppeling met deze bank of dienst.</string>
-    <!-- TODO: Update translation when available -->
-    <string name="tink_error_download_authentication_app_required">Authentication app download required</string>
+    <string name="tink_error_download_authentication_app_required">Er moet een verificatieapp worden gedownload</string>
     <string name="tink_error_unknown">Er is iets misgegaan.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>
