@@ -7,6 +7,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.tink.link.ui.QrCodeGenerator
 import com.tink.link.ui.R
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ScreenEvent
 import kotlinx.android.synthetic.main.tink_dialog_bank_id_other_device.*
 
 private const val BANK_ID_URI_ARG = "BANK_ID_URI_ARG"
@@ -36,6 +38,7 @@ internal class BankIdOtherDeviceFragment : DialogFragment() {
                         Toast.LENGTH_SHORT
                     )
                     .show()
+                TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
             } else {
                 qrCode.setImageBitmap(qrCodeImage)
             }

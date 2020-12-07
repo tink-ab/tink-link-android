@@ -13,6 +13,7 @@ object Versions {
     const val rxjava = "2.1.9"
     const val navigation = "2.2.2"
     const val dokka = "0.10.1"
+    const val moshi = "1.9.2"
 }
 
 object Dependencies {
@@ -55,6 +56,10 @@ object Dependencies {
         const val test_assertj = "org.assertj:assertj-core:3.11.1"
     }
 
+    object Moshi {
+        const val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
+    }
+
     const val material_components = "com.google.android.material:material:1.2.1"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
@@ -67,7 +72,7 @@ object Dependencies {
     const val zxing = "com.google.zxing:core:3.4.0"
 
     object Tink {
-        private const val coreVersion = "0.5.4"
+        private const val coreVersion = "0.5.6"
         const val core = "com.tink:core:$coreVersion"
     }
 }

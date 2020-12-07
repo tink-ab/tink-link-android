@@ -8,6 +8,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.ui.R
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.extensions.toView
 import kotlinx.android.synthetic.main.tink_dialog_supplemental_information.*
 
@@ -56,7 +58,9 @@ internal class SupplementalInformationFragment : DialogFragment() {
                 supplementalInformationViewModel.sendSupplementalInformation(
                     fields = filledFields,
                     onSuccess = { dismiss() },
-                    onError = { }
+                    onError = {
+                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                    }
                 )
             }
 

@@ -78,9 +78,9 @@ private class TinkCallToActionSpan(
 
     override fun updateDrawState(textPaint: TextPaint) {
         textPaint.apply {
-            isUnderlineText = false
-            color = context.getColorFromAttr(R.attr.tink_colorPrimary)
-            typeface = ResourcesCompat.getFont(context, R.font.tink_font_semi_bold)
+            isUnderlineText = true
+            color = context.getColorFromAttr(R.attr.tink_textColorSecondary)
+            typeface = ResourcesCompat.getFont(context, R.font.tink_font_regular)
         }
     }
 

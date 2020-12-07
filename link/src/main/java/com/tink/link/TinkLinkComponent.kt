@@ -10,6 +10,7 @@ import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import com.tink.model.user.UserInfo
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
 import dagger.Component
@@ -64,6 +65,10 @@ internal abstract class TinkLinkComponent {
 
     internal fun authenticateUser(authenticationCode: String, resultHandler: ResultHandler<User>) {
         accessRepository.authenticate(authenticationCode, resultHandler)
+    }
+
+    internal fun getUserInfo(resultHandler: ResultHandler<UserInfo>) {
+        accessRepository.getUserInfo(resultHandler)
     }
 
     companion object {
