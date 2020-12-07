@@ -50,6 +50,8 @@
     <string name="tink_connection_success_done_button">Fatto</string>
     <string name="tink_cancel_button">Annulla</string>
     <string name="tink_ok_button">Ok</string>
+    <string name="tink_error_credentials_already_exists">Hai già una connessione a questa banca o servizio.</string>
+    <string name="tink_error_download_authentication_app_required">Download dell\'app di autenticazione</string>
     <string name="tink_error_unknown">Si è verificato un problema.</string>
     <!-- TODO: This string will be removed once we update design to use one button for Bank ID -->
     <string name="tink_credentials_bankId_other_device_button">Öppna Bank ID på en annan enhet</string>

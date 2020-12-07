@@ -4,10 +4,7 @@
 
 `fun create(providerName: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, credentialsType: Type, fields: `[`Map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>, statusChangeObserver: `[`StreamObserver`](../../com.tink.service.streaming.publisher/-stream-observer/index.md)`<`[`CredentialsStatus`](../-credentials-status/index.md)`>, items: `[`Set`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)`<`[`RefreshableItem`](../../com.tink.model.credentials/-refreshable-item/index.md)`>? = null): `[`StreamSubscription`](../../com.tink.service.streaming.publisher/-stream-subscription/index.md)
 
-Creates a new [Credentials](../../com.tink.model.credentials/-credentials/index.md) object. If the user fails to authenticate the [Credentials](../../com.tink.model.credentials/-credentials/index.md)
-(for example writing the wrong password) a [delete](delete.md) will be triggered.
-Note that the delete is performed asynchronously and is thus not guaranteed to have completed
-when the [statusChangeObserver](create.md#com.tink.link.core.credentials.CredentialsRepository$create(kotlin.String, com.tink.model.credentials.Credentials.Type, kotlin.collections.Map((kotlin.String, )), com.tink.service.streaming.publisher.StreamObserver((com.tink.link.core.credentials.CredentialsStatus)), kotlin.collections.Set((com.tink.model.credentials.RefreshableItem)))/statusChangeObserver) calls [onError](../../com.tink.service.streaming.publisher/-stream-observer/on-error.md).
+Creates a new [Credentials](../../com.tink.model.credentials/-credentials/index.md) object.
 
 ### Parameters
 
