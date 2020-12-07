@@ -1,0 +1,5 @@
+[link](../../index.md) / [com.tink.model.user](../index.md) / [UserInfo](index.md) / [&lt;init&gt;](./-init-.md)
+
+# &lt;init&gt;
+
+`UserInfo(created: Instant = Instant.EPOCH, id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, appId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, profile: `[`UserProfile`](../-user-profile/index.md)`, flags: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`> = emptyList(), username: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, nationalId: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`
