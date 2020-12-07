@@ -18,6 +18,8 @@ android {
         versionCode = TinkLinkVersion.code
         versionName = TinkLinkVersion.name
 
+        buildConfigField("String", "libraryVersion", "\"$versionName\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -54,6 +56,8 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
+    kapt(Dependencies.Moshi.moshi_codegen)
+
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
 
@@ -66,19 +70,6 @@ dependencies {
     implementation(Dependencies.Androidx.browser)
 
     implementation(Dependencies.zxing)
-}
-
-// Workaround for https://youtrack.jetbrains.com/issue/KT-32804
-// See thread: https://github.com/google/dagger/issues/1449
-if (project.hasProperty("kapt")) {
-    // Reference for 'kapt' DSL: https://kotlinlang.org/docs/reference/kapt.html#java-compiler-options
-    kapt {
-        // we expect this closure to run over a org.jetbrains.kotlin.gradle.plugin.KaptExtension
-        javacOptions {
-            option("-source", "8")
-            option("-target", "8")
-        }
-    }
 }
 
 apply(from = "../publishing.gradle")

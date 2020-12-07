@@ -22,6 +22,7 @@ import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
 import org.threeten.bp.Instant
+import retrofit2.HttpException
 import java.util.concurrent.atomic.AtomicBoolean
 
 internal class CredentialsViewModel : ViewModel() {
@@ -251,3 +252,5 @@ private fun List<Provider.Capability>.toRefreshableItems(): Set<RefreshableItem>
     }
     return refreshableItems
 }
+
+fun Throwable.isExistingCredentialsError() = this is HttpException && this.code() == 409

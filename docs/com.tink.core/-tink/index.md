@@ -8,6 +8,7 @@
 
 | Name | Summary |
 |---|---|
+| [getConfiguration](get-configuration.md) | `fun getConfiguration(): `[`TinkConfiguration`](../../com.tink.service.network/-tink-configuration/index.md)`?` |
 | [getUser](get-user.md) | `fun getUser(): `[`User`](../../com.tink.model.user/-user/index.md)`?` |
 | [init](init.md) | `fun init(config: `[`TinkConfiguration`](../../com.tink.service.network/-tink-configuration/index.md)`, context: `[`Context`](https://developer.android.com/reference/android/content/Context.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 | [providerRepository](provider-repository.md) | `fun providerRepository(): `[`ProviderRepository`](../../com.tink.core.provider/-provider-repository/index.md) |
@@ -23,4 +24,5 @@
 | [getConsentContext](../../com.tink.link/get-consent-context.md) | `fun `[`Tink`](./index.md)`.getConsentContext(): `[`ConsentContext`](../../com.tink.link.consent/-consent-context/index.md) |
 | [getTransferRepository](../../com.tink.link.payments/get-transfer-repository.md) | Fetches the [TransferRepository](../../com.tink.link.payments/-transfer-repository/index.md) from Tink.`fun `[`Tink`](./index.md)`.getTransferRepository(): `[`TransferRepository`](../../com.tink.link.payments/-transfer-repository/index.md) |
 | [getUserContext](../../com.tink.link/get-user-context.md) | Fetches the [UserContext](../../com.tink.link.core.user/-user-context/index.md) from Tink if a user is set.`fun `[`Tink`](./index.md)`.getUserContext(): `[`UserContext`](../../com.tink.link.core.user/-user-context/index.md)`?` |
+| [getUserInfo](../../com.tink.link/get-user-info.md) | Fetches the [UserInfo](../../com.tink.model.user/-user-info/index.md) for an authenticated user.`fun `[`Tink`](./index.md)`.getUserInfo(resultHandler: `[`ResultHandler`](../../com.tink.service.handler/-result-handler/index.md)`<`[`UserInfo`](../../com.tink.model.user/-user-info/index.md)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 | [requireUserContext](../../com.tink.link/require-user-context.md) | Fetches the [UserContext](../../com.tink.link.core.user/-user-context/index.md) from Tink if a user is set.`fun `[`Tink`](./index.md)`.requireUserContext(): `[`UserContext`](../../com.tink.link.core.user/-user-context/index.md) |

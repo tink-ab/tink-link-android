@@ -3,6 +3,7 @@ package com.tink.link.core.access
 import com.tink.link.coroutines.launchForResult
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import com.tink.model.user.UserInfo
 import com.tink.service.authorization.UserCreationDescriptor
 import com.tink.service.authorization.UserService
 import com.tink.service.handler.ResultHandler
@@ -38,6 +39,12 @@ internal class AccessRepository @Inject constructor(
         scope.launchForResult(resultHandler) {
             val token = service.authenticate(authenticationCode)
             User.fromAccessToken(token)
+        }
+    }
+
+    internal fun getUserInfo(resultHandler: ResultHandler<UserInfo>) {
+        scope.launchForResult(resultHandler) {
+            service.getUserInfo()
         }
     }
 }

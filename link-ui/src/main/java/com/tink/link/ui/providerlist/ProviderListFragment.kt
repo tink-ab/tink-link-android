@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
+import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.model.provider.ProviderTreeNode
@@ -63,6 +65,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             viewLifecycleOwner,
             Observer {
                 providerAdapter?.providers = it
+                updateSearchView()
                 if (it.size == 1) {
                     // The list consists only of a single provider.
                     val node = it.first()
@@ -82,6 +85,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             viewLifecycleOwner,
             Observer {
                 errorGroup?.visibility = if (it == true) View.VISIBLE else View.GONE
+                if (it == true) TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
             }
         )
 
@@ -92,6 +96,8 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         }
 
         setupToolbar()
+
+        TinkLinkTracker.trackScreen(getScreenEventFromPath(path))
     }
 
     private fun setupToolbar() {
@@ -106,16 +112,21 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             searchMenuItem.icon,
             requireContext().getColorFromAttr(R.attr.tink_colorOnPrimary)
         )
-        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
-            setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
-        } else {
-            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
-        }
+        updateSearchView()
 
         toolbar.setNavigationOnClickListener {
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
                 TinkLinkUiActivity.RESULT_CANCELLED
             )
+        }
+    }
+
+    private fun updateSearchView() {
+        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
+            setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
+            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.VISIBLE
+        } else {
+            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
         }
     }
 
@@ -202,6 +213,26 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                 path.financialInstitutionGroupNodeByName
 
             else -> getString(R.string.tink_provider_list_title)
+        }
+
+    private fun getScreenEventFromPath(path: ProviderListPath): ScreenEvent =
+        when {
+            path.credentialsTypeNodeByType != null ->
+                ScreenEvent.PROVIDER_SELECTION_SCREEN
+
+            path.accessTypeNodeByType != null ->
+                ScreenEvent.CREDENTIALS_TYPE_SELECTION_SCREEN
+
+            path.authenticationUserTypeNodeByType != null ->
+                ScreenEvent.ACCESS_TYPE_SELECTION_SCREEN
+
+            path.financialInstitutionNodeByFinancialInstitution != null ->
+                ScreenEvent.AUTHENTICATION_USER_TYPE_SELECTION_SCREEN
+
+            path.financialInstitutionGroupNodeByName != null ->
+                ScreenEvent.FINANCIAL_INSTITUTION_SELECTION_SCREEN
+
+            else -> ScreenEvent.PROVIDER_SELECTION_SCREEN
         }
 }
 

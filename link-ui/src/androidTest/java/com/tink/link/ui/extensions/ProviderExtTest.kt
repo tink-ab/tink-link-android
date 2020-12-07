@@ -45,7 +45,8 @@ internal class ProviderExtTest {
                 id = "dde2463acf40501389de4fca5a3693a4",
                 name = "Nordea"
             ),
-            capabilities = capabilities
+            capabilities = capabilities,
+            authenticationUserType = Provider.AuthenticationUserType.PERSONAL
         )
 
     @Test
