@@ -4,8 +4,10 @@
 
 `class Custom : `[`Environment`](../index.md)
 
+Represents a custom environment you want to connect to.
+
 ### Constructors
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `Custom(restApiUrl: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, restApiSSLKey: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?)` |
+| [&lt;init&gt;](-init-.md) | Represents a custom environment you want to connect to.`Custom(restUrl: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, sslCertificate: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)` |
