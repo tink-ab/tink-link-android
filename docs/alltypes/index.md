@@ -221,6 +221,8 @@ Possible values are [Success](../com.tink.link.core.credentials/-credentials-sta
 
 ##### [com.tink.service.network.Environment](../com.tink.service.network/-environment/index.md)
 
+Represents the environment you want to connect to.
+
 
 |
 
