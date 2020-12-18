@@ -77,6 +77,18 @@ dependencies {
  }
 ```
 
+### Initializing the `AndroidThreeTen` library
+Currently, Tink Link UI uses the [`AndroidThreeTen`](https://github.com/JakeWharton/ThreeTenABP) library and this needs the timezone information to be initialized in your `Application.onCreate()` method as mentioned [here](https://github.com/JakeWharton/ThreeTenABP#usage).
+```kotlin
+class MyApp : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
+}
+```
+
 ## Tutorials
 - [Tink Link Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-headless-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
 - [Tink Link UI Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
