@@ -390,7 +390,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                         getString(R.string.tink_error_credentials_already_exists)
                     } else {
                         error.localizedMessage ?: error.message
-                        ?: getString(R.string.tink_error_unknown)
+                            ?: getString(R.string.tink_error_unknown)
                     }
                     lifecycleScope.launchWhenStarted { showError(message) }
                 }

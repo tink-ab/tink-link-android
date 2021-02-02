@@ -75,8 +75,10 @@ class MainLinkUiActivity : AppCompatActivity() {
     private fun handleResultFromLinkUi(resultCode: Int, data: Bundle?) {
         when (resultCode) {
             TinkLinkUiActivity.RESULT_SUCCESS -> {
-                when (val result =
-                    data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)) {
+                when (
+                    val result =
+                        data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)
+                ) {
                     is TinkLinkResult.TemporaryUser -> {
                         Toast.makeText(
                             this,
@@ -98,8 +100,10 @@ class MainLinkUiActivity : AppCompatActivity() {
             }
 
             TinkLinkUiActivity.RESULT_FAILURE -> {
-                when (val result =
-                    data?.getParcelable<TinkLinkError>(TinkLinkUiActivity.ERROR_DATA)) {
+                when (
+                    val result =
+                        data?.getParcelable<TinkLinkError>(TinkLinkUiActivity.ERROR_DATA)
+                ) {
                     is TinkLinkError.FailedToAddCredentials -> {
                         for ((id, error) in result.errorsByCredentialsId) {
                             // Handling logic such as deleting the credentials matching the id
