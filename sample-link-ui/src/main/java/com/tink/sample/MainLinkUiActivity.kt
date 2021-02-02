@@ -9,6 +9,7 @@ import com.tink.core.Tink
 import com.tink.link.ui.CredentialsOperation
 import com.tink.link.ui.LinkUser
 import com.tink.link.ui.ProviderSelection
+import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkResult
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
@@ -74,7 +75,8 @@ class MainLinkUiActivity : AppCompatActivity() {
     private fun handleResultFromLinkUi(resultCode: Int, data: Bundle?) {
         when (resultCode) {
             TinkLinkUiActivity.RESULT_SUCCESS -> {
-                when (val result = data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)) {
+                when (val result =
+                    data?.getParcelable<TinkLinkResult>(TinkLinkUiActivity.RESULT_DATA)) {
                     is TinkLinkResult.TemporaryUser -> {
                         Toast.makeText(
                             this,
@@ -94,8 +96,20 @@ class MainLinkUiActivity : AppCompatActivity() {
                     else -> Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
             }
+
+            TinkLinkUiActivity.RESULT_FAILURE -> {
+                when (val result =
+                    data?.getParcelable<TinkLinkError>(TinkLinkUiActivity.ERROR_DATA)) {
+                    is TinkLinkError.FailedToAddCredentials -> {
+                        for ((id, error) in result.errorsByCredentialsId) {
+                            // Handling logic such as deleting the credentials matching the id
+                            return
+                        }
+                    }
+                }
+            }
+
             TinkLinkUiActivity.RESULT_CANCELLED -> { /* Handle cancellation */ }
-            TinkLinkUiActivity.RESULT_FAILURE -> { /* Handle error */ }
         }
     }
 
