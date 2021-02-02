@@ -150,7 +150,7 @@ internal abstract class CredentialsTask(
             Credentials.Status.AUTHENTICATION_ERROR,
             Credentials.Status.TEMPORARY_ERROR,
             Credentials.Status.PERMANENT_ERROR,
-            null -> throw CredentialsFailure(statusPayload?.ifBlank { null })
+            null -> throw CredentialsFailure(this, statusPayload?.ifBlank { null })
         }
 
     override fun unsubscribe() {
@@ -158,4 +158,4 @@ internal abstract class CredentialsTask(
     }
 }
 
-class CredentialsFailure(message: String? = null) : Throwable(message)
+class CredentialsFailure(val credentials: Credentials, message: String? = null) : Throwable(message)
