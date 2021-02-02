@@ -124,7 +124,7 @@ internal abstract class CredentialsTask(
         return oldStatus != newStatus
     }
 
-    private suspend fun Credentials.toCredentialsStatus() =
+    private fun Credentials.toCredentialsStatus() =
         when (status) {
             Credentials.Status.UNKNOWN,
             Credentials.Status.CREATED,
