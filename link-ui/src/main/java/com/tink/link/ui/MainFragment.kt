@@ -116,7 +116,10 @@ internal class MainFragment : Fragment() {
 
         viewModel.onError.observe(
             viewLifecycleOwner,
-            Observer { _ ->
+            Observer { error ->
+                (activity as? TinkLinkUiActivity)?.let { activity ->
+                    activity.linkError = error
+                }
                 statusDialog = CredentialsStatusDialogFactory
                     .createDialog(
                         requireContext(),
