@@ -21,7 +21,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.InteractionEvent
@@ -31,6 +33,7 @@ import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.link.ui.extensions.toTinkLinkErrorInfo
 import com.tink.link.ui.extensions.toView
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
@@ -71,9 +74,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         super.onViewCreated(view, savedInstanceState)
         toolbarWithLogo.toolbarTitleView.text = provider.displayName
         toolbarWithLogo.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                TinkLinkUiActivity.RESULT_CANCELLED
-            )
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                if (activity.linkError == null) {
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
+                } else {
+                    // Since there are some credentials errors, this can be considered a failure
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_FAILURE)
+                }
+            }
         }
 
         TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN)
@@ -144,6 +152,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
             (activity as? TinkLinkUiActivity)?.let {
                 it.credentials = credentials
+                // Remove from credentials error entries if this credentials had an error entry
+                it.removeCredentialsError(credentials.id)
+                // Remove any link error entry
+                it.linkError = null
             }
         }
     }
@@ -368,6 +380,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 fields = fields,
                 onAwaitingAuthentication = ::handleAuthenticationTask,
                 onError = { error ->
+                    if (error is CredentialsFailure) {
+                        // Add credentials error entry for this failed credentials
+                        (activity as? TinkLinkUiActivity)?.let {
+                            it.addCredentialsError(error.credentials.id, error.toTinkLinkErrorInfo())
+                            it.linkError = TinkLinkError.FailedToAddCredentials(it.errorsByCredentialsId)
+                        }
+                    }
                     val message = if (error.isExistingCredentialsError()) {
                         getString(R.string.tink_error_credentials_already_exists)
                     } else {

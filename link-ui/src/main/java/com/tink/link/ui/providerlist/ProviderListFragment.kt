@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.ScreenEvent
@@ -84,8 +85,18 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         viewModel.isError.observe(
             viewLifecycleOwner,
             Observer {
-                errorGroup?.visibility = if (it == true) View.VISIBLE else View.GONE
-                if (it == true) TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                if (it == true) {
+                    (activity as? TinkLinkUiActivity)?.let { activity ->
+                        activity.linkError = TinkLinkError.UnableToFetchProviders
+                    }
+                    errorGroup?.visibility = View.VISIBLE
+                    TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                } else {
+                    (activity as? TinkLinkUiActivity)?.let { activity ->
+                        activity.linkError = null
+                    }
+                    errorGroup?.visibility = View.GONE
+                }
             }
         )
 
@@ -115,9 +126,14 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         updateSearchView()
 
         toolbar.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                TinkLinkUiActivity.RESULT_CANCELLED
-            )
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                val resultCode = if (activity.linkError == TinkLinkError.UnableToFetchProviders) {
+                    TinkLinkUiActivity.RESULT_FAILURE
+                } else {
+                    TinkLinkUiActivity.RESULT_CANCELLED
+                }
+                activity.closeTinkLinkUi(resultCode)
+            }
         }
     }
 
