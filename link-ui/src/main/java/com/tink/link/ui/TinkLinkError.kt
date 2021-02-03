@@ -29,10 +29,10 @@ sealed class TinkLinkError : Parcelable {
     /**
      * Tink Link UI failed to add one or more credentials.
      *
-     * @param errorsByCredentialsId A map of failed credentials ids to [errors][Throwable]
+     * @property errorsByCredentialsId A map of failed credentials ids to [errors][TinkLinkErrorInfo]
      */
     @Parcelize
-    data class FailedToAddCredentials(val errorsByCredentialsId: Map<String, Throwable>) :
+    data class FailedToAddCredentials(val errorsByCredentialsId: Map<String, TinkLinkErrorInfo>) :
         TinkLinkError()
 
     /**

@@ -30,6 +30,8 @@ import kotlinx.android.parcel.Parcelize
  * with the key [RESULT_DATA].
  * For a [failure result][RESULT_FAILURE], a [TinkLinkError] is returned as data bundled with
  * the key [ERROR_DATA].
+ * If there are credentials that could not be added as part of the Tink Link UI flow, a map of
+ * those failed credentials ids to errors will be returned as data bundled with the key [FAILED_CREDENTIALS_DATA]
  * If a [temporary user][TemporaryUser] is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser]
  * which includes the authorization code (String) and the [Credentials] connected to the user.
  * If a permanent user is used for the flow (either [LinkUser.ExistingUser] or [LinkUser.UnauthenticatedUser]),
@@ -46,6 +48,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val RESULT_FAILURE = 103
         const val RESULT_DATA = "resultData"
         const val ERROR_DATA = "errorData"
+        const val FAILED_CREDENTIALS_DATA = "failedCredentialsData"
 
         const val ARG_STYLE = "styleResId"
         const val ARG_SCOPES = "scopes"
@@ -107,13 +110,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
 
     internal var credentials: Credentials? = null
 
-    private val credentialsIdToError: MutableMap<String, Throwable> = mutableMapOf()
-
-    /**
-     * A map of failed credentials ids to [errors][Throwable].
-     * This property can be used to delete any credentials that failed to be added by Tink Link UI.
-     */
-    val errorsByCredentialsId: Map<String, Throwable> = credentialsIdToError
+    private val credentialsIdToError: MutableMap<String, TinkLinkErrorInfo> = mutableMapOf()
+    internal val errorsByCredentialsId: Map<String, TinkLinkErrorInfo> = credentialsIdToError
 
     internal var linkError: TinkLinkError? = null
 
@@ -144,33 +142,29 @@ class TinkLinkUiActivity : AppCompatActivity() {
     }
 
     internal fun closeTinkLinkUi(resultCode: Int) {
-        when (resultCode) {
+        val resultIntent = when (resultCode) {
             RESULT_SUCCESS -> {
                 getTinkLinkResult()
-                    ?.let { result ->
-                        val successIntent =
-                            Intent().apply { putExtras(bundleOf(RESULT_DATA to result)) }
-                        setResult(resultCode, successIntent)
-                    }
-                    ?: setError(resultCode, TinkLinkError.InternalError)
+                    ?.let { Intent().apply { putExtras(bundleOf(RESULT_DATA to it)) } }
+                    ?: getErrorIntent(TinkLinkError.InternalError)
             }
 
-            RESULT_FAILURE -> {
-                setError(resultCode, linkError ?: TinkLinkError.InternalError)
-            }
-
-            else -> {
-                setResult(resultCode)
-            }
+            RESULT_FAILURE -> { getErrorIntent(linkError ?: TinkLinkError.InternalError) }
+            else -> Intent()
         }
+        if (errorsByCredentialsId.isNotEmpty()) {
+            val failedCredentialsDataBundle = Bundle()
+            for ((id, error) in errorsByCredentialsId) {
+                failedCredentialsDataBundle.putParcelable(id, error)
+            }
+            resultIntent.putExtra(FAILED_CREDENTIALS_DATA, failedCredentialsDataBundle)
+        }
+        setResult(resultCode, resultIntent)
         finish()
     }
 
-    private fun setError(resultCode: Int, error: TinkLinkError) {
-        val errorIntent =
-            Intent().apply { putExtras(bundleOf(ERROR_DATA to error)) }
-        setResult(resultCode, errorIntent)
-    }
+    private fun getErrorIntent(error: TinkLinkError): Intent =
+        Intent().apply { putExtras(bundleOf(ERROR_DATA to error)) }
 
     private fun getTinkLinkResult(): TinkLinkResult? =
         if (authorizeUser) {
@@ -181,8 +175,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
             credentials?.let { TinkLinkResult.PermanentUser(it) }
         }
 
-    internal fun addCredentialsError(credentialsId: String, error: Throwable) {
-        credentialsIdToError[credentialsId] = error
+    internal fun addCredentialsError(credentialsId: String, errorInfo: TinkLinkErrorInfo) {
+        credentialsIdToError[credentialsId] = errorInfo
     }
 
     internal fun removeCredentialsError(credentialsId: String) {

@@ -10,6 +10,7 @@ import com.tink.link.ui.CredentialsOperation
 import com.tink.link.ui.LinkUser
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.TinkLinkError
+import com.tink.link.ui.TinkLinkErrorInfo
 import com.tink.link.ui.TinkLinkResult
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.model.user.Scope
@@ -107,7 +108,6 @@ class MainLinkUiActivity : AppCompatActivity() {
                     is TinkLinkError.FailedToAddCredentials -> {
                         for ((id, error) in result.errorsByCredentialsId) {
                             // Handling logic such as deleting the credentials matching the id
-                            return
                         }
                     }
                 }
@@ -115,6 +115,15 @@ class MainLinkUiActivity : AppCompatActivity() {
 
             TinkLinkUiActivity.RESULT_CANCELLED -> { /* Handle cancellation */ }
         }
+
+        data?.getBundle(TinkLinkUiActivity.FAILED_CREDENTIALS_DATA)
+            ?.takeIf { !it.isEmpty }
+            ?.let { bundle ->
+                for (credentialsId in bundle.keySet()) {
+                    val error = bundle.getParcelable<TinkLinkErrorInfo>(credentialsId)
+                    // Handling logic such as deleting the credentials matching the credentialsId
+                }
+            }
     }
 
     companion object {

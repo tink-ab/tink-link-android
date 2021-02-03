@@ -28,6 +28,7 @@ import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.extensions.toTinkLinkErrorInfo
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
@@ -382,7 +383,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                     if (error is CredentialsFailure) {
                         // Add credentials error entry for this failed credentials
                         (activity as? TinkLinkUiActivity)?.let {
-                            it.addCredentialsError(error.credentials.id, error)
+                            it.addCredentialsError(error.credentials.id, error.toTinkLinkErrorInfo())
                             it.linkError = TinkLinkError.FailedToAddCredentials(it.errorsByCredentialsId)
                         }
                     }
