@@ -58,7 +58,7 @@ sealed class TinkLinkErrorInfo : Parcelable {
      * @property message The error message
      */
     @Parcelize
-    data class HttpError(val code: Int, override val message: String): TinkLinkErrorInfo()
+    data class HttpError(val code: Int, override val message: String) : TinkLinkErrorInfo()
 
     /**
      * This represents a generic error that may have occurred.
@@ -66,5 +66,5 @@ sealed class TinkLinkErrorInfo : Parcelable {
      * @property message The error message
      */
     @Parcelize
-    data class InternalError(override val message: String): TinkLinkErrorInfo()
+    data class InternalError(override val message: String) : TinkLinkErrorInfo()
 }
