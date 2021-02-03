@@ -41,3 +41,30 @@ sealed class TinkLinkError : Parcelable {
     @Parcelize
     object InternalError : TinkLinkError()
 }
+
+/**
+ * A wrapper class that provides information about the underlying error causing the [TinkLinkError]
+ *
+ * @property message The error message
+ */
+sealed class TinkLinkErrorInfo : Parcelable {
+
+    abstract val message: String
+
+    /**
+     * This represents an HTTP exception that may have occurred.
+     *
+     * @property code The HTTP error code
+     * @property message The error message
+     */
+    @Parcelize
+    data class HttpError(val code: Int, override val message: String): TinkLinkErrorInfo()
+
+    /**
+     * This represents a generic error that may have occurred.
+     *
+     * @property message The error message
+     */
+    @Parcelize
+    data class InternalError(override val message: String): TinkLinkErrorInfo()
+}
