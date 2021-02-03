@@ -73,12 +73,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         super.onViewCreated(view, savedInstanceState)
         toolbarWithLogo.toolbarTitleView.text = provider.displayName
         toolbarWithLogo.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.let {
-                if (it.linkError == null) {
-                    it.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                if (activity.linkError == null) {
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
                 } else {
                     // Since there are some credentials errors, this can be considered a failure
-                    it.closeTinkLinkUi(TinkLinkUiActivity.RESULT_FAILURE)
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_FAILURE)
                 }
             }
         }
