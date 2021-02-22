@@ -59,7 +59,7 @@ internal class SupplementalInformationFragment : DialogFragment() {
                     fields = filledFields,
                     onSuccess = { dismiss() },
                     onError = {
-                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                     }
                 )
             }

@@ -38,7 +38,7 @@ internal class BankIdOtherDeviceFragment : DialogFragment() {
                         Toast.LENGTH_SHORT
                     )
                     .show()
-                TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
             } else {
                 qrCode.setImageBitmap(qrCodeImage)
             }

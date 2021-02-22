@@ -1,7 +1,7 @@
 package com.tink.link.ui.analytics.models
 
 internal enum class ScreenEvent {
-    ERROR,
+    ERROR_SCREEN,
     SUCCESS_SCREEN,
     SUPPLEMENTAL_INFORMATION_SCREEN,
     PROVIDER_SELECTION_SCREEN,

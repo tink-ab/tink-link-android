@@ -133,7 +133,7 @@ internal class MainFragment : Fragment() {
                     }
                     .also {
                         it.show()
-                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                     }
             }
         )

@@ -90,7 +90,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                         activity.linkError = TinkLinkError.UnableToFetchProviders
                     }
                     errorGroup?.visibility = View.VISIBLE
-                    TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                    TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                 } else {
                     (activity as? TinkLinkUiActivity)?.let { activity ->
                         activity.linkError = null

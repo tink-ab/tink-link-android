@@ -422,7 +422,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     @UiThread
     private fun showError(message: String) {
         showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
-        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
     }
 
     @UiThread
