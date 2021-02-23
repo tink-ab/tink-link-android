@@ -114,16 +114,19 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
         activity
             ?.onBackPressedDispatcher
-            ?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    TinkLinkTracker.trackInteraction(
-                        InteractionEvent.BACK,
-                        getScreenEventFromPath(path)
-                    )
-                    isEnabled = false
-                    activity?.onBackPressed()
+            ?.addCallback(
+                viewLifecycleOwner,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        TinkLinkTracker.trackInteraction(
+                            InteractionEvent.BACK,
+                            getScreenEventFromPath(path)
+                        )
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
                 }
-            })
+            )
     }
 
     private fun setupToolbar() {

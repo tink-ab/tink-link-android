@@ -178,17 +178,20 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         activity
             ?.onBackPressedDispatcher
-            ?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    TinkLinkTracker.trackInteraction(
-                        InteractionEvent.BACK,
-                        ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
-                        getScreenEventData()
-                    )
-                    isEnabled = false
-                    activity?.onBackPressed()
+            ?.addCallback(
+                viewLifecycleOwner,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        TinkLinkTracker.trackInteraction(
+                            InteractionEvent.BACK,
+                            ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                            getScreenEventData()
+                        )
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
                 }
-            })
+            )
     }
 
     private fun showFullCredentialsFlow() {

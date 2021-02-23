@@ -85,19 +85,22 @@ internal class ConnectionSuccessfulFragment :
 
         activity
             ?.onBackPressedDispatcher
-            ?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    TinkLinkTracker.trackInteraction(
-                        InteractionEvent.BACK,
-                        ScreenEvent.SUCCESS_SCREEN,
-                        ScreenEventData(
-                            providerName = viewModel.credentials.value?.providerName,
-                            credentialsId = viewModel.credentials.value?.id
+            ?.addCallback(
+                viewLifecycleOwner,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        TinkLinkTracker.trackInteraction(
+                            InteractionEvent.BACK,
+                            ScreenEvent.SUCCESS_SCREEN,
+                            ScreenEventData(
+                                providerName = viewModel.credentials.value?.providerName,
+                                credentialsId = viewModel.credentials.value?.id
+                            )
                         )
-                    )
-                    isEnabled = false
-                    activity?.onBackPressed()
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
                 }
-            })
+            )
     }
 }
