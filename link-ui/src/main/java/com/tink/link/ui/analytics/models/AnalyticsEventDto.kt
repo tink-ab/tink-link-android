@@ -22,6 +22,8 @@ internal data class ViewEventDto(
     @Json(name = "platform") @field:Json(name = "platform") var platform: String,
     @Json(name = "device") @field:Json(name = "device") var device: String,
     @Json(name = "userId") @field:Json(name = "userId") var userId: String,
+    @Json(name = "providerName") @field:Json(name = "providerName") var providerName: String? = null,
+    @Json(name = "credentialsId") @field:Json(name = "credentialsId") var credentialsId: String? = null,
     @Json(name = "flow") @field:Json(name = "flow") var flow: String,
     @Json(name = "view") @field:Json(name = "view") var view: String,
     @Json(name = "timestamp") @field:Json(name = "timestamp") var timestamp: String
@@ -36,6 +38,8 @@ internal data class InteractionEventDto(
     @Json(name = "clientId") @field:Json(name = "clientId") var clientId: String,
     @Json(name = "sessionId") @field:Json(name = "sessionId") var sessionId: String,
     @Json(name = "userId") @field:Json(name = "userId") var userId: String,
+    @Json(name = "providerName") @field:Json(name = "providerName") var providerName: String? = null,
+    @Json(name = "credentialsId") @field:Json(name = "credentialsId") var credentialsId: String? = null,
     @Json(name = "label") @field:Json(name = "label") var label: String? = null,
     @Json(name = "view") @field:Json(name = "view") var view: String,
     @Json(name = "timestamp") @field:Json(name = "timestamp") var timestamp: String,

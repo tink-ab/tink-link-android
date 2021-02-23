@@ -18,6 +18,7 @@ import com.tink.link.getUserInfo
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
@@ -30,12 +31,12 @@ const val FRAGMENT_ARG_CREDENTIALS_OPERATION = "credentialsOperationArg"
 internal class MainFragment : Fragment() {
 
     private val linkUser: LinkUser by lazy {
-        requireNotNull(arguments?.getParcelable<LinkUser>(FRAGMENT_ARG_LINK_USER))
+        requireNotNull(arguments?.getParcelable(FRAGMENT_ARG_LINK_USER))
     }
 
     private val credentialsOperation: CredentialsOperation by lazy {
         requireNotNull(
-            arguments?.getParcelable<CredentialsOperation>(FRAGMENT_ARG_CREDENTIALS_OPERATION)
+            arguments?.getParcelable(FRAGMENT_ARG_CREDENTIALS_OPERATION)
         )
     }
 
@@ -107,36 +108,42 @@ internal class MainFragment : Fragment() {
             }
         }
 
-        viewModel.credentialsToProvider.observe(
-            viewLifecycleOwner,
-            Observer { credentialsToProvider ->
-                launchFlowForCredentials(credentialsToProvider)
-            }
-        )
+        viewModel.credentialsToProvider.observe(viewLifecycleOwner, { credentialsToProvider ->
+            launchFlowForCredentials(credentialsToProvider)
+        })
 
-        viewModel.onError.observe(
-            viewLifecycleOwner,
-            Observer { error ->
-                (activity as? TinkLinkUiActivity)?.let { activity ->
-                    activity.linkError = error
-                }
-                statusDialog = CredentialsStatusDialogFactory
-                    .createDialog(
-                        requireContext(),
-                        CredentialsStatusDialogFactory.Type.ERROR,
-                        getString(R.string.tink_error_unknown)
-                    ) {
-                        statusDialog?.dismiss()
-                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                            TinkLinkUiActivity.RESULT_FAILURE
-                        )
-                    }
-                    .also {
-                        it.show()
-                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
-                    }
+        viewModel.onError.observe(viewLifecycleOwner, { error ->
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                activity.linkError = error
             }
-        )
+            statusDialog = CredentialsStatusDialogFactory
+                .createDialog(
+                    requireContext(),
+                    CredentialsStatusDialogFactory.Type.ERROR,
+                    getString(R.string.tink_error_unknown)
+                ) {
+                    statusDialog?.dismiss()
+                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                        TinkLinkUiActivity.RESULT_FAILURE
+                    )
+                }
+                .also {
+                    it.show()
+                    val credentialsId: String? = credentialsOperation.credentialsId
+                    val providerName = if (error is TinkLinkError.ProviderNotFound) {
+                        error.providerName
+                    } else {
+                        null
+                    }
+                    TinkLinkTracker.trackScreen(
+                        ScreenEvent.ERROR_SCREEN,
+                        ScreenEventData(
+                            providerName = providerName,
+                            credentialsId = credentialsId
+                        )
+                    )
+                }
+        })
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {

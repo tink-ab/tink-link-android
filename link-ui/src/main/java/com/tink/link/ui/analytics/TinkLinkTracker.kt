@@ -4,6 +4,7 @@ import com.tink.link.ui.CredentialsOperation
 import com.tink.link.ui.analytics.models.AppInfo
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.analytics.models.toFlowInfo
 import com.tink.link.ui.analytics.network.AnalyticsService
 import kotlinx.coroutines.CoroutineScope
@@ -25,15 +26,19 @@ internal object TinkLinkTracker {
         AnalyticsService.initialize(clientId, userId, market, appInfo, operation.toFlowInfo())
     }
 
-    fun trackScreen(screenEvent: ScreenEvent) {
+    fun trackScreen(screenEvent: ScreenEvent, screenEventData: ScreenEventData? = null) {
         scope.launch {
-            AnalyticsService.sendScreenEvent(screenEvent)
+            AnalyticsService.sendScreenEvent(screenEvent, screenEventData)
         }
     }
 
-    fun trackInteraction(interactionEvent: InteractionEvent, screenEvent: ScreenEvent) {
+    fun trackInteraction(
+        interactionEvent: InteractionEvent,
+        screenEvent: ScreenEvent,
+        screenEventData: ScreenEventData? = null
+    ) {
         scope.launch {
-            AnalyticsService.sendInteractionEvent(interactionEvent, screenEvent)
+            AnalyticsService.sendInteractionEvent(interactionEvent, screenEvent, screenEventData)
         }
     }
 }

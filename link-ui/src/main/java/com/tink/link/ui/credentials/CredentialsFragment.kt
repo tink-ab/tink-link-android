@@ -28,6 +28,7 @@ import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
@@ -84,7 +85,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
-        TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN)
+        TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN, getScreenEventData())
 
         provider.images?.icon?.let {
             Picasso.get().load(it).into(toolbarWithLogo.logoView)
@@ -367,7 +368,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
             TinkLinkTracker.trackInteraction(
                 InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
             )
 
             val fields = credentialsFields.children
@@ -422,7 +424,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     @UiThread
     private fun showError(message: String) {
         showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
-        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
+        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN, getScreenEventData())
     }
 
     @UiThread
@@ -436,7 +438,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
             TinkLinkTracker.trackInteraction(
                 InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
             )
 
             val fields = credentialsFields.children
@@ -468,7 +471,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 is AuthenticationTask.SupplementalInformation -> {
                     SupplementalInformationFragment.newInstance(authenticationTask)
                         .show(childFragmentManager, null)
-                    TinkLinkTracker.trackScreen(ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN)
+                    TinkLinkTracker.trackScreen(
+                        ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN,
+                        getScreenEventData()
+                    )
                 }
             }
         }
@@ -582,6 +588,17 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             )
         )
     }
+
+    private fun getScreenEventData(): ScreenEventData =
+        ScreenEventData(
+            providerName = provider.name,
+            credentialsId = when (val operationArgs = credentialsOperationArgs) {
+                is CredentialsOperationArgs.Create -> viewModel.credentials.value?.id
+                is CredentialsOperationArgs.Update -> operationArgs.credentials.id
+                is CredentialsOperationArgs.Authenticate -> operationArgs.credentials.id
+                is CredentialsOperationArgs.Refresh -> operationArgs.credentials.id
+            }
+        )
 }
 
 sealed class CredentialsOperationArgs : Parcelable {

@@ -11,3 +11,8 @@ internal enum class ScreenEvent {
     CREDENTIALS_TYPE_SELECTION_SCREEN,
     SUBMIT_CREDENTIALS_SCREEN
 }
+
+internal data class ScreenEventData(
+    val providerName: String?,
+    val credentialsId: String?
+)

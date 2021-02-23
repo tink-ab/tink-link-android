@@ -10,6 +10,7 @@ import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import kotlinx.android.synthetic.main.tink_fragment_connection_successful.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.toolbar
 
@@ -31,7 +32,13 @@ internal class ConnectionSuccessfulFragment :
             (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(TinkLinkUiActivity.RESULT_SUCCESS)
         }
 
-        TinkLinkTracker.trackScreen(ScreenEvent.SUCCESS_SCREEN)
+        TinkLinkTracker.trackScreen(
+            ScreenEvent.SUCCESS_SCREEN,
+            ScreenEventData(
+                providerName = viewModel.credentials.value?.providerName,
+                credentialsId = viewModel.credentials.value?.id
+            )
+        )
 
         successTitle.text =
             if (isNewCredentialsCreated) {

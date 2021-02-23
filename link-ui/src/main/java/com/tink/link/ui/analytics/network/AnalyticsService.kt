@@ -7,6 +7,7 @@ import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.InteractionEventDto
 import com.tink.link.ui.analytics.models.ProductDto
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.analytics.models.ViewEventDto
 import okhttp3.OkHttpClient
 import org.threeten.bp.ZonedDateTime
@@ -66,7 +67,7 @@ internal object AnalyticsService {
         sessionId = java.util.UUID.randomUUID().toString()
     }
 
-    suspend fun sendScreenEvent(screenEvent: ScreenEvent) {
+    suspend fun sendScreenEvent(screenEvent: ScreenEvent, screenEventData: ScreenEventData?) {
         if (!isInitialized) return
         api.sendViewEvent(
             ViewEventRequest(
@@ -84,6 +85,8 @@ internal object AnalyticsService {
                     platform = PLATFORM,
                     device = DEVICE,
                     userId = userId,
+                    providerName = screenEventData?.providerName ?: "",
+                    credentialsId = screenEventData?.credentialsId ?: "",
                     flow = flowInfo?.flow?.name ?: "",
                     view = screenEvent.name,
                     timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
@@ -94,7 +97,8 @@ internal object AnalyticsService {
 
     suspend fun sendInteractionEvent(
         interactionEvent: InteractionEvent,
-        screenEvent: ScreenEvent
+        screenEvent: ScreenEvent,
+        screenEventData: ScreenEventData?
     ) {
         if (!isInitialized) return
         api.sendInteractionEvent(
@@ -108,6 +112,8 @@ internal object AnalyticsService {
                     clientId = clientId,
                     sessionId = sessionId,
                     userId = userId,
+                    providerName = screenEventData?.providerName ?: "",
+                    credentialsId = screenEventData?.credentialsId ?: "",
                     label = null,
                     view = screenEvent.name,
                     timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
