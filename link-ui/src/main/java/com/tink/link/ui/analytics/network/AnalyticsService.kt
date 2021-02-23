@@ -3,6 +3,8 @@ package com.tink.link.ui.analytics.network
 import com.tink.link.ui.analytics.models.AnalyticsEventTypeDto
 import com.tink.link.ui.analytics.models.AnalyticsFlowInfo
 import com.tink.link.ui.analytics.models.AppInfo
+import com.tink.link.ui.analytics.models.ApplicationEvent
+import com.tink.link.ui.analytics.models.ApplicationEventDto
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.InteractionEventDto
 import com.tink.link.ui.analytics.models.ProductDto
@@ -120,6 +122,38 @@ internal object AnalyticsService {
                     product = product,
                     action = interactionEvent.name,
                     device = DEVICE
+                )
+            )
+        )
+    }
+
+    suspend fun sendApplicationEvent(
+        applicationEvent: ApplicationEvent,
+        screenEventData: ScreenEventData?
+    ) {
+        if (!isInitialized) return
+        Timber.d("mohanlog: $applicationEvent, $screenEventData")
+        api.sendApplicationEvent(
+            ApplicationEventRequest(
+                type = AnalyticsEventTypeDto.APPLICATION_EVENT,
+                applicationEvent = ApplicationEventDto(
+                    appName = appInfo?.appName,
+                    appIdentifier = appInfo?.appPackageName,
+                    appVersion = appInfo?.appVersion,
+                    market = market,
+                    clientId = clientId,
+                    sessionId = sessionId,
+                    isTest = flowInfo?.isTest ?: false,
+                    product = product,
+                    version = appInfo?.version ?: "",
+                    platform = PLATFORM,
+                    device = DEVICE,
+                    userId = userId,
+                    providerName = screenEventData?.providerName ?: "",
+                    credentialsId = screenEventData?.credentialsId ?: "",
+                    flow = flowInfo?.flow?.name ?: "",
+                    type = applicationEvent.name,
+                    timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
                 )
             )
         )

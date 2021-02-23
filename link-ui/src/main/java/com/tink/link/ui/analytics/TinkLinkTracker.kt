@@ -2,6 +2,7 @@ package com.tink.link.ui.analytics
 
 import com.tink.link.ui.CredentialsOperation
 import com.tink.link.ui.analytics.models.AppInfo
+import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
@@ -39,6 +40,15 @@ internal object TinkLinkTracker {
     ) {
         scope.launch {
             AnalyticsService.sendInteractionEvent(interactionEvent, screenEvent, screenEventData)
+        }
+    }
+
+    fun trackApplicationEvent(
+        applicationEvent: ApplicationEvent,
+        screenEventData: ScreenEventData? = null
+    ) {
+        scope.launch {
+            AnalyticsService.sendApplicationEvent(applicationEvent, screenEventData)
         }
     }
 }
