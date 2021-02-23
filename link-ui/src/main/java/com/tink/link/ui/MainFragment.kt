@@ -179,6 +179,7 @@ internal class MainFragment : Fragment() {
                     TinkLinkTracker.initialize(
                         clientId = Tink.getConfiguration()?.oAuthClientId ?: "",
                         userId = userInfo.id,
+                        market = userInfo.profile.market,
                         appInfo = getAppInfo(context),
                         operation = credentialsOperation
                     )

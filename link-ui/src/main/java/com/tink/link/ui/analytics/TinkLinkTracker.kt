@@ -15,8 +15,14 @@ internal object TinkLinkTracker {
 
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
-    fun initialize(clientId: String, userId: String, appInfo: AppInfo, operation: CredentialsOperation) {
-        AnalyticsService.initialize(clientId, userId, appInfo, operation.toFlowInfo())
+    fun initialize(
+        clientId: String,
+        userId: String,
+        market: String,
+        appInfo: AppInfo,
+        operation: CredentialsOperation
+    ) {
+        AnalyticsService.initialize(clientId, userId, market, appInfo, operation.toFlowInfo())
     }
 
     fun trackScreen(screenEvent: ScreenEvent) {

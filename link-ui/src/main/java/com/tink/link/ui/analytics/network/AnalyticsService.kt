@@ -38,6 +38,8 @@ internal object AnalyticsService {
 
     private var userId: String = ""
 
+    private var market: String = ""
+
     private var appInfo: AppInfo? = null
 
     private var flowInfo: AnalyticsFlowInfo? = null
@@ -47,11 +49,13 @@ internal object AnalyticsService {
     fun initialize(
         clientId: String,
         userId: String,
+        market: String,
         appInfo: AppInfo,
         flowInfo: AnalyticsFlowInfo
     ) {
         this.clientId = clientId
         this.userId = userId
+        this.market = market
         this.appInfo = appInfo
         this.flowInfo = flowInfo
         initSession()
@@ -71,6 +75,7 @@ internal object AnalyticsService {
                     appName = appInfo?.appName,
                     appIdentifier = appInfo?.appPackageName,
                     appVersion = appInfo?.appVersion,
+                    market = market,
                     clientId = clientId,
                     sessionId = sessionId,
                     isTest = flowInfo?.isTest ?: false,
@@ -99,6 +104,7 @@ internal object AnalyticsService {
                     appName = appInfo?.appName,
                     appIdentifier = appInfo?.appPackageName,
                     appVersion = appInfo?.appVersion,
+                    market = market,
                     clientId = clientId,
                     sessionId = sessionId,
                     userId = userId,
