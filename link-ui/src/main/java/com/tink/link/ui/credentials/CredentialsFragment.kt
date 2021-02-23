@@ -27,6 +27,7 @@ import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
@@ -139,6 +140,15 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 }
 
                 else -> { }
+            }
+        }
+
+        viewModel.authenticationSuccessfulEvent.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let { _ ->
+                TinkLinkTracker.trackApplicationEvent(
+                    ApplicationEvent.AUTHENTICATION_SUCCESSFUL,
+                    getScreenEventData()
+                )
             }
         }
 
@@ -376,9 +386,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun areFieldsValid(): Boolean {
-        return credentialsFields.children
+        val isValid = credentialsFields.children
             .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
+        if (!isValid) {
+            sendApplicationEvent(ApplicationEvent.CREDENTIALS_VALIDATION_FAILED)
+        }
+        return isValid
     }
 
     private fun createCredentials() {
@@ -396,6 +410,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
+
+            if (fields.isNotEmpty()) {
+                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
+            }
 
             viewModel.createCredentials(
                 provider = provider,
@@ -467,6 +485,10 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 .map { it.getFilledField() }
                 .toList()
 
+            if (fields.isNotEmpty()) {
+                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
+            }
+
             viewModel.updateCredentials(
                 id = credentialsId,
                 provider = provider,
@@ -485,6 +507,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         lifecycleScope.launchWhenResumed {
             when (authenticationTask) {
                 is AuthenticationTask.ThirdPartyAuthentication -> {
+                    sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
                     handleThirdPartyAuthentication(authenticationTask)
                 }
 
@@ -619,6 +642,19 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 is CredentialsOperationArgs.Refresh -> operationArgs.credentials.id
             }
         )
+
+    private fun sendApplicationEvent(event: ApplicationEvent) {
+        val isCredentialsSubmittedEvent =
+            event == ApplicationEvent.CREDENTIALS_SUBMITTED && provider.accessType == Provider.AccessType.OTHER
+        val isAuthenticationInitializedEvent =
+            event == ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED && provider.accessType == Provider.AccessType.OPEN_BANKING
+        val isValidationFailedEvent =
+            event == ApplicationEvent.CREDENTIALS_VALIDATION_FAILED && provider.accessType == Provider.AccessType.OTHER
+
+        if (isCredentialsSubmittedEvent || isAuthenticationInitializedEvent || isValidationFailedEvent) {
+            TinkLinkTracker.trackApplicationEvent(event, getScreenEventData())
+        }
+    }
 }
 
 sealed class CredentialsOperationArgs : Parcelable {

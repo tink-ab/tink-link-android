@@ -17,6 +17,7 @@ import com.tink.link.createTemporaryUser
 import com.tink.link.getUserInfo
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.AppInfo
+import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.credentials.CredentialsOperationArgs
@@ -173,6 +174,7 @@ internal class MainFragment : Fragment() {
             else -> null
         }
         if (operationArgs != null) {
+            sendApplicationEvent(credentialsOperation)
             findNavController().navigate(
                 MainFragmentDirections.actionMainFragmentToCredentialsFragment(operationArgs)
             )
@@ -212,4 +214,34 @@ internal class MainFragment : Fragment() {
             appVersion = appVersionName
         )
     }
+
+    private fun sendApplicationEvent(credentialsOperation: CredentialsOperation) {
+        when (val operation = credentialsOperation) {
+            is CredentialsOperation.Create -> {
+                val screenEventData = ScreenEventData(
+                    providerName = operation.getProviderNameIfAvailable(),
+                    credentialsId = operation.credentialsId
+                )
+                TinkLinkTracker.trackApplicationEvent(
+                    operation.toApplicationEvent(),
+                    screenEventData
+                )
+            }
+            else -> { }
+        }
+    }
+
+    private fun CredentialsOperation.Create.toApplicationEvent(): ApplicationEvent =
+        if (providerSelection is ProviderSelection.SingleProvider) {
+            ApplicationEvent.INITIALIZED_WITH_PROVIDER
+        } else {
+            ApplicationEvent.INITIALIZED_WITHOUT_PROVIDER
+        }
+
+    private fun CredentialsOperation.Create.getProviderNameIfAvailable(): String? =
+        if (providerSelection is ProviderSelection.SingleProvider) {
+            providerSelection.name
+        } else {
+            null
+        }
 }
