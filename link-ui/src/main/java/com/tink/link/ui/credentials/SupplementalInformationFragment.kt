@@ -1,6 +1,7 @@
 package com.tink.link.ui.credentials
 
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.core.view.children
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.ui.R
 import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.extensions.toView
@@ -79,6 +81,18 @@ internal class SupplementalInformationFragment : DialogFragment() {
         }
 
         return dialog
+    }
+
+    override fun onDismiss(dialog: DialogInterface) {
+        TinkLinkTracker.trackInteraction(
+            InteractionEvent.BACK,
+            ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN,
+            ScreenEventData(
+                providerName = credentialsViewModel.credentials.value?.providerName,
+                credentialsId = credentialsViewModel.credentials.value?.id
+            )
+        )
+        super.onDismiss(dialog)
     }
 
     companion object {

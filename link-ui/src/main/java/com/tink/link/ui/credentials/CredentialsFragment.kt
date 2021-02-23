@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
@@ -75,6 +76,11 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         super.onViewCreated(view, savedInstanceState)
         toolbarWithLogo.toolbarTitleView.text = provider.displayName
         toolbarWithLogo.setNavigationOnClickListener {
+            TinkLinkTracker.trackInteraction(
+                InteractionEvent.CLOSE,
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
+            )
             (activity as? TinkLinkUiActivity)?.let { activity ->
                 if (activity.linkError == null) {
                     activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
@@ -159,6 +165,20 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 it.linkError = null
             }
         }
+
+        activity
+            ?.onBackPressedDispatcher
+            ?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    TinkLinkTracker.trackInteraction(
+                        InteractionEvent.BACK,
+                        ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                        getScreenEventData()
+                    )
+                    isEnabled = false
+                    activity?.onBackPressed()
+                }
+            })
     }
 
     private fun showFullCredentialsFlow() {
