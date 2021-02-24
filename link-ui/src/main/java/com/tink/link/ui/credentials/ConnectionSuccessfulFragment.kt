@@ -89,8 +89,9 @@ internal class ConnectionSuccessfulFragment :
                 viewLifecycleOwner,
                 object : OnBackPressedCallback(true) {
                     override fun handleOnBackPressed() {
+                        // Since pressing back here exits the flow, we can track this as a CLOSE event
                         TinkLinkTracker.trackInteraction(
-                            InteractionEvent.BACK,
+                            InteractionEvent.CLOSE,
                             ScreenEvent.SUCCESS_SCREEN,
                             ScreenEventData(
                                 providerName = viewModel.credentials.value?.providerName,
