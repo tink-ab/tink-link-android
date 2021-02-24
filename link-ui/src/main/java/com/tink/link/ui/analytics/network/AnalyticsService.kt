@@ -132,7 +132,6 @@ internal object AnalyticsService {
         screenEventData: ScreenEventData?
     ) {
         if (!isInitialized) return
-        Timber.d("mohanlog: $applicationEvent, $screenEventData")
         api.sendApplicationEvent(
             ApplicationEventRequest(
                 type = AnalyticsEventTypeDto.APPLICATION_EVENT,
