@@ -179,7 +179,6 @@ internal class MainFragment : Fragment() {
             else -> null
         }
         if (operationArgs != null) {
-            sendApplicationEvent(credentialsOperation)
             findNavController().navigate(
                 MainFragmentDirections.actionMainFragmentToCredentialsFragment(operationArgs)
             )
@@ -197,6 +196,7 @@ internal class MainFragment : Fragment() {
                         appInfo = getAppInfo(context),
                         operation = credentialsOperation
                     )
+                    sendApplicationEvent(credentialsOperation)
                 },
                 { }
             )
