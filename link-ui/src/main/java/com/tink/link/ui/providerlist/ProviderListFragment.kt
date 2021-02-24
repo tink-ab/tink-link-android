@@ -2,6 +2,7 @@ package com.tink.link.ui.providerlist
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
@@ -15,6 +16,7 @@ import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.extensions.getColorFromAttr
@@ -90,7 +92,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                         activity.linkError = TinkLinkError.UnableToFetchProviders
                     }
                     errorGroup?.visibility = View.VISIBLE
-                    TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                    TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                 } else {
                     (activity as? TinkLinkUiActivity)?.let { activity ->
                         activity.linkError = null
@@ -109,6 +111,22 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         setupToolbar()
 
         TinkLinkTracker.trackScreen(getScreenEventFromPath(path))
+
+        activity
+            ?.onBackPressedDispatcher
+            ?.addCallback(
+                viewLifecycleOwner,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        TinkLinkTracker.trackInteraction(
+                            InteractionEvent.BACK,
+                            getScreenEventFromPath(path)
+                        )
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
+                }
+            )
     }
 
     private fun setupToolbar() {
@@ -126,6 +144,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         updateSearchView()
 
         toolbar.setNavigationOnClickListener {
+            TinkLinkTracker.trackInteraction(
+                InteractionEvent.CLOSE,
+                getScreenEventFromPath(path)
+            )
             (activity as? TinkLinkUiActivity)?.let { activity ->
                 val resultCode = if (activity.linkError == TinkLinkError.UnableToFetchProviders) {
                     TinkLinkUiActivity.RESULT_FAILURE
