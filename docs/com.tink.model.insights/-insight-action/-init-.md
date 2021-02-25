@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`InsightAction(label: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, data: Data)`
+`InsightAction(label: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, actionType: Type, data: Data)`

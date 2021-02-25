@@ -26,7 +26,7 @@
 | [com.tink.model.misc](com.tink.model.misc/index.md) |  |
 | [com.tink.model.provider](com.tink.model.provider/index.md) |  |
 | [com.tink.model.relations](com.tink.model.relations/index.md) |  |
-| [com.tink.model.statistic](com.tink.model.statistic/index.md) |  |
+| [com.tink.model.statistics](com.tink.model.statistics/index.md) |  |
 | [com.tink.model.time](com.tink.model.time/index.md) |  |
 | [com.tink.model.transaction](com.tink.model.transaction/index.md) |  |
 | [com.tink.model.transfer](com.tink.model.transfer/index.md) |  |
@@ -34,17 +34,24 @@
 | [com.tink.service.account](com.tink.service.account/index.md) |  |
 | [com.tink.service.authentication](com.tink.service.authentication/index.md) |  |
 | [com.tink.service.authorization](com.tink.service.authorization/index.md) |  |
+| [com.tink.service.budget](com.tink.service.budget/index.md) |  |
 | [com.tink.service.category](com.tink.service.category/index.md) |  |
 | [com.tink.service.consent](com.tink.service.consent/index.md) |  |
 | [com.tink.service.credentials](com.tink.service.credentials/index.md) |  |
 | [com.tink.service.di](com.tink.service.di/index.md) |  |
 | [com.tink.service.handler](com.tink.service.handler/index.md) |  |
+| [com.tink.service.insight](com.tink.service.insight/index.md) |  |
 | [com.tink.service.misc](com.tink.service.misc/index.md) |  |
 | [com.tink.service.network](com.tink.service.network/index.md) |  |
+| [com.tink.service.observer](com.tink.service.observer/index.md) |  |
 | [com.tink.service.provider](com.tink.service.provider/index.md) |  |
+| [com.tink.service.statistics](com.tink.service.statistics/index.md) |  |
 | [com.tink.service.streaming](com.tink.service.streaming/index.md) |  |
 | [com.tink.service.streaming.publisher](com.tink.service.streaming.publisher/index.md) |  |
+| [com.tink.service.time](com.tink.service.time/index.md) |  |
+| [com.tink.service.transaction](com.tink.service.transaction/index.md) |  |
 | [com.tink.service.transfer](com.tink.service.transfer/index.md) |  |
+| [com.tink.service.user](com.tink.service.user/index.md) |  |
 
 ### Index
 

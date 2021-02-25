@@ -2,10 +2,21 @@ $dokka.format:gfm
 $dokka.linkExtension:md
 $dokka.location:com.tink.model.provider$toProviderTree(kotlin.collections.List((com.tink.model.provider.Provider)))com.tink.model.provider/kotlin.collections.-list/to-provider-tree.md
 $dokka.location:com.tink.service.account$toCoreModel(com.tink.rest.models.Account)com.tink.service.account/com.tink.rest.models.-account/to-core-model.md
+$dokka.location:com.tink.service.budget$toCoreModel(com.tink.rest.models.Budget)com.tink.service.budget/com.tink.rest.models.-budget/to-core-model.md
+$dokka.location:com.tink.service.budget$toCoreModel(com.tink.rest.models.BudgetPeriod, com.tink.model.misc.Amount)com.tink.service.budget/com.tink.rest.models.-budget-period/to-core-model.md
+$dokka.location:com.tink.service.budget$toCoreModel(com.tink.rest.models.BudgetSummary)com.tink.service.budget/com.tink.rest.models.-budget-summary/to-core-model.md
+$dokka.location:com.tink.service.budget$toCoreModel(com.tink.rest.models.BudgetTransaction)com.tink.service.budget/com.tink.rest.models.-budget-transaction/to-core-model.md
+$dokka.location:com.tink.service.budget$toCoreModel(com.tink.rest.models.Filter)com.tink.service.budget/com.tink.rest.models.-filter/to-core-model.md
+$dokka.location:com.tink.service.category$toCategoryTree(kotlin.collections.List((com.tink.rest.models.Category)))com.tink.service.category/kotlin.collections.-list/to-category-tree.md
 $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.StatusEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-status-enum/to-core-model.md
 $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.ThirdPartyAuthentication)com.tink.service.credentials/com.tink.rest.models.-credentials.-third-party-authentication/to-core-model.md
 $dokka.location:com.tink.service.credentials$toCoreModel(com.tink.rest.models.Credentials.TypeEnum)com.tink.service.credentials/com.tink.rest.models.-credentials.-type-enum/to-core-model.md
+$dokka.location:com.tink.service.insight$toCoreModel(com.tink.rest.models.InsightProposedAction)com.tink.service.insight/com.tink.rest.models.-insight-proposed-action/to-core-model.md
 $dokka.location:com.tink.service.misc$toAmount(com.tink.rest.models.CurrencyDenominatedAmount)com.tink.service.misc/com.tink.rest.models.-currency-denominated-amount/to-amount.md
+$dokka.location:com.tink.service.transaction$toCoreModel(com.tink.rest.models.Transaction)com.tink.service.transaction/com.tink.rest.models.-transaction/to-core-model.md
+$dokka.location:com.tink.service.transaction$toCoreModel(com.tink.rest.models.TransactionResponse)com.tink.service.transaction/com.tink.rest.models.-transaction-response/to-core-model.md
+$dokka.location:com.tink.service.user$toPeriodMode(com.tink.rest.models.UserProfile)com.tink.service.user/com.tink.rest.models.-user-profile/to-period-mode.md
+$dokka.location:com.tink.service.user$toUserProfile(com.tink.rest.models.User)com.tink.service.user/com.tink.rest.models.-user/to-user-profile.md
 com.tink.core
 com.tink.core.provider
 com.tink.link
@@ -28,7 +39,7 @@ com.tink.model.insights
 com.tink.model.misc
 com.tink.model.provider
 com.tink.model.relations
-com.tink.model.statistic
+com.tink.model.statistics
 com.tink.model.time
 com.tink.model.transaction
 com.tink.model.transfer
@@ -36,14 +47,21 @@ com.tink.model.user
 com.tink.service.account
 com.tink.service.authentication
 com.tink.service.authorization
+com.tink.service.budget
 com.tink.service.category
 com.tink.service.consent
 com.tink.service.credentials
 com.tink.service.di
 com.tink.service.handler
+com.tink.service.insight
 com.tink.service.misc
 com.tink.service.network
+com.tink.service.observer
 com.tink.service.provider
+com.tink.service.statistics
 com.tink.service.streaming
 com.tink.service.streaming.publisher
+com.tink.service.time
+com.tink.service.transaction
 com.tink.service.transfer
+com.tink.service.user

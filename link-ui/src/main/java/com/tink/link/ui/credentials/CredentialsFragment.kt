@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
@@ -21,16 +22,21 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.ui.R
+import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
 import com.tink.link.ui.analytics.TinkLinkTracker
+import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.extensions.LinkInfo
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
+import com.tink.link.ui.extensions.toTinkLinkErrorInfo
 import com.tink.link.ui.extensions.toView
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
@@ -71,12 +77,22 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         super.onViewCreated(view, savedInstanceState)
         toolbarWithLogo.toolbarTitleView.text = provider.displayName
         toolbarWithLogo.setNavigationOnClickListener {
-            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                TinkLinkUiActivity.RESULT_CANCELLED
+            TinkLinkTracker.trackInteraction(
+                InteractionEvent.CLOSE,
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
             )
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                if (activity.linkError == null) {
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_CANCELLED)
+                } else {
+                    // Since there are some credentials errors, this can be considered a failure
+                    activity.closeTinkLinkUi(TinkLinkUiActivity.RESULT_FAILURE)
+                }
+            }
         }
 
-        TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN)
+        TinkLinkTracker.trackScreen(ScreenEvent.SUBMIT_CREDENTIALS_SCREEN, getScreenEventData())
 
         provider.images?.icon?.let {
             Picasso.get().load(it).into(toolbarWithLogo.logoView)
@@ -127,6 +143,15 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
+        viewModel.authenticationSuccessfulEvent.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let { _ ->
+                TinkLinkTracker.trackApplicationEvent(
+                    ApplicationEvent.AUTHENTICATION_SUCCESSFUL,
+                    getScreenEventData()
+                )
+            }
+        }
+
         viewModel.errorEvent.observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { statusPayload ->
                 val message =
@@ -144,8 +169,29 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
             (activity as? TinkLinkUiActivity)?.let {
                 it.credentials = credentials
+                // Remove from credentials error entries if this credentials had an error entry
+                it.removeCredentialsError(credentials.id)
+                // Remove any link error entry
+                it.linkError = null
             }
         }
+
+        activity
+            ?.onBackPressedDispatcher
+            ?.addCallback(
+                viewLifecycleOwner,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        TinkLinkTracker.trackInteraction(
+                            InteractionEvent.BACK,
+                            ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                            getScreenEventData()
+                        )
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
+                }
+            )
     }
 
     private fun showFullCredentialsFlow() {
@@ -343,9 +389,13 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun areFieldsValid(): Boolean {
-        return credentialsFields.children
+        val isValid = credentialsFields.children
             .filterIsInstance(CredentialsField::class.java)
             .all { it.validateContent() }
+        if (!isValid) {
+            sendApplicationEvent(ApplicationEvent.CREDENTIALS_VALIDATION_FAILED)
+        }
+        return isValid
     }
 
     private fun createCredentials() {
@@ -355,7 +405,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
             TinkLinkTracker.trackInteraction(
                 InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
             )
 
             val fields = credentialsFields.children
@@ -363,11 +414,22 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 .map { it.getFilledField() }
                 .toList()
 
+            if (fields.isNotEmpty()) {
+                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
+            }
+
             viewModel.createCredentials(
                 provider = provider,
                 fields = fields,
                 onAwaitingAuthentication = ::handleAuthenticationTask,
                 onError = { error ->
+                    if (error is CredentialsFailure) {
+                        // Add credentials error entry for this failed credentials
+                        (activity as? TinkLinkUiActivity)?.let {
+                            it.addCredentialsError(error.credentials.id, error.toTinkLinkErrorInfo())
+                            it.linkError = TinkLinkError.FailedToAddCredentials(it.errorsByCredentialsId)
+                        }
+                    }
                     val message = if (error.isExistingCredentialsError()) {
                         getString(R.string.tink_error_credentials_already_exists)
                     } else {
@@ -403,7 +465,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     @UiThread
     private fun showError(message: String) {
         showStatusDialog(message, CredentialsStatusDialogFactory.Type.ERROR)
-        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+        TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN, getScreenEventData())
     }
 
     @UiThread
@@ -417,13 +479,18 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
             TinkLinkTracker.trackInteraction(
                 InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN
+                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+                getScreenEventData()
             )
 
             val fields = credentialsFields.children
                 .filterIsInstance(CredentialsField::class.java)
                 .map { it.getFilledField() }
                 .toList()
+
+            if (fields.isNotEmpty()) {
+                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
+            }
 
             viewModel.updateCredentials(
                 id = credentialsId,
@@ -443,13 +510,17 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         lifecycleScope.launchWhenResumed {
             when (authenticationTask) {
                 is AuthenticationTask.ThirdPartyAuthentication -> {
+                    sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
                     handleThirdPartyAuthentication(authenticationTask)
                 }
 
                 is AuthenticationTask.SupplementalInformation -> {
                     SupplementalInformationFragment.newInstance(authenticationTask)
                         .show(childFragmentManager, null)
-                    TinkLinkTracker.trackScreen(ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN)
+                    TinkLinkTracker.trackScreen(
+                        ScreenEvent.SUPPLEMENTAL_INFORMATION_SCREEN,
+                        getScreenEventData()
+                    )
                 }
             }
         }
@@ -562,6 +633,30 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 isNewCredentialsCreated = credentialsOperationArgs is CredentialsOperationArgs.Create
             )
         )
+    }
+
+    private fun getScreenEventData(): ScreenEventData =
+        ScreenEventData(
+            providerName = provider.name,
+            credentialsId = when (val operationArgs = credentialsOperationArgs) {
+                is CredentialsOperationArgs.Create -> viewModel.credentials.value?.id
+                is CredentialsOperationArgs.Update -> operationArgs.credentials.id
+                is CredentialsOperationArgs.Authenticate -> operationArgs.credentials.id
+                is CredentialsOperationArgs.Refresh -> operationArgs.credentials.id
+            }
+        )
+
+    private fun sendApplicationEvent(event: ApplicationEvent) {
+        val isCredentialsSubmittedEvent =
+            event == ApplicationEvent.CREDENTIALS_SUBMITTED && provider.accessType == Provider.AccessType.OTHER
+        val isAuthenticationInitializedEvent =
+            event == ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED && provider.accessType == Provider.AccessType.OPEN_BANKING
+        val isValidationFailedEvent =
+            event == ApplicationEvent.CREDENTIALS_VALIDATION_FAILED && provider.accessType == Provider.AccessType.OTHER
+
+        if (isCredentialsSubmittedEvent || isAuthenticationInitializedEvent || isValidationFailedEvent) {
+            TinkLinkTracker.trackApplicationEvent(event, getScreenEventData())
+        }
     }
 }
 

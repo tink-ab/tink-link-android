@@ -1,7 +1,7 @@
 package com.tink.link.ui.analytics.models
 
 internal enum class ScreenEvent {
-    ERROR,
+    ERROR_SCREEN,
     SUCCESS_SCREEN,
     SUPPLEMENTAL_INFORMATION_SCREEN,
     PROVIDER_SELECTION_SCREEN,
@@ -11,3 +11,8 @@ internal enum class ScreenEvent {
     CREDENTIALS_TYPE_SELECTION_SCREEN,
     SUBMIT_CREDENTIALS_SCREEN
 }
+
+internal data class ScreenEventData(
+    val providerName: String?,
+    val credentialsId: String?
+)

@@ -12,6 +12,10 @@ and [RESULT_FAILURE](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md).
 
 For a [successful result](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md), a [TinkLinkResult](../-tink-link-result/index.md) is returned as data bundled
 with the key [RESULT_DATA](-r-e-s-u-l-t_-d-a-t-a.md).
+For a [failure result](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md), a [TinkLinkError](../-tink-link-error/index.md) is returned as data bundled with
+the key [ERROR_DATA](-e-r-r-o-r_-d-a-t-a.md).
+If there are credentials that could not be added as part of the Tink Link UI flow, a map of
+those failed credentials ids to errors will be returned as data bundled with the key [FAILED_CREDENTIALS_DATA](-f-a-i-l-e-d_-c-r-e-d-e-n-t-i-a-l-s_-d-a-t-a.md)
 If a [temporary user](../-link-user/-temporary-user/index.md) is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser](../-tink-link-result/-temporary-user/index.md)
 which includes the authorization code (String) and the [Credentials](../../com.tink.model.credentials/-credentials/index.md) connected to the user.
 If a permanent user is used for the flow (either [LinkUser.ExistingUser](../-link-user/-existing-user/index.md) or [LinkUser.UnauthenticatedUser](../-link-user/-unauthenticated-user/index.md)),

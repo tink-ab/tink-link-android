@@ -16,3 +16,9 @@
 |---|---|
 | [currencyCode](currency-code.md) | `val currencyCode: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [value](value.md) | `val value: `[`ExactNumber`](../-exact-number/index.md) |
+
+### Extension Functions
+
+| Name | Summary |
+|---|---|
+| [toDto](../../com.tink.service.misc/to-dto.md) | `fun `[`Amount`](./index.md)`.toDto(): CurrencyDenominatedAmount` |

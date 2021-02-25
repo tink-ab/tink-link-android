@@ -3,6 +3,7 @@ package com.tink.link.ui.analytics.network
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import com.tink.link.ui.analytics.models.AnalyticsEventTypeDto
+import com.tink.link.ui.analytics.models.ApplicationEventDto
 import com.tink.link.ui.analytics.models.InteractionEventDto
 import com.tink.link.ui.analytics.models.ViewEventDto
 import retrofit2.Response
@@ -19,6 +20,11 @@ internal interface AnalyticsApi {
     suspend fun sendInteractionEvent(
         @retrofit2.http.Body body: InteractionEventRequest
     ): Response<Unit>
+
+    @POST("/link/v1/analytics")
+    suspend fun sendApplicationEvent(
+        @retrofit2.http.Body body: ApplicationEventRequest
+    ): Response<Unit>
 }
 
 @JsonClass(generateAdapter = true)
@@ -31,4 +37,10 @@ internal data class ViewEventRequest(
 internal data class InteractionEventRequest(
     @Json(name = "type") @field:Json(name = "type") var type: AnalyticsEventTypeDto? = null,
     @Json(name = "interactionEvent") @field:Json(name = "interactionEvent") var interactionEvent: InteractionEventDto? = null
+)
+
+@JsonClass(generateAdapter = true)
+internal data class ApplicationEventRequest(
+    @Json(name = "type") @field:Json(name = "type") var type: AnalyticsEventTypeDto? = null,
+    @Json(name = "applicationEvent") @field:Json(name = "applicationEvent") var applicationEvent: ApplicationEventDto? = null
 )

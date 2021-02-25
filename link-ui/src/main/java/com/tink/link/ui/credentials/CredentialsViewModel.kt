@@ -64,6 +64,9 @@ internal class CredentialsViewModel : ViewModel() {
     private val _errorEvent = MutableLiveData<Event<String>>()
     val errorEvent: LiveData<Event<String>> = _errorEvent
 
+    private val _authenticationSuccessfulEvent = MutableLiveData<Event<Unit>>()
+    val authenticationSuccessfulEvent: LiveData<Event<Unit>> = _authenticationSuccessfulEvent
+
     private val _fields = MutableLiveData<List<Field>>()
     val fields: LiveData<List<Field>> = _fields
 
@@ -90,6 +93,7 @@ internal class CredentialsViewModel : ViewModel() {
 
                     is CredentialsStatus.Loading -> {
                         _viewState.postValue(ViewState.UPDATING)
+                        _authenticationSuccessfulEvent.postValue(Event(Unit))
                         if (authorizeUser && !authorizationDone.get()) {
                             authorizeUser(scopes)
                         }
