@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`YearPeriod(year: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, start: Instant, end: Instant)`
+`YearPeriod(year: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`, identifier: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, start: Instant, end: Instant)`

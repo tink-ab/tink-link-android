@@ -9,7 +9,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.tink.core.Tink
 import com.tink.link.authenticateUser
@@ -17,7 +16,9 @@ import com.tink.link.createTemporaryUser
 import com.tink.link.getUserInfo
 import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.AppInfo
+import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
+import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
@@ -30,12 +31,12 @@ const val FRAGMENT_ARG_CREDENTIALS_OPERATION = "credentialsOperationArg"
 internal class MainFragment : Fragment() {
 
     private val linkUser: LinkUser by lazy {
-        requireNotNull(arguments?.getParcelable<LinkUser>(FRAGMENT_ARG_LINK_USER))
+        requireNotNull(arguments?.getParcelable(FRAGMENT_ARG_LINK_USER))
     }
 
     private val credentialsOperation: CredentialsOperation by lazy {
         requireNotNull(
-            arguments?.getParcelable<CredentialsOperation>(FRAGMENT_ARG_CREDENTIALS_OPERATION)
+            arguments?.getParcelable(FRAGMENT_ARG_CREDENTIALS_OPERATION)
         )
     }
 
@@ -109,14 +110,17 @@ internal class MainFragment : Fragment() {
 
         viewModel.credentialsToProvider.observe(
             viewLifecycleOwner,
-            Observer { credentialsToProvider ->
+            { credentialsToProvider ->
                 launchFlowForCredentials(credentialsToProvider)
             }
         )
 
         viewModel.onError.observe(
             viewLifecycleOwner,
-            Observer { _ ->
+            { error ->
+                (activity as? TinkLinkUiActivity)?.let { activity ->
+                    activity.linkError = error
+                }
                 statusDialog = CredentialsStatusDialogFactory
                     .createDialog(
                         requireContext(),
@@ -130,7 +134,19 @@ internal class MainFragment : Fragment() {
                     }
                     .also {
                         it.show()
-                        TinkLinkTracker.trackScreen(ScreenEvent.ERROR)
+                        val credentialsId: String? = credentialsOperation.credentialsId
+                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
+                            error.providerName
+                        } else {
+                            null
+                        }
+                        TinkLinkTracker.trackScreen(
+                            ScreenEvent.ERROR_SCREEN,
+                            ScreenEventData(
+                                providerName = providerName,
+                                credentialsId = credentialsId
+                            )
+                        )
                     }
             }
         )
@@ -176,9 +192,11 @@ internal class MainFragment : Fragment() {
                     TinkLinkTracker.initialize(
                         clientId = Tink.getConfiguration()?.oAuthClientId ?: "",
                         userId = userInfo.id,
+                        market = userInfo.profile.market,
                         appInfo = getAppInfo(context),
                         operation = credentialsOperation
                     )
+                    sendApplicationEvent(credentialsOperation)
                 },
                 { }
             )
@@ -201,4 +219,34 @@ internal class MainFragment : Fragment() {
             appVersion = appVersionName
         )
     }
+
+    private fun sendApplicationEvent(credentialsOperation: CredentialsOperation) {
+        when (val operation = credentialsOperation) {
+            is CredentialsOperation.Create -> {
+                val screenEventData = ScreenEventData(
+                    providerName = operation.getProviderNameIfAvailable(),
+                    credentialsId = operation.credentialsId
+                )
+                TinkLinkTracker.trackApplicationEvent(
+                    operation.toApplicationEvent(),
+                    screenEventData
+                )
+            }
+            else -> { }
+        }
+    }
+
+    private fun CredentialsOperation.Create.toApplicationEvent(): ApplicationEvent =
+        if (providerSelection is ProviderSelection.SingleProvider) {
+            ApplicationEvent.INITIALIZED_WITH_PROVIDER
+        } else {
+            ApplicationEvent.INITIALIZED_WITHOUT_PROVIDER
+        }
+
+    private fun CredentialsOperation.Create.getProviderNameIfAvailable(): String? =
+        if (providerSelection is ProviderSelection.SingleProvider) {
+            providerSelection.name
+        } else {
+            null
+        }
 }

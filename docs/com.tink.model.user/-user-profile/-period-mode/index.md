@@ -2,12 +2,11 @@
 
 # PeriodMode
 
-`enum class PeriodMode`
+`sealed class PeriodMode : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html)
 
-### Enum Values
+### Types
 
 | Name | Summary |
 |---|---|
-| [UNKNOWN](-u-n-k-n-o-w-n.md) |  |
-| [MONTHLY](-m-o-n-t-h-l-y.md) |  |
-| [MONTHLY_ADJUSTED](-m-o-n-t-h-l-y_-a-d-j-u-s-t-e-d.md) |  |
+| [Monthly](-monthly.md) | `object Monthly : PeriodMode` |
+| [MonthlyAdjusted](-monthly-adjusted/index.md) | `data class MonthlyAdjusted : PeriodMode` |

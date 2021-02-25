@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`Recurring(unit: PeriodUnit, quantity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)`
+`Recurring(unit: PeriodUnit)`

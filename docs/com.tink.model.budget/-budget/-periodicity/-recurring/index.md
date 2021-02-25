@@ -14,11 +14,10 @@
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `Recurring(unit: PeriodUnit, quantity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`)` |
+| [&lt;init&gt;](-init-.md) | `Recurring(unit: PeriodUnit)` |
 
 ### Properties
 
 | Name | Summary |
 |---|---|
-| [quantity](quantity.md) | `val quantity: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [unit](unit.md) | `val unit: PeriodUnit` |
