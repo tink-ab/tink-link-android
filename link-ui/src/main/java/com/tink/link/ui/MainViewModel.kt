@@ -21,8 +21,8 @@ internal class MainViewModel : ViewModel() {
     private val _credentialsToProvider: MutableLiveData<CredentialsToProvider> = MutableLiveData()
     val credentialsToProvider: LiveData<CredentialsToProvider> = _credentialsToProvider
 
-    private val _onError: MutableLiveData<Throwable> = MutableLiveData()
-    val onError: LiveData<Throwable> = _onError
+    private val _onError: MutableLiveData<TinkLinkError> = MutableLiveData()
+    val onError: LiveData<TinkLinkError> = _onError
 
     fun setCredentialsId(credentialsId: String) {
         credentialsRepository.getCredentials(
@@ -38,17 +38,17 @@ internal class MainViewModel : ViewModel() {
                                         CredentialsToProvider(credentials, provider)
                                     )
                                 } else {
-                                    _onError.postValue(NoSuchElementException("Could not find a provider with that name."))
+                                    _onError.postValue(TinkLinkError.ProviderNotFound(credentials.providerName))
                                 }
                             },
                             {
-                                _onError.postValue(it)
+                                _onError.postValue(TinkLinkError.ProviderNotFound(credentials.providerName))
                             }
                         )
                     )
                 },
                 {
-                    _onError.postValue(it)
+                    _onError.postValue(TinkLinkError.CredentialsNotFound(credentialsId))
                 }
             )
         )

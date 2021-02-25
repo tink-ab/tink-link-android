@@ -12,6 +12,10 @@ and [RESULT_FAILURE](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md).
 
 For a [successful result](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md), a [TinkLinkResult](../-tink-link-result/index.md) is returned as data bundled
 with the key [RESULT_DATA](-r-e-s-u-l-t_-d-a-t-a.md).
+For a [failure result](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md), a [TinkLinkError](../-tink-link-error/index.md) is returned as data bundled with
+the key [ERROR_DATA](-e-r-r-o-r_-d-a-t-a.md).
+If there are credentials that could not be added as part of the Tink Link UI flow, a map of
+those failed credentials ids to errors will be returned as data bundled with the key [FAILED_CREDENTIALS_DATA](-f-a-i-l-e-d_-c-r-e-d-e-n-t-i-a-l-s_-d-a-t-a.md)
 If a [temporary user](../-link-user/-temporary-user/index.md) is used for the flow, the result data is of type [TinkLinkResult.TemporaryUser](../-tink-link-result/-temporary-user/index.md)
 which includes the authorization code (String) and the [Credentials](../../com.tink.model.credentials/-credentials/index.md) connected to the user.
 If a permanent user is used for the flow (either [LinkUser.ExistingUser](../-link-user/-existing-user/index.md) or [LinkUser.UnauthenticatedUser](../-link-user/-unauthenticated-user/index.md)),
@@ -56,6 +60,8 @@ activity.startActivityForResult(
 | [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.md) | `const val ARG_LINK_USER: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.md) | `const val ARG_SCOPES: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_STYLE](-a-r-g_-s-t-y-l-e.md) | `const val ARG_STYLE: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ERROR_DATA](-e-r-r-o-r_-d-a-t-a.md) | `const val ERROR_DATA: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [FAILED_CREDENTIALS_DATA](-f-a-i-l-e-d_-c-r-e-d-e-n-t-i-a-l-s_-d-a-t-a.md) | `const val FAILED_CREDENTIALS_DATA: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [RESULT_CANCELLED](-r-e-s-u-l-t_-c-a-n-c-e-l-l-e-d.md) | `const val RESULT_CANCELLED: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 | [RESULT_DATA](-r-e-s-u-l-t_-d-a-t-a.md) | `const val RESULT_DATA: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [RESULT_FAILURE](-r-e-s-u-l-t_-f-a-i-l-u-r-e.md) | `const val RESULT_FAILURE: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
