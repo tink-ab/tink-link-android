@@ -12,6 +12,7 @@ All subclasses should be data classes or provide a meaningful `equals()` functio
 |---|---|
 | [Acknowledge](-acknowledge.md) | `object Acknowledge : Data` |
 | [CategorizeExpense](-categorize-expense/index.md) | `data class CategorizeExpense : Data` |
+| [CreateBudget](-create-budget/index.md) | `data class CreateBudget : Data` |
 | [CreateTransfer](-create-transfer/index.md) | `data class CreateTransfer : Data` |
 | [Dismiss](-dismiss.md) | `object Dismiss : Data` |
 | [NoData](-no-data.md) | `object NoData : Data` |

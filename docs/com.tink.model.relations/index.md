@@ -7,3 +7,4 @@
 | Name | Summary |
 |---|---|
 | [AmountByCategory](-amount-by-category/index.md) | `data class AmountByCategory : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |
+| [ExpensesByDay](-expenses-by-day/index.md) | `data class ExpensesByDay : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |

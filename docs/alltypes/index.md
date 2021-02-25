@@ -16,6 +16,11 @@
 
 |
 
+##### [com.tink.model.account.AccountDetails](../com.tink.model.account/-account-details/index.md)
+
+
+|
+
 ##### [com.tink.service.account.AccountService](../com.tink.service.account/-account-service/index.md)
 
 
@@ -77,6 +82,11 @@ Each beneficiary belongs to an account, which means that the given account can s
 ##### [com.tink.model.budget.Budget](../com.tink.model.budget/-budget/index.md)
 
 
+| (extensions in package com.tink.service.budget)
+
+##### [com.tink.rest.models.Budget](../com.tink.service.budget/com.tink.rest.models.-budget/index.md)
+
+
 |
 
 ##### [com.tink.model.budget.BudgetCreateOrUpdateDescriptor](../com.tink.model.budget/-budget-create-or-update-descriptor/index.md)
@@ -87,7 +97,32 @@ If we have an id, it means we're updating an already existing budget.
 
 |
 
+##### [com.tink.model.budget.BudgetFilter](../com.tink.model.budget/-budget-filter.md)
+
+
+|
+
 ##### [com.tink.model.budget.BudgetPeriod](../com.tink.model.budget/-budget-period.md)
+
+
+| (extensions in package com.tink.service.budget)
+
+##### [com.tink.rest.models.BudgetPeriod](../com.tink.service.budget/com.tink.rest.models.-budget-period/index.md)
+
+
+|
+
+##### [com.tink.model.budget.BudgetPeriodicity](../com.tink.model.budget/-budget-periodicity.md)
+
+
+|
+
+##### [com.tink.service.budget.BudgetService](../com.tink.service.budget/-budget-service/index.md)
+
+
+|
+
+##### [com.tink.service.budget.BudgetServiceImpl](../com.tink.service.budget/-budget-service-impl/index.md)
 
 
 |
@@ -100,9 +135,19 @@ If we have an id, it means we're updating an already existing budget.
 ##### [com.tink.model.budget.BudgetSummary](../com.tink.model.budget/-budget-summary.md)
 
 
+| (extensions in package com.tink.service.budget)
+
+##### [com.tink.rest.models.BudgetSummary](../com.tink.service.budget/com.tink.rest.models.-budget-summary/index.md)
+
+
 |
 
 ##### [com.tink.model.budget.BudgetTransaction](../com.tink.model.budget/-budget-transaction.md)
+
+
+| (extensions in package com.tink.service.budget)
+
+##### [com.tink.rest.models.BudgetTransaction](../com.tink.service.budget/com.tink.rest.models.-budget-transaction/index.md)
 
 
 |
@@ -117,7 +162,22 @@ If we have an id, it means we're updating an already existing budget.
 
 |
 
+##### [com.tink.service.category.CategoryService](../com.tink.service.category/-category-service/index.md)
+
+
+|
+
+##### [com.tink.service.category.CategoryServiceImpl](../com.tink.service.category/-category-service-impl/index.md)
+
+
+|
+
 ##### [com.tink.model.category.CategoryTree](../com.tink.model.category/-category-tree/index.md)
+
+
+|
+
+##### [com.tink.service.observer.ChangeObserver](../com.tink.service.observer/-change-observer/index.md)
 
 
 |
@@ -231,9 +291,19 @@ Represents the environment you want to connect to.
 
 |
 
+##### [com.tink.model.relations.ExpensesByDay](../com.tink.model.relations/-expenses-by-day/index.md)
+
+
+|
+
 ##### [com.tink.model.misc.Field](../com.tink.model.misc/-field/index.md)
 
 This model represents a specific input, usually as a text field) that the user needs to fill during the authentication flow.
+
+
+| (extensions in package com.tink.service.budget)
+
+##### [com.tink.rest.models.Filter](../com.tink.service.budget/com.tink.rest.models.-filter/index.md)
 
 
 |
@@ -253,9 +323,29 @@ This model represents a specific input, usually as a text field) that the user n
 
 |
 
+##### [com.tink.service.insight.InsightActionConvertersTest](../com.tink.service.insight/-insight-action-converters-test/index.md)
+
+
+|
+
 ##### [com.tink.model.insights.InsightData](../com.tink.model.insights/-insight-data/index.md)
 
 All subclasses should be data classes or provide a meaningful `equals()` function
+
+
+| (extensions in package com.tink.service.insight)
+
+##### [com.tink.rest.models.InsightProposedAction](../com.tink.service.insight/com.tink.rest.models.-insight-proposed-action/index.md)
+
+
+|
+
+##### [com.tink.service.insight.InsightService](../com.tink.service.insight/-insight-service/index.md)
+
+
+|
+
+##### [com.tink.service.insight.InsightServiceImpl](../com.tink.service.insight/-insight-service-impl/index.md)
 
 
 |
@@ -281,6 +371,11 @@ create a [temporary user](../com.tink.link.ui/-link-user/-temporary-user/index.m
 ##### [kotlin.collections.List](../com.tink.model.provider/kotlin.collections.-list/index.md)
 
 
+| (extensions in package com.tink.service.category)
+
+##### [kotlin.collections.List](../com.tink.service.category/kotlin.collections.-list/index.md)
+
+
 |
 
 ##### [com.tink.model.time.MonthPeriod](../com.tink.model.time/-month-period/index.md)
@@ -300,12 +395,22 @@ A description of the OAuth client and the data it will collect from the user.
 
 |
 
+##### [com.tink.service.transaction.Pageable](../com.tink.service.transaction/-pageable/index.md)
+
+
+|
+
 ##### [com.tink.model.insights.PerformedInsightAction](../com.tink.model.insights/-performed-insight-action/index.md)
 
 
 |
 
 ##### [com.tink.model.time.Period](../com.tink.model.time/-period/index.md)
+
+
+|
+
+##### [com.tink.service.time.PeriodService](../com.tink.service.time/-period-service/index.md)
 
 
 |
@@ -407,12 +512,17 @@ A title and description explaining a specific [Scope](../com.tink.model.user/-sc
 
 |
 
-##### [com.tink.model.statistic.Statistic](../com.tink.model.statistic/-statistic/index.md)
+##### [com.tink.model.statistics.Statistics](../com.tink.model.statistics/-statistics/index.md)
 
 
 |
 
-##### [com.tink.model.statistic.StatisticTree](../com.tink.model.statistic/-statistic-tree/index.md)
+##### [com.tink.service.statistics.StatisticsQueryDescriptor](../com.tink.service.statistics/-statistics-query-descriptor/index.md)
+
+
+|
+
+##### [com.tink.service.statistics.StatisticsService](../com.tink.service.statistics/-statistics-service/index.md)
 
 
 | (extensions in package com.tink.service.credentials)
@@ -478,6 +588,20 @@ This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-
 
 |
 
+##### [com.tink.link.ui.TinkLinkError](../com.tink.link.ui/-tink-link-error/index.md)
+
+Represents errors that happen during the Tink Link UI flow.
+
+
+|
+
+##### [com.tink.link.ui.TinkLinkErrorInfo](../com.tink.link.ui/-tink-link-error-info/index.md)
+
+A wrapper class that provides information about the underlying error causing the [TinkLinkError](../com.tink.link.ui/-tink-link-error/index.md)
+
+
+|
+
 ##### [com.tink.link.payments.TinkLinkPayments](../com.tink.link.payments/-tink-link-payments/index.md)
 
 This is for Java compatibility only. Use extensions on [Tink](../com.tink.core/-tink/index.md) when using Kotlin
@@ -508,9 +632,24 @@ Activity used for displaying the full Tink Link UI flow.
 ##### [com.tink.model.transaction.Transaction](../com.tink.model.transaction/-transaction/index.md)
 
 
+| (extensions in package com.tink.service.transaction)
+
+##### [com.tink.rest.models.Transaction](../com.tink.service.transaction/com.tink.rest.models.-transaction/index.md)
+
+
+| (extensions in package com.tink.service.transaction)
+
+##### [com.tink.rest.models.TransactionResponse](../com.tink.service.transaction/com.tink.rest.models.-transaction-response/index.md)
+
+
 |
 
-##### [com.tink.model.transaction.TransactionDetails](../com.tink.model.transaction/-transaction-details/index.md)
+##### [com.tink.service.transaction.TransactionService](../com.tink.service.transaction/-transaction-service/index.md)
+
+
+|
+
+##### [com.tink.service.transaction.TransactionUpdateDescriptor](../com.tink.service.transaction/-transaction-update-descriptor/index.md)
 
 
 |
@@ -565,6 +704,11 @@ Possible values are [Success](../com.tink.link.payments/-transfer-status/-succes
 ##### [com.tink.model.user.User](../com.tink.model.user/-user/index.md)
 
 
+| (extensions in package com.tink.service.user)
+
+##### [com.tink.rest.models.User](../com.tink.service.user/com.tink.rest.models.-user/index.md)
+
+
 |
 
 ##### [com.tink.link.core.user.UserContext](../com.tink.link.core.user/-user-context/index.md)
@@ -592,9 +736,34 @@ Context for functionality that requires a user to be set.
 ##### [com.tink.model.user.UserProfile](../com.tink.model.user/-user-profile/index.md)
 
 
+| (extensions in package com.tink.service.user)
+
+##### [com.tink.rest.models.UserProfile](../com.tink.service.user/com.tink.rest.models.-user-profile/index.md)
+
+
+|
+
+##### [com.tink.service.user.UserProfileService](../com.tink.service.user/-user-profile-service/index.md)
+
+
+|
+
+##### [com.tink.service.user.UserProfileServiceImpl](../com.tink.service.user/-user-profile-service-impl/index.md)
+
+
 |
 
 ##### [com.tink.service.authorization.UserService](../com.tink.service.authorization/-user-service/index.md)
+
+
+|
+
+##### [com.tink.model.time.WeekPeriod](../com.tink.model.time/-week-period/index.md)
+
+
+|
+
+##### [com.tink.model.time.YearMonth](../com.tink.model.time/-year-month/index.md)
 
 
 |
