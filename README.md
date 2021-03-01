@@ -99,3 +99,6 @@ class MyApp : Application() {
 
 ## Developer documentation
 - [Tink Link Android Reference](https://tink-ab.github.io/tink-link-android/)
+
+## [Tink](https://tink.com)
+Tink was founded in 2012 with the aim of changing the banking industry for the better. We have built Europe’s most robust open banking platform – with the broadest, deepest connectivity and powerful services that create value out of the financial data.
