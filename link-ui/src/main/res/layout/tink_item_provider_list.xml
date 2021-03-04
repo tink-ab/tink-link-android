@@ -21,17 +21,37 @@
   <TextView
     android:id="@+id/title"
     style="@style/tink_hecto"
-    android:layout_width="0dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
-    android:gravity="center_vertical"
+    android:gravity="center_vertical|start"
     app:layout_constraintBottom_toTopOf="@id/barrier"
-    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/logo"
     app:layout_constraintTop_toTopOf="parent"
     tools:text="Placeholder title" />
+
+  <TextView
+      android:id="@+id/beta_tag"
+      style="@style/tink_nano"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:gravity="center_vertical|start"
+      android:visibility="gone"
+      android:textColor="?tink_textColorPrimary"
+      app:layout_constraintStart_toEndOf="@id/title"
+      app:layout_constraintBottom_toTopOf="@id/barrier"
+      app:layout_constraintTop_toTopOf="parent"
+      android:paddingStart="6dp"
+      android:paddingEnd="6dp"
+      android:paddingTop="2dp"
+      android:paddingBottom="2dp"
+      tools:visibility="visible"
+      android:background="@drawable/tink_text_border"
+      android:text="@string/tink_provider_beta_tag" />
 
   <androidx.constraintlayout.widget.Barrier
     android:id="@+id/barrier"
