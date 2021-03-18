@@ -5,7 +5,6 @@ plugins {
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.dokka").version("0.10.0")
-    id("com.jfrog.bintray")
 }
 
 android {
