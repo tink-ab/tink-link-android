@@ -4,7 +4,6 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("org.jetbrains.dokka").version(Versions.dokka)
-    id("com.jfrog.bintray")
 }
 
 android {
