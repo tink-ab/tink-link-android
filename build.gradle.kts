@@ -14,6 +14,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter() // Remove jcenter when we can, currently blocked by this https://youtrack.jetbrains.com/issue/KT-44730
     }
 }
 
