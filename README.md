@@ -6,12 +6,12 @@
 
 ## Installation
 
-1. Make sure `jcenter()` is added to your repositories (it should be by default).
+1. Make sure `mavenCentral()` is added to your repositories (it should be by default).
 
 ```groovy
 allprojects {
     repositories {
-       jcenter()
+       mavenCentral()
        ...
     }
 }
