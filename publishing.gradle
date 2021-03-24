@@ -82,8 +82,9 @@ publishing {
             name = OSSRH_STAGING_NAME
             url = OSSRH_STAGING_URL
             credentials {
-                username = hasProperty('OSSRH_USER') ? OSSRH_USER : ""
-                password = hasProperty('OSSRH_PASSWORD') ? OSSRH_PASSWORD : ""            }
+                username = project.hasProperty('OSSRH_USER') ? OSSRH_USER : ""
+                password = project.hasProperty('OSSRH_PASSWORD') ? OSSRH_PASSWORD : ""
+            }
         }
     }
 }
