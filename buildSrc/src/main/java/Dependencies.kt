@@ -9,8 +9,6 @@ object Versions {
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
     const val coroutines = "1.3.9"
-    const val retrofit = "2.6.2"
-    const val rxjava = "2.1.9"
     const val navigation = "2.2.2"
     const val dokka = "0.10.1"
     const val moshi = "1.9.2"
@@ -42,12 +40,6 @@ object Dependencies {
         const val dagger_android_compiler = "$base_url:dagger-compiler:${Versions.dagger}"
     }
 
-    object Retrofit {
-        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-        const val retrofit_adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
-        const val retrofit_converter_gson =  "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-    }
-
     object Testing {
         const val test_junit_api = "org.junit.jupiter:junit-jupiter-api:5.2.0"
         const val test_junit_engine = "org.junit.jupiter:junit-jupiter-engine:5.2.0"
@@ -64,7 +56,6 @@ object Dependencies {
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.12"
-    const val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"
     const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.2.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.71828"
