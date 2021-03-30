@@ -43,8 +43,6 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
-    implementation(Dependencies.rxjava)
-
     testImplementation(Dependencies.Testing.test_assertj)
     testImplementation(Dependencies.Testing.test_junit_api)
     testRuntimeOnly(Dependencies.Testing.test_junit_engine)
