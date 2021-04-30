@@ -4,25 +4,25 @@ object Versions {
     const val minSdk = 21
     const val targetSdk = 30
 
-    const val kotlin = "1.4.21"
+    const val kotlin = "1.4.32"
     const val dagger = "2.24"
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
-    const val navigation = "2.2.2"
+    const val navigation = "2.3.5"
     const val dokka = "0.10.1"
-    const val moshi = "1.9.2"
+    const val moshi = "1.12.0"
 }
 
 object Dependencies {
     object Androidx {
         const val appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
         const val core_ktx = "androidx.core:core-ktx:${Versions.androidx_core_ktx}"
-        const val constraint_layout = "androidx.constraintlayout:constraintlayout:1.1.3"
+        const val constraint_layout = "androidx.constraintlayout:constraintlayout:2.0.4"
         const val test_runner = "androidx.test:runner:1.2.0"
         const val test_espresso = "androidx.test.espresso:espresso-core:3.2.0"
         const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
-        const val browser = "androidx.browser:browser:1.2.0"
+        const val browser = "androidx.browser:browser:1.3.0"
     }
 
     object Dagger {
@@ -46,13 +46,13 @@ object Dependencies {
         const val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
     }
 
-    const val material_components = "com.google.android.material:material:1.2.1"
+    const val material_components = "com.google.android.material:material:1.3.0"
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.13.2"
-    const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.3.0"
+    const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.3.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
-    const val picasso = "com.squareup.picasso:picasso:2.71828"
+    const val picasso = "com.squareup.picasso:picasso:2.8"
     const val ktlint = "com.pinterest:ktlint:0.37.1"
     const val zxing = "com.google.zxing:core:3.4.1"
 
