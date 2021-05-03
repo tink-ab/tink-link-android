@@ -5,7 +5,7 @@
 
 This directory contains sample code that demonstrates the usage of `TinkLinkUI` Android SDK.
 
-![Tink Link Android](//images.ctfassets.net/tmqu5vj33f7w/iSJMvxhKcd64b6oJ2RG8F/d9e7da7635fb94755362a6d95eb7aaa7/Tink_Link_Android.png)
+![Tink Link Android](https://images.ctfassets.net/tmqu5vj33f7w/iSJMvxhKcd64b6oJ2RG8F/d9e7da7635fb94755362a6d95eb7aaa7/Tink_Link_Android.png)
 
 ## Prerequisites
 
