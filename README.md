@@ -93,7 +93,7 @@ class MyApp : Application() {
 - [Tink Link Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-headless-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
 - [Tink Link UI Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
 
-## Examples
+## Samples
 - [Tink Link Sample](/sample-link)
 - [Tink Link UI Sample](/sample-link-ui)
 
