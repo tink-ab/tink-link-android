@@ -2,7 +2,7 @@
 
 # &lt;init&gt;
 
-`Loading(message: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null)`
+`Loading(message: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`? = null, credentials: `[`Credentials`](../../../com.tink.model.credentials/-credentials/index.md)`? = null)`
 
 The creation is being processed by Tink. There is currently no user action
 required.
@@ -10,3 +10,5 @@ required.
 ### Parameters
 
 `message` - a message containing details about the status.
+
+`credentials` - the credentials being processed, if available

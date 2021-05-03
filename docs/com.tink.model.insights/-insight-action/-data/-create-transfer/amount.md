@@ -2,4 +2,4 @@
 
 # amount
 
-`val amount: `[`Amount`](../../../../com.tink.model.misc/-amount/index.md)
+`val amount: `[`Amount`](../../../../com.tink.model.misc/-amount/index.md)`?`

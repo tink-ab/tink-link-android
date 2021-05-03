@@ -382,7 +382,11 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
     private fun submitFilledFields() {
         when (val operationArgs = credentialsOperationArgs) {
-            is CredentialsOperationArgs.Create -> createCredentials()
+            is CredentialsOperationArgs.Create -> {
+                viewModel.newlyAddedCredentials[provider.name]
+                    ?.let { updateCredentials(it.id) }
+                    ?: createCredentials()
+            }
             is CredentialsOperationArgs.Update -> updateCredentials(operationArgs.credentials.id)
             else -> { }
         }

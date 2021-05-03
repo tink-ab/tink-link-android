@@ -129,19 +129,21 @@ internal abstract class CredentialsTask(
             Credentials.Status.UNKNOWN,
             Credentials.Status.CREATED,
             Credentials.Status.UPDATING,
-            Credentials.Status.AUTHENTICATING -> CredentialsStatus.Loading(status.toString())
+            Credentials.Status.AUTHENTICATING -> CredentialsStatus.Loading(status.toString(), this)
 
             Credentials.Status.UPDATED -> CredentialsStatus.Success(status.toString(), this)
 
             Credentials.Status.AWAITING_MOBILE_BANKID_AUTHENTICATION,
             Credentials.Status.AWAITING_THIRD_PARTY_APP_AUTHENTICATION ->
                 CredentialsStatus.AwaitingAuthentication(
-                    AuthenticationTask.ThirdPartyAuthentication(this)
+                    AuthenticationTask.ThirdPartyAuthentication(this),
+                    credentials = this
                 )
 
             Credentials.Status.AWAITING_SUPPLEMENTAL_INFORMATION ->
                 CredentialsStatus.AwaitingAuthentication(
-                    AuthenticationTask.SupplementalInformation(this)
+                    AuthenticationTask.SupplementalInformation(this),
+                    credentials = this
                 )
 
             Credentials.Status.DISABLED,
