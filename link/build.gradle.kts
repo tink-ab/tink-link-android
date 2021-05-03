@@ -4,7 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("org.jetbrains.dokka").version(Versions.dokka)
-    id("com.jfrog.bintray")
+    id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 android {
@@ -43,8 +43,6 @@ dependencies {
     implementation(Dependencies.Dagger.dagger_android_support)
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
-
-    implementation(Dependencies.rxjava)
 
     testImplementation(Dependencies.Testing.test_assertj)
     testImplementation(Dependencies.Testing.test_junit_api)

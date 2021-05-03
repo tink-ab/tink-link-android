@@ -35,6 +35,8 @@ internal class CredentialsViewModel : ViewModel() {
     private val _credentials = MutableLiveData<Credentials>()
     val credentials: LiveData<Credentials> = _credentials
 
+    internal val newlyAddedCredentials: MutableMap<String, Credentials> = mutableMapOf()
+
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
 
@@ -81,10 +83,17 @@ internal class CredentialsViewModel : ViewModel() {
 
     private fun getCredentialsStreamObserver(
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
-        onError: (Throwable) -> Unit
+        onError: (Throwable) -> Unit,
+        isNewlyCreatedCredentials: Boolean = false
     ): StreamObserver<CredentialsStatus> {
         return object : StreamObserver<CredentialsStatus> {
             override fun onNext(value: CredentialsStatus) {
+                if (isNewlyCreatedCredentials) {
+                    // Add newly created credentials
+                    value.credentials?.let {
+                        newlyAddedCredentials[it.providerName] = it
+                    }
+                }
                 when (value) {
                     is CredentialsStatus.Success -> {
                         _credentials.postValue(value.credentials)
@@ -126,7 +135,7 @@ internal class CredentialsViewModel : ViewModel() {
             provider.name,
             provider.credentialsType,
             fields.toFieldMap(),
-            getCredentialsStreamObserver(onAwaitingAuthentication, onError),
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError, true),
             createRefreshableItems(scopes, provider.capabilities)
         )
     }

@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("com.jfrog.bintray")
+    id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 android {
