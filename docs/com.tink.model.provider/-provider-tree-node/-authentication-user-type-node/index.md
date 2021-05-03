@@ -25,4 +25,5 @@ A parent node of the tree structure, with a list of [AccessTypeNode](../-access-
 | [accessTypes](access-types.md) | The list of child nodes.`val accessTypes: `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<AccessTypeNode>` |
 | [authenticationUserType](authentication-user-type.md) | The `authenticationUserType` that this node represents.`val authenticationUserType: AuthenticationUserType` |
 | [icon](icon.md) | An optional url linking to a visual description of the node.`val icon: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?` |
+| [isBeta](is-beta.md) | Denotes that there is at least one underlying Provider in beta.`val isBeta: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 | [name](name.md) | A textual description of the node.`val name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?` |
