@@ -9,3 +9,7 @@ the authentication that needs to be completed by the user.
 ### Property
 
 `authenticationTask` - the authentication that needs to be completed by the user.
+
+### Parameters
+
+`credentials` - the credentials for which authentication is needed
