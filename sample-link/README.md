@@ -40,3 +40,5 @@ Before running the example project, you need to configure the following:
 
 1. Open the project in Android Studio.
 2. Press the run button. If all went well, this should launch a simulator with the sample app running.
+
+Read more about TinkLink Android in [here](https://docs.tink.com/resources/tink-link-android).

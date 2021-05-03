@@ -87,3 +87,5 @@ You can change the redirect URI by doing the following:
                    .build()
        )
    ```
+   
+   Read more about TinkLink Android in [here](https://docs.tink.com/resources/tink-link-android).
