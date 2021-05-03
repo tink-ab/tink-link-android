@@ -1,4 +1,4 @@
-# Example app
+# TinkLink Headless Sample
 
 ## Prerequisites
 
