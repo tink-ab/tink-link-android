@@ -11,7 +11,7 @@ android {
     compileSdkVersion(Versions.compileSdk)
     buildToolsVersion(Versions.buildTools)
     defaultConfig {
-        applicationId = "com.tink.link.ui.sample"
+        applicationId = "com.tink.link.sample"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
         versionCode = TinkLinkVersion.code
@@ -25,14 +25,13 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
-    implementation(project(":link-ui"))
+    implementation(project(":link"))
 
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
@@ -45,8 +44,12 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
+    implementation(Dependencies.Androidx.navigation_fragment)
+    implementation(Dependencies.Androidx.navigation_ui)
+
     implementation(Dependencies.timber)
     implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
+    implementation(Dependencies.picasso)
 }

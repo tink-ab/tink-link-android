@@ -1,0 +1,9 @@
+<resources>
+  <string name="tink_app_name">Sample Tink Link UI</string>
+  
+  <string name="redirect_uri_scheme" translatable="false">link-demo</string>
+  <string name="redirect_uri_host" translatable="false">tink</string>
+
+  <string name="link_ui_button_text">Launch Tink Link UI</string>
+
+</resources>
