@@ -2,7 +2,7 @@
 
 # TransferModule
 
-`abstract class TransferModule`
+`@Module abstract class TransferModule`
 
 ### Constructors
 
