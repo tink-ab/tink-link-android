@@ -4,6 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("org.jetbrains.dokka").version(Versions.dokka)
+    id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 android {
