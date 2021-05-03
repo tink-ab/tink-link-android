@@ -1,4 +1,9 @@
-# Tink Link UI Sample
+![Platform](https://img.shields.io/badge/platform-Android-orange.svg)
+![Languages](https://img.shields.io/badge/languages-kotlin-orange.svg)
+
+# TinkLink Sample
+
+This directory contains sample code that demonstrates the usage of `TinkLinkUI` Android SDK.
 
 ## Prerequisites
 
