@@ -42,9 +42,7 @@ dependencies {
     androidTestImplementation(Dependencies.Androidx.test_runner)
     androidTestImplementation(Dependencies.Androidx.test_espresso)
 
-    implementation(Dependencies.Dagger.core)
     implementation(Dependencies.Dagger.dagger_android)
-    implementation(Dependencies.Dagger.dagger_android_support)
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 

@@ -27,9 +27,7 @@ object Dependencies {
 
     object Dagger {
         private const val base_url = "com.google.dagger"
-        const val core = "$base_url:dagger-android-support:${Versions.dagger}"
         const val dagger_android = "$base_url:dagger-android:${Versions.dagger}"
-        const val dagger_android_support = "$base_url:dagger-android-support:${Versions.dagger}"
         const val dagger_android_processor = "$base_url:dagger-android-processor:${Versions.dagger}"
         const val dagger_android_compiler = "$base_url:dagger-compiler:${Versions.dagger}"
     }
