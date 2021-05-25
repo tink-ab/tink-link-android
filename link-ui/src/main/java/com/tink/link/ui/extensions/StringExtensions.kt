@@ -56,7 +56,7 @@ internal fun String.convertUrlMarkdownToSpan(context: Context): SpannableString 
         val url = matcher.toMatchResult().group(2)
         val startIndex = matcher.start(1) - 1
         if (!url.isNullOrEmpty() && !linkText.isNullOrEmpty()) {
-            val linkInfo = LinkInfo.Url(url, linkText)
+            val linkInfo = LinkInfo.Url(linkText, url)
             val fullText = matcher.replaceAll(linkText)
             return SpannableString.valueOf(fullText).apply {
                 setSpan(
