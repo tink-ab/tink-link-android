@@ -70,6 +70,12 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             Observer { providerList ->
                 providerAdapter?.providers = providerList
                 updateSearchView()
+
+                if (providerList.size == 1 && providerSelection is ProviderSelection.SingleProvider) {
+                    // The list consists only of a single provider.
+                    val node = providerList.first()
+                    navigateToNode(node, true)
+                }
             }
         )
 
