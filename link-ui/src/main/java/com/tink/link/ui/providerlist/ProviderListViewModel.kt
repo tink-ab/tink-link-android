@@ -48,9 +48,9 @@ internal class ProviderListViewModel : ViewModel() {
             val filteredProviders =
                 providers.filter { providerTreeNode ->
                     providerTreeNode is ProviderTreeNode.AuthenticationUserTypeNode ||
-                            providerTreeNode is ProviderTreeNode.AccessTypeNode ||
-                            providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
-                            providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
+                        providerTreeNode is ProviderTreeNode.AccessTypeNode ||
+                        providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
+                        providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
                 }
 
             if (filteredProviders != value) {
