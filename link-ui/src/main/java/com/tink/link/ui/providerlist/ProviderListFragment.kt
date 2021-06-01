@@ -20,6 +20,7 @@ import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.extensions.getColorFromAttr
+import com.tink.link.ui.extensions.visibleIf
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
@@ -66,38 +67,38 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
 
         viewModel.providers.observe(
             viewLifecycleOwner,
-            Observer {
-                providerAdapter?.providers = it
+            Observer { providerList ->
+                providerAdapter?.providers = providerList
                 updateSearchView()
-                if (it.size == 1) {
+
+                if (providerList.size == 1 && providerSelection is ProviderSelection.SingleProvider) {
                     // The list consists only of a single provider.
-                    val node = it.first()
-                    navigateToNode(node, providerSelection is ProviderSelection.SingleProvider)
+                    val node = providerList.first()
+                    navigateToNode(node, true)
                 }
             }
         )
 
         viewModel.loading.observe(
             viewLifecycleOwner,
-            Observer {
-                loader?.visibility = if (it != false) View.VISIBLE else View.GONE
+            Observer { isLoading ->
+                loader?.visibleIf { isLoading }
             }
         )
 
         viewModel.isError.observe(
             viewLifecycleOwner,
-            Observer {
-                if (it == true) {
+            Observer { isError: Boolean? ->
+                errorGroup?.visibleIf { isError == true }
+                if (isError == true) {
                     (activity as? TinkLinkUiActivity)?.let { activity ->
                         activity.linkError = TinkLinkError.UnableToFetchProviders
                     }
-                    errorGroup?.visibility = View.VISIBLE
                     TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                 } else {
                     (activity as? TinkLinkUiActivity)?.let { activity ->
                         activity.linkError = null
                     }
-                    errorGroup?.visibility = View.GONE
                 }
             }
         )
@@ -160,11 +161,12 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     private fun updateSearchView() {
-        if (!providerAdapter?.providers.isNullOrEmpty() && path.shouldShowSearch()) {
+        val isSearchShown = path.shouldShowSearch()
+        toolbar.menu.findItem(R.id.search_button).actionView.visibleIf {
+            isSearchShown
+        }
+        if (isSearchShown) {
             setupSearch(toolbar.menu.findItem(R.id.search_button).actionView as SearchView)
-            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.VISIBLE
-        } else {
-            toolbar.menu.findItem(R.id.search_button).actionView.visibility = View.GONE
         }
     }
 
@@ -190,8 +192,9 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
     }
 
     private fun search(searchText: String) {
-        queryString = searchText
-        viewModel.search(searchText)
+        val trimmedQuery = searchText.trim()
+        queryString = trimmedQuery
+        viewModel.search(trimmedQuery)
     }
 
     /**
