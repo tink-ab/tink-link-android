@@ -43,13 +43,14 @@ internal class ProviderListViewModel : ViewModel() {
     private val filteredProviders = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
             val providers = providersByPath.value ?: return
-            val query = query.value ?: ""
+            val query = query.value.orEmpty()
 
             val filteredProviders =
-                if (query.isNotBlank() && query.length >= 3) {
-                    providers.filter { it.name?.contains(query, ignoreCase = true) ?: false }
-                } else {
-                    providers
+                providers.filter { providerTreeNode ->
+                    providerTreeNode is ProviderTreeNode.AuthenticationUserTypeNode ||
+                            providerTreeNode is ProviderTreeNode.AccessTypeNode ||
+                            providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
+                            providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
                 }
 
             if (filteredProviders != value) {
@@ -75,12 +76,13 @@ internal class ProviderListViewModel : ViewModel() {
             providers.findFinancialInstitutionGroupNode(it)?.financialInstitutions
         } ?: return providers
 
-        val authenticationUserTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
-            financialInstitutions
-                .firstOrNull { it.financialInstitution == pathItem }
-                ?.authenticationUserTypes
-                ?.filterNot { it.authenticationUserType == Provider.AuthenticationUserType.UNKNOWN }
-        } ?: return financialInstitutions
+        val authenticationUserTypes =
+            path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
+                financialInstitutions
+                    .firstOrNull { it.financialInstitution == pathItem }
+                    ?.authenticationUserTypes
+                    ?.filterNot { it.authenticationUserType == Provider.AuthenticationUserType.UNKNOWN }
+            } ?: return financialInstitutions
 
         val accessTypes = path.authenticationUserTypeNodeByType?.let { pathItem ->
             authenticationUserTypes.firstOrNull { it.authenticationUserType == pathItem }?.accessTypes
