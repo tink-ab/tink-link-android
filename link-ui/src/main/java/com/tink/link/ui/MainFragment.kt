@@ -95,10 +95,12 @@ internal class MainFragment : Fragment() {
         setupInternalTracker(requireContext())
         when (val operation = credentialsOperation) {
             is CredentialsOperation.Create -> {
-                findNavController().navigate(
-                    R.id.action_mainFragment_to_providerListFragment,
-                    bundleOf(FRAGMENT_ARG_PROVIDER_SELECTION to operation.providerSelection)
-                )
+                activity?.runOnUiThread {
+                    findNavController().navigate(
+                        R.id.action_mainFragment_to_providerListFragment,
+                        bundleOf(FRAGMENT_ARG_PROVIDER_SELECTION to operation.providerSelection)
+                    )
+                }
             }
 
             is CredentialsOperation.Update,
