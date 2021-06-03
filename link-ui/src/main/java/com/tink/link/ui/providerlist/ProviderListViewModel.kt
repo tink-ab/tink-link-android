@@ -19,7 +19,7 @@ internal class ProviderListViewModel : ViewModel() {
         ProviderDataSource.clear()
     }
 
-    private val allProviders = Transformations.map(ProviderDataSource.providers) { allProviders ->
+    private val allEnabledProviders = Transformations.map(ProviderDataSource.providers) { allProviders ->
         allProviders?.filter { provider ->
             provider.status == Provider.Status.ENABLED
         }?.toProviderTree()
@@ -31,15 +31,15 @@ internal class ProviderListViewModel : ViewModel() {
 
     private val providersByPath = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
-            val allProviders = allProviders.value ?: return
+            val allEnabledProviders = allEnabledProviders.value ?: return
             val path = path.value ?: return
 
-            val filtered = applyPath(allProviders, path)
+            val filtered = applyPath(allEnabledProviders, path)
 
             postValue(filtered)
         }
         addSource(path) { update() }
-        addSource(allProviders) { update() }
+        addSource(allEnabledProviders) { update() }
     }
 
     private val filteredProviders = MediatorLiveData<List<ProviderTreeNode>>().apply {
