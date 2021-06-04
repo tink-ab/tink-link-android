@@ -4,7 +4,7 @@ object Versions {
     const val minSdk = 21
     const val targetSdk = 30
 
-    const val kotlin = "1.4.32"
+    const val kotlin = "1.5.0"
     const val dagger = "2.35.1"
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
@@ -55,7 +55,7 @@ object Dependencies {
     const val zxing = "com.google.zxing:core:3.4.1"
 
     object Tink {
-        private const val coreVersion = "0.6.5"
+        private const val coreVersion = "0.6.6"
         const val core = "com.tink:core:$coreVersion"
     }
 }

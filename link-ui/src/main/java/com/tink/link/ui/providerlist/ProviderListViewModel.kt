@@ -19,8 +19,10 @@ internal class ProviderListViewModel : ViewModel() {
         ProviderDataSource.clear()
     }
 
-    private val allProviders = Transformations.map(ProviderDataSource.providers) {
-        it?.toProviderTree()
+    private val allEnabledProviders = Transformations.map(ProviderDataSource.providers) { allProviders ->
+        allProviders?.filter { provider ->
+            provider.status == Provider.Status.ENABLED
+        }?.toProviderTree()
     }
 
     val loading: LiveData<Boolean> = ProviderDataSource.loading
@@ -29,27 +31,28 @@ internal class ProviderListViewModel : ViewModel() {
 
     private val providersByPath = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
-            val allProviders = allProviders.value ?: return
+            val allEnabledProviders = allEnabledProviders.value ?: return
             val path = path.value ?: return
 
-            val filtered = applyPath(allProviders, path)
+            val filtered = applyPath(allEnabledProviders, path)
 
             postValue(filtered)
         }
         addSource(path) { update() }
-        addSource(allProviders) { update() }
+        addSource(allEnabledProviders) { update() }
     }
 
     private val filteredProviders = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
             val providers = providersByPath.value ?: return
-            val query = query.value ?: ""
+            val query = query.value.orEmpty()
 
             val filteredProviders =
-                if (query.isNotBlank() && query.length >= 3) {
-                    providers.filter { it.name?.contains(query, ignoreCase = true) ?: false }
-                } else {
-                    providers
+                providers.filter { providerTreeNode ->
+                    providerTreeNode is ProviderTreeNode.AuthenticationUserTypeNode ||
+                        providerTreeNode is ProviderTreeNode.AccessTypeNode ||
+                        providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
+                        providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
                 }
 
             if (filteredProviders != value) {
@@ -75,12 +78,13 @@ internal class ProviderListViewModel : ViewModel() {
             providers.findFinancialInstitutionGroupNode(it)?.financialInstitutions
         } ?: return providers
 
-        val authenticationUserTypes = path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
-            financialInstitutions
-                .firstOrNull { it.financialInstitution == pathItem }
-                ?.authenticationUserTypes
-                ?.filterNot { it.authenticationUserType == Provider.AuthenticationUserType.UNKNOWN }
-        } ?: return financialInstitutions
+        val authenticationUserTypes =
+            path.financialInstitutionNodeByFinancialInstitution?.let { pathItem ->
+                financialInstitutions
+                    .firstOrNull { it.financialInstitution == pathItem }
+                    ?.authenticationUserTypes
+                    ?.filterNot { it.authenticationUserType == Provider.AuthenticationUserType.UNKNOWN }
+            } ?: return financialInstitutions
 
         val accessTypes = path.authenticationUserTypeNodeByType?.let { pathItem ->
             authenticationUserTypes.firstOrNull { it.authenticationUserType == pathItem }?.accessTypes
