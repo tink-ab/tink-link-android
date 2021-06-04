@@ -11,6 +11,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING
 import com.tink.link.ui.ProviderSelection
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkError
@@ -20,6 +22,7 @@ import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
 import com.tink.link.ui.extensions.getColorFromAttr
+import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.visibleIf
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
@@ -61,6 +64,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                 onItemClickedListener = { navigateToNode(it) }
             }
             adapter = providerAdapter
+            closeKeyboardOnScroll()
         }
 
         viewModel.setPath(path)
@@ -128,6 +132,17 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                     }
                 }
             )
+    }
+
+    private fun RecyclerView.closeKeyboardOnScroll() {
+        clearOnScrollListeners()
+        addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                if (newState == SCROLL_STATE_DRAGGING) {
+                    recyclerView.hideKeyboard()
+                }
+            }
+        })
     }
 
     private fun setupToolbar() {
