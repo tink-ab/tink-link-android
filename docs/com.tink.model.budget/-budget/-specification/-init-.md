@@ -2,4 +2,4 @@
 
 # &lt;init&gt;
 
-`Specification(id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, amount: `[`Amount`](../../../com.tink.model.misc/-amount/index.md)`, periodicity: Periodicity, archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, filter: Filter)`
+`Specification(id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, created: Instant, amount: `[`Amount`](../../../com.tink.model.misc/-amount/index.md)`, periodicity: Periodicity, archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, filter: Filter)`
