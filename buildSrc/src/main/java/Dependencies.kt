@@ -4,8 +4,8 @@ object Versions {
     const val minSdk = 21
     const val targetSdk = 30
 
-    const val kotlin = "1.4.32"
-    const val dagger = "2.24"
+    const val kotlin = "1.5.0"
+    const val dagger = "2.35.1"
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
     const val navigation = "2.3.5"
@@ -27,9 +27,7 @@ object Dependencies {
 
     object Dagger {
         private const val base_url = "com.google.dagger"
-        const val core = "$base_url:dagger-android-support:${Versions.dagger}"
         const val dagger_android = "$base_url:dagger-android:${Versions.dagger}"
-        const val dagger_android_support = "$base_url:dagger-android-support:${Versions.dagger}"
         const val dagger_android_processor = "$base_url:dagger-android-processor:${Versions.dagger}"
         const val dagger_android_compiler = "$base_url:dagger-compiler:${Versions.dagger}"
     }
@@ -57,7 +55,7 @@ object Dependencies {
     const val zxing = "com.google.zxing:core:3.4.1"
 
     object Tink {
-        private const val coreVersion = "0.6.5"
+        private const val coreVersion = "0.6.6"
         const val core = "com.tink:core:$coreVersion"
     }
 }

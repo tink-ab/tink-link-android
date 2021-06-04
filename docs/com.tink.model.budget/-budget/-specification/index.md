@@ -14,7 +14,7 @@
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `Specification(id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, amount: `[`Amount`](../../../com.tink.model.misc/-amount/index.md)`, periodicity: Periodicity, archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, filter: Filter)` |
+| [&lt;init&gt;](-init-.md) | `Specification(id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, created: Instant, amount: `[`Amount`](../../../com.tink.model.misc/-amount/index.md)`, periodicity: Periodicity, archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`, filter: Filter)` |
 
 ### Properties
 
@@ -22,6 +22,7 @@
 |---|---|
 | [amount](amount.md) | `val amount: `[`Amount`](../../../com.tink.model.misc/-amount/index.md) |
 | [archived](archived.md) | `val archived: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [created](created.md) | `val created: Instant` |
 | [filter](filter.md) | `val filter: Filter` |
 | [id](id.md) | `val id: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [name](name.md) | `val name: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

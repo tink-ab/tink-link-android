@@ -65,6 +65,8 @@ You can change the redirect URI by doing the following:
    </activity>
    ```
    For more information, please see the official Android guide [on deep linking](https://developer.android.com/training/app-links/deep-linking.html).
+   
+	**Note:** Tink Link supports both portrait and landscape mode. If your app only supports portrait mode you might want to disable landscape mode in Tink Link to stay consistent with your other screens. To do so add the `android:screenOrientation="portrait"` attribute to `com.tink.link.ui.TinkLinkUiActivity`.
 
 3. Update the `TinkConfiguration` object in [`src/main/java/com/tink/sample/MainLinkUiActivity.kt`](src/main/java/com/tink/sample/MainLinkUiActivity.kt) with the new redirect URI.
 
