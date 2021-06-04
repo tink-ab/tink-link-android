@@ -19,11 +19,13 @@ import com.tink.link.ui.analytics.TinkLinkTracker
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.credentials.CredentialsOperationArgs
+import com.tink.link.ui.extensions.closeKeyboardOnScrollStart
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.visibleIf
 import com.tink.model.provider.ProviderTreeNode
 import kotlinx.android.synthetic.main.tink_fragment_provider_list.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar.*
+import java.lang.ref.WeakReference
 
 const val FRAGMENT_ARG_PROVIDER_SELECTION = "providerSelectionArg"
 
@@ -61,6 +63,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                 onItemClickedListener = { navigateToNode(it) }
             }
             adapter = providerAdapter
+            closeKeyboardOnScrollStart(WeakReference(this@ProviderListFragment))
         }
 
         viewModel.setPath(path)
