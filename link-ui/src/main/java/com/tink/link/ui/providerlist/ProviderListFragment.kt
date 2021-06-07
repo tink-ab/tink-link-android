@@ -101,7 +101,10 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
                     TinkLinkTracker.trackScreen(ScreenEvent.ERROR_SCREEN)
                 } else {
                     (activity as? TinkLinkUiActivity)?.let { activity ->
-                        activity.linkError = null
+                        // Clear the linkError property only if this was set here as there may be another valid error to be tracked
+                        if (activity.linkError is TinkLinkError.UnableToFetchProviders) {
+                            activity.linkError = null
+                        }
                     }
                 }
             }
