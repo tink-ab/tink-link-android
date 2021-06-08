@@ -209,6 +209,8 @@ internal class CredentialsViewModel : ViewModel() {
         streamSubscription?.unsubscribe()
     }
 
+    fun stopSubscribing() = streamSubscription?.unsubscribe()
+
     enum class ViewState {
         NOT_LOADING,
         WAITING_FOR_AUTHENTICATION,
