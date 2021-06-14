@@ -19,7 +19,7 @@ internal class ProviderListViewModel : ViewModel() {
         ProviderDataSource.clear()
     }
 
-    private val allEnabledProviders = Transformations.map(ProviderDataSource.providers) { allProviders ->
+    val allEnabledProviders: LiveData<List<ProviderTreeNode>?> = Transformations.map(ProviderDataSource.providers) { allProviders ->
         allProviders?.filter { provider ->
             provider.status == Provider.Status.ENABLED
         }?.toProviderTree()
