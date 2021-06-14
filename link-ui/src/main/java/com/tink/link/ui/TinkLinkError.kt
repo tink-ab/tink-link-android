@@ -21,7 +21,7 @@ sealed class TinkLinkError : Parcelable {
     data class ProviderNotFound(val providerName: String) : TinkLinkError()
 
     /**
-     * Tink Link UI displayed an empty list of providers
+     * Tink Link UI fetched an empty list of providers
      */
     @Parcelize
     object ProviderListEmpty : TinkLinkError()
