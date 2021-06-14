@@ -28,4 +28,20 @@
   <dimen name="tink_credentials_qr_code_width">156dp</dimen>
   <dimen name="tink_credentials_qr_code_height">156dp</dimen>
 
+  <dimen name="tink_standard_margin_start">16dp</dimen>
+  <dimen name="tink_standard_margin_end">16dp</dimen>
+  <dimen name="tink_provider_list_error_marginStart">56dp</dimen>
+  <dimen name="tink_provider_list_error_marginEnd">56dp</dimen>
+  <dimen name="tink_item_provider_divider_marginStart">72dp</dimen>
+  <dimen name="tink_consent_information_marginStart">24dp</dimen>
+  <dimen name="tink_consent_information_marginEnd">24dp</dimen>
+  <dimen name="tink_credentials_empty_login_text_marginStart">56dp</dimen>
+  <dimen name="tink_credentials_empty_login_text_marginEnd">56dp</dimen>
+  <dimen name="tink_credentials_termsAndConsentText_marginStart">24dp</dimen>
+  <dimen name="tink_credentials_termsAndConsentText_marginEnd">20dp</dimen>
+  <dimen name="tink_credentials_authenticate_statusMessage_marginStart">56dp</dimen>
+  <dimen name="tink_credentials_authenticate_statusMessage_marginEnd">56dp</dimen>
+  <dimen name="tink_connection_successful_marginStart">56dp</dimen>
+  <dimen name="tink_connection_successful_marginEnd">56dp</dimen>
+
 </resources>
