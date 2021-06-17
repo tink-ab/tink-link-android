@@ -109,7 +109,11 @@ internal class CredentialsViewModel : ViewModel() {
                     }
 
                     is CredentialsStatus.AwaitingAuthentication -> {
-                        _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                        if (value.authenticationTask is AuthenticationTask.SupplementalInformation) {
+                            _viewState.postValue(ViewState.NOT_LOADING)
+                        } else {
+                            _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                        }
                         onAwaitingAuthentication(value.authenticationTask)
                     }
                 }
@@ -208,6 +212,8 @@ internal class CredentialsViewModel : ViewModel() {
         super.onCleared()
         streamSubscription?.unsubscribe()
     }
+
+    fun stopSubscribing() = streamSubscription?.unsubscribe()
 
     enum class ViewState {
         NOT_LOADING,

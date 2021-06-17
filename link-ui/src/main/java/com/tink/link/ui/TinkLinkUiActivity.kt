@@ -18,6 +18,7 @@ import com.tink.model.user.User
 import com.tink.service.network.TinkConfiguration
 import com.tink.service.provider.ProviderFilter
 import kotlinx.android.parcel.Parcelize
+import kotlinx.android.synthetic.main.tink_activity_main.*
 
 /**
  * Activity used for displaying the full Tink Link UI flow.
@@ -141,7 +142,25 @@ class TinkLinkUiActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        if (nav_host_fragment.childFragmentManager.backStackEntryCount == 0) {
+            // Exiting Tink Link UI flow
+            if (linkError == null) {
+                setTinkLinkUiResult(RESULT_CANCELLED)
+            } else {
+                // Since there are some credentials errors, this can be considered a failure
+                setTinkLinkUiResult(RESULT_FAILURE)
+            }
+        }
+        super.onBackPressed()
+    }
+
     internal fun closeTinkLinkUi(resultCode: Int) {
+        setTinkLinkUiResult(resultCode)
+        finish()
+    }
+
+    internal fun setTinkLinkUiResult(resultCode: Int) {
         val resultIntent = when (resultCode) {
             RESULT_SUCCESS -> {
                 getTinkLinkResult()
@@ -160,7 +179,6 @@ class TinkLinkUiActivity : AppCompatActivity() {
             resultIntent.putExtra(FAILED_CREDENTIALS_DATA, failedCredentialsDataBundle)
         }
         setResult(resultCode, resultIntent)
-        finish()
     }
 
     private fun getErrorIntent(error: TinkLinkError): Intent =

@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:background="?tink_colorBackground"
-  android:padding="24dp">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
 
-  <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/supplementalInformationTitle"
-    style="@style/tink_mega"
-    android:layout_width="0dp"
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/tink_supplemental_information_title"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:background="?tink_colorBackground"
+    android:padding="24dp">
 
-  <LinearLayout
-    android:id="@+id/supplementalFieldsContainer"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:orientation="vertical"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/supplementalInformationTitle" />
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/supplementalInformationTitle"
+      style="@style/tink_mega"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:text="@string/tink_supplemental_information_title"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
-  <com.google.android.material.button.MaterialButton
-    android:id="@+id/cancelButton"
-    style="?tink_textButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    android:layout_marginEnd="32dp"
-    android:text="@string/tink_cancel_button"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@id/submitButton"
-    app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
+    <LinearLayout
+      android:id="@+id/supplementalFieldsContainer"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:orientation="vertical"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/supplementalInformationTitle" />
 
-  <com.google.android.material.button.MaterialButton
-    android:id="@+id/submitButton"
-    style="?tink_textButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    android:text="@string/tink_supplemental_information_submit_button"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@id/supplementalInformationTitle"
-    app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/cancelButton"
+      style="?tink_textButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:text="@string/tink_cancel_button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/submitButton"
+      app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/submitButton"
+      style="?tink_textButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="@string/tink_supplemental_information_submit_button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="@id/supplementalInformationTitle"
+      app:layout_constraintTop_toBottomOf="@id/supplementalFieldsContainer" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
