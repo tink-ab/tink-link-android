@@ -73,6 +73,7 @@ internal class SupplementalInformationFragment : DialogFragment() {
             }
 
             cancelButton.setOnClickListener {
+                credentialsViewModel.stopSubscribing()
                 supplementalInformationViewModel.cancelSupplementalInformation()
                 dismiss()
             }
