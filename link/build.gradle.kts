@@ -29,10 +29,6 @@ android {
 
 }
 
-apply {
-    from("../dokka-config.gradle")
-}
-
 dependencies {
     api(Dependencies.Tink.core)
 
@@ -63,39 +59,36 @@ if (project.hasProperty("kapt")) {
 
 apply(from = "../publishing.gradle")
 
-tasks {
-    dokka {
-        doFirst {
-            println("Deleting old /docs")
-            delete("../docs")
-        }
-        doLast {
-            // Link
-            println("Copying docs from /docs/link to /docs")
-            copy {
-                from("../docs/link")
-                into("../docs")
-            }
-            println("Deleting /docs/link")
-            delete("../docs/link")
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    outputDirectory.set(rootDir.resolve("docs"))
 
-            // Link-Payments
-            println("Copying docs from /docs/link-payments to /docs")
-            copy {
-                from("../docs/link-payments")
-                into("../docs")
-            }
-            println("Deleting /docs/link-payments")
-            delete("../docs/link-payments")
+    dokkaSourceSets {
+        configureEach {
+            sourceRoots
+                .from(rootDir.resolve("link/src"))
+                .from(rootDir.resolve("link-payments/src"))
+                .from(rootDir.resolve("link-ui/src"))
+                .from(rootDir.resolve("../tink-sdk-core-android/core/src"))
+                .from(rootDir.resolve("../tink-sdk-core-android/models/src"))
+                .from(rootDir.resolve("../tink-sdk-core-android/service/src"))
 
-            // Link-UI
-            println("Copying docs from /docs/link-ui to /docs")
-            copy {
-                from("../docs/link-ui")
-                into("../docs")
-            }
-            println("Deleting /docs/link-ui")
-            delete("../docs/link-ui")
+            samples
+                .from(rootDir.resolve("link-payments/src/main/java/com/tink/link/payments/codeexamples"))
+                .from(rootDir.resolve("link-ui/src/main/java/com/tink/link/ui/codeexamples"))
         }
+    }
+
+    doFirst {
+        println("Deleting old /docs")
+        delete("../docs")
+    }
+    doLast {
+        println("Copying docs from /docs/link to /docs")
+        copy {
+            from("../docs/link")
+            into("../docs")
+        }
+        println("Deleting /docs/link")
+        delete("../docs/link")
     }
 }
