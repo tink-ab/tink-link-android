@@ -1,0 +1,11 @@
+//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Period](index.md)/[spentAmount](spent-amount.md)
+
+
+
+# spentAmount  
+[androidJvm]  
+Content  
+val [spentAmount](spent-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+
+
+

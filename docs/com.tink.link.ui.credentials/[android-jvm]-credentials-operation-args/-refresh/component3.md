@@ -1,0 +1,11 @@
+//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[androidJvm]CredentialsOperationArgs](../index.md)/[Refresh](index.md)/[component3](component3.md)
+
+
+
+# component3  
+[androidJvm]  
+Content  
+operator fun [component3](component3.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+
+
+
