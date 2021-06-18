@@ -1,3 +1,6 @@
+---
+title: [common]authenticateUser -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[common]authenticateUser]([common]authenticate-user.md)
 
 

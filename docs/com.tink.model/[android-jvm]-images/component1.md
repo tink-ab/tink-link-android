@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.model](../index.md)/[[androidJvm]Images](index.md)/[component1](component1.md)
 
 

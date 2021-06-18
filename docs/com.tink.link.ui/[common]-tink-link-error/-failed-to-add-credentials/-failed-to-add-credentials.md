@@ -1,3 +1,6 @@
+---
+title: FailedToAddCredentials -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[FailedToAddCredentials](index.md)/[FailedToAddCredentials](-failed-to-add-credentials.md)
 
 

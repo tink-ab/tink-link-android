@@ -1,3 +1,6 @@
+---
+title: transactionId -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[LargeExpenseData](index.md)/[transactionId](transaction-id.md)
 
 

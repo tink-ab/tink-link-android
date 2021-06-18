@@ -1,3 +1,6 @@
+---
+title: com.tink.model.statistics -
+---
 //[link](../index.md)/[com.tink.model.statistics](index.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: currencyCode -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Amount](index.md)/[currencyCode](currency-code.md)
 
 

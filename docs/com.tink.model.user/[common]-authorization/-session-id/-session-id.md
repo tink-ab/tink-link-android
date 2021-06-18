@@ -1,3 +1,6 @@
+---
+title: SessionId -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]Authorization](../index.md)/[SessionId](index.md)/[SessionId](-session-id.md)
 
 

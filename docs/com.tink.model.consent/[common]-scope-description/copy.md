@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]ScopeDescription](index.md)/[copy](copy.md)
 
 

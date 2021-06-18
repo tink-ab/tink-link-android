@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[androidJvm]CredentialsOperationArgs](../index.md)/[Create](index.md)/[component1](component1.md)
 
 

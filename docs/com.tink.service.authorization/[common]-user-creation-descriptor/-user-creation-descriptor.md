@@ -1,3 +1,6 @@
+---
+title: UserCreationDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[UserCreationDescriptor](-user-creation-descriptor.md)
 
 

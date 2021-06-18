@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[component3](component3.md)
 
 

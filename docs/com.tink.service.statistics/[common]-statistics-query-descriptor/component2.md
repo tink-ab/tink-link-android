@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[common]StatisticsQueryDescriptor](index.md)/[component2](component2.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: accountId -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)/[accountId](account-id.md)
 
 

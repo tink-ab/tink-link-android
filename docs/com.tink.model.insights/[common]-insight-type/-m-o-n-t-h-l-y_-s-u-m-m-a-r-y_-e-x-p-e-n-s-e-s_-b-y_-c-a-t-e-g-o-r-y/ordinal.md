@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[MONTHLY_SUMMARY_EXPENSES_BY_CATEGORY](index.md)/[ordinal](ordinal.md)
 
 

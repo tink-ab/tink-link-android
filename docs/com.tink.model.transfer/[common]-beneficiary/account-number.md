@@ -1,3 +1,6 @@
+---
+title: accountNumber -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]Beneficiary](index.md)/[accountNumber](account-number.md)
 
 

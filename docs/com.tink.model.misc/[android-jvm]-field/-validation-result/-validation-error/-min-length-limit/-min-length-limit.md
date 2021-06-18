@@ -1,3 +1,6 @@
+---
+title: MinLengthLimit -
+---
 //[link](../../../../../index.md)/[com.tink.model.misc](../../../../index.md)/[[androidJvm]Field](../../../index.md)/[ValidationResult](../../index.md)/[ValidationError](../index.md)/[MinLengthLimit](index.md)/[MinLengthLimit](-min-length-limit.md)
 
 

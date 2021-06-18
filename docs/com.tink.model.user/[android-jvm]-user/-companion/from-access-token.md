@@ -1,3 +1,6 @@
+---
+title: fromAccessToken -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]User](../index.md)/[Companion](index.md)/[fromAccessToken](from-access-token.md)
 
 

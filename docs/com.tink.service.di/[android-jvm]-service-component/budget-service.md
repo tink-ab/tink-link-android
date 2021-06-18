@@ -1,3 +1,6 @@
+---
+title: budgetService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[budgetService](budget-service.md)
 
 

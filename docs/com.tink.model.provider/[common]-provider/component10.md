@@ -1,3 +1,6 @@
+---
+title: component10 -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[component10](component10.md)
 
 

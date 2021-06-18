@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[copy](copy.md)
 
 

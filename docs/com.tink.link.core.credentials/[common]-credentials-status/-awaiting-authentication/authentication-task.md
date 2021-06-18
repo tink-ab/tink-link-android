@@ -1,3 +1,6 @@
+---
+title: authenticationTask -
+---
 //[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[common]CredentialsStatus](../index.md)/[AwaitingAuthentication](index.md)/[authenticationTask](authentication-task.md)
 
 

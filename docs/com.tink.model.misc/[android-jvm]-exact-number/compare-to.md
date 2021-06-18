@@ -1,3 +1,6 @@
+---
+title: compareTo -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]ExactNumber](index.md)/[compareTo](compare-to.md)
 
 

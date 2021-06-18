@@ -1,3 +1,6 @@
+---
+title: addBeneficiary -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[addBeneficiary](add-beneficiary.md)
 
 

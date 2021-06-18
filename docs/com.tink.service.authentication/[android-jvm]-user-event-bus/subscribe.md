@@ -1,3 +1,6 @@
+---
+title: subscribe -
+---
 //[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[androidJvm]UserEventBus](index.md)/[subscribe](subscribe.md)
 
 

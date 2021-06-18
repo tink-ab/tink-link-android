@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[androidJvm]Credentials](../../index.md)/[Status](../index.md)/[AWAITING_MOBILE_BANKID_AUTHENTICATION](index.md)/[ordinal](ordinal.md)
 
 

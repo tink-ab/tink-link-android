@@ -1,3 +1,6 @@
+---
+title: uri -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]Beneficiary](index.md)/[uri](uri.md)
 
 

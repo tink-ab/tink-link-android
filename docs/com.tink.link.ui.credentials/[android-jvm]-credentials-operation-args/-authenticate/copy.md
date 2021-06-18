@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[androidJvm]CredentialsOperationArgs](../index.md)/[Authenticate](index.md)/[copy](copy.md)
 
 

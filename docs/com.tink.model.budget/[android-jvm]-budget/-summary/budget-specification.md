@@ -1,3 +1,6 @@
+---
+title: budgetSpecification -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Summary](index.md)/[budgetSpecification](budget-specification.md)
 
 

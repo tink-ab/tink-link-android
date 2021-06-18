@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[name](name.md)
 
 

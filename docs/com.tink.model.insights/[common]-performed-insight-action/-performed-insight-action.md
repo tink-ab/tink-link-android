@@ -1,3 +1,6 @@
+---
+title: PerformedInsightAction -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]PerformedInsightAction](index.md)/[PerformedInsightAction](-performed-insight-action.md)
 
 

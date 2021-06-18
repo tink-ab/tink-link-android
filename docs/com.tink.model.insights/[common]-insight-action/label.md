@@ -1,3 +1,6 @@
+---
+title: label -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]InsightAction](index.md)/[label](label.md)
 
 

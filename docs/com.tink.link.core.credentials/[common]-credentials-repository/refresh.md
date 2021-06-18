@@ -1,3 +1,6 @@
+---
+title: refresh -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[refresh](refresh.md)
 
 

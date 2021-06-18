@@ -1,3 +1,6 @@
+---
+title: ProviderList -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[ProviderList](index.md)/[ProviderList](-provider-list.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: accountNumber -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]Beneficiary](index.md)/[accountNumber](account-number.md)
 
 

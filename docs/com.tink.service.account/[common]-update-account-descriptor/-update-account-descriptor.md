@@ -1,3 +1,6 @@
+---
+title: UpdateAccountDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]UpdateAccountDescriptor](index.md)/[UpdateAccountDescriptor](-update-account-descriptor.md)
 
 

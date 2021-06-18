@@ -1,3 +1,6 @@
+---
+title: message -
+---
 //[link](../../../../../index.md)/[com.tink.link.authentication](../../../../index.md)/[[common]AuthenticationTask](../../../index.md)/[ThirdPartyAuthentication](../../index.md)/[LaunchResult](../index.md)/[Error](index.md)/[message](message.md)
 
 

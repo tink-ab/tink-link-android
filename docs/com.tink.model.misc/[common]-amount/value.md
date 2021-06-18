@@ -1,3 +1,6 @@
+---
+title: value -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]Amount](index.md)/[value](value.md)
 
 

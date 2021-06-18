@@ -1,3 +1,6 @@
+---
+title: getConfiguration -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[getConfiguration](get-configuration.md)
 
 

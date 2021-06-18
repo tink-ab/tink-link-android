@@ -1,3 +1,6 @@
+---
+title: [androidJvm]requireUserContext -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]requireUserContext]([android-jvm]require-user-context.md)
 
 

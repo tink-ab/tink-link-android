@@ -1,3 +1,6 @@
+---
+title: userEventBus -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[userEventBus](user-event-bus.md)
 
 

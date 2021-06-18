@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[component3](component3.md)
 
 

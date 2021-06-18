@@ -1,3 +1,6 @@
+---
+title: update -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]AccountService](index.md)/[update](update.md)
 
 

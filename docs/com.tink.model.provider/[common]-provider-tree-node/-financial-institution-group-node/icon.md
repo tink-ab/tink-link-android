@@ -1,3 +1,6 @@
+---
+title: icon -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[FinancialInstitutionGroupNode](index.md)/[icon](icon.md)
 
 

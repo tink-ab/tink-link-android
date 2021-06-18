@@ -1,3 +1,6 @@
+---
+title: AccountDetails -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[AccountDetails](-account-details.md)
 
 

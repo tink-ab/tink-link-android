@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[common]StatisticsQueryDescriptor](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: BudgetSummaryAchievedData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSummaryAchievedData](index.md)/[BudgetSummaryAchievedData](-budget-summary-achieved-data.md)
 
 

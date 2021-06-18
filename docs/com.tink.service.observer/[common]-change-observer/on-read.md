@@ -1,3 +1,6 @@
+---
+title: onRead -
+---
 //[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onRead](on-read.md)
 
 

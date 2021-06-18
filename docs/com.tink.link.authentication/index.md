@@ -1,3 +1,6 @@
+---
+title: com.tink.link.authentication -
+---
 //[link](../index.md)/[com.tink.link.authentication](index.md)
 
 

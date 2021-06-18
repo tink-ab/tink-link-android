@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[LARGE_EXPENSE](index.md)/[ordinal](ordinal.md)
 
 

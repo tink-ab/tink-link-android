@@ -1,3 +1,6 @@
+---
+title: getProfile -
+---
 //[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileService](index.md)/[getProfile](get-profile.md)
 
 

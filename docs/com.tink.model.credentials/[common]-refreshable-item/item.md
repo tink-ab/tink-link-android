@@ -1,3 +1,6 @@
+---
+title: item -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]RefreshableItem](index.md)/[item](item.md)
 
 

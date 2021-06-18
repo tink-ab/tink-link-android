@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[common]Credentials](../../index.md)/[Status](../index.md)/[UNKNOWN](index.md)/[ordinal](ordinal.md)
 
 

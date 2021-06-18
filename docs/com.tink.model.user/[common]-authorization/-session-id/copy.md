@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]Authorization](../index.md)/[SessionId](index.md)/[copy](copy.md)
 
 

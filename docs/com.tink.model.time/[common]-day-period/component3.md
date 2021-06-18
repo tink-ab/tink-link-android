@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]DayPeriod](index.md)/[component3](component3.md)
 
 

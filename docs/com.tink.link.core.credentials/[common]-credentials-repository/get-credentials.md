@@ -1,3 +1,6 @@
+---
+title: getCredentials -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[getCredentials](get-credentials.md)
 
 

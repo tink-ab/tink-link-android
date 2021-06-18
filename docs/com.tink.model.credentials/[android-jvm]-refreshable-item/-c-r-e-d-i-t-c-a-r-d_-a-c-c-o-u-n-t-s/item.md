@@ -1,3 +1,6 @@
+---
+title: item -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[CREDITCARD_ACCOUNTS](index.md)/[item](item.md)
 
 

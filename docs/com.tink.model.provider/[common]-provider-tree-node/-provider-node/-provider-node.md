@@ -1,3 +1,6 @@
+---
+title: ProviderNode -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[ProviderNode](index.md)/[ProviderNode](-provider-node.md)
 
 

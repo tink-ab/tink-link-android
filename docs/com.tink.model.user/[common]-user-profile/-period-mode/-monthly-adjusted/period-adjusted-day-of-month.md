@@ -1,3 +1,6 @@
+---
+title: periodAdjustedDayOfMonth -
+---
 //[link](../../../../index.md)/[com.tink.model.user](../../../index.md)/[[common]UserProfile](../../index.md)/[PeriodMode](../index.md)/[MonthlyAdjusted](index.md)/[periodAdjustedDayOfMonth](period-adjusted-day-of-month.md)
 
 

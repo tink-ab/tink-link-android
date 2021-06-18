@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[MonthlySummaryExpensesByCategoryData](index.md)/[component2](component2.md)
 
 

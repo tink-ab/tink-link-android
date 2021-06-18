@@ -1,3 +1,6 @@
+---
+title: sessionId -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]Authorization](../index.md)/[SessionId](index.md)/[sessionId](session-id.md)
 
 

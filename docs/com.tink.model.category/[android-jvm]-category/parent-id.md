@@ -1,3 +1,6 @@
+---
+title: parentId -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[parentId](parent-id.md)
 
 

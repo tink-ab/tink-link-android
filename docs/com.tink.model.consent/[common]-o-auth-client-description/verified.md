@@ -1,3 +1,6 @@
+---
+title: verified -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[verified](verified.md)
 
 

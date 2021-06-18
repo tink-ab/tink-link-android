@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Type](../index.md)/[VIEW_TRANSACTIONS](index.md)/[name](name.md)
 
 

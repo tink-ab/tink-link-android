@@ -1,3 +1,6 @@
+---
+title: InputType -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[InputType](index.md)/[InputType](-input-type.md)
 
 

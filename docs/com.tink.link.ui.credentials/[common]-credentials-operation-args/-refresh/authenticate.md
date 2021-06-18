@@ -1,3 +1,6 @@
+---
+title: authenticate -
+---
 //[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Refresh](index.md)/[authenticate](authenticate.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: component9 -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[component9](component9.md)
 
 

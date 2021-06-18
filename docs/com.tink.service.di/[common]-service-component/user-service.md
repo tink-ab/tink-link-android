@@ -1,3 +1,6 @@
+---
+title: userService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[userService](user-service.md)
 
 

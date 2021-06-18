@@ -1,3 +1,6 @@
+---
+title: clientIconUrl -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[clientIconUrl](client-icon-url.md)
 
 

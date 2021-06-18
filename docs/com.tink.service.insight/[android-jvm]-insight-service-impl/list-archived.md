@@ -1,3 +1,6 @@
+---
+title: listArchived -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightServiceImpl](index.md)/[listArchived](list-archived.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: SignableOperation -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]SignableOperation](index.md)/[SignableOperation](-signable-operation.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: MonthlySummaryExpensesByCategoryData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[MonthlySummaryExpensesByCategoryData](index.md)/[MonthlySummaryExpensesByCategoryData](-monthly-summary-expenses-by-category-data.md)
 
 

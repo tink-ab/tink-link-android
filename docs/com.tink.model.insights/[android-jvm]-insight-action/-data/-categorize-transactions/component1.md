@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CategorizeTransactions](index.md)/[component1](component1.md)
 
 

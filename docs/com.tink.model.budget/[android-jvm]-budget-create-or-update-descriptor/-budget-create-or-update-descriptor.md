@@ -1,3 +1,6 @@
+---
+title: BudgetCreateOrUpdateDescriptor -
+---
 //[link](../../index.md)/[com.tink.model.budget](../index.md)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.md)/[BudgetCreateOrUpdateDescriptor](-budget-create-or-update-descriptor.md)
 
 

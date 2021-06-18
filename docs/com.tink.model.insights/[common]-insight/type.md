@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[type](type.md)
 
 

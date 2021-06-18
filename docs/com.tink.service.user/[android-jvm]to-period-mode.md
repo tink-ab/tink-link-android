@@ -1,3 +1,6 @@
+---
+title: [androidJvm]toPeriodMode -
+---
 //[link](../index.md)/[com.tink.service.user](index.md)/[[androidJvm]toPeriodMode]([android-jvm]to-period-mode.md)
 
 

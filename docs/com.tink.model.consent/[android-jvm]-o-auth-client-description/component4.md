@@ -1,3 +1,6 @@
+---
+title: component4 -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[component4](component4.md)
 
 

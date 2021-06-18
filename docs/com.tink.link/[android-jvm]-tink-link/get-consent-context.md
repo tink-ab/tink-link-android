@@ -1,3 +1,6 @@
+---
+title: getConsentContext -
+---
 //[link](../../index.md)/[com.tink.link](../index.md)/[[androidJvm]TinkLink](index.md)/[getConsentContext](get-consent-context.md)
 
 

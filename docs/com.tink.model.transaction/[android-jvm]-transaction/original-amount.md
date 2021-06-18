@@ -1,3 +1,6 @@
+---
+title: originalAmount -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[originalAmount](original-amount.md)
 
 

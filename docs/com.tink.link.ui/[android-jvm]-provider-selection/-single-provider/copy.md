@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]ProviderSelection](../index.md)/[SingleProvider](index.md)/[copy](copy.md)
 
 

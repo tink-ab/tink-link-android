@@ -1,3 +1,6 @@
+---
+title: authenticationUserTypes -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[FinancialInstitutionNode](index.md)/[authenticationUserTypes](authentication-user-types.md)
 
 

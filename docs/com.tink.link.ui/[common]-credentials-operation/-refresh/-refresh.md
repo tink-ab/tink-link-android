@@ -1,3 +1,6 @@
+---
+title: Refresh -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]CredentialsOperation](../index.md)/[Refresh](index.md)/[Refresh](-refresh.md)
 
 

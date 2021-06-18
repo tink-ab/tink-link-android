@@ -1,3 +1,6 @@
+---
+title: favored -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]UpdateAccountDescriptor](index.md)/[favored](favored.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: credentialsId -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[credentialsId](credentials-id.md)
 
 

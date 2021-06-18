@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[component2](component2.md)
 
 

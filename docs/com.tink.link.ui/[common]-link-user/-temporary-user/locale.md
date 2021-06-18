@@ -1,3 +1,6 @@
+---
+title: locale -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[TemporaryUser](index.md)/[locale](locale.md)
 
 

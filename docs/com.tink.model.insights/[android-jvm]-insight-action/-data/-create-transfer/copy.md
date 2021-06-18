@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[copy](copy.md)
 
 

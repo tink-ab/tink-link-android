@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[component2](component2.md)
 
 

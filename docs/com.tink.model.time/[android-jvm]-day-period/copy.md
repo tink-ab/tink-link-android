@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]DayPeriod](index.md)/[copy](copy.md)
 
 

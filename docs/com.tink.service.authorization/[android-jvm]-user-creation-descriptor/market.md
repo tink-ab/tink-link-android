@@ -1,3 +1,6 @@
+---
+title: market -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserCreationDescriptor](index.md)/[market](market.md)
 
 

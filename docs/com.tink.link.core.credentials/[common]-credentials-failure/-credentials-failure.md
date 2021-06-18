@@ -1,3 +1,6 @@
+---
+title: CredentialsFailure -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsFailure](index.md)/[CredentialsFailure](-credentials-failure.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: toBigDecimal -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]ExactNumber](index.md)/[toBigDecimal](to-big-decimal.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: component14 -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[component14](component14.md)
 
 

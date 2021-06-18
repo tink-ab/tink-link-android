@@ -1,3 +1,6 @@
+---
+title: groupDisplayName -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[groupDisplayName](group-display-name.md)
 
 

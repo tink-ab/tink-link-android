@@ -1,3 +1,6 @@
+---
+title: com.tink.model.category -
+---
 //[link](../index.md)/[com.tink.model.category](index.md)
 
 

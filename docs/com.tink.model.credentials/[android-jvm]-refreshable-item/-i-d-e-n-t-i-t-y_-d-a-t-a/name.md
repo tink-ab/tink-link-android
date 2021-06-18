@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[IDENTITY_DATA](index.md)/[name](name.md)
 
 

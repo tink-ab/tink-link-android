@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[androidJvm]AddBeneficiaryStatus](../index.md)/[Loading](index.md)/[component1](component1.md)
 
 

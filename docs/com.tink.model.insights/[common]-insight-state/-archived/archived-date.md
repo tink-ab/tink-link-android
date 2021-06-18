@@ -1,3 +1,6 @@
+---
+title: archivedDate -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightState](../index.md)/[Archived](index.md)/[archivedDate](archived-date.md)
 
 

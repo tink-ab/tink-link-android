@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.model](../index.md)/[[common]Images](index.md)/[component1](component1.md)
 
 

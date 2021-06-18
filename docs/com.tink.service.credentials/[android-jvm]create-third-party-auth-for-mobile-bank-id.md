@@ -1,3 +1,6 @@
+---
+title: [androidJvm]createThirdPartyAuthForMobileBankId -
+---
 //[link](../index.md)/[com.tink.service.credentials](index.md)/[[androidJvm]createThirdPartyAuthForMobileBankId]([android-jvm]create-third-party-auth-for-mobile-bank-id.md)
 
 

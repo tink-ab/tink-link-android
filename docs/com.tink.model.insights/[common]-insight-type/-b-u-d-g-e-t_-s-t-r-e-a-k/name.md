@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[BUDGET_STREAK](index.md)/[name](name.md)
 
 

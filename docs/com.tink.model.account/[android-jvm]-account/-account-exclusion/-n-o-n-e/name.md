@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.account](../../../index.md)/[[androidJvm]Account](../../index.md)/[AccountExclusion](../index.md)/[NONE](index.md)/[name](name.md)
 
 

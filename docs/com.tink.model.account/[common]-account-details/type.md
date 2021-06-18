@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[type](type.md)
 
 

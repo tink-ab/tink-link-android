@@ -1,3 +1,6 @@
+---
+title: authorization -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]User](index.md)/[authorization](authorization.md)
 
 

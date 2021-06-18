@@ -1,3 +1,6 @@
+---
+title: start -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]WeekPeriod](index.md)/[start](start.md)
 
 

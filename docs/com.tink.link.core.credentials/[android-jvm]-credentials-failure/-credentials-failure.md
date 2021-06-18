@@ -1,3 +1,6 @@
+---
+title: CredentialsFailure -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsFailure](index.md)/[CredentialsFailure](-credentials-failure.md)
 
 

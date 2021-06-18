@@ -1,3 +1,6 @@
+---
+title: RESULT_SUCCESS -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[RESULT_SUCCESS](-r-e-s-u-l-t_-s-u-c-c-e-s-s.md)
 
 

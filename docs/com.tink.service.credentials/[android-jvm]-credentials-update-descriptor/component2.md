@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsUpdateDescriptor](index.md)/[component2](component2.md)
 
 

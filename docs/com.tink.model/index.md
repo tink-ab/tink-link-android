@@ -1,3 +1,6 @@
+---
+title: com.tink.model -
+---
 //[link](../index.md)/[com.tink.model](index.md)
 
 

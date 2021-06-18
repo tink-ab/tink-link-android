@@ -1,3 +1,6 @@
+---
+title: displayName -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[displayName](display-name.md)
 
 

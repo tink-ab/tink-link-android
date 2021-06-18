@@ -1,3 +1,6 @@
+---
+title: sessionExpiryDate -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[sessionExpiryDate](session-expiry-date.md)
 
 

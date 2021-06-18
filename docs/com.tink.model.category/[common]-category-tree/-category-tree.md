@@ -1,3 +1,6 @@
+---
+title: CategoryTree -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]CategoryTree](index.md)/[CategoryTree](-category-tree.md)
 
 

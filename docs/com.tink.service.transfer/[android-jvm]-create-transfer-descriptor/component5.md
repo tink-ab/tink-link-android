@@ -1,3 +1,6 @@
+---
+title: component5 -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[component5](component5.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: sourceAccountUri -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[sourceAccountUri](source-account-uri.md)
 
 

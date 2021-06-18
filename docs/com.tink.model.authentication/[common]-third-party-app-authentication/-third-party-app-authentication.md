@@ -1,3 +1,6 @@
+---
+title: ThirdPartyAppAuthentication -
+---
 //[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[common]ThirdPartyAppAuthentication](index.md)/[ThirdPartyAppAuthentication](-third-party-app-authentication.md)
 
 

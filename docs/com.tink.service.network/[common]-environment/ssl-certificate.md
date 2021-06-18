@@ -1,3 +1,6 @@
+---
+title: sslCertificate -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]Environment](index.md)/[sslCertificate](ssl-certificate.md)
 
 

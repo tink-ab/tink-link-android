@@ -1,3 +1,6 @@
+---
+title: [androidJvm]isExistingCredentialsError -
+---
 //[link](../index.md)/[com.tink.link.ui.credentials](index.md)/[[androidJvm]isExistingCredentialsError]([android-jvm]is-existing-credentials-error.md)
 
 

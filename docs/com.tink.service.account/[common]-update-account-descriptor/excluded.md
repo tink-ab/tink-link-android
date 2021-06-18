@@ -1,3 +1,6 @@
+---
+title: excluded -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]UpdateAccountDescriptor](index.md)/[excluded](excluded.md)
 
 

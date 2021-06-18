@@ -1,3 +1,6 @@
+---
+title: InternalError -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkErrorInfo](../index.md)/[InternalError](index.md)/[InternalError](-internal-error.md)
 
 

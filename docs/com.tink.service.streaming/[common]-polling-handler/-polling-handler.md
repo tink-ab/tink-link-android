@@ -1,3 +1,6 @@
+---
+title: PollingHandler -
+---
 //[link](../../index.md)/[com.tink.service.streaming](../index.md)/[[common]PollingHandler](index.md)/[PollingHandler](-polling-handler.md)
 
 

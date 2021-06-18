@@ -1,3 +1,6 @@
+---
+title: component5 -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[component5](component5.md)
 
 

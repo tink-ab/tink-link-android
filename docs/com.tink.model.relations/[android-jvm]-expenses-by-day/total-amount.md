@@ -1,3 +1,6 @@
+---
+title: totalAmount -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]ExpensesByDay](index.md)/[totalAmount](total-amount.md)
 
 

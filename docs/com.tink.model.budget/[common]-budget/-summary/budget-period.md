@@ -1,3 +1,6 @@
+---
+title: budgetPeriod -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Summary](index.md)/[budgetPeriod](budget-period.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: budgetAmount -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Period](index.md)/[budgetAmount](budget-amount.md)
 
 

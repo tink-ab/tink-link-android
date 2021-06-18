@@ -1,3 +1,6 @@
+---
+title: BudgetSummaryOverspentData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSummaryOverspentData](index.md)/[BudgetSummaryOverspentData](-budget-summary-overspent-data.md)
 
 

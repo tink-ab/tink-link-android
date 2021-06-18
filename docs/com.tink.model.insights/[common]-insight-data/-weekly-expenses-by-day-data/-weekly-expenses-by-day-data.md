@@ -1,3 +1,6 @@
+---
+title: WeeklyExpensesByDayData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[WeeklyExpensesByDayData](index.md)/[WeeklyExpensesByDayData](-weekly-expenses-by-day-data.md)
 
 

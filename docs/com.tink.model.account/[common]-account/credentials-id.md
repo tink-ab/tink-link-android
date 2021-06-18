@@ -1,3 +1,6 @@
+---
+title: credentialsId -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[credentialsId](credentials-id.md)
 
 

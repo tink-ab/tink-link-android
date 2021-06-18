@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CategorizeExpense](index.md)/[copy](copy.md)
 
 

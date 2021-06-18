@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[component3](component3.md)
 
 

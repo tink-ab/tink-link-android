@@ -1,3 +1,6 @@
+---
+title: supplementInformation -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsRepository](index.md)/[supplementInformation](supplement-information.md)
 
 

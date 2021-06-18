@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[androidJvm]Credentials](../../index.md)/[Status](../index.md)/[PERMANENT_ERROR](index.md)/[name](name.md)
 
 

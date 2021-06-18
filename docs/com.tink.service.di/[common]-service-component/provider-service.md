@@ -1,3 +1,6 @@
+---
+title: providerService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[providerService](provider-service.md)
 
 

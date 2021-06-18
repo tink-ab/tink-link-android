@@ -1,3 +1,6 @@
+---
+title: numberOfMonthsBound -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[numberOfMonthsBound](number-of-months-bound.md)
 
 

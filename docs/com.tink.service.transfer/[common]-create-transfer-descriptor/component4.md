@@ -1,3 +1,6 @@
+---
+title: component4 -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateTransferDescriptor](index.md)/[component4](component4.md)
 
 

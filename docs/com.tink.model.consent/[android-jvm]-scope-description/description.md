@@ -1,3 +1,6 @@
+---
+title: description -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]ScopeDescription](index.md)/[description](description.md)
 
 

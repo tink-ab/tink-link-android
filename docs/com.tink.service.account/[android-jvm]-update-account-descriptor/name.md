@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]UpdateAccountDescriptor](index.md)/[name](name.md)
 
 

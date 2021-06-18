@@ -1,3 +1,6 @@
+---
+title: ScopeDescription -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]ScopeDescription](index.md)/[ScopeDescription](-scope-description.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: [common]createTemporaryUser -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[common]createTemporaryUser]([common]create-temporary-user.md)
 
 

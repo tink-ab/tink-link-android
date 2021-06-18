@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[copy](copy.md)
 
 

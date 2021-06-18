@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[ProviderList](index.md)/[component1](component1.md)
 
 

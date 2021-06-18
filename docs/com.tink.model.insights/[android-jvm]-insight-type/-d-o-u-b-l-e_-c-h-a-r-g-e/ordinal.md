@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[DOUBLE_CHARGE](index.md)/[ordinal](ordinal.md)
 
 

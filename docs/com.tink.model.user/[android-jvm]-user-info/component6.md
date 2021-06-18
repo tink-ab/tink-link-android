@@ -1,3 +1,6 @@
+---
+title: component6 -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[component6](component6.md)
 
 

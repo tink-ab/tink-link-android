@@ -1,3 +1,6 @@
+---
+title: addBeneficiary -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[common]TransferRepository](index.md)/[addBeneficiary](add-beneficiary.md)
 
 

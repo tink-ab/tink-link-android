@@ -1,3 +1,6 @@
+---
+title: component4 -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[component4](component4.md)
 
 

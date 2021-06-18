@@ -1,3 +1,6 @@
+---
+title: convert CategorizeTransactionsData -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightActionConvertersTest](index.md)/[convert CategorizeTransactionsData](convert -categorize-transactions-data.md)
 
 

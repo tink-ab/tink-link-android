@@ -1,3 +1,6 @@
+---
+title: nextDayOfTermsChange -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[nextDayOfTermsChange](next-day-of-terms-change.md)
 
 

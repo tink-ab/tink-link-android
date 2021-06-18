@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[InputType](index.md)/[component2](component2.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: credentials -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[TemporaryUser](index.md)/[credentials](credentials.md)
 
 

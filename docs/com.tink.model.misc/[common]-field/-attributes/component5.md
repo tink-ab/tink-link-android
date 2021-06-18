@@ -1,3 +1,6 @@
+---
+title: component5 -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[Attributes](index.md)/[component5](component5.md)
 
 

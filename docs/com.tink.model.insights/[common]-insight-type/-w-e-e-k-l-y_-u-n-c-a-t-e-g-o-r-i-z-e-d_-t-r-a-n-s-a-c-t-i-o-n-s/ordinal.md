@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[WEEKLY_UNCATEGORIZED_TRANSACTIONS](index.md)/[ordinal](ordinal.md)
 
 

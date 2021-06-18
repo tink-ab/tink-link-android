@@ -1,3 +1,6 @@
+---
+title: user -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[ExistingUser](index.md)/[user](user.md)
 
 

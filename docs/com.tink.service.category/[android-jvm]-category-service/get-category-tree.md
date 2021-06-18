@@ -1,3 +1,6 @@
+---
+title: getCategoryTree -
+---
 //[link](../../index.md)/[com.tink.service.category](../index.md)/[[androidJvm]CategoryService](index.md)/[getCategoryTree](get-category-tree.md)
 
 

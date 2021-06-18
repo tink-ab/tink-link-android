@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[SingleProvider](index.md)/[name](name.md)
 
 

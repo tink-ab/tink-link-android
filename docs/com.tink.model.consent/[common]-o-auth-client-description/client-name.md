@@ -1,3 +1,6 @@
+---
+title: clientName -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[clientName](client-name.md)
 
 

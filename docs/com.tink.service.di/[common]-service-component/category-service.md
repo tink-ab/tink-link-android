@@ -1,3 +1,6 @@
+---
+title: categoryService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[categoryService](category-service.md)
 
 

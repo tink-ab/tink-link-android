@@ -1,3 +1,6 @@
+---
+title: week -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[WeeklyExpensesByCategoryData](index.md)/[week](week.md)
 
 

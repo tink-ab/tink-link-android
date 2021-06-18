@@ -1,3 +1,6 @@
+---
+title: ValidationRules -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[ValidationRules](-validation-rules.md)
 
 

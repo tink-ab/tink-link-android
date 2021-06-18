@@ -1,3 +1,6 @@
+---
+title: isImmutable -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[InputType](index.md)/[isImmutable](is-immutable.md)
 
 

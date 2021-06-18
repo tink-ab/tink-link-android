@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsCreationDescriptor](index.md)/[type](type.md)
 
 

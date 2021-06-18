@@ -1,3 +1,6 @@
+---
+title: RESULT_CANCELLED -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[RESULT_CANCELLED](-r-e-s-u-l-t_-c-a-n-c-e-l-l-e-d.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: title -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[title](title.md)
 
 

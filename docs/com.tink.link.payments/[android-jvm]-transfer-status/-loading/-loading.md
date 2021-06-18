@@ -1,3 +1,6 @@
+---
+title: Loading -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[androidJvm]TransferStatus](../index.md)/[Loading](index.md)/[Loading](-loading.md)
 
 

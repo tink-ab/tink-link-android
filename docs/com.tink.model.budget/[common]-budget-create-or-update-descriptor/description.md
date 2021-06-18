@@ -1,3 +1,6 @@
+---
+title: description -
+---
 //[link](../../index.md)/[com.tink.model.budget](../index.md)/[[common]BudgetCreateOrUpdateDescriptor](index.md)/[description](description.md)
 
 

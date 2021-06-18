@@ -1,3 +1,6 @@
+---
+title: component4 -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[component4](component4.md)
 
 

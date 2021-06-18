@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateBeneficiaryDescriptor](index.md)/[name](name.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: component5 -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[component5](component5.md)
 
 

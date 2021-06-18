@@ -1,3 +1,6 @@
+---
+title: onBackPressed -
+---
 //[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onBackPressed](on-back-pressed.md)
 
 

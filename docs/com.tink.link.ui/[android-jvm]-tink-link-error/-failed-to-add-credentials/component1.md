@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkError](../index.md)/[FailedToAddCredentials](index.md)/[component1](component1.md)
 
 

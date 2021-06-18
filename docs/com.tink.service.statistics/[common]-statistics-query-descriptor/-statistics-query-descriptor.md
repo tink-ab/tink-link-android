@@ -1,3 +1,6 @@
+---
+title: StatisticsQueryDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[common]StatisticsQueryDescriptor](index.md)/[StatisticsQueryDescriptor](-statistics-query-descriptor.md)
 
 

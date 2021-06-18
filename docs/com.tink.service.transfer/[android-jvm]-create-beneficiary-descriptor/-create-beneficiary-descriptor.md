@@ -1,3 +1,6 @@
+---
+title: CreateBeneficiaryDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[CreateBeneficiaryDescriptor](-create-beneficiary-descriptor.md)
 
 

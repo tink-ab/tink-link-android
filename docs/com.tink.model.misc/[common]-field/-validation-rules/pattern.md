@@ -1,3 +1,6 @@
+---
+title: pattern -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[pattern](pattern.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: component6 -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[component6](component6.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: listTransactions -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionService](index.md)/[listTransactions](list-transactions.md)
 
 

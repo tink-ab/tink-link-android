@@ -1,3 +1,6 @@
+---
+title: getTransaction -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[getTransaction](get-transaction.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.account](../../../index.md)/[[androidJvm]AccountDetails](../../index.md)/[Type](../index.md)/[UNKNOWN](index.md)/[ordinal](ordinal.md)
 
 

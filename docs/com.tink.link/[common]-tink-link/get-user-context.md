@@ -1,3 +1,6 @@
+---
+title: getUserContext -
+---
 //[link](../../index.md)/[com.tink.link](../index.md)/[[common]TinkLink](index.md)/[getUserContext](get-user-context.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: getTransferStatus -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[getTransferStatus](get-transfer-status.md)
 
 

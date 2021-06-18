@@ -1,3 +1,6 @@
+---
+title: applicationContext -
+---
 //[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[androidJvm]ServiceComponent](../index.md)/[Builder](index.md)/[applicationContext](application-context.md)
 
 

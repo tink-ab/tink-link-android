@@ -1,3 +1,6 @@
+---
+title: accountService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[accountService](account-service.md)
 
 

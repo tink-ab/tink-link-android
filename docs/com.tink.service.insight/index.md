@@ -1,3 +1,6 @@
+---
+title: com.tink.service.insight -
+---
 //[link](../index.md)/[com.tink.service.insight](index.md)
 
 

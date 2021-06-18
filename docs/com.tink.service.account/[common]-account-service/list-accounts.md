@@ -1,3 +1,6 @@
+---
+title: listAccounts -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]AccountService](index.md)/[listAccounts](list-accounts.md)
 
 

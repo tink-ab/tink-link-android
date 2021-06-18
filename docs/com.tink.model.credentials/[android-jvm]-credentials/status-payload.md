@@ -1,3 +1,6 @@
+---
+title: statusPayload -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[statusPayload](status-payload.md)
 
 

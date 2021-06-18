@@ -1,3 +1,6 @@
+---
+title: list -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[list](list.md)
 
 

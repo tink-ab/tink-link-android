@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[component3](component3.md)
 
 

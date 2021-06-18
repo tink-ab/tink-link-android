@@ -1,3 +1,6 @@
+---
+title: com.tink.link.payments.di -
+---
 //[link](../index.md)/[com.tink.link.payments.di](index.md)
 
 

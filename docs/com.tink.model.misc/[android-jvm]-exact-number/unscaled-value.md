@@ -1,3 +1,6 @@
+---
+title: unscaledValue -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]ExactNumber](index.md)/[unscaledValue](unscaled-value.md)
 
 

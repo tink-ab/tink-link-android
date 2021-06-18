@@ -1,3 +1,6 @@
+---
+title: UncategorizedTransactionData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[UncategorizedTransactionData](index.md)/[UncategorizedTransactionData](-uncategorized-transaction-data.md)
 
 

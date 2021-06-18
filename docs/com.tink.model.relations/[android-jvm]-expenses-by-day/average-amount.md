@@ -1,3 +1,6 @@
+---
+title: averageAmount -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]ExpensesByDay](index.md)/[averageAmount](average-amount.md)
 
 

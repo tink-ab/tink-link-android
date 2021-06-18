@@ -1,3 +1,6 @@
+---
+title: Beneficiary -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]Beneficiary](index.md)/[Beneficiary](-beneficiary.md)
 
 

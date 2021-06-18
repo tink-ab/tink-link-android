@@ -1,3 +1,6 @@
+---
+title: CategorizeTransactions -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CategorizeTransactions](index.md)/[CategorizeTransactions](-categorize-transactions.md)
 
 

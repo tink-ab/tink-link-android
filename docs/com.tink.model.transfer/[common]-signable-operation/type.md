@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[type](type.md)
 
 

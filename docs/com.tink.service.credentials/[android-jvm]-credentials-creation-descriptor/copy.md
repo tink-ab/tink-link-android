@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsCreationDescriptor](index.md)/[copy](copy.md)
 
 

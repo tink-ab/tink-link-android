@@ -1,3 +1,6 @@
+---
+title: getSimilarTransactions -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionService](index.md)/[getSimilarTransactions](get-similar-transactions.md)
 
 

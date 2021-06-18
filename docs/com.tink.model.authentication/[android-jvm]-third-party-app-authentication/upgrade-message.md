@@ -1,3 +1,6 @@
+---
+title: upgradeMessage -
+---
 //[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)/[upgradeMessage](upgrade-message.md)
 
 

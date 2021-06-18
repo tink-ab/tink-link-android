@@ -1,3 +1,6 @@
+---
+title: AuthenticationUserTypeNode -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[AuthenticationUserTypeNode](-authentication-user-type-node.md)
 
 

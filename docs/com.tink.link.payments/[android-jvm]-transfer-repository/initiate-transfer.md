@@ -1,3 +1,6 @@
+---
+title: initiateTransfer -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TransferRepository](index.md)/[initiateTransfer](initiate-transfer.md)
 
 

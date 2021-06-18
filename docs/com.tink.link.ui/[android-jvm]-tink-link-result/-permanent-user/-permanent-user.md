@@ -1,3 +1,6 @@
+---
+title: PermanentUser -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[PermanentUser](-permanent-user.md)
 
 

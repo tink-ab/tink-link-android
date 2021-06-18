@@ -1,3 +1,6 @@
+---
+title: getSourceAccounts -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]TransferService](index.md)/[getSourceAccounts](get-source-accounts.md)
 
 

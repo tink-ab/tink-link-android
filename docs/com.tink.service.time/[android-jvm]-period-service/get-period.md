@@ -1,3 +1,6 @@
+---
+title: getPeriod -
+---
 //[link](../../index.md)/[com.tink.service.time](../index.md)/[[androidJvm]PeriodService](index.md)/[getPeriod](get-period.md)
 
 

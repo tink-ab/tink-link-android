@@ -1,3 +1,6 @@
+---
+title: status -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]SignableOperation](index.md)/[status](status.md)
 
 

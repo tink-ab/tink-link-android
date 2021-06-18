@@ -1,3 +1,6 @@
+---
+title: AwaitingAuthentication -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[androidJvm]TransferStatus](../index.md)/[AwaitingAuthentication](index.md)/[AwaitingAuthentication](-awaiting-authentication.md)
 
 

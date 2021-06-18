@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../../../index.md)/[com.tink.model.budget](../../../../index.md)/[[androidJvm]Budget](../../../index.md)/[Specification](../../index.md)/[Filter](../index.md)/[Account](index.md)/[copy](copy.md)
 
 

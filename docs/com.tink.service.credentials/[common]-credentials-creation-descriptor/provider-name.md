@@ -1,3 +1,6 @@
+---
+title: providerName -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsCreationDescriptor](index.md)/[providerName](provider-name.md)
 
 

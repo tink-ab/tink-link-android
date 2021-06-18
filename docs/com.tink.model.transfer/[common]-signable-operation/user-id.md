@@ -1,3 +1,6 @@
+---
+title: userId -
+---
 //[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[userId](user-id.md)
 
 

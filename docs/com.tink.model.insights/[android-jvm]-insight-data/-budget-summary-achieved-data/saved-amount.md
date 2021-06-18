@@ -1,3 +1,6 @@
+---
+title: savedAmount -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryAchievedData](index.md)/[savedAmount](saved-amount.md)
 
 

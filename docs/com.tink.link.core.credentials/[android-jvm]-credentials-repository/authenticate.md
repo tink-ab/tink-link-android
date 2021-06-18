@@ -1,3 +1,6 @@
+---
+title: authenticate -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsRepository](index.md)/[authenticate](authenticate.md)
 
 

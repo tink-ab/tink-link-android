@@ -1,3 +1,6 @@
+---
+title: restUrl -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]Environment](index.md)/[restUrl](rest-url.md)
 
 

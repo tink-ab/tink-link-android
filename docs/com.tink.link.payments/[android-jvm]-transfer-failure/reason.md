@@ -1,3 +1,6 @@
+---
+title: reason -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TransferFailure](index.md)/[reason](reason.md)
 
 

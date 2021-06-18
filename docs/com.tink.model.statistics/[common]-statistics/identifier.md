@@ -1,3 +1,6 @@
+---
+title: identifier -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[identifier](identifier.md)
 
 

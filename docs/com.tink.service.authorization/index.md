@@ -1,3 +1,6 @@
+---
+title: com.tink.service.authorization -
+---
 //[link](../index.md)/[com.tink.service.authorization](index.md)
 
 

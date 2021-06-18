@@ -1,3 +1,6 @@
+---
+title: accountNumberType -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[accountNumberType](account-number-type.md)
 
 

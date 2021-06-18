@@ -1,3 +1,6 @@
+---
+title: originalDate -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[originalDate](original-date.md)
 
 

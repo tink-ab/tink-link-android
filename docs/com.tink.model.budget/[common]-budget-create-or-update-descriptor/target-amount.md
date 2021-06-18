@@ -1,3 +1,6 @@
+---
+title: targetAmount -
+---
 //[link](../../index.md)/[com.tink.model.budget](../index.md)/[[common]BudgetCreateOrUpdateDescriptor](index.md)/[targetAmount](target-amount.md)
 
 

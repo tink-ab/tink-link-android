@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[common]TransferMessage](index.md)/[component1](component1.md)
 
 

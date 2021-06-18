@@ -1,3 +1,6 @@
+---
+title: value -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[value](value.md)
 
 

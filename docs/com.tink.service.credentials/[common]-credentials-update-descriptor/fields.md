@@ -1,3 +1,6 @@
+---
+title: fields -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsUpdateDescriptor](index.md)/[fields](fields.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: getTransferRepository -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TinkLinkPayments](index.md)/[getTransferRepository](get-transfer-repository.md)
 
 

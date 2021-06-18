@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[androidJvm]StatisticsQueryDescriptor](index.md)/[copy](copy.md)
 
 

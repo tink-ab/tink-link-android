@@ -1,3 +1,6 @@
+---
+title: AccountDetails -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[AccountDetails](-account-details.md)
 
 

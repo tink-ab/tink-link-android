@@ -1,3 +1,6 @@
+---
+title: hint -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[Attributes](index.md)/[hint](hint.md)
 
 

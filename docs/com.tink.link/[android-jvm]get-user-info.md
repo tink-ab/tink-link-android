@@ -1,3 +1,6 @@
+---
+title: [androidJvm]getUserInfo -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]getUserInfo]([android-jvm]get-user-info.md)
 
 

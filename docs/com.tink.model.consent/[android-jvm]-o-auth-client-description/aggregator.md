@@ -1,3 +1,6 @@
+---
+title: aggregator -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[aggregator](aggregator.md)
 
 

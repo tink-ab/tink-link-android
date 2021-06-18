@@ -1,3 +1,6 @@
+---
+title: appId -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[appId](app-id.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: CredentialsNotFound -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[CredentialsNotFound](index.md)/[CredentialsNotFound](-credentials-not-found.md)
 
 

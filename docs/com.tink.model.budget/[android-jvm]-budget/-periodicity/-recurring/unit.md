@@ -1,3 +1,6 @@
+---
+title: unit -
+---
 //[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)/[unit](unit.md)
 
 

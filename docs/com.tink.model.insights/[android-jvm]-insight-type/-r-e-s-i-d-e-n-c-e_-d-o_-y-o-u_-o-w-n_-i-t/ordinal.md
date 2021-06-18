@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[RESIDENCE_DO_YOU_OWN_IT](index.md)/[ordinal](ordinal.md)
 
 

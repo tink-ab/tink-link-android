@@ -1,3 +1,6 @@
+---
+title: thirdPartyCallback -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[thirdPartyCallback](third-party-callback.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: accountService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[accountService](account-service.md)
 
 

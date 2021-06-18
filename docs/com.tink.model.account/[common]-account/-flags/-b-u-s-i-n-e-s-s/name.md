@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.account](../../../index.md)/[[common]Account](../../index.md)/[Flags](../index.md)/[BUSINESS](index.md)/[name](name.md)
 
 

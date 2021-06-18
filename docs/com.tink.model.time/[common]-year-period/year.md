@@ -1,3 +1,6 @@
+---
+title: year -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[year](year.md)
 
 

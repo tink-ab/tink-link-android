@@ -1,3 +1,6 @@
+---
+title: appUri -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsAuthenticateDescriptor](index.md)/[appUri](app-uri.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: com.tink.model.provider -
+---
 //[link](../index.md)/[com.tink.model.provider](index.md)
 
 

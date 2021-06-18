@@ -1,3 +1,6 @@
+---
+title: clientUrl -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[clientUrl](client-url.md)
 
 

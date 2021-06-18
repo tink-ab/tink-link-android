@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[CREDITCARD_TRANSACTIONS](index.md)/[ordinal](ordinal.md)
 
 

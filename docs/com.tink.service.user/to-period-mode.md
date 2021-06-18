@@ -1,3 +1,6 @@
+---
+title: toPeriodMode -
+---
 //[link](../index.md)/[com.tink.service.user](index.md)/[toPeriodMode](to-period-mode.md)
 
 

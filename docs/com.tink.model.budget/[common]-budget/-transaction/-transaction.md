@@ -1,3 +1,6 @@
+---
+title: Transaction -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Transaction](index.md)/[Transaction](-transaction.md)
 
 

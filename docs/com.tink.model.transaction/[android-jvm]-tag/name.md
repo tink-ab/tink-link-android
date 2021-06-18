@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Tag](index.md)/[name](name.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: privacyPolicy -
+---
 //[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[privacyPolicy](privacy-policy.md)
 
 

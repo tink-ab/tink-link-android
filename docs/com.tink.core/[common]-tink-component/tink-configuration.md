@@ -1,3 +1,6 @@
+---
+title: tinkConfiguration -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[tinkConfiguration](tink-configuration.md)
 
 

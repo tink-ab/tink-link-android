@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.provider](../../../index.md)/[[androidJvm]Provider](../../index.md)/[Capability](../index.md)/[MORTGAGE_AGGREGATION](index.md)/[name](name.md)
 
 

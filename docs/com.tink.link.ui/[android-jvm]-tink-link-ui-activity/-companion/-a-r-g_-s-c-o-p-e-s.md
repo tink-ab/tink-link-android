@@ -1,3 +1,6 @@
+---
+title: ARG_SCOPES -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.md)
 
 

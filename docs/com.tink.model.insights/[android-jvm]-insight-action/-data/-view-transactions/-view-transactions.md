@@ -1,3 +1,6 @@
+---
+title: ViewTransactions -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[ViewTransactions](index.md)/[ViewTransactions](-view-transactions.md)
 
 

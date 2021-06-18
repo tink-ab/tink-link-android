@@ -1,3 +1,6 @@
+---
+title: [common]createThirdPartyAuthForMobileBankId -
+---
 //[link](../index.md)/[com.tink.service.credentials](index.md)/[[common]createThirdPartyAuthForMobileBankId]([common]create-third-party-auth-for-mobile-bank-id.md)
 
 

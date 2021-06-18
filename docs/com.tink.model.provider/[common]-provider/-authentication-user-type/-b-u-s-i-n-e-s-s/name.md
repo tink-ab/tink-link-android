@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.provider](../../../index.md)/[[common]Provider](../../index.md)/[AuthenticationUserType](../index.md)/[BUSINESS](index.md)/[name](name.md)
 
 

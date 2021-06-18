@@ -1,3 +1,6 @@
+---
+title: compareTo -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[compareTo](compare-to.md)
 
 

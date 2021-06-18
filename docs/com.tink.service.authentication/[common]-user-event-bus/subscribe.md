@@ -1,3 +1,6 @@
+---
+title: subscribe -
+---
 //[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[common]UserEventBus](index.md)/[subscribe](subscribe.md)
 
 

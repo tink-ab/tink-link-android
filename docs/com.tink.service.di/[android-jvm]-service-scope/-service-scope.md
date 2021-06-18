@@ -1,3 +1,6 @@
+---
+title: ServiceScope -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceScope](index.md)/[ServiceScope](-service-scope.md)
 
 

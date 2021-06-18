@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[androidJvm]AuthenticationMethod](../index.md)/[EMAIL_AND_PASSWORD](index.md)/[ordinal](ordinal.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: termsAndConditions -
+---
 //[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[termsAndConditions](terms-and-conditions.md)
 
 

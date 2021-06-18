@@ -1,3 +1,6 @@
+---
+title: TransferFailure -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[common]TransferFailure](index.md)/[TransferFailure](-transfer-failure.md)
 
 

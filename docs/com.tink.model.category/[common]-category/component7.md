@@ -1,3 +1,6 @@
+---
+title: component7 -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[component7](component7.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: subscribe -
+---
 //[link](../../index.md)/[com.tink.service.streaming](../index.md)/[[common]PollingHandler](index.md)/[subscribe](subscribe.md)
 
 

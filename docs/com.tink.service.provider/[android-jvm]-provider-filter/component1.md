@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.service.provider](../index.md)/[[androidJvm]ProviderFilter](index.md)/[component1](component1.md)
 
 

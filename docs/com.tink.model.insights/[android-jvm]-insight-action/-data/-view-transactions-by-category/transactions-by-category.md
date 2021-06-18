@@ -1,3 +1,6 @@
+---
+title: transactionsByCategory -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[ViewTransactionsByCategory](index.md)/[transactionsByCategory](transactions-by-category.md)
 
 

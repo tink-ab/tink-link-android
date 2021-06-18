@@ -1,3 +1,6 @@
+---
+title: component6 -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[component6](component6.md)
 
 

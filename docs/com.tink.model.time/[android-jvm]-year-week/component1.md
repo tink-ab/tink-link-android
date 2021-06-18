@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]YearWeek](index.md)/[component1](component1.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: Tag -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Tag](index.md)/[Tag](-tag.md)
 
 

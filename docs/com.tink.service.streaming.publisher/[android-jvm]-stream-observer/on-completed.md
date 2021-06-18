@@ -1,3 +1,6 @@
+---
+title: onCompleted -
+---
 //[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]StreamObserver](index.md)/[onCompleted](on-completed.md)
 
 

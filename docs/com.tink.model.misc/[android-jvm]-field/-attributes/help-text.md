@@ -1,3 +1,6 @@
+---
+title: helpText -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[Attributes](index.md)/[helpText](help-text.md)
 
 

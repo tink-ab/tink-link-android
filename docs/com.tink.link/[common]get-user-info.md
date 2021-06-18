@@ -1,3 +1,6 @@
+---
+title: [common]getUserInfo -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[common]getUserInfo]([common]get-user-info.md)
 
 

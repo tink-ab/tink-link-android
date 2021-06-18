@@ -1,3 +1,6 @@
+---
+title: achievedBudgets -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryOverspentData](index.md)/[achievedBudgets](achieved-budgets.md)
 
 

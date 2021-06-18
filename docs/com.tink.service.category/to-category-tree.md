@@ -1,3 +1,6 @@
+---
+title: toCategoryTree -
+---
 //[link](../index.md)/[com.tink.service.category](index.md)/[toCategoryTree](to-category-tree.md)
 
 

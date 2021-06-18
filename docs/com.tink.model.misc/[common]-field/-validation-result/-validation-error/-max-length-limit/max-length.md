@@ -1,3 +1,6 @@
+---
+title: maxLength -
+---
 //[link](../../../../../index.md)/[com.tink.model.misc](../../../../index.md)/[[common]Field](../../../index.md)/[ValidationResult](../../index.md)/[ValidationError](../index.md)/[MaxLengthLimit](index.md)/[maxLength](max-length.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: message -
+---
 //[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[common]CredentialsStatus](../index.md)/[Loading](index.md)/[message](message.md)
 
 

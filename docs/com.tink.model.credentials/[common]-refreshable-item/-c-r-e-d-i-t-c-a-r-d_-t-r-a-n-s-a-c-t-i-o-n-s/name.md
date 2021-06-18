@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[common]RefreshableItem](../index.md)/[CREDITCARD_TRANSACTIONS](index.md)/[name](name.md)
 
 

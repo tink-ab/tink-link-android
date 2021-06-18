@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Type](../index.md)/[VIEW_TRANSACTION](index.md)/[ordinal](ordinal.md)
 
 

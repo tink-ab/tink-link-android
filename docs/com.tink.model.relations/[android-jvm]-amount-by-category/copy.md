@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]AmountByCategory](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[copy](copy.md)
 
 

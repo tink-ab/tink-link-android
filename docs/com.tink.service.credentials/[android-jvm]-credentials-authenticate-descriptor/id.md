@@ -1,3 +1,6 @@
+---
+title: id -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsAuthenticateDescriptor](index.md)/[id](id.md)
 
 

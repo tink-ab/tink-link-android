@@ -1,3 +1,6 @@
+---
+title: SingleProvider -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]ProviderSelection](../index.md)/[SingleProvider](index.md)/[SingleProvider](-single-provider.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../../../index.md)/[com.tink.model.budget](../../../../../index.md)/[[androidJvm]Budget](../../../../index.md)/[Periodicity](../../../index.md)/[Recurring](../../index.md)/[PeriodUnit](../index.md)/[WEEK](index.md)/[ordinal](ordinal.md)
 
 

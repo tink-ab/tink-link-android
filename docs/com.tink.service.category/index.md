@@ -1,3 +1,6 @@
+---
+title: com.tink.service.category -
+---
 //[link](../index.md)/[com.tink.service.category](index.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: value -
+---
 //[link](../../../../index.md)/[com.tink.model.statistics](../../../index.md)/[[common]Statistics](../../index.md)/[Type](../index.md)/[UNKNOWN](index.md)/[value](value.md)
 
 

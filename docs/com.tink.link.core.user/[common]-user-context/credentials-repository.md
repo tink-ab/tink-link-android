@@ -1,3 +1,6 @@
+---
+title: credentialsRepository -
+---
 //[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[common]UserContext](index.md)/[credentialsRepository](credentials-repository.md)
 
 

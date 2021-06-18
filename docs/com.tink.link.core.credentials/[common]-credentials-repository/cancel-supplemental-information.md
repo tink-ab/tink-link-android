@@ -1,3 +1,6 @@
+---
+title: cancelSupplementalInformation -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[cancelSupplementalInformation](cancel-supplemental-information.md)
 
 

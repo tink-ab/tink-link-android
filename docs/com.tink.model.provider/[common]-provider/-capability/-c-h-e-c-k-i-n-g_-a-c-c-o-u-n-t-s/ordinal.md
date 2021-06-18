@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.provider](../../../index.md)/[[common]Provider](../../index.md)/[Capability](../index.md)/[CHECKING_ACCOUNTS](index.md)/[ordinal](ordinal.md)
 
 

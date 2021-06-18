@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]ExpensesByDay](index.md)/[copy](copy.md)
 
 

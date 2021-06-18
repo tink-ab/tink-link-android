@@ -1,3 +1,6 @@
+---
+title: credentialsId -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateBeneficiaryDescriptor](index.md)/[credentialsId](credentials-id.md)
 
 

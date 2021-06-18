@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.transfer](../../../index.md)/[[androidJvm]SignableOperation](../../index.md)/[Type](../index.md)/[UNKNOWN](index.md)/[name](name.md)
 
 

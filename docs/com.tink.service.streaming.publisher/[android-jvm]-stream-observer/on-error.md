@@ -1,3 +1,6 @@
+---
+title: onError -
+---
 //[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]StreamObserver](index.md)/[onError](on-error.md)
 
 

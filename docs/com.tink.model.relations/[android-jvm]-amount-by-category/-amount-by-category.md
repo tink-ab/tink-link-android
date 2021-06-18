@@ -1,3 +1,6 @@
+---
+title: AmountByCategory -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]AmountByCategory](index.md)/[AmountByCategory](-amount-by-category.md)
 
 

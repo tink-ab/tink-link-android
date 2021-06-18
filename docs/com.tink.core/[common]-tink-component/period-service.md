@@ -1,3 +1,6 @@
+---
+title: periodService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[periodService](period-service.md)
 
 

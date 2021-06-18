@@ -1,3 +1,6 @@
+---
+title: delete -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[delete](delete.md)
 
 

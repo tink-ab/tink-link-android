@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]Authorization](../index.md)/[AccessToken](index.md)/[copy](copy.md)
 
 

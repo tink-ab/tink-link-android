@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[common]Credentials](../../index.md)/[Type](../index.md)/[THIRD_PARTY_AUTHENTICATION](index.md)/[ordinal](ordinal.md)
 
 

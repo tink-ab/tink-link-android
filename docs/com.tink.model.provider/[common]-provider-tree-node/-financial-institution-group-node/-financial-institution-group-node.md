@@ -1,3 +1,6 @@
+---
+title: FinancialInstitutionGroupNode -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[FinancialInstitutionGroupNode](index.md)/[FinancialInstitutionGroupNode](-financial-institution-group-node.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkError](../index.md)/[FailedToAddCredentials](index.md)/[copy](copy.md)
 
 

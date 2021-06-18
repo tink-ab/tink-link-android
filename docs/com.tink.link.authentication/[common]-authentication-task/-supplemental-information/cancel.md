@@ -1,3 +1,6 @@
+---
+title: cancel -
+---
 //[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[SupplementalInformation](index.md)/[cancel](cancel.md)
 
 

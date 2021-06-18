@@ -1,3 +1,6 @@
+---
+title: icon -
+---
 //[link](../../index.md)/[com.tink.model](../index.md)/[[common]Images](index.md)/[icon](icon.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: id -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[id](id.md)
 
 

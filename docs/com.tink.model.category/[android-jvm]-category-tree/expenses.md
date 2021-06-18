@@ -1,3 +1,6 @@
+---
+title: expenses -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]CategoryTree](index.md)/[expenses](expenses.md)
 
 

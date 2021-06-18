@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)/[type](type.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: categorizeTransactions -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[categorizeTransactions](categorize-transactions.md)
 
 

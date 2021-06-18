@@ -1,3 +1,6 @@
+---
+title: supplementalInformation -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[supplementalInformation](supplemental-information.md)
 
 

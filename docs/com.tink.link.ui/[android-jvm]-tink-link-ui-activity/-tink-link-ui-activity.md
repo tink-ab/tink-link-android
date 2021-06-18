@@ -1,3 +1,6 @@
+---
+title: TinkLinkUiActivity -
+---
 //[link](../../index.md)/[com.tink.link.ui](../index.md)/[[androidJvm]TinkLinkUiActivity](index.md)/[TinkLinkUiActivity](-tink-link-ui-activity.md)
 
 

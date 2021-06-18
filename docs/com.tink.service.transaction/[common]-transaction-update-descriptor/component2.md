@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionUpdateDescriptor](index.md)/[component2](component2.md)
 
 

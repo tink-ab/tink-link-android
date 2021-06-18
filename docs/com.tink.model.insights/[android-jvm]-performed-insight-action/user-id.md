@@ -1,3 +1,6 @@
+---
+title: userId -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]PerformedInsightAction](index.md)/[userId](user-id.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: accountId -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[AccountBalanceLowData](index.md)/[accountId](account-id.md)
 
 

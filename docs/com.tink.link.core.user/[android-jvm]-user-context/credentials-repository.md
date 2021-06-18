@@ -1,3 +1,6 @@
+---
+title: credentialsRepository -
+---
 //[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[androidJvm]UserContext](index.md)/[credentialsRepository](credentials-repository.md)
 
 

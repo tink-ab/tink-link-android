@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[component1](component1.md)
 
 

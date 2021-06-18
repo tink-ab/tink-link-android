@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]ScopeDescription](index.md)/[copy](copy.md)
 
 

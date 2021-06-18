@@ -1,3 +1,6 @@
+---
+title: scopeDescriptions -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[scopeDescriptions](scope-descriptions.md)
 
 

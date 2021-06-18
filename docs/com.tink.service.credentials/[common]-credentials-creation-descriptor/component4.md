@@ -1,3 +1,6 @@
+---
+title: component4 -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsCreationDescriptor](index.md)/[component4](component4.md)
 
 

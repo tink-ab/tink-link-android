@@ -1,3 +1,6 @@
+---
+title: requiredMinimumVersion -
+---
 //[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[common]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[requiredMinimumVersion](required-minimum-version.md)
 
 

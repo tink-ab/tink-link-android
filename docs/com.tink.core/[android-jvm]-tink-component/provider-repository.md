@@ -1,3 +1,6 @@
+---
+title: providerRepository -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[providerRepository](provider-repository.md)
 
 

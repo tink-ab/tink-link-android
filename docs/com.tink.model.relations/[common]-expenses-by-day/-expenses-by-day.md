@@ -1,3 +1,6 @@
+---
+title: ExpensesByDay -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]ExpensesByDay](index.md)/[ExpensesByDay](-expenses-by-day.md)
 
 

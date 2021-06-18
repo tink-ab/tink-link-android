@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[androidJvm]Credentials](../../index.md)/[Type](../index.md)/[PASSWORD](index.md)/[ordinal](ordinal.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: com.tink.model.credentials -
+---
 //[link](../index.md)/[com.tink.model.credentials](index.md)
 
 

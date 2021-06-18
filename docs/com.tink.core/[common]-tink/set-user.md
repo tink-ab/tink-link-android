@@ -1,3 +1,6 @@
+---
+title: setUser -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[setUser](set-user.md)
 
 

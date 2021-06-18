@@ -1,3 +1,6 @@
+---
+title: value -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Type](../index.md)/[CREATE_BUDGET](index.md)/[value](value.md)
 
 

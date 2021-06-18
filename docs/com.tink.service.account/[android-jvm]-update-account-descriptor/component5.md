@@ -1,3 +1,6 @@
+---
+title: component5 -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]UpdateAccountDescriptor](index.md)/[component5](component5.md)
 
 

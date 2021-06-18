@@ -1,3 +1,6 @@
+---
+title: DayPeriod -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]DayPeriod](index.md)/[DayPeriod](-day-period.md)
 
 

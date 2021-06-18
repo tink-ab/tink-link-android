@@ -1,3 +1,6 @@
+---
+title: message -
+---
 //[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[androidJvm]CredentialsStatus](../index.md)/[Success](index.md)/[message](message.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: postUser -
+---
 //[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[common]UserEventBus](index.md)/[postUser](post-user.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[copy](copy.md)
 
 

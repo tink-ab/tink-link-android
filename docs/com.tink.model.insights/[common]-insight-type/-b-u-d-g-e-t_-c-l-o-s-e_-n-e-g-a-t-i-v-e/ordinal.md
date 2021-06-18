@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[BUDGET_CLOSE_NEGATIVE](index.md)/[ordinal](ordinal.md)
 
 

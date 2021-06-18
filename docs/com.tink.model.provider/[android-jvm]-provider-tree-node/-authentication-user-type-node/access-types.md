@@ -1,3 +1,6 @@
+---
+title: accessTypes -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[accessTypes](access-types.md)
 
 

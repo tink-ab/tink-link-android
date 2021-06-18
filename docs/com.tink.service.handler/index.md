@@ -1,3 +1,6 @@
+---
+title: com.tink.service.handler -
+---
 //[link](../index.md)/[com.tink.service.handler](index.md)
 
 

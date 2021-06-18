@@ -1,3 +1,6 @@
+---
+title: isNewerThan -
+---
 //[link](../../index.md)/[com.tink.link.authentication](../index.md)/[[common]AuthenticationTask](index.md)/[isNewerThan](is-newer-than.md)
 
 

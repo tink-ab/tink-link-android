@@ -1,3 +1,6 @@
+---
+title: budgetId -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetIdToPeriod](index.md)/[budgetId](budget-id.md)
 
 

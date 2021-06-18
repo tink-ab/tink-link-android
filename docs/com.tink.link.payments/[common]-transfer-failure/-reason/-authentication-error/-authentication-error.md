@@ -1,3 +1,6 @@
+---
+title: AuthenticationError -
+---
 //[link](../../../../index.md)/[com.tink.link.payments](../../../index.md)/[[common]TransferFailure](../../index.md)/[Reason](../index.md)/[AuthenticationError](index.md)/[AuthenticationError](-authentication-error.md)
 
 

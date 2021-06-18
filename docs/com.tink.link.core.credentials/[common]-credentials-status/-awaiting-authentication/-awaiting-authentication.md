@@ -1,3 +1,6 @@
+---
+title: AwaitingAuthentication -
+---
 //[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[common]CredentialsStatus](../index.md)/[AwaitingAuthentication](index.md)/[AwaitingAuthentication](-awaiting-authentication.md)
 
 

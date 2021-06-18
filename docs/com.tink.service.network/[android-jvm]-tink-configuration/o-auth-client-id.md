@@ -1,3 +1,6 @@
+---
+title: oAuthClientId -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]TinkConfiguration](index.md)/[oAuthClientId](o-auth-client-id.md)
 
 

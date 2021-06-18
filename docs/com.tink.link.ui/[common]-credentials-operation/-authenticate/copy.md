@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]CredentialsOperation](../index.md)/[Authenticate](index.md)/[copy](copy.md)
 
 

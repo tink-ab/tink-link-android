@@ -1,3 +1,6 @@
+---
+title: [common]toProviderTree -
+---
 //[link](../index.md)/[com.tink.model.provider](index.md)/[[common]toProviderTree]([common]to-provider-tree.md)
 
 

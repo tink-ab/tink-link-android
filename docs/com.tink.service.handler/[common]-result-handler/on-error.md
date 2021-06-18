@@ -1,3 +1,6 @@
+---
+title: onError -
+---
 //[link](../../index.md)/[com.tink.service.handler](../index.md)/[[common]ResultHandler](index.md)/[onError](on-error.md)
 
 

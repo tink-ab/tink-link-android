@@ -1,3 +1,6 @@
+---
+title: [androidJvm]toCoreModel -
+---
 //[link](../index.md)/[com.tink.service.insight](index.md)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.md)
 
 

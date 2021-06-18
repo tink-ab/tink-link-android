@@ -1,3 +1,6 @@
+---
+title: com.tink.service.account -
+---
 //[link](../index.md)/[com.tink.service.account](index.md)
 
 

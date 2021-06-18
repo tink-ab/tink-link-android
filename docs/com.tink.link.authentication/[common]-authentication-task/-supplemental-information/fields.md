@@ -1,3 +1,6 @@
+---
+title: fields -
+---
 //[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[SupplementalInformation](index.md)/[fields](fields.md)
 
 

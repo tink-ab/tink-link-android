@@ -1,3 +1,6 @@
+---
+title: providerName -
+---
 //[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[providerName](provider-name.md)
 
 

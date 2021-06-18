@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[common]Credentials](../../index.md)/[Type](../index.md)/[MOBILE_BANKID](index.md)/[name](name.md)
 
 

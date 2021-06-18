@@ -1,3 +1,6 @@
+---
+title: description -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionUpdateDescriptor](index.md)/[description](description.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: onCreate -
+---
 //[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onCreate](on-create.md)
 
 

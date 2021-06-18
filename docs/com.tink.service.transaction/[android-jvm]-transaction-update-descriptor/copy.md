@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionUpdateDescriptor](index.md)/[copy](copy.md)
 
 

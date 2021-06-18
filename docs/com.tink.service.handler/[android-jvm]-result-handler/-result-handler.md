@@ -1,3 +1,6 @@
+---
+title: ResultHandler -
+---
 //[link](../../index.md)/[com.tink.service.handler](../index.md)/[[androidJvm]ResultHandler](index.md)/[ResultHandler](-result-handler.md)
 
 

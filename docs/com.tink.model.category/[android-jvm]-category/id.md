@@ -1,3 +1,6 @@
+---
+title: id -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[id](id.md)
 
 

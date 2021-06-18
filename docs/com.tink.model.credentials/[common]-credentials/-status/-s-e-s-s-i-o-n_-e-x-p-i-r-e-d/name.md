@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.credentials](../../../index.md)/[[common]Credentials](../../index.md)/[Status](../index.md)/[SESSION_EXPIRED](index.md)/[name](name.md)
 
 

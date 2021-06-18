@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]UpdateAccountDescriptor](index.md)/[type](type.md)
 
 

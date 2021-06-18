@@ -1,3 +1,6 @@
+---
+title: BudgetCloseData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetCloseData](index.md)/[BudgetCloseData](-budget-close-data.md)
 
 

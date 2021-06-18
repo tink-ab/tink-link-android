@@ -1,3 +1,6 @@
+---
+title: budgetService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[budgetService](budget-service.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: getUserInfo -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserService](index.md)/[getUserInfo](get-user-info.md)
 
 

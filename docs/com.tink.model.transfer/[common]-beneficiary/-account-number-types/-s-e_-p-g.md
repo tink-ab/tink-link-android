@@ -1,3 +1,6 @@
+---
+title: SE_PG -
+---
 //[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[common]Beneficiary](../index.md)/[AccountNumberTypes](index.md)/[SE_PG](-s-e_-p-g.md)
 
 

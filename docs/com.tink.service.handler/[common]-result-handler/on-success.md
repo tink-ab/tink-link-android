@@ -1,3 +1,6 @@
+---
+title: onSuccess -
+---
 //[link](../../index.md)/[com.tink.service.handler](../index.md)/[[common]ResultHandler](index.md)/[onSuccess](on-success.md)
 
 

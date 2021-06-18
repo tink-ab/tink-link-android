@@ -1,3 +1,6 @@
+---
+title: credentialsTypes -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)/[credentialsTypes](credentials-types.md)
 
 

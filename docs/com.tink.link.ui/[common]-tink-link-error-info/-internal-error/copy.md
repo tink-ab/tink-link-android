@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkErrorInfo](../index.md)/[InternalError](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: accounts -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[common]RefreshableItem](../index.md)/[Companion](index.md)/[accounts](accounts.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: WeeklyUncategorizedTransactionsData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[WeeklyUncategorizedTransactionsData](index.md)/[WeeklyUncategorizedTransactionsData](-weekly-uncategorized-transactions-data.md)
 
 

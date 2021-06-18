@@ -1,3 +1,6 @@
+---
+title: authenticate -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserService](index.md)/[authenticate](authenticate.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.model](../index.md)/[[common]Images](index.md)/[copy](copy.md)
 
 

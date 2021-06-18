@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[MONTHLY_SUMMARY](index.md)/[ordinal](ordinal.md)
 
 

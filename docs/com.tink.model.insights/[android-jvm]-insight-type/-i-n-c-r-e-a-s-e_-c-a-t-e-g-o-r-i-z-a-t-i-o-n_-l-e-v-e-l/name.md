@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[INCREASE_CATEGORIZATION_LEVEL](index.md)/[name](name.md)
 
 

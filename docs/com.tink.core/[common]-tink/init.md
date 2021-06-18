@@ -1,3 +1,6 @@
+---
+title: init -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[init](init.md)
 
 

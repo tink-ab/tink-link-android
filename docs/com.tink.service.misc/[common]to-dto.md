@@ -1,3 +1,6 @@
+---
+title: [common]toDto -
+---
 //[link](../index.md)/[com.tink.service.misc](index.md)/[[common]toDto]([common]to-dto.md)
 
 

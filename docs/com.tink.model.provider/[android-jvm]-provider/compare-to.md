@@ -1,3 +1,6 @@
+---
+title: compareTo -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[compareTo](compare-to.md)
 
 

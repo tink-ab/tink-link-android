@@ -1,3 +1,6 @@
+---
+title: AccountServiceImpl -
+---
 //[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]AccountServiceImpl](index.md)/[AccountServiceImpl](-account-service-impl.md)
 
 

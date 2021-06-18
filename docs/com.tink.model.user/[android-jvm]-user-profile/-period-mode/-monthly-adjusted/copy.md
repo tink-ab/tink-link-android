@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../../index.md)/[com.tink.model.user](../../../index.md)/[[androidJvm]UserProfile](../../index.md)/[PeriodMode](../index.md)/[MonthlyAdjusted](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: helpText -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[helpText](help-text.md)
 
 

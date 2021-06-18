@@ -1,3 +1,6 @@
+---
+title: locale -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserProfile](index.md)/[locale](locale.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: ownerAccountId -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[ownerAccountId](owner-account-id.md)
 
 

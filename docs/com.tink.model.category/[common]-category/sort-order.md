@@ -1,3 +1,6 @@
+---
+title: sortOrder -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[sortOrder](sort-order.md)
 
 

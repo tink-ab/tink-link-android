@@ -1,3 +1,6 @@
+---
+title: ownerAccountId -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateBeneficiaryDescriptor](index.md)/[ownerAccountId](owner-account-id.md)
 
 

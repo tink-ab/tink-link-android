@@ -1,3 +1,6 @@
+---
+title: AccessToken -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]Authorization](../index.md)/[AccessToken](index.md)/[AccessToken](-access-token.md)
 
 

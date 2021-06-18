@@ -1,3 +1,6 @@
+---
+title: query -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[androidJvm]StatisticsService](index.md)/[query](query.md)
 
 

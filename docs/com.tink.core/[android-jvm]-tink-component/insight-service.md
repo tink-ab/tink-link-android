@@ -1,3 +1,6 @@
+---
+title: insightService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[insightService](insight-service.md)
 
 

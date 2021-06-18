@@ -1,3 +1,6 @@
+---
+title: transferService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[transferService](transfer-service.md)
 
 

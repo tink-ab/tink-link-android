@@ -1,3 +1,6 @@
+---
+title: isOptional -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[isOptional](is-optional.md)
 
 

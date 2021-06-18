@@ -1,3 +1,6 @@
+---
+title: listSuggestions -
+---
 //[link](../../index.md)/[com.tink.service.provider](../index.md)/[[common]ProviderService](index.md)/[listSuggestions](list-suggestions.md)
 
 

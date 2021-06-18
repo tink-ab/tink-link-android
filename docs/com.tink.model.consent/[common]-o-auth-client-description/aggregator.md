@@ -1,3 +1,6 @@
+---
+title: aggregator -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[aggregator](aggregator.md)
 
 

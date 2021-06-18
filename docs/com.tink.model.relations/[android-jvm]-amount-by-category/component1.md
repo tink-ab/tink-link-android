@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]AmountByCategory](index.md)/[component1](component1.md)
 
 

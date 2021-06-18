@@ -1,3 +1,6 @@
+---
+title: beneficiaryUri -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[beneficiaryUri](beneficiary-uri.md)
 
 

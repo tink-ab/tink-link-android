@@ -1,3 +1,6 @@
+---
+title: onNewIntent -
+---
 //[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onNewIntent](on-new-intent.md)
 
 

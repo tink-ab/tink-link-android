@@ -1,3 +1,6 @@
+---
+title: com.tink.model.budget -
+---
 //[link](../index.md)/[com.tink.model.budget](index.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Field](index.md)/[name](name.md)
 
 

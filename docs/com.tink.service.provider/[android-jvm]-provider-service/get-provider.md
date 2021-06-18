@@ -1,3 +1,6 @@
+---
+title: getProvider -
+---
 //[link](../../index.md)/[com.tink.service.provider](../index.md)/[[androidJvm]ProviderService](index.md)/[getProvider](get-provider.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.provider](../../../index.md)/[[common]Provider](../../index.md)/[Type](../index.md)/[FRAUD](index.md)/[name](name.md)
 
 

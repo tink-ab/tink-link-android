@@ -1,3 +1,6 @@
+---
+title: UserProfileServiceImpl -
+---
 //[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileServiceImpl](index.md)/[UserProfileServiceImpl](-user-profile-service-impl.md)
 
 

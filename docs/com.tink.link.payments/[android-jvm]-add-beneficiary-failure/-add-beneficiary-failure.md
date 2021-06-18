@@ -1,3 +1,6 @@
+---
+title: AddBeneficiaryFailure -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]AddBeneficiaryFailure](index.md)/[AddBeneficiaryFailure](-add-beneficiary-failure.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: fetchAccounts -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TransferRepository](index.md)/[fetchAccounts](fetch-accounts.md)
 
 

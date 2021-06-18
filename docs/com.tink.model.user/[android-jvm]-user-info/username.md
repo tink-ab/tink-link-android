@@ -1,3 +1,6 @@
+---
+title: username -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[username](username.md)
 
 

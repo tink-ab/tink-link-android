@@ -1,3 +1,6 @@
+---
+title: CreateTransferDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[CreateTransferDescriptor](-create-transfer-descriptor.md)
 
 

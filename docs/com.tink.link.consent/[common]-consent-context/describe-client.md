@@ -1,3 +1,6 @@
+---
+title: describeClient -
+---
 //[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[describeClient](describe-client.md)
 
 

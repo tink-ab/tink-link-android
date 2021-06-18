@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../../index.md)/[com.tink.model.user](../../../index.md)/[[common]UserProfile](../../index.md)/[PeriodMode](../index.md)/[MonthlyAdjusted](index.md)/[component1](component1.md)
 
 

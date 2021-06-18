@@ -1,3 +1,6 @@
+---
+title: categoryService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[categoryService](category-service.md)
 
 

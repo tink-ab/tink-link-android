@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.account](../../../index.md)/[[common]Account](../../index.md)/[Flags](../index.md)/[UNKNOWN](index.md)/[ordinal](ordinal.md)
 
 

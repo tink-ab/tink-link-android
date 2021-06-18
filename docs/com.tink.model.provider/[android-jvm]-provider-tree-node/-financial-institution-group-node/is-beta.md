@@ -1,3 +1,6 @@
+---
+title: isBeta -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[FinancialInstitutionGroupNode](index.md)/[isBeta](is-beta.md)
 
 

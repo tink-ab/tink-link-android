@@ -1,3 +1,6 @@
+---
+title: Provider -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[Provider](-provider.md)
 
 

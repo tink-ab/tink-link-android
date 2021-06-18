@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]Provider](../index.md)/[FinancialInstitution](index.md)/[copy](copy.md)
 
 

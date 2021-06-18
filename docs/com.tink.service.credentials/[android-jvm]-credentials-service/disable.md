@@ -1,3 +1,6 @@
+---
+title: disable -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[disable](disable.md)
 
 

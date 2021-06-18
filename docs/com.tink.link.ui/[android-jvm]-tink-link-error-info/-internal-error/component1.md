@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkErrorInfo](../index.md)/[InternalError](index.md)/[component1](component1.md)
 
 

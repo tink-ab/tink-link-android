@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkResult](../index.md)/[TemporaryUser](index.md)/[copy](copy.md)
 
 

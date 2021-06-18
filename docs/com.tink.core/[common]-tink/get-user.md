@@ -1,3 +1,6 @@
+---
+title: getUser -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[getUser](get-user.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: originalAmount -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[originalAmount](original-amount.md)
 
 

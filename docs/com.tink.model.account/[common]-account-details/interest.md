@@ -1,3 +1,6 @@
+---
+title: interest -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[interest](interest.md)
 
 

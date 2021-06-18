@@ -1,3 +1,6 @@
+---
+title: com.tink.service.observer -
+---
 //[link](../index.md)/[com.tink.service.observer](index.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: created -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[created](created.md)
 
 

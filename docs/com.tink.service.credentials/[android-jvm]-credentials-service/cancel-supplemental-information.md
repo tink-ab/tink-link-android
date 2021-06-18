@@ -1,3 +1,6 @@
+---
+title: cancelSupplementalInformation -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[cancelSupplementalInformation](cancel-supplemental-information.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: convert ViewBudgetActionData -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightActionConvertersTest](index.md)/[convert ViewBudgetActionData](convert -view-budget-action-data.md)
 
 

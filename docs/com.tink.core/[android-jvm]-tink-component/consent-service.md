@@ -1,3 +1,6 @@
+---
+title: consentService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[consentService](consent-service.md)
 
 

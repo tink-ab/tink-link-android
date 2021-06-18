@@ -1,3 +1,6 @@
+---
+title: onError -
+---
 //[link](../../index.md)/[com.tink.service.handler](../index.md)/[[androidJvm]ResultHandler](index.md)/[onError](on-error.md)
 
 

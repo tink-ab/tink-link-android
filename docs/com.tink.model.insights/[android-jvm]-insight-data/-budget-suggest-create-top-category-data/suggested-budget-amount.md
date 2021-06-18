@@ -1,3 +1,6 @@
+---
+title: suggestedBudgetAmount -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSuggestCreateTopCategoryData](index.md)/[suggestedBudgetAmount](suggested-budget-amount.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: [common]requireUserContext -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[common]requireUserContext]([common]require-user-context.md)
 
 

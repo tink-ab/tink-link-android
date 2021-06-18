@@ -1,3 +1,6 @@
+---
+title: description -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionUpdateDescriptor](index.md)/[description](description.md)
 
 

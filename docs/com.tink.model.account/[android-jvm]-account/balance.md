@@ -1,3 +1,6 @@
+---
+title: balance -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[balance](balance.md)
 
 

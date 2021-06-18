@@ -1,3 +1,6 @@
+---
+title: termsAndConditions -
+---
 //[link](../../index.md)/[com.tink.link.consent](../index.md)/[[androidJvm]ConsentContext](index.md)/[termsAndConditions](terms-and-conditions.md)
 
 

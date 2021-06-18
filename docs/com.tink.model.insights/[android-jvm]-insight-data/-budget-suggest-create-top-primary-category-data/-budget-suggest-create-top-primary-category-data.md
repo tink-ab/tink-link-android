@@ -1,3 +1,6 @@
+---
+title: BudgetSuggestCreateTopPrimaryCategoryData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data.md)
 
 

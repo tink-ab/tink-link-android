@@ -1,3 +1,6 @@
+---
+title: isNewerThan -
+---
 //[link](../../index.md)/[com.tink.link.authentication](../index.md)/[[androidJvm]AuthenticationTask](index.md)/[isNewerThan](is-newer-than.md)
 
 

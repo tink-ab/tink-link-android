@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[BUDGET_SUGGEST_CREATE_TOP_CATEGORY](index.md)/[name](name.md)
 
 

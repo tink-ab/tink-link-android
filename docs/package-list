@@ -1,4 +1,4 @@
-$dokka.format:gfm-v1
+$dokka.format:jekyll-v1
 $dokka.linkExtension:md
 $dokka.location:com.tink.core.provider/ProviderRepository///PointingToDeclaration/com.tink.core.provider/[android-jvm]-provider-repository/index.md
 $dokka.location:com.tink.core.provider/ProviderRepository/ProviderRepository/#com.tink.service.provider.ProviderService/PointingToDeclaration/com.tink.core.provider/[android-jvm]-provider-repository/-provider-repository.md

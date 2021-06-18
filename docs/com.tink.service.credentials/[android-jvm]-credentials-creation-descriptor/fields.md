@@ -1,3 +1,6 @@
+---
+title: fields -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsCreationDescriptor](index.md)/[fields](fields.md)
 
 

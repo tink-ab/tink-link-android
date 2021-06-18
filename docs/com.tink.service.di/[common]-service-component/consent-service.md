@@ -1,3 +1,6 @@
+---
+title: consentService -
+---
 //[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[consentService](consent-service.md)
 
 

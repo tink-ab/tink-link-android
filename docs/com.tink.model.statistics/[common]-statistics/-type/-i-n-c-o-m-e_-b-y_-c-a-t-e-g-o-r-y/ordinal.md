@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.statistics](../../../index.md)/[[common]Statistics](../../index.md)/[Type](../index.md)/[INCOME_BY_CATEGORY](index.md)/[ordinal](ordinal.md)
 
 

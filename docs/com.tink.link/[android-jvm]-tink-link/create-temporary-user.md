@@ -1,3 +1,6 @@
+---
+title: createTemporaryUser -
+---
 //[link](../../index.md)/[com.tink.link](../index.md)/[[androidJvm]TinkLink](index.md)/[createTemporaryUser](create-temporary-user.md)
 
 

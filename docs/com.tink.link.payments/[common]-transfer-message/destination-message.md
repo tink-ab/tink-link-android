@@ -1,3 +1,6 @@
+---
+title: destinationMessage -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[common]TransferMessage](index.md)/[destinationMessage](destination-message.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: helpText -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[helpText](help-text.md)
 
 

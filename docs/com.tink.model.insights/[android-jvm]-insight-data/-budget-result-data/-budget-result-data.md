@@ -1,3 +1,6 @@
+---
+title: BudgetResultData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetResultData](index.md)/[BudgetResultData](-budget-result-data.md)
 
 

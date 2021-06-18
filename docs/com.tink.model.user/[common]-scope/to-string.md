@@ -1,3 +1,6 @@
+---
+title: toString -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]Scope](index.md)/[toString](to-string.md)
 
 

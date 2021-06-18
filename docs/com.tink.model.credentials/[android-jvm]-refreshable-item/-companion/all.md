@@ -1,3 +1,6 @@
+---
+title: all -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[Companion](index.md)/[all](all.md)
 
 

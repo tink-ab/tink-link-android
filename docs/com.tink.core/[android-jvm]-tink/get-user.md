@@ -1,3 +1,6 @@
+---
+title: getUser -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[getUser](get-user.md)
 
 

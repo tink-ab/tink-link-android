@@ -1,3 +1,6 @@
+---
+title: FinancialInstitution -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]Provider](../index.md)/[FinancialInstitution](index.md)/[FinancialInstitution](-financial-institution.md)
 
 

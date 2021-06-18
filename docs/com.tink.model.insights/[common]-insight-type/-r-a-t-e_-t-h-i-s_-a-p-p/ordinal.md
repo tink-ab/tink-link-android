@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[RATE_THIS_APP](index.md)/[ordinal](ordinal.md)
 
 

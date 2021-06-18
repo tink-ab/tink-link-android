@@ -1,3 +1,6 @@
+---
+title: convert ViewTransactionsByCategoryData -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightActionConvertersTest](index.md)/[convert ViewTransactionsByCategoryData](convert -view-transactions-by-category-data.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: refreshableItems -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsRefreshDescriptor](index.md)/[refreshableItems](refreshable-items.md)
 
 

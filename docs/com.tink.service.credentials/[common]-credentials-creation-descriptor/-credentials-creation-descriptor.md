@@ -1,3 +1,6 @@
+---
+title: CredentialsCreationDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsCreationDescriptor](index.md)/[CredentialsCreationDescriptor](-credentials-creation-descriptor.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: credentialsService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[credentialsService](credentials-service.md)
 
 

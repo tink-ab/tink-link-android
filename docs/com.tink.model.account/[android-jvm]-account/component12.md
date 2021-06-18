@@ -1,3 +1,6 @@
+---
+title: component12 -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[component12](component12.md)
 
 

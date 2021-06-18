@@ -1,3 +1,6 @@
+---
+title: actions -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[actions](actions.md)
 
 

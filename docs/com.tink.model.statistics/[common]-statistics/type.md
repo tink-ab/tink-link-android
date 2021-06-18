@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[type](type.md)
 
 

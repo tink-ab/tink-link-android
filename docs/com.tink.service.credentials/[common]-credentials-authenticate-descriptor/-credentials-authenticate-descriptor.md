@@ -1,3 +1,6 @@
+---
+title: CredentialsAuthenticateDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsAuthenticateDescriptor](index.md)/[CredentialsAuthenticateDescriptor](-credentials-authenticate-descriptor.md)
 
 

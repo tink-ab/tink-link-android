@@ -1,3 +1,6 @@
+---
+title: groupDisplayName -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[groupDisplayName](group-display-name.md)
 
 

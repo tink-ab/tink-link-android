@@ -1,3 +1,6 @@
+---
+title: environment -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]TinkConfiguration](index.md)/[environment](environment.md)
 
 

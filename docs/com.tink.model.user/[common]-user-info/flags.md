@@ -1,3 +1,6 @@
+---
+title: flags -
+---
 //[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[flags](flags.md)
 
 

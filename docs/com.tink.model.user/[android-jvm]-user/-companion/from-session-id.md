@@ -1,3 +1,6 @@
+---
+title: fromSessionId -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]User](../index.md)/[Companion](index.md)/[fromSessionId](from-session-id.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: providerRepository -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[providerRepository](provider-repository.md)
 
 

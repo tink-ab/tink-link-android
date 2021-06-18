@@ -1,3 +1,6 @@
+---
+title: AccountBalanceLowData -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[AccountBalanceLowData](index.md)/[AccountBalanceLowData](-account-balance-low-data.md)
 
 

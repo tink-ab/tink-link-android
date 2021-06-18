@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightType](../index.md)/[WEEKLY_SUMMARY_EXPENSES_BY_CATEGORY](index.md)/[name](name.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: com.tink.service.credentials -
+---
 //[link](../index.md)/[com.tink.service.credentials](index.md)
 
 

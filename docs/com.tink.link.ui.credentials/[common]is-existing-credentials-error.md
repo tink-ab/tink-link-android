@@ -1,3 +1,6 @@
+---
+title: [common]isExistingCredentialsError -
+---
 //[link](../index.md)/[com.tink.link.ui.credentials](index.md)/[[common]isExistingCredentialsError]([common]is-existing-credentials-error.md)
 
 

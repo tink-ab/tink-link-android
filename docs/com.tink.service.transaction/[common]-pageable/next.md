@@ -1,3 +1,6 @@
+---
+title: next -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]Pageable](index.md)/[next](next.md)
 
 

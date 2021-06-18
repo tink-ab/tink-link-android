@@ -1,3 +1,6 @@
+---
+title: getBeneficiaries -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[getBeneficiaries](get-beneficiaries.md)
 
 

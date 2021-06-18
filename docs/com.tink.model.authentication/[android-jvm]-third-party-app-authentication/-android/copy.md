@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[androidJvm]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[copy](copy.md)
 
 

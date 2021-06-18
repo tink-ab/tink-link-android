@@ -1,3 +1,6 @@
+---
+title: market -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[market](market.md)
 
 

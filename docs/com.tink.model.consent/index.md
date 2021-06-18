@@ -1,3 +1,6 @@
+---
+title: com.tink.model.consent -
+---
 //[link](../index.md)/[com.tink.model.consent](index.md)
 
 

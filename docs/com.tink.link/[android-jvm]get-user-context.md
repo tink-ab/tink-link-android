@@ -1,3 +1,6 @@
+---
+title: [androidJvm]getUserContext -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]getUserContext]([android-jvm]get-user-context.md)
 
 

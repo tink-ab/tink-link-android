@@ -1,3 +1,6 @@
+---
+title: message -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[common]AddBeneficiaryStatus](../index.md)/[Success](index.md)/[message](message.md)
 
 

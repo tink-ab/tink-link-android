@@ -1,3 +1,6 @@
+---
+title: validate -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Field](index.md)/[validate](validate.md)
 
 

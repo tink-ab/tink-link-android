@@ -1,3 +1,6 @@
+---
+title: [common]getConsentContext -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[common]getConsentContext]([common]get-consent-context.md)
 
 

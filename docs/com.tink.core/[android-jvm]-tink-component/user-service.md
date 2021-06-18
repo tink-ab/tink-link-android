@@ -1,3 +1,6 @@
+---
+title: userService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[userService](user-service.md)
 
 

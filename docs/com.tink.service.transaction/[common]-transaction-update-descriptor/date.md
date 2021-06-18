@@ -1,3 +1,6 @@
+---
+title: date -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionUpdateDescriptor](index.md)/[date](date.md)
 
 

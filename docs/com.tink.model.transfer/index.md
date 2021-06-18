@@ -1,3 +1,6 @@
+---
+title: com.tink.model.transfer -
+---
 //[link](../index.md)/[com.tink.model.transfer](index.md)
 
 

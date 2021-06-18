@@ -1,3 +1,6 @@
+---
+title: description -
+---
 //[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]ScopeDescription](index.md)/[description](description.md)
 
 

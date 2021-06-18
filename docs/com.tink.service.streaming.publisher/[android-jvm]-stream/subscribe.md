@@ -1,3 +1,6 @@
+---
+title: subscribe -
+---
 //[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]Stream](index.md)/[subscribe](subscribe.md)
 
 

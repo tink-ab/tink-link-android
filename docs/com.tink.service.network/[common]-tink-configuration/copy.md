@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]TinkConfiguration](index.md)/[copy](copy.md)
 
 

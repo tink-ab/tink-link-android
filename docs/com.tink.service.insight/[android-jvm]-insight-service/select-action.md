@@ -1,3 +1,6 @@
+---
+title: selectAction -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightService](index.md)/[selectAction](select-action.md)
 
 

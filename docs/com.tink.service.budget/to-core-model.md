@@ -1,3 +1,6 @@
+---
+title: toCoreModel -
+---
 //[link](../index.md)/[com.tink.service.budget](index.md)/[toCoreModel](to-core-model.md)
 
 

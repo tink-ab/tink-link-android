@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[WeeklyUncategorizedTransactionsData](index.md)/[copy](copy.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: initiateTransfer -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[initiateTransfer](initiate-transfer.md)
 
 

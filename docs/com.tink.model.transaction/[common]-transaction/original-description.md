@@ -1,3 +1,6 @@
+---
+title: originalDescription -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[originalDescription](original-description.md)
 
 

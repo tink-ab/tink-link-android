@@ -1,3 +1,6 @@
+---
+title: createIntent -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[createIntent](create-intent.md)
 
 

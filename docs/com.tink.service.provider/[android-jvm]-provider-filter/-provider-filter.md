@@ -1,3 +1,6 @@
+---
+title: ProviderFilter -
+---
 //[link](../../index.md)/[com.tink.service.provider](../index.md)/[[androidJvm]ProviderFilter](index.md)/[ProviderFilter](-provider-filter.md)
 
 

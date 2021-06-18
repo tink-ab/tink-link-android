@@ -1,3 +1,6 @@
+---
+title: listStream -
+---
 //[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsRepository](index.md)/[listStream](list-stream.md)
 
 

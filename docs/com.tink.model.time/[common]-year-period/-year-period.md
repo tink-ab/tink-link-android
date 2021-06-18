@@ -1,3 +1,6 @@
+---
+title: YearPeriod -
+---
 //[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[YearPeriod](-year-period.md)
 
 

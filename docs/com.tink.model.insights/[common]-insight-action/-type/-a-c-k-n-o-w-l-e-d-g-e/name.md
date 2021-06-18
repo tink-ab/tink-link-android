@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Type](../index.md)/[ACKNOWLEDGE](index.md)/[name](name.md)
 
 

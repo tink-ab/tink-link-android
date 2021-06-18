@@ -1,3 +1,6 @@
+---
+title: notes -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[notes](notes.md)
 
 

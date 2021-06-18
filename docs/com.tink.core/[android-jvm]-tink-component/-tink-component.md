@@ -1,3 +1,6 @@
+---
+title: TinkComponent -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[TinkComponent](-tink-component.md)
 
 

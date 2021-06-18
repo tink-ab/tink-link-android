@@ -1,3 +1,6 @@
+---
+title: authorizationCode -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]LinkUser](../index.md)/[UnauthenticatedUser](index.md)/[authorizationCode](authorization-code.md)
 
 

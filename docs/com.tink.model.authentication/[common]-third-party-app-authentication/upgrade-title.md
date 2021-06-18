@@ -1,3 +1,6 @@
+---
+title: upgradeTitle -
+---
 //[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[common]ThirdPartyAppAuthentication](index.md)/[upgradeTitle](upgrade-title.md)
 
 

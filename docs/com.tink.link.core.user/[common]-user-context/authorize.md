@@ -1,3 +1,6 @@
+---
+title: authorize -
+---
 //[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[common]UserContext](index.md)/[authorize](authorize.md)
 
 

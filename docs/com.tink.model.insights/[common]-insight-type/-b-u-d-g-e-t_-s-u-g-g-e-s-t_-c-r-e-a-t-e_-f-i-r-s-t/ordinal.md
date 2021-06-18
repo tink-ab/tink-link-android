@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[BUDGET_SUGGEST_CREATE_FIRST](index.md)/[ordinal](ordinal.md)
 
 

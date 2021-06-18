@@ -1,3 +1,6 @@
+---
+title: type -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[type](type.md)
 
 

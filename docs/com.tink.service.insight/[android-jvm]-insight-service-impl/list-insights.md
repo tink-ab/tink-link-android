@@ -1,3 +1,6 @@
+---
+title: listInsights -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightServiceImpl](index.md)/[listInsights](list-insights.md)
 
 

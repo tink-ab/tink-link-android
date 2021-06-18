@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.category](../../../index.md)/[[common]Category](../../index.md)/[Type](../index.md)/[TRANSFER](index.md)/[name](name.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: isDefaultChild -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[isDefaultChild](is-default-child.md)
 
 

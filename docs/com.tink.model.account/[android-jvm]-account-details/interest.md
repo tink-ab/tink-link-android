@@ -1,3 +1,6 @@
+---
+title: interest -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[interest](interest.md)
 
 

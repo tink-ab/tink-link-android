@@ -1,3 +1,6 @@
+---
+title: getCategoryTree -
+---
 //[link](../../index.md)/[com.tink.service.category](../index.md)/[[common]CategoryServiceImpl](index.md)/[getCategoryTree](get-category-tree.md)
 
 

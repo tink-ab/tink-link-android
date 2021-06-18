@@ -1,3 +1,6 @@
+---
+title: budgetId -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetResultData](index.md)/[budgetId](budget-id.md)
 
 

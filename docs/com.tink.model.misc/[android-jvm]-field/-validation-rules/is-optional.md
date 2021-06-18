@@ -1,3 +1,6 @@
+---
+title: isOptional -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[isOptional](is-optional.md)
 
 

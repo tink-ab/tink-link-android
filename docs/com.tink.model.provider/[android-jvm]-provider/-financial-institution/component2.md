@@ -1,3 +1,6 @@
+---
+title: component2 -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]Provider](../index.md)/[FinancialInstitution](index.md)/[component2](component2.md)
 
 

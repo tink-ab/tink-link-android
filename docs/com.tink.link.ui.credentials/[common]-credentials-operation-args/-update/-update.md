@@ -1,3 +1,6 @@
+---
+title: Update -
+---
 //[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Update](index.md)/[Update](-update.md)
 
 

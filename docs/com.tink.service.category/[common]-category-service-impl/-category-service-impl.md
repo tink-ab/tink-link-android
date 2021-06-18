@@ -1,3 +1,6 @@
+---
+title: CategoryServiceImpl -
+---
 //[link](../../index.md)/[com.tink.service.category](../index.md)/[[common]CategoryServiceImpl](index.md)/[CategoryServiceImpl](-category-service-impl.md)
 
 

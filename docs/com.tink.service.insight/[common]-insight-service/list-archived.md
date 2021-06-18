@@ -1,3 +1,6 @@
+---
+title: listArchived -
+---
 //[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightService](index.md)/[listArchived](list-archived.md)
 
 

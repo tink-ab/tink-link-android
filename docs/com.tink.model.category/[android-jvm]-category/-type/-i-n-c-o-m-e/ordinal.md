@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.category](../../../index.md)/[[androidJvm]Category](../../index.md)/[Type](../index.md)/[INCOME](index.md)/[ordinal](ordinal.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[component3](component3.md)
 
 

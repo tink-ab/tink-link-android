@@ -1,3 +1,6 @@
+---
+title: periodMode -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[androidJvm]StatisticsQueryDescriptor](index.md)/[periodMode](period-mode.md)
 
 

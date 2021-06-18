@@ -1,3 +1,6 @@
+---
+title: [common]toCoreModel -
+---
 //[link](../index.md)/[com.tink.service.transaction](index.md)/[[common]toCoreModel]([common]to-core-model.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: ExactNumber -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]ExactNumber](index.md)/[ExactNumber](-exact-number.md)
 
 

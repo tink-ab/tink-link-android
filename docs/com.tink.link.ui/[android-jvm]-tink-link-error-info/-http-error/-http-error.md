@@ -1,3 +1,6 @@
+---
+title: HttpError -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkErrorInfo](../index.md)/[HttpError](index.md)/[HttpError](-http-error.md)
 
 

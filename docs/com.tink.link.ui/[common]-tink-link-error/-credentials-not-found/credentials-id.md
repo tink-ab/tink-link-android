@@ -1,3 +1,6 @@
+---
+title: credentialsId -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[CredentialsNotFound](index.md)/[credentialsId](credentials-id.md)
 
 

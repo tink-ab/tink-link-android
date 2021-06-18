@@ -1,3 +1,6 @@
+---
+title: Statistics -
+---
 //[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[Statistics](-statistics.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: statisticsService -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[statisticsService](statistics-service.md)
 
 

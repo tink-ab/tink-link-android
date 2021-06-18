@@ -1,3 +1,6 @@
+---
+title: fetchBeneficiaries -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TransferRepository](index.md)/[fetchBeneficiaries](fetch-beneficiaries.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: date -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]ExpensesByDay](index.md)/[date](date.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: TransactionUpdateDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionUpdateDescriptor](index.md)/[TransactionUpdateDescriptor](-transaction-update-descriptor.md)
 
 

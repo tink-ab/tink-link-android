@@ -1,3 +1,6 @@
+---
+title: tinkConfiguration -
+---
 //[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[androidJvm]ServiceComponent](../index.md)/[Builder](index.md)/[tinkConfiguration](tink-configuration.md)
 
 

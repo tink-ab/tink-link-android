@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../../../index.md)/[com.tink.model.budget](../../../../../index.md)/[[androidJvm]Budget](../../../../index.md)/[Periodicity](../../../index.md)/[Recurring](../../index.md)/[PeriodUnit](../index.md)/[MONTH](index.md)/[name](name.md)
 
 

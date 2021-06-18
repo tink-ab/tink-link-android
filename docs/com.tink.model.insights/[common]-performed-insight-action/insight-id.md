@@ -1,3 +1,6 @@
+---
+title: insightId -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]PerformedInsightAction](index.md)/[insightId](insight-id.md)
 
 

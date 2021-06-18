@@ -1,3 +1,6 @@
+---
+title: periodicity -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[periodicity](periodicity.md)
 
 

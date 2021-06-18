@@ -1,3 +1,6 @@
+---
+title: transactions -
+---
 //[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[common]RefreshableItem](../index.md)/[Companion](index.md)/[transactions](transactions.md)
 
 

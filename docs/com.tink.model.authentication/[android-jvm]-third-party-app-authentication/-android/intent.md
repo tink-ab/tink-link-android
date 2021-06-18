@@ -1,3 +1,6 @@
+---
+title: intent -
+---
 //[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[androidJvm]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[intent](intent.md)
 
 

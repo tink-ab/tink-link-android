@@ -1,3 +1,6 @@
+---
+title: code -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[code](code.md)
 
 

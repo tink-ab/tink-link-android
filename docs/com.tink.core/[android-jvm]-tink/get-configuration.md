@@ -1,3 +1,6 @@
+---
+title: getConfiguration -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[getConfiguration](get-configuration.md)
 
 

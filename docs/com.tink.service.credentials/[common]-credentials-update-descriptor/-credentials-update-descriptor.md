@@ -1,3 +1,6 @@
+---
+title: CredentialsUpdateDescriptor -
+---
 //[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsUpdateDescriptor](index.md)/[CredentialsUpdateDescriptor](-credentials-update-descriptor.md)
 
 

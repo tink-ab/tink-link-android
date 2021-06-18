@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.provider](../../../index.md)/[[androidJvm]Provider](../../index.md)/[Status](../index.md)/[ENABLED](index.md)/[ordinal](ordinal.md)
 
 

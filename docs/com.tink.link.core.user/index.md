@@ -1,3 +1,6 @@
+---
+title: com.tink.link.core.user -
+---
 //[link](../index.md)/[com.tink.link.core.user](index.md)
 
 

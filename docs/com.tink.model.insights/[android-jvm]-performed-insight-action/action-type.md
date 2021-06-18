@@ -1,3 +1,6 @@
+---
+title: actionType -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]PerformedInsightAction](index.md)/[actionType](action-type.md)
 
 

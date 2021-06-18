@@ -1,3 +1,6 @@
+---
+title: com.tink.model.transaction -
+---
 //[link](../index.md)/[com.tink.model.transaction](index.md)
 
 

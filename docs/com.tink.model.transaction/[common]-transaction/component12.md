@@ -1,3 +1,6 @@
+---
+title: component12 -
+---
 //[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[component12](component12.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: destinationMessage -
+---
 //[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[destinationMessage](destination-message.md)
 
 

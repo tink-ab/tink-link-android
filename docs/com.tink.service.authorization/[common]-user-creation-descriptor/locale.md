@@ -1,3 +1,6 @@
+---
+title: locale -
+---
 //[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[locale](locale.md)
 
 

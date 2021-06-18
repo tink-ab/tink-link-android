@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Refresh](index.md)/[component3](component3.md)
 
 

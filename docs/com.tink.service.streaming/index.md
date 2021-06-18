@@ -1,3 +1,6 @@
+---
+title: com.tink.service.streaming -
+---
 //[link](../index.md)/[com.tink.service.streaming](index.md)
 
 

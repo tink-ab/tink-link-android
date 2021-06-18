@@ -1,3 +1,6 @@
+---
+title: ThirdPartyAuthentication -
+---
 //[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[androidJvm]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)/[ThirdPartyAuthentication](-third-party-authentication.md)
 
 

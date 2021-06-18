@@ -1,3 +1,6 @@
+---
+title: patternError -
+---
 //[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[patternError](pattern-error.md)
 
 

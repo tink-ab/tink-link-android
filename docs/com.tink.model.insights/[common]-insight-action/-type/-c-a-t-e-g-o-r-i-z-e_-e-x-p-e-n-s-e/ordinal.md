@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Type](../index.md)/[CATEGORIZE_EXPENSE](index.md)/[ordinal](ordinal.md)
 
 

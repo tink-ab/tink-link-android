@@ -1,3 +1,6 @@
+---
+title: component3 -
+---
 //[link](../../../../../../index.md)/[com.tink.link.authentication](../../../../../index.md)/[[androidJvm]AuthenticationTask](../../../../index.md)/[ThirdPartyAuthentication](../../../index.md)/[LaunchResult](../../index.md)/[Error](../index.md)/[AppNotInstalled](index.md)/[component3](component3.md)
 
 

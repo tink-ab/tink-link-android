@@ -1,3 +1,6 @@
+---
+title: init -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[init](init.md)
 
 

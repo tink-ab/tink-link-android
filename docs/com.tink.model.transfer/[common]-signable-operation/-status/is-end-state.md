@@ -1,3 +1,6 @@
+---
+title: isEndState -
+---
 //[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[common]SignableOperation](../index.md)/[Status](index.md)/[isEndState](is-end-state.md)
 
 

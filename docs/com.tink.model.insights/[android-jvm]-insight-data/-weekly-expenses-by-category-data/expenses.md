@@ -1,3 +1,6 @@
+---
+title: expenses -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[WeeklyExpensesByCategoryData](index.md)/[expenses](expenses.md)
 
 

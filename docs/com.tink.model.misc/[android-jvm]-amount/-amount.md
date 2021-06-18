@@ -1,3 +1,6 @@
+---
+title: Amount -
+---
 //[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Amount](index.md)/[Amount](-amount.md)
 
 

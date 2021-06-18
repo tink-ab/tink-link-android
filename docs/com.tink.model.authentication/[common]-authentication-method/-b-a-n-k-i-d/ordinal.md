@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[common]AuthenticationMethod](../index.md)/[BANKID](index.md)/[ordinal](ordinal.md)
 
 

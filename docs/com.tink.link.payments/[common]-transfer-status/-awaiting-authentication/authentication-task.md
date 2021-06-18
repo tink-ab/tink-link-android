@@ -1,3 +1,6 @@
+---
+title: authenticationTask -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[common]TransferStatus](../index.md)/[AwaitingAuthentication](index.md)/[authenticationTask](authentication-task.md)
 
 

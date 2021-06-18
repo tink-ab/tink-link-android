@@ -1,3 +1,6 @@
+---
+title: component1 -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[androidJvm]StatisticsQueryDescriptor](index.md)/[component1](component1.md)
 
 

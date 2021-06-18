@@ -1,3 +1,6 @@
+---
+title: CustomScope -
+---
 //[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]Scope](../index.md)/[CustomScope](index.md)/[CustomScope](-custom-scope.md)
 
 

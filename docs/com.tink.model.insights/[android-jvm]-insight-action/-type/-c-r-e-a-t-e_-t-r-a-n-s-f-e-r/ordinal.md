@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Type](../index.md)/[CREATE_TRANSFER](index.md)/[ordinal](ordinal.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: com.tink.model.relations -
+---
 //[link](../index.md)/[com.tink.model.relations](index.md)
 
 

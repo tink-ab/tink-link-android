@@ -1,3 +1,6 @@
+---
+title: [androidJvm]authenticateUser -
+---
 //[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]authenticateUser]([android-jvm]authenticate-user.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.service.provider](../index.md)/[[common]ProviderFilter](index.md)/[copy](copy.md)
 
 

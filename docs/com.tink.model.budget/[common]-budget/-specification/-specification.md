@@ -1,3 +1,6 @@
+---
+title: Specification -
+---
 //[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Specification](index.md)/[Specification](-specification.md)
 
 

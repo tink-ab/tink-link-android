@@ -1,3 +1,6 @@
+---
+title: android -
+---
 //[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[common]ThirdPartyAppAuthentication](index.md)/[android](android.md)
 
 

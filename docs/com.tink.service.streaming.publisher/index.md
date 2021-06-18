@@ -1,3 +1,6 @@
+---
+title: com.tink.service.streaming.publisher -
+---
 //[link](../index.md)/[com.tink.service.streaming.publisher](index.md)
 
 

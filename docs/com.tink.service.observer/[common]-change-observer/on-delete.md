@@ -1,3 +1,6 @@
+---
+title: onDelete -
+---
 //[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onDelete](on-delete.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: overspentBudgets -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryOverspentData](index.md)/[overspentBudgets](overspent-budgets.md)
 
 

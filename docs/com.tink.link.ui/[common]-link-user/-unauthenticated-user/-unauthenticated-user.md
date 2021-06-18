@@ -1,3 +1,6 @@
+---
+title: UnauthenticatedUser -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[UnauthenticatedUser](index.md)/[UnauthenticatedUser](-unauthenticated-user.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: ownership -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[ownership](ownership.md)
 
 

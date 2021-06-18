@@ -1,3 +1,6 @@
+---
+title: getProvider -
+---
 //[link](../../index.md)/[com.tink.core.provider](../index.md)/[[common]ProviderRepository](index.md)/[getProvider](get-provider.md)
 
 

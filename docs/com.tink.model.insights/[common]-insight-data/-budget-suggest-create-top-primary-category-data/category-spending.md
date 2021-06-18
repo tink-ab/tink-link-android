@@ -1,3 +1,6 @@
+---
+title: categorySpending -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](index.md)/[categorySpending](category-spending.md)
 
 

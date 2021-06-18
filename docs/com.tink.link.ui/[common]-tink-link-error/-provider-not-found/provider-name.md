@@ -1,3 +1,6 @@
+---
+title: providerName -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[ProviderNotFound](index.md)/[providerName](provider-name.md)
 
 

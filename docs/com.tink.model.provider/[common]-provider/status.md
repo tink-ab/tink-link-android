@@ -1,3 +1,6 @@
+---
+title: status -
+---
 //[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[status](status.md)
 
 

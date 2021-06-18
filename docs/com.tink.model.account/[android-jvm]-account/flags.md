@@ -1,3 +1,6 @@
+---
+title: flags -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[flags](flags.md)
 
 

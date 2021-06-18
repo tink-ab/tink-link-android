@@ -1,3 +1,6 @@
+---
+title: created -
+---
 //[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[created](created.md)
 
 

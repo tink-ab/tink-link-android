@@ -1,3 +1,6 @@
+---
+title: excluded -
+---
 //[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[excluded](excluded.md)
 
 

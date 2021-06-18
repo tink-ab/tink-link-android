@@ -1,3 +1,6 @@
+---
+title: ordinal -
+---
 //[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightType](../index.md)/[WEEKLY_SUMMARY_EXPENSES_BY_DAY](index.md)/[ordinal](ordinal.md)
 
 

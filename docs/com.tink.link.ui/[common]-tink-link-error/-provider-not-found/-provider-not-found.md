@@ -1,3 +1,6 @@
+---
+title: ProviderNotFound -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[ProviderNotFound](index.md)/[ProviderNotFound](-provider-not-found.md)
 
 

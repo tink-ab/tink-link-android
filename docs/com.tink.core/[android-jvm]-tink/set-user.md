@@ -1,3 +1,6 @@
+---
+title: setUser -
+---
 //[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[setUser](set-user.md)
 
 

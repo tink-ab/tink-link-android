@@ -1,3 +1,6 @@
+---
+title: TemporaryUser -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[TemporaryUser](index.md)/[TemporaryUser](-temporary-user.md)
 
 

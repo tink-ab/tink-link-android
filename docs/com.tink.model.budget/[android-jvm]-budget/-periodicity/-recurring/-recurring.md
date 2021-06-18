@@ -1,3 +1,6 @@
+---
+title: Recurring -
+---
 //[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)/[Recurring](-recurring.md)
 
 

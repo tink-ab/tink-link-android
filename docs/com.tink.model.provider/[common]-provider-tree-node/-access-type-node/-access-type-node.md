@@ -1,3 +1,6 @@
+---
+title: AccessTypeNode -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)/[AccessTypeNode](-access-type-node.md)
 
 

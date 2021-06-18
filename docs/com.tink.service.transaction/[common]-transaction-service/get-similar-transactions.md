@@ -1,3 +1,6 @@
+---
+title: getSimilarTransactions -
+---
 //[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[getSimilarTransactions](get-similar-transactions.md)
 
 

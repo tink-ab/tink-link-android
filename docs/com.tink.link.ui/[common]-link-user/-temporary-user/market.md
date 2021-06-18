@@ -1,3 +1,6 @@
+---
+title: market -
+---
 //[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[TemporaryUser](index.md)/[market](market.md)
 
 

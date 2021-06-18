@@ -1,3 +1,6 @@
+---
+title: Success -
+---
 //[link](../../../index.md)/[com.tink.link.payments](../../index.md)/[[androidJvm]TransferStatus](../index.md)/[Success](index.md)/[Success](-success.md)
 
 

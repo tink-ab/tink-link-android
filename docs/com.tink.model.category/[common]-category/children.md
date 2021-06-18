@@ -1,3 +1,6 @@
+---
+title: children -
+---
 //[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[children](children.md)
 
 

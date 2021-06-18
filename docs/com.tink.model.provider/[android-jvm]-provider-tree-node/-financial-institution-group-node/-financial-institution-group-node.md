@@ -1,3 +1,6 @@
+---
+title: FinancialInstitutionGroupNode -
+---
 //[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[FinancialInstitutionGroupNode](index.md)/[FinancialInstitutionGroupNode](-financial-institution-group-node.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: query -
+---
 //[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[common]StatisticsService](index.md)/[query](query.md)
 
 

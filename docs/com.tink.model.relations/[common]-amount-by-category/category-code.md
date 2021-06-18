@@ -1,3 +1,6 @@
+---
+title: categoryCode -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]AmountByCategory](index.md)/[categoryCode](category-code.md)
 
 

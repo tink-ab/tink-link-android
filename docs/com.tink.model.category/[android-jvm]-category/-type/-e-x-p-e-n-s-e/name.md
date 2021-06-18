@@ -1,3 +1,6 @@
+---
+title: name -
+---
 //[link](../../../../index.md)/[com.tink.model.category](../../../index.md)/[[androidJvm]Category](../../index.md)/[Type](../index.md)/[EXPENSE](index.md)/[name](name.md)
 
 

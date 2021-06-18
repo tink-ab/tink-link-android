@@ -1,3 +1,6 @@
+---
+title: [common]getTransferRepository -
+---
 //[link](../index.md)/[com.tink.link.payments](index.md)/[[common]getTransferRepository]([common]get-transfer-repository.md)
 
 

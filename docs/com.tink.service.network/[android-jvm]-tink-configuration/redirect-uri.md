@@ -1,3 +1,6 @@
+---
+title: redirectUri -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]TinkConfiguration](index.md)/[redirectUri](redirect-uri.md)
 
 

@@ -1,3 +1,6 @@
+---
+title: copy -
+---
 //[link](../../index.md)/[com.tink.link.payments](../index.md)/[[androidJvm]TransferMessage](index.md)/[copy](copy.md)
 
 

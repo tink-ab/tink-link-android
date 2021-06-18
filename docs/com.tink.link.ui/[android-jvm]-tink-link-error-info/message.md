@@ -1,3 +1,6 @@
+---
+title: message -
+---
 //[link](../../index.md)/[com.tink.link.ui](../index.md)/[[androidJvm]TinkLinkErrorInfo](index.md)/[message](message.md)
 
 

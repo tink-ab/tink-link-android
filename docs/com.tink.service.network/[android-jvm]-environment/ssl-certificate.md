@@ -1,3 +1,6 @@
+---
+title: sslCertificate -
+---
 //[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]Environment](index.md)/[sslCertificate](ssl-certificate.md)
 
 

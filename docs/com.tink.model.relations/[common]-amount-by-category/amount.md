@@ -1,3 +1,6 @@
+---
+title: amount -
+---
 //[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]AmountByCategory](index.md)/[amount](amount.md)
 
 
