@@ -1,0 +1,14 @@
+---
+title: component6 -
+---
+//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[component6](component6.md)
+
+
+
+# component6  
+[androidJvm]  
+Content  
+operator fun [component6](component6.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
+
+
+
