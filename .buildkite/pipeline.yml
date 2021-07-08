@@ -17,3 +17,9 @@ steps:
       docker-compose#v2.5.1:
         run: app
         config: .buildkite/docker-compose.gradle.yml
+  - name: ':male-detective: run detect-secrets on new commits'
+    plugins:
+    - docker#v3.3.0:
+        image: gcr.io/tink-containers/detect-secrets:v1.1.0
+        command: ["/opt/detect-secrets", "development"]
+        always-pull: true
