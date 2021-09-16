@@ -35,7 +35,7 @@ class ConsentContext(
      * @return A [Uri] to the Terms & Conditions
      */
     fun termsAndConditions(locale: Locale = Locale.getDefault()): Uri {
-        return Uri.parse("https://link.tink.com/terms-and-conditions/${locale.language}")
+        return Uri.parse("https://link.tink.com/terms-and-conditions/${locale.language}?locale=$locale")
     }
 
     /**
@@ -47,7 +47,7 @@ class ConsentContext(
      * @return A [Uri] to the Privacy Policy
      */
     fun privacyPolicy(locale: Locale = Locale.getDefault()): Uri {
-        return Uri.parse("https://link.tink.com/privacy-policy/${locale.language}")
+        return Uri.parse("https://link.tink.com/privacy-policy/${locale.language}?locale=$locale")
     }
 
     /**
