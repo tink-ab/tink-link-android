@@ -1,10 +1,17 @@
-[link](../index.md) / [com.tink.model.transaction](./index.md)
+---
+title: com.tink.model.transaction -
+---
+//[link](../index.md)/[com.tink.model.transaction](index.md)
 
-## Package com.tink.model.transaction
 
-### Types
 
-| Name | Summary |
+# Package com.tink.model.transaction  
+
+
+## Types  
+  
+|  Name|  Summary| 
 |---|---|
-| [Tag](-tag/index.md) | `data class Tag : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |
-| [Transaction](-transaction/index.md) | `data class Transaction : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |
+| <a name="com.tink.model.transaction/Tag///PointingToDeclaration/"></a>Tag| <a name="com.tink.model.transaction/Tag///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [Tag]([common]-tag/index.md)(**name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  <br>[androidJvm]  <br>data class [Tag]([android-jvm]-tag/index.md)(**name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br><br><br>
+| <a name="com.tink.model.transaction/Transaction///PointingToDeclaration/"></a>Transaction| <a name="com.tink.model.transaction/Transaction///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [Transaction]([common]-transaction/index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **amount**: [Amount](../com.tink.model.misc/[common]-amount/index.md), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **categoryId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **date**: <ERROR CLASS>, **accountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **notes**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag]([common]-tag/index.md)>, **upcoming**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), **pending**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), **originalDate**: <ERROR CLASS>, **originalDescription**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **originalAmount**: [Amount](../com.tink.model.misc/[common]-amount/index.md), **inserted**: <ERROR CLASS>)  <br>[androidJvm]  <br>data class [Transaction]([android-jvm]-transaction/index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **amount**: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.md), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **categoryId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **date**: Instant, **accountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **notes**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag]([android-jvm]-tag/index.md)>, **upcoming**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), **pending**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), **originalDate**: Instant, **originalDescription**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **originalAmount**: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.md), **inserted**: Instant) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br><br><br>
+

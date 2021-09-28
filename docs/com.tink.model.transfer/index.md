@@ -1,10 +1,17 @@
-[link](../index.md) / [com.tink.model.transfer](./index.md)
+---
+title: com.tink.model.transfer -
+---
+//[link](../index.md)/[com.tink.model.transfer](index.md)
 
-## Package com.tink.model.transfer
 
-### Types
 
-| Name | Summary |
+# Package com.tink.model.transfer  
+
+
+## Types  
+  
+|  Name|  Summary| 
 |---|---|
-| [Beneficiary](-beneficiary/index.md) | A beneficiary is a payment or transfer destination account which has been authorized by the bank. Each beneficiary belongs to an account, which means that the given account can send money to that beneficiary.`data class Beneficiary : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |
-| [SignableOperation](-signable-operation/index.md) | `data class SignableOperation : `[`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) |
+| <a name="com.tink.model.transfer/Beneficiary///PointingToDeclaration/"></a>Beneficiary| <a name="com.tink.model.transfer/Beneficiary///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [Beneficiary]([common]-beneficiary/index.md)(**ownerAccountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **accountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **accountNumberType**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  <br>[androidJvm]  <br>data class [Beneficiary]([android-jvm]-beneficiary/index.md)(**ownerAccountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **accountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **accountNumberType**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br>More info  <br>A beneficiary is a payment or transfer destination account which has been authorized by the bank.  <br><br><br>
+| <a name="com.tink.model.transfer/SignableOperation///PointingToDeclaration/"></a>SignableOperation| <a name="com.tink.model.transfer/SignableOperation///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [SignableOperation]([common]-signable-operation/index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **credentialsId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **created**: <ERROR CLASS>, **status**: [SignableOperation.Status]([common]-signable-operation/-status/index.md), **statusMessage**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [SignableOperation.Type]([common]-signable-operation/-type/index.md), **underlyingId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **updated**: <ERROR CLASS>, **userId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  <br>[androidJvm]  <br>data class [SignableOperation]([android-jvm]-signable-operation/index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **credentialsId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **created**: Instant, **status**: [SignableOperation.Status]([android-jvm]-signable-operation/-status/index.md), **statusMessage**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [SignableOperation.Type]([android-jvm]-signable-operation/-type/index.md), **underlyingId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **updated**: Instant, **userId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br><br><br>
+

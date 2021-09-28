@@ -4,7 +4,6 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
-    id("org.jetbrains.dokka").version("0.10.0")
     id("com.github.ben-manes.versions") version "0.38.0"
 }
 
@@ -71,17 +70,3 @@ dependencies {
 }
 
 apply(from = "../publishing.gradle")
-
-tasks {
-    dokka {
-        doLast {
-            println("Copying docs from /docs/link to /docs")
-            copy {
-                from("../docs/link")
-                into("../docs")
-            }
-            println("Deleting /docs/link")
-            delete("../docs/link")
-        }
-    }
-}
