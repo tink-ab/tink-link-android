@@ -53,6 +53,48 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.credentialsToProvider.observe(
+            viewLifecycleOwner,
+            { credentialsToProvider ->
+                launchFlowForCredentials(credentialsToProvider)
+            }
+        )
+
+        viewModel.onError.observe(
+            viewLifecycleOwner,
+            { error ->
+                (activity as? TinkLinkUiActivity)?.let { activity ->
+                    activity.linkError = error
+                }
+                statusDialog = CredentialsStatusDialogFactory
+                    .createDialog(
+                        requireContext(),
+                        CredentialsStatusDialogFactory.Type.ERROR,
+                        getString(R.string.tink_error_unknown)
+                    ) {
+                        statusDialog?.dismiss()
+                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                            TinkLinkUiActivity.RESULT_FAILURE
+                        )
+                    }
+                    .also {
+                        it.show()
+                        val credentialsId: String? = credentialsOperation.credentialsId
+                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
+                            error.providerName
+                        } else {
+                            null
+                        }
+                        TinkLinkTracker.trackScreen(
+                            ScreenEvent.ERROR_SCREEN,
+                            ScreenEventData(
+                                providerName = providerName,
+                                credentialsId = credentialsId
+                            )
+                        )
+                    }
+            }
+        )
         when (linkUser) {
             is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
             is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
@@ -109,49 +151,6 @@ internal class MainFragment : Fragment() {
                 operation.credentialsId?.let { viewModel.setCredentialsId(it) }
             }
         }
-
-        viewModel.credentialsToProvider.observe(
-            viewLifecycleOwner,
-            { credentialsToProvider ->
-                launchFlowForCredentials(credentialsToProvider)
-            }
-        )
-
-        viewModel.onError.observe(
-            viewLifecycleOwner,
-            { error ->
-                (activity as? TinkLinkUiActivity)?.let { activity ->
-                    activity.linkError = error
-                }
-                statusDialog = CredentialsStatusDialogFactory
-                    .createDialog(
-                        requireContext(),
-                        CredentialsStatusDialogFactory.Type.ERROR,
-                        getString(R.string.tink_error_unknown)
-                    ) {
-                        statusDialog?.dismiss()
-                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                            TinkLinkUiActivity.RESULT_FAILURE
-                        )
-                    }
-                    .also {
-                        it.show()
-                        val credentialsId: String? = credentialsOperation.credentialsId
-                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
-                            error.providerName
-                        } else {
-                            null
-                        }
-                        TinkLinkTracker.trackScreen(
-                            ScreenEvent.ERROR_SCREEN,
-                            ScreenEventData(
-                                providerName = providerName,
-                                credentialsId = credentialsId
-                            )
-                        )
-                    }
-            }
-        )
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {
