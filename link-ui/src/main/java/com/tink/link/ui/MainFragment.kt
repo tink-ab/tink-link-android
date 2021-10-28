@@ -53,6 +53,15 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        observeCredentialChanges()
+        when (linkUser) {
+            is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
+            is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
+            is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
+        }
+    }
+
+    private fun observeCredentialChanges() {
         viewModel.credentialsToProvider.observe(
             viewLifecycleOwner,
             { credentialsToProvider ->
@@ -95,11 +104,6 @@ internal class MainFragment : Fragment() {
                     }
             }
         )
-        when (linkUser) {
-            is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
-            is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
-            is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
-        }
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
