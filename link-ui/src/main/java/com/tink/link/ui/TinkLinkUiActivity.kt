@@ -15,7 +15,10 @@ import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.credentials.Credentials
 import com.tink.model.user.Scope
 import com.tink.model.user.User
+import com.tink.service.network.SdkClient
+import com.tink.service.network.SdkInformation
 import com.tink.service.network.TinkConfiguration
+import com.tink.service.network.coreSdkInformation
 import com.tink.service.provider.ProviderFilter
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_activity_main.*
@@ -78,6 +81,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
             styleResId: Int? = R.style.TinkLinkUiStyle,
             credentialsOperation: CredentialsOperation = CredentialsOperation.Create()
         ): Intent {
+            coreSdkInformation = SdkInformation(SdkClient.TINK_LINK, BuildConfig.libraryVersion)
             return Intent(context, TinkLinkUiActivity::class.java)
                 .apply {
                     val bundle = bundleOf(
