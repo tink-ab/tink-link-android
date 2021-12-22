@@ -226,30 +226,24 @@ internal class MainFragment : Fragment() {
     }
 
     private fun sendApplicationEvent(credentialsOperation: CredentialsOperation) {
-        when (val operation = credentialsOperation) {
-            is CredentialsOperation.Create -> {
-                val screenEventData = ScreenEventData(
-                    providerName = operation.getProviderNameIfAvailable(),
-                    credentialsId = operation.credentialsId
-                )
-                TinkLinkTracker.trackApplicationEvent(
-                    operation.toApplicationEvent(),
-                    screenEventData
-                )
-            }
-            else -> { }
-        }
+        TinkLinkTracker.trackApplicationEvent(
+            credentialsOperation.toApplicationEvent(),
+            ScreenEventData(
+                providerName = credentialsOperation.getProviderNameIfAvailable(),
+                credentialsId = credentialsOperation.credentialsId
+            )
+        )
     }
 
-    private fun CredentialsOperation.Create.toApplicationEvent(): ApplicationEvent =
-        if (providerSelection is ProviderSelection.SingleProvider) {
+    private fun CredentialsOperation.toApplicationEvent(): ApplicationEvent =
+        if (this is CredentialsOperation.Create && providerSelection is ProviderSelection.SingleProvider) {
             ApplicationEvent.INITIALIZED_WITH_PROVIDER
         } else {
             ApplicationEvent.INITIALIZED_WITHOUT_PROVIDER
         }
 
-    private fun CredentialsOperation.Create.getProviderNameIfAvailable(): String? =
-        if (providerSelection is ProviderSelection.SingleProvider) {
+    private fun CredentialsOperation.getProviderNameIfAvailable(): String? =
+        if (this is CredentialsOperation.Create && providerSelection is ProviderSelection.SingleProvider) {
             providerSelection.name
         } else {
             null
