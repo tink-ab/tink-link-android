@@ -65,7 +65,6 @@
   <string name="tink_close">Close</string>
   <!-- TODO: Non-translatable strings -->
   <string name="tink_app_name" translatable="false">link-ui</string>
-  <string name="tink_provider_beta_tag" translatable="false">BETA</string>
   <string name="tink_provider_select_authentication_user_type_unknown" translatable="false">Unknown</string>
   <string name="tink_provider_select_credentials_type_password_default_description" translatable="false">Password</string>
   <string name="tink_provider_select_credentials_type_mobile_bank_id_default_description" translatable="false">Mobile BankID</string>

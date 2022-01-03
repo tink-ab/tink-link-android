@@ -13,7 +13,6 @@ import com.tink.link.ui.extensions.capabilitiesText
 import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.getCompatDrawable
 import com.tink.link.ui.extensions.inflate
-import com.tink.link.ui.extensions.visibleIf
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
 import com.tink.model.credentials.Credentials
@@ -58,7 +57,6 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
 
     private val title: TextView = itemView.findViewById(R.id.title)
     private val logo: ImageView = itemView.findViewById(R.id.logo)
-    private val betaTag: TextView = itemView.findViewById(R.id.beta_tag)
 
     fun bind(item: ProviderTreeNode) {
         title.text = when (item) {
@@ -88,9 +86,6 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
                 Picasso.get().load(it).into(logo)
                 logo.visibility = View.VISIBLE
             }
-        }
-        betaTag.visibleIf {
-            item.isBeta
         }
     }
 }
