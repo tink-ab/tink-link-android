@@ -29,42 +29,18 @@
       android:gravity="center_vertical|start"
       app:layout_constraintBottom_toTopOf="@id/barrier"
       app:layout_constraintStart_toEndOf="@+id/logo"
-      app:layout_constraintEnd_toStartOf="@id/beta_tag"
+      app:layout_constraintEnd_toEndOf="parent"
       android:ellipsize="end"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintHorizontal_chainStyle="packed"
       tools:text="Placeholder title" />
-
-  <TextView
-      android:id="@+id/beta_tag"
-      style="@style/tink_nano"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="@dimen/tink_standard_margin_end"
-      android:gravity="center_vertical|start"
-      android:visibility="gone"
-      android:textColor="?tink_textColorPrimary"
-      app:layout_constraintStart_toEndOf="@id/title"
-      app:layout_constraintBottom_toTopOf="@id/barrier"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintHorizontal_chainStyle="packed"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:paddingStart="6dp"
-      android:paddingEnd="6dp"
-      android:paddingTop="2dp"
-      android:paddingBottom="2dp"
-      tools:visibility="visible"
-      android:background="@drawable/tink_text_border"
-      android:text="@string/tink_provider_beta_tag" />
 
   <androidx.constraintlayout.widget.Barrier
       android:id="@+id/barrier"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       app:barrierDirection="bottom"
-      app:constraint_referenced_ids="logo,title,beta_tag" />
+      app:constraint_referenced_ids="logo,title" />
 
   <View
       android:id="@+id/divider"
