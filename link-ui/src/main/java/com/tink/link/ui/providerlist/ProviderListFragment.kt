@@ -231,7 +231,16 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
      * Navigate to the next node.
      */
     private fun navigateToNode(node: ProviderTreeNode, singleProvider: Boolean = false) {
-        val newPath = path.append(node)
+        var newPath = path.append(node)
+
+        // Add group node to path when user has searched for a financialInstitution node.
+        if (node is ProviderTreeNode.FinancialInstitutionNode
+            && newPath.financialInstitutionGroupNodeByName == null) {
+            viewModel.getFinancialInstitutionGroupNode(node)?.let { groupNode ->
+                newPath = path.append(groupNode).append(node)
+            }
+        }
+
         if (newPath.isFullPathToProvider) {
             val action = if (singleProvider) {
                 ProviderListFragmentDirections.actionProviderListFragmentToCredentialsFragmentSingleProvider(

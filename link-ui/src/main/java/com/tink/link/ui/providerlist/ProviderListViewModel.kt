@@ -44,8 +44,10 @@ internal class ProviderListViewModel : ViewModel() {
 
     private val filteredProviders = MediatorLiveData<List<ProviderTreeNode>>().apply {
         fun update() {
-            val providers = providersByPath.value ?: return
+            val providersByPath = providersByPath.value ?: return
+
             val query = query.value.orEmpty()
+            val providers = if (query.isEmpty()) providersByPath else providersForSearch(providersByPath)
 
             val filteredProviders =
                 providers.filter { providerTreeNode ->
@@ -53,6 +55,7 @@ internal class ProviderListViewModel : ViewModel() {
                         providerTreeNode is ProviderTreeNode.AccessTypeNode ||
                         providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
                         providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
+
                 }
 
             if (filteredProviders != value) {
@@ -63,9 +66,31 @@ internal class ProviderListViewModel : ViewModel() {
         addSource(query) { update() }
     }
 
+    private fun providersForSearch(
+        providersByPath: List<ProviderTreeNode>
+    ): List<ProviderTreeNode> {
+        return providersByPath.flatMap { provider ->
+            if (provider is ProviderTreeNode.FinancialInstitutionGroupNode &&
+                provider.financialInstitutions.isNotEmpty()) {
+                provider.financialInstitutions
+            } else {
+                listOf(provider)
+            }
+        }
+    }
+
     val providers: LiveData<List<ProviderTreeNode>> = filteredProviders
 
     fun search(query: String) = this.query.postValue(query)
+
+    fun getFinancialInstitutionGroupNode(
+        financialInstitutionNode: ProviderTreeNode.FinancialInstitutionNode)
+    : ProviderTreeNode.FinancialInstitutionGroupNode? {
+        val providers = providersByPath.value ?: return null
+        return providers
+            .filterIsInstance<ProviderTreeNode.FinancialInstitutionGroupNode>()
+            .first { it.financialInstitutions.contains(financialInstitutionNode) }
+    }
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
 
