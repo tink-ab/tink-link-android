@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import com.tink.core.Tink
 import com.tink.link.getUserContext
 import com.tink.link.ui.LinkUser.TemporaryUser
-import com.tink.link.ui.codeexamples.tinkLinkUIExample
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.model.credentials.Credentials
 import com.tink.model.user.Scope
