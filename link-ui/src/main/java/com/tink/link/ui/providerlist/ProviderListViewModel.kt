@@ -86,10 +86,9 @@ internal class ProviderListViewModel : ViewModel() {
     fun getFinancialInstitutionGroupNode(
         financialInstitutionNode: ProviderTreeNode.FinancialInstitutionNode)
     : ProviderTreeNode.FinancialInstitutionGroupNode? {
-        val providers = providersByPath.value ?: return null
-        return providers
-            .filterIsInstance<ProviderTreeNode.FinancialInstitutionGroupNode>()
-            .first { it.financialInstitutions.contains(financialInstitutionNode) }
+        return providersByPath.value
+            ?.filterIsInstance<ProviderTreeNode.FinancialInstitutionGroupNode>()
+            ?.first { it.financialInstitutions.contains(financialInstitutionNode) }
     }
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
