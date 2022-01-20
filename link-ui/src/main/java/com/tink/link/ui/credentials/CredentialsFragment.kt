@@ -1,6 +1,9 @@
 package com.tink.link.ui.credentials
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.RoundRectShape
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
@@ -32,12 +35,14 @@ import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.extensions.LinkInfo
+import com.tink.link.ui.extensions.getColorFromAttr
 import com.tink.link.ui.extensions.hideKeyboard
 import com.tink.link.ui.extensions.setTextWithLinks
 import com.tink.link.ui.extensions.setTextWithUrlMarkdown
 import com.tink.link.ui.extensions.toArrayList
 import com.tink.link.ui.extensions.toTinkLinkErrorInfo
 import com.tink.link.ui.extensions.toView
+import com.tink.link.ui.utils.ColorsUtils
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -275,6 +280,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     private fun showEmptyFieldsFlow() {
         credentialsFieldsHelpTextGroup.isVisible = false
         emptyFieldsGroup.isVisible = true
@@ -283,6 +289,19 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
         emptyFieldsLoginText.text =
             getString(R.string.tink_credentials_empty_fields_login, provider.displayName)
+
+        setEmptyFieldsInstructionTextBackground()
+        emptyFieldsInstructionText1.text = getString(R.string.tink_credentials_empty_fields_instructions_text_1, provider.displayName)
+    }
+
+    private fun setEmptyFieldsInstructionTextBackground() {
+        val baseColor = context?.getColorFromAttr(R.attr.tink_colorPrimary) ?: return
+        val color = ColorsUtils.adjustAlpha(baseColor, 1f)
+        val r = 30f
+        val shape = ShapeDrawable(RoundRectShape(floatArrayOf(r, r, r, r, r, r, r, r), null, null))
+        shape.alpha = (255 * 0.1).toInt()
+        shape.paint.color = color
+        emptyFieldsInstructionTextContainer.background = shape
     }
 
     private fun showAuthenticateFlow() {
