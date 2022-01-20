@@ -63,4 +63,8 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <string name="tink_credentials_empty_fields_instructions_text_1">Du overføres sikkert til %1$s.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_2">Du bliver bedt om at godkende.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_3">Når du er godkendt, omdirigeres du tilbage.</string>
+    <string name="tink_credentials_empty_fields_assurance">Dine bankloginoplysninger er kun synlige for dig</string>
 </resources>

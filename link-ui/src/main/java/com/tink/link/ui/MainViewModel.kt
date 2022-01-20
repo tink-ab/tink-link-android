@@ -14,9 +14,9 @@ import com.tink.service.handler.ResultHandler
 
 internal class MainViewModel : ViewModel() {
 
-    private val userContext: UserContext = requireNotNull(Tink.getUserContext())
-    private val credentialsRepository: CredentialsRepository = userContext.credentialsRepository
-    private val providerRepository: ProviderRepository = userContext.providerRepository
+    private val userContext: UserContext by lazy { requireNotNull(Tink.getUserContext()) }
+    private val credentialsRepository: CredentialsRepository by lazy { userContext.credentialsRepository }
+    private val providerRepository: ProviderRepository by lazy { userContext.providerRepository }
 
     private val _credentialsToProvider: MutableLiveData<CredentialsToProvider> = MutableLiveData()
     val credentialsToProvider: LiveData<CredentialsToProvider> = _credentialsToProvider
