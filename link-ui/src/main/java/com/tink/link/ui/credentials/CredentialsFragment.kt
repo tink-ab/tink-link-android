@@ -26,6 +26,8 @@ import com.squareup.picasso.Picasso
 import com.tink.link.authentication.AuthenticationTask
 import com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult
 import com.tink.link.core.credentials.CredentialsFailure
+import com.tink.link.core.events.TinkLinkEvent
+import com.tink.link.core.events.TinkLinkEventData
 import com.tink.link.ui.R
 import com.tink.link.ui.TinkLinkError
 import com.tink.link.ui.TinkLinkUiActivity
@@ -172,12 +174,16 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
 
         viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
-            (activity as? TinkLinkUiActivity)?.let {
-                it.credentials = credentials
+            (activity as? TinkLinkUiActivity)?.let { tinkLinkActivity ->
+                val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
+                    putExtra(TinkLinkEventData.CREDENTIALS_ID.key, credentials.id)
+                }
+                tinkLinkActivity.sendBroadcast(credentialsCreatedIntent)
+                tinkLinkActivity.credentials = credentials
                 // Remove from credentials error entries if this credentials had an error entry
-                it.removeCredentialsError(credentials.id)
+                tinkLinkActivity.removeCredentialsError(credentials.id)
                 // Remove any link error entry
-                it.linkError = null
+                tinkLinkActivity.linkError = null
             }
         }
 
