@@ -1,6 +1,9 @@
 package com.tink.link.ui.credentials
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.RoundRectShape
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
@@ -31,6 +34,15 @@ import com.tink.link.ui.analytics.models.ApplicationEvent
 import com.tink.link.ui.analytics.models.InteractionEvent
 import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
+import com.tink.link.ui.extensions.LinkInfo
+import com.tink.link.ui.extensions.getColorFromAttr
+import com.tink.link.ui.extensions.hideKeyboard
+import com.tink.link.ui.extensions.setTextWithLinks
+import com.tink.link.ui.extensions.setTextWithUrlMarkdown
+import com.tink.link.ui.extensions.toArrayList
+import com.tink.link.ui.extensions.toTinkLinkErrorInfo
+import com.tink.link.ui.extensions.toView
+import com.tink.link.ui.utils.ColorsUtils
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
@@ -39,18 +51,6 @@ import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCred
 import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.view.*
-import com.tink.link.ui.extensions.*
-import com.tink.link.ui.extensions.LinkInfo
-import com.tink.link.ui.extensions.hideKeyboard
-import com.tink.link.ui.extensions.setTextWithLinks
-import com.tink.link.ui.extensions.setTextWithUrlMarkdown
-import com.tink.link.ui.extensions.toArrayList
-import com.tink.link.ui.extensions.toTinkLinkErrorInfo
-import com.tink.link.ui.extensions.toView
-import android.graphics.drawable.shapes.RoundRectShape
-
-import android.graphics.drawable.ShapeDrawable
-import com.tink.link.ui.utils.ColorsUtils
 
 private const val BANK_ID_ACTION_SAME_DEVICE = 1
 private const val BANK_ID_ACTION_OTHER_DEVICE = 2
@@ -280,6 +280,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     private fun showEmptyFieldsFlow() {
         credentialsFieldsHelpTextGroup.isVisible = false
         emptyFieldsGroup.isVisible = true
