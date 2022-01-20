@@ -63,4 +63,8 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <string name="tink_credentials_empty_fields_instructions_text_1">Será transferido de forma segura para %1$.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_2">Será obrigado a autenticar-se.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_3">Depois de autenticado voltará a ser redirecionado.</string>
+    <string name="tink_credentials_empty_fields_assurance">Os seus detalhes de início de sessão só estão visíveis para si</string>
 </resources>

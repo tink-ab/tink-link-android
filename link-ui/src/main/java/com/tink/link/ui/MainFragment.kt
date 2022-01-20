@@ -53,11 +53,57 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        observeCredentialChanges()
         when (linkUser) {
             is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
             is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
             is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
         }
+    }
+
+    private fun observeCredentialChanges() {
+        viewModel.credentialsToProvider.observe(
+            viewLifecycleOwner,
+            { credentialsToProvider ->
+                launchFlowForCredentials(credentialsToProvider)
+            }
+        )
+
+        viewModel.onError.observe(
+            viewLifecycleOwner,
+            { error ->
+                (activity as? TinkLinkUiActivity)?.let { activity ->
+                    activity.linkError = error
+                }
+                statusDialog = CredentialsStatusDialogFactory
+                    .createDialog(
+                        requireContext(),
+                        CredentialsStatusDialogFactory.Type.ERROR,
+                        getString(R.string.tink_error_unknown)
+                    ) {
+                        statusDialog?.dismiss()
+                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                            TinkLinkUiActivity.RESULT_FAILURE
+                        )
+                    }
+                    .also {
+                        it.show()
+                        val credentialsId: String? = credentialsOperation.credentialsId
+                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
+                            error.providerName
+                        } else {
+                            null
+                        }
+                        TinkLinkTracker.trackScreen(
+                            ScreenEvent.ERROR_SCREEN,
+                            ScreenEventData(
+                                providerName = providerName,
+                                credentialsId = credentialsId
+                            )
+                        )
+                    }
+            }
+        )
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
@@ -109,49 +155,6 @@ internal class MainFragment : Fragment() {
                 operation.credentialsId?.let { viewModel.setCredentialsId(it) }
             }
         }
-
-        viewModel.credentialsToProvider.observe(
-            viewLifecycleOwner,
-            { credentialsToProvider ->
-                launchFlowForCredentials(credentialsToProvider)
-            }
-        )
-
-        viewModel.onError.observe(
-            viewLifecycleOwner,
-            { error ->
-                (activity as? TinkLinkUiActivity)?.let { activity ->
-                    activity.linkError = error
-                }
-                statusDialog = CredentialsStatusDialogFactory
-                    .createDialog(
-                        requireContext(),
-                        CredentialsStatusDialogFactory.Type.ERROR,
-                        getString(R.string.tink_error_unknown)
-                    ) {
-                        statusDialog?.dismiss()
-                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                            TinkLinkUiActivity.RESULT_FAILURE
-                        )
-                    }
-                    .also {
-                        it.show()
-                        val credentialsId: String? = credentialsOperation.credentialsId
-                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
-                            error.providerName
-                        } else {
-                            null
-                        }
-                        TinkLinkTracker.trackScreen(
-                            ScreenEvent.ERROR_SCREEN,
-                            ScreenEventData(
-                                providerName = providerName,
-                                credentialsId = credentialsId
-                            )
-                        )
-                    }
-            }
-        )
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {
@@ -223,30 +226,24 @@ internal class MainFragment : Fragment() {
     }
 
     private fun sendApplicationEvent(credentialsOperation: CredentialsOperation) {
-        when (val operation = credentialsOperation) {
-            is CredentialsOperation.Create -> {
-                val screenEventData = ScreenEventData(
-                    providerName = operation.getProviderNameIfAvailable(),
-                    credentialsId = operation.credentialsId
-                )
-                TinkLinkTracker.trackApplicationEvent(
-                    operation.toApplicationEvent(),
-                    screenEventData
-                )
-            }
-            else -> { }
-        }
+        TinkLinkTracker.trackApplicationEvent(
+            credentialsOperation.toApplicationEvent(),
+            ScreenEventData(
+                providerName = credentialsOperation.getProviderNameIfAvailable(),
+                credentialsId = credentialsOperation.credentialsId
+            )
+        )
     }
 
-    private fun CredentialsOperation.Create.toApplicationEvent(): ApplicationEvent =
-        if (providerSelection is ProviderSelection.SingleProvider) {
+    private fun CredentialsOperation.toApplicationEvent(): ApplicationEvent =
+        if (this is CredentialsOperation.Create && providerSelection is ProviderSelection.SingleProvider) {
             ApplicationEvent.INITIALIZED_WITH_PROVIDER
         } else {
             ApplicationEvent.INITIALIZED_WITHOUT_PROVIDER
         }
 
-    private fun CredentialsOperation.Create.getProviderNameIfAvailable(): String? =
-        if (providerSelection is ProviderSelection.SingleProvider) {
+    private fun CredentialsOperation.getProviderNameIfAvailable(): String? =
+        if (this is CredentialsOperation.Create && providerSelection is ProviderSelection.SingleProvider) {
             providerSelection.name
         } else {
             null

@@ -1,9 +1,16 @@
-[link](../index.md) / [com.tink.service.authentication](./index.md)
+---
+title: com.tink.service.authentication -
+---
+//[link](../index.md)/[com.tink.service.authentication](index.md)
 
-## Package com.tink.service.authentication
 
-### Types
 
-| Name | Summary |
+# Package com.tink.service.authentication  
+
+
+## Types  
+  
+|  Name|  Summary| 
 |---|---|
-| [UserEventBus](-user-event-bus/index.md) | `class UserEventBus` |
+| <a name="com.tink.service.authentication/UserEventBus///PointingToDeclaration/"></a>UserEventBus| <a name="com.tink.service.authentication/UserEventBus///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>class [UserEventBus]([common]-user-event-bus/index.md)constructor  <br>[androidJvm]  <br>class [UserEventBus]([android-jvm]-user-event-bus/index.md)@Inject()constructor  <br><br><br>
+
