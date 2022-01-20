@@ -55,7 +55,6 @@ internal class ProviderListViewModel : ViewModel() {
                         providerTreeNode is ProviderTreeNode.AccessTypeNode ||
                         providerTreeNode is ProviderTreeNode.CredentialsTypeNode ||
                         providerTreeNode.name?.contains(query, ignoreCase = true) ?: false
-
                 }
 
             if (filteredProviders != value) {
@@ -71,7 +70,8 @@ internal class ProviderListViewModel : ViewModel() {
     ): List<ProviderTreeNode> {
         return providersByPath.flatMap { provider ->
             if (provider is ProviderTreeNode.FinancialInstitutionGroupNode &&
-                provider.financialInstitutions.isNotEmpty()) {
+                provider.financialInstitutions.isNotEmpty()
+            ) {
                 provider.financialInstitutions
             } else {
                 listOf(provider)
@@ -84,12 +84,13 @@ internal class ProviderListViewModel : ViewModel() {
     fun search(query: String) = this.query.postValue(query)
 
     fun getFinancialInstitutionGroupNode(
-        financialInstitutionNode: ProviderTreeNode.FinancialInstitutionNode)
-    : ProviderTreeNode.FinancialInstitutionGroupNode? {
-        return providersByPath.value
-            ?.filterIsInstance<ProviderTreeNode.FinancialInstitutionGroupNode>()
-            ?.first { it.financialInstitutions.contains(financialInstitutionNode) }
-    }
+        financialInstitutionNode: ProviderTreeNode.FinancialInstitutionNode
+    ):
+        ProviderTreeNode.FinancialInstitutionGroupNode? {
+            return providersByPath.value
+                ?.filterIsInstance<ProviderTreeNode.FinancialInstitutionGroupNode>()
+                ?.first { it.financialInstitutions.contains(financialInstitutionNode) }
+        }
 
     fun setPath(path: ProviderListPath) = this.path.postValue(path)
 

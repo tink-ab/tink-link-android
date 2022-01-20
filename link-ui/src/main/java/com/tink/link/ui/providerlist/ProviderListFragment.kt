@@ -234,8 +234,9 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
         var newPath = path.append(node)
 
         // Add group node to path when user has searched for a financialInstitution node.
-        if (node is ProviderTreeNode.FinancialInstitutionNode
-            && newPath.financialInstitutionGroupNodeByName == null) {
+        if (node is ProviderTreeNode.FinancialInstitutionNode &&
+            newPath.financialInstitutionGroupNodeByName == null
+        ) {
             viewModel.getFinancialInstitutionGroupNode(node)?.let { groupNode ->
                 newPath = path.append(groupNode).append(node)
             }
