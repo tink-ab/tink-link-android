@@ -13,6 +13,11 @@ import kotlinx.coroutines.SupervisorJob
 import java.util.Locale
 import javax.inject.Inject
 
+private const val TERMS_CONDITIONS_URL = "https://link.tink.com/terms-and-conditions"
+private const val PRIVACY_POLICY_URL = "https://link.tink.com/privacy-policy"
+private const val LOCALE_PARAMETER = "locale"
+private const val CHROMELESS_PARAMETER = "chromeless"
+
 /**
  * Context for handling things around user consent.
  */
@@ -34,9 +39,13 @@ class ConsentContext(
      * @param locale The locale with the language to use.
      * @return A [Uri] to the Terms & Conditions
      */
-    fun termsAndConditions(locale: Locale = Locale.getDefault()): Uri {
-        return Uri.parse("https://link.tink.com/terms-and-conditions/${locale.language}")
-    }
+    fun termsAndConditions(locale: Locale = Locale.getDefault(), showChromeless: Boolean = true): Uri =
+        Uri.parse(TERMS_CONDITIONS_URL)
+            .buildUpon()
+            .appendPath(locale.language)
+            .appendQueryParameter(LOCALE_PARAMETER, locale.toString())
+            .appendQueryParameter(CHROMELESS_PARAMETER, showChromeless.toString())
+            .build()
 
     /**
      * Get a link to the Privacy Policy for Tink Link.
@@ -46,9 +55,13 @@ class ConsentContext(
      * @param locale The locale with the language to use.
      * @return A [Uri] to the Privacy Policy
      */
-    fun privacyPolicy(locale: Locale = Locale.getDefault()): Uri {
-        return Uri.parse("https://link.tink.com/privacy-policy/${locale.language}")
-    }
+    fun privacyPolicy(locale: Locale = Locale.getDefault(), showChromeless: Boolean = true): Uri =
+        Uri.parse(PRIVACY_POLICY_URL)
+            .buildUpon()
+            .appendPath(locale.language)
+            .appendQueryParameter(LOCALE_PARAMETER, locale.toString())
+            .appendQueryParameter(CHROMELESS_PARAMETER, showChromeless.toString())
+            .build()
 
     /**
      * Get the [client description][OAuthClientDescription] for a client with the provided scopes.
