@@ -53,7 +53,6 @@ import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCred
 import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.view.*
-import timber.log.Timber
 
 private const val BANK_ID_ACTION_SAME_DEVICE = 1
 private const val BANK_ID_ACTION_OTHER_DEVICE = 2
