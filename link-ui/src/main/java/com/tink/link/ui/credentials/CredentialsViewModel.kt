@@ -40,6 +40,9 @@ internal class CredentialsViewModel : ViewModel() {
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
 
+    private val _newCredentials = MutableLiveData<String>()
+    val newCredentials: LiveData<String> = _newCredentials
+
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = MediatorLiveData<ViewState>().apply {
         fun update() {
@@ -90,6 +93,10 @@ internal class CredentialsViewModel : ViewModel() {
             override fun onNext(value: CredentialsStatus) {
                 if (isNewlyCreatedCredentials) {
                     // Add newly created credentials
+                    val credentialsId = value.credentials?.id
+                    if (newlyAddedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
+                        _newCredentials.postValue(credentialsId)
+                    }
                     value.credentials?.let {
                         newlyAddedCredentials[it.providerName] = it
                     }

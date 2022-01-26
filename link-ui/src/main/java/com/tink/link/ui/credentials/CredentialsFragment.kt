@@ -53,6 +53,7 @@ import kotlinx.android.synthetic.main.tink_fragment_credentials.authenticateCred
 import kotlinx.android.synthetic.main.tink_layout_credentials_authenticate.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.*
 import kotlinx.android.synthetic.main.tink_layout_toolbar_with_logo.view.*
+import timber.log.Timber
 
 private const val BANK_ID_ACTION_SAME_DEVICE = 1
 private const val BANK_ID_ACTION_OTHER_DEVICE = 2
@@ -173,12 +174,18 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
+        viewModel.newCredentials.observe(viewLifecycleOwner) { newCredentials ->
+            Timber.d("New credentials created $newCredentials")
+            activity?.let {
+                val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
+                    putExtra(TinkLinkEventData.CREDENTIALS_ID.key, newCredentials)
+                }
+                it.sendBroadcast(credentialsCreatedIntent)
+            }
+        }
+
         viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
             (activity as? TinkLinkUiActivity)?.let { tinkLinkActivity ->
-                val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
-                    putExtra(TinkLinkEventData.CREDENTIALS_ID.key, credentials.id)
-                }
-                tinkLinkActivity.sendBroadcast(credentialsCreatedIntent)
                 tinkLinkActivity.credentials = credentials
                 // Remove from credentials error entries if this credentials had an error entry
                 tinkLinkActivity.removeCredentialsError(credentials.id)
