@@ -174,13 +174,14 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
-        viewModel.newCredentials.observe(viewLifecycleOwner) { newCredentials ->
-            Timber.d("New credentials created $newCredentials")
-            activity?.let {
-                val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
-                    putExtra(TinkLinkEventData.CREDENTIALS_ID.key, newCredentials)
+        viewModel.newCredentials.observe(viewLifecycleOwner) { credentialsEvent ->
+            credentialsEvent.getContentIfNotHandled()?.let { newCredentials ->
+                activity?.let {
+                    val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
+                        putExtra(TinkLinkEventData.CREDENTIALS_ID.key, newCredentials)
+                    }
+                    it.sendBroadcast(credentialsCreatedIntent)
                 }
-                it.sendBroadcast(credentialsCreatedIntent)
             }
         }
 
