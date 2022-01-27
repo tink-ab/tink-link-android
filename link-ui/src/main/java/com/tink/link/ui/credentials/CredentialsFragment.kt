@@ -173,7 +173,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
-        viewModel.newCredentials.observe(viewLifecycleOwner) { credentialsEvent ->
+        viewModel.newCredentialsId.observe(viewLifecycleOwner) { credentialsEvent ->
             credentialsEvent.getContentIfNotHandled()?.let { newCredentials ->
                 activity?.let {
                     val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
