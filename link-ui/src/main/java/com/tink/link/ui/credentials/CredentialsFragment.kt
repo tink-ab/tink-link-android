@@ -173,12 +173,19 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             }
         }
 
+        viewModel.newCredentialsId.observe(viewLifecycleOwner) { credentialsEvent ->
+            credentialsEvent.getContentIfNotHandled()?.let { newCredentials ->
+                activity?.let {
+                    val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
+                        putExtra(TinkLinkEventData.CREDENTIALS_ID.key, newCredentials)
+                    }
+                    it.sendBroadcast(credentialsCreatedIntent)
+                }
+            }
+        }
+
         viewModel.credentials.observe(viewLifecycleOwner) { credentials ->
             (activity as? TinkLinkUiActivity)?.let { tinkLinkActivity ->
-                val credentialsCreatedIntent = Intent(TinkLinkEvent.CREDENTIALS_CREATED.action).apply {
-                    putExtra(TinkLinkEventData.CREDENTIALS_ID.key, credentials.id)
-                }
-                tinkLinkActivity.sendBroadcast(credentialsCreatedIntent)
                 tinkLinkActivity.credentials = credentials
                 // Remove from credentials error entries if this credentials had an error entry
                 tinkLinkActivity.removeCredentialsError(credentials.id)

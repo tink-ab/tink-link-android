@@ -40,6 +40,9 @@ internal class CredentialsViewModel : ViewModel() {
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
 
+    private val _newCredentialsId = MutableLiveData<Event<String>>()
+    val newCredentialsId: LiveData<Event<String>> = _newCredentialsId
+
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = MediatorLiveData<ViewState>().apply {
         fun update() {
@@ -90,6 +93,10 @@ internal class CredentialsViewModel : ViewModel() {
             override fun onNext(value: CredentialsStatus) {
                 if (isNewlyCreatedCredentials) {
                     // Add newly created credentials
+                    val credentialsId = value.credentials?.id
+                    if (newlyAddedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
+                        _newCredentialsId.postValue(Event(credentialsId))
+                    }
                     value.credentials?.let {
                         newlyAddedCredentials[it.providerName] = it
                     }
@@ -178,13 +185,13 @@ internal class CredentialsViewModel : ViewModel() {
     ) {
         streamSubscription = credentialsRepository.refresh(
             credentialsId = credentials.id,
-            authenticate = credentials
-                .sessionExpiryDate
-                ?.let { it <= Instant.now() } // Set authenticate to TRUE if session has expired
-                ?: forceAuthenticate,
+            authenticate = forceAuthenticate || sessionHasExpired(credentials),
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
+
+    private fun sessionHasExpired(credentials: Credentials) =
+        credentials.sessionExpiryDate?.let { it <= Instant.now() } == true
 
     private var currentlyAuthorizing = AtomicBoolean(false)
     private var authorizationDone = AtomicBoolean(false)
