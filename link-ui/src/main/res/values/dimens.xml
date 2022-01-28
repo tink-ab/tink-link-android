@@ -35,7 +35,7 @@
   <dimen name="tink_item_provider_divider_marginStart">72dp</dimen>
   <dimen name="tink_consent_information_marginStart">24dp</dimen>
   <dimen name="tink_consent_information_marginEnd">24dp</dimen>
-  <dimen name="tink_credentials_empty_login_text_marginStart">56dp</dimen>
+  <dimen name="tink_credentials_empty_login_text_marginStart">40dp</dimen>
   <dimen name="tink_credentials_empty_login_text_marginEnd">56dp</dimen>
   <dimen name="tink_credentials_termsAndConsentText_marginStart">24dp</dimen>
   <dimen name="tink_credentials_termsAndConsentText_marginEnd">20dp</dimen>
