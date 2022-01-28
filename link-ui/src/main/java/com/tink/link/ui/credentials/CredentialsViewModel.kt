@@ -185,13 +185,13 @@ internal class CredentialsViewModel : ViewModel() {
     ) {
         streamSubscription = credentialsRepository.refresh(
             credentialsId = credentials.id,
-            authenticate = credentials
-                .sessionExpiryDate
-                ?.let { it <= Instant.now() } // Set authenticate to TRUE if session has expired
-                ?: forceAuthenticate,
+            authenticate = forceAuthenticate || sessionHasExpired(credentials),
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
+
+    private fun sessionHasExpired(credentials: Credentials) =
+        credentials.sessionExpiryDate?.let { it <= Instant.now() } == true
 
     private var currentlyAuthorizing = AtomicBoolean(false)
     private var authorizationDone = AtomicBoolean(false)
