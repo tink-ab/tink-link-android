@@ -44,6 +44,14 @@ dependencies {
     testImplementation(Dependencies.Testing.test_mockk)
 }
 
+// Force jsoup 1.14.2 for security updates
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute(module("org.jsoup:jsoup:1.13.1"))
+            .using(module("org.jsoup:jsoup:1.14.2"))
+    }
+}
+
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804
 // See thread: https://github.com/google/dagger/issues/1449
 if (project.hasProperty("kapt")) {
