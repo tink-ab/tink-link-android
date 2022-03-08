@@ -450,7 +450,9 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 .map { it.getFilledField() }
                 .toList()
 
-            if (fields.isNotEmpty()) {
+            if (provider.accessType == Provider.AccessType.OPEN_BANKING) {
+                sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
+            } else {
                 sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
             }
 
@@ -524,7 +526,9 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 .map { it.getFilledField() }
                 .toList()
 
-            if (fields.isNotEmpty()) {
+            if (provider.accessType == Provider.AccessType.OPEN_BANKING) {
+                sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
+            } else {
                 sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
             }
 
@@ -546,7 +550,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
         lifecycleScope.launchWhenResumed {
             when (authenticationTask) {
                 is AuthenticationTask.ThirdPartyAuthentication -> {
-                    sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
                     handleThirdPartyAuthentication(authenticationTask)
                 }
 
