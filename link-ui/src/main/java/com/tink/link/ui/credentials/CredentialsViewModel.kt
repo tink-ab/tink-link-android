@@ -71,6 +71,7 @@ internal class CredentialsViewModel : ViewModel() {
 
     private val _authenticationSuccessfulEvent = MutableLiveData<Event<Unit>>()
     val authenticationSuccessfulEvent: LiveData<Event<Unit>> = _authenticationSuccessfulEvent
+    private var didSendSuccessEvent: Boolean = false
 
     private val _fields = MutableLiveData<List<Field>>()
     val fields: LiveData<List<Field>> = _fields
@@ -103,13 +104,24 @@ internal class CredentialsViewModel : ViewModel() {
                 }
                 when (value) {
                     is CredentialsStatus.Success -> {
+                        if (value.credentials.status == Credentials.Status.UPDATED || value.credentials.status == Credentials.Status.UPDATING) {
+                            if (!didSendSuccessEvent) {
+                                _authenticationSuccessfulEvent.postValue(Event(Unit))
+                                didSendSuccessEvent = true
+                            }
+                        }
                         _credentials.postValue(value.credentials)
                         _viewState.postValue(ViewState.UPDATED)
                     }
 
                     is CredentialsStatus.Loading -> {
+                        if (value.credentials?.status == Credentials.Status.UPDATED || value.credentials?.status == Credentials.Status.UPDATING) {
+                            if (!didSendSuccessEvent) {
+                                _authenticationSuccessfulEvent.postValue(Event(Unit))
+                                didSendSuccessEvent = true
+                            }
+                        }
                         _viewState.postValue(ViewState.UPDATING)
-                        _authenticationSuccessfulEvent.postValue(Event(Unit))
                         if (authorizeUser && !authorizationDone.get()) {
                             authorizeUser(scopes)
                         }
