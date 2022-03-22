@@ -24,10 +24,10 @@ private val MainLinkUiActivity.testTinkLinkConfig
         environment = Configuration.sampleEnvironment,
         oAuthClientId = Configuration.sampleOAuthClientId,
         redirectUri =
-            Uri.Builder()
-                .scheme(getString(R.string.redirect_uri_scheme))
-                .encodedAuthority(getString(R.string.redirect_uri_host))
-                .build()
+        Uri.Builder()
+            .scheme(getString(R.string.redirect_uri_scheme))
+            .encodedAuthority(getString(R.string.redirect_uri_host))
+            .build()
     )
 
 class MainLinkUiActivity : AppCompatActivity() {
