@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
@@ -34,8 +35,6 @@ internal class CredentialsViewModel : ViewModel() {
 
     private val _credentials = MutableLiveData<Credentials>()
     val credentials: LiveData<Credentials> = _credentials
-
-    internal val newlyAddedCredentials: MutableMap<String, Credentials> = mutableMapOf()
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
@@ -87,21 +86,12 @@ internal class CredentialsViewModel : ViewModel() {
 
     private fun getCredentialsStreamObserver(
         onAwaitingAuthentication: (AuthenticationTask) -> Unit,
-        onError: (Throwable) -> Unit,
-        isNewlyCreatedCredentials: Boolean = false
+        onError: (Throwable) -> Unit
     ): StreamObserver<CredentialsStatus> {
         return object : StreamObserver<CredentialsStatus> {
             override fun onNext(value: CredentialsStatus) {
-                if (isNewlyCreatedCredentials) {
-                    // Add newly created credentials
-                    val credentialsId = value.credentials?.id
-                    if (newlyAddedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
-                        _newCredentialsId.postValue(Event(credentialsId))
-                    }
-                    value.credentials?.let {
-                        newlyAddedCredentials[it.providerName] = it
-                    }
-                }
+                _credentials.postValue(value.credentials)
+
                 when (value) {
                     is CredentialsStatus.Success -> {
                         if (value.credentials.status == Credentials.Status.UPDATED || value.credentials.status == Credentials.Status.UPDATING) {
@@ -110,7 +100,6 @@ internal class CredentialsViewModel : ViewModel() {
                                 didSendSuccessEvent = true
                             }
                         }
-                        _credentials.postValue(value.credentials)
                         _viewState.postValue(ViewState.UPDATED)
                     }
 
@@ -140,6 +129,9 @@ internal class CredentialsViewModel : ViewModel() {
 
             override fun onError(error: Throwable) {
                 _viewState.postValue(ViewState.NOT_LOADING)
+                if (error is CredentialsFailure) {
+                    _credentials.postValue(error.credentials)
+                }
                 onError(error)
             }
         }
@@ -158,7 +150,7 @@ internal class CredentialsViewModel : ViewModel() {
             provider.name,
             provider.credentialsType,
             fields.toFieldMap(),
-            getCredentialsStreamObserver(onAwaitingAuthentication, onError, true),
+            getCredentialsStreamObserver(onAwaitingAuthentication, onError),
             createRefreshableItems(scopes, provider.capabilities)
         )
     }
