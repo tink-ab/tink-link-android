@@ -433,12 +433,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
 
         val providerFields = viewModel.fields.value?.associate { it.name to it.value }
         val hasMatchingFields = providerFields == null ||
-            allFielsMatching(providerFields, credentials.fields)
+            allFieldsMatching(providerFields, credentials.fields)
 
         return hasCorrectProvider && hasMatchingFields
     }
 
-    private fun allFielsMatching(
+    private fun allFieldsMatching(
         providerFields: Map<String, String>,
         credentialFields: Map<String, String>
     ): Boolean {
