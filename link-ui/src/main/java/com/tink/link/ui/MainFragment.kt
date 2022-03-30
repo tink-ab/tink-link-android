@@ -53,7 +53,6 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        observeCredentialChanges()
         when (linkUser) {
             is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
             is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
@@ -152,12 +151,16 @@ internal class MainFragment : Fragment() {
             is CredentialsOperation.Update,
             is CredentialsOperation.Authenticate,
             is CredentialsOperation.Refresh -> {
-                operation.credentialsId?.let { viewModel.setCredentialsId(it) }
+                operation.credentialsId?.let {
+                    observeCredentialChanges()
+                    viewModel.setCredentialsId(it)
+                }
             }
         }
     }
 
     private fun launchFlowForCredentials(credentialsToProvider: CredentialsToProvider) {
+
         val operationArgs = when (val operation = credentialsOperation) {
             is CredentialsOperation.Update -> {
                 CredentialsOperationArgs.Update(
