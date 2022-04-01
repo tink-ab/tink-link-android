@@ -431,7 +431,7 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     private fun isCredentialsForThisFlow(credentials: Credentials): Boolean {
         val hasCorrectProvider = credentialsOperationArgs.provider.name == credentials.providerName
 
-        val providerFields = viewModel.fields.value?.associate { it.name to it.value } ?: emptyMap()
+        val providerFields = getFilledCredentialsFields().associate { it.name to it.value }
         val hasMatchingFields = allFieldsMatching(providerFields, credentials.fields)
 
         return hasCorrectProvider && hasMatchingFields
