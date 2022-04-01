@@ -36,7 +36,7 @@ internal class CredentialsViewModel : ViewModel() {
     private val _credentials = MutableLiveData<Credentials>()
     val credentials: LiveData<Credentials> = _credentials
 
-    internal val newlyAddedCredentials: MutableMap<String, Credentials> = mutableMapOf()
+    internal val addedCredentials: MutableMap<String, Credentials> = mutableMapOf()
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
@@ -96,15 +96,12 @@ internal class CredentialsViewModel : ViewModel() {
                 if (isNewlyCreatedCredentials) {
                     // Add newly created credentials
                     val credentialsId = value.credentials?.id
-                    if (newlyAddedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
+                    if (addedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
                         _newCredentialsId.postValue(Event(credentialsId))
-                    }
-                    value.credentials?.let {
-                        newlyAddedCredentials[it.providerName] = it
                     }
                 }
 
-                _credentials.postValue(value.credentials)
+                postCredentials(value.credentials)
 
                 when (value) {
                     is CredentialsStatus.Success -> {
@@ -144,11 +141,18 @@ internal class CredentialsViewModel : ViewModel() {
             override fun onError(error: Throwable) {
                 _viewState.postValue(ViewState.NOT_LOADING)
                 if (error is CredentialsFailure) {
-                    _credentials.postValue(error.credentials)
+                    postCredentials(error.credentials)
                 }
                 onError(error)
             }
         }
+    }
+
+    private fun postCredentials(credentials: Credentials?) {
+        credentials?.let {
+            addedCredentials[it.providerName] = it
+        }
+        _credentials.postValue(credentials)
     }
 
     /**
@@ -206,6 +210,13 @@ internal class CredentialsViewModel : ViewModel() {
             authenticate = forceAuthenticate || sessionHasExpired(credentials),
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
+    }
+
+    fun setCredentialsForProvider(providerName: String) {
+        val credentialsForProvider = addedCredentials[providerName]
+        if (credentialsForProvider != null) {
+            _credentials.postValue(credentialsForProvider)
+        }
     }
 
     private fun sessionHasExpired(credentials: Credentials) =

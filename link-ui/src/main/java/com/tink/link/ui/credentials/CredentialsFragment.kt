@@ -106,6 +106,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             Picasso.get().load(it).into(toolbarWithLogo.logoView)
         }
 
+        viewModel.setCredentialsForProvider(provider.name)
+
         when (credentialsOperationArgs) {
             is CredentialsOperationArgs.Create,
             is CredentialsOperationArgs.Update -> { showFullCredentialsFlow() }
