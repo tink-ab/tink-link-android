@@ -739,6 +739,12 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             TinkLinkTracker.trackApplicationEvent(event, getScreenEventData())
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        viewModel.stopSubscribing()
+        viewModel.updateViewState(CredentialsViewModel.ViewState.NOT_LOADING)
+    }
 }
 
 sealed class CredentialsOperationArgs : Parcelable {
