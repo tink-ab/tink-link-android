@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
@@ -102,6 +103,9 @@ internal class CredentialsViewModel : ViewModel() {
                         newlyAddedCredentials[it.providerName] = it
                     }
                 }
+
+                _credentials.postValue(value.credentials)
+
                 when (value) {
                     is CredentialsStatus.Success -> {
                         if (value.credentials.status == Credentials.Status.UPDATED || value.credentials.status == Credentials.Status.UPDATING) {
@@ -110,7 +114,6 @@ internal class CredentialsViewModel : ViewModel() {
                                 didSendSuccessEvent = true
                             }
                         }
-                        _credentials.postValue(value.credentials)
                         _viewState.postValue(ViewState.UPDATED)
                     }
 
@@ -140,6 +143,9 @@ internal class CredentialsViewModel : ViewModel() {
 
             override fun onError(error: Throwable) {
                 _viewState.postValue(ViewState.NOT_LOADING)
+                if (error is CredentialsFailure) {
+                    _credentials.postValue(error.credentials)
+                }
                 onError(error)
             }
         }

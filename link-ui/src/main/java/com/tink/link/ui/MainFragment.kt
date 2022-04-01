@@ -63,47 +63,45 @@ internal class MainFragment : Fragment() {
 
     private fun observeCredentialChanges() {
         viewModel.credentialsToProvider.observe(
-            viewLifecycleOwner,
-            { credentialsToProvider ->
-                launchFlowForCredentials(credentialsToProvider)
-            }
-        )
+            viewLifecycleOwner
+        ) { credentialsToProvider ->
+            launchFlowForCredentials(credentialsToProvider)
+        }
 
         viewModel.onError.observe(
-            viewLifecycleOwner,
-            { error ->
-                (activity as? TinkLinkUiActivity)?.let { activity ->
-                    activity.linkError = error
-                }
-                statusDialog = CredentialsStatusDialogFactory
-                    .createDialog(
-                        requireContext(),
-                        CredentialsStatusDialogFactory.Type.ERROR,
-                        getString(R.string.tink_error_unknown)
-                    ) {
-                        statusDialog?.dismiss()
-                        (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
-                            TinkLinkUiActivity.RESULT_FAILURE
-                        )
-                    }
-                    .also {
-                        it.show()
-                        val credentialsId: String? = credentialsOperation.credentialsId
-                        val providerName = if (error is TinkLinkError.ProviderNotFound) {
-                            error.providerName
-                        } else {
-                            null
-                        }
-                        TinkLinkTracker.trackScreen(
-                            ScreenEvent.ERROR_SCREEN,
-                            ScreenEventData(
-                                providerName = providerName,
-                                credentialsId = credentialsId
-                            )
-                        )
-                    }
+            viewLifecycleOwner
+        ) { error ->
+            (activity as? TinkLinkUiActivity)?.let { activity ->
+                activity.linkError = error
             }
-        )
+            statusDialog = CredentialsStatusDialogFactory
+                .createDialog(
+                    requireContext(),
+                    CredentialsStatusDialogFactory.Type.ERROR,
+                    getString(R.string.tink_error_unknown)
+                ) {
+                    statusDialog?.dismiss()
+                    (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                        TinkLinkUiActivity.RESULT_FAILURE
+                    )
+                }
+                .also {
+                    it.show()
+                    val credentialsId: String? = credentialsOperation.credentialsId
+                    val providerName = if (error is TinkLinkError.ProviderNotFound) {
+                        error.providerName
+                    } else {
+                        null
+                    }
+                    TinkLinkTracker.trackScreen(
+                        ScreenEvent.ERROR_SCREEN,
+                        ScreenEventData(
+                            providerName = providerName,
+                            credentialsId = credentialsId
+                        )
+                    )
+                }
+        }
     }
 
     private fun createUser(onUserCreateAction: (User) -> Unit) {
@@ -116,9 +114,8 @@ internal class MainFragment : Fragment() {
             market = market,
             locale = locale,
             resultHandler = ResultHandler(
-                onUserCreateAction,
-                { }
-            )
+                onUserCreateAction
+            ) { }
         )
     }
 
@@ -130,9 +127,8 @@ internal class MainFragment : Fragment() {
         Tink.authenticateUser(
             authenticationCode = authorizationCode,
             resultHandler = ResultHandler(
-                onUserAuthenticateAction,
-                { }
-            )
+                onUserAuthenticateAction
+            ) { }
         )
     }
 

@@ -46,6 +46,7 @@ import com.tink.link.ui.extensions.toTinkLinkErrorInfo
 import com.tink.link.ui.extensions.toView
 import com.tink.link.ui.utils.ColorsUtils
 import com.tink.model.credentials.Credentials
+import com.tink.model.misc.Field
 import com.tink.model.provider.Provider
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_fragment_credentials.*
@@ -413,15 +414,40 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     }
 
     private fun submitFilledFields() {
-        when (val operationArgs = credentialsOperationArgs) {
-            is CredentialsOperationArgs.Create -> {
-                viewModel.newlyAddedCredentials[provider.name]
-                    ?.let { updateCredentials(it.id) }
-                    ?: createCredentials()
-            }
-            is CredentialsOperationArgs.Update -> updateCredentials(operationArgs.credentials.id)
-            else -> { }
+        val credentials = viewModel.credentials.value
+        val credentialsAreForOtherProvider = credentials?.providerName != provider.name
+
+        if (credentialsAreForOtherProvider)
+            createCredentials()
+        else if (credentials != null && credentials.hasError()) {
+            updateCredentials(credentials.id)
+        } else if (credentials != null && isCredentialsForThisFlow(credentials)) {
+            refreshCredentials(credentials)
+        } else {
+            createCredentials()
         }
+    }
+
+    private fun isCredentialsForThisFlow(credentials: Credentials): Boolean {
+        val hasCorrectProvider = credentialsOperationArgs.provider.name == credentials.providerName
+
+        val providerFields = viewModel.fields.value?.associate { it.name to it.value } ?: emptyMap()
+        val hasMatchingFields = allFieldsMatching(providerFields, credentials.fields)
+
+        return hasCorrectProvider && hasMatchingFields
+    }
+
+    private fun allFieldsMatching(
+        providerFields: Map<String, String>,
+        credentialFields: Map<String, String>
+    ): Boolean {
+        val hasSameSize = providerFields.size == credentialFields.size
+
+        val hasSameContent = providerFields.keys.fold(true) { acc, key ->
+            acc && (providerFields[key] == credentialFields[key])
+        }
+
+        return hasSameSize && hasSameContent
     }
 
     private fun areFieldsValid(): Boolean {
@@ -439,22 +465,9 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             showLoading(getString(R.string.tink_credentials_status_authorizing))
             hideKeyboard()
 
-            TinkLinkTracker.trackInteraction(
-                InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
-                getScreenEventData()
-            )
+            trackSubmitCredentials()
 
-            val fields = credentialsFields.children
-                .filterIsInstance(CredentialsField::class.java)
-                .map { it.getFilledField() }
-                .toList()
-
-            if (provider.accessType == Provider.AccessType.OPEN_BANKING) {
-                sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
-            } else {
-                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
-            }
+            val fields = getFilledCredentialsFields()
 
             viewModel.createCredentials(
                 provider = provider,
@@ -478,6 +491,69 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
                 }
             )
         }
+    }
+
+    private fun refreshCredentials(credentials: Credentials) {
+        showLoading(getString(R.string.tink_credentials_status_authorizing))
+        hideKeyboard()
+        trackSubmitCredentials()
+
+        viewModel.refreshCredentials(
+            credentials,
+            true,
+            onAwaitingAuthentication = ::handleAuthenticationTask,
+            onError = { error ->
+                val message = error.localizedMessage
+                    ?: error.message
+                    ?: getString(R.string.tink_error_unknown)
+                lifecycleScope.launchWhenStarted { showError(message) }
+            }
+        )
+    }
+
+    private fun updateCredentials(credentialsId: String) {
+        if (areFieldsValid()) {
+            showLoading(getString(R.string.tink_credentials_status_authorizing))
+            hideKeyboard()
+
+            trackSubmitCredentials()
+
+            val fields = getFilledCredentialsFields()
+
+            viewModel.updateCredentials(
+                id = credentialsId,
+                provider = provider,
+                fields = fields,
+                onAwaitingAuthentication = ::handleAuthenticationTask,
+                onError = { error ->
+                    val message = error.localizedMessage ?: error.message
+                        ?: getString(R.string.tink_error_unknown)
+                    lifecycleScope.launchWhenStarted { showError(message) }
+                }
+            )
+        }
+    }
+
+    private fun getFilledCredentialsFields(): List<Field> {
+        return credentialsFields.children
+            .filterIsInstance(CredentialsField::class.java)
+            .map { it.getFilledField() }
+            .toList()
+    }
+
+    private fun trackSubmitCredentials() {
+        TinkLinkTracker.trackInteraction(
+            InteractionEvent.SUBMIT_CREDENTIALS,
+            ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
+            getScreenEventData()
+        )
+
+        val applicationEvent = if (provider.accessType == Provider.AccessType.OPEN_BANKING) {
+            ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED
+        } else {
+            ApplicationEvent.CREDENTIALS_SUBMITTED
+        }
+        sendApplicationEvent(applicationEvent)
     }
 
     @UiThread
@@ -509,42 +585,6 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
     @UiThread
     private fun showLoading(message: String) =
         showStatusDialog(message, CredentialsStatusDialogFactory.Type.LOADING)
-
-    private fun updateCredentials(credentialsId: String) {
-        if (areFieldsValid()) {
-            showLoading(getString(R.string.tink_credentials_status_authorizing))
-            hideKeyboard()
-
-            TinkLinkTracker.trackInteraction(
-                InteractionEvent.SUBMIT_CREDENTIALS,
-                ScreenEvent.SUBMIT_CREDENTIALS_SCREEN,
-                getScreenEventData()
-            )
-
-            val fields = credentialsFields.children
-                .filterIsInstance(CredentialsField::class.java)
-                .map { it.getFilledField() }
-                .toList()
-
-            if (provider.accessType == Provider.AccessType.OPEN_BANKING) {
-                sendApplicationEvent(ApplicationEvent.PROVIDER_AUTHENTICATION_INITIALIZED)
-            } else {
-                sendApplicationEvent(ApplicationEvent.CREDENTIALS_SUBMITTED)
-            }
-
-            viewModel.updateCredentials(
-                id = credentialsId,
-                provider = provider,
-                fields = fields,
-                onAwaitingAuthentication = ::handleAuthenticationTask,
-                onError = { error ->
-                    val message = error.localizedMessage ?: error.message
-                        ?: getString(R.string.tink_error_unknown)
-                    lifecycleScope.launchWhenStarted { showError(message) }
-                }
-            )
-        }
-    }
 
     private fun handleAuthenticationTask(authenticationTask: AuthenticationTask) {
         lifecycleScope.launchWhenResumed {
@@ -715,8 +755,7 @@ sealed class CredentialsOperationArgs : Parcelable {
         override val provider: Provider,
         val credentials: Credentials,
         val authenticate: Boolean
-    ) :
-        CredentialsOperationArgs()
+    ) : CredentialsOperationArgs()
 
     @Parcelize
     data class Authenticate(override val provider: Provider, val credentials: Credentials) :
