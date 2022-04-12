@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-./gradlew link:test link-payments:test link-ui:test
+./gradlew link:test link-ui:test

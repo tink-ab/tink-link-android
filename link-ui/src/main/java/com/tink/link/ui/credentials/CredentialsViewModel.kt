@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
@@ -35,7 +36,7 @@ internal class CredentialsViewModel : ViewModel() {
     private val _credentials = MutableLiveData<Credentials>()
     val credentials: LiveData<Credentials> = _credentials
 
-    internal val newlyAddedCredentials: MutableMap<String, Credentials> = mutableMapOf()
+    internal val addedCredentials: MutableMap<String, Credentials> = mutableMapOf()
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
@@ -95,13 +96,13 @@ internal class CredentialsViewModel : ViewModel() {
                 if (isNewlyCreatedCredentials) {
                     // Add newly created credentials
                     val credentialsId = value.credentials?.id
-                    if (newlyAddedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
+                    if (addedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
                         _newCredentialsId.postValue(Event(credentialsId))
                     }
-                    value.credentials?.let {
-                        newlyAddedCredentials[it.providerName] = it
-                    }
                 }
+
+                postCredentials(value.credentials)
+
                 when (value) {
                     is CredentialsStatus.Success -> {
                         if (value.credentials.status == Credentials.Status.UPDATED || value.credentials.status == Credentials.Status.UPDATING) {
@@ -110,7 +111,6 @@ internal class CredentialsViewModel : ViewModel() {
                                 didSendSuccessEvent = true
                             }
                         }
-                        _credentials.postValue(value.credentials)
                         _viewState.postValue(ViewState.UPDATED)
                     }
 
@@ -140,9 +140,19 @@ internal class CredentialsViewModel : ViewModel() {
 
             override fun onError(error: Throwable) {
                 _viewState.postValue(ViewState.NOT_LOADING)
+                if (error is CredentialsFailure) {
+                    postCredentials(error.credentials)
+                }
                 onError(error)
             }
         }
+    }
+
+    private fun postCredentials(credentials: Credentials?) {
+        credentials?.let {
+            addedCredentials[it.providerName] = it
+        }
+        _credentials.postValue(credentials)
     }
 
     /**
@@ -200,6 +210,13 @@ internal class CredentialsViewModel : ViewModel() {
             authenticate = forceAuthenticate || sessionHasExpired(credentials),
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
+    }
+
+    fun setCredentialsForProvider(providerName: String) {
+        val credentialsForProvider = addedCredentials[providerName]
+        if (credentialsForProvider != null) {
+            _credentials.postValue(credentialsForProvider)
+        }
     }
 
     private fun sessionHasExpired(credentials: Credentials) =

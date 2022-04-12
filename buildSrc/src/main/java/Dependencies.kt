@@ -55,7 +55,7 @@ object Dependencies {
     const val zxing = "com.google.zxing:core:3.4.1"
 
     object Tink {
-        private const val coreVersion = "0.8.1"
+        private const val coreVersion = "0.8.2"
         const val core = "com.tink:core:$coreVersion"
     }
 }
