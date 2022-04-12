@@ -10,7 +10,7 @@ import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
-import com.tink.link.getUserContext
+import com.tink.link.requireUserContext
 import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.credentials.Credentials
@@ -30,7 +30,7 @@ internal class CredentialsViewModel : ViewModel() {
     internal var scopes: List<Scope> = emptyList()
     internal var authorizeUser: Boolean = false
 
-    private val userContext: UserContext = requireNotNull(Tink.getUserContext())
+    private val userContext: UserContext = Tink.requireUserContext()
     private val credentialsRepository: CredentialsRepository = userContext.credentialsRepository
 
     private val _credentials = MutableLiveData<Credentials>()
