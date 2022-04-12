@@ -120,7 +120,7 @@ internal object AnalyticsService {
                     view = screenEvent.name,
                     timestamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
                     product = product,
-                    action = interactionEvent.name,
+                    action = "${screenEvent.name}/${interactionEvent.name}",
                     device = DEVICE
                 )
             )

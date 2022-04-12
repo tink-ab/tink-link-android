@@ -105,7 +105,7 @@ internal abstract class CredentialsTask(
                 // Fetch credentials and compare new status to previous.
                 // If it's unchanged, this will be null.
                 credentials = credentialsService.getCredentials(initialCredentials.id)
-                    .takeIf { it.statusUpdated.isAfter(previousStatusUpdated) }
+                    .takeIf { it.statusUpdated.isAfter(previousStatusUpdated) && it.toCredentialsStatus() != currentStatus }
             }
 
             streamObserver.onCompleted()

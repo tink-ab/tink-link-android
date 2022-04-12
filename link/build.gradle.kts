@@ -8,14 +8,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    buildToolsVersion = Versions.buildTools
+    compileSdk = Versions.compileSdk
 
     defaultConfig {
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
-        versionCode = TinkLinkVersion.code
-        versionName = TinkLinkVersion.name
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,6 +40,14 @@ dependencies {
     testImplementation(Dependencies.Testing.test_junit_api)
     testRuntimeOnly(Dependencies.Testing.test_junit_engine)
     testImplementation(Dependencies.Testing.test_mockk)
+}
+
+// Force jsoup 1.14.2 for security updates
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute(module("org.jsoup:jsoup:1.13.1"))
+            .using(module("org.jsoup:jsoup:1.14.2"))
+    }
 }
 
 // Workaround for https://youtrack.jetbrains.com/issue/KT-32804

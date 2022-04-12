@@ -1,8 +1,7 @@
 package com.tink.link.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.tink.core.Tink
 import com.tink.core.provider.ProviderRepository
 import com.tink.link.core.credentials.CredentialsRepository
@@ -11,6 +10,7 @@ import com.tink.link.getUserContext
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
+import kotlinx.coroutines.launch
 
 internal class MainViewModel : ViewModel() {
 
@@ -18,40 +18,38 @@ internal class MainViewModel : ViewModel() {
     private val credentialsRepository: CredentialsRepository by lazy { userContext.credentialsRepository }
     private val providerRepository: ProviderRepository by lazy { userContext.providerRepository }
 
-    private val _credentialsToProvider: MutableLiveData<CredentialsToProvider> = MutableLiveData()
-    val credentialsToProvider: LiveData<CredentialsToProvider> = _credentialsToProvider
-
-    private val _onError: MutableLiveData<TinkLinkError> = MutableLiveData()
-    val onError: LiveData<TinkLinkError> = _onError
-
-    fun setCredentialsId(credentialsId: String) {
-        credentialsRepository.getCredentials(
-            credentialsId,
-            ResultHandler(
-                { credentials ->
-                    providerRepository.getProvider(
-                        credentials.providerName,
-                        ResultHandler(
-                            { provider ->
-                                if (provider != null) {
-                                    _credentialsToProvider.postValue(
-                                        CredentialsToProvider(credentials, provider)
-                                    )
-                                } else {
-                                    _onError.postValue(TinkLinkError.ProviderNotFound(credentials.providerName))
+    fun setCredentialsId(
+        credentialsId: String,
+        onSuccess: (CredentialsToProvider) -> Unit,
+        onError: (TinkLinkError) -> Unit
+    ) {
+        viewModelScope.launch {
+            credentialsRepository.getCredentials(
+                credentialsId,
+                ResultHandler(
+                    { credentials ->
+                        providerRepository.getProvider(
+                            credentials.providerName,
+                            ResultHandler(
+                                { provider ->
+                                    if (provider != null) {
+                                        onSuccess(CredentialsToProvider(credentials, provider))
+                                    } else {
+                                        onError(TinkLinkError.ProviderNotFound(credentials.providerName))
+                                    }
+                                },
+                                {
+                                    onError(TinkLinkError.ProviderNotFound(credentials.providerName))
                                 }
-                            },
-                            {
-                                _onError.postValue(TinkLinkError.ProviderNotFound(credentials.providerName))
-                            }
+                            )
                         )
-                    )
-                },
-                {
-                    _onError.postValue(TinkLinkError.CredentialsNotFound(credentialsId))
-                }
+                    },
+                    {
+                        onError(TinkLinkError.CredentialsNotFound(credentialsId))
+                    }
+                )
             )
-        )
+        }
     }
 }
 

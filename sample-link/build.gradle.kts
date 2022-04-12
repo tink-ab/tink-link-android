@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
     defaultConfig {
         applicationId = "com.tink.link.sample"
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
         versionCode = TinkLinkVersion.code
         versionName = TinkLinkVersion.name
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
