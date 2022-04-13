@@ -24,6 +24,7 @@
 
     <activity
       android:name="com.tink.link.ui.TinkLinkUiActivity"
+      android:exported="false"
       android:launchMode="singleTask">
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
