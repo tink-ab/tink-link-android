@@ -63,4 +63,8 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <string name="tink_credentials_empty_fields_instructions_text_1">Sie werden sicher zu %1$s weitergeleitet.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_2">Sie werden aufgefordert, sich zu authentifizieren.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_3">Sobald Sie authentifiziert sind, werden Sie zurückgeleitet.</string>
+    <string name="tink_credentials_empty_fields_assurance">Die Anmeldeinformationen Ihrer Bank sind nur für Sie sichtbar.</string>
 </resources>

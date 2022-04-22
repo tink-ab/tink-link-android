@@ -72,4 +72,12 @@
   <string name="tink_provider_select_credentials_type_keyfob_default_description" translatable="false">Key Fob</string>
   <string name="tink_provider_select_credentials_type_fraud_default_description" translatable="false">Fraud</string>
   <string name="tink_provider_select_credentials_type_unknown_default_description" translatable="false">Unknown</string>
+  <string name="tink_credentials_empty_fields_instructions_number_1" translatable="false">1.</string>
+  <string name="tink_credentials_empty_fields_instructions_number_2" translatable="false">2.</string>
+  <string name="tink_credentials_empty_fields_instructions_number_3" translatable="false">3.</string>
+  <string name="tink_credentials_empty_fields_instructions_text_1">You will be securely transferred to %1$s.</string>
+  <string name="tink_credentials_empty_fields_instructions_text_2">You will be required to authenticate.</string>
+  <string name="tink_credentials_empty_fields_instructions_text_3">Once authenticated, you will be redirected back.</string>
+  <string name="tink_credentials_empty_fields_assurance">Your bank login details are only visible to you</string>
+
 </resources>

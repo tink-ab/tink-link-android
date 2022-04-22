@@ -9,5 +9,6 @@
   android:elevation="4dp"
   app:titleTextAppearance="@style/tink_mega"
   app:navigationIcon="@drawable/tink_close"
+  app:navigationContentDescription="@string/nav_app_bar_navigate_up_description"
   app:titleTextColor="?tink_colorOnPrimary"
   tools:title="Bank name" />

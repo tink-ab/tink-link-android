@@ -63,4 +63,8 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <string name="tink_credentials_empty_fields_instructions_text_1">Sinut ohjataan turvallisesti %1$s-palveluun.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_2">Sinua pyydetään todentamaan henkilöllisyytesi.</string>
+    <string name="tink_credentials_empty_fields_instructions_text_3">Kun olet tehnyt todennuksen, sinut ohjataan takaisin.</string>
+    <string name="tink_credentials_empty_fields_assurance">Vain sinä näet kirjautumistietosi pankkiin.</string>
 </resources>

@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso
 import com.tink.link.ui.R
 import com.tink.link.ui.extensions.capabilitiesText
 import com.tink.link.ui.extensions.getColorFromAttr
+import com.tink.link.ui.extensions.getCompatDrawable
 import com.tink.link.ui.extensions.inflate
 import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
@@ -77,7 +78,7 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
                 setImageResource(iconRes)
                 imageTintList =
                     ColorStateList.valueOf(context.getColorFromAttr(R.attr.tink_colorOnPrimary))
-                background = context.getDrawable(R.drawable.tink_rounded_background)
+                background = context.getCompatDrawable(R.drawable.tink_rounded_background)
                 visibility = View.VISIBLE
             }
         } else {

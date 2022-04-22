@@ -6,10 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tink.core.Tink
 import com.tink.link.authentication.AuthenticationTask
+import com.tink.link.core.credentials.CredentialsFailure
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.credentials.CredentialsStatus
 import com.tink.link.core.user.UserContext
-import com.tink.link.getUserContext
+import com.tink.link.requireUserContext
 import com.tink.link.ui.Event
 import com.tink.link.ui.extensions.toFieldMap
 import com.tink.model.credentials.Credentials
@@ -29,16 +30,19 @@ internal class CredentialsViewModel : ViewModel() {
     internal var scopes: List<Scope> = emptyList()
     internal var authorizeUser: Boolean = false
 
-    private val userContext: UserContext = requireNotNull(Tink.getUserContext())
+    private val userContext: UserContext = Tink.requireUserContext()
     private val credentialsRepository: CredentialsRepository = userContext.credentialsRepository
 
     private val _credentials = MutableLiveData<Credentials>()
     val credentials: LiveData<Credentials> = _credentials
 
-    internal val newlyAddedCredentials: MutableMap<String, Credentials> = mutableMapOf()
+    internal val addedCredentials: MutableMap<String, Credentials> = mutableMapOf()
 
     private val _authorizationCode = MutableLiveData<String>()
     val authorizationCode: LiveData<String> = _authorizationCode
+
+    private val _newCredentialsId = MutableLiveData<Event<String>>()
+    val newCredentialsId: LiveData<Event<String>> = _newCredentialsId
 
     private val _viewState = MutableLiveData<ViewState>().also { it.value = ViewState.NOT_LOADING }
     val viewState: LiveData<ViewState> = MediatorLiveData<ViewState>().apply {
@@ -68,6 +72,7 @@ internal class CredentialsViewModel : ViewModel() {
 
     private val _authenticationSuccessfulEvent = MutableLiveData<Event<Unit>>()
     val authenticationSuccessfulEvent: LiveData<Event<Unit>> = _authenticationSuccessfulEvent
+    private var didSendSuccessEvent: Boolean = false
 
     private val _fields = MutableLiveData<List<Field>>()
     val fields: LiveData<List<Field>> = _fields
@@ -90,26 +95,44 @@ internal class CredentialsViewModel : ViewModel() {
             override fun onNext(value: CredentialsStatus) {
                 if (isNewlyCreatedCredentials) {
                     // Add newly created credentials
-                    value.credentials?.let {
-                        newlyAddedCredentials[it.providerName] = it
+                    val credentialsId = value.credentials?.id
+                    if (addedCredentials[value.credentials?.providerName] == null && credentialsId != null) {
+                        _newCredentialsId.postValue(Event(credentialsId))
                     }
                 }
+
+                postCredentials(value.credentials)
+
                 when (value) {
                     is CredentialsStatus.Success -> {
-                        _credentials.postValue(value.credentials)
+                        if (value.credentials.status == Credentials.Status.UPDATED || value.credentials.status == Credentials.Status.UPDATING) {
+                            if (!didSendSuccessEvent) {
+                                _authenticationSuccessfulEvent.postValue(Event(Unit))
+                                didSendSuccessEvent = true
+                            }
+                        }
                         _viewState.postValue(ViewState.UPDATED)
                     }
 
                     is CredentialsStatus.Loading -> {
+                        if (value.credentials?.status == Credentials.Status.UPDATED || value.credentials?.status == Credentials.Status.UPDATING) {
+                            if (!didSendSuccessEvent) {
+                                _authenticationSuccessfulEvent.postValue(Event(Unit))
+                                didSendSuccessEvent = true
+                            }
+                        }
                         _viewState.postValue(ViewState.UPDATING)
-                        _authenticationSuccessfulEvent.postValue(Event(Unit))
                         if (authorizeUser && !authorizationDone.get()) {
                             authorizeUser(scopes)
                         }
                     }
 
                     is CredentialsStatus.AwaitingAuthentication -> {
-                        _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                        if (value.authenticationTask is AuthenticationTask.SupplementalInformation) {
+                            _viewState.postValue(ViewState.NOT_LOADING)
+                        } else {
+                            _viewState.postValue(ViewState.WAITING_FOR_AUTHENTICATION)
+                        }
                         onAwaitingAuthentication(value.authenticationTask)
                     }
                 }
@@ -117,9 +140,19 @@ internal class CredentialsViewModel : ViewModel() {
 
             override fun onError(error: Throwable) {
                 _viewState.postValue(ViewState.NOT_LOADING)
+                if (error is CredentialsFailure) {
+                    postCredentials(error.credentials)
+                }
                 onError(error)
             }
         }
+    }
+
+    private fun postCredentials(credentials: Credentials?) {
+        credentials?.let {
+            addedCredentials[it.providerName] = it
+        }
+        _credentials.postValue(credentials)
     }
 
     /**
@@ -174,13 +207,20 @@ internal class CredentialsViewModel : ViewModel() {
     ) {
         streamSubscription = credentialsRepository.refresh(
             credentialsId = credentials.id,
-            authenticate = credentials
-                .sessionExpiryDate
-                ?.let { it <= Instant.now() } // Set authenticate to TRUE if session has expired
-                ?: forceAuthenticate,
+            authenticate = forceAuthenticate || sessionHasExpired(credentials),
             statusChangeObserver = getCredentialsStreamObserver(onAwaitingAuthentication, onError)
         )
     }
+
+    fun setCredentialsForProvider(providerName: String) {
+        val credentialsForProvider = addedCredentials[providerName]
+        if (credentialsForProvider != null) {
+            _credentials.postValue(credentialsForProvider)
+        }
+    }
+
+    private fun sessionHasExpired(credentials: Credentials) =
+        credentials.sessionExpiryDate?.let { it <= Instant.now() } == true
 
     private var currentlyAuthorizing = AtomicBoolean(false)
     private var authorizationDone = AtomicBoolean(false)
@@ -208,6 +248,8 @@ internal class CredentialsViewModel : ViewModel() {
         super.onCleared()
         streamSubscription?.unsubscribe()
     }
+
+    fun stopSubscribing() = streamSubscription?.unsubscribe()
 
     enum class ViewState {
         NOT_LOADING,

@@ -4,21 +4,18 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
-    id("org.jetbrains.dokka").version("0.10.0")
     id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
-        versionCode = TinkLinkVersion.code
-        versionName = TinkLinkVersion.name
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
 
-        buildConfigField("String", "libraryVersion", "\"$versionName\"")
+        buildConfigField("String", "libraryVersion", "\"${TinkLinkVersion.name}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,9 +47,7 @@ dependencies {
     androidTestImplementation(Dependencies.Androidx.test_runner)
     androidTestImplementation(Dependencies.Androidx.test_espresso)
 
-    implementation(Dependencies.Dagger.core)
     implementation(Dependencies.Dagger.dagger_android)
-    implementation(Dependencies.Dagger.dagger_android_support)
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
@@ -73,17 +68,3 @@ dependencies {
 }
 
 apply(from = "../publishing.gradle")
-
-tasks {
-    dokka {
-        doLast {
-            println("Copying docs from /docs/link to /docs")
-            copy {
-                from("../docs/link")
-                into("../docs")
-            }
-            println("Deleting /docs/link")
-            delete("../docs/link")
-        }
-    }
-}

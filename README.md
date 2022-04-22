@@ -53,14 +53,6 @@ This should be the same redirect URI that is registered in the list of allowed r
 Tink.init(config, applicationContext)
 ```
 
-## Update proguard rules to prevent issues due to code obfuscation
-Since we currently use reflection for the serialization of rest modules in our `core` module, this may cause issues due to code obfuscation.
-To prevent this, please add the following proguard keep rules to your `proguard-rules.pro` file.
-```java
--keep class com.tink.rest.models.** { *; }
--keepclassmembers class com.tink.rest.models.** { *; }
-```
-
 ## Integrating Tink Link UI into your application
 Tink Link UI contains a predefined flow, a single entrypoint and configurable UI style, which can be used to bootstrap your application fast, suitable for customer aggregating with temporary users.
 

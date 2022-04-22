@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
     defaultConfig {
         applicationId = "com.tink.link.ui.sample"
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
         versionCode = TinkLinkVersion.code
         versionName = TinkLinkVersion.name
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -39,9 +39,7 @@ dependencies {
     implementation(Dependencies.Androidx.core_ktx)
     implementation(Dependencies.Androidx.constraint_layout)
 
-    implementation(Dependencies.Dagger.core)
     implementation(Dependencies.Dagger.dagger_android)
-    implementation(Dependencies.Dagger.dagger_android_support)
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
