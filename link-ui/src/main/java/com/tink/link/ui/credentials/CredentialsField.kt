@@ -54,6 +54,7 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
             }
 
             if (field.attributes.inputType.isMasked) {
+                inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
                 transformationMethod = PasswordTransformationMethod.getInstance()
             }
 
