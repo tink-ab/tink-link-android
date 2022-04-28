@@ -48,14 +48,14 @@ object Dependencies {
 
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val junit = "junit:junit:4.13.2"
-    const val three_ten_abp = "com.jakewharton.threetenabp:threetenabp:1.3.1"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.8"
     const val ktlint = "com.pinterest:ktlint:0.45.1"
     const val zxing = "com.google.zxing:core:3.4.1"
+    const val desugar = "com.android.tools:desugar_jdk_libs:1.1.5"
 
     object Tink {
-        private const val coreVersion = "0.8.2"
+        private const val coreVersion = "1.8.6"
         const val core = "com.tink:core:$coreVersion"
     }
 }
