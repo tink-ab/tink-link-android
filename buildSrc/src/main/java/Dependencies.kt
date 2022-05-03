@@ -1,8 +1,8 @@
 object Versions {
-    const val compileSdk = 30
+    const val compileSdk = 31
     const val buildTools = "30.0.3"
     const val minSdk = 21
-    const val targetSdk = 30
+    const val targetSdk = 31
 
     const val kotlin = "1.5.31"
     const val dagger = "2.35.1"
@@ -11,6 +11,8 @@ object Versions {
     const val navigation = "2.3.5"
     const val dokka = "1.4.20"
     const val moshi = "1.12.0"
+    const val mockk = "1.12.2"
+    const val espresso = "3.4.0"
 }
 
 object Dependencies {
@@ -18,11 +20,14 @@ object Dependencies {
         const val appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
         const val core_ktx = "androidx.core:core-ktx:${Versions.androidx_core_ktx}"
         const val constraint_layout = "androidx.constraintlayout:constraintlayout:2.0.4"
-        const val test_runner = "androidx.test:runner:1.2.0"
-        const val test_espresso = "androidx.test.espresso:espresso-core:3.2.0"
         const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
         const val browser = "androidx.browser:browser:1.3.0"
+
+        const val test_runner = "androidx.test:runner:1.4.0"
+        const val test_espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+        const val test_fragment =  "androidx.fragment:fragment-testing:1.4.0"
+        const val test_espresso_idling_resource = "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"
     }
 
     object Dagger {
@@ -36,8 +41,11 @@ object Dependencies {
         const val test_junit_api = "org.junit.jupiter:junit-jupiter-api:5.2.0"
         const val test_junit_engine = "org.junit.jupiter:junit-jupiter-engine:5.2.0"
         const val test_junit_params = "org.junit.jupiter:junit-jupiter-params:5.2.0"
-        const val test_mockk = "io.mockk:mockk:1.11.0"
-        const val test_assertj = "org.assertj:assertj-core:3.19.0"
+        const val test_mockk = "io.mockk:mockk:${Versions.mockk}"
+        const val test_mockk_android = "io.mockk:mockk-android:${Versions.mockk}"
+        const val test_assertj = "org.assertj:assertj-core:3.22.0"
+        const val test_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+        const val test_mockwebserver = "com.squareup.okhttp3:mockwebserver:4.3.1"
     }
 
     object Moshi {
