@@ -85,13 +85,13 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
         println("Deleting old /docs")
         delete("../docs")
     }
-    doLast {
-        println("Copying docs from /docs/link to /docs")
-        copy {
-            from("../docs/link")
-            into("../docs")
-        }
-        println("Deleting /docs/link")
-        delete("../docs/link")
-    }
+//    doLast {
+//        println("Copying docs from /docs/link to /docs")
+//        copy {
+//            from("../docs/link")
+//            into("../docs")
+//        }
+//        println("Deleting /docs/link")
+//        delete("../docs/link")
+//    }
 }
