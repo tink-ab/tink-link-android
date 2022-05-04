@@ -10,7 +10,7 @@ title: filter
 
 
 [common]\
-val [filter](filter.html): &lt;ERROR CLASS&gt;
+val [filter](filter.html): [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html)
 
 
 

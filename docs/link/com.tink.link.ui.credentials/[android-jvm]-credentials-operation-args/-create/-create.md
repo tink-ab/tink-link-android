@@ -10,7 +10,7 @@ title: Create
 
 
 [androidJvm]\
-fun [Create](-create.html)(provider: Provider)
+fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html))
 
 
 

@@ -10,7 +10,7 @@ title: fields
 
 
 [androidJvm]\
-val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;Field&gt;
+val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field](../../../com.tink.model.misc/[android-jvm]-field/index.html)&gt;
 
 
 

@@ -10,7 +10,7 @@ title: Loading
 
 
 [common]\
-fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, credentials: &lt;ERROR CLASS&gt;? = null)
+fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)? = null)
 
 
 

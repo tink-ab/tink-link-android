@@ -10,7 +10,7 @@ title: ProviderList
 
 
 [common]\
-fun [ProviderList](-provider-list.html)(filter: &lt;ERROR CLASS&gt; = ProviderFilter())
+fun [ProviderList](-provider-list.html)(filter: [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html) = ProviderFilter())
 
 
 

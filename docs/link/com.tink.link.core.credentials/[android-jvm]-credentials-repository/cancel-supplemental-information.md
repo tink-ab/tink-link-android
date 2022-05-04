@@ -10,7 +10,7 @@ title: cancelSupplementalInformation
 
 
 [androidJvm]\
-fun [cancelSupplementalInformation](cancel-supplemental-information.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), handler: ResultHandler&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+fun [cancelSupplementalInformation](cancel-supplemental-information.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), handler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
 
 
 
@@ -25,8 +25,8 @@ androidJvm
 
 | | |
 |---|---|
-| credentialsId | Identifier for the Credentials that is being authenticated |
-| handler | The ResultHandler for processing error and success callbacks |
+| credentialsId | Identifier for the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) that is being authenticated |
+| handler | The [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html) for processing error and success callbacks |
 
 
 

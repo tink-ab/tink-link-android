@@ -10,7 +10,7 @@ title: [androidJvm]CredentialsFailure
 
 
 [androidJvm]\
-class [CredentialsFailure](index.html)(val credentials: Credentials, message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) : [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)
+class [CredentialsFailure](index.html)(val credentials: [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) : [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)
 
 
 
@@ -19,7 +19,7 @@ class [CredentialsFailure](index.html)(val credentials: Credentials, message: [S
 
 | | |
 |---|---|
-| [CredentialsFailure](-credentials-failure.html) | [androidJvm]<br>fun [CredentialsFailure](-credentials-failure.html)(credentials: Credentials, message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) |
+| [CredentialsFailure](-credentials-failure.html) | [androidJvm]<br>fun [CredentialsFailure](-credentials-failure.html)(credentials: [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) |
 
 
 ## Functions
@@ -43,6 +43,6 @@ class [CredentialsFailure](index.html)(val credentials: Credentials, message: [S
 | Name | Summary |
 |---|---|
 | [cause](index.html#-654012527%2FProperties%2F-812656150) | [androidJvm]<br>open val [cause](index.html#-654012527%2FProperties%2F-812656150): [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)? |
-| [credentials](credentials.html) | [androidJvm]<br>val [credentials](credentials.html): Credentials |
+| [credentials](credentials.html) | [androidJvm]<br>val [credentials](credentials.html): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) |
 | [message](index.html#1824300659%2FProperties%2F-812656150) | [androidJvm]<br>open val [message](index.html#1824300659%2FProperties%2F-812656150): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
 

@@ -10,7 +10,7 @@ title: PermanentUser
 
 
 [common]\
-fun [PermanentUser](-permanent-user.html)(credentials: &lt;ERROR CLASS&gt;)
+fun [PermanentUser](-permanent-user.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
 
 
 
@@ -21,7 +21,7 @@ common
 
 | | |
 |---|---|
-| credentials | Credentials connected to the user |
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
 
 
 

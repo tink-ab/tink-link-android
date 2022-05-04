@@ -10,7 +10,7 @@ title: providerRepository
 
 
 [androidJvm]\
-abstract val [providerRepository](provider-repository.html): ProviderRepository
+abstract val [providerRepository](provider-repository.html): [ProviderRepository](../../com.tink.core.provider/[android-jvm]-provider-repository/index.html)
 
 
 

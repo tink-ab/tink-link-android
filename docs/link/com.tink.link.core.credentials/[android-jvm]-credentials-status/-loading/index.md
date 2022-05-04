@@ -10,7 +10,7 @@ title: Loading
 
 
 [androidJvm]\
-data class [Loading](index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val credentials: Credentials? = null) : [CredentialsStatus](../index.html)
+data class [Loading](index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null) : [CredentialsStatus](../index.html)
 
 The creation is being processed by Tink. There is currently no user action required.
 
@@ -33,7 +33,7 @@ androidJvm
 
 | | |
 |---|---|
-| [Loading](-loading.html) | [androidJvm]<br>fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, credentials: Credentials? = null) |
+| [Loading](-loading.html) | [androidJvm]<br>fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null) |
 
 
 ## Properties
@@ -41,6 +41,6 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): Credentials? = null |
+| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null |
 | [message](message.html) | [androidJvm]<br>val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
 

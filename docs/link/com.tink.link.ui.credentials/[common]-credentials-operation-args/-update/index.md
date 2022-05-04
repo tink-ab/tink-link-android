@@ -10,7 +10,7 @@ title: Update
 
 
 [common]\
-data class [Update](index.html)(val provider: &lt;ERROR CLASS&gt;, val credentials: &lt;ERROR CLASS&gt;) : [CredentialsOperationArgs](../index.html)
+data class [Update](index.html)(val provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html), val credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) : [CredentialsOperationArgs](../index.html)
 
 
 
@@ -19,7 +19,7 @@ data class [Update](index.html)(val provider: &lt;ERROR CLASS&gt;, val credentia
 
 | | |
 |---|---|
-| [Update](-update.html) | [common]<br>fun [Update](-update.html)(provider: &lt;ERROR CLASS&gt;, credentials: &lt;ERROR CLASS&gt;) |
+| [Update](-update.html) | [common]<br>fun [Update](-update.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) |
 
 
 ## Properties
@@ -27,6 +27,6 @@ data class [Update](index.html)(val provider: &lt;ERROR CLASS&gt;, val credentia
 
 | Name | Summary |
 |---|---|
-| [credentials](credentials.html) | [common]<br>val [credentials](credentials.html): &lt;ERROR CLASS&gt; |
-| [provider](provider.html) | [common]<br>open override val [provider](provider.html): &lt;ERROR CLASS&gt; |
+| [credentials](credentials.html) | [common]<br>val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) |
+| [provider](provider.html) | [common]<br>open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[common]-provider/index.html) |
 

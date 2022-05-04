@@ -10,7 +10,7 @@ title: getUserContext
 
 
 [common]\
-fun [getUserContext](get-user-context.html)(): &lt;ERROR CLASS&gt;
+fun [getUserContext](get-user-context.html)(): [UserContext](../../com.tink.link.core.user/[common]-user-context/index.html)?
 
 
 

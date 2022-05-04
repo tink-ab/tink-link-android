@@ -10,7 +10,7 @@ title: AwaitingAuthentication
 
 
 [androidJvm]\
-fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), credentials: Credentials)
+fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
 
 
 

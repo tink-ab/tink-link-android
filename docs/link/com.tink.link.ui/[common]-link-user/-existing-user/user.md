@@ -10,7 +10,7 @@ title: user
 
 
 [common]\
-val [user](user.html): &lt;ERROR CLASS&gt;
+val [user](user.html): [User](../../../com.tink.model.user/[common]-user/index.html)
 
 
 

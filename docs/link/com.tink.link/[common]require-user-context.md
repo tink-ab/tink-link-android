@@ -10,7 +10,7 @@ title: [common]requireUserContext
 
 
 [common]\
-fun &lt;ERROR CLASS&gt;.[requireUserContext]([common]require-user-context.html)(): [UserContext](../com.tink.link.core.user/[common]-user-context/index.html)
+fun [Tink](../com.tink.core/[common]-tink/index.html).[requireUserContext]([common]require-user-context.html)(): [UserContext](../com.tink.link.core.user/[common]-user-context/index.html)
 
 
 

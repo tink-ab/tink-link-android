@@ -10,7 +10,7 @@ title: AwaitingAuthentication
 
 
 [common]\
-class [AwaitingAuthentication](index.html)(val authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), val credentials: &lt;ERROR CLASS&gt;) : [CredentialsStatus](../index.html)
+class [AwaitingAuthentication](index.html)(val authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), val credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) : [CredentialsStatus](../index.html)
 
 There is an outstanding authentication waiting that needs to be completed by the user to proceed.
 
@@ -32,7 +32,7 @@ common
 
 | | |
 |---|---|
-| [AwaitingAuthentication](-awaiting-authentication.html) | [common]<br>fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), credentials: &lt;ERROR CLASS&gt;) |
+| [AwaitingAuthentication](-awaiting-authentication.html) | [common]<br>fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) |
 
 
 ## Properties
@@ -41,5 +41,5 @@ common
 | Name | Summary |
 |---|---|
 | [authenticationTask](authentication-task.html) | [common]<br>val [authenticationTask](authentication-task.html): [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html)<br>the authentication that needs to be completed by the user. |
-| [credentials](credentials.html) | [common]<br>open override val [credentials](credentials.html): &lt;ERROR CLASS&gt; |
+| [credentials](credentials.html) | [common]<br>open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) |
 

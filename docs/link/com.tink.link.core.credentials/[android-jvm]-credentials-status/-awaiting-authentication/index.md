@@ -10,7 +10,7 @@ title: AwaitingAuthentication
 
 
 [androidJvm]\
-class [AwaitingAuthentication](index.html)(val authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), val credentials: Credentials) : [CredentialsStatus](../index.html)
+class [AwaitingAuthentication](index.html)(val authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), val credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) : [CredentialsStatus](../index.html)
 
 There is an outstanding authentication waiting that needs to be completed by the user to proceed.
 
@@ -32,7 +32,7 @@ androidJvm
 
 | | |
 |---|---|
-| [AwaitingAuthentication](-awaiting-authentication.html) | [androidJvm]<br>fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), credentials: Credentials) |
+| [AwaitingAuthentication](-awaiting-authentication.html) | [androidJvm]<br>fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) |
 
 
 ## Properties
@@ -41,5 +41,5 @@ androidJvm
 | Name | Summary |
 |---|---|
 | [authenticationTask](authentication-task.html) | [androidJvm]<br>val [authenticationTask](authentication-task.html): [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html)<br>the authentication that needs to be completed by the user. |
-| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): Credentials |
+| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) |
 

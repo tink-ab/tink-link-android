@@ -19,7 +19,7 @@ object [Companion](index.html)
 
 | Name | Summary |
 |---|---|
-| [createIntent](create-intent.html) | [common]<br>fun [createIntent](create-intent.html)(context: &lt;ERROR CLASS&gt;, linkUser: [LinkUser](../../[common]-link-user/index.html), scopes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;&lt;ERROR CLASS&gt;&gt;, styleResId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = R.style.TinkLinkUiStyle, credentialsOperation: [CredentialsOperation](../../[common]-credentials-operation/index.html) = CredentialsOperation.Create()): &lt;ERROR CLASS&gt;<br>Creates an intent for use when starting this activity. |
+| [createIntent](create-intent.html) | [common]<br>fun [createIntent](create-intent.html)(context: &lt;ERROR CLASS&gt;, linkUser: [LinkUser](../../[common]-link-user/index.html), scopes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Scope](../../../com.tink.model.user/[common]-scope/index.html)&gt;, styleResId: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = R.style.TinkLinkUiStyle, credentialsOperation: [CredentialsOperation](../../[common]-credentials-operation/index.html) = CredentialsOperation.Create()): &lt;ERROR CLASS&gt;<br>Creates an intent for use when starting this activity. |
 
 
 ## Properties

@@ -10,7 +10,7 @@ title: PermanentUser
 
 
 [common]\
-data class [PermanentUser](index.html)(val credentials: &lt;ERROR CLASS&gt;) : [TinkLinkResult](../index.html)
+data class [PermanentUser](index.html)(val credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) : [TinkLinkResult](../index.html)
 
 The data returned when a [LinkUser.ExistingUser](../../[common]-link-user/-existing-user/index.html) or [LinkUser.UnauthenticatedUser](../../[common]-link-user/-unauthenticated-user/index.html) is used in the Tink Link UI flow.
 
@@ -23,7 +23,7 @@ common
 
 | | |
 |---|---|
-| credentials | Credentials connected to the user |
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
 
 
 
@@ -32,7 +32,7 @@ common
 
 | | |
 |---|---|
-| [PermanentUser](-permanent-user.html) | [common]<br>fun [PermanentUser](-permanent-user.html)(credentials: &lt;ERROR CLASS&gt;) |
+| [PermanentUser](-permanent-user.html) | [common]<br>fun [PermanentUser](-permanent-user.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) |
 
 
 ## Properties
@@ -40,5 +40,5 @@ common
 
 | Name | Summary |
 |---|---|
-| [credentials](credentials.html) | [common]<br>val [credentials](credentials.html): &lt;ERROR CLASS&gt; |
+| [credentials](credentials.html) | [common]<br>val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) |
 

@@ -10,7 +10,7 @@ title: SupplementalInformation
 
 
 [common]\
-fun [SupplementalInformation](-supplemental-information.html)(credentials: &lt;ERROR CLASS&gt;)
+fun [SupplementalInformation](-supplemental-information.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
 
 
 
