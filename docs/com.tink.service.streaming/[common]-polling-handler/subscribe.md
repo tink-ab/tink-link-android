@@ -1,14 +1,17 @@
 ---
-title: subscribe -
+title: subscribe
 ---
-//[link](../../index.md)/[com.tink.service.streaming](../index.md)/[[common]PollingHandler](index.md)/[subscribe](subscribe.md)
+//[link](../../../index.html)/[com.tink.service.streaming](../index.html)/[[common]PollingHandler](index.html)/[subscribe](subscribe.html)
 
 
 
-# subscribe  
-[common]  
-Content  
-open override fun [subscribe](subscribe.md)(observer: [StreamObserver](../../com.tink.service.streaming.publisher/[common]-stream-observer/index.md)<[T](index.md)>): [StreamSubscription](../../com.tink.service.streaming.publisher/[common]-stream-subscription/index.md)  
+# subscribe
+
+
+
+[common]\
+open override fun [subscribe](subscribe.html)(observer: [StreamObserver](../../com.tink.service.streaming.publisher/[common]-stream-observer/index.html)&lt;[T](index.html)&gt;): [StreamSubscription](../../com.tink.service.streaming.publisher/[common]-stream-subscription/index.html)
+
 
 
 

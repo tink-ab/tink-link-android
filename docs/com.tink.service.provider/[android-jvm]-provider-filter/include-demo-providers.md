@@ -1,14 +1,17 @@
 ---
-title: includeDemoProviders -
+title: includeDemoProviders
 ---
-//[link](../../index.md)/[com.tink.service.provider](../index.md)/[[androidJvm]ProviderFilter](index.md)/[includeDemoProviders](include-demo-providers.md)
+//[link](../../../index.html)/[com.tink.service.provider](../index.html)/[[androidJvm]ProviderFilter](index.html)/[includeDemoProviders](include-demo-providers.html)
 
 
 
-# includeDemoProviders  
-[androidJvm]  
-Content  
-val [includeDemoProviders](include-demo-providers.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false  
+# includeDemoProviders
+
+
+
+[androidJvm]\
+val [includeDemoProviders](include-demo-providers.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false
+
 
 
 

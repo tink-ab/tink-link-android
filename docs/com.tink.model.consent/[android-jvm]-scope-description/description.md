@@ -1,20 +1,21 @@
 ---
-title: description -
+title: description
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]ScopeDescription](index.md)/[description](description.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]ScopeDescription](index.html)/[description](description.html)
 
 
 
-# description  
-[androidJvm]  
-Content  
-val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# description
+
+
+
+[androidJvm]\
+val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 A string describing what user data the scope provides access to.
 
-  
 
 
 

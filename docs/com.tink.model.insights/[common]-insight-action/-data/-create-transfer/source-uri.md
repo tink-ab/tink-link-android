@@ -1,14 +1,17 @@
 ---
-title: sourceUri -
+title: sourceUri
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[sourceUri](source-uri.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)/[sourceUri](source-uri.html)
 
 
 
-# sourceUri  
-[common]  
-Content  
-val [sourceUri](source-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# sourceUri
+
+
+
+[common]\
+val [sourceUri](source-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

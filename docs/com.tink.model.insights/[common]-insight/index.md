@@ -1,51 +1,47 @@
 ---
-title: [common]Insight -
+title: [common]Insight
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)
 
 
 
-# Insight  
- [common] data class [Insight](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [InsightType](../[common]-insight-type/index.md), **title**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **created**: <ERROR CLASS>, **actions**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[common]-insight-action/index.md)>, **state**: [InsightState](../[common]-insight-state/index.md), **data**: [InsightData](../[common]-insight-data/index.md), **viewDetails**: [Insight.ViewDetails](-view-details/index.md)?)   
+# Insight
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Insight](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val type: [InsightType](../[common]-insight-type/index.html), val title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val created: &lt;ERROR CLASS&gt;, val actions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightAction](../[common]-insight-action/index.html)&gt;, val state: [InsightState](../[common]-insight-state/index.html), val data: [InsightData](../[common]-insight-data/index.html), var viewDetails: [Insight.ViewDetails](-view-details/index.html)? = null)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/Insight.ViewDetails///PointingToDeclaration/"></a>[ViewDetails](-view-details/index.md)| <a name="com.tink.model.insights/Insight.ViewDetails///PointingToDeclaration/"></a>[common]  <br>Content  <br>interface [ViewDetails](-view-details/index.md)  <br>More info  <br>All subclasses should be data classes or provide a meaningful equals() function  <br><br><br>
+| [Insight](-insight.html) | [common]<br>fun [Insight](-insight.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [InsightType](../[common]-insight-type/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: &lt;ERROR CLASS&gt;, actions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightAction](../[common]-insight-action/index.html)&gt;, state: [InsightState](../[common]-insight-state/index.html), data: [InsightData](../[common]-insight-data/index.html), viewDetails: [Insight.ViewDetails](-view-details/index.html)? = null) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/Insight/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/Insight/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/Insight/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [InsightType](../[common]-insight-type/index.md)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.insights/Insight/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.insights/Insight/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.insights/Insight/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): <ERROR CLASS>  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.insights/Insight/component6/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component6](component6.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[common]-insight-action/index.md)>  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.insights/Insight/component7/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component7](component7.md)(): [InsightState](../[common]-insight-state/index.md)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component8/#/PointingToDeclaration/"></a>[component8](component8.md)| <a name="com.tink.model.insights/Insight/component8/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component8](component8.md)(): [InsightData](../[common]-insight-data/index.md)  <br><br><br>
-| <a name="com.tink.model.insights/Insight/component9/#/PointingToDeclaration/"></a>[component9](component9.md)| <a name="com.tink.model.insights/Insight/component9/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component9](component9.md)(): [Insight.ViewDetails](-view-details/index.md)?  <br><br><br>
-| <a name="com.tink.model.insights/Insight/copy/#kotlin.String#com.tink.model.insights.InsightType#kotlin.String#kotlin.String##kotlin.collections.List[com.tink.model.insights.InsightAction]#com.tink.model.insights.InsightState#com.tink.model.insights.InsightData#com.tink.model.insights.Insight.ViewDetails?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/Insight/copy/#kotlin.String#com.tink.model.insights.InsightType#kotlin.String#kotlin.String##kotlin.collections.List[com.tink.model.insights.InsightAction]#com.tink.model.insights.InsightState#com.tink.model.insights.InsightData#com.tink.model.insights.Insight.ViewDetails?/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [InsightType](../[common]-insight-type/index.md), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: <ERROR CLASS>, actions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[common]-insight-action/index.md)>, state: [InsightState](../[common]-insight-state/index.md), data: [InsightData](../[common]-insight-data/index.md), viewDetails: [Insight.ViewDetails](-view-details/index.md)? = null): [Insight](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [ViewDetails](-view-details/index.html) | [common]<br>interface [ViewDetails](-view-details/index.html)<br>All subclasses should be data classes or provide a meaningful equals() function |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/Insight/actions/#/PointingToDeclaration/"></a>[actions](actions.md)| <a name="com.tink.model.insights/Insight/actions/#/PointingToDeclaration/"></a> [common] val [actions](actions.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[common]-insight-action/index.md)>   <br>
-| <a name="com.tink.model.insights/Insight/created/#/PointingToDeclaration/"></a>[created](created.md)| <a name="com.tink.model.insights/Insight/created/#/PointingToDeclaration/"></a> [common] val [created](created.md): <ERROR CLASS>   <br>
-| <a name="com.tink.model.insights/Insight/data/#/PointingToDeclaration/"></a>[data](data.md)| <a name="com.tink.model.insights/Insight/data/#/PointingToDeclaration/"></a> [common] val [data](data.md): [InsightData](../[common]-insight-data/index.md)   <br>
-| <a name="com.tink.model.insights/Insight/description/#/PointingToDeclaration/"></a>[description](description.md)| <a name="com.tink.model.insights/Insight/description/#/PointingToDeclaration/"></a> [common] val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.insights/Insight/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.insights/Insight/id/#/PointingToDeclaration/"></a> [common] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.insights/Insight/state/#/PointingToDeclaration/"></a>[state](state.md)| <a name="com.tink.model.insights/Insight/state/#/PointingToDeclaration/"></a> [common] val [state](state.md): [InsightState](../[common]-insight-state/index.md)   <br>
-| <a name="com.tink.model.insights/Insight/title/#/PointingToDeclaration/"></a>[title](title.md)| <a name="com.tink.model.insights/Insight/title/#/PointingToDeclaration/"></a> [common] val [title](title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.insights/Insight/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.insights/Insight/type/#/PointingToDeclaration/"></a> [common] val [type](type.md): [InsightType](../[common]-insight-type/index.md)   <br>
-| <a name="com.tink.model.insights/Insight/viewDetails/#/PointingToDeclaration/"></a>[viewDetails](view-details.md)| <a name="com.tink.model.insights/Insight/viewDetails/#/PointingToDeclaration/"></a> [common] var [viewDetails](view-details.md): [Insight.ViewDetails](-view-details/index.md)? = null   <br>
+| [actions](actions.html) | [common]<br>val [actions](actions.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightAction](../[common]-insight-action/index.html)&gt; |
+| [created](created.html) | [common]<br>val [created](created.html): &lt;ERROR CLASS&gt; |
+| [data](data.html) | [common]<br>val [data](data.html): [InsightData](../[common]-insight-data/index.html) |
+| [description](description.html) | [common]<br>val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [id](id.html) | [common]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [state](state.html) | [common]<br>val [state](state.html): [InsightState](../[common]-insight-state/index.html) |
+| [title](title.html) | [common]<br>val [title](title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [type](type.html) | [common]<br>val [type](type.html): [InsightType](../[common]-insight-type/index.html) |
+| [viewDetails](view-details.html) | [common]<br>var [viewDetails](view-details.html): [Insight.ViewDetails](-view-details/index.html)? = null |
 

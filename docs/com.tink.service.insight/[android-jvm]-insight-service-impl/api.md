@@ -1,14 +1,17 @@
 ---
-title: api -
+title: api
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightServiceImpl](index.md)/[api](api.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[androidJvm]InsightServiceImpl](index.html)/[api](api.html)
 
 
 
-# api  
-[androidJvm]  
-Content  
-val [api](api.md): ActionableInsightApi  
+# api
+
+
+
+[androidJvm]\
+val [api](api.html): ActionableInsightApi
+
 
 
 

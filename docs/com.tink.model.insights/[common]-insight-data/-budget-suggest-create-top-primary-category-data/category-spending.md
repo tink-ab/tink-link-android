@@ -1,14 +1,17 @@
 ---
-title: categorySpending -
+title: categorySpending
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](index.md)/[categorySpending](category-spending.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetSuggestCreateTopPrimaryCategoryData](index.html)/[categorySpending](category-spending.html)
 
 
 
-# categorySpending  
-[common]  
-Content  
-val [categorySpending](category-spending.md): [AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.md)  
+# categorySpending
+
+
+
+[common]\
+val [categorySpending](category-spending.html): [AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.html)
+
 
 
 

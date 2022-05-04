@@ -1,14 +1,17 @@
 ---
-title: [androidJvm]toCoreModel -
+title: [androidJvm]toCoreModel
 ---
-//[link](../index.md)/[com.tink.service.insight](index.md)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.md)
+//[link](../../index.html)/[com.tink.service.insight](index.html)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.html)
 
 
 
-# toCoreModel  
-[androidJvm]  
-Content  
-fun InsightProposedAction.[toCoreModel]([android-jvm]to-core-model.md)(): [InsightAction](../com.tink.model.insights/[android-jvm]-insight-action/index.md)  
+# toCoreModel
+
+
+
+[androidJvm]\
+fun InsightProposedAction.[toCoreModel]([android-jvm]to-core-model.html)(): [InsightAction](../com.tink.model.insights/[android-jvm]-insight-action/index.html)
+
 
 
 

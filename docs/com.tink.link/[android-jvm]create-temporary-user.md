@@ -1,24 +1,25 @@
 ---
-title: [androidJvm]createTemporaryUser -
+title: [androidJvm]createTemporaryUser
 ---
-//[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]createTemporaryUser]([android-jvm]create-temporary-user.md)
+//[link](../../index.html)/[com.tink.link](index.html)/[[androidJvm]createTemporaryUser]([android-jvm]create-temporary-user.html)
 
 
 
-# createTemporaryUser  
-[androidJvm]  
-Content  
-fun [Tink](../com.tink.core/[android-jvm]-tink/index.md).[createTemporaryUser]([android-jvm]create-temporary-user.md)(market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[User](../com.tink.model.user/[android-jvm]-user/index.md)>)  
-More info  
+# createTemporaryUser
+
+
+
+[androidJvm]\
+fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[createTemporaryUser]([android-jvm]create-temporary-user.html)(market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[User](../com.tink.model.user/[android-jvm]-user/index.html)&gt;)
+
 
 
 Create a temporary user. This allows you to launch the flow and fetch data for users without having permanent Tink users.
 
 
 
-On a successful result, your resultHandler should call [Tink.setUser](../com.tink.core/[android-jvm]-tink/set-user.md) to set this user to the Tink instance.
+On a successful result, your resultHandler should call [Tink.setUser](../com.tink.core/[android-jvm]-tink/set-user.html) to set this user to the Tink instance.
 
-  
 
 
 

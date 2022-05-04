@@ -1,14 +1,17 @@
 ---
-title: PollingHandler -
+title: PollingHandler
 ---
-//[link](../../index.md)/[com.tink.service.streaming](../index.md)/[[common]PollingHandler](index.md)/[PollingHandler](-polling-handler.md)
+//[link](../../../index.html)/[com.tink.service.streaming](../index.html)/[[common]PollingHandler](index.html)/[PollingHandler](-polling-handler.html)
 
 
 
-# PollingHandler  
-[common]  
-Content  
-fun <[T](index.md)> [PollingHandler](-polling-handler.md)(pollingAction: suspend ([StreamObserver](../../com.tink.service.streaming.publisher/[common]-stream-observer/index.md)<[T](index.md)>) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))  
+# PollingHandler
+
+
+
+[common]\
+fun &lt;[T](index.html)&gt; [PollingHandler](-polling-handler.html)(pollingAction: suspend ([StreamObserver](../../com.tink.service.streaming.publisher/[common]-stream-observer/index.html)&lt;[T](index.html)&gt;) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))
+
 
 
 

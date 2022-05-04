@@ -1,14 +1,17 @@
 ---
-title: ServiceScope -
+title: ServiceScope
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceScope](index.md)/[ServiceScope](-service-scope.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceScope](index.html)/[ServiceScope](-service-scope.html)
 
 
 
-# ServiceScope  
-[androidJvm]  
-Content  
-fun [ServiceScope](-service-scope.md)()  
+# ServiceScope
+
+
+
+[androidJvm]\
+fun [ServiceScope](-service-scope.html)()
+
 
 
 

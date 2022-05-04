@@ -1,14 +1,17 @@
 ---
-title: BudgetCloseData -
+title: BudgetCloseData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetCloseData](index.md)/[BudgetCloseData](-budget-close-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetCloseData](index.html)/[BudgetCloseData](-budget-close-data.html)
 
 
 
-# BudgetCloseData  
-[common]  
-Content  
-fun [BudgetCloseData](-budget-close-data.md)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[common]-budget/-period/index.md), currentTime: <ERROR CLASS>)  
+# BudgetCloseData
+
+
+
+[common]\
+fun [BudgetCloseData](-budget-close-data.html)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[common]-budget/-period/index.html), currentTime: &lt;ERROR CLASS&gt;)
+
 
 
 

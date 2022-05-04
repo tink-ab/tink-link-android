@@ -1,26 +1,28 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[androidJvm]CredentialsStatus](../index.md)/[Loading](index.md)/[credentials](credentials.md)
+//[link](../../../../index.html)/[com.tink.link.core.credentials](../../index.html)/[[androidJvm]CredentialsStatus](../index.html)/[Loading](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[androidJvm]  
-Content  
-open override val [credentials](credentials.md): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)? = null  
-More info  
+# credentials
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading/credentials/#/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading/credentials/#/PointingToDeclaration/"></a><br><br>the credentials being processed, if available<br><br>
-  
-  
+| credentials | the credentials being processed, if available |
+
 
 
 

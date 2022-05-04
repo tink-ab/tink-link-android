@@ -1,15 +1,19 @@
 ---
-title: ConsentContext -
+title: ConsentContext
 ---
-//[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[ConsentContext](-consent-context.md)
+//[link](../../../index.html)/[com.tink.link.consent](../index.html)/[[common]ConsentContext](index.html)/[ConsentContext](-consent-context.html)
 
 
 
-# ConsentContext  
-[common]  
-Content  
-fun [ConsentContext](-consent-context.md)(consentService: [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.md))  
-fun [ConsentContext](-consent-context.md)(consentService: [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.md), dispatcher: <ERROR CLASS>)  
+# ConsentContext
+
+
+
+[common]\
+fun [ConsentContext](-consent-context.html)(consentService: [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.html))
+
+fun [ConsentContext](-consent-context.html)(consentService: [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.html), dispatcher: &lt;ERROR CLASS&gt;)
+
 
 
 

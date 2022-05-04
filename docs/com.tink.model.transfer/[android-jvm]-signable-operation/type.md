@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]SignableOperation](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[androidJvm]SignableOperation](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [SignableOperation.Type](-type/index.md)  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [SignableOperation.Type](-type/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: Transaction -
+title: Transaction
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[Transaction](-transaction.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[Transaction](-transaction.html)
 
 
 
-# Transaction  
-[common]  
-Content  
-fun [Transaction](-transaction.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../com.tink.model.misc/[common]-amount/index.md), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), categoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: <ERROR CLASS>, accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../[common]-tag/index.md)>, upcoming: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), pending: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), originalDate: <ERROR CLASS>, originalDescription: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), originalAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.md), inserted: <ERROR CLASS>)  
+# Transaction
+
+
+
+[common]\
+fun [Transaction](-transaction.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../com.tink.model.misc/[common]-amount/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), categoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: &lt;ERROR CLASS&gt;, accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../[common]-tag/index.html)&gt;, upcoming: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), pending: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), originalDate: &lt;ERROR CLASS&gt;, originalDescription: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), originalAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html), inserted: &lt;ERROR CLASS&gt;, categoryType: [CategoryType](../[common]-category-type/index.html))
+
 
 
 

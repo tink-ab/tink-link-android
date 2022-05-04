@@ -1,26 +1,28 @@
 ---
-title: accountNumberType -
+title: accountNumberType
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateBeneficiaryDescriptor](index.md)/[accountNumberType](account-number-type.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[common]CreateBeneficiaryDescriptor](index.html)/[accountNumberType](account-number-type.html)
 
 
 
-# accountNumberType  
-[common]  
-Content  
-val [accountNumberType](account-number-type.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# accountNumberType
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [accountNumberType](account-number-type.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/accountNumberType/#/PointingToDeclaration/"></a>accountNumberType| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/accountNumberType/#/PointingToDeclaration/"></a><br><br>The type of transfer that is used for the beneficiary, for example "iban"<br><br>
-  
-  
+| accountNumberType | The type of transfer that is used for the beneficiary, for example &quot;iban&quot; |
+
 
 
 

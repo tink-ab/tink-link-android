@@ -1,14 +1,17 @@
 ---
-title: spentAmount -
+title: spentAmount
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Period](index.md)/[spentAmount](spent-amount.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Period](index.html)/[spentAmount](spent-amount.html)
 
 
 
-# spentAmount  
-[androidJvm]  
-Content  
-val [spentAmount](spent-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# spentAmount
+
+
+
+[androidJvm]\
+val [spentAmount](spent-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

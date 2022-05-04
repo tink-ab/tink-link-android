@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[amount](amount.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[common]  
-Content  
-val [amount](amount.md): [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)? = null  
+# amount
+
+
+
+[common]\
+val [amount](amount.html): [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)? = null
+
 
 
 

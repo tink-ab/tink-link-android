@@ -1,14 +1,17 @@
 ---
-title: categorizeTransactions -
+title: categorizeTransactions
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[categorizeTransactions](categorize-transactions.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[common]TransactionService](index.html)/[categorizeTransactions](categorize-transactions.html)
 
 
 
-# categorizeTransactions  
-[common]  
-Content  
-abstract suspend fun [categorizeTransactions](categorize-transactions.md)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>, newCategoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# categorizeTransactions
+
+
+
+[common]\
+abstract suspend fun [categorizeTransactions](categorize-transactions.html)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, newCategoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

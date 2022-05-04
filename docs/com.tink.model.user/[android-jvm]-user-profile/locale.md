@@ -1,14 +1,17 @@
 ---
-title: locale -
+title: locale
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserProfile](index.md)/[locale](locale.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserProfile](index.html)/[locale](locale.html)
 
 
 
-# locale  
-[androidJvm]  
-Content  
-val [locale](locale.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# locale
+
+
+
+[androidJvm]\
+val [locale](locale.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

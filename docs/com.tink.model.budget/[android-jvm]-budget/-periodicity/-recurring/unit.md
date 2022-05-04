@@ -1,14 +1,17 @@
 ---
-title: unit -
+title: unit
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)/[unit](unit.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Periodicity](../index.html)/[Recurring](index.html)/[unit](unit.html)
 
 
 
-# unit  
-[androidJvm]  
-Content  
-val [unit](unit.md): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)  
+# unit
+
+
+
+[androidJvm]\
+val [unit](unit.html): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)
+
 
 
 

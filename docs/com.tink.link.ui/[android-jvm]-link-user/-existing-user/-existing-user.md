@@ -1,14 +1,17 @@
 ---
-title: ExistingUser -
+title: ExistingUser
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]LinkUser](../index.md)/[ExistingUser](index.md)/[ExistingUser](-existing-user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]LinkUser](../index.html)/[ExistingUser](index.html)/[ExistingUser](-existing-user.html)
 
 
 
-# ExistingUser  
-[androidJvm]  
-Content  
-fun [ExistingUser](-existing-user.md)(user: [User](../../../com.tink.model.user/[android-jvm]-user/index.md))  
+# ExistingUser
+
+
+
+[androidJvm]\
+fun [ExistingUser](-existing-user.html)(user: [User](../../../com.tink.model.user/[android-jvm]-user/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: onCompleted -
+title: onCompleted
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[common]StreamObserver](index.md)/[onCompleted](on-completed.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[common]StreamObserver](index.html)/[onCompleted](on-completed.html)
 
 
 
-# onCompleted  
-[common]  
-Content  
-open fun [onCompleted](on-completed.md)()  
+# onCompleted
+
+
+
+[common]\
+open fun [onCompleted](on-completed.html)()
+
 
 
 

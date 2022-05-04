@@ -1,14 +1,17 @@
 ---
-title: HttpError -
+title: HttpError
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkErrorInfo](../index.md)/[HttpError](index.md)/[HttpError](-http-error.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkErrorInfo](../index.html)/[HttpError](index.html)/[HttpError](-http-error.html)
 
 
 
-# HttpError  
-[androidJvm]  
-Content  
-fun [HttpError](-http-error.md)(code: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# HttpError
+
+
+
+[androidJvm]\
+fun [HttpError](-http-error.html)(code: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

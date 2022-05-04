@@ -1,14 +1,17 @@
 ---
-title: actions -
+title: actions
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[actions](actions.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]Insight](index.html)/[actions](actions.html)
 
 
 
-# actions  
-[androidJvm]  
-Content  
-val [actions](actions.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[android-jvm]-insight-action/index.md)>  
+# actions
+
+
+
+[androidJvm]\
+val [actions](actions.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightAction](../[android-jvm]-insight-action/index.html)&gt;
+
 
 
 

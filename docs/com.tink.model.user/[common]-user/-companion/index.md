@@ -1,21 +1,24 @@
 ---
-title: Companion -
+title: Companion
 ---
-//[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]User](../index.md)/[Companion](index.md)
+//[link](../../../../index.html)/[com.tink.model.user](../../index.html)/[[common]User](../index.html)/[Companion](index.html)
 
 
 
-# Companion  
- [common] object [Companion](index.md)   
+# Companion
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+object [Companion](index.html)
+
+
+
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.model.user/User.Companion/fromAccessToken/#kotlin.String/PointingToDeclaration/"></a>[fromAccessToken](from-access-token.md)| <a name="com.tink.model.user/User.Companion/fromAccessToken/#kotlin.String/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [fromAccessToken](from-access-token.md)(accessToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.md)  <br><br><br>
-| <a name="com.tink.model.user/User.Companion/fromSessionId/#kotlin.String/PointingToDeclaration/"></a>[fromSessionId](from-session-id.md)| <a name="com.tink.model.user/User.Companion/fromSessionId/#kotlin.String/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [fromSessionId](from-session-id.md)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.md)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [fromAccessToken](from-access-token.html) | [common]<br>fun [fromAccessToken](from-access-token.html)(accessToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.html) |
+| [fromSessionId](from-session-id.html) | [common]<br>fun [fromSessionId](from-session-id.html)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.html) |
 

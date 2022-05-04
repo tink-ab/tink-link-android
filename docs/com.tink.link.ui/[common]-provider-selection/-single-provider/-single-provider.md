@@ -1,14 +1,17 @@
 ---
-title: SingleProvider -
+title: SingleProvider
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[SingleProvider](index.md)/[SingleProvider](-single-provider.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]ProviderSelection](../index.html)/[SingleProvider](index.html)/[SingleProvider](-single-provider.html)
 
 
 
-# SingleProvider  
-[common]  
-Content  
-fun [SingleProvider](-single-provider.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# SingleProvider
+
+
+
+[common]\
+fun [SingleProvider](-single-provider.html)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

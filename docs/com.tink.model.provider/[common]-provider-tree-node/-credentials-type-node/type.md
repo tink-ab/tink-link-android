@@ -1,26 +1,28 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[type](type.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[CredentialsTypeNode](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Credentials.Type](../../../com.tink.model.credentials/[common]-credentials/-type/index.md)  
-More info  
+# type
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [type](type.html): [Credentials.Type](../../../com.tink.model.credentials/[common]-credentials/-type/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/type/#/PointingToDeclaration/"></a>type| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/type/#/PointingToDeclaration/"></a><br><br>Grouping identifier. See [Credentials.Type](../../../com.tink.model.credentials/[common]-credentials/-type/index.md)<br><br>
-  
-  
+| type | Grouping identifier. See [Credentials.Type](../../../com.tink.model.credentials/[common]-credentials/-type/index.html) |
+
 
 
 

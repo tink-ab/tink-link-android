@@ -1,18 +1,20 @@
 ---
-title: com.tink.service.streaming.publisher -
+title: com.tink.service.streaming.publisher
 ---
-//[link](../index.md)/[com.tink.service.streaming.publisher](index.md)
+//[link](../../index.html)/[com.tink.service.streaming.publisher](index.html)
 
 
 
-# Package com.tink.service.streaming.publisher  
+# Package com.tink.service.streaming.publisher
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.streaming.publisher/Stream///PointingToDeclaration/"></a>Stream| <a name="com.tink.service.streaming.publisher/Stream///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [Stream]([common]-stream/index.md)<[T]([common]-stream/index.md)>  <br>[androidJvm]  <br>interface [Stream]([android-jvm]-stream/index.md)<[T]([android-jvm]-stream/index.md)>  <br><br><br>
-| <a name="com.tink.service.streaming.publisher/StreamObserver///PointingToDeclaration/"></a>StreamObserver| <a name="com.tink.service.streaming.publisher/StreamObserver///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [StreamObserver]([common]-stream-observer/index.md)<[T]([common]-stream-observer/index.md)>  <br>[androidJvm]  <br>interface [StreamObserver]([android-jvm]-stream-observer/index.md)<[T]([android-jvm]-stream-observer/index.md)>  <br><br><br>
-| <a name="com.tink.service.streaming.publisher/StreamSubscription///PointingToDeclaration/"></a>StreamSubscription| <a name="com.tink.service.streaming.publisher/StreamSubscription///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [StreamSubscription]([common]-stream-subscription/index.md)  <br>[androidJvm]  <br>interface [StreamSubscription]([android-jvm]-stream-subscription/index.md)  <br><br><br>
+| Stream | [common, androidJvm]<br>[common]<br>interface [Stream]([common]-stream/index.html)&lt;[T]([common]-stream/index.html)&gt;<br>[androidJvm]<br>interface [Stream]([android-jvm]-stream/index.html)&lt;[T]([android-jvm]-stream/index.html)&gt; |
+| StreamObserver | [common, androidJvm]<br>[common]<br>interface [StreamObserver]([common]-stream-observer/index.html)&lt;[T]([common]-stream-observer/index.html)&gt;<br>[androidJvm]<br>interface [StreamObserver]([android-jvm]-stream-observer/index.html)&lt;[T]([android-jvm]-stream-observer/index.html)&gt; |
+| StreamSubscription | [common, androidJvm]<br>[common]<br>interface [StreamSubscription]([common]-stream-subscription/index.html)<br>[androidJvm]<br>interface [StreamSubscription]([android-jvm]-stream-subscription/index.html) |
 

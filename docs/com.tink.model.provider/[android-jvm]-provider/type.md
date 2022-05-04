@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [Provider.Type](-type/index.md)  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [Provider.Type](-type/index.html)
+
 
 
 

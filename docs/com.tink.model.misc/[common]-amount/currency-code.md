@@ -1,14 +1,17 @@
 ---
-title: currencyCode -
+title: currencyCode
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]Amount](index.md)/[currencyCode](currency-code.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]Amount](index.html)/[currencyCode](currency-code.html)
 
 
 
-# currencyCode  
-[common]  
-Content  
-val [currencyCode](currency-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# currencyCode
+
+
+
+[common]\
+val [currencyCode](currency-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

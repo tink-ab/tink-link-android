@@ -1,14 +1,17 @@
 ---
-title: Category -
+title: Category
 ---
-//[link](../../../../../index.md)/[com.tink.model.budget](../../../../index.md)/[[common]Budget](../../../index.md)/[Specification](../../index.md)/[Filter](../index.md)/[Category](index.md)/[Category](-category.md)
+//[link](../../../../../../index.html)/[com.tink.model.budget](../../../../index.html)/[[common]Budget](../../../index.html)/[Specification](../../index.html)/[Filter](../index.html)/[Category](index.html)/[Category](-category.html)
 
 
 
-# Category  
-[common]  
-Content  
-fun [Category](-category.md)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# Category
+
+
+
+[common]\
+fun [Category](-category.html)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

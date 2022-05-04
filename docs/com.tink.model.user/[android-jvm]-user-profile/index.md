@@ -1,45 +1,52 @@
 ---
-title: [androidJvm]UserProfile -
+title: [androidJvm]UserProfile
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserProfile](index.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserProfile](index.html)
 
 
 
-# UserProfile  
- [androidJvm] data class [UserProfile](index.md)(**locale**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **market**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **timeZone**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **currency**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **periodMode**: [UserProfile.PeriodMode](-period-mode/index.md)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)   
+# UserProfile
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [UserProfile](index.html)(val locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val periodMode: [UserProfile.PeriodMode](-period-mode/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.user/UserProfile.PeriodMode///PointingToDeclaration/"></a>[PeriodMode](-period-mode/index.md)| <a name="com.tink.model.user/UserProfile.PeriodMode///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>sealed class [PeriodMode](-period-mode/index.md) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br><br><br>
+| [UserProfile](-user-profile.html) | [androidJvm]<br>fun [UserProfile](-user-profile.html)(locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), periodMode: [UserProfile.PeriodMode](-period-mode/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.user/UserProfile/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.user/UserProfile/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.user/UserProfile/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.user/UserProfile/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.user/UserProfile/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.user/UserProfile/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [UserProfile.PeriodMode](-period-mode/index.md)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.user.UserProfile.PeriodMode/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.user/UserProfile/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.user.UserProfile.PeriodMode/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), periodMode: [UserProfile.PeriodMode](-period-mode/index.md)): [UserProfile](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [PeriodMode](-period-mode/index.html) | [androidJvm]<br>sealed class [PeriodMode](-period-mode/index.html) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.user/UserProfile/currency/#/PointingToDeclaration/"></a>[currency](currency.md)| <a name="com.tink.model.user/UserProfile/currency/#/PointingToDeclaration/"></a> [androidJvm] val [currency](currency.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/locale/#/PointingToDeclaration/"></a>[locale](locale.md)| <a name="com.tink.model.user/UserProfile/locale/#/PointingToDeclaration/"></a> [androidJvm] val [locale](locale.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/market/#/PointingToDeclaration/"></a>[market](market.md)| <a name="com.tink.model.user/UserProfile/market/#/PointingToDeclaration/"></a> [androidJvm] val [market](market.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/periodMode/#/PointingToDeclaration/"></a>[periodMode](period-mode.md)| <a name="com.tink.model.user/UserProfile/periodMode/#/PointingToDeclaration/"></a> [androidJvm] val [periodMode](period-mode.md): [UserProfile.PeriodMode](-period-mode/index.md)   <br>
-| <a name="com.tink.model.user/UserProfile/timeZone/#/PointingToDeclaration/"></a>[timeZone](time-zone.md)| <a name="com.tink.model.user/UserProfile/timeZone/#/PointingToDeclaration/"></a> [androidJvm] val [timeZone](time-zone.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [currency](currency.html) | [androidJvm]<br>val [currency](currency.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [locale](locale.html) | [androidJvm]<br>val [locale](locale.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [market](market.html) | [androidJvm]<br>val [market](market.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [periodMode](period-mode.html) | [androidJvm]<br>val [periodMode](period-mode.html): [UserProfile.PeriodMode](-period-mode/index.html) |
+| [timeZone](time-zone.html) | [androidJvm]<br>val [timeZone](time-zone.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

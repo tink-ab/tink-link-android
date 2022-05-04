@@ -1,14 +1,17 @@
 ---
-title: UncategorizedTransactionData -
+title: UncategorizedTransactionData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[UncategorizedTransactionData](index.md)/[UncategorizedTransactionData](-uncategorized-transaction-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[UncategorizedTransactionData](index.html)/[UncategorizedTransactionData](-uncategorized-transaction-data.html)
 
 
 
-# UncategorizedTransactionData  
-[androidJvm]  
-Content  
-fun [UncategorizedTransactionData](-uncategorized-transaction-data.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# UncategorizedTransactionData
+
+
+
+[androidJvm]\
+fun [UncategorizedTransactionData](-uncategorized-transaction-data.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

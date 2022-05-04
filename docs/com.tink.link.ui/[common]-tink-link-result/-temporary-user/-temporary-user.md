@@ -1,27 +1,29 @@
 ---
-title: TemporaryUser -
+title: TemporaryUser
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkResult](../index.md)/[TemporaryUser](index.md)/[TemporaryUser](-temporary-user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkResult](../index.html)/[TemporaryUser](index.html)/[TemporaryUser](-temporary-user.html)
 
 
 
-# TemporaryUser  
-[common]  
-Content  
-fun [TemporaryUser](-temporary-user.md)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md))  
-More info  
+# TemporaryUser
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+fun [TemporaryUser](-temporary-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/TemporaryUser/#kotlin.String#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>authorizationCode| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/TemporaryUser/#kotlin.String#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>Authorization code from authorizing the user towards a new set of scopes<br><br>
-| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/TemporaryUser/#kotlin.String#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/TemporaryUser/#kotlin.String#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>[Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md) connected to the user<br><br>
-  
-  
+| authorizationCode | Authorization code from authorizing the user towards a new set of scopes |
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
+
 
 
 

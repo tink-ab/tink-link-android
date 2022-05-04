@@ -1,14 +1,17 @@
 ---
-title: parentId -
+title: parentId
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[parentId](parent-id.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]Category](index.html)/[parentId](parent-id.html)
 
 
 
-# parentId  
-[common]  
-Content  
-val [parentId](parent-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
+# parentId
+
+
+
+[common]\
+val [parentId](parent-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 

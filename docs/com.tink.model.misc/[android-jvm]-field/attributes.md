@@ -1,14 +1,17 @@
 ---
-title: attributes -
+title: attributes
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Field](index.md)/[attributes](attributes.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]Field](index.html)/[attributes](attributes.html)
 
 
 
-# attributes  
-[androidJvm]  
-Content  
-val [attributes](attributes.md): [Field.Attributes](-attributes/index.md)  
+# attributes
+
+
+
+[androidJvm]\
+val [attributes](attributes.html): [Field.Attributes](-attributes/index.html)
+
 
 
 

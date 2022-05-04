@@ -1,14 +1,17 @@
 ---
-title: periodicity -
+title: periodicity
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateBudget](index.md)/[periodicity](periodicity.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateBudget](index.html)/[periodicity](periodicity.html)
 
 
 
-# periodicity  
-[common]  
-Content  
-val [periodicity](periodicity.md): [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?  
+# periodicity
+
+
+
+[common]\
+val [periodicity](periodicity.html): [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-1713223439)?
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: isEndState -
+title: isEndState
 ---
-//[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[androidJvm]SignableOperation](../index.md)/[Status](index.md)/[isEndState](is-end-state.md)
+//[link](../../../../index.html)/[com.tink.model.transfer](../../index.html)/[[androidJvm]SignableOperation](../index.html)/[Status](index.html)/[isEndState](is-end-state.html)
 
 
 
-# isEndState  
-[androidJvm]  
-Content  
-fun [isEndState](is-end-state.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isEndState
+
+
+
+[androidJvm]\
+fun [isEndState](is-end-state.html)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

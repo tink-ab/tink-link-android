@@ -1,14 +1,17 @@
 ---
-title: icon -
+title: icon
 ---
-//[link](../../index.md)/[com.tink.model](../index.md)/[[common]Images](index.md)/[icon](icon.md)
+//[link](../../../index.html)/[com.tink.model](../index.html)/[[common]Images](index.html)/[icon](icon.html)
 
 
 
-# icon  
-[common]  
-Content  
-val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# icon
+
+
+
+[common]\
+val [icon](icon.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

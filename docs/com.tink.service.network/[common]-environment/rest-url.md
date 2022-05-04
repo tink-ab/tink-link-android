@@ -1,14 +1,17 @@
 ---
-title: restUrl -
+title: restUrl
 ---
-//[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]Environment](index.md)/[restUrl](rest-url.md)
+//[link](../../../index.html)/[com.tink.service.network](../index.html)/[[common]Environment](index.html)/[restUrl](rest-url.html)
 
 
 
-# restUrl  
-[common]  
-Content  
-val [restUrl](rest-url.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# restUrl
+
+
+
+[common]\
+val [restUrl](rest-url.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,15 +1,17 @@
 ---
-title: privacyPolicy -
+title: privacyPolicy
 ---
-//[link](../../index.md)/[com.tink.link.consent](../index.md)/[[androidJvm]ConsentContext](index.md)/[privacyPolicy](privacy-policy.md)
+//[link](../../../index.html)/[com.tink.link.consent](../index.html)/[[androidJvm]ConsentContext](index.html)/[privacyPolicy](privacy-policy.html)
 
 
 
-# privacyPolicy  
-[androidJvm]  
-Content  
-fun [privacyPolicy](privacy-policy.md)(locale: [Locale](https://developer.android.com/reference/kotlin/java/util/Locale.html) = Locale.getDefault()): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)  
-More info  
+# privacyPolicy
+
+
+
+[androidJvm]\
+fun [privacyPolicy](privacy-policy.html)(locale: [Locale](https://developer.android.com/reference/kotlin/java/util/Locale.html) = Locale.getDefault(), showChromeless: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)
+
 
 
 Get a link to the Privacy Policy for Tink Link.
@@ -20,22 +22,23 @@ Note: Not all languages are supported. The link will display the page in english
 
 
 
-#### Return  
+#### Return
+
 
 
 A [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html) to the Privacy Policy
 
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.consent/ConsentContext/privacyPolicy/#java.util.Locale/PointingToDeclaration/"></a>locale| <a name="com.tink.link.consent/ConsentContext/privacyPolicy/#java.util.Locale/PointingToDeclaration/"></a><br><br>The locale with the language to use.<br><br>
-  
-  
+| locale | The locale with the language to use. |
+
 
 
 

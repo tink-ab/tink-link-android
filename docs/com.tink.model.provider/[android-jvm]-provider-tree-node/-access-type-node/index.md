@@ -1,57 +1,58 @@
 ---
-title: AccessTypeNode -
+title: AccessTypeNode
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[AccessTypeNode](index.html)
 
 
 
-# AccessTypeNode  
- [androidJvm] data class [AccessTypeNode](index.md)(**type**: [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md), **credentialsTypes**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>) : [ProviderTreeNode](../index.md)
-
-A parent node of the tree structure, with a list of [CredentialsTypeNode](../-credentials-type-node/index.md) children.
-
-   
+# AccessTypeNode
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [AccessTypeNode](index.html)(val type: [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.html), val credentialsTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.html)&gt;) : [ProviderTreeNode](../index.html)
+
+A parent node of the tree structure, with a list of [CredentialsTypeNode](../-credentials-type-node/index.html) children.
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode///PointingToDeclaration/"></a>type| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode///PointingToDeclaration/"></a><br><br>Grouping identifier. See [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md)<br><br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode///PointingToDeclaration/"></a>credentialsTypes| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode///PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
+| type | Grouping identifier. See [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.html) |
+| credentialsTypes | The list of child nodes. |
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/AccessTypeNode/#com.tink.model.provider.Provider.AccessType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.CredentialsTypeNode]/PointingToDeclaration/"></a>[AccessTypeNode](-access-type-node.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/AccessTypeNode/#com.tink.model.provider.Provider.AccessType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.CredentialsTypeNode]/PointingToDeclaration/"></a> [androidJvm] fun [AccessTypeNode](-access-type-node.md)(type: [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md), credentialsTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>)Grouping identifier.   <br>
+| [AccessTypeNode](-access-type-node.html) | [androidJvm]<br>fun [AccessTypeNode](-access-type-node.html)(type: [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.html), credentialsTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.html)&gt;) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md)  <br><br><br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>  <br><br><br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/copy/#com.tink.model.provider.Provider.AccessType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.CredentialsTypeNode]/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/copy/#com.tink.model.provider.Provider.AccessType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.CredentialsTypeNode]/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(type: [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md), credentialsTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>): [ProviderTreeNode.AccessTypeNode](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/credentialsTypes/#/PointingToDeclaration/"></a>[credentialsTypes](credentials-types.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/credentialsTypes/#/PointingToDeclaration/"></a> [androidJvm] val [credentialsTypes](credentials-types.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>The list of child nodes.   <br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/icon/#/PointingToDeclaration/"></a>[icon](icon.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/icon/#/PointingToDeclaration/"></a> [androidJvm] open override val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?An optional url linking to a visual description of the node.   <br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/isBeta/#/PointingToDeclaration/"></a>[isBeta](is-beta.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/isBeta/#/PointingToDeclaration/"></a> [androidJvm] open override val [isBeta](is-beta.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)Denotes that there is at least one underlying Provider in beta.   <br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/name/#/PointingToDeclaration/"></a>[name](name.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/name/#/PointingToDeclaration/"></a> [androidJvm] open override val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?A textual description of the node.   <br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/type/#/PointingToDeclaration/"></a> [androidJvm] val [type](type.md): [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.md)Grouping identifier.   <br>
+| [credentialsTypes](credentials-types.html) | [androidJvm]<br>val [credentialsTypes](credentials-types.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.html)&gt; |
+| [icon](icon.html) | [androidJvm]<br>open override val [icon](icon.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?<br>An optional url linking to a visual description of the node. |
+| [isBeta](is-beta.html) | [androidJvm]<br>open override val [isBeta](is-beta.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Denotes that there is at least one underlying Provider in beta. |
+| [name](name.html) | [androidJvm]<br>open override val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?<br>A textual description of the node. |
+| [type](type.html) | [androidJvm]<br>val [type](type.html): [Provider.AccessType](../../[android-jvm]-provider/-access-type/index.html) |
 

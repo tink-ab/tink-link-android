@@ -1,39 +1,35 @@
 ---
-title: ValidationResult -
+title: ValidationResult
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationResult](index.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationResult](index.html)
 
 
 
-# ValidationResult  
- [androidJvm] sealed class [ValidationResult](index.md)
-
-Represents the result of a validation of the user input for a field. It can be either one of two types depending upon whether the user input was valid or not. If the user input is valid, the result is [ValidationResult.Valid](-valid/index.md) If the user input is invalid, the result is [ValidationResult.ValidationError](-validation-error/index.md)
-
-   
+# ValidationResult
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+sealed class [ValidationResult](index.html)
+
+Represents the result of a validation of the user input for a field. It can be either one of two types depending upon whether the user input was valid or not. If the user input is valid, the result is [ValidationResult.Valid](-valid/index.html) If the user input is invalid, the result is [ValidationResult.ValidationError](-validation-error/index.html)
+
+
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.Valid///PointingToDeclaration/"></a>[Valid](-valid/index.md)| <a name="com.tink.model.misc/Field.ValidationResult.Valid///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>object [Valid](-valid/index.md) : [Field.ValidationResult](index.md)  <br>More info  <br>Represents the type of [ValidationResult](index.md) when the user input is valid.  <br><br><br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError///PointingToDeclaration/"></a>[ValidationError](-validation-error/index.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>sealed class [ValidationError](-validation-error/index.md) : [Field.ValidationResult](index.md)  <br>More info  <br>Represents the type of [ValidationResult](index.md) when the user input is invalid.  <br><br><br>
+| [Valid](-valid/index.html) | [androidJvm]<br>object [Valid](-valid/index.html) : [Field.ValidationResult](index.html)<br>Represents the type of [ValidationResult](index.html) when the user input is valid. |
+| [ValidationError](-validation-error/index.html) | [androidJvm]<br>sealed class [ValidationError](-validation-error/index.html) : [Field.ValidationResult](index.html)<br>Represents the type of [ValidationResult](index.html) when the user input is invalid. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+## Inheritors
 
 
-## Inheritors  
-  
-|  Name| 
+| Name |
 |---|
-| <a name="com.tink.model.misc/Field.ValidationResult.Valid///PointingToDeclaration/"></a>Field.ValidationResult
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError///PointingToDeclaration/"></a>Field.ValidationResult
+| Valid |
+| ValidationError |
 

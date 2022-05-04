@@ -1,14 +1,17 @@
 ---
-title: CategoryTree -
+title: CategoryTree
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]CategoryTree](index.md)/[CategoryTree](-category-tree.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]CategoryTree](index.html)/[CategoryTree](-category-tree.html)
 
 
 
-# CategoryTree  
-[common]  
-Content  
-fun [CategoryTree](-category-tree.md)(expenses: [Category](../[common]-category/index.md), income: [Category](../[common]-category/index.md), transfers: [Category](../[common]-category/index.md))  
+# CategoryTree
+
+
+
+[common]\
+fun [CategoryTree](-category-tree.html)(expenses: [Category](../[common]-category/index.html), income: [Category](../[common]-category/index.html), transfers: [Category](../[common]-category/index.html))
+
 
 
 

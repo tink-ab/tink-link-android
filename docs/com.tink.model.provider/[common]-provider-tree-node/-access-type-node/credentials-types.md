@@ -1,26 +1,28 @@
 ---
-title: credentialsTypes -
+title: credentialsTypes
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)/[credentialsTypes](credentials-types.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[AccessTypeNode](index.html)/[credentialsTypes](credentials-types.html)
 
 
 
-# credentialsTypes  
-[common]  
-Content  
-val [credentialsTypes](credentials-types.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.md)>  
-More info  
+# credentialsTypes
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [credentialsTypes](credentials-types.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.CredentialsTypeNode](../-credentials-type-node/index.html)&gt;
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/credentialsTypes/#/PointingToDeclaration/"></a>credentialsTypes| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/credentialsTypes/#/PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
-  
+| credentialsTypes | The list of child nodes. |
+
 
 
 

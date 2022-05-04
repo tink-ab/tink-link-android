@@ -1,16 +1,18 @@
 ---
-title: com.tink.service.time -
+title: com.tink.service.time
 ---
-//[link](../index.md)/[com.tink.service.time](index.md)
+//[link](../../index.html)/[com.tink.service.time](index.html)
 
 
 
-# Package com.tink.service.time  
+# Package com.tink.service.time
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.time/PeriodService///PointingToDeclaration/"></a>PeriodService| <a name="com.tink.service.time/PeriodService///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [PeriodService]([common]-period-service/index.md)  <br>[androidJvm]  <br>interface [PeriodService]([android-jvm]-period-service/index.md)  <br><br><br>
+| PeriodService | [common, androidJvm]<br>[common]<br>interface [PeriodService]([common]-period-service/index.html)<br>[androidJvm]<br>interface [PeriodService]([android-jvm]-period-service/index.html) |
 

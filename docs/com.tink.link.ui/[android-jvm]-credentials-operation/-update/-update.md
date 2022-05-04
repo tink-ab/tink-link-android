@@ -1,26 +1,28 @@
 ---
-title: Update -
+title: Update
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]CredentialsOperation](../index.md)/[Update](index.md)/[Update](-update.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]CredentialsOperation](../index.html)/[Update](index.html)/[Update](-update.html)
 
 
 
-# Update  
-[androidJvm]  
-Content  
-fun [Update](-update.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
-More info  
+# Update
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [Update](-update.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Update/Update/#kotlin.String/PointingToDeclaration/"></a>credentialsId| <a name="com.tink.link.ui/CredentialsOperation.Update/Update/#kotlin.String/PointingToDeclaration/"></a><br><br>Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) to be updated<br><br>
-  
-  
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) to be updated |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: nextDayOfTermsChange -
+title: nextDayOfTermsChange
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[nextDayOfTermsChange](next-day-of-terms-change.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]AccountDetails](index.html)/[nextDayOfTermsChange](next-day-of-terms-change.html)
 
 
 
-# nextDayOfTermsChange  
-[common]  
-Content  
-val [nextDayOfTermsChange](next-day-of-terms-change.md): <ERROR CLASS>? = null  
+# nextDayOfTermsChange
+
+
+
+[common]\
+val [nextDayOfTermsChange](next-day-of-terms-change.html): &lt;ERROR CLASS&gt;? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: inputType -
+title: inputType
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[Attributes](index.md)/[inputType](input-type.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[Attributes](index.html)/[inputType](input-type.html)
 
 
 
-# inputType  
-[androidJvm]  
-Content  
-val [inputType](input-type.md): [Field.InputType](../-input-type/index.md)  
+# inputType
+
+
+
+[androidJvm]\
+val [inputType](input-type.html): [Field.InputType](../-input-type/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: requireComponent -
+title: requireComponent
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[requireComponent](require-component.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]Tink](index.html)/[requireComponent](require-component.html)
 
 
 
-# requireComponent  
-[common]  
-Content  
-fun [requireComponent](require-component.md)(): <ERROR CLASS>  
+# requireComponent
+
+
+
+[common]\
+fun [requireComponent](require-component.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

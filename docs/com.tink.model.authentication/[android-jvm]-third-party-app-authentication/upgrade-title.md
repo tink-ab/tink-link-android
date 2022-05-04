@@ -1,14 +1,17 @@
 ---
-title: upgradeTitle -
+title: upgradeTitle
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)/[upgradeTitle](upgrade-title.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[androidJvm]ThirdPartyAppAuthentication](index.html)/[upgradeTitle](upgrade-title.html)
 
 
 
-# upgradeTitle  
-[androidJvm]  
-Content  
-val [upgradeTitle](upgrade-title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# upgradeTitle
+
+
+
+[androidJvm]\
+val [upgradeTitle](upgrade-title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

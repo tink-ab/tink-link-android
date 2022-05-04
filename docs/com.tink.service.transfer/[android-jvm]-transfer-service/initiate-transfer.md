@@ -1,37 +1,40 @@
 ---
-title: initiateTransfer -
+title: initiateTransfer
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]TransferService](index.md)/[initiateTransfer](initiate-transfer.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]TransferService](index.html)/[initiateTransfer](initiate-transfer.html)
 
 
 
-# initiateTransfer  
-[androidJvm]  
-Content  
-abstract suspend fun [initiateTransfer](initiate-transfer.md)(descriptor: [CreateTransferDescriptor](../[android-jvm]-create-transfer-descriptor/index.md)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.md)  
-More info  
+# initiateTransfer
+
+
+
+[androidJvm]\
+abstract suspend fun [initiateTransfer](initiate-transfer.html)(descriptor: [CreateTransferDescriptor](../[android-jvm]-create-transfer-descriptor/index.html)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.html)
+
 
 
 Initiates a new transfer
 
 
 
-#### Return  
-
-
-A [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.md) from which you can read the [status](../../com.tink.model.transfer/[android-jvm]-signable-operation/-status/index.md) of the operation.
+#### Return
 
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+A [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.html) from which you can read the [status](../../com.tink.model.transfer/[android-jvm]-signable-operation/-status/index.html) of the operation.
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/TransferService/initiateTransfer/#com.tink.service.transfer.CreateTransferDescriptor/PointingToDeclaration/"></a>descriptor| <a name="com.tink.service.transfer/TransferService/initiateTransfer/#com.tink.service.transfer.CreateTransferDescriptor/PointingToDeclaration/"></a><br><br>Information about the transfer that should be created<br><br>
-  
-  
+| descriptor | Information about the transfer that should be created |
+
 
 
 

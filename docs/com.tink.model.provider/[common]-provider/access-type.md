@@ -1,14 +1,17 @@
 ---
-title: accessType -
+title: accessType
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[accessType](access-type.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[accessType](access-type.html)
 
 
 
-# accessType  
-[common]  
-Content  
-val [accessType](access-type.md): [Provider.AccessType](-access-type/index.md)  
+# accessType
+
+
+
+[common]\
+val [accessType](access-type.html): [Provider.AccessType](-access-type/index.html)
+
 
 
 

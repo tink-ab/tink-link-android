@@ -1,14 +1,17 @@
 ---
-title: accessType -
+title: accessType
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[accessType](access-type.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[accessType](access-type.html)
 
 
 
-# accessType  
-[androidJvm]  
-Content  
-val [accessType](access-type.md): [Provider.AccessType](-access-type/index.md)  
+# accessType
+
+
+
+[androidJvm]\
+val [accessType](access-type.html): [Provider.AccessType](-access-type/index.html)
+
 
 
 

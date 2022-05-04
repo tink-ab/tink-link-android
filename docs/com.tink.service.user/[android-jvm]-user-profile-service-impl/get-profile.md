@@ -1,14 +1,17 @@
 ---
-title: getProfile -
+title: getProfile
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileServiceImpl](index.md)/[getProfile](get-profile.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[androidJvm]UserProfileServiceImpl](index.html)/[getProfile](get-profile.html)
 
 
 
-# getProfile  
-[androidJvm]  
-Content  
-open suspend override fun [getProfile](get-profile.md)(): [UserProfile](../../com.tink.model.user/[android-jvm]-user-profile/index.md)  
+# getProfile
+
+
+
+[androidJvm]\
+open suspend override fun [getProfile](get-profile.html)(): [UserProfile](../../com.tink.model.user/[android-jvm]-user-profile/index.html)
+
 
 
 

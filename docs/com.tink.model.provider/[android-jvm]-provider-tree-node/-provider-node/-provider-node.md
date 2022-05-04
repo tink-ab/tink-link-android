@@ -1,14 +1,17 @@
 ---
-title: ProviderNode -
+title: ProviderNode
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[ProviderNode](index.md)/[ProviderNode](-provider-node.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[ProviderNode](index.html)/[ProviderNode](-provider-node.html)
 
 
 
-# ProviderNode  
-[androidJvm]  
-Content  
-fun [ProviderNode](-provider-node.md)(provider: [Provider](../../[android-jvm]-provider/index.md))  
+# ProviderNode
+
+
+
+[androidJvm]\
+fun [ProviderNode](-provider-node.html)(provider: [Provider](../../[android-jvm]-provider/index.html))
+
 
 
 

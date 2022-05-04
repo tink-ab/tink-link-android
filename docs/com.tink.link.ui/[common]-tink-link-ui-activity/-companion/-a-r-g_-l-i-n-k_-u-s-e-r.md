@@ -1,14 +1,17 @@
 ---
-title: ARG_LINK_USER -
+title: ARG_LINK_USER
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkUiActivity](../index.html)/[Companion](index.html)/[ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.html)
 
 
 
-# ARG_LINK_USER  
-[common]  
-Content  
-const val [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# ARG_LINK_USER
+
+
+
+[common]\
+const val [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

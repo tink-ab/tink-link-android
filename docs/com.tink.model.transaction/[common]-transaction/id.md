@@ -1,14 +1,17 @@
 ---
-title: id -
+title: id
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[id](id.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[id](id.html)
 
 
 
-# id  
-[common]  
-Content  
-val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# id
+
+
+
+[common]\
+val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: fields -
+title: fields
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[fields](fields.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[fields](fields.html)
 
 
 
-# fields  
-[common]  
-Content  
-val [fields](fields.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field](../../com.tink.model.misc/[common]-field/index.md)>  
+# fields
+
+
+
+[common]\
+val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field](../../com.tink.model.misc/[common]-field/index.html)&gt;
+
 
 
 

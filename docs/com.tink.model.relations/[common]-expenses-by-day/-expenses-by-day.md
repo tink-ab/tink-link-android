@@ -1,14 +1,17 @@
 ---
-title: ExpensesByDay -
+title: ExpensesByDay
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]ExpensesByDay](index.md)/[ExpensesByDay](-expenses-by-day.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[common]ExpensesByDay](index.html)/[ExpensesByDay](-expenses-by-day.html)
 
 
 
-# ExpensesByDay  
-[common]  
-Content  
-fun [ExpensesByDay](-expenses-by-day.md)(date: <ERROR CLASS>, totalAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.md), averageAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.md))  
+# ExpensesByDay
+
+
+
+[common]\
+fun [ExpensesByDay](-expenses-by-day.html)(date: &lt;ERROR CLASS&gt;, totalAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html), averageAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: budgetService -
+title: budgetService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[budgetService](budget-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[budgetService](budget-service.html)
 
 
 
-# budgetService  
-[common]  
-Content  
-abstract val [budgetService](budget-service.md): [BudgetService](../../com.tink.service.budget/[common]-budget-service/index.md)  
+# budgetService
+
+
+
+[common]\
+abstract val [budgetService](budget-service.html): [BudgetService](../../com.tink.service.budget/[common]-budget-service/index.html)
+
 
 
 

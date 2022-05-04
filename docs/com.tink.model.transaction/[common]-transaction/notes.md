@@ -1,14 +1,17 @@
 ---
-title: notes -
+title: notes
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[notes](notes.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[notes](notes.html)
 
 
 
-# notes  
-[common]  
-Content  
-val [notes](notes.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# notes
+
+
+
+[common]\
+val [notes](notes.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

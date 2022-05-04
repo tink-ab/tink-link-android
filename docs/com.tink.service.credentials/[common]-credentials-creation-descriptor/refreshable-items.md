@@ -1,14 +1,17 @@
 ---
-title: refreshableItems -
+title: refreshableItems
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsCreationDescriptor](index.md)/[refreshableItems](refreshable-items.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsCreationDescriptor](index.html)/[refreshableItems](refreshable-items.html)
 
 
 
-# refreshableItems  
-[common]  
-Content  
-val [refreshableItems](refreshable-items.md): [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)<[RefreshableItem](../../com.tink.model.credentials/[common]-refreshable-item/index.md)>? = null  
+# refreshableItems
+
+
+
+[common]\
+val [refreshableItems](refreshable-items.html): [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)&lt;[RefreshableItem](../../com.tink.model.credentials/[common]-refreshable-item/index.html)&gt;? = null
+
 
 
 

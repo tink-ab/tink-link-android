@@ -1,14 +1,17 @@
 ---
-title: dayOfMonth -
+title: dayOfMonth
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]DayPeriod](index.md)/[dayOfMonth](day-of-month.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]DayPeriod](index.html)/[dayOfMonth](day-of-month.html)
 
 
 
-# dayOfMonth  
-[common]  
-Content  
-val [dayOfMonth](day-of-month.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# dayOfMonth
+
+
+
+[common]\
+val [dayOfMonth](day-of-month.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

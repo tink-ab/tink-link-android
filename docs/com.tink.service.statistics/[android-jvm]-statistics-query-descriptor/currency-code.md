@@ -1,14 +1,17 @@
 ---
-title: currencyCode -
+title: currencyCode
 ---
-//[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[androidJvm]StatisticsQueryDescriptor](index.md)/[currencyCode](currency-code.md)
+//[link](../../../index.html)/[com.tink.service.statistics](../index.html)/[[androidJvm]StatisticsQueryDescriptor](index.html)/[currencyCode](currency-code.html)
 
 
 
-# currencyCode  
-[androidJvm]  
-Content  
-val [currencyCode](currency-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# currencyCode
+
+
+
+[androidJvm]\
+val [currencyCode](currency-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

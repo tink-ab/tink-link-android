@@ -1,14 +1,17 @@
 ---
-title: isDefaultChild -
+title: isDefaultChild
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[isDefaultChild](is-default-child.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]Category](index.html)/[isDefaultChild](is-default-child.html)
 
 
 
-# isDefaultChild  
-[common]  
-Content  
-val [isDefaultChild](is-default-child.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isDefaultChild
+
+
+
+[common]\
+val [isDefaultChild](is-default-child.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

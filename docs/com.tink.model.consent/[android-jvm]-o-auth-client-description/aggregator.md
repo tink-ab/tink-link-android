@@ -1,26 +1,28 @@
 ---
-title: aggregator -
+title: aggregator
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[aggregator](aggregator.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]OAuthClientDescription](index.html)/[aggregator](aggregator.html)
 
 
 
-# aggregator  
-[androidJvm]  
-Content  
-val [aggregator](aggregator.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
-More info  
+# aggregator
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [aggregator](aggregator.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/aggregator/#/PointingToDeclaration/"></a>aggregator| <a name="com.tink.model.consent/OAuthClientDescription/aggregator/#/PointingToDeclaration/"></a><br><br>: Describes whether the client is aggregating data under their own or under Tink's license.<br><br>
-  
-  
+| aggregator | : Describes whether the client is aggregating data under their own or under Tink's license. |
+
 
 
 

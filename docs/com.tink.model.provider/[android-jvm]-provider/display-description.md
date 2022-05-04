@@ -1,14 +1,17 @@
 ---
-title: displayDescription -
+title: displayDescription
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[displayDescription](display-description.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[displayDescription](display-description.html)
 
 
 
-# displayDescription  
-[androidJvm]  
-Content  
-val [displayDescription](display-description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# displayDescription
+
+
+
+[androidJvm]\
+val [displayDescription](display-description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

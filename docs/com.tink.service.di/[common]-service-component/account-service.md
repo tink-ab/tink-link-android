@@ -1,14 +1,17 @@
 ---
-title: accountService -
+title: accountService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[accountService](account-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[accountService](account-service.html)
 
 
 
-# accountService  
-[common]  
-Content  
-abstract val [accountService](account-service.md): [AccountService](../../com.tink.service.account/[common]-account-service/index.md)  
+# accountService
+
+
+
+[common]\
+abstract val [accountService](account-service.html): [AccountService](../../com.tink.service.account/[common]-account-service/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: currency -
+title: currency
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserProfile](index.md)/[currency](currency.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserProfile](index.html)/[currency](currency.html)
 
 
 
-# currency  
-[androidJvm]  
-Content  
-val [currency](currency.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# currency
+
+
+
+[androidJvm]\
+val [currency](currency.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

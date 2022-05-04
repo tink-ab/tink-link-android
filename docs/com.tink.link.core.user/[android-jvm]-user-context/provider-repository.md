@@ -1,14 +1,17 @@
 ---
-title: providerRepository -
+title: providerRepository
 ---
-//[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[androidJvm]UserContext](index.md)/[providerRepository](provider-repository.md)
+//[link](../../../index.html)/[com.tink.link.core.user](../index.html)/[[androidJvm]UserContext](index.html)/[providerRepository](provider-repository.html)
 
 
 
-# providerRepository  
-[androidJvm]  
-Content  
-abstract val [providerRepository](provider-repository.md): [ProviderRepository](../../com.tink.core.provider/[android-jvm]-provider-repository/index.md)  
+# providerRepository
+
+
+
+[androidJvm]\
+abstract val [providerRepository](provider-repository.html): [ProviderRepository](../../com.tink.core.provider/[android-jvm]-provider-repository/index.html)
+
 
 
 

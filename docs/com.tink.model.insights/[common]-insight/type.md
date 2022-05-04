@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [InsightType](../[common]-insight-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [InsightType](../[common]-insight-type/index.html)
+
 
 
 

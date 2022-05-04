@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]AmountByCategory](index.md)/[amount](amount.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[common]AmountByCategory](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[common]  
-Content  
-val [amount](amount.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# amount
+
+
+
+[common]\
+val [amount](amount.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

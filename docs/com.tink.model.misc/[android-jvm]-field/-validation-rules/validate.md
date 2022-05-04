@@ -1,38 +1,41 @@
 ---
-title: validate -
+title: validate
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[validate](validate.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationRules](index.html)/[validate](validate.html)
 
 
 
-# validate  
-[androidJvm]  
-Content  
-fun [validate](validate.md)(fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Field.ValidationResult](../-validation-result/index.md)  
-More info  
+# validate
+
+
+
+[androidJvm]\
+fun [validate](validate.html)(fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Field.ValidationResult](../-validation-result/index.html)
+
 
 
 Validates the user input for a field.
 
 
 
-#### Return  
-
-
-An instance of [ValidationResult](../-validation-result/index.md), either [ValidationResult.Valid](../-validation-result/-valid/index.md) or [ValidationResult.ValidationError](../-validation-result/-validation-error/index.md).
+#### Return
 
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+An instance of [ValidationResult](../-validation-result/index.html), either [ValidationResult.Valid](../-validation-result/-valid/index.html) or [ValidationResult.ValidationError](../-validation-result/-validation-error/index.html).
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.misc/Field.ValidationRules/validate/#kotlin.String#kotlin.String/PointingToDeclaration/"></a>fieldName| <a name="com.tink.model.misc/Field.ValidationRules/validate/#kotlin.String#kotlin.String/PointingToDeclaration/"></a><br><br>The [name](../name.md) of the field being validated<br><br>
-| <a name="com.tink.model.misc/Field.ValidationRules/validate/#kotlin.String#kotlin.String/PointingToDeclaration/"></a>value| <a name="com.tink.model.misc/Field.ValidationRules/validate/#kotlin.String#kotlin.String/PointingToDeclaration/"></a><br><br>The user input for the field<br><br>
-  
-  
+| fieldName | The [name](../name.html) of the field being validated |
+| value | The user input for the field |
+
 
 
 

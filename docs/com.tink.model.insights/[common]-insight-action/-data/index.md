@@ -1,55 +1,55 @@
 ---
-title: Data -
+title: Data
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightAction](../index.md)/[Data](index.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightAction](../index.html)/[Data](index.html)
 
 
 
-# Data  
- [common] sealed class [Data](index.md)
+# Data
+
+
+
+[common]\
+sealed class [Data](index.html)
 
 All subclasses should be data classes or provide a meaningful equals() function
 
-   
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.Acknowledge///PointingToDeclaration/"></a>[Acknowledge](-acknowledge/index.md)| <a name="com.tink.model.insights/InsightAction.Data.Acknowledge///PointingToDeclaration/"></a>[common]  <br>Content  <br>object [Acknowledge](-acknowledge/index.md) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CategorizeExpense///PointingToDeclaration/"></a>[CategorizeExpense](-categorize-expense/index.md)| <a name="com.tink.model.insights/InsightAction.Data.CategorizeExpense///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [CategorizeExpense](-categorize-expense/index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CategorizeTransactions///PointingToDeclaration/"></a>[CategorizeTransactions](-categorize-transactions/index.md)| <a name="com.tink.model.insights/InsightAction.Data.CategorizeTransactions///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [CategorizeTransactions](-categorize-transactions/index.md)(**transactionIds**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget///PointingToDeclaration/"></a>[CreateBudget](-create-budget/index.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [CreateBudget](-create-budget/index.md)(**budgetFilter**: [BudgetFilter](../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?, **amount**: [Amount](../../../com.tink.model.misc/[common]-amount/index.md)?, **periodicity**: [BudgetPeriodicity](../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer///PointingToDeclaration/"></a>[CreateTransfer](-create-transfer/index.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [CreateTransfer](-create-transfer/index.md)(**sourceUri**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **destinationUri**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **amount**: [Amount](../../../com.tink.model.misc/[common]-amount/index.md)?, **sourceAccountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **destinationAccountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.Dismiss///PointingToDeclaration/"></a>[Dismiss](-dismiss/index.md)| <a name="com.tink.model.insights/InsightAction.Data.Dismiss///PointingToDeclaration/"></a>[common]  <br>Content  <br>object [Dismiss](-dismiss/index.md) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.NoData///PointingToDeclaration/"></a>[NoData](-no-data/index.md)| <a name="com.tink.model.insights/InsightAction.Data.NoData///PointingToDeclaration/"></a>[common]  <br>Content  <br>object [NoData](-no-data/index.md) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.ViewBudget///PointingToDeclaration/"></a>[ViewBudget](-view-budget/index.md)| <a name="com.tink.model.insights/InsightAction.Data.ViewBudget///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [ViewBudget](-view-budget/index.md)(**budgetId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **periodStartDate**: <ERROR CLASS>) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactions///PointingToDeclaration/"></a>[ViewTransactions](-view-transactions/index.md)| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactions///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [ViewTransactions](-view-transactions/index.md)(**transactionIds**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>) : [InsightAction.Data](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactionsByCategory///PointingToDeclaration/"></a>[ViewTransactionsByCategory](-view-transactions-by-category/index.md)| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactionsByCategory///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [ViewTransactionsByCategory](-view-transactions-by-category/index.md)(**transactionsByCategory**: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>>) : [InsightAction.Data](index.md)  <br><br><br>
+| [Acknowledge](-acknowledge/index.html) | [common]<br>object [Acknowledge](-acknowledge/index.html) : [InsightAction.Data](index.html) |
+| [CategorizeExpense](-categorize-expense/index.html) | [common]<br>data class [CategorizeExpense](-categorize-expense/index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.html) |
+| [CategorizeTransactions](-categorize-transactions/index.html) | [common]<br>data class [CategorizeTransactions](-categorize-transactions/index.html)(val transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : [InsightAction.Data](index.html) |
+| [CreateBudget](-create-budget/index.html) | [common]<br>data class [CreateBudget](-create-budget/index.html)(val budgetFilter: [BudgetFilter](../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-1713223439)?, val amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html)?, val periodicity: [BudgetPeriodicity](../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-1713223439)?) : [InsightAction.Data](index.html) |
+| [CreateTransfer](-create-transfer/index.html) | [common]<br>data class [CreateTransfer](-create-transfer/index.html)(val sourceUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val destinationUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html)? = null, val sourceAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val destinationAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) : [InsightAction.Data](index.html) |
+| [Dismiss](-dismiss/index.html) | [common]<br>object [Dismiss](-dismiss/index.html) : [InsightAction.Data](index.html) |
+| [NoData](-no-data/index.html) | [common]<br>object [NoData](-no-data/index.html) : [InsightAction.Data](index.html) |
+| [RefreshCredential](-refresh-credential/index.html) | [common]<br>data class [RefreshCredential](-refresh-credential/index.html)(val credentialId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.html) |
+| [ViewAccount](-view-account/index.html) | [common]<br>data class [ViewAccount](-view-account/index.html)(val accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.html) |
+| [ViewBudget](-view-budget/index.html) | [common]<br>data class [ViewBudget](-view-budget/index.html)(val budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val periodStartDate: &lt;ERROR CLASS&gt;) : [InsightAction.Data](index.html) |
+| [ViewTransactions](-view-transactions/index.html) | [common]<br>data class [ViewTransactions](-view-transactions/index.html)(val transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : [InsightAction.Data](index.html) |
+| [ViewTransactionsByCategory](-view-transactions-by-category/index.html) | [common]<br>data class [ViewTransactionsByCategory](-view-transactions-by-category/index.html)(val transactionsByCategory: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;&gt;) : [InsightAction.Data](index.html) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+## Inheritors
 
 
-## Inheritors  
-  
-|  Name| 
+| Name |
 |---|
-| <a name="com.tink.model.insights/InsightAction.Data.NoData///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.Acknowledge///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.Dismiss///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.ViewBudget///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.CategorizeExpense///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.CategorizeTransactions///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactions///PointingToDeclaration/"></a>InsightAction.Data
-| <a name="com.tink.model.insights/InsightAction.Data.ViewTransactionsByCategory///PointingToDeclaration/"></a>InsightAction.Data
+| NoData |
+| Acknowledge |
+| Dismiss |
+| ViewBudget |
+| CreateBudget |
+| CreateTransfer |
+| CategorizeExpense |
+| CategorizeTransactions |
+| RefreshCredential |
+| ViewAccount |
+| ViewTransactions |
+| ViewTransactionsByCategory |
 

@@ -1,14 +1,17 @@
 ---
-title: ProviderNode -
+title: ProviderNode
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[ProviderNode](index.md)/[ProviderNode](-provider-node.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[ProviderNode](index.html)/[ProviderNode](-provider-node.html)
 
 
 
-# ProviderNode  
-[common]  
-Content  
-fun [ProviderNode](-provider-node.md)(provider: [Provider](../../[common]-provider/index.md))  
+# ProviderNode
+
+
+
+[common]\
+fun [ProviderNode](-provider-node.html)(provider: [Provider](../../[common]-provider/index.html))
+
 
 
 

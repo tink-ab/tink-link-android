@@ -1,27 +1,29 @@
 ---
-title: CredentialsTypeNode -
+title: CredentialsTypeNode
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[CredentialsTypeNode](-credentials-type-node.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[CredentialsTypeNode](index.html)/[CredentialsTypeNode](-credentials-type-node.html)
 
 
 
-# CredentialsTypeNode  
-[androidJvm]  
-Content  
-fun [CredentialsTypeNode](-credentials-type-node.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, type: [Credentials.Type](../../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.md), providers: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.ProviderNode](../-provider-node/index.md)>)  
-More info  
+# CredentialsTypeNode
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [CredentialsTypeNode](-credentials-type-node.html)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, type: [Credentials.Type](../../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.html), providers: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.ProviderNode](../-provider-node/index.html)&gt;)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/CredentialsTypeNode/#kotlin.String?#com.tink.model.credentials.Credentials.Type#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.ProviderNode]/PointingToDeclaration/"></a>type| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/CredentialsTypeNode/#kotlin.String?#com.tink.model.credentials.Credentials.Type#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.ProviderNode]/PointingToDeclaration/"></a><br><br>Grouping identifier. See [Credentials.Type](../../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.md)<br><br>
-| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/CredentialsTypeNode/#kotlin.String?#com.tink.model.credentials.Credentials.Type#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.ProviderNode]/PointingToDeclaration/"></a>providers| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/CredentialsTypeNode/#kotlin.String?#com.tink.model.credentials.Credentials.Type#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.ProviderNode]/PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
-  
+| type | Grouping identifier. See [Credentials.Type](../../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.html) |
+| providers | The list of child nodes. |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: CategoryServiceImpl -
+title: CategoryServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.category](../index.md)/[[common]CategoryServiceImpl](index.md)/[CategoryServiceImpl](-category-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.category](../index.html)/[[common]CategoryServiceImpl](index.html)/[CategoryServiceImpl](-category-service-impl.html)
 
 
 
-# CategoryServiceImpl  
-[common]  
-Content  
-fun [CategoryServiceImpl](-category-service-impl.md)(api: <ERROR CLASS>)  
+# CategoryServiceImpl
+
+
+
+[common]\
+fun [CategoryServiceImpl](-category-service-impl.html)(api: &lt;ERROR CLASS&gt;)
+
 
 
 

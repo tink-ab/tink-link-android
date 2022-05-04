@@ -1,26 +1,28 @@
 ---
-title: AwaitingAuthentication -
+title: AwaitingAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[androidJvm]CredentialsStatus](../index.md)/[AwaitingAuthentication](index.md)/[AwaitingAuthentication](-awaiting-authentication.md)
+//[link](../../../../index.html)/[com.tink.link.core.credentials](../../index.html)/[[androidJvm]CredentialsStatus](../index.html)/[AwaitingAuthentication](index.html)/[AwaitingAuthentication](-awaiting-authentication.html)
 
 
 
-# AwaitingAuthentication  
-[androidJvm]  
-Content  
-fun [AwaitingAuthentication](-awaiting-authentication.md)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.md), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md))  
-More info  
+# AwaitingAuthentication
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[android-jvm]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/AwaitingAuthentication/#com.tink.link.authentication.AuthenticationTask#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/AwaitingAuthentication/#com.tink.link.authentication.AuthenticationTask#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>the credentials for which authentication is needed<br><br>
-  
-  
+| credentials | the credentials for which authentication is needed |
+
 
 
 

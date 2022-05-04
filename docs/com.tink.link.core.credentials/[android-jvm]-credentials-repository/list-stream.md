@@ -1,24 +1,25 @@
 ---
-title: listStream -
+title: listStream
 ---
-//[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsRepository](index.md)/[listStream](list-stream.md)
+//[link](../../../index.html)/[com.tink.link.core.credentials](../index.html)/[[androidJvm]CredentialsRepository](index.html)/[listStream](list-stream.html)
 
 
 
-# listStream  
-[androidJvm]  
-Content  
-fun [listStream](list-stream.md)(): [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.md)<[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md)>>  
-More info  
-
-
-Returns a [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.md) containing the list of [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md) objects.
+# listStream
 
 
 
-You can subscribe to the [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.md) and observe changes in the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md) objects and act upon them.
+[androidJvm]\
+fun [listStream](list-stream.html)(): [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html)&lt;[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)&gt;&gt;
 
-  
+
+
+Returns a [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html) containing the list of [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) objects.
+
+
+
+You can subscribe to the [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html) and observe changes in the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) objects and act upon them.
+
 
 
 

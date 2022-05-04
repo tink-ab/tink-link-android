@@ -1,14 +1,17 @@
 ---
-title: consentService -
+title: consentService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[consentService](consent-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[consentService](consent-service.html)
 
 
 
-# consentService  
-[common]  
-Content  
-abstract val [consentService](consent-service.md): [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.md)  
+# consentService
+
+
+
+[common]\
+abstract val [consentService](consent-service.html): [ConsentService](../../com.tink.service.consent/[common]-consent-service/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: listTransactions -
+title: listTransactions
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[listTransactions](list-transactions.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[common]TransactionService](index.html)/[listTransactions](list-transactions.html)
 
 
 
-# listTransactions  
-[common]  
-Content  
-abstract suspend fun [listTransactions](list-transactions.md)(accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, categoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, period: [Period](../../com.tink.model.time/[common]-period/index.md)? = null, offset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) = 0): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Transaction](../../com.tink.model.transaction/[common]-transaction/index.md)>  
+# listTransactions
+
+
+
+[common]\
+abstract suspend fun [listTransactions](list-transactions.html)(accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, categoryId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, period: [Period](../../com.tink.model.time/[common]-period/index.html)? = null, offset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) = 0): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Transaction](../../com.tink.model.transaction/[common]-transaction/index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: accountService -
+title: accountService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[accountService](account-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[accountService](account-service.html)
 
 
 
-# accountService  
-[androidJvm]  
-Content  
-abstract val [accountService](account-service.md): [AccountService](../../com.tink.service.account/[android-jvm]-account-service/index.md)  
+# accountService
+
+
+
+[androidJvm]\
+abstract val [accountService](account-service.html): [AccountService](../../com.tink.service.account/[android-jvm]-account-service/index.html)
+
 
 
 

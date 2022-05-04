@@ -1,14 +1,17 @@
 ---
-title: balance -
+title: balance
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[balance](balance.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[balance](balance.html)
 
 
 
-# balance  
-[common]  
-Content  
-val [balance](balance.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# balance
+
+
+
+[common]\
+val [balance](balance.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

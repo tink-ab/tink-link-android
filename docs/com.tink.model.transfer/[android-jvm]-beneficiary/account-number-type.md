@@ -1,26 +1,28 @@
 ---
-title: accountNumberType -
+title: accountNumberType
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]Beneficiary](index.md)/[accountNumberType](account-number-type.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[androidJvm]Beneficiary](index.html)/[accountNumberType](account-number-type.html)
 
 
 
-# accountNumberType  
-[androidJvm]  
-Content  
-val [accountNumberType](account-number-type.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# accountNumberType
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [accountNumberType](account-number-type.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.transfer/Beneficiary/accountNumberType/#/PointingToDeclaration/"></a>accountNumberType| <a name="com.tink.model.transfer/Beneficiary/accountNumberType/#/PointingToDeclaration/"></a><br><br>The type of the [accountNumber](account-number.md) that this beneficiary has. See [AccountNumberTypes](-account-number-types/index.md) for supported types.<br><br>
-  
-  
+| accountNumberType | The type of the [accountNumber](account-number.html) that this beneficiary has. See [AccountNumberTypes](-account-number-types/index.html) for supported types. |
+
 
 
 

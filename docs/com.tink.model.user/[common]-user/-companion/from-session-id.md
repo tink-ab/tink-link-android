@@ -1,14 +1,17 @@
 ---
-title: fromSessionId -
+title: fromSessionId
 ---
-//[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]User](../index.md)/[Companion](index.md)/[fromSessionId](from-session-id.md)
+//[link](../../../../index.html)/[com.tink.model.user](../../index.html)/[[common]User](../index.html)/[Companion](index.html)/[fromSessionId](from-session-id.html)
 
 
 
-# fromSessionId  
-[common]  
-Content  
-fun [fromSessionId](from-session-id.md)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.md)  
+# fromSessionId
+
+
+
+[common]\
+fun [fromSessionId](from-session-id.html)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [User](../index.html)
+
 
 
 

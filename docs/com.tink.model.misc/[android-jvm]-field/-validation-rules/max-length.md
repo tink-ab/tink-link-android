@@ -1,14 +1,17 @@
 ---
-title: maxLength -
+title: maxLength
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[maxLength](max-length.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationRules](index.html)/[maxLength](max-length.html)
 
 
 
-# maxLength  
-[androidJvm]  
-Content  
-val [maxLength](max-length.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# maxLength
+
+
+
+[androidJvm]\
+val [maxLength](max-length.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

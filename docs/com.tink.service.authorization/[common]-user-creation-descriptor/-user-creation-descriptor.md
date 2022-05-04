@@ -1,14 +1,17 @@
 ---
-title: UserCreationDescriptor -
+title: UserCreationDescriptor
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[UserCreationDescriptor](-user-creation-descriptor.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[common]UserCreationDescriptor](index.html)/[UserCreationDescriptor](-user-creation-descriptor.html)
 
 
 
-# UserCreationDescriptor  
-[common]  
-Content  
-fun [UserCreationDescriptor](-user-creation-descriptor.md)(market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# UserCreationDescriptor
+
+
+
+[common]\
+fun [UserCreationDescriptor](-user-creation-descriptor.html)(market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: refresh -
+title: refresh
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[refresh](refresh.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsService](index.html)/[refresh](refresh.html)
 
 
 
-# refresh  
-[androidJvm]  
-Content  
-abstract suspend fun [refresh](refresh.md)(descriptor: [CredentialsRefreshDescriptor](../[android-jvm]-credentials-refresh-descriptor/index.md))  
+# refresh
+
+
+
+[androidJvm]\
+abstract suspend fun [refresh](refresh.html)(descriptor: [CredentialsRefreshDescriptor](../[android-jvm]-credentials-refresh-descriptor/index.html))
+
 
 
 

@@ -1,26 +1,28 @@
 ---
-title: message -
+title: message
 ---
-//[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[androidJvm]CredentialsStatus](../index.md)/[Loading](index.md)/[message](message.md)
+//[link](../../../../index.html)/[com.tink.link.core.credentials](../../index.html)/[[androidJvm]CredentialsStatus](../index.html)/[Loading](index.html)/[message](message.html)
 
 
 
-# message  
-[androidJvm]  
-Content  
-val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
-More info  
+# message
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading/message/#/PointingToDeclaration/"></a>message| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading/message/#/PointingToDeclaration/"></a><br><br>a message containing details about the status.<br><br>
-  
-  
+| message | a message containing details about the status. |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: BudgetSuggestCreateTopPrimaryCategoryData -
+title: BudgetSuggestCreateTopPrimaryCategoryData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetSuggestCreateTopPrimaryCategoryData](index.html)/[BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data.html)
 
 
 
-# BudgetSuggestCreateTopPrimaryCategoryData  
-[common]  
-Content  
-fun [BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data.md)(categorySpending: [AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.md), suggestedBudgetAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md))  
+# BudgetSuggestCreateTopPrimaryCategoryData
+
+
+
+[common]\
+fun [BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data.html)(categorySpending: [AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.html), suggestedBudgetAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html))
+
 
 
 

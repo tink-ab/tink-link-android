@@ -1,48 +1,45 @@
 ---
-title: [common]CredentialsStatus -
+title: [common]CredentialsStatus
 ---
-//[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsStatus](index.md)
+//[link](../../../index.html)/[com.tink.link.core.credentials](../index.html)/[[common]CredentialsStatus](index.html)
 
 
 
-# CredentialsStatus  
- [common] sealed class [CredentialsStatus](index.md)
-
-The status of a Credentials. Possible values are [Success](-success/index.md), [Loading](-loading/index.md), and [AwaitingAuthentication](-awaiting-authentication/index.md)
-
-   
+# CredentialsStatus
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+sealed class [CredentialsStatus](index.html)
+
+The status of a Credentials. Possible values are [Success](-success/index.html), [Loading](-loading/index.html), and [AwaitingAuthentication](-awaiting-authentication/index.html)
+
+
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication///PointingToDeclaration/"></a>[AwaitingAuthentication](-awaiting-authentication/index.md)| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication///PointingToDeclaration/"></a>[common]  <br>Content  <br>class [AwaitingAuthentication](-awaiting-authentication/index.md)(**authenticationTask**: [AuthenticationTask](../../com.tink.link.authentication/[common]-authentication-task/index.md), **credentials**: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)) : [CredentialsStatus](index.md)  <br>More info  <br>There is an outstanding authentication waiting that needs to be completed by the user to proceed.  <br><br><br>
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading///PointingToDeclaration/"></a>[Loading](-loading/index.md)| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [Loading](-loading/index.md)(**message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **credentials**: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)?) : [CredentialsStatus](index.md)  <br>More info  <br>The creation is being processed by Tink.  <br><br><br>
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Success///PointingToDeclaration/"></a>[Success](-success/index.md)| <a name="com.tink.link.core.credentials/CredentialsStatus.Success///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [Success](-success/index.md)(**message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **credentials**: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)) : [CredentialsStatus](index.md)  <br>More info  <br>The credentials were successfully created.  <br><br><br>
+| [AwaitingAuthentication](-awaiting-authentication/index.html) | [common]<br>class [AwaitingAuthentication](-awaiting-authentication/index.html)(val authenticationTask: [AuthenticationTask](../../com.tink.link.authentication/[common]-authentication-task/index.html), val credentials: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)) : [CredentialsStatus](index.html)<br>There is an outstanding authentication waiting that needs to be completed by the user to proceed. |
+| [Loading](-loading/index.html) | [common]<br>data class [Loading](-loading/index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val credentials: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)? = null) : [CredentialsStatus](index.html)<br>The creation is being processed by Tink. There is currently no user action required. |
+| [Success](-success/index.html) | [common]<br>data class [Success](-success/index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val credentials: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)) : [CredentialsStatus](index.html)<br>The credentials were successfully created. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [credentials](credentials.html) | [common]<br>abstract val [credentials](credentials.html): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)? |
 
 
-## Properties  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus/credentials/#/PointingToDeclaration/"></a>[credentials](credentials.md)| <a name="com.tink.link.core.credentials/CredentialsStatus/credentials/#/PointingToDeclaration/"></a> [common] abstract val [credentials](credentials.md): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)?   <br>
+## Inheritors
 
 
-## Inheritors  
-  
-|  Name| 
+| Name |
 |---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Success///PointingToDeclaration/"></a>CredentialsStatus
-| <a name="com.tink.link.core.credentials/CredentialsStatus.Loading///PointingToDeclaration/"></a>CredentialsStatus
-| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication///PointingToDeclaration/"></a>CredentialsStatus
+| Success |
+| Loading |
+| AwaitingAuthentication |
 

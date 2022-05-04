@@ -1,14 +1,17 @@
 ---
-title: Transaction -
+title: Transaction
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Transaction](index.md)/[Transaction](-transaction.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Transaction](index.html)/[Transaction](-transaction.html)
 
 
 
-# Transaction  
-[common]  
-Content  
-fun [Transaction](-transaction.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md), dispensableAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: <ERROR CLASS>)  
+# Transaction
+
+
+
+[common]\
+fun [Transaction](-transaction.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), dispensableAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: &lt;ERROR CLASS&gt;)
+
 
 
 

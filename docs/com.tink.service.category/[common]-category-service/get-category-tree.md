@@ -1,14 +1,17 @@
 ---
-title: getCategoryTree -
+title: getCategoryTree
 ---
-//[link](../../index.md)/[com.tink.service.category](../index.md)/[[common]CategoryService](index.md)/[getCategoryTree](get-category-tree.md)
+//[link](../../../index.html)/[com.tink.service.category](../index.html)/[[common]CategoryService](index.html)/[getCategoryTree](get-category-tree.html)
 
 
 
-# getCategoryTree  
-[common]  
-Content  
-abstract suspend fun [getCategoryTree](get-category-tree.md)(): [CategoryTree](../../com.tink.model.category/[common]-category-tree/index.md)  
+# getCategoryTree
+
+
+
+[common]\
+abstract suspend fun [getCategoryTree](get-category-tree.html)(): [CategoryTree](../../com.tink.model.category/[common]-category-tree/index.html)
+
 
 
 

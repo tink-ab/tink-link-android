@@ -1,14 +1,17 @@
 ---
-title: authenticate -
+title: authenticate
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsService](index.md)/[authenticate](authenticate.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsService](index.html)/[authenticate](authenticate.html)
 
 
 
-# authenticate  
-[common]  
-Content  
-abstract suspend fun [authenticate](authenticate.md)(descriptor: [CredentialsAuthenticateDescriptor](../[common]-credentials-authenticate-descriptor/index.md))  
+# authenticate
+
+
+
+[common]\
+abstract suspend fun [authenticate](authenticate.html)(descriptor: [CredentialsAuthenticateDescriptor](../[common]-credentials-authenticate-descriptor/index.html))
+
 
 
 

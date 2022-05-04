@@ -1,14 +1,17 @@
 ---
-title: beneficiaryUri -
+title: beneficiaryUri
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateTransferDescriptor](index.md)/[beneficiaryUri](beneficiary-uri.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[common]CreateTransferDescriptor](index.html)/[beneficiaryUri](beneficiary-uri.html)
 
 
 
-# beneficiaryUri  
-[common]  
-Content  
-val [beneficiaryUri](beneficiary-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# beneficiaryUri
+
+
+
+[common]\
+val [beneficiaryUri](beneficiary-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

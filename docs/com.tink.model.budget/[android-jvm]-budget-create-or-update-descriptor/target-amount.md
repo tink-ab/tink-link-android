@@ -1,14 +1,17 @@
 ---
-title: targetAmount -
+title: targetAmount
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.md)/[targetAmount](target-amount.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.html)/[targetAmount](target-amount.html)
 
 
 
-# targetAmount  
-[androidJvm]  
-Content  
-val [targetAmount](target-amount.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# targetAmount
+
+
+
+[androidJvm]\
+val [targetAmount](target-amount.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

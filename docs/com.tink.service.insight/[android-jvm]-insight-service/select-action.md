@@ -1,14 +1,17 @@
 ---
-title: selectAction -
+title: selectAction
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightService](index.md)/[selectAction](select-action.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[androidJvm]InsightService](index.html)/[selectAction](select-action.html)
 
 
 
-# selectAction  
-[androidJvm]  
-Content  
-abstract suspend fun [selectAction](select-action.md)(performedAction: [PerformedInsightAction](../../com.tink.model.insights/[android-jvm]-performed-insight-action/index.md))  
+# selectAction
+
+
+
+[androidJvm]\
+abstract suspend fun [selectAction](select-action.html)(performedAction: [PerformedInsightAction](../../com.tink.model.insights/[android-jvm]-performed-insight-action/index.html))
+
 
 
 

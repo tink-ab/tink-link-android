@@ -1,14 +1,17 @@
 ---
-title: transfers -
+title: transfers
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]CategoryTree](index.md)/[transfers](transfers.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]CategoryTree](index.html)/[transfers](transfers.html)
 
 
 
-# transfers  
-[androidJvm]  
-Content  
-val [transfers](transfers.md): [Category](../[android-jvm]-category/index.md)  
+# transfers
+
+
+
+[androidJvm]\
+val [transfers](transfers.html): [Category](../[android-jvm]-category/index.html)
+
 
 
 

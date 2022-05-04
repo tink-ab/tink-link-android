@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightAction](../index.md)/[Type](index.md)/[value](value.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightAction](../index.html)/[Type](index.html)/[value](value.html)
 
 
 
-# value  
-[common]  
-Content  
-val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# value
+
+
+
+[common]\
+val [value](value.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

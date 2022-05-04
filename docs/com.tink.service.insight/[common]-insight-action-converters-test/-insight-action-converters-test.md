@@ -1,14 +1,17 @@
 ---
-title: InsightActionConvertersTest -
+title: InsightActionConvertersTest
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightActionConvertersTest](index.md)/[InsightActionConvertersTest](-insight-action-converters-test.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightActionConvertersTest](index.html)/[InsightActionConvertersTest](-insight-action-converters-test.html)
 
 
 
-# InsightActionConvertersTest  
-[common]  
-Content  
-fun [InsightActionConvertersTest](-insight-action-converters-test.md)()  
+# InsightActionConvertersTest
+
+
+
+[common]\
+fun [InsightActionConvertersTest](-insight-action-converters-test.html)()
+
 
 
 

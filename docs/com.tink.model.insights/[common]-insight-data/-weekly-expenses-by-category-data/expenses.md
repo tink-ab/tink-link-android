@@ -1,14 +1,17 @@
 ---
-title: expenses -
+title: expenses
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[WeeklyExpensesByCategoryData](index.md)/[expenses](expenses.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[WeeklyExpensesByCategoryData](index.html)/[expenses](expenses.html)
 
 
 
-# expenses  
-[common]  
-Content  
-val [expenses](expenses.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.md)>  
+# expenses
+
+
+
+[common]\
+val [expenses](expenses.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[AmountByCategory](../../../com.tink.model.relations/[common]-amount-by-category/index.html)&gt;
+
 
 
 

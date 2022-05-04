@@ -1,14 +1,17 @@
 ---
-title: pending -
+title: pending
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[pending](pending.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[pending](pending.html)
 
 
 
-# pending  
-[common]  
-Content  
-val [pending](pending.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# pending
+
+
+
+[common]\
+val [pending](pending.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

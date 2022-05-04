@@ -1,24 +1,25 @@
 ---
-title: getUserContext -
+title: getUserContext
 ---
-//[link](../../index.md)/[com.tink.link](../index.md)/[[common]TinkLink](index.md)/[getUserContext](get-user-context.md)
+//[link](../../../index.html)/[com.tink.link](../index.html)/[[common]TinkLink](index.html)/[getUserContext](get-user-context.html)
 
 
 
-# getUserContext  
-[common]  
-Content  
-fun [getUserContext](get-user-context.md)(): [UserContext](../../com.tink.link.core.user/[common]-user-context/index.md)?  
-More info  
+# getUserContext
 
 
-Fetches the [UserContext](../../com.tink.link.core.user/[common]-user-context/index.md) from Tink if a user is set.
+
+[common]\
+fun [getUserContext](get-user-context.html)(): [UserContext](../../com.tink.link.core.user/[common]-user-context/index.html)?
+
+
+
+Fetches the [UserContext](../../com.tink.link.core.user/[common]-user-context/index.html) from Tink if a user is set.
 
 
 
 If no user is set, this will return null
 
-  
 
 
 

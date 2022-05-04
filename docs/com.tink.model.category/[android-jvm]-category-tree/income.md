@@ -1,14 +1,17 @@
 ---
-title: income -
+title: income
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]CategoryTree](index.md)/[income](income.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]CategoryTree](index.html)/[income](income.html)
 
 
 
-# income  
-[androidJvm]  
-Content  
-val [income](income.md): [Category](../[android-jvm]-category/index.md)  
+# income
+
+
+
+[androidJvm]\
+val [income](income.html): [Category](../[android-jvm]-category/index.html)
+
 
 
 

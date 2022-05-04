@@ -1,26 +1,28 @@
 ---
-title: PermanentUser -
+title: PermanentUser
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[PermanentUser](-permanent-user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkResult](../index.html)/[PermanentUser](index.html)/[PermanentUser](-permanent-user.html)
 
 
 
-# PermanentUser  
-[common]  
-Content  
-fun [PermanentUser](-permanent-user.md)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md))  
-More info  
+# PermanentUser
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+fun [PermanentUser](-permanent-user.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/PermanentUser/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/PermanentUser/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>[Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md) connected to the user<br><br>
-  
-  
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
+
 
 
 

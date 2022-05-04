@@ -1,39 +1,35 @@
 ---
-title: [common]ResultHandler -
+title: [common]ResultHandler
 ---
-//[link](../../index.md)/[com.tink.service.handler](../index.md)/[[common]ResultHandler](index.md)
+//[link](../../../index.html)/[com.tink.service.handler](../index.html)/[[common]ResultHandler](index.html)
 
 
 
-# ResultHandler  
- [common] class [ResultHandler](index.md)<[T](index.md)>(**onSuccess**: ([T](index.md)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html), **onError**: ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))
+# ResultHandler
+
+
+
+[common]\
+class [ResultHandler](index.html)&lt;[T](index.html)&gt;(val onSuccess: ([T](index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html), val onError: ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))
 
 This is the basic wrapper for asynchronous callbacks in TinkLink.
 
-   
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.service.handler/ResultHandler/ResultHandler/#[TypeParam(bounds=[kotlin.Any?])]#[kotlin.Throwable]/PointingToDeclaration/"></a>[ResultHandler](-result-handler.md)| <a name="com.tink.service.handler/ResultHandler/ResultHandler/#[TypeParam(bounds=[kotlin.Any?])]#[kotlin.Throwable]/PointingToDeclaration/"></a> [common] fun <[T](index.md)> [ResultHandler](-result-handler.md)(onSuccess: <ERROR CLASS><[T](index.md)>, onError: <ERROR CLASS><[Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)>)Convenience constructor for use in Java.   <br>
-| <a name="com.tink.service.handler/ResultHandler/ResultHandler/#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[kotlin.Throwable,kotlin.Unit]/PointingToDeclaration/"></a>[ResultHandler](-result-handler.md)| <a name="com.tink.service.handler/ResultHandler/ResultHandler/#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[kotlin.Throwable,kotlin.Unit]/PointingToDeclaration/"></a> [common] fun <[T](index.md)> [ResultHandler](-result-handler.md)(onSuccess: ([T](index.md)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html), onError: ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))Creates a new result handler with success and error callbacks.   <br>
+| [ResultHandler](-result-handler.html) | [common]<br>fun &lt;[T](index.html)&gt; [ResultHandler](-result-handler.html)(onSuccess: &lt;ERROR CLASS&gt;&lt;[T](index.html)&gt;, onError: &lt;ERROR CLASS&gt;&lt;[Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)&gt;)<br>Convenience constructor for use in Java. Example usage: |
+| [ResultHandler](-result-handler.html) | [common]<br>fun &lt;[T](index.html)&gt; [ResultHandler](-result-handler.html)(onSuccess: ([T](index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html), onError: ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html))<br>Creates a new result handler with success and error callbacks. Use this default constructor from Kotlin. From Java it is recommended to use the secondary constructor. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-
-
-## Properties  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.service.handler/ResultHandler/onError/#/PointingToDeclaration/"></a>[onError](on-error.md)| <a name="com.tink.service.handler/ResultHandler/onError/#/PointingToDeclaration/"></a> [common] val [onError](on-error.md): ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)   <br>
-| <a name="com.tink.service.handler/ResultHandler/onSuccess/#/PointingToDeclaration/"></a>[onSuccess](on-success.md)| <a name="com.tink.service.handler/ResultHandler/onSuccess/#/PointingToDeclaration/"></a> [common] val [onSuccess](on-success.md): ([T](index.md)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)   <br>
+| [onError](on-error.html) | [common]<br>val [onError](on-error.html): ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [onSuccess](on-success.html) | [common]<br>val [onSuccess](on-success.html): ([T](index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 

@@ -1,14 +1,17 @@
 ---
-title: market -
+title: market
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserCreationDescriptor](index.md)/[market](market.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[common]UserCreationDescriptor](index.html)/[market](market.html)
 
 
 
-# market  
-[common]  
-Content  
-val [market](market.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# market
+
+
+
+[common]\
+val [market](market.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

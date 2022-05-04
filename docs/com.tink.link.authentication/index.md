@@ -1,16 +1,18 @@
 ---
-title: com.tink.link.authentication -
+title: com.tink.link.authentication
 ---
-//[link](../index.md)/[com.tink.link.authentication](index.md)
+//[link](../../index.html)/[com.tink.link.authentication](index.html)
 
 
 
-# Package com.tink.link.authentication  
+# Package com.tink.link.authentication
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask///PointingToDeclaration/"></a>AuthenticationTask| <a name="com.tink.link.authentication/AuthenticationTask///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>sealed class [AuthenticationTask]([common]-authentication-task/index.md)  <br>[androidJvm]  <br>sealed class [AuthenticationTask]([android-jvm]-authentication-task/index.md) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br>More info  <br>Represents an authentication that needs to be completed by the user.  <br><br><br>
+| AuthenticationTask | [common, androidJvm]<br>[common]<br>sealed class [AuthenticationTask]([common]-authentication-task/index.html)<br>[androidJvm]<br>sealed class [AuthenticationTask]([android-jvm]-authentication-task/index.html) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)<br>Represents an authentication that needs to be completed by the user. |
 

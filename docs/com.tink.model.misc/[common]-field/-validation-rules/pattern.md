@@ -1,14 +1,17 @@
 ---
-title: pattern -
+title: pattern
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[ValidationRules](index.md)/[pattern](pattern.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[common]Field](../index.html)/[ValidationRules](index.html)/[pattern](pattern.html)
 
 
 
-# pattern  
-[common]  
-Content  
-val [pattern](pattern.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# pattern
+
+
+
+[common]\
+val [pattern](pattern.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

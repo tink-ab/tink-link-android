@@ -1,20 +1,21 @@
 ---
-title: title -
+title: title
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]ScopeDescription](index.md)/[title](title.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[common]ScopeDescription](index.html)/[title](title.html)
 
 
 
-# title  
-[common]  
-Content  
-val [title](title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# title
+
+
+
+[common]\
+val [title](title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 The short string of what access the scope is for.
 
-  
 
 
 

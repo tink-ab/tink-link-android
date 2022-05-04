@@ -1,16 +1,21 @@
 ---
-title: [androidJvm]toCoreModel -
+title: [androidJvm]toCoreModel
 ---
-//[link](../index.md)/[com.tink.service.credentials](index.md)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.md)
+//[link](../../index.html)/[com.tink.service.credentials](index.html)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.html)
 
 
 
-# toCoreModel  
-[androidJvm]  
-Content  
-fun Credentials.ThirdPartyAuthentication.[toCoreModel]([android-jvm]to-core-model.md)(): [ThirdPartyAppAuthentication](../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.md)  
-fun Credentials.TypeEnum.[toCoreModel]([android-jvm]to-core-model.md)(): [Credentials.Type](../com.tink.model.credentials/[android-jvm]-credentials/-type/index.md)  
-fun Credentials.StatusEnum.[toCoreModel]([android-jvm]to-core-model.md)(): [Credentials.Status](../com.tink.model.credentials/[android-jvm]-credentials/-status/index.md)  
+# toCoreModel
+
+
+
+[androidJvm]\
+fun Credentials.ThirdPartyAuthentication.[toCoreModel]([android-jvm]to-core-model.html)(): [ThirdPartyAppAuthentication](../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.html)
+
+fun Credentials.TypeEnum.[toCoreModel]([android-jvm]to-core-model.html)(): [Credentials.Type](../com.tink.model.credentials/[android-jvm]-credentials/-type/index.html)
+
+fun Credentials.StatusEnum.[toCoreModel]([android-jvm]to-core-model.html)(): [Credentials.Status](../com.tink.model.credentials/[android-jvm]-credentials/-status/index.html)
+
 
 
 

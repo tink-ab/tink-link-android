@@ -1,14 +1,17 @@
 ---
-title: destinationMessage -
+title: destinationMessage
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[destinationMessage](destination-message.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateTransferDescriptor](index.html)/[destinationMessage](destination-message.html)
 
 
 
-# destinationMessage  
-[androidJvm]  
-Content  
-val [destinationMessage](destination-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# destinationMessage
+
+
+
+[androidJvm]\
+val [destinationMessage](destination-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

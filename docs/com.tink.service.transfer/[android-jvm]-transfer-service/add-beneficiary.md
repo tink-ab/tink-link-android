@@ -1,20 +1,21 @@
 ---
-title: addBeneficiary -
+title: addBeneficiary
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]TransferService](index.md)/[addBeneficiary](add-beneficiary.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]TransferService](index.html)/[addBeneficiary](add-beneficiary.html)
 
 
 
-# addBeneficiary  
-[androidJvm]  
-Content  
-abstract suspend fun [addBeneficiary](add-beneficiary.md)(descriptor: [CreateBeneficiaryDescriptor](../[android-jvm]-create-beneficiary-descriptor/index.md))  
-More info  
+# addBeneficiary
+
+
+
+[androidJvm]\
+abstract suspend fun [addBeneficiary](add-beneficiary.html)(descriptor: [CreateBeneficiaryDescriptor](../[android-jvm]-create-beneficiary-descriptor/index.html))
+
 
 
 Add a new beneficiary
 
-  
 
 
 

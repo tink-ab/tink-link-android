@@ -1,14 +1,17 @@
 ---
-title: unscaledValue -
+title: unscaledValue
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]ExactNumber](index.md)/[unscaledValue](unscaled-value.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]ExactNumber](index.html)/[unscaledValue](unscaled-value.html)
 
 
 
-# unscaledValue  
-[androidJvm]  
-Content  
-val [unscaledValue](unscaled-value.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)  
+# unscaledValue
+
+
+
+[androidJvm]\
+val [unscaledValue](unscaled-value.html): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: start -
+title: start
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]Period](index.md)/[start](start.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]Period](index.html)/[start](start.html)
 
 
 
-# start  
-[common]  
-Content  
-abstract val [start](start.md): <ERROR CLASS>  
+# start
+
+
+
+[common]\
+abstract val [start](start.html): &lt;ERROR CLASS&gt;
+
 
 
 

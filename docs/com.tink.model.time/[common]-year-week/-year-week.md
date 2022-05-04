@@ -1,14 +1,17 @@
 ---
-title: YearWeek -
+title: YearWeek
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearWeek](index.md)/[YearWeek](-year-week.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearWeek](index.html)/[YearWeek](-year-week.html)
 
 
 
-# YearWeek  
-[common]  
-Content  
-fun [YearWeek](-year-week.md)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), week: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  
+# YearWeek
+
+
+
+[common]\
+fun [YearWeek](-year-week.html)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), week: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
+
 
 
 

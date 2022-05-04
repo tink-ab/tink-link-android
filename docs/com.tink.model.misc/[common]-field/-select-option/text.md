@@ -1,14 +1,17 @@
 ---
-title: text -
+title: text
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[SelectOption](index.md)/[text](text.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[common]Field](../index.html)/[SelectOption](index.html)/[text](text.html)
 
 
 
-# text  
-[common]  
-Content  
-val [text](text.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# text
+
+
+
+[common]\
+val [text](text.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

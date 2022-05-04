@@ -1,14 +1,17 @@
 ---
-title: getProfile -
+title: getProfile
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[common]UserProfileService](index.md)/[getProfile](get-profile.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[common]UserProfileService](index.html)/[getProfile](get-profile.html)
 
 
 
-# getProfile  
-[common]  
-Content  
-abstract suspend fun [getProfile](get-profile.md)(): [UserProfile](../../com.tink.model.user/[common]-user-profile/index.md)  
+# getProfile
+
+
+
+[common]\
+abstract suspend fun [getProfile](get-profile.html)(): [UserProfile](../../com.tink.model.user/[common]-user-profile/index.html)
+
 
 
 

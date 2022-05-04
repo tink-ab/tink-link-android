@@ -1,14 +1,17 @@
 ---
-title: expenses -
+title: expenses
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]CategoryTree](index.md)/[expenses](expenses.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]CategoryTree](index.html)/[expenses](expenses.html)
 
 
 
-# expenses  
-[common]  
-Content  
-val [expenses](expenses.md): [Category](../[common]-category/index.md)  
+# expenses
+
+
+
+[common]\
+val [expenses](expenses.html): [Category](../[common]-category/index.html)
+
 
 
 

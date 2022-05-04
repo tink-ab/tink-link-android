@@ -1,34 +1,34 @@
 ---
-title: [androidJvm]CredentialsUpdateDescriptor -
+title: [androidJvm]CredentialsUpdateDescriptor
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsUpdateDescriptor](index.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsUpdateDescriptor](index.html)
 
 
 
-# CredentialsUpdateDescriptor  
- [androidJvm] data class [CredentialsUpdateDescriptor](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **providerName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **fields**: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>, **appUri**: [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html))   
+# CredentialsUpdateDescriptor
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [CredentialsUpdateDescriptor](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val fields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, val appUri: [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html))
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>  <br><br><br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)  <br><br><br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/copy/#kotlin.String#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#android.net.Uri/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/copy/#kotlin.String#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#android.net.Uri/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), fields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>, appUri: [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)): [CredentialsUpdateDescriptor](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [CredentialsUpdateDescriptor](-credentials-update-descriptor.html) | [androidJvm]<br>fun [CredentialsUpdateDescriptor](-credentials-update-descriptor.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), fields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, appUri: [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/appUri/#/PointingToDeclaration/"></a>[appUri](app-uri.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/appUri/#/PointingToDeclaration/"></a> [androidJvm] val [appUri](app-uri.md): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)   <br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/fields/#/PointingToDeclaration/"></a>[fields](fields.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/fields/#/PointingToDeclaration/"></a> [androidJvm] val [fields](fields.md): [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>   <br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/id/#/PointingToDeclaration/"></a> [androidJvm] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/providerName/#/PointingToDeclaration/"></a>[providerName](provider-name.md)| <a name="com.tink.service.credentials/CredentialsUpdateDescriptor/providerName/#/PointingToDeclaration/"></a> [androidJvm] val [providerName](provider-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [appUri](app-uri.html) | [androidJvm]<br>val [appUri](app-uri.html): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html) |
+| [fields](fields.html) | [androidJvm]<br>val [fields](fields.html): [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt; |
+| [id](id.html) | [androidJvm]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [providerName](provider-name.html) | [androidJvm]<br>val [providerName](provider-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

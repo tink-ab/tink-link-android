@@ -1,20 +1,21 @@
 ---
-title: fieldName -
+title: fieldName
 ---
-//[link](../../../../index.md)/[com.tink.model.misc](../../../index.md)/[[androidJvm]Field](../../index.md)/[ValidationResult](../index.md)/[ValidationError](index.md)/[fieldName](field-name.md)
+//[link](../../../../../index.html)/[com.tink.model.misc](../../../index.html)/[[androidJvm]Field](../../index.html)/[ValidationResult](../index.html)/[ValidationError](index.html)/[fieldName](field-name.html)
 
 
 
-# fieldName  
-[androidJvm]  
-Content  
-abstract val [fieldName](field-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# fieldName
 
 
-The [name](../../name.md) of the field
 
-  
+[androidJvm]\
+abstract val [fieldName](field-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+The [name](../../name.html) of the field
+
 
 
 

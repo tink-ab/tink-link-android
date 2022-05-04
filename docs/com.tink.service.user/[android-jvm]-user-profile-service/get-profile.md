@@ -1,14 +1,17 @@
 ---
-title: getProfile -
+title: getProfile
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileService](index.md)/[getProfile](get-profile.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[androidJvm]UserProfileService](index.html)/[getProfile](get-profile.html)
 
 
 
-# getProfile  
-[androidJvm]  
-Content  
-abstract suspend fun [getProfile](get-profile.md)(): [UserProfile](../../com.tink.model.user/[android-jvm]-user-profile/index.md)  
+# getProfile
+
+
+
+[androidJvm]\
+abstract suspend fun [getProfile](get-profile.html)(): [UserProfile](../../com.tink.model.user/[android-jvm]-user-profile/index.html)
+
 
 
 

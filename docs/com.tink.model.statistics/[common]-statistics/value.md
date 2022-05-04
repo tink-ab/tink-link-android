@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[value](value.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[common]Statistics](index.html)/[value](value.html)
 
 
 
-# value  
-[common]  
-Content  
-val [value](value.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# value
+
+
+
+[common]\
+val [value](value.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]UpdateAccountDescriptor](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[common]UpdateAccountDescriptor](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Account.Type](../../com.tink.model.account/[common]-account/-type/index.md)? = null  
+# type
+
+
+
+[common]\
+val [type](type.html): [Account.Type](../../com.tink.model.account/[common]-account/-type/index.html)? = null
+
 
 
 

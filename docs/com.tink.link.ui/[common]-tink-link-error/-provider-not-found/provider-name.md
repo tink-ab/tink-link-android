@@ -1,14 +1,17 @@
 ---
-title: providerName -
+title: providerName
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkError](../index.md)/[ProviderNotFound](index.md)/[providerName](provider-name.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkError](../index.html)/[ProviderNotFound](index.html)/[providerName](provider-name.html)
 
 
 
-# providerName  
-[common]  
-Content  
-val [providerName](provider-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# providerName
+
+
+
+[common]\
+val [providerName](provider-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

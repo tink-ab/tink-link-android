@@ -1,14 +1,17 @@
 ---
-title: AccessToken -
+title: AccessToken
 ---
-//[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]Authorization](../index.md)/[AccessToken](index.md)/[AccessToken](-access-token.md)
+//[link](../../../../index.html)/[com.tink.model.user](../../index.html)/[[common]Authorization](../index.html)/[AccessToken](index.html)/[AccessToken](-access-token.html)
 
 
 
-# AccessToken  
-[common]  
-Content  
-fun [AccessToken](-access-token.md)(accessToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# AccessToken
+
+
+
+[common]\
+fun [AccessToken](-access-token.html)(accessToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

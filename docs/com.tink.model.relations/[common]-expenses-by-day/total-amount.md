@@ -1,14 +1,17 @@
 ---
-title: totalAmount -
+title: totalAmount
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]ExpensesByDay](index.md)/[totalAmount](total-amount.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[common]ExpensesByDay](index.html)/[totalAmount](total-amount.html)
 
 
 
-# totalAmount  
-[common]  
-Content  
-val [totalAmount](total-amount.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# totalAmount
+
+
+
+[common]\
+val [totalAmount](total-amount.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

@@ -1,26 +1,28 @@
 ---
-title: providers -
+title: providers
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[providers](providers.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[CredentialsTypeNode](index.html)/[providers](providers.html)
 
 
 
-# providers  
-[common]  
-Content  
-val [providers](providers.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.ProviderNode](../-provider-node/index.md)>  
-More info  
+# providers
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [providers](providers.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.ProviderNode](../-provider-node/index.html)&gt;
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/providers/#/PointingToDeclaration/"></a>providers| <a name="com.tink.model.provider/ProviderTreeNode.CredentialsTypeNode/providers/#/PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
-  
+| providers | The list of child nodes. |
+
 
 
 

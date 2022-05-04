@@ -1,14 +1,17 @@
 ---
-title: excluded -
+title: excluded
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[excluded](excluded.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[excluded](excluded.html)
 
 
 
-# excluded  
-[androidJvm]  
-Content  
-val [excluded](excluded.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# excluded
+
+
+
+[androidJvm]\
+val [excluded](excluded.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

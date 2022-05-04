@@ -1,14 +1,17 @@
 ---
-title: [common]plus -
+title: [common]plus
 ---
-//[link](../index.md)/[com.tink.model.credentials](index.md)/[[common]plus]([common]plus.md)
+//[link](../../index.html)/[com.tink.model.credentials](index.html)/[[common]plus]([common]plus.html)
 
 
 
-# plus  
-[common]  
-Content  
-operator fun [RefreshableItem]([common]-refreshable-item/index.md).[plus]([common]plus.md)(other: [RefreshableItem]([common]-refreshable-item/index.md)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem]([common]-refreshable-item/index.md)>  
+# plus
+
+
+
+[common]\
+operator fun [RefreshableItem]([common]-refreshable-item/index.html).[plus]([common]plus.html)(other: [RefreshableItem]([common]-refreshable-item/index.html)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem]([common]-refreshable-item/index.html)&gt;
+
 
 
 

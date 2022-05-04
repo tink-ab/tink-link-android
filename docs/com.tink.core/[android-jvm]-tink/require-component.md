@@ -1,16 +1,25 @@
 ---
-title: requireComponent -
+title: requireComponent
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[requireComponent](require-component.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]Tink](index.html)/[requireComponent](require-component.html)
 
 
 
-# requireComponent  
-[androidJvm]  
-Content  
-@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)()  
-  
-fun [requireComponent](require-component.md)(): [TinkComponent](../[android-jvm]-tink-component/index.md)  
+# requireComponent
+
+
+
+[androidJvm]\
+
+
+
+
+@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
+
+
+
+fun [requireComponent](require-component.html)(): [TinkComponent](../[android-jvm]-tink-component/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: Create -
+title: Create
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Create](index.md)/[Create](-create.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[common]CredentialsOperationArgs](../index.html)/[Create](index.html)/[Create](-create.html)
 
 
 
-# Create  
-[common]  
-Content  
-fun [Create](-create.md)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.md))  
+# Create
+
+
+
+[common]\
+fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: upcoming -
+title: upcoming
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[upcoming](upcoming.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Transaction](index.html)/[upcoming](upcoming.html)
 
 
 
-# upcoming  
-[androidJvm]  
-Content  
-val [upcoming](upcoming.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# upcoming
+
+
+
+[androidJvm]\
+val [upcoming](upcoming.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: message -
+title: message
 ---
-//[link](../../../../../../index.md)/[com.tink.link.authentication](../../../../../index.md)/[[common]AuthenticationTask](../../../../index.md)/[ThirdPartyAuthentication](../../../index.md)/[LaunchResult](../../index.md)/[Error](../index.md)/[AppNotInstalled](index.md)/[message](message.md)
+//[link](../../../../../../../index.html)/[com.tink.link.authentication](../../../../../index.html)/[[common]AuthenticationTask](../../../../index.html)/[ThirdPartyAuthentication](../../../index.html)/[LaunchResult](../../index.html)/[Error](../index.html)/[AppNotInstalled](index.html)/[message](message.html)
 
 
 
-# message  
-[common]  
-Content  
-open override val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# message
+
+
+
+[common]\
+open override val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

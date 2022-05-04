@@ -1,14 +1,17 @@
 ---
-title: categoryCode -
+title: categoryCode
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)/[categoryCode](category-code.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Transaction](index.html)/[categoryCode](category-code.html)
 
 
 
-# categoryCode  
-[androidJvm]  
-Content  
-val [categoryCode](category-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# categoryCode
+
+
+
+[androidJvm]\
+val [categoryCode](category-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

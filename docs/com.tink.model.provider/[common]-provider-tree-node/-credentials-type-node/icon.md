@@ -1,20 +1,21 @@
 ---
-title: icon -
+title: icon
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[CredentialsTypeNode](index.md)/[icon](icon.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[CredentialsTypeNode](index.html)/[icon](icon.html)
 
 
 
-# icon  
-[common]  
-Content  
-open override val [icon](icon.md): <ERROR CLASS>  
-More info  
+# icon
+
+
+
+[common]\
+open override val [icon](icon.html): &lt;ERROR CLASS&gt;
+
 
 
 An optional url linking to a visual description of the node.
 
-  
 
 
 

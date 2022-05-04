@@ -1,14 +1,17 @@
 ---
-title: getProfile -
+title: getProfile
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[common]UserProfileServiceImpl](index.md)/[getProfile](get-profile.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[common]UserProfileServiceImpl](index.html)/[getProfile](get-profile.html)
 
 
 
-# getProfile  
-[common]  
-Content  
-open suspend override fun [getProfile](get-profile.md)(): <ERROR CLASS>  
+# getProfile
+
+
+
+[common]\
+open suspend override fun [getProfile](get-profile.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

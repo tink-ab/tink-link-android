@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]Credentials](index.html)/[status](status.html)
 
 
 
-# status  
-[androidJvm]  
-Content  
-val [status](status.md): [Credentials.Status](-status/index.md)? = null  
+# status
+
+
+
+[androidJvm]\
+val [status](status.html): [Credentials.Status](-status/index.html)? = null
+
 
 
 

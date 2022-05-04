@@ -1,14 +1,17 @@
 ---
-title: compareTo -
+title: compareTo
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]ExactNumber](index.md)/[compareTo](compare-to.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]ExactNumber](index.html)/[compareTo](compare-to.html)
 
 
 
-# compareTo  
-[common]  
-Content  
-open operator override fun [compareTo](compare-to.md)(other: [ExactNumber](index.md)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# compareTo
+
+
+
+[common]\
+open operator override fun [compareTo](compare-to.html)(other: [ExactNumber](index.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

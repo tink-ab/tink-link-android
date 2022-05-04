@@ -1,14 +1,17 @@
 ---
-title: overspentAmount -
+title: overspentAmount
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryOverspentData](index.md)/[overspentAmount](overspent-amount.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSummaryOverspentData](index.html)/[overspentAmount](overspent-amount.html)
 
 
 
-# overspentAmount  
-[androidJvm]  
-Content  
-val [overspentAmount](overspent-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# overspentAmount
+
+
+
+[androidJvm]\
+val [overspentAmount](overspent-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

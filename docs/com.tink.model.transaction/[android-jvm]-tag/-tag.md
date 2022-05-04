@@ -1,14 +1,17 @@
 ---
-title: Tag -
+title: Tag
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Tag](index.md)/[Tag](-tag.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Tag](index.html)/[Tag](-tag.html)
 
 
 
-# Tag  
-[androidJvm]  
-Content  
-fun [Tag](-tag.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# Tag
+
+
+
+[androidJvm]\
+fun [Tag](-tag.html)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

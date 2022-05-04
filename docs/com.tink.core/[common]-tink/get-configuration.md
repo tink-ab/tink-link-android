@@ -1,14 +1,17 @@
 ---
-title: getConfiguration -
+title: getConfiguration
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[getConfiguration](get-configuration.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]Tink](index.html)/[getConfiguration](get-configuration.html)
 
 
 
-# getConfiguration  
-[common]  
-Content  
-fun [getConfiguration](get-configuration.md)(): [TinkConfiguration](../../com.tink.service.network/[common]-tink-configuration/index.md)?  
+# getConfiguration
+
+
+
+[common]\
+fun [getConfiguration](get-configuration.html)(): [TinkConfiguration](../../com.tink.service.network/[common]-tink-configuration/index.html)?
+
 
 
 

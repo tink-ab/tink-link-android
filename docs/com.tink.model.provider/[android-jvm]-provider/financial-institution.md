@@ -1,14 +1,17 @@
 ---
-title: financialInstitution -
+title: financialInstitution
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[financialInstitution](financial-institution.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[financialInstitution](financial-institution.html)
 
 
 
-# financialInstitution  
-[androidJvm]  
-Content  
-val [financialInstitution](financial-institution.md): [Provider.FinancialInstitution](-financial-institution/index.md)  
+# financialInstitution
+
+
+
+[androidJvm]\
+val [financialInstitution](financial-institution.html): [Provider.FinancialInstitution](-financial-institution/index.html)
+
 
 
 

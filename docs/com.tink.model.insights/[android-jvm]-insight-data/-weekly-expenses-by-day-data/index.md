@@ -1,32 +1,41 @@
 ---
-title: WeeklyExpensesByDayData -
+title: WeeklyExpensesByDayData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[WeeklyExpensesByDayData](index.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[WeeklyExpensesByDayData](index.html)
 
 
 
-# WeeklyExpensesByDayData  
- [androidJvm] data class [WeeklyExpensesByDayData](index.md)(**week**: [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.md), **expensesByDay**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.md)>) : [InsightData](../index.md)   
+# WeeklyExpensesByDayData
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [WeeklyExpensesByDayData](index.html)(val week: [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.html), val expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.html)&gt;) : [InsightData](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.md)>  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/copy/#com.tink.model.time.YearWeek#kotlin.collections.List[com.tink.model.relations.ExpensesByDay]/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/copy/#com.tink.model.time.YearWeek#kotlin.collections.List[com.tink.model.relations.ExpensesByDay]/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(week: [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.md), expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.md)>): [InsightData.WeeklyExpensesByDayData](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [WeeklyExpensesByDayData](-weekly-expenses-by-day-data.html) | [androidJvm]<br>fun [WeeklyExpensesByDayData](-weekly-expenses-by-day-data.html)(week: [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.html), expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.html)&gt;) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/expensesByDay/#/PointingToDeclaration/"></a>[expensesByDay](expenses-by-day.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/expensesByDay/#/PointingToDeclaration/"></a> [androidJvm] val [expensesByDay](expenses-by-day.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.md)>   <br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/week/#/PointingToDeclaration/"></a>[week](week.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/week/#/PointingToDeclaration/"></a> [androidJvm] val [week](week.md): [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.md)   <br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [expensesByDay](expenses-by-day.html) | [androidJvm]<br>val [expensesByDay](expenses-by-day.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[android-jvm]-expenses-by-day/index.html)&gt; |
+| [week](week.html) | [androidJvm]<br>val [week](week.html): [YearWeek](../../../com.tink.model.time/[android-jvm]-year-week/index.html) |
 

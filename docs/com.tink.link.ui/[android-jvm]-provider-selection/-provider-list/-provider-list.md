@@ -1,14 +1,17 @@
 ---
-title: ProviderList -
+title: ProviderList
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]ProviderSelection](../index.md)/[ProviderList](index.md)/[ProviderList](-provider-list.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]ProviderSelection](../index.html)/[ProviderList](index.html)/[ProviderList](-provider-list.html)
 
 
 
-# ProviderList  
-[androidJvm]  
-Content  
-fun [ProviderList](-provider-list.md)(filter: [ProviderFilter](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md) = ProviderFilter())  
+# ProviderList
+
+
+
+[androidJvm]\
+fun [ProviderList](-provider-list.html)(filter: [ProviderFilter](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html) = ProviderFilter())
+
 
 
 

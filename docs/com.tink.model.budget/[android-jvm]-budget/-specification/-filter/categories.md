@@ -1,14 +1,17 @@
 ---
-title: categories -
+title: categories
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Specification](../index.md)/[Filter](index.md)/[categories](categories.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Specification](../index.html)/[Filter](index.html)/[categories](categories.html)
 
 
 
-# categories  
-[androidJvm]  
-Content  
-val [categories](categories.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Budget.Specification.Filter.Category](-category/index.md)>  
+# categories
+
+
+
+[androidJvm]\
+val [categories](categories.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Budget.Specification.Filter.Category](-category/index.html)&gt;
+
 
 
 

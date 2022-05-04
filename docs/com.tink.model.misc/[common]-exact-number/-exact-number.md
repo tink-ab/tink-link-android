@@ -1,17 +1,23 @@
 ---
-title: ExactNumber -
+title: ExactNumber
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]ExactNumber](index.md)/[ExactNumber](-exact-number.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]ExactNumber](index.html)/[ExactNumber](-exact-number.html)
 
 
 
-# ExactNumber  
-[common]  
-Content  
-fun [ExactNumber](-exact-number.md)(double: [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html))  
-fun [ExactNumber](-exact-number.md)(long: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html))  
-fun [ExactNumber](-exact-number.md)(bigDecimal: <ERROR CLASS>)  
-fun [ExactNumber](-exact-number.md)(unscaledValue: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), scale: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html))  
+# ExactNumber
+
+
+
+[common]\
+fun [ExactNumber](-exact-number.html)(double: [Double](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html))
+
+fun [ExactNumber](-exact-number.html)(long: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html))
+
+fun [ExactNumber](-exact-number.html)(bigDecimal: &lt;ERROR CLASS&gt;)
+
+fun [ExactNumber](-exact-number.html)(unscaledValue: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), scale: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: date -
+title: date
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionUpdateDescriptor](index.md)/[date](date.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[common]TransactionUpdateDescriptor](index.html)/[date](date.html)
 
 
 
-# date  
-[common]  
-Content  
-val [date](date.md): <ERROR CLASS>? = null  
+# date
+
+
+
+[common]\
+val [date](date.html): &lt;ERROR CLASS&gt;? = null
+
 
 
 

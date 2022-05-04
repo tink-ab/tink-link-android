@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[amount](amount.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[androidJvm]  
-Content  
-val [amount](amount.md): [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.md)? = null  
+# amount
+
+
+
+[androidJvm]\
+val [amount](amount.html): [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.html)? = null
+
 
 
 

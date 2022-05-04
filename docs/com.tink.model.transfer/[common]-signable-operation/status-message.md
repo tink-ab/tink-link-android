@@ -1,14 +1,17 @@
 ---
-title: statusMessage -
+title: statusMessage
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[statusMessage](status-message.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]SignableOperation](index.html)/[statusMessage](status-message.html)
 
 
 
-# statusMessage  
-[common]  
-Content  
-val [statusMessage](status-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# statusMessage
+
+
+
+[common]\
+val [statusMessage](status-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

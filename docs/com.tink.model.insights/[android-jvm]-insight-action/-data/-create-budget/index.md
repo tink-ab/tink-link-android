@@ -1,34 +1,42 @@
 ---
-title: CreateBudget -
+title: CreateBudget
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CreateBudget](index.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[CreateBudget](index.html)
 
 
 
-# CreateBudget  
- [androidJvm] data class [CreateBudget](index.md)(**budgetFilter**: [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?, **amount**: [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.md)?, **periodicity**: [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?) : [InsightAction.Data](../index.md)   
+# CreateBudget
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [CreateBudget](index.html)(val budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-812656150)?, val amount: [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.html)?, val periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-812656150)?) : [InsightAction.Data](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.md)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/copy/#com.tink.model.budget.Budget.Specification.Filter?#com.tink.model.misc.Amount?#com.tink.model.budget.Budget.Periodicity?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/copy/#com.tink.model.budget.Budget.Specification.Filter?#com.tink.model.misc.Amount?#com.tink.model.budget.Budget.Periodicity?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?, amount: [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.md)?, periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?): [InsightAction.Data.CreateBudget](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [CreateBudget](-create-budget.html) | [androidJvm]<br>fun [CreateBudget](-create-budget.html)(budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-812656150)?, amount: [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.html)?, periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-812656150)?) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/amount/#/PointingToDeclaration/"></a>[amount](amount.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/amount/#/PointingToDeclaration/"></a> [androidJvm] val [amount](amount.md): [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.md)?   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/budgetFilter/#/PointingToDeclaration/"></a>[budgetFilter](budget-filter.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/budgetFilter/#/PointingToDeclaration/"></a> [androidJvm] val [budgetFilter](budget-filter.md): [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/periodicity/#/PointingToDeclaration/"></a>[periodicity](periodicity.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/periodicity/#/PointingToDeclaration/"></a> [androidJvm] val [periodicity](periodicity.md): [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?   <br>
+| [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [amount](amount.html) | [androidJvm]<br>val [amount](amount.html): [Amount](../../../../com.tink.model.misc/[android-jvm]-amount/index.html)? |
+| [budgetFilter](budget-filter.html) | [androidJvm]<br>val [budgetFilter](budget-filter.html): [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-812656150)? |
+| [periodicity](periodicity.html) | [androidJvm]<br>val [periodicity](periodicity.html): [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-812656150)? |
 

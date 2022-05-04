@@ -1,20 +1,21 @@
 ---
-title: fieldName -
+title: fieldName
 ---
-//[link](../../../../../index.md)/[com.tink.model.misc](../../../../index.md)/[[common]Field](../../../index.md)/[ValidationResult](../../index.md)/[ValidationError](../index.md)/[MinLengthLimit](index.md)/[fieldName](field-name.md)
+//[link](../../../../../../index.html)/[com.tink.model.misc](../../../../index.html)/[[common]Field](../../../index.html)/[ValidationResult](../../index.html)/[ValidationError](../index.html)/[MinLengthLimit](index.html)/[fieldName](field-name.html)
 
 
 
-# fieldName  
-[common]  
-Content  
-open override val [fieldName](field-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# fieldName
 
 
-The [name](../../../name.md) of the field
 
-  
+[common]\
+open override val [fieldName](field-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+The [name](../../../name.html) of the field
+
 
 
 

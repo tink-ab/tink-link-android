@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[status](status.html)
 
 
 
-# status  
-[androidJvm]  
-Content  
-val [status](status.md): [Provider.Status](-status/index.md)  
+# status
+
+
+
+[androidJvm]\
+val [status](status.html): [Provider.Status](-status/index.html)
+
 
 
 

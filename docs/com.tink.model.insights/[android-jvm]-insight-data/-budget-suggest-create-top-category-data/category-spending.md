@@ -1,14 +1,17 @@
 ---
-title: categorySpending -
+title: categorySpending
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSuggestCreateTopCategoryData](index.md)/[categorySpending](category-spending.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSuggestCreateTopCategoryData](index.html)/[categorySpending](category-spending.html)
 
 
 
-# categorySpending  
-[androidJvm]  
-Content  
-val [categorySpending](category-spending.md): [AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.md)  
+# categorySpending
+
+
+
+[androidJvm]\
+val [categorySpending](category-spending.html): [AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.html)
+
 
 
 

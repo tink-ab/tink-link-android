@@ -1,14 +1,17 @@
 ---
-title: onBackPressed -
+title: onBackPressed
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onBackPressed](on-back-pressed.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[common]TinkLinkUiActivity](index.html)/[onBackPressed](on-back-pressed.html)
 
 
 
-# onBackPressed  
-[common]  
-Content  
-open fun [onBackPressed](on-back-pressed.md)()  
+# onBackPressed
+
+
+
+[common]\
+open fun [onBackPressed](on-back-pressed.html)()
+
 
 
 

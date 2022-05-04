@@ -1,14 +1,17 @@
 ---
-title: filter -
+title: filter
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[ProviderList](index.md)/[filter](filter.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]ProviderSelection](../index.html)/[ProviderList](index.html)/[filter](filter.html)
 
 
 
-# filter  
-[common]  
-Content  
-val [filter](filter.md): [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.md)  
+# filter
+
+
+
+[common]\
+val [filter](filter.html): [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: upgradeMessage -
+title: upgradeMessage
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[common]ThirdPartyAppAuthentication](index.md)/[upgradeMessage](upgrade-message.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[common]ThirdPartyAppAuthentication](index.html)/[upgradeMessage](upgrade-message.html)
 
 
 
-# upgradeMessage  
-[common]  
-Content  
-val [upgradeMessage](upgrade-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# upgradeMessage
+
+
+
+[common]\
+val [upgradeMessage](upgrade-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

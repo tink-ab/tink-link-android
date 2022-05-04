@@ -1,24 +1,25 @@
 ---
-title: [common]authenticateUser -
+title: [common]authenticateUser
 ---
-//[link](../index.md)/[com.tink.link](index.md)/[[common]authenticateUser]([common]authenticate-user.md)
+//[link](../../index.html)/[com.tink.link](index.html)/[[common]authenticateUser]([common]authenticate-user.html)
 
 
 
-# authenticateUser  
-[common]  
-Content  
-fun [Tink](../com.tink.core/[common]-tink/index.md).[authenticateUser]([common]authenticate-user.md)(authenticationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../com.tink.service.handler/[common]-result-handler/index.md)<[User](../com.tink.model.user/[common]-user/index.md)>): <ERROR CLASS>  
-More info  
+# authenticateUser
+
+
+
+[common]\
+fun [Tink](../com.tink.core/[common]-tink/index.html).[authenticateUser]([common]authenticate-user.html)(authenticationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../com.tink.service.handler/[common]-result-handler/index.html)&lt;[User](../com.tink.model.user/[common]-user/index.html)&gt;): &lt;ERROR CLASS&gt;
+
 
 
 Authenticate an existing user with an authentication code.
 
 
 
-On a successful result, your resultHandler should call [Tink.setUser](../com.tink.core/[common]-tink/set-user.md) to set this user to Tink.
+On a successful result, your resultHandler should call [Tink.setUser](../com.tink.core/[common]-tink/set-user.html) to set this user to Tink.
 
-  
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: ServiceComponent -
+title: ServiceComponent
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[ServiceComponent](-service-component.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[ServiceComponent](-service-component.html)
 
 
 
-# ServiceComponent  
-[androidJvm]  
-Content  
-fun [ServiceComponent](-service-component.md)()  
+# ServiceComponent
+
+
+
+[androidJvm]\
+fun [ServiceComponent](-service-component.html)()
+
 
 
 

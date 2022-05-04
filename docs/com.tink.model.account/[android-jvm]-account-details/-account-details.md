@@ -1,14 +1,17 @@
 ---
-title: AccountDetails -
+title: AccountDetails
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[AccountDetails](-account-details.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]AccountDetails](index.html)/[AccountDetails](-account-details.html)
 
 
 
-# AccountDetails  
-[androidJvm]  
-Content  
-fun [AccountDetails](-account-details.md)(interest: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)? = null, numberOfMonthsBound: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null, type: [AccountDetails.Type](-type/index.md)?, nextDayOfTermsChange: Instant? = null)  
+# AccountDetails
+
+
+
+[androidJvm]\
+fun [AccountDetails](-account-details.html)(interest: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)? = null, numberOfMonthsBound: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null, type: [AccountDetails.Type](-type/index.html)?, nextDayOfTermsChange: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null)
+
 
 
 

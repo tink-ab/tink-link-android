@@ -1,14 +1,17 @@
 ---
-title: spentAmount -
+title: spentAmount
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Period](index.md)/[spentAmount](spent-amount.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Period](index.html)/[spentAmount](spent-amount.html)
 
 
 
-# spentAmount  
-[common]  
-Content  
-val [spentAmount](spent-amount.md): [Amount](../../../com.tink.model.misc/[common]-amount/index.md)  
+# spentAmount
+
+
+
+[common]\
+val [spentAmount](spent-amount.html): [Amount](../../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

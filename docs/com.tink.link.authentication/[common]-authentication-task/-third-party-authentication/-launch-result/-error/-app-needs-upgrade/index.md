@@ -1,47 +1,39 @@
 ---
-title: AppNeedsUpgrade -
+title: AppNeedsUpgrade
 ---
-//[link](../../../../../../index.md)/[com.tink.link.authentication](../../../../../index.md)/[[common]AuthenticationTask](../../../../index.md)/[ThirdPartyAuthentication](../../../index.md)/[LaunchResult](../../index.md)/[Error](../index.md)/[AppNeedsUpgrade](index.md)
+//[link](../../../../../../../index.html)/[com.tink.link.authentication](../../../../../index.html)/[[common]AuthenticationTask](../../../../index.html)/[ThirdPartyAuthentication](../../../index.html)/[LaunchResult](../../index.html)/[Error](../index.html)/[AppNeedsUpgrade](index.html)
 
 
 
-# AppNeedsUpgrade  
- [common] data class [AppNeedsUpgrade](index.md)(**packageName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **title**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](../index.md)
+# AppNeedsUpgrade
+
+
+
+[common]\
+data class [AppNeedsUpgrade](index.html)(val packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](../index.html)
 
 The app necessary for authentication is installed on the users device but needs to be updated.
 
 
 
-Properties [packageName](package-name.md), [title](title.md), and [message](message.md) can be used for example to show a dialog to the user prompting to upgrade the app.
-
-   
+Properties [packageName](package-name.html), [title](title.html), and [message](message.html) can be used for example to show a dialog to the user prompting to upgrade the app.
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/AppNeedsUpgrade/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[AppNeedsUpgrade](-app-needs-upgrade.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/AppNeedsUpgrade/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/"></a> [common] fun [AppNeedsUpgrade](-app-needs-upgrade.md)(packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))   <br>
+| [AppNeedsUpgrade](-app-needs-upgrade.html) | [common]<br>fun [AppNeedsUpgrade](-app-needs-upgrade.html)(packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/copy/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/copy/#kotlin.String#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-
-
-## Properties  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/message/#/PointingToDeclaration/"></a>[message](message.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/message/#/PointingToDeclaration/"></a> [common] open override val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/packageName/#/PointingToDeclaration/"></a>[packageName](package-name.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/packageName/#/PointingToDeclaration/"></a> [common] open override val [packageName](package-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/title/#/PointingToDeclaration/"></a>[title](title.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade/title/#/PointingToDeclaration/"></a> [common] open override val [title](title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [message](message.html) | [common]<br>open override val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [packageName](package-name.html) | [common]<br>open override val [packageName](package-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [title](title.html) | [common]<br>open override val [title](title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

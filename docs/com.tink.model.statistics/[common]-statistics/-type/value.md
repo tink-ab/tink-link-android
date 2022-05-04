@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../../index.md)/[com.tink.model.statistics](../../index.md)/[[common]Statistics](../index.md)/[Type](index.md)/[value](value.md)
+//[link](../../../../index.html)/[com.tink.model.statistics](../../index.html)/[[common]Statistics](../index.html)/[Type](index.html)/[value](value.html)
 
 
 
-# value  
-[common]  
-Content  
-val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# value
+
+
+
+[common]\
+val [value](value.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

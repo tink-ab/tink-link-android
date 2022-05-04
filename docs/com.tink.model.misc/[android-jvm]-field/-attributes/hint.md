@@ -1,14 +1,17 @@
 ---
-title: hint -
+title: hint
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[Attributes](index.md)/[hint](hint.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[Attributes](index.html)/[hint](hint.html)
 
 
 
-# hint  
-[androidJvm]  
-Content  
-val [hint](hint.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# hint
+
+
+
+[androidJvm]\
+val [hint](hint.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

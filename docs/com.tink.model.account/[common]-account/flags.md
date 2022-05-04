@@ -1,14 +1,17 @@
 ---
-title: flags -
+title: flags
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[flags](flags.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[flags](flags.html)
 
 
 
-# flags  
-[common]  
-Content  
-val [flags](flags.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Account.Flags](-flags/index.md)>  
+# flags
+
+
+
+[common]\
+val [flags](flags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Account.Flags](-flags/index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: TinkScope -
+title: TinkScope
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkScope](index.md)/[TinkScope](-tink-scope.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkScope](index.html)/[TinkScope](-tink-scope.html)
 
 
 
-# TinkScope  
-[common]  
-Content  
-fun [TinkScope](-tink-scope.md)()  
+# TinkScope
+
+
+
+[common]\
+fun [TinkScope](-tink-scope.html)()
+
 
 
 

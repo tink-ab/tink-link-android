@@ -1,26 +1,28 @@
 ---
-title: scopeDescriptions -
+title: scopeDescriptions
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[scopeDescriptions](scope-descriptions.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[common]OAuthClientDescription](index.html)/[scopeDescriptions](scope-descriptions.html)
 
 
 
-# scopeDescriptions  
-[common]  
-Content  
-val [scopeDescriptions](scope-descriptions.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ScopeDescription](../[common]-scope-description/index.md)>  
-More info  
+# scopeDescriptions
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [scopeDescriptions](scope-descriptions.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ScopeDescription](../[common]-scope-description/index.html)&gt;
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/scopeDescriptions/#/PointingToDeclaration/"></a>scopeDescriptions| <a name="com.tink.model.consent/OAuthClientDescription/scopeDescriptions/#/PointingToDeclaration/"></a><br><br>: A list of [ScopeDescription](../[common]-scope-description/index.md)s describing which financial info is going to be collected.<br><br>
-  
-  
+| scopeDescriptions | : A list of [ScopeDescription](../[common]-scope-description/index.html)s describing which financial info is going to be collected. |
+
 
 
 

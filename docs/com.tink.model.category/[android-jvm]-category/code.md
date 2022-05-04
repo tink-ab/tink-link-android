@@ -1,14 +1,17 @@
 ---
-title: code -
+title: code
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[code](code.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]Category](index.html)/[code](code.html)
 
 
 
-# code  
-[androidJvm]  
-Content  
-val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# code
+
+
+
+[androidJvm]\
+val [code](code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

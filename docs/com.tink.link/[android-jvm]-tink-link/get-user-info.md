@@ -1,22 +1,29 @@
 ---
-title: getUserInfo -
+title: getUserInfo
 ---
-//[link](../../index.md)/[com.tink.link](../index.md)/[[androidJvm]TinkLink](index.md)/[getUserInfo](get-user-info.md)
+//[link](../../../index.html)/[com.tink.link](../index.html)/[[androidJvm]TinkLink](index.html)/[getUserInfo](get-user-info.html)
 
 
 
-# getUserInfo  
-[androidJvm]  
-Content  
-@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)()  
-  
-fun [getUserInfo](get-user-info.md)(resultHandler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.md)>)  
-More info  
+# getUserInfo
 
 
-Fetches the [UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.md) for an authenticated user.
 
-  
+[androidJvm]\
+
+
+
+
+@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
+
+
+
+fun [getUserInfo](get-user-info.html)(resultHandler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.html)&gt;)
+
+
+
+Fetches the [UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.html) for an authenticated user.
+
 
 
 

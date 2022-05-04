@@ -1,14 +1,17 @@
 ---
-title: YearMonth -
+title: YearMonth
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearMonth](index.md)/[YearMonth](-year-month.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearMonth](index.html)/[YearMonth](-year-month.html)
 
 
 
-# YearMonth  
-[common]  
-Content  
-fun [YearMonth](-year-month.md)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), month: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  
+# YearMonth
+
+
+
+[common]\
+fun [YearMonth](-year-month.html)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), month: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: description -
+title: description
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[common]BudgetCreateOrUpdateDescriptor](index.md)/[description](description.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[common]BudgetCreateOrUpdateDescriptor](index.html)/[description](description.html)
 
 
 
-# description  
-[common]  
-Content  
-val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# description
+
+
+
+[common]\
+val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

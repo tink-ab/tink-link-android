@@ -1,14 +1,17 @@
 ---
-title: month -
+title: month
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[MonthlySummaryExpensesByCategoryData](index.md)/[month](month.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[MonthlySummaryExpensesByCategoryData](index.html)/[month](month.html)
 
 
 
-# month  
-[androidJvm]  
-Content  
-val [month](month.md): [YearMonth](../../../com.tink.model.time/[android-jvm]-year-month/index.md)  
+# month
+
+
+
+[androidJvm]\
+val [month](month.html): [YearMonth](../../../com.tink.model.time/[android-jvm]-year-month/index.html)
+
 
 
 

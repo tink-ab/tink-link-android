@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]UpdateAccountDescriptor](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[androidJvm]UpdateAccountDescriptor](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [Account.Type](../../com.tink.model.account/[android-jvm]-account/-type/index.md)? = null  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [Account.Type](../../com.tink.model.account/[android-jvm]-account/-type/index.html)? = null
+
 
 
 

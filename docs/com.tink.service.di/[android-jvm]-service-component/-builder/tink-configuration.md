@@ -1,16 +1,25 @@
 ---
-title: tinkConfiguration -
+title: tinkConfiguration
 ---
-//[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[androidJvm]ServiceComponent](../index.md)/[Builder](index.md)/[tinkConfiguration](tink-configuration.md)
+//[link](../../../../index.html)/[com.tink.service.di](../../index.html)/[[androidJvm]ServiceComponent](../index.html)/[Builder](index.html)/[tinkConfiguration](tink-configuration.html)
 
 
 
-# tinkConfiguration  
-[androidJvm]  
-Content  
-@BindsInstance()  
-  
-abstract fun [tinkConfiguration](tink-configuration.md)(tinkConfiguration: [TinkConfiguration](../../../com.tink.service.network/[android-jvm]-tink-configuration/index.md)): [ServiceComponent.Builder](index.md)  
+# tinkConfiguration
+
+
+
+[androidJvm]\
+
+
+
+
+@BindsInstance
+
+
+
+abstract fun [tinkConfiguration](tink-configuration.html)(tinkConfiguration: [TinkConfiguration](../../../com.tink.service.network/[android-jvm]-tink-configuration/index.html)): [ServiceComponent.Builder](index.html)
+
 
 
 

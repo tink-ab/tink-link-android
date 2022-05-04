@@ -1,14 +1,17 @@
 ---
-title: credentialsId -
+title: credentialsId
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[androidJvm]CredentialsOperation](index.md)/[credentialsId](credentials-id.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[androidJvm]CredentialsOperation](index.html)/[credentialsId](credentials-id.html)
 
 
 
-# credentialsId  
-[androidJvm]  
-Content  
-open val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# credentialsId
+
+
+
+[androidJvm]\
+open val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

@@ -1,15 +1,17 @@
 ---
-title: thirdPartyCallback -
+title: thirdPartyCallback
 ---
-//[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsRepository](index.md)/[thirdPartyCallback](third-party-callback.md)
+//[link](../../../index.html)/[com.tink.link.core.credentials](../index.html)/[[common]CredentialsRepository](index.html)/[thirdPartyCallback](third-party-callback.html)
 
 
 
-# thirdPartyCallback  
-[common]  
-Content  
-fun [thirdPartyCallback](third-party-callback.md)(state: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), parameters: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>, handler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.md)<[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)>)  
-More info  
+# thirdPartyCallback
+
+
+
+[common]\
+fun [thirdPartyCallback](third-party-callback.html)(state: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), parameters: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, handler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+
 
 
 Sends the third party callback information from an Account Servicing Payment Service Provider (ASPSP).
@@ -20,17 +22,17 @@ This is usually done inside the TinkLink framework and it should normally not be
 
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>state| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a><br><br>The value corresponding to the state key from the received callback parameters.<br><br>
-| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>parameters| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a><br><br>The map of key and value pairs, other than state from the received callback parameters.<br><br>
-| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>handler| <a name="com.tink.link.core.credentials/CredentialsRepository/thirdPartyCallback/#kotlin.String#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a><br><br>The [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.md) for processing error and success callbacks<br><br>
-  
-  
+| state | The value corresponding to the state key from the received callback parameters. |
+| parameters | The map of key and value pairs, other than state from the received callback parameters. |
+| handler | The [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.html) for processing error and success callbacks |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: scale -
+title: scale
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]ExactNumber](index.md)/[scale](scale.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]ExactNumber](index.html)/[scale](scale.html)
 
 
 
-# scale  
-[common]  
-Content  
-val [scale](scale.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)  
+# scale
+
+
+
+[common]\
+val [scale](scale.html): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)
+
 
 
 

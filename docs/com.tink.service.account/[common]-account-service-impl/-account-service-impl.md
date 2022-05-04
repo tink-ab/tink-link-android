@@ -1,14 +1,17 @@
 ---
-title: AccountServiceImpl -
+title: AccountServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]AccountServiceImpl](index.md)/[AccountServiceImpl](-account-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[common]AccountServiceImpl](index.html)/[AccountServiceImpl](-account-service-impl.html)
 
 
 
-# AccountServiceImpl  
-[common]  
-Content  
-fun [AccountServiceImpl](-account-service-impl.md)(api: <ERROR CLASS>)  
+# AccountServiceImpl
+
+
+
+[common]\
+fun [AccountServiceImpl](-account-service-impl.html)(api: &lt;ERROR CLASS&gt;)
+
 
 
 

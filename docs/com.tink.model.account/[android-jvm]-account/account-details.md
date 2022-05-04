@@ -1,14 +1,17 @@
 ---
-title: accountDetails -
+title: accountDetails
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[accountDetails](account-details.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[accountDetails](account-details.html)
 
 
 
-# accountDetails  
-[androidJvm]  
-Content  
-val [accountDetails](account-details.md): [AccountDetails](../[android-jvm]-account-details/index.md)? = null  
+# accountDetails
+
+
+
+[androidJvm]\
+val [accountDetails](account-details.html): [AccountDetails](../[android-jvm]-account-details/index.html)? = null
+
 
 
 

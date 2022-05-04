@@ -1,14 +1,17 @@
 ---
-title: onUpdate -
+title: onUpdate
 ---
-//[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onUpdate](on-update.md)
+//[link](../../../index.html)/[com.tink.service.observer](../index.html)/[[common]ChangeObserver](index.html)/[onUpdate](on-update.html)
 
 
 
-# onUpdate  
-[common]  
-Content  
-abstract fun [onUpdate](on-update.md)(items: [T](index.md))  
+# onUpdate
+
+
+
+[common]\
+abstract fun [onUpdate](on-update.html)(items: [T](index.html))
+
 
 
 

@@ -1,42 +1,46 @@
 ---
-title: Transaction -
+title: Transaction
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Transaction](index.html)
 
 
 
-# Transaction  
- [androidJvm] data class [Transaction](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **accountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **amount**: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), **dispensableAmount**: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), **categoryCode**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **date**: Instant) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)   
+# Transaction
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [Transaction](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val amount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), val dispensableAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), val categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val date: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Transaction/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.budget/Budget.Transaction/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.budget/Budget.Transaction/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.budget/Budget.Transaction/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.budget/Budget.Transaction/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.budget/Budget.Transaction/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.budget/Budget.Transaction/component6/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component6](component6.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.budget/Budget.Transaction/component7/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component7](component7.md)(): Instant  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Transaction/copy/#kotlin.String#kotlin.String#com.tink.model.misc.Amount#com.tink.model.misc.Amount#kotlin.String#kotlin.String#org.threeten.bp.Instant/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.budget/Budget.Transaction/copy/#kotlin.String#kotlin.String#com.tink.model.misc.Amount#com.tink.model.misc.Amount#kotlin.String#kotlin.String#org.threeten.bp.Instant/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), dispensableAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: Instant): [Budget.Transaction](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [Transaction](-transaction.html) | [androidJvm]<br>fun [Transaction](-transaction.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), dispensableAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Transaction/accountId/#/PointingToDeclaration/"></a>[accountId](account-id.md)| <a name="com.tink.model.budget/Budget.Transaction/accountId/#/PointingToDeclaration/"></a> [androidJvm] val [accountId](account-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/amount/#/PointingToDeclaration/"></a>[amount](amount.md)| <a name="com.tink.model.budget/Budget.Transaction/amount/#/PointingToDeclaration/"></a> [androidJvm] val [amount](amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/categoryCode/#/PointingToDeclaration/"></a>[categoryCode](category-code.md)| <a name="com.tink.model.budget/Budget.Transaction/categoryCode/#/PointingToDeclaration/"></a> [androidJvm] val [categoryCode](category-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/date/#/PointingToDeclaration/"></a>[date](date.md)| <a name="com.tink.model.budget/Budget.Transaction/date/#/PointingToDeclaration/"></a> [androidJvm] val [date](date.md): Instant   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/description/#/PointingToDeclaration/"></a>[description](description.md)| <a name="com.tink.model.budget/Budget.Transaction/description/#/PointingToDeclaration/"></a> [androidJvm] val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/dispensableAmount/#/PointingToDeclaration/"></a>[dispensableAmount](dispensable-amount.md)| <a name="com.tink.model.budget/Budget.Transaction/dispensableAmount/#/PointingToDeclaration/"></a> [androidJvm] val [dispensableAmount](dispensable-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)   <br>
-| <a name="com.tink.model.budget/Budget.Transaction/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.budget/Budget.Transaction/id/#/PointingToDeclaration/"></a> [androidJvm] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [accountId](account-id.html) | [androidJvm]<br>val [accountId](account-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [amount](amount.html) | [androidJvm]<br>val [amount](amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html) |
+| [categoryCode](category-code.html) | [androidJvm]<br>val [categoryCode](category-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [date](date.html) | [androidJvm]<br>val [date](date.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html) |
+| [description](description.html) | [androidJvm]<br>val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [dispensableAmount](dispensable-amount.html) | [androidJvm]<br>val [dispensableAmount](dispensable-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html) |
+| [id](id.html) | [androidJvm]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

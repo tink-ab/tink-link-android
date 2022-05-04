@@ -1,14 +1,17 @@
 ---
-title: patternError -
+title: patternError
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[patternError](pattern-error.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationRules](index.html)/[patternError](pattern-error.html)
 
 
 
-# patternError  
-[androidJvm]  
-Content  
-val [patternError](pattern-error.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# patternError
+
+
+
+[androidJvm]\
+val [patternError](pattern-error.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

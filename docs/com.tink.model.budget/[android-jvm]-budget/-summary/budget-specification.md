@@ -1,14 +1,17 @@
 ---
-title: budgetSpecification -
+title: budgetSpecification
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Summary](index.md)/[budgetSpecification](budget-specification.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Summary](index.html)/[budgetSpecification](budget-specification.html)
 
 
 
-# budgetSpecification  
-[androidJvm]  
-Content  
-val [budgetSpecification](budget-specification.md): [Budget.Specification](../-specification/index.md)  
+# budgetSpecification
+
+
+
+[androidJvm]\
+val [budgetSpecification](budget-specification.html): [Budget.Specification](../-specification/index.html)
+
 
 
 

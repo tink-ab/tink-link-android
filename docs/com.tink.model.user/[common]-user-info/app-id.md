@@ -1,14 +1,17 @@
 ---
-title: appId -
+title: appId
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[appId](app-id.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserInfo](index.html)/[appId](app-id.html)
 
 
 
-# appId  
-[common]  
-Content  
-val [appId](app-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# appId
+
+
+
+[common]\
+val [appId](app-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

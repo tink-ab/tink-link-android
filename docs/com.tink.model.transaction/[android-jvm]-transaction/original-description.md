@@ -1,14 +1,17 @@
 ---
-title: originalDescription -
+title: originalDescription
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[originalDescription](original-description.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Transaction](index.html)/[originalDescription](original-description.html)
 
 
 
-# originalDescription  
-[androidJvm]  
-Content  
-val [originalDescription](original-description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# originalDescription
+
+
+
+[androidJvm]\
+val [originalDescription](original-description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

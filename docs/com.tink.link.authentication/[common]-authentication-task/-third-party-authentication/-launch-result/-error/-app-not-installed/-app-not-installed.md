@@ -1,14 +1,17 @@
 ---
-title: AppNotInstalled -
+title: AppNotInstalled
 ---
-//[link](../../../../../../index.md)/[com.tink.link.authentication](../../../../../index.md)/[[common]AuthenticationTask](../../../../index.md)/[ThirdPartyAuthentication](../../../index.md)/[LaunchResult](../../index.md)/[Error](../index.md)/[AppNotInstalled](index.md)/[AppNotInstalled](-app-not-installed.md)
+//[link](../../../../../../../index.html)/[com.tink.link.authentication](../../../../../index.html)/[[common]AuthenticationTask](../../../../index.html)/[ThirdPartyAuthentication](../../../index.html)/[LaunchResult](../../index.html)/[Error](../index.html)/[AppNotInstalled](index.html)/[AppNotInstalled](-app-not-installed.html)
 
 
 
-# AppNotInstalled  
-[common]  
-Content  
-fun [AppNotInstalled](-app-not-installed.md)(packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# AppNotInstalled
+
+
+
+[common]\
+fun [AppNotInstalled](-app-not-installed.html)(packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

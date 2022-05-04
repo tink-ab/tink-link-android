@@ -1,14 +1,17 @@
 ---
-title: state -
+title: state
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[state](state.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]Insight](index.html)/[state](state.html)
 
 
 
-# state  
-[androidJvm]  
-Content  
-val [state](state.md): [InsightState](../[android-jvm]-insight-state/index.md)  
+# state
+
+
+
+[androidJvm]\
+val [state](state.html): [InsightState](../[android-jvm]-insight-state/index.html)
+
 
 
 

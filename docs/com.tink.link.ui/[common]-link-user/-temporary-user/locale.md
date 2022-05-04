@@ -1,26 +1,28 @@
 ---
-title: locale -
+title: locale
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[TemporaryUser](index.md)/[locale](locale.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]LinkUser](../index.html)/[TemporaryUser](index.html)/[locale](locale.html)
 
 
 
-# locale  
-[common]  
-Content  
-val [locale](locale.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# locale
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [locale](locale.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/LinkUser.TemporaryUser/locale/#/PointingToDeclaration/"></a>locale| <a name="com.tink.link.ui/LinkUser.TemporaryUser/locale/#/PointingToDeclaration/"></a><br><br>Locale for the user. Defaults to default locale for the user's market. Example: "sv_SE"<br><br>
-  
-  
+| locale | Locale for the user. Defaults to default locale for the user's market. Example: &quot;sv_SE&quot; |
+
 
 
 

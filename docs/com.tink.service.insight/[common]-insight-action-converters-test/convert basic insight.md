@@ -1,14 +1,17 @@
 ---
-title: convert basic insight -
+title: convert basic insight
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightActionConvertersTest](index.md)/[convert basic insight](convert basic insight.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightActionConvertersTest](index.html)/[convert basic insight](convert basic insight.html)
 
 
 
-# convert basic insight  
-[common]  
-Content  
-fun [convert basic insight](convert basic insight.md)()  
+# convert basic insight
+
+
+
+[common]\
+fun [convert basic insight](convert basic insight.html)()
+
 
 
 

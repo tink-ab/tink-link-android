@@ -1,14 +1,17 @@
 ---
-title: date -
+title: date
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionUpdateDescriptor](index.md)/[date](date.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[androidJvm]TransactionUpdateDescriptor](index.html)/[date](date.html)
 
 
 
-# date  
-[androidJvm]  
-Content  
-val [date](date.md): Instant? = null  
+# date
+
+
+
+[androidJvm]\
+val [date](date.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null
+
 
 
 

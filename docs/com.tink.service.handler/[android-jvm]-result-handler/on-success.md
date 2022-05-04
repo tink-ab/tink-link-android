@@ -1,14 +1,17 @@
 ---
-title: onSuccess -
+title: onSuccess
 ---
-//[link](../../index.md)/[com.tink.service.handler](../index.md)/[[androidJvm]ResultHandler](index.md)/[onSuccess](on-success.md)
+//[link](../../../index.html)/[com.tink.service.handler](../index.html)/[[androidJvm]ResultHandler](index.html)/[onSuccess](on-success.html)
 
 
 
-# onSuccess  
-[androidJvm]  
-Content  
-val [onSuccess](on-success.md): ([T](index.md)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)  
+# onSuccess
+
+
+
+[androidJvm]\
+val [onSuccess](on-success.html): ([T](index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+
 
 
 

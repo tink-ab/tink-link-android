@@ -1,14 +1,17 @@
 ---
-title: UserInfo -
+title: UserInfo
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[UserInfo](-user-info.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserInfo](index.html)/[UserInfo](-user-info.html)
 
 
 
-# UserInfo  
-[common]  
-Content  
-fun [UserInfo](-user-info.md)(created: <ERROR CLASS> = Instant.EPOCH, id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), appId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), profile: [UserProfile](../[common]-user-profile/index.md), flags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)> = emptyList(), username: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, nationalId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null)  
+# UserInfo
+
+
+
+[common]\
+fun [UserInfo](-user-info.html)(created: &lt;ERROR CLASS&gt; = Instant.EPOCH, id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), appId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), profile: [UserProfile](../[common]-user-profile/index.html), flags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt; = emptyList(), username: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, nationalId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null)
+
 
 
 

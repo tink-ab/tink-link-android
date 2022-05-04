@@ -1,47 +1,50 @@
 ---
-title: ThirdPartyAuthentication -
+title: ThirdPartyAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[common]AuthenticationTask](../index.html)/[ThirdPartyAuthentication](index.html)
 
 
 
-# ThirdPartyAuthentication  
- [common] data class [ThirdPartyAuthentication](index.md)(**credentials**: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md)) : [AuthenticationTask](../index.md)
-
-Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](launch.md), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](third-party-app-authentication.md)
-
-   
+# ThirdPartyAuthentication
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [ThirdPartyAuthentication](index.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) : [AuthenticationTask](../index.html)
+
+Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](launch.html), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](third-party-app-authentication.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/ThirdPartyAuthentication/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[ThirdPartyAuthentication](-third-party-authentication.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/ThirdPartyAuthentication/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a> [common] fun [ThirdPartyAuthentication](-third-party-authentication.md)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md))   <br>
+| [ThirdPartyAuthentication](-third-party-authentication.html) | [common]<br>fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) |
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult///PointingToDeclaration/"></a>[LaunchResult](-launch-result/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult///PointingToDeclaration/"></a>[common]  <br>Content  <br>sealed class [LaunchResult](-launch-result/index.md)  <br>More info  <br>Indicates if the user was successfully redirected when [launch](launch.md) was called.  <br><br><br>
+| [LaunchResult](-launch-result/index.html) | [common]<br>sealed class [LaunchResult](-launch-result/index.html)<br>Indicates if the user was successfully redirected when [launch](launch.html) was called. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md)): [AuthenticationTask.ThirdPartyAuthentication](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[isNewerThan](../is-newer-than.md)| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [isNewerThan](../is-newer-than.md)(other: [AuthenticationTask](../index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br>More info  <br>Helper function comparing two [AuthenticationTask](../index.md)s to see if one is newer than that the other.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/launch/#/PointingToDeclaration/"></a>[launch](launch.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/launch/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [launch](launch.md)(activity: <ERROR CLASS>): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.md)  <br>More info  <br>Try to redirect the user to the third party app for authentication.  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [isNewerThan](../is-newer-than.html) | [common]<br>fun [isNewerThan](../is-newer-than.html)(other: [AuthenticationTask](../index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Helper function comparing two [AuthenticationTask](../index.html)s to see if one is newer than that the other. This can be used to determine if a new update should be sent. This is for internal use in the Tink Sdk and it should not be necessary to use it otherwise. |
+| [launch](launch.html) | [common]<br>fun [launch](launch.html)(activity: &lt;ERROR CLASS&gt;): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.html)<br>Try to redirect the user to the third party app for authentication. |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/thirdPartyAppAuthentication/#/PointingToDeclaration/"></a>[thirdPartyAppAuthentication](third-party-app-authentication.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/thirdPartyAppAuthentication/#/PointingToDeclaration/"></a> [common] val [thirdPartyAppAuthentication](third-party-app-authentication.md): <ERROR CLASS>   <br>
+| [thirdPartyAppAuthentication](third-party-app-authentication.html) | [common]<br>val [thirdPartyAppAuthentication](third-party-app-authentication.html): &lt;ERROR CLASS&gt; |
 

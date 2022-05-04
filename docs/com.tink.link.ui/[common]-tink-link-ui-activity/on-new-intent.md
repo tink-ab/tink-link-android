@@ -1,14 +1,17 @@
 ---
-title: onNewIntent -
+title: onNewIntent
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onNewIntent](on-new-intent.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[common]TinkLinkUiActivity](index.html)/[onNewIntent](on-new-intent.html)
 
 
 
-# onNewIntent  
-[common]  
-Content  
-open fun [onNewIntent](on-new-intent.md)(intent: <ERROR CLASS>?)  
+# onNewIntent
+
+
+
+[common]\
+open fun [onNewIntent](on-new-intent.html)(intent: &lt;ERROR CLASS&gt;?)
+
 
 
 

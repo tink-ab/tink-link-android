@@ -1,14 +1,17 @@
 ---
-title: providerRepository -
+title: providerRepository
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[providerRepository](provider-repository.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[providerRepository](provider-repository.html)
 
 
 
-# providerRepository  
-[common]  
-Content  
-abstract val [providerRepository](provider-repository.md): [ProviderRepository](../../com.tink.core.provider/[common]-provider-repository/index.md)  
+# providerRepository
+
+
+
+[common]\
+abstract val [providerRepository](provider-repository.html): [ProviderRepository](../../com.tink.core.provider/[common]-provider-repository/index.html)
+
 
 
 

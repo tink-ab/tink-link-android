@@ -1,14 +1,17 @@
 ---
-title: periodStartDate -
+title: periodStartDate
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[ViewBudget](index.md)/[periodStartDate](period-start-date.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[ViewBudget](index.html)/[periodStartDate](period-start-date.html)
 
 
 
-# periodStartDate  
-[androidJvm]  
-Content  
-val [periodStartDate](period-start-date.md): Instant  
+# periodStartDate
+
+
+
+[androidJvm]\
+val [periodStartDate](period-start-date.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

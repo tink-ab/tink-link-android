@@ -1,14 +1,17 @@
 ---
-title: onDelete -
+title: onDelete
 ---
-//[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onDelete](on-delete.md)
+//[link](../../../index.html)/[com.tink.service.observer](../index.html)/[[common]ChangeObserver](index.html)/[onDelete](on-delete.html)
 
 
 
-# onDelete  
-[common]  
-Content  
-abstract fun [onDelete](on-delete.md)(items: [T](index.md))  
+# onDelete
+
+
+
+[common]\
+abstract fun [onDelete](on-delete.html)(items: [T](index.html))
+
 
 
 

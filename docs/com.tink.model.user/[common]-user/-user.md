@@ -1,14 +1,17 @@
 ---
-title: User -
+title: User
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]User](index.md)/[User](-user.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]User](index.html)/[User](-user.html)
 
 
 
-# User  
-[common]  
-Content  
-fun [User](-user.md)(authorization: [Authorization](../[common]-authorization/index.md))  
+# User
+
+
+
+[common]\
+fun [User](-user.html)(authorization: [Authorization](../[common]-authorization/index.html))
+
 
 
 

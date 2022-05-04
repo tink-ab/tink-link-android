@@ -1,15 +1,17 @@
 ---
-title: termsAndConditions -
+title: termsAndConditions
 ---
-//[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[termsAndConditions](terms-and-conditions.md)
+//[link](../../../index.html)/[com.tink.link.consent](../index.html)/[[common]ConsentContext](index.html)/[termsAndConditions](terms-and-conditions.html)
 
 
 
-# termsAndConditions  
-[common]  
-Content  
-fun [termsAndConditions](terms-and-conditions.md)(locale: <ERROR CLASS> = Locale.getDefault()): <ERROR CLASS>  
-More info  
+# termsAndConditions
+
+
+
+[common]\
+fun [termsAndConditions](terms-and-conditions.html)(locale: &lt;ERROR CLASS&gt; = Locale.getDefault(), showChromeless: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true): &lt;ERROR CLASS&gt;
+
 
 
 Get a link to the Terms & Conditions for Tink Link.
@@ -20,22 +22,23 @@ Note: Not all languages are supported. The link will display the page in english
 
 
 
-#### Return  
+#### Return
+
 
 
 A Uri to the Terms & Conditions
 
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.consent/ConsentContext/termsAndConditions/#/PointingToDeclaration/"></a>locale| <a name="com.tink.link.consent/ConsentContext/termsAndConditions/#/PointingToDeclaration/"></a><br><br>The locale with the language to use.<br><br>
-  
-  
+| locale | The locale with the language to use. |
+
 
 
 

@@ -1,20 +1,21 @@
 ---
-title: getBeneficiaries -
+title: getBeneficiaries
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]TransferService](index.md)/[getBeneficiaries](get-beneficiaries.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]TransferService](index.html)/[getBeneficiaries](get-beneficiaries.html)
 
 
 
-# getBeneficiaries  
-[androidJvm]  
-Content  
-abstract suspend fun [getBeneficiaries](get-beneficiaries.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Beneficiary](../../com.tink.model.transfer/[android-jvm]-beneficiary/index.md)>  
-More info  
+# getBeneficiaries
+
+
+
+[androidJvm]\
+abstract suspend fun [getBeneficiaries](get-beneficiaries.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Beneficiary](../../com.tink.model.transfer/[android-jvm]-beneficiary/index.html)&gt;
+
 
 
 Lists all beneficiaries of the current user
 
-  
 
 
 

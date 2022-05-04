@@ -1,14 +1,17 @@
 ---
-title: setUser -
+title: setUser
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[setUser](set-user.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]Tink](index.html)/[setUser](set-user.html)
 
 
 
-# setUser  
-[common]  
-Content  
-fun [setUser](set-user.md)(user: [User](../../com.tink.model.user/[common]-user/index.md))  
+# setUser
+
+
+
+[common]\
+fun [setUser](set-user.html)(user: [User](../../com.tink.model.user/[common]-user/index.html))
+
 
 
 

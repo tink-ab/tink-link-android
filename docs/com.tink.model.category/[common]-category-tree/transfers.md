@@ -1,14 +1,17 @@
 ---
-title: transfers -
+title: transfers
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]CategoryTree](index.md)/[transfers](transfers.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]CategoryTree](index.html)/[transfers](transfers.html)
 
 
 
-# transfers  
-[common]  
-Content  
-val [transfers](transfers.md): [Category](../[common]-category/index.md)  
+# transfers
+
+
+
+[common]\
+val [transfers](transfers.html): [Category](../[common]-category/index.html)
+
 
 
 

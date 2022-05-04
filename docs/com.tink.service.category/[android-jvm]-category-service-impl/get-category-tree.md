@@ -1,14 +1,17 @@
 ---
-title: getCategoryTree -
+title: getCategoryTree
 ---
-//[link](../../index.md)/[com.tink.service.category](../index.md)/[[androidJvm]CategoryServiceImpl](index.md)/[getCategoryTree](get-category-tree.md)
+//[link](../../../index.html)/[com.tink.service.category](../index.html)/[[androidJvm]CategoryServiceImpl](index.html)/[getCategoryTree](get-category-tree.html)
 
 
 
-# getCategoryTree  
-[androidJvm]  
-Content  
-open suspend override fun [getCategoryTree](get-category-tree.md)(): [CategoryTree](../../com.tink.model.category/[android-jvm]-category-tree/index.md)  
+# getCategoryTree
+
+
+
+[androidJvm]\
+open suspend override fun [getCategoryTree](get-category-tree.html)(): [CategoryTree](../../com.tink.model.category/[android-jvm]-category-tree/index.html)
+
 
 
 

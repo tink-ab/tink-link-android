@@ -1,14 +1,17 @@
 ---
-title: budgetId -
+title: budgetId
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetIdToPeriod](index.md)/[budgetId](budget-id.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetIdToPeriod](index.html)/[budgetId](budget-id.html)
 
 
 
-# budgetId  
-[common]  
-Content  
-val [budgetId](budget-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# budgetId
+
+
+
+[common]\
+val [budgetId](budget-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

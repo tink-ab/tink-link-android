@@ -1,14 +1,17 @@
 ---
-title: authorization -
+title: authorization
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]User](index.md)/[authorization](authorization.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]User](index.html)/[authorization](authorization.html)
 
 
 
-# authorization  
-[androidJvm]  
-Content  
-val [authorization](authorization.md): [Authorization](../[android-jvm]-authorization/index.md)  
+# authorization
+
+
+
+[androidJvm]\
+val [authorization](authorization.html): [Authorization](../[android-jvm]-authorization/index.html)
+
 
 
 

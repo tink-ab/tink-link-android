@@ -1,14 +1,17 @@
 ---
-title: FinancialInstitution -
+title: FinancialInstitution
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]Provider](../index.md)/[FinancialInstitution](index.md)/[FinancialInstitution](-financial-institution.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]Provider](../index.html)/[FinancialInstitution](index.html)/[FinancialInstitution](-financial-institution.html)
 
 
 
-# FinancialInstitution  
-[androidJvm]  
-Content  
-fun [FinancialInstitution](-financial-institution.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# FinancialInstitution
+
+
+
+[androidJvm]\
+fun [FinancialInstitution](-financial-institution.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

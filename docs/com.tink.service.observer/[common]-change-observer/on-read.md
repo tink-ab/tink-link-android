@@ -1,14 +1,17 @@
 ---
-title: onRead -
+title: onRead
 ---
-//[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onRead](on-read.md)
+//[link](../../../index.html)/[com.tink.service.observer](../index.html)/[[common]ChangeObserver](index.html)/[onRead](on-read.html)
 
 
 
-# onRead  
-[common]  
-Content  
-abstract fun [onRead](on-read.md)(items: [T](index.md))  
+# onRead
+
+
+
+[common]\
+abstract fun [onRead](on-read.html)(items: [T](index.html))
+
 
 
 

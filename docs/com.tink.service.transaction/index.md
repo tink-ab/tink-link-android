@@ -1,25 +1,28 @@
 ---
-title: com.tink.service.transaction -
+title: com.tink.service.transaction
 ---
-//[link](../index.md)/[com.tink.service.transaction](index.md)
+//[link](../../index.html)/[com.tink.service.transaction](index.html)
 
 
 
-# Package com.tink.service.transaction  
+# Package com.tink.service.transaction
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.transaction/Pageable///PointingToDeclaration/"></a>Pageable| <a name="com.tink.service.transaction/Pageable///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [Pageable]([common]-pageable/index.md)  <br>[androidJvm]  <br>interface [Pageable]([android-jvm]-pageable/index.md)  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionService///PointingToDeclaration/"></a>TransactionService| <a name="com.tink.service.transaction/TransactionService///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [TransactionService]([common]-transaction-service/index.md)  <br>[androidJvm]  <br>interface [TransactionService]([android-jvm]-transaction-service/index.md)  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor///PointingToDeclaration/"></a>TransactionUpdateDescriptor| <a name="com.tink.service.transaction/TransactionUpdateDescriptor///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [TransactionUpdateDescriptor]([common]-transaction-update-descriptor/index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **date**: <ERROR CLASS>?, **notes**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../com.tink.model.transaction/[common]-tag/index.md)>?)  <br>[androidJvm]  <br>data class [TransactionUpdateDescriptor]([android-jvm]-transaction-update-descriptor/index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **date**: Instant?, **notes**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../com.tink.model.transaction/[android-jvm]-tag/index.md)>?)  <br><br><br>
+| Pageable | [common, androidJvm]<br>[common]<br>interface [Pageable]([common]-pageable/index.html)<br>[androidJvm]<br>interface [Pageable]([android-jvm]-pageable/index.html) |
+| TransactionService | [common, androidJvm]<br>[common]<br>interface [TransactionService]([common]-transaction-service/index.html)<br>[androidJvm]<br>interface [TransactionService]([android-jvm]-transaction-service/index.html) |
+| TransactionUpdateDescriptor | [common, androidJvm]<br>[common]<br>data class [TransactionUpdateDescriptor]([common]-transaction-update-descriptor/index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val date: &lt;ERROR CLASS&gt;? = null, val notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../com.tink.model.transaction/[common]-tag/index.html)&gt;? = null)<br>[androidJvm]<br>data class [TransactionUpdateDescriptor]([android-jvm]-transaction-update-descriptor/index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val date: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null, val notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../com.tink.model.transaction/[android-jvm]-tag/index.html)&gt;? = null) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.transaction//toCoreModel/#/PointingToDeclaration/"></a>toCoreModel| <a name="com.tink.service.transaction//toCoreModel/#/PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): <ERROR CLASS>  <br>[androidJvm]  <br>fun Transaction.[toCoreModel]([android-jvm]to-core-model.md)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.md)  <br>[androidJvm]  <br>fun TransactionResponse.[toCoreModel]([android-jvm]to-core-model.md)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.md)  <br><br><br>
+| toCoreModel | [common, androidJvm]<br>[common]<br>fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun Transaction.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html)<br>[androidJvm]<br>fun TransactionResponse.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html) |
 

@@ -1,14 +1,17 @@
 ---
-title: android -
+title: android
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)/[android](android.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[androidJvm]ThirdPartyAppAuthentication](index.html)/[android](android.html)
 
 
 
-# android  
-[androidJvm]  
-Content  
-val [android](android.md): [ThirdPartyAppAuthentication.Android](-android/index.md)? = null  
+# android
+
+
+
+[androidJvm]\
+val [android](android.html): [ThirdPartyAppAuthentication.Android](-android/index.html)? = null
+
 
 
 

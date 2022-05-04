@@ -1,14 +1,17 @@
 ---
-title: id -
+title: id
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]UpdateAccountDescriptor](index.md)/[id](id.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[androidJvm]UpdateAccountDescriptor](index.html)/[id](id.html)
 
 
 
-# id  
-[androidJvm]  
-Content  
-val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# id
+
+
+
+[androidJvm]\
+val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

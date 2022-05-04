@@ -1,26 +1,28 @@
 ---
-title: authenticationUserType -
+title: authenticationUserType
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[authenticationUserType](authentication-user-type.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[AuthenticationUserTypeNode](index.html)/[authenticationUserType](authentication-user-type.html)
 
 
 
-# authenticationUserType  
-[androidJvm]  
-Content  
-val [authenticationUserType](authentication-user-type.md): [Provider.AuthenticationUserType](../../[android-jvm]-provider/-authentication-user-type/index.md)  
-More info  
+# authenticationUserType
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [authenticationUserType](authentication-user-type.html): [Provider.AuthenticationUserType](../../[android-jvm]-provider/-authentication-user-type/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/authenticationUserType/#/PointingToDeclaration/"></a>authenticationUserType| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/authenticationUserType/#/PointingToDeclaration/"></a><br><br>The authenticationUserType that this node represents.<br><br>
-  
-  
+| authenticationUserType | The authenticationUserType that this node represents. |
+
 
 
 

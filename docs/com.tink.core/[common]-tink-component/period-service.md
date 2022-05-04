@@ -1,14 +1,17 @@
 ---
-title: periodService -
+title: periodService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[periodService](period-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[periodService](period-service.html)
 
 
 
-# periodService  
-[common]  
-Content  
-abstract val [periodService](period-service.md): [PeriodService](../../com.tink.service.time/[common]-period-service/index.md)  
+# periodService
+
+
+
+[common]\
+abstract val [periodService](period-service.html): [PeriodService](../../com.tink.service.time/[common]-period-service/index.html)
+
 
 
 

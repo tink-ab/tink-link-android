@@ -1,14 +1,17 @@
 ---
-title: accounts -
+title: accounts
 ---
-//[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[common]RefreshableItem](../index.md)/[Companion](index.md)/[accounts](accounts.md)
+//[link](../../../../index.html)/[com.tink.model.credentials](../../index.html)/[[common]RefreshableItem](../index.html)/[Companion](index.html)/[accounts](accounts.html)
 
 
 
-# accounts  
-[common]  
-Content  
-fun [accounts](accounts.md)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../index.md)>  
+# accounts
+
+
+
+[common]\
+fun [accounts](accounts.html)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../index.html)&gt;
+
 
 
 

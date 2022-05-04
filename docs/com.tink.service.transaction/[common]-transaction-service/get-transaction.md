@@ -1,14 +1,17 @@
 ---
-title: getTransaction -
+title: getTransaction
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionService](index.md)/[getTransaction](get-transaction.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[common]TransactionService](index.html)/[getTransaction](get-transaction.html)
 
 
 
-# getTransaction  
-[common]  
-Content  
-abstract suspend fun [getTransaction](get-transaction.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Transaction](../../com.tink.model.transaction/[common]-transaction/index.md)  
+# getTransaction
+
+
+
+[common]\
+abstract suspend fun [getTransaction](get-transaction.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Transaction](../../com.tink.model.transaction/[common]-transaction/index.html)
+
 
 
 

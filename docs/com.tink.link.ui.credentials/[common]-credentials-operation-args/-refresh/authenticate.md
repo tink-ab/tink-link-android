@@ -1,14 +1,17 @@
 ---
-title: authenticate -
+title: authenticate
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Refresh](index.md)/[authenticate](authenticate.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[common]CredentialsOperationArgs](../index.html)/[Refresh](index.html)/[authenticate](authenticate.html)
 
 
 
-# authenticate  
-[common]  
-Content  
-val [authenticate](authenticate.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# authenticate
+
+
+
+[common]\
+val [authenticate](authenticate.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

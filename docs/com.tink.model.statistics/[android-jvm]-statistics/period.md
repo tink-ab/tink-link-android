@@ -1,14 +1,17 @@
 ---
-title: period -
+title: period
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[period](period.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[androidJvm]Statistics](index.html)/[period](period.html)
 
 
 
-# period  
-[androidJvm]  
-Content  
-val [period](period.md): [Period](../../com.tink.model.time/[android-jvm]-period/index.md)  
+# period
+
+
+
+[androidJvm]\
+val [period](period.html): [Period](../../com.tink.model.time/[android-jvm]-period/index.html)
+
 
 
 

@@ -1,49 +1,46 @@
 ---
-title: [common]Category -
+title: [common]Category
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]Category](index.html)
 
 
 
-# Category  
- [common] data class [Category](index.md)(**code**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [Category.Type](-type/index.md), **parentId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **children**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>, **sortOrder**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), **isDefaultChild**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))   
+# Category
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Category](index.html)(val code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val type: [Category.Type](-type/index.html), val parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, val children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt;, val sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), val isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.category/Category.Type///PointingToDeclaration/"></a>[Type](-type/index.md)| <a name="com.tink.model.category/Category.Type///PointingToDeclaration/"></a>[common]  <br>Content  <br>enum [Type](-type/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[Category.Type](-type/index.md)>   <br><br><br>
+| [Category](-category.html) | [common]<br>fun [Category](-category.html)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Category.Type](-type/index.html), parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt;, sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.category/Category/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.category/Category/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.category/Category/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.category/Category/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.category/Category/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [Category.Type](-type/index.md)  <br><br><br>
-| <a name="com.tink.model.category/Category/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.category/Category/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.category/Category/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.category/Category/component6/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component6](component6.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>  <br><br><br>
-| <a name="com.tink.model.category/Category/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.category/Category/component7/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component7](component7.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component8/#/PointingToDeclaration/"></a>[component8](component8.md)| <a name="com.tink.model.category/Category/component8/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component8](component8.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.category.Category.Type#kotlin.String?#kotlin.collections.List[com.tink.model.category.Category]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.category/Category/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.category.Category.Type#kotlin.String?#kotlin.collections.List[com.tink.model.category.Category]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Category.Type](-type/index.md), parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>, sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [Category](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [Type](-type/index.html) | [common]<br>enum [Type](-type/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[Category.Type](-type/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.category/Category/children/#/PointingToDeclaration/"></a>[children](children.md)| <a name="com.tink.model.category/Category/children/#/PointingToDeclaration/"></a> [common] val [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>   <br>
-| <a name="com.tink.model.category/Category/code/#/PointingToDeclaration/"></a>[code](code.md)| <a name="com.tink.model.category/Category/code/#/PointingToDeclaration/"></a> [common] val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.category/Category/id/#/PointingToDeclaration/"></a> [common] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/isDefaultChild/#/PointingToDeclaration/"></a>[isDefaultChild](is-default-child.md)| <a name="com.tink.model.category/Category/isDefaultChild/#/PointingToDeclaration/"></a> [common] val [isDefaultChild](is-default-child.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)   <br>
-| <a name="com.tink.model.category/Category/name/#/PointingToDeclaration/"></a>[name](name.md)| <a name="com.tink.model.category/Category/name/#/PointingToDeclaration/"></a> [common] val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/parentId/#/PointingToDeclaration/"></a>[parentId](parent-id.md)| <a name="com.tink.model.category/Category/parentId/#/PointingToDeclaration/"></a> [common] val [parentId](parent-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?   <br>
-| <a name="com.tink.model.category/Category/sortOrder/#/PointingToDeclaration/"></a>[sortOrder](sort-order.md)| <a name="com.tink.model.category/Category/sortOrder/#/PointingToDeclaration/"></a> [common] val [sortOrder](sort-order.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)   <br>
-| <a name="com.tink.model.category/Category/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.category/Category/type/#/PointingToDeclaration/"></a> [common] val [type](type.md): [Category.Type](-type/index.md)   <br>
+| [children](children.html) | [common]<br>val [children](children.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt; |
+| [code](code.html) | [common]<br>val [code](code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [id](id.html) | [common]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [isDefaultChild](is-default-child.html) | [common]<br>val [isDefaultChild](is-default-child.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [name](name.html) | [common]<br>val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [parentId](parent-id.html) | [common]<br>val [parentId](parent-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
+| [sortOrder](sort-order.html) | [common]<br>val [sortOrder](sort-order.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [type](type.html) | [common]<br>val [type](type.html): [Category.Type](-type/index.html) |
 

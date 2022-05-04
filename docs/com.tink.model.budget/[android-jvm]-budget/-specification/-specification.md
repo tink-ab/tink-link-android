@@ -1,14 +1,17 @@
 ---
-title: Specification -
+title: Specification
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[Specification](-specification.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Specification](index.html)/[Specification](-specification.html)
 
 
 
-# Specification  
-[androidJvm]  
-Content  
-fun [Specification](-specification.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: Instant, amount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), periodicity: [Budget.Periodicity](../-periodicity/index.md), archived: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), filter: [Budget.Specification.Filter](-filter/index.md))  
+# Specification
+
+
+
+[androidJvm]\
+fun [Specification](-specification.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), amount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), periodicity: [Budget.Periodicity](../-periodicity/index.html), archived: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), filter: [Budget.Specification.Filter](-filter/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: createAnonymousUser -
+title: createAnonymousUser
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserService](index.md)/[createAnonymousUser](create-anonymous-user.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[common]UserService](index.html)/[createAnonymousUser](create-anonymous-user.html)
 
 
 
-# createAnonymousUser  
-[common]  
-Content  
-abstract suspend fun [createAnonymousUser](create-anonymous-user.md)(arguments: [UserCreationDescriptor](../[common]-user-creation-descriptor/index.md)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# createAnonymousUser
+
+
+
+[common]\
+abstract suspend fun [createAnonymousUser](create-anonymous-user.html)(arguments: [UserCreationDescriptor](../[common]-user-creation-descriptor/index.html)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

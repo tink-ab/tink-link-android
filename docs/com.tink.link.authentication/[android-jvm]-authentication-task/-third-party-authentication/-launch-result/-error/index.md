@@ -1,65 +1,70 @@
 ---
-title: Error -
+title: Error
 ---
-//[link](../../../../../index.md)/[com.tink.link.authentication](../../../../index.md)/[[androidJvm]AuthenticationTask](../../../index.md)/[ThirdPartyAuthentication](../../index.md)/[LaunchResult](../index.md)/[Error](index.md)
+//[link](../../../../../../index.html)/[com.tink.link.authentication](../../../../index.html)/[[androidJvm]AuthenticationTask](../../../index.html)/[ThirdPartyAuthentication](../../index.html)/[LaunchResult](../index.html)/[Error](index.html)
 
 
 
-# Error  
- [androidJvm] sealed class [Error](index.md) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](../index.md)
+# Error
+
+
+
+[androidJvm]\
+sealed class [Error](index.html) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](../index.html)
 
 There was an error when launching the third party app.
 
 
 
-Properties [packageName](package-name.md), [title](title.md), and [message](message.md) can be used for example to show a dialog to the user prompting to install or upgrading the app.
-
-   
+Properties [packageName](package-name.html), [title](title.html), and [message](message.html) can be used for example to show a dialog to the user prompting to install or upgrading the app.
 
 
-## See also  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+## See also
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error///PointingToDeclaration/"></a>[com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNotInstalled](-app-not-installed/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error///PointingToDeclaration/"></a>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error///PointingToDeclaration/"></a>[com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade](-app-needs-upgrade/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error///PointingToDeclaration/"></a>
-  
+| [com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNotInstalled](-app-not-installed/index.html) |  |
+| [com.tink.link.authentication.AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade](-app-needs-upgrade/index.html) |  |
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade///PointingToDeclaration/"></a>[AppNeedsUpgrade](-app-needs-upgrade/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [AppNeedsUpgrade](-app-needs-upgrade/index.md)(**packageName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **title**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](index.md)  <br>More info  <br>The app necessary for authentication is installed on the users device but needs to be updated.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNotInstalled///PointingToDeclaration/"></a>[AppNotInstalled](-app-not-installed/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNotInstalled///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [AppNotInstalled](-app-not-installed/index.md)(**packageName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **title**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **message**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](index.md)  <br>More info  <br>The app necessary for authentication is not installed on the user's device.  <br><br><br>
+| [AppNeedsUpgrade](-app-needs-upgrade/index.html) | [androidJvm]<br>data class [AppNeedsUpgrade](-app-needs-upgrade/index.html)(val packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](index.html)<br>The app necessary for authentication is installed on the users device but needs to be updated. |
+| [AppNotInstalled](-app-not-installed/index.html) | [androidJvm]<br>data class [AppNotInstalled](-app-not-installed/index.html)(val packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error](index.html)<br>The app necessary for authentication is not installed on the user's device. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator fun [equals](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [hashCode](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [toString](../../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/message/#/PointingToDeclaration/"></a>[message](message.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/message/#/PointingToDeclaration/"></a> [androidJvm] abstract val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/packageName/#/PointingToDeclaration/"></a>[packageName](package-name.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/packageName/#/PointingToDeclaration/"></a> [androidJvm] abstract val [packageName](package-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/title/#/PointingToDeclaration/"></a>[title](title.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error/title/#/PointingToDeclaration/"></a> [androidJvm] abstract val [title](title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [message](message.html) | [androidJvm]<br>abstract val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [packageName](package-name.html) | [androidJvm]<br>abstract val [packageName](package-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [title](title.html) | [androidJvm]<br>abstract val [title](title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 
 
-## Inheritors  
-  
-|  Name| 
+## Inheritors
+
+
+| Name |
 |---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNotInstalled///PointingToDeclaration/"></a>AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error.AppNeedsUpgrade///PointingToDeclaration/"></a>AuthenticationTask.ThirdPartyAuthentication.LaunchResult.Error
+| AppNotInstalled |
+| AppNeedsUpgrade |
 

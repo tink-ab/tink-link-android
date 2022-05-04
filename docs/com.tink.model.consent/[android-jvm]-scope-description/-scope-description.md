@@ -1,14 +1,17 @@
 ---
-title: ScopeDescription -
+title: ScopeDescription
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]ScopeDescription](index.md)/[ScopeDescription](-scope-description.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]ScopeDescription](index.html)/[ScopeDescription](-scope-description.html)
 
 
 
-# ScopeDescription  
-[androidJvm]  
-Content  
-fun [ScopeDescription](-scope-description.md)(title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# ScopeDescription
+
+
+
+[androidJvm]\
+fun [ScopeDescription](-scope-description.html)(title: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

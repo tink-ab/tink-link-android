@@ -1,14 +1,17 @@
 ---
-title: getUser -
+title: getUser
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[getUser](get-user.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]Tink](index.html)/[getUser](get-user.html)
 
 
 
-# getUser  
-[common]  
-Content  
-fun [getUser](get-user.md)(): [User](../../com.tink.model.user/[common]-user/index.md)?  
+# getUser
+
+
+
+[common]\
+fun [getUser](get-user.html)(): [User](../../com.tink.model.user/[common]-user/index.html)?
+
 
 
 

@@ -1,16 +1,25 @@
 ---
-title: InsightServiceImpl -
+title: InsightServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightServiceImpl](index.md)/[InsightServiceImpl](-insight-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[androidJvm]InsightServiceImpl](index.html)/[InsightServiceImpl](-insight-service-impl.html)
 
 
 
-# InsightServiceImpl  
-[androidJvm]  
-Content  
-@Inject()  
-  
-fun [InsightServiceImpl](-insight-service-impl.md)(api: ActionableInsightApi)  
+# InsightServiceImpl
+
+
+
+[androidJvm]\
+
+
+
+
+@Inject
+
+
+
+fun [InsightServiceImpl](-insight-service-impl.html)(api: ActionableInsightApi)
+
 
 
 

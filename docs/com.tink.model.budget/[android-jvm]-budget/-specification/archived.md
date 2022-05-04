@@ -1,14 +1,17 @@
 ---
-title: archived -
+title: archived
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[archived](archived.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Specification](index.html)/[archived](archived.html)
 
 
 
-# archived  
-[androidJvm]  
-Content  
-val [archived](archived.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# archived
+
+
+
+[androidJvm]\
+val [archived](archived.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: TinkComponent -
+title: TinkComponent
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[TinkComponent](-tink-component.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[TinkComponent](-tink-component.html)
 
 
 
-# TinkComponent  
-[androidJvm]  
-Content  
-fun [TinkComponent](-tink-component.md)()  
+# TinkComponent
+
+
+
+[androidJvm]\
+fun [TinkComponent](-tink-component.html)()
+
 
 
 

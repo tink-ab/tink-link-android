@@ -1,14 +1,17 @@
 ---
-title: overspentBudgets -
+title: overspentBudgets
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryOverspentData](index.md)/[overspentBudgets](overspent-budgets.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSummaryOverspentData](index.html)/[overspentBudgets](overspent-budgets.html)
 
 
 
-# overspentBudgets  
-[androidJvm]  
-Content  
-val [overspentBudgets](overspent-budgets.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.md)>  
+# overspentBudgets
+
+
+
+[androidJvm]\
+val [overspentBudgets](overspent-budgets.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: financialInstitution -
+title: financialInstitution
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[financialInstitution](financial-institution.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[financialInstitution](financial-institution.html)
 
 
 
-# financialInstitution  
-[common]  
-Content  
-val [financialInstitution](financial-institution.md): [Provider.FinancialInstitution](-financial-institution/index.md)  
+# financialInstitution
+
+
+
+[common]\
+val [financialInstitution](financial-institution.html): [Provider.FinancialInstitution](-financial-institution/index.html)
+
 
 
 

@@ -1,15 +1,19 @@
 ---
-title: ViewTransactions -
+title: ViewTransactions
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[ViewTransactions](index.md)/[ViewTransactions](-view-transactions.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[ViewTransactions](index.html)/[ViewTransactions](-view-transactions.html)
 
 
 
-# ViewTransactions  
-[common]  
-Content  
-fun [ViewTransactions](-view-transactions.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
-fun [ViewTransactions](-view-transactions.md)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>)  
+# ViewTransactions
+
+
+
+[common]\
+fun [ViewTransactions](-view-transactions.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
+fun [ViewTransactions](-view-transactions.html)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;)
+
 
 
 

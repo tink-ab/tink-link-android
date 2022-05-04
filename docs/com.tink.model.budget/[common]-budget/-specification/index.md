@@ -1,47 +1,45 @@
 ---
-title: Specification -
+title: Specification
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Specification](index.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Specification](index.html)
 
 
 
-# Specification  
- [common] data class [Specification](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **created**: <ERROR CLASS>, **amount**: [Amount](../../../com.tink.model.misc/[common]-amount/index.md), **periodicity**: [Budget.Periodicity](../-periodicity/index.md), **archived**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), **filter**: [Budget.Specification.Filter](-filter/index.md))   
+# Specification
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Specification](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val created: &lt;ERROR CLASS&gt;, val amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), val periodicity: [Budget.Periodicity](../-periodicity/index.html), val archived: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), val filter: [Budget.Specification.Filter](-filter/index.html))
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Specification.Filter///PointingToDeclaration/"></a>[Filter](-filter/index.md)| <a name="com.tink.model.budget/Budget.Specification.Filter///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [Filter](-filter/index.md)(**accounts**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Budget.Specification.Filter.Account](-filter/-account/index.md)>, **categories**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Budget.Specification.Filter.Category](-filter/-category/index.md)>, **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Budget.Specification.Filter.Tag](-filter/-tag/index.md)>, **freeTextQuery**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  <br><br><br>
+| [Specification](-specification.html) | [common]<br>fun [Specification](-specification.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: &lt;ERROR CLASS&gt;, amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), periodicity: [Budget.Periodicity](../-periodicity/index.html), archived: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), filter: [Budget.Specification.Filter](-filter/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Specification/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.budget/Budget.Specification/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.budget/Budget.Specification/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.budget/Budget.Specification/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): <ERROR CLASS>  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.budget/Budget.Specification/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [Amount](../../../com.tink.model.misc/[common]-amount/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.budget/Budget.Specification/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): [Budget.Periodicity](../-periodicity/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.budget/Budget.Specification/component6/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component6](component6.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.budget/Budget.Specification/component7/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component7](component7.md)(): [Budget.Specification.Filter](-filter/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Specification/copy/#kotlin.String#kotlin.String##com.tink.model.misc.Amount#com.tink.model.budget.Budget.Periodicity#kotlin.Boolean#com.tink.model.budget.Budget.Specification.Filter/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.budget/Budget.Specification/copy/#kotlin.String#kotlin.String##com.tink.model.misc.Amount#com.tink.model.budget.Budget.Periodicity#kotlin.Boolean#com.tink.model.budget.Budget.Specification.Filter/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), created: <ERROR CLASS>, amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md), periodicity: [Budget.Periodicity](../-periodicity/index.md), archived: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), filter: [Budget.Specification.Filter](-filter/index.md)): [Budget.Specification](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [Filter](-filter/index.html) | [common]<br>data class [Filter](-filter/index.html)(val accounts: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Budget.Specification.Filter.Account](-filter/-account/index.html)&gt;, val categories: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Budget.Specification.Filter.Category](-filter/-category/index.html)&gt;, val tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Budget.Specification.Filter.Tag](-filter/-tag/index.html)&gt;, val freeTextQuery: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Specification/amount/#/PointingToDeclaration/"></a>[amount](amount.md)| <a name="com.tink.model.budget/Budget.Specification/amount/#/PointingToDeclaration/"></a> [common] val [amount](amount.md): [Amount](../../../com.tink.model.misc/[common]-amount/index.md)   <br>
-| <a name="com.tink.model.budget/Budget.Specification/archived/#/PointingToDeclaration/"></a>[archived](archived.md)| <a name="com.tink.model.budget/Budget.Specification/archived/#/PointingToDeclaration/"></a> [common] val [archived](archived.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Specification/created/#/PointingToDeclaration/"></a>[created](created.md)| <a name="com.tink.model.budget/Budget.Specification/created/#/PointingToDeclaration/"></a> [common] val [created](created.md): <ERROR CLASS>   <br>
-| <a name="com.tink.model.budget/Budget.Specification/filter/#/PointingToDeclaration/"></a>[filter](filter.md)| <a name="com.tink.model.budget/Budget.Specification/filter/#/PointingToDeclaration/"></a> [common] val [filter](filter.md): [Budget.Specification.Filter](-filter/index.md)   <br>
-| <a name="com.tink.model.budget/Budget.Specification/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.budget/Budget.Specification/id/#/PointingToDeclaration/"></a> [common] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Specification/name/#/PointingToDeclaration/"></a>[name](name.md)| <a name="com.tink.model.budget/Budget.Specification/name/#/PointingToDeclaration/"></a> [common] val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/Budget.Specification/periodicity/#/PointingToDeclaration/"></a>[periodicity](periodicity.md)| <a name="com.tink.model.budget/Budget.Specification/periodicity/#/PointingToDeclaration/"></a> [common] val [periodicity](periodicity.md): [Budget.Periodicity](../-periodicity/index.md)   <br>
+| [amount](amount.html) | [common]<br>val [amount](amount.html): [Amount](../../../com.tink.model.misc/[common]-amount/index.html) |
+| [archived](archived.html) | [common]<br>val [archived](archived.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [created](created.html) | [common]<br>val [created](created.html): &lt;ERROR CLASS&gt; |
+| [filter](filter.html) | [common]<br>val [filter](filter.html): [Budget.Specification.Filter](-filter/index.html) |
+| [id](id.html) | [common]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [name](name.html) | [common]<br>val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [periodicity](periodicity.html) | [common]<br>val [periodicity](periodicity.html): [Budget.Periodicity](../-periodicity/index.html) |
 

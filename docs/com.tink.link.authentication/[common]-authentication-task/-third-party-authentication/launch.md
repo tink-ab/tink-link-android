@@ -1,27 +1,29 @@
 ---
-title: launch -
+title: launch
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)/[launch](launch.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[common]AuthenticationTask](../index.html)/[ThirdPartyAuthentication](index.html)/[launch](launch.html)
 
 
 
-# launch  
-[common]  
-Content  
-fun [launch](launch.md)(activity: <ERROR CLASS>): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.md)  
-More info  
+# launch
+
+
+
+[common]\
+fun [launch](launch.html)(activity: &lt;ERROR CLASS&gt;): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.html)
+
 
 
 Try to redirect the user to the third party app for authentication.
 
 
 
-#### Return  
+#### Return
 
 
-a [LaunchResult](-launch-result/index.md) that indicates if the user was successfully redirected.
 
-  
+a [LaunchResult](-launch-result/index.html) that indicates if the user was successfully redirected.
+
 
 
 

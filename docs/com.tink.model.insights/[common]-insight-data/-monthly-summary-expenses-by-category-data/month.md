@@ -1,14 +1,17 @@
 ---
-title: month -
+title: month
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[MonthlySummaryExpensesByCategoryData](index.md)/[month](month.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[MonthlySummaryExpensesByCategoryData](index.html)/[month](month.html)
 
 
 
-# month  
-[common]  
-Content  
-val [month](month.md): [YearMonth](../../../com.tink.model.time/[common]-year-month/index.md)  
+# month
+
+
+
+[common]\
+val [month](month.html): [YearMonth](../../../com.tink.model.time/[common]-year-month/index.html)
+
 
 
 

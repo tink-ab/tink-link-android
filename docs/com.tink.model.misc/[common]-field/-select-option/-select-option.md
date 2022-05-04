@@ -1,14 +1,17 @@
 ---
-title: SelectOption -
+title: SelectOption
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[SelectOption](index.md)/[SelectOption](-select-option.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[common]Field](../index.html)/[SelectOption](index.html)/[SelectOption](-select-option.html)
 
 
 
-# SelectOption  
-[common]  
-Content  
-fun [SelectOption](-select-option.md)(iconUrl: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), text: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# SelectOption
+
+
+
+[common]\
+fun [SelectOption](-select-option.html)(iconUrl: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), text: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

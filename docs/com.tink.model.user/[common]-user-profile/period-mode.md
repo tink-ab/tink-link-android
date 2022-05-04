@@ -1,14 +1,17 @@
 ---
-title: periodMode -
+title: periodMode
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserProfile](index.md)/[periodMode](period-mode.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserProfile](index.html)/[periodMode](period-mode.html)
 
 
 
-# periodMode  
-[common]  
-Content  
-val [periodMode](period-mode.md): [UserProfile.PeriodMode](-period-mode/index.md)  
+# periodMode
+
+
+
+[common]\
+val [periodMode](period-mode.html): [UserProfile.PeriodMode](-period-mode/index.html)
+
 
 
 

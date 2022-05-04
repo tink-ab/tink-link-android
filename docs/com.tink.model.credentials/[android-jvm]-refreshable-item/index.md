@@ -1,12 +1,16 @@
 ---
-title: [androidJvm]RefreshableItem -
+title: [androidJvm]RefreshableItem
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]RefreshableItem](index.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]RefreshableItem](index.html)
 
 
 
-# RefreshableItem  
- [androidJvm] enum [RefreshableItem](index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[RefreshableItem](index.md)> 
+# RefreshableItem
+
+
+
+[androidJvm]\
+enum [RefreshableItem](index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[RefreshableItem](index.html)&gt; 
 
 Refreshable items are a way to limit which types of data should be aggregated from a provider.
 
@@ -14,61 +18,54 @@ Refreshable items are a way to limit which types of data should be aggregated fr
 
 Tip: You can use collection operations to quickly define different sets of items, e.g.
 
-val onlyAccounts = RefreshableItem.accounts()  
-val everythingExceptTransactions = RefreshableItem.all() - RefreshableItem.transactions()  
-val onlyCreditCardData = RefreshableItem.CREDITCARD_ACCOUNTS + RefreshableItem.CREDITCARD_TRANSACTIONS   
+val onlyAccounts = RefreshableItem.accounts()\
+val everythingExceptTransactions = RefreshableItem.all() - RefreshableItem.transactions()\
+val onlyCreditCardData = RefreshableItem.CREDITCARD_ACCOUNTS + RefreshableItem.CREDITCARD_TRANSACTIONS
 
 
-## Entries  
-  
-|  Name|  Summary| 
+
+## Entries
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.credentials/RefreshableItem.CHECKING_ACCOUNTS///PointingToDeclaration/"></a>[CHECKING_ACCOUNTS](-c-h-e-c-k-i-n-g_-a-c-c-o-u-n-t-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.CHECKING_ACCOUNTS///PointingToDeclaration/"></a> [androidJvm] [CHECKING_ACCOUNTS](-c-h-e-c-k-i-n-g_-a-c-c-o-u-n-t-s/index.md)("CHECKING_ACCOUNTS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.CHECKING_TRANSACTIONS///PointingToDeclaration/"></a>[CHECKING_TRANSACTIONS](-c-h-e-c-k-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.CHECKING_TRANSACTIONS///PointingToDeclaration/"></a> [androidJvm] [CHECKING_TRANSACTIONS](-c-h-e-c-k-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)("CHECKING_TRANSACTIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.SAVING_ACCOUNTS///PointingToDeclaration/"></a>[SAVING_ACCOUNTS](-s-a-v-i-n-g_-a-c-c-o-u-n-t-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.SAVING_ACCOUNTS///PointingToDeclaration/"></a> [androidJvm] [SAVING_ACCOUNTS](-s-a-v-i-n-g_-a-c-c-o-u-n-t-s/index.md)("SAVING_ACCOUNTS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.SAVING_TRANSACTIONS///PointingToDeclaration/"></a>[SAVING_TRANSACTIONS](-s-a-v-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.SAVING_TRANSACTIONS///PointingToDeclaration/"></a> [androidJvm] [SAVING_TRANSACTIONS](-s-a-v-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)("SAVING_TRANSACTIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.CREDITCARD_ACCOUNTS///PointingToDeclaration/"></a>[CREDITCARD_ACCOUNTS](-c-r-e-d-i-t-c-a-r-d_-a-c-c-o-u-n-t-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.CREDITCARD_ACCOUNTS///PointingToDeclaration/"></a> [androidJvm] [CREDITCARD_ACCOUNTS](-c-r-e-d-i-t-c-a-r-d_-a-c-c-o-u-n-t-s/index.md)("CREDITCARD_ACCOUNTS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.CREDITCARD_TRANSACTIONS///PointingToDeclaration/"></a>[CREDITCARD_TRANSACTIONS](-c-r-e-d-i-t-c-a-r-d_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.CREDITCARD_TRANSACTIONS///PointingToDeclaration/"></a> [androidJvm] [CREDITCARD_TRANSACTIONS](-c-r-e-d-i-t-c-a-r-d_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)("CREDITCARD_TRANSACTIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.LOAN_ACCOUNTS///PointingToDeclaration/"></a>[LOAN_ACCOUNTS](-l-o-a-n_-a-c-c-o-u-n-t-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.LOAN_ACCOUNTS///PointingToDeclaration/"></a> [androidJvm] [LOAN_ACCOUNTS](-l-o-a-n_-a-c-c-o-u-n-t-s/index.md)("LOAN_ACCOUNTS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.LOAN_TRANSACTIONS///PointingToDeclaration/"></a>[LOAN_TRANSACTIONS](-l-o-a-n_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.LOAN_TRANSACTIONS///PointingToDeclaration/"></a> [androidJvm] [LOAN_TRANSACTIONS](-l-o-a-n_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)("LOAN_TRANSACTIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.INVESTMENT_ACCOUNTS///PointingToDeclaration/"></a>[INVESTMENT_ACCOUNTS](-i-n-v-e-s-t-m-e-n-t_-a-c-c-o-u-n-t-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.INVESTMENT_ACCOUNTS///PointingToDeclaration/"></a> [androidJvm] [INVESTMENT_ACCOUNTS](-i-n-v-e-s-t-m-e-n-t_-a-c-c-o-u-n-t-s/index.md)("INVESTMENT_ACCOUNTS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.INVESTMENT_TRANSACTIONS///PointingToDeclaration/"></a>[INVESTMENT_TRANSACTIONS](-i-n-v-e-s-t-m-e-n-t_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.INVESTMENT_TRANSACTIONS///PointingToDeclaration/"></a> [androidJvm] [INVESTMENT_TRANSACTIONS](-i-n-v-e-s-t-m-e-n-t_-t-r-a-n-s-a-c-t-i-o-n-s/index.md)("INVESTMENT_TRANSACTIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.EINVOICES///PointingToDeclaration/"></a>[EINVOICES](-e-i-n-v-o-i-c-e-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.EINVOICES///PointingToDeclaration/"></a> [androidJvm] [EINVOICES](-e-i-n-v-o-i-c-e-s/index.md)("EINVOICES")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.TRANSFER_DESTINATIONS///PointingToDeclaration/"></a>[TRANSFER_DESTINATIONS](-t-r-a-n-s-f-e-r_-d-e-s-t-i-n-a-t-i-o-n-s/index.md)| <a name="com.tink.model.credentials/RefreshableItem.TRANSFER_DESTINATIONS///PointingToDeclaration/"></a> [androidJvm] [TRANSFER_DESTINATIONS](-t-r-a-n-s-f-e-r_-d-e-s-t-i-n-a-t-i-o-n-s/index.md)("TRANSFER_DESTINATIONS")  <br>   <br>
-| <a name="com.tink.model.credentials/RefreshableItem.IDENTITY_DATA///PointingToDeclaration/"></a>[IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a/index.md)| <a name="com.tink.model.credentials/RefreshableItem.IDENTITY_DATA///PointingToDeclaration/"></a> [androidJvm] [IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a/index.md)("IDENTITY_DATA")  <br>   <br>
+| [IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a/index.html) | [androidJvm]<br>[IDENTITY_DATA](-i-d-e-n-t-i-t-y_-d-a-t-a/index.html)(&quot;IDENTITY_DATA&quot;) |
+| [TRANSFER_DESTINATIONS](-t-r-a-n-s-f-e-r_-d-e-s-t-i-n-a-t-i-o-n-s/index.html) | [androidJvm]<br>[TRANSFER_DESTINATIONS](-t-r-a-n-s-f-e-r_-d-e-s-t-i-n-a-t-i-o-n-s/index.html)(&quot;TRANSFER_DESTINATIONS&quot;) |
+| [EINVOICES](-e-i-n-v-o-i-c-e-s/index.html) | [androidJvm]<br>[EINVOICES](-e-i-n-v-o-i-c-e-s/index.html)(&quot;EINVOICES&quot;) |
+| [INVESTMENT_TRANSACTIONS](-i-n-v-e-s-t-m-e-n-t_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[INVESTMENT_TRANSACTIONS](-i-n-v-e-s-t-m-e-n-t_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;INVESTMENT_TRANSACTIONS&quot;) |
+| [INVESTMENT_ACCOUNTS](-i-n-v-e-s-t-m-e-n-t_-a-c-c-o-u-n-t-s/index.html) | [androidJvm]<br>[INVESTMENT_ACCOUNTS](-i-n-v-e-s-t-m-e-n-t_-a-c-c-o-u-n-t-s/index.html)(&quot;INVESTMENT_ACCOUNTS&quot;) |
+| [LOAN_TRANSACTIONS](-l-o-a-n_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[LOAN_TRANSACTIONS](-l-o-a-n_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;LOAN_TRANSACTIONS&quot;) |
+| [LOAN_ACCOUNTS](-l-o-a-n_-a-c-c-o-u-n-t-s/index.html) | [androidJvm]<br>[LOAN_ACCOUNTS](-l-o-a-n_-a-c-c-o-u-n-t-s/index.html)(&quot;LOAN_ACCOUNTS&quot;) |
+| [CREDITCARD_TRANSACTIONS](-c-r-e-d-i-t-c-a-r-d_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[CREDITCARD_TRANSACTIONS](-c-r-e-d-i-t-c-a-r-d_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;CREDITCARD_TRANSACTIONS&quot;) |
+| [CREDITCARD_ACCOUNTS](-c-r-e-d-i-t-c-a-r-d_-a-c-c-o-u-n-t-s/index.html) | [androidJvm]<br>[CREDITCARD_ACCOUNTS](-c-r-e-d-i-t-c-a-r-d_-a-c-c-o-u-n-t-s/index.html)(&quot;CREDITCARD_ACCOUNTS&quot;) |
+| [SAVING_TRANSACTIONS](-s-a-v-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[SAVING_TRANSACTIONS](-s-a-v-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;SAVING_TRANSACTIONS&quot;) |
+| [SAVING_ACCOUNTS](-s-a-v-i-n-g_-a-c-c-o-u-n-t-s/index.html) | [androidJvm]<br>[SAVING_ACCOUNTS](-s-a-v-i-n-g_-a-c-c-o-u-n-t-s/index.html)(&quot;SAVING_ACCOUNTS&quot;) |
+| [CHECKING_TRANSACTIONS](-c-h-e-c-k-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[CHECKING_TRANSACTIONS](-c-h-e-c-k-i-n-g_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;CHECKING_TRANSACTIONS&quot;) |
+| [CHECKING_ACCOUNTS](-c-h-e-c-k-i-n-g_-a-c-c-o-u-n-t-s/index.html) | [androidJvm]<br>[CHECKING_ACCOUNTS](-c-h-e-c-k-i-n-g_-a-c-c-o-u-n-t-s/index.html)(&quot;CHECKING_ACCOUNTS&quot;) |
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.credentials/RefreshableItem.Companion///PointingToDeclaration/"></a>[Companion](-companion/index.md)| <a name="com.tink.model.credentials/RefreshableItem.Companion///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>object [Companion](-companion/index.md)  <br><br><br>
+| [Companion](-companion/index.html) | [androidJvm]<br>object [Companion](-companion/index.html) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Enum/compareTo/#com.tink.model.credentials.RefreshableItem/PointingToDeclaration/"></a>[compareTo](-i-d-e-n-t-i-t-y_-d-a-t-a/index.md#%5Bkotlin%2FEnum%2FcompareTo%2F%23com.tink.model.credentials.RefreshableItem%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/compareTo/#com.tink.model.credentials.RefreshableItem/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator override fun [compareTo](-i-d-e-n-t-i-t-y_-d-a-t-a/index.md#%5Bkotlin%2FEnum%2FcompareTo%2F%23com.tink.model.credentials.RefreshableItem%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [RefreshableItem](index.md)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Enum/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator override fun [equals](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Enum/finalize/#/PointingToDeclaration/"></a>[finalize](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2Ffinalize%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/finalize/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [finalize](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2Ffinalize%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)()  <br><br><br>
-| <a name="kotlin/Enum/getDeclaringClass/#/PointingToDeclaration/"></a>[getDeclaringClass](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FgetDeclaringClass%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/getDeclaringClass/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [getDeclaringClass](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FgetDeclaringClass%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Class](https://developer.android.com/reference/kotlin/java/lang/Class.html)<[RefreshableItem](index.md)>  <br><br><br>
-| <a name="kotlin/Enum/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>override fun [hashCode](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Enum/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Enum/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.model.transfer/[android-jvm]-signable-operation/-type/-u-n-k-n-o-w-n/index.md#%5Bkotlin%2FEnum%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [item](item.html) | [androidJvm]<br>val [item](item.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [name](../../com.tink.service.network/[android-jvm]-sdk-client/-t-i-n-k_-l-i-n-k/index.html#-372974862%2FProperties%2F-812656150) | [androidJvm]<br>val [name](../../com.tink.service.network/[android-jvm]-sdk-client/-t-i-n-k_-l-i-n-k/index.html#-372974862%2FProperties%2F-812656150): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ordinal](../../com.tink.service.network/[android-jvm]-sdk-client/-t-i-n-k_-l-i-n-k/index.html#-739389684%2FProperties%2F-812656150) | [androidJvm]<br>val [ordinal](../../com.tink.service.network/[android-jvm]-sdk-client/-t-i-n-k_-l-i-n-k/index.html#-739389684%2FProperties%2F-812656150): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Extensions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.credentials/RefreshableItem/item/#/PointingToDeclaration/"></a>[item](item.md)| <a name="com.tink.model.credentials/RefreshableItem/item/#/PointingToDeclaration/"></a> [androidJvm] val [item](item.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.credentials/RefreshableItem/name/#/PointingToDeclaration/"></a>[name](index.md#%5Bcom.tink.model.credentials%2FRefreshableItem%2Fname%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F-586840090)| <a name="com.tink.model.credentials/RefreshableItem/name/#/PointingToDeclaration/"></a> [androidJvm] val [name](index.md#%5Bcom.tink.model.credentials%2FRefreshableItem%2Fname%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F-586840090): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.credentials/RefreshableItem/ordinal/#/PointingToDeclaration/"></a>[ordinal](index.md#%5Bcom.tink.model.credentials%2FRefreshableItem%2Fordinal%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F-586840090)| <a name="com.tink.model.credentials/RefreshableItem/ordinal/#/PointingToDeclaration/"></a> [androidJvm] val [ordinal](index.md#%5Bcom.tink.model.credentials%2FRefreshableItem%2Fordinal%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F-586840090): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)   <br>
-
-
-## Extensions  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.model.credentials//plus/com.tink.model.credentials.RefreshableItem#com.tink.model.credentials.RefreshableItem/PointingToDeclaration/"></a>plus| <a name="com.tink.model.credentials//plus/com.tink.model.credentials.RefreshableItem#com.tink.model.credentials.RefreshableItem/PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>operator fun [RefreshableItem](../[common]-refreshable-item/index.md).[plus](../[common]plus.md)(other: [RefreshableItem](../[common]-refreshable-item/index.md)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../[common]-refreshable-item/index.md)>  <br>[androidJvm]  <br>operator fun [RefreshableItem](index.md).[plus](../[android-jvm]plus.md)(other: [RefreshableItem](index.md)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](index.md)>  <br><br><br>
+| plus | [common, androidJvm]<br>[common]<br>operator fun [RefreshableItem](../[common]-refreshable-item/index.html).[plus](../[common]plus.html)(other: [RefreshableItem](../[common]-refreshable-item/index.html)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../[common]-refreshable-item/index.html)&gt;<br>[androidJvm]<br>operator fun [RefreshableItem](index.html).[plus](../[android-jvm]plus.html)(other: [RefreshableItem](index.html)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](index.html)&gt; |
 

@@ -1,14 +1,17 @@
 ---
-title: validationRules -
+title: validationRules
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Field](index.md)/[validationRules](validation-rules.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]Field](index.html)/[validationRules](validation-rules.html)
 
 
 
-# validationRules  
-[androidJvm]  
-Content  
-val [validationRules](validation-rules.md): [Field.ValidationRules](-validation-rules/index.md)  
+# validationRules
+
+
+
+[androidJvm]\
+val [validationRules](validation-rules.html): [Field.ValidationRules](-validation-rules/index.html)
+
 
 
 

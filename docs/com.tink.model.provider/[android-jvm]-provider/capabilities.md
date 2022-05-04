@@ -1,14 +1,17 @@
 ---
-title: capabilities -
+title: capabilities
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[capabilities](capabilities.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[capabilities](capabilities.html)
 
 
 
-# capabilities  
-[androidJvm]  
-Content  
-val [capabilities](capabilities.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Provider.Capability](-capability/index.md)>  
+# capabilities
+
+
+
+[androidJvm]\
+val [capabilities](capabilities.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Provider.Capability](-capability/index.html)&gt;
+
 
 
 

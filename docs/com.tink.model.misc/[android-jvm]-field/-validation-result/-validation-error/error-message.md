@@ -1,20 +1,21 @@
 ---
-title: errorMessage -
+title: errorMessage
 ---
-//[link](../../../../index.md)/[com.tink.model.misc](../../../index.md)/[[androidJvm]Field](../../index.md)/[ValidationResult](../index.md)/[ValidationError](index.md)/[errorMessage](error-message.md)
+//[link](../../../../../index.html)/[com.tink.model.misc](../../../index.html)/[[androidJvm]Field](../../index.html)/[ValidationResult](../index.html)/[ValidationError](index.html)/[errorMessage](error-message.html)
 
 
 
-# errorMessage  
-[androidJvm]  
-Content  
-val [errorMessage](error-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
-More info  
+# errorMessage
+
+
+
+[androidJvm]\
+val [errorMessage](error-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 A user-friendly message describing the validation error
 
-  
 
 
 

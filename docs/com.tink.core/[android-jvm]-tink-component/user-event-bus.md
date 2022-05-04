@@ -1,14 +1,17 @@
 ---
-title: userEventBus -
+title: userEventBus
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[userEventBus](user-event-bus.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[userEventBus](user-event-bus.html)
 
 
 
-# userEventBus  
-[androidJvm]  
-Content  
-abstract val [userEventBus](user-event-bus.md): [UserEventBus](../../com.tink.service.authentication/[android-jvm]-user-event-bus/index.md)  
+# userEventBus
+
+
+
+[androidJvm]\
+abstract val [userEventBus](user-event-bus.html): [UserEventBus](../../com.tink.service.authentication/[android-jvm]-user-event-bus/index.html)
+
 
 
 

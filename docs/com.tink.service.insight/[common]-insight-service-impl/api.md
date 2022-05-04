@@ -1,14 +1,17 @@
 ---
-title: api -
+title: api
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightServiceImpl](index.md)/[api](api.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightServiceImpl](index.html)/[api](api.html)
 
 
 
-# api  
-[common]  
-Content  
-val [api](api.md): <ERROR CLASS>  
+# api
+
+
+
+[common]\
+val [api](api.html): &lt;ERROR CLASS&gt;
+
 
 
 

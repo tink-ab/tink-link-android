@@ -1,51 +1,47 @@
 ---
-title: [androidJvm]BudgetCreateOrUpdateDescriptor -
+title: [androidJvm]BudgetCreateOrUpdateDescriptor
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.html)
 
 
 
-# BudgetCreateOrUpdateDescriptor  
- [androidJvm] data class [BudgetCreateOrUpdateDescriptor](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **targetAmount**: [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md), **filter**: [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.md), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **periodicity**: [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+# BudgetCreateOrUpdateDescriptor
+
+
+
+[androidJvm]\
+data class [BudgetCreateOrUpdateDescriptor](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val targetAmount: [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html), val filter: [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val periodicity: [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
 
 Descriptor for creating or updating a budget. If we have an id, it means we're updating an already existing budget.
 
-   
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/BudgetCreateOrUpdateDescriptor/#kotlin.String?#kotlin.String#com.tink.model.misc.Amount#com.tink.model.budget.Budget.Specification.Filter#kotlin.String?#com.tink.model.budget.Budget.Periodicity/PointingToDeclaration/"></a>[BudgetCreateOrUpdateDescriptor](-budget-create-or-update-descriptor.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/BudgetCreateOrUpdateDescriptor/#kotlin.String?#kotlin.String#com.tink.model.misc.Amount#com.tink.model.budget.Budget.Specification.Filter#kotlin.String?#com.tink.model.budget.Budget.Periodicity/PointingToDeclaration/"></a> [androidJvm] fun [BudgetCreateOrUpdateDescriptor](-budget-create-or-update-descriptor.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), targetAmount: [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md), filter: [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.md), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, periodicity: [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md))   <br>
+| [BudgetCreateOrUpdateDescriptor](-budget-create-or-update-descriptor.html) | [androidJvm]<br>fun [BudgetCreateOrUpdateDescriptor](-budget-create-or-update-descriptor.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), targetAmount: [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html), filter: [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, periodicity: [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/component6/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component6](component6.md)(): [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/copy/#kotlin.String?#kotlin.String#com.tink.model.misc.Amount#com.tink.model.budget.Budget.Specification.Filter#kotlin.String?#com.tink.model.budget.Budget.Periodicity/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/copy/#kotlin.String?#kotlin.String#com.tink.model.misc.Amount#com.tink.model.budget.Budget.Specification.Filter#kotlin.String?#com.tink.model.budget.Budget.Periodicity/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), targetAmount: [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md), filter: [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.md), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, periodicity: [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md)): [BudgetCreateOrUpdateDescriptor](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/description/#/PointingToDeclaration/"></a>[description](description.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/description/#/PointingToDeclaration/"></a> [androidJvm] val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/filter/#/PointingToDeclaration/"></a>[filter](filter.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/filter/#/PointingToDeclaration/"></a> [androidJvm] val [filter](filter.md): [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.md)   <br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/id/#/PointingToDeclaration/"></a> [androidJvm] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/name/#/PointingToDeclaration/"></a>[name](name.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/name/#/PointingToDeclaration/"></a> [androidJvm] val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/periodicity/#/PointingToDeclaration/"></a>[periodicity](periodicity.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/periodicity/#/PointingToDeclaration/"></a> [androidJvm] val [periodicity](periodicity.md): [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md)   <br>
-| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/targetAmount/#/PointingToDeclaration/"></a>[targetAmount](target-amount.md)| <a name="com.tink.model.budget/BudgetCreateOrUpdateDescriptor/targetAmount/#/PointingToDeclaration/"></a> [androidJvm] val [targetAmount](target-amount.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)   <br>
+| [description](description.html) | [androidJvm]<br>val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [filter](filter.html) | [androidJvm]<br>val [filter](filter.html): [Budget.Specification.Filter](../[android-jvm]-budget/-specification/-filter/index.html) |
+| [id](id.html) | [androidJvm]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [name](name.html) | [androidJvm]<br>val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [periodicity](periodicity.html) | [androidJvm]<br>val [periodicity](periodicity.html): [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.html) |
+| [targetAmount](target-amount.html) | [androidJvm]<br>val [targetAmount](target-amount.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html) |
 

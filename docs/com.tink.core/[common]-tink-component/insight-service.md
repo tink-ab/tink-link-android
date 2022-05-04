@@ -1,14 +1,17 @@
 ---
-title: insightService -
+title: insightService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[insightService](insight-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[insightService](insight-service.html)
 
 
 
-# insightService  
-[common]  
-Content  
-abstract val [insightService](insight-service.md): [InsightService](../../com.tink.service.insight/[common]-insight-service/index.md)  
+# insightService
+
+
+
+[common]\
+abstract val [insightService](insight-service.html): [InsightService](../../com.tink.service.insight/[common]-insight-service/index.html)
+
 
 
 

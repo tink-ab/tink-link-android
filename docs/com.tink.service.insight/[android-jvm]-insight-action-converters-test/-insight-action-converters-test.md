@@ -1,14 +1,17 @@
 ---
-title: InsightActionConvertersTest -
+title: InsightActionConvertersTest
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightActionConvertersTest](index.md)/[InsightActionConvertersTest](-insight-action-converters-test.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[androidJvm]InsightActionConvertersTest](index.html)/[InsightActionConvertersTest](-insight-action-converters-test.html)
 
 
 
-# InsightActionConvertersTest  
-[androidJvm]  
-Content  
-fun [InsightActionConvertersTest](-insight-action-converters-test.md)()  
+# InsightActionConvertersTest
+
+
+
+[androidJvm]\
+fun [InsightActionConvertersTest](-insight-action-converters-test.html)()
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: income -
+title: income
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]CategoryTree](index.md)/[income](income.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]CategoryTree](index.html)/[income](income.html)
 
 
 
-# income  
-[common]  
-Content  
-val [income](income.md): [Category](../[common]-category/index.md)  
+# income
+
+
+
+[common]\
+val [income](income.html): [Category](../[common]-category/index.html)
+
 
 
 

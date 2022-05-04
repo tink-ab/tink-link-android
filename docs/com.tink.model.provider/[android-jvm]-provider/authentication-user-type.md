@@ -1,14 +1,17 @@
 ---
-title: authenticationUserType -
+title: authenticationUserType
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[authenticationUserType](authentication-user-type.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[authenticationUserType](authentication-user-type.html)
 
 
 
-# authenticationUserType  
-[androidJvm]  
-Content  
-val [authenticationUserType](authentication-user-type.md): [Provider.AuthenticationUserType](-authentication-user-type/index.md)  
+# authenticationUserType
+
+
+
+[androidJvm]\
+val [authenticationUserType](authentication-user-type.html): [Provider.AuthenticationUserType](-authentication-user-type/index.html)
+
 
 
 

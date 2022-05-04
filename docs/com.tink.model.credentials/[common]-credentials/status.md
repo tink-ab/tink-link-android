@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[status](status.html)
 
 
 
-# status  
-[common]  
-Content  
-val [status](status.md): [Credentials.Status](-status/index.md)? = null  
+# status
+
+
+
+[common]\
+val [status](status.html): [Credentials.Status](-status/index.html)? = null
+
 
 
 

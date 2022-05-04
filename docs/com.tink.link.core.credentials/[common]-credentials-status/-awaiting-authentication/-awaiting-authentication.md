@@ -1,26 +1,28 @@
 ---
-title: AwaitingAuthentication -
+title: AwaitingAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[common]CredentialsStatus](../index.md)/[AwaitingAuthentication](index.md)/[AwaitingAuthentication](-awaiting-authentication.md)
+//[link](../../../../index.html)/[com.tink.link.core.credentials](../../index.html)/[[common]CredentialsStatus](../index.html)/[AwaitingAuthentication](index.html)/[AwaitingAuthentication](-awaiting-authentication.html)
 
 
 
-# AwaitingAuthentication  
-[common]  
-Content  
-fun [AwaitingAuthentication](-awaiting-authentication.md)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.md), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md))  
-More info  
+# AwaitingAuthentication
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/AwaitingAuthentication/#com.tink.link.authentication.AuthenticationTask#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/AwaitingAuthentication/#com.tink.link.authentication.AuthenticationTask#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>the credentials for which authentication is needed<br><br>
-  
-  
+| credentials | the credentials for which authentication is needed |
+
 
 
 

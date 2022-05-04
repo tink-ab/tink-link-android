@@ -1,26 +1,28 @@
 ---
-title: oAuthClientId -
+title: oAuthClientId
 ---
-//[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]TinkConfiguration](index.md)/[oAuthClientId](o-auth-client-id.md)
+//[link](../../../index.html)/[com.tink.service.network](../index.html)/[[androidJvm]TinkConfiguration](index.html)/[oAuthClientId](o-auth-client-id.html)
 
 
 
-# oAuthClientId  
-[androidJvm]  
-Content  
-val [oAuthClientId](o-auth-client-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# oAuthClientId
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [oAuthClientId](o-auth-client-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.network/TinkConfiguration/oAuthClientId/#/PointingToDeclaration/"></a>oAuthClientId| <a name="com.tink.service.network/TinkConfiguration/oAuthClientId/#/PointingToDeclaration/"></a><br><br>Your client id. You can retrieve it from https://console.tink.com.<br><br>
-  
-  
+| oAuthClientId | Your client id. You can retrieve it from https://console.tink.com. |
+
 
 
 

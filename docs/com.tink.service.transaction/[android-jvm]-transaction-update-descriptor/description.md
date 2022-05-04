@@ -1,14 +1,17 @@
 ---
-title: description -
+title: description
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]TransactionUpdateDescriptor](index.md)/[description](description.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[androidJvm]TransactionUpdateDescriptor](index.html)/[description](description.html)
 
 
 
-# description  
-[androidJvm]  
-Content  
-val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# description
+
+
+
+[androidJvm]\
+val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

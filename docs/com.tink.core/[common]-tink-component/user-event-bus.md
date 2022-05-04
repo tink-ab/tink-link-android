@@ -1,14 +1,17 @@
 ---
-title: userEventBus -
+title: userEventBus
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[userEventBus](user-event-bus.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[userEventBus](user-event-bus.html)
 
 
 
-# userEventBus  
-[common]  
-Content  
-abstract val [userEventBus](user-event-bus.md): [UserEventBus](../../com.tink.service.authentication/[common]-user-event-bus/index.md)  
+# userEventBus
+
+
+
+[common]\
+abstract val [userEventBus](user-event-bus.html): [UserEventBus](../../com.tink.service.authentication/[common]-user-event-bus/index.html)
+
 
 
 

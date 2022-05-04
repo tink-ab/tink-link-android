@@ -1,14 +1,17 @@
 ---
-title: InsightAction -
+title: InsightAction
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]InsightAction](index.md)/[InsightAction](-insight-action.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]InsightAction](index.html)/[InsightAction](-insight-action.html)
 
 
 
-# InsightAction  
-[common]  
-Content  
-fun [InsightAction](-insight-action.md)(label: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), actionType: [InsightAction.Type](-type/index.md), data: [InsightAction.Data](-data/index.md))  
+# InsightAction
+
+
+
+[common]\
+fun [InsightAction](-insight-action.html)(label: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), actionType: [InsightAction.Type](-type/index.html), data: [InsightAction.Data](-data/index.html))
+
 
 
 

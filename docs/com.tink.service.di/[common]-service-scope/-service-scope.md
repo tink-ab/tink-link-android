@@ -1,14 +1,17 @@
 ---
-title: ServiceScope -
+title: ServiceScope
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceScope](index.md)/[ServiceScope](-service-scope.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceScope](index.html)/[ServiceScope](-service-scope.html)
 
 
 
-# ServiceScope  
-[common]  
-Content  
-fun [ServiceScope](-service-scope.md)()  
+# ServiceScope
+
+
+
+[common]\
+fun [ServiceScope](-service-scope.html)()
+
 
 
 

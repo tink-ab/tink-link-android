@@ -1,14 +1,17 @@
 ---
-title: requireCapability -
+title: requireCapability
 ---
-//[link](../../index.md)/[com.tink.service.provider](../index.md)/[[common]ProviderFilter](index.md)/[requireCapability](require-capability.md)
+//[link](../../../index.html)/[com.tink.service.provider](../index.html)/[[common]ProviderFilter](index.html)/[requireCapability](require-capability.html)
 
 
 
-# requireCapability  
-[common]  
-Content  
-val [requireCapability](require-capability.md): [Provider.Capability](../../com.tink.model.provider/[common]-provider/-capability/index.md)? = null  
+# requireCapability
+
+
+
+[common]\
+val [requireCapability](require-capability.html): [Provider.Capability](../../com.tink.model.provider/[common]-provider/-capability/index.html)? = null
+
 
 
 

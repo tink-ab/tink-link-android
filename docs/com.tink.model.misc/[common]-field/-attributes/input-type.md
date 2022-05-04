@@ -1,14 +1,17 @@
 ---
-title: inputType -
+title: inputType
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[Attributes](index.md)/[inputType](input-type.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[common]Field](../index.html)/[Attributes](index.html)/[inputType](input-type.html)
 
 
 
-# inputType  
-[common]  
-Content  
-val [inputType](input-type.md): [Field.InputType](../-input-type/index.md)  
+# inputType
+
+
+
+[common]\
+val [inputType](input-type.html): [Field.InputType](../-input-type/index.html)
+
 
 
 

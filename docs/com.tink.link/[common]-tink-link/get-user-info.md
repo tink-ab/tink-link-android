@@ -1,20 +1,21 @@
 ---
-title: getUserInfo -
+title: getUserInfo
 ---
-//[link](../../index.md)/[com.tink.link](../index.md)/[[common]TinkLink](index.md)/[getUserInfo](get-user-info.md)
+//[link](../../../index.html)/[com.tink.link](../index.html)/[[common]TinkLink](index.html)/[getUserInfo](get-user-info.html)
 
 
 
-# getUserInfo  
-[common]  
-Content  
-fun [getUserInfo](get-user-info.md)(resultHandler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.md)<[UserInfo](../../com.tink.model.user/[common]-user-info/index.md)>): <ERROR CLASS>  
-More info  
+# getUserInfo
 
 
-Fetches the [UserInfo](../../com.tink.model.user/[common]-user-info/index.md) for an authenticated user.
 
-  
+[common]\
+fun [getUserInfo](get-user-info.html)(resultHandler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.html)&lt;[UserInfo](../../com.tink.model.user/[common]-user-info/index.html)&gt;): &lt;ERROR CLASS&gt;
+
+
+
+Fetches the [UserInfo](../../com.tink.model.user/[common]-user-info/index.html) for an authenticated user.
+
 
 
 

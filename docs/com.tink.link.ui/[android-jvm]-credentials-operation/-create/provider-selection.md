@@ -1,26 +1,28 @@
 ---
-title: providerSelection -
+title: providerSelection
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]CredentialsOperation](../index.md)/[Create](index.md)/[providerSelection](provider-selection.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]CredentialsOperation](../index.html)/[Create](index.html)/[providerSelection](provider-selection.html)
 
 
 
-# providerSelection  
-[androidJvm]  
-Content  
-val [providerSelection](provider-selection.md): [ProviderSelection](../../[android-jvm]-provider-selection/index.md)  
-More info  
+# providerSelection
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [providerSelection](provider-selection.html): [ProviderSelection](../../[android-jvm]-provider-selection/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Create/providerSelection/#/PointingToDeclaration/"></a>providerSelection| <a name="com.tink.link.ui/CredentialsOperation.Create/providerSelection/#/PointingToDeclaration/"></a><br><br>Optional selection used to specify if you want to show a [single provider](../../[android-jvm]-provider-selection/-single-provider/index.md) or a [list of providers](../../[android-jvm]-provider-selection/-provider-list/index.md).<br><br>
-  
-  
+| providerSelection | Optional selection used to specify if you want to show a [single provider](../../[android-jvm]-provider-selection/-single-provider/index.html) or a [list of providers](../../[android-jvm]-provider-selection/-provider-list/index.html). |
+
 
 
 

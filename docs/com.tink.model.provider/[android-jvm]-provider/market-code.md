@@ -1,14 +1,17 @@
 ---
-title: marketCode -
+title: marketCode
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[marketCode](market-code.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[marketCode](market-code.html)
 
 
 
-# marketCode  
-[androidJvm]  
-Content  
-val [marketCode](market-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# marketCode
+
+
+
+[androidJvm]\
+val [marketCode](market-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

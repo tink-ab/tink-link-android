@@ -1,14 +1,17 @@
 ---
-title: compareTo -
+title: compareTo
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[compareTo](compare-to.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[compareTo](compare-to.html)
 
 
 
-# compareTo  
-[androidJvm]  
-Content  
-open operator override fun [compareTo](compare-to.md)(other: [Provider](index.md)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# compareTo
+
+
+
+[androidJvm]\
+open operator override fun [compareTo](compare-to.html)(other: [Provider](index.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

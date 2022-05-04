@@ -1,14 +1,17 @@
 ---
-title: Archived -
+title: Archived
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightState](../index.md)/[Archived](index.md)/[Archived](-archived.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightState](../index.html)/[Archived](index.html)/[Archived](-archived.html)
 
 
 
-# Archived  
-[common]  
-Content  
-fun [Archived](-archived.md)(archivedDate: <ERROR CLASS>)  
+# Archived
+
+
+
+[common]\
+fun [Archived](-archived.html)(archivedDate: &lt;ERROR CLASS&gt;)
+
 
 
 

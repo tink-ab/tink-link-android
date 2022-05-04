@@ -1,14 +1,17 @@
 ---
-title: convert CategorizeTransactionsData -
+title: convert CategorizeTransactionsData
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[androidJvm]InsightActionConvertersTest](index.md)/[convert CategorizeTransactionsData](convert -categorize-transactions-data.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[androidJvm]InsightActionConvertersTest](index.html)/[convert CategorizeTransactionsData](convert -categorize-transactions-data.html)
 
 
 
-# convert CategorizeTransactionsData  
-[androidJvm]  
-Content  
-fun [convert CategorizeTransactionsData](convert -categorize-transactions-data.md)()  
+# convert CategorizeTransactionsData
+
+
+
+[androidJvm]\
+fun [convert CategorizeTransactionsData](convert -categorize-transactions-data.html)()
+
 
 
 

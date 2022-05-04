@@ -1,14 +1,17 @@
 ---
-title: Custom -
+title: Custom
 ---
-//[link](../../../index.md)/[com.tink.service.network](../../index.md)/[[common]Environment](../index.md)/[Custom](index.md)/[Custom](-custom.md)
+//[link](../../../../index.html)/[com.tink.service.network](../../index.html)/[[common]Environment](../index.html)/[Custom](index.html)/[Custom](-custom.html)
 
 
 
-# Custom  
-[common]  
-Content  
-fun [Custom](-custom.md)(restUrl: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null)  
+# Custom
+
+
+
+[common]\
+fun [Custom](-custom.html)(restUrl: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null)
+
 
 
 

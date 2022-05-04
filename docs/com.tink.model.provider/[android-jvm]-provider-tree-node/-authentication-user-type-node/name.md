@@ -1,20 +1,21 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[name](name.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[AuthenticationUserTypeNode](index.html)/[name](name.html)
 
 
 
-# name  
-[androidJvm]  
-Content  
-open override val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
-More info  
+# name
+
+
+
+[androidJvm]\
+open override val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 A textual description of the node.
 
-  
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: transactionId -
+title: transactionId
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[LargeExpenseData](index.md)/[transactionId](transaction-id.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[LargeExpenseData](index.html)/[transactionId](transaction-id.html)
 
 
 
-# transactionId  
-[common]  
-Content  
-val [transactionId](transaction-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# transactionId
+
+
+
+[common]\
+val [transactionId](transaction-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

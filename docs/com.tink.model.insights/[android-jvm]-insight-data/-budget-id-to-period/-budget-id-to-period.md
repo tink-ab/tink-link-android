@@ -1,14 +1,17 @@
 ---
-title: BudgetIdToPeriod -
+title: BudgetIdToPeriod
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetIdToPeriod](index.md)/[BudgetIdToPeriod](-budget-id-to-period.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetIdToPeriod](index.html)/[BudgetIdToPeriod](-budget-id-to-period.html)
 
 
 
-# BudgetIdToPeriod  
-[androidJvm]  
-Content  
-fun [BudgetIdToPeriod](-budget-id-to-period.md)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[android-jvm]-budget/-period/index.md))  
+# BudgetIdToPeriod
+
+
+
+[androidJvm]\
+fun [BudgetIdToPeriod](-budget-id-to-period.html)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[android-jvm]-budget/-period/index.html))
+
 
 
 

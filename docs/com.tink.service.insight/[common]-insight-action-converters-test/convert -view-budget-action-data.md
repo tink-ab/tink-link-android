@@ -1,14 +1,17 @@
 ---
-title: convert ViewBudgetActionData -
+title: convert ViewBudgetActionData
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightActionConvertersTest](index.md)/[convert ViewBudgetActionData](convert -view-budget-action-data.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightActionConvertersTest](index.html)/[convert ViewBudgetActionData](convert -view-budget-action-data.html)
 
 
 
-# convert ViewBudgetActionData  
-[common]  
-Content  
-fun [convert ViewBudgetActionData](convert -view-budget-action-data.md)()  
+# convert ViewBudgetActionData
+
+
+
+[common]\
+fun [convert ViewBudgetActionData](convert -view-budget-action-data.html)()
+
 
 
 

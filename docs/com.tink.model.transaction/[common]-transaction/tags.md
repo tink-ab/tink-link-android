@@ -1,14 +1,17 @@
 ---
-title: tags -
+title: tags
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[tags](tags.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[tags](tags.html)
 
 
 
-# tags  
-[common]  
-Content  
-val [tags](tags.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../[common]-tag/index.md)>  
+# tags
+
+
+
+[common]\
+val [tags](tags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../[common]-tag/index.html)&gt;
+
 
 
 

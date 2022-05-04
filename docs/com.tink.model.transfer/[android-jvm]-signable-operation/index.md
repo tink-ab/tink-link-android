@@ -1,54 +1,57 @@
 ---
-title: [androidJvm]SignableOperation -
+title: [androidJvm]SignableOperation
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]SignableOperation](index.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[androidJvm]SignableOperation](index.html)
 
 
 
-# SignableOperation  
- [androidJvm] data class [SignableOperation](index.md)(**id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **credentialsId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **created**: Instant, **status**: [SignableOperation.Status](-status/index.md), **statusMessage**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [SignableOperation.Type](-type/index.md), **underlyingId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **updated**: Instant, **userId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)   
+# SignableOperation
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [SignableOperation](index.html)(val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, val created: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), val status: [SignableOperation.Status](-status/index.html), val statusMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val type: [SignableOperation.Type](-type/index.html), val underlyingId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val updated: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), val userId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.transfer/SignableOperation.Status///PointingToDeclaration/"></a>[Status](-status/index.md)| <a name="com.tink.model.transfer/SignableOperation.Status///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>enum [Status](-status/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[SignableOperation.Status](-status/index.md)>   <br>More info  <br>The status of the operation.  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation.Type///PointingToDeclaration/"></a>[Type](-type/index.md)| <a name="com.tink.model.transfer/SignableOperation.Type///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>enum [Type](-type/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[SignableOperation.Type](-type/index.md)>   <br><br><br>
+| [SignableOperation](-signable-operation.html) | [androidJvm]<br>fun [SignableOperation](-signable-operation.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, created: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), status: [SignableOperation.Status](-status/index.html), statusMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [SignableOperation.Type](-type/index.html), underlyingId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), updated: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), userId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.transfer/SignableOperation/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.transfer/SignableOperation/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.transfer/SignableOperation/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.transfer/SignableOperation/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): Instant  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.transfer/SignableOperation/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [SignableOperation.Status](-status/index.md)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.transfer/SignableOperation/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.transfer/SignableOperation/component6/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component6](component6.md)(): [SignableOperation.Type](-type/index.md)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.transfer/SignableOperation/component7/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component7](component7.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component8/#/PointingToDeclaration/"></a>[component8](component8.md)| <a name="com.tink.model.transfer/SignableOperation/component8/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component8](component8.md)(): Instant  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/component9/#/PointingToDeclaration/"></a>[component9](component9.md)| <a name="com.tink.model.transfer/SignableOperation/component9/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component9](component9.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.transfer/SignableOperation/copy/#kotlin.String#kotlin.String?#org.threeten.bp.Instant#com.tink.model.transfer.SignableOperation.Status#kotlin.String#com.tink.model.transfer.SignableOperation.Type#kotlin.String#org.threeten.bp.Instant#kotlin.String/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.transfer/SignableOperation/copy/#kotlin.String#kotlin.String?#org.threeten.bp.Instant#com.tink.model.transfer.SignableOperation.Status#kotlin.String#com.tink.model.transfer.SignableOperation.Type#kotlin.String#org.threeten.bp.Instant#kotlin.String/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, created: Instant, status: [SignableOperation.Status](-status/index.md), statusMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [SignableOperation.Type](-type/index.md), underlyingId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), updated: Instant, userId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [SignableOperation](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [Status](-status/index.html) | [androidJvm]<br>enum [Status](-status/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[SignableOperation.Status](-status/index.html)&gt; <br>The status of the operation. [CANCELLED](-status/-c-a-n-c-e-l-l-e-d/index.html), [FAILED](-status/-f-a-i-l-e-d/index.html) and [EXECUTED](-status/-e-x-e-c-u-t-e-d/index.html) are all endstates. |
+| [Type](-type/index.html) | [androidJvm]<br>enum [Type](-type/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[SignableOperation.Type](-type/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.transfer/SignableOperation/created/#/PointingToDeclaration/"></a>[created](created.md)| <a name="com.tink.model.transfer/SignableOperation/created/#/PointingToDeclaration/"></a> [androidJvm] val [created](created.md): Instant   <br>
-| <a name="com.tink.model.transfer/SignableOperation/credentialsId/#/PointingToDeclaration/"></a>[credentialsId](credentials-id.md)| <a name="com.tink.model.transfer/SignableOperation/credentialsId/#/PointingToDeclaration/"></a> [androidJvm] val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?   <br>
-| <a name="com.tink.model.transfer/SignableOperation/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.transfer/SignableOperation/id/#/PointingToDeclaration/"></a> [androidJvm] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.transfer/SignableOperation/status/#/PointingToDeclaration/"></a>[status](status.md)| <a name="com.tink.model.transfer/SignableOperation/status/#/PointingToDeclaration/"></a> [androidJvm] val [status](status.md): [SignableOperation.Status](-status/index.md)   <br>
-| <a name="com.tink.model.transfer/SignableOperation/statusMessage/#/PointingToDeclaration/"></a>[statusMessage](status-message.md)| <a name="com.tink.model.transfer/SignableOperation/statusMessage/#/PointingToDeclaration/"></a> [androidJvm] val [statusMessage](status-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.transfer/SignableOperation/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.transfer/SignableOperation/type/#/PointingToDeclaration/"></a> [androidJvm] val [type](type.md): [SignableOperation.Type](-type/index.md)   <br>
-| <a name="com.tink.model.transfer/SignableOperation/underlyingId/#/PointingToDeclaration/"></a>[underlyingId](underlying-id.md)| <a name="com.tink.model.transfer/SignableOperation/underlyingId/#/PointingToDeclaration/"></a> [androidJvm] val [underlyingId](underlying-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.transfer/SignableOperation/updated/#/PointingToDeclaration/"></a>[updated](updated.md)| <a name="com.tink.model.transfer/SignableOperation/updated/#/PointingToDeclaration/"></a> [androidJvm] val [updated](updated.md): Instant   <br>
-| <a name="com.tink.model.transfer/SignableOperation/userId/#/PointingToDeclaration/"></a>[userId](user-id.md)| <a name="com.tink.model.transfer/SignableOperation/userId/#/PointingToDeclaration/"></a> [androidJvm] val [userId](user-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [created](created.html) | [androidJvm]<br>val [created](created.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html) |
+| [credentialsId](credentials-id.html) | [androidJvm]<br>val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
+| [id](id.html) | [androidJvm]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [status](status.html) | [androidJvm]<br>val [status](status.html): [SignableOperation.Status](-status/index.html) |
+| [statusMessage](status-message.html) | [androidJvm]<br>val [statusMessage](status-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [type](type.html) | [androidJvm]<br>val [type](type.html): [SignableOperation.Type](-type/index.html) |
+| [underlyingId](underlying-id.html) | [androidJvm]<br>val [underlyingId](underlying-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [updated](updated.html) | [androidJvm]<br>val [updated](updated.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html) |
+| [userId](user-id.html) | [androidJvm]<br>val [userId](user-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

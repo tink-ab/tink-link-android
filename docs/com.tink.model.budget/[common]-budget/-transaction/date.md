@@ -1,14 +1,17 @@
 ---
-title: date -
+title: date
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Transaction](index.md)/[date](date.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Transaction](index.html)/[date](date.html)
 
 
 
-# date  
-[common]  
-Content  
-val [date](date.md): <ERROR CLASS>  
+# date
+
+
+
+[common]\
+val [date](date.html): &lt;ERROR CLASS&gt;
+
 
 
 

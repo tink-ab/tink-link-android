@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]SignableOperation](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[androidJvm]SignableOperation](index.html)/[status](status.html)
 
 
 
-# status  
-[androidJvm]  
-Content  
-val [status](status.md): [SignableOperation.Status](-status/index.md)  
+# status
+
+
+
+[androidJvm]\
+val [status](status.html): [SignableOperation.Status](-status/index.html)
+
 
 
 

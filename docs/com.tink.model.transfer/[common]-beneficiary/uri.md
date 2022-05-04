@@ -1,14 +1,17 @@
 ---
-title: uri -
+title: uri
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]Beneficiary](index.md)/[uri](uri.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]Beneficiary](index.html)/[uri](uri.html)
 
 
 
-# uri  
-[common]  
-Content  
-val [uri](uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# uri
+
+
+
+[common]\
+val [uri](uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

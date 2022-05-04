@@ -1,14 +1,17 @@
 ---
-title: UserProfileServiceImpl -
+title: UserProfileServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[common]UserProfileServiceImpl](index.md)/[UserProfileServiceImpl](-user-profile-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[common]UserProfileServiceImpl](index.html)/[UserProfileServiceImpl](-user-profile-service-impl.html)
 
 
 
-# UserProfileServiceImpl  
-[common]  
-Content  
-fun [UserProfileServiceImpl](-user-profile-service-impl.md)(api: <ERROR CLASS>)  
+# UserProfileServiceImpl
+
+
+
+[common]\
+fun [UserProfileServiceImpl](-user-profile-service-impl.html)(api: &lt;ERROR CLASS&gt;)
+
 
 
 

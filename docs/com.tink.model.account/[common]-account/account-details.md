@@ -1,14 +1,17 @@
 ---
-title: accountDetails -
+title: accountDetails
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[accountDetails](account-details.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[accountDetails](account-details.html)
 
 
 
-# accountDetails  
-[common]  
-Content  
-val [accountDetails](account-details.md): [AccountDetails](../[common]-account-details/index.md)? = null  
+# accountDetails
+
+
+
+[common]\
+val [accountDetails](account-details.html): [AccountDetails](../[common]-account-details/index.html)? = null
+
 
 
 

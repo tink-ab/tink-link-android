@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]SignableOperation](index.html)/[status](status.html)
 
 
 
-# status  
-[common]  
-Content  
-val [status](status.md): [SignableOperation.Status](-status/index.md)  
+# status
+
+
+
+[common]\
+val [status](status.html): [SignableOperation.Status](-status/index.html)
+
 
 
 

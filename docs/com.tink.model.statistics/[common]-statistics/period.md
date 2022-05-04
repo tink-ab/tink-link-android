@@ -1,14 +1,17 @@
 ---
-title: period -
+title: period
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[period](period.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[common]Statistics](index.html)/[period](period.html)
 
 
 
-# period  
-[common]  
-Content  
-val [period](period.md): [Period](../../com.tink.model.time/[common]-period/index.md)  
+# period
+
+
+
+[common]\
+val [period](period.html): [Period](../../com.tink.model.time/[common]-period/index.html)
+
 
 
 

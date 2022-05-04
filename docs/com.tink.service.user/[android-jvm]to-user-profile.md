@@ -1,14 +1,17 @@
 ---
-title: [androidJvm]toUserProfile -
+title: [androidJvm]toUserProfile
 ---
-//[link](../index.md)/[com.tink.service.user](index.md)/[[androidJvm]toUserProfile]([android-jvm]to-user-profile.md)
+//[link](../../index.html)/[com.tink.service.user](index.html)/[[androidJvm]toUserProfile]([android-jvm]to-user-profile.html)
 
 
 
-# toUserProfile  
-[androidJvm]  
-Content  
-fun User.[toUserProfile]([android-jvm]to-user-profile.md)(): [UserProfile](../com.tink.model.user/[android-jvm]-user-profile/index.md)  
+# toUserProfile
+
+
+
+[androidJvm]\
+fun User.[toUserProfile]([android-jvm]to-user-profile.html)(): [UserProfile](../com.tink.model.user/[android-jvm]-user-profile/index.html)
+
 
 
 

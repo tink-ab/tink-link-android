@@ -1,14 +1,17 @@
 ---
-title: authorize -
+title: authorize
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserService](index.md)/[authorize](authorize.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[androidJvm]UserService](index.html)/[authorize](authorize.html)
 
 
 
-# authorize  
-[androidJvm]  
-Content  
-abstract suspend fun [authorize](authorize.md)(scopes: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[Scope](../../com.tink.model.user/[android-jvm]-scope/index.md)>): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# authorize
+
+
+
+[androidJvm]\
+abstract suspend fun [authorize](authorize.html)(scopes: [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[Scope](../../com.tink.model.user/[android-jvm]-scope/index.html)&gt;): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,16 +1,18 @@
 ---
-title: com.tink.core.provider -
+title: com.tink.core.provider
 ---
-//[link](../index.md)/[com.tink.core.provider](index.md)
+//[link](../../index.html)/[com.tink.core.provider](index.html)
 
 
 
-# Package com.tink.core.provider  
+# Package com.tink.core.provider
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.core.provider/ProviderRepository///PointingToDeclaration/"></a>ProviderRepository| <a name="com.tink.core.provider/ProviderRepository///PointingToDeclaration/"></a>[common]  <br>Content  <br>class [ProviderRepository]([common]-provider-repository/index.md)constructor(**service**: [ProviderService](../com.tink.service.provider/[common]-provider-service/index.md))  <br>More info  <br>Repository for retrieving [Provider](../com.tink.model.provider/[common]-provider/index.md)s  <br><br><br>[androidJvm]  <br>Content  <br>class [ProviderRepository]([android-jvm]-provider-repository/index.md)@Inject()constructor(**service**: [ProviderService](../com.tink.service.provider/[android-jvm]-provider-service/index.md))  <br>More info  <br>Repository for retrieving [Provider](../com.tink.model.provider/[android-jvm]-provider/index.md)s  <br><br><br>
+| ProviderRepository | [common]<br>class [ProviderRepository]([common]-provider-repository/index.html)constructor(service: [ProviderService](../com.tink.service.provider/[common]-provider-service/index.html))<br>Repository for retrieving [Provider](../com.tink.model.provider/[common]-provider/index.html)s<br>[androidJvm]<br>class [ProviderRepository]([android-jvm]-provider-repository/index.html)@Injectconstructor(service: [ProviderService](../com.tink.service.provider/[android-jvm]-provider-service/index.html))<br>Repository for retrieving [Provider](../com.tink.model.provider/[android-jvm]-provider/index.html)s |
 

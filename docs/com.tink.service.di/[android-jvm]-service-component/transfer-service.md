@@ -1,14 +1,17 @@
 ---
-title: transferService -
+title: transferService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[transferService](transfer-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[transferService](transfer-service.html)
 
 
 
-# transferService  
-[androidJvm]  
-Content  
-abstract val [transferService](transfer-service.md): [TransferService](../../com.tink.service.transfer/[android-jvm]-transfer-service/index.md)  
+# transferService
+
+
+
+[androidJvm]\
+abstract val [transferService](transfer-service.html): [TransferService](../../com.tink.service.transfer/[android-jvm]-transfer-service/index.html)
+
 
 
 

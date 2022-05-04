@@ -1,20 +1,21 @@
 ---
-title: [androidJvm]getUserInfo -
+title: [androidJvm]getUserInfo
 ---
-//[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]getUserInfo]([android-jvm]get-user-info.md)
+//[link](../../index.html)/[com.tink.link](index.html)/[[androidJvm]getUserInfo]([android-jvm]get-user-info.html)
 
 
 
-# getUserInfo  
-[androidJvm]  
-Content  
-fun [Tink](../com.tink.core/[android-jvm]-tink/index.md).[getUserInfo]([android-jvm]get-user-info.md)(resultHandler: [ResultHandler](../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[UserInfo](../com.tink.model.user/[android-jvm]-user-info/index.md)>)  
-More info  
+# getUserInfo
 
 
-Fetches the [UserInfo](../com.tink.model.user/[android-jvm]-user-info/index.md) for an authenticated user.
 
-  
+[androidJvm]\
+fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[getUserInfo]([android-jvm]get-user-info.html)(resultHandler: [ResultHandler](../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[UserInfo](../com.tink.model.user/[android-jvm]-user-info/index.html)&gt;)
+
+
+
+Fetches the [UserInfo](../com.tink.model.user/[android-jvm]-user-info/index.html) for an authenticated user.
+
 
 
 

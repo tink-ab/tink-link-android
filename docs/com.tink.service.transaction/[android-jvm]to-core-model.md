@@ -1,15 +1,19 @@
 ---
-title: [androidJvm]toCoreModel -
+title: [androidJvm]toCoreModel
 ---
-//[link](../index.md)/[com.tink.service.transaction](index.md)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.md)
+//[link](../../index.html)/[com.tink.service.transaction](index.html)/[[androidJvm]toCoreModel]([android-jvm]to-core-model.html)
 
 
 
-# toCoreModel  
-[androidJvm]  
-Content  
-fun Transaction.[toCoreModel]([android-jvm]to-core-model.md)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.md)  
-fun TransactionResponse.[toCoreModel]([android-jvm]to-core-model.md)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.md)  
+# toCoreModel
+
+
+
+[androidJvm]\
+fun Transaction.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html)
+
+fun TransactionResponse.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html)
+
 
 
 

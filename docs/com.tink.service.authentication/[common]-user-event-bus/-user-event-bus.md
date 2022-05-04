@@ -1,14 +1,17 @@
 ---
-title: UserEventBus -
+title: UserEventBus
 ---
-//[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[common]UserEventBus](index.md)/[UserEventBus](-user-event-bus.md)
+//[link](../../../index.html)/[com.tink.service.authentication](../index.html)/[[common]UserEventBus](index.html)/[UserEventBus](-user-event-bus.html)
 
 
 
-# UserEventBus  
-[common]  
-Content  
-fun [UserEventBus](-user-event-bus.md)()  
+# UserEventBus
+
+
+
+[common]\
+fun [UserEventBus](-user-event-bus.html)()
+
 
 
 

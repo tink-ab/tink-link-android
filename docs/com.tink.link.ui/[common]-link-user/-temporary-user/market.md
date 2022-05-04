@@ -1,26 +1,28 @@
 ---
-title: market -
+title: market
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[TemporaryUser](index.md)/[market](market.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]LinkUser](../index.html)/[TemporaryUser](index.html)/[market](market.html)
 
 
 
-# market  
-[common]  
-Content  
-val [market](market.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# market
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [market](market.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/LinkUser.TemporaryUser/market/#/PointingToDeclaration/"></a>market| <a name="com.tink.link.ui/LinkUser.TemporaryUser/market/#/PointingToDeclaration/"></a><br><br>Market specific code for the user as a ISO 3166-1 country code. Example: "SE"<br><br>
-  
-  
+| market | Market specific code for the user as a ISO 3166-1 country code. Example: &quot;SE&quot; |
+
 
 
 

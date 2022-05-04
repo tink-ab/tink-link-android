@@ -1,14 +1,17 @@
 ---
-title: createAnonymousUser -
+title: createAnonymousUser
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserService](index.md)/[createAnonymousUser](create-anonymous-user.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[androidJvm]UserService](index.html)/[createAnonymousUser](create-anonymous-user.html)
 
 
 
-# createAnonymousUser  
-[androidJvm]  
-Content  
-abstract suspend fun [createAnonymousUser](create-anonymous-user.md)(arguments: [UserCreationDescriptor](../[android-jvm]-user-creation-descriptor/index.md)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# createAnonymousUser
+
+
+
+[androidJvm]\
+abstract suspend fun [createAnonymousUser](create-anonymous-user.html)(arguments: [UserCreationDescriptor](../[android-jvm]-user-creation-descriptor/index.html)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

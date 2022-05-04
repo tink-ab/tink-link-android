@@ -1,14 +1,17 @@
 ---
-title: CredentialsAuthenticateDescriptor -
+title: CredentialsAuthenticateDescriptor
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsAuthenticateDescriptor](index.md)/[CredentialsAuthenticateDescriptor](-credentials-authenticate-descriptor.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsAuthenticateDescriptor](index.html)/[CredentialsAuthenticateDescriptor](-credentials-authenticate-descriptor.html)
 
 
 
-# CredentialsAuthenticateDescriptor  
-[common]  
-Content  
-fun [CredentialsAuthenticateDescriptor](-credentials-authenticate-descriptor.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), appUri: <ERROR CLASS>)  
+# CredentialsAuthenticateDescriptor
+
+
+
+[common]\
+fun [CredentialsAuthenticateDescriptor](-credentials-authenticate-descriptor.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), appUri: &lt;ERROR CLASS&gt;)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: OneOff -
+title: OneOff
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[OneOff](index.md)/[OneOff](-one-off.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Periodicity](../index.html)/[OneOff](index.html)/[OneOff](-one-off.html)
 
 
 
-# OneOff  
-[androidJvm]  
-Content  
-fun [OneOff](-one-off.md)(start: Instant, end: Instant)  
+# OneOff
+
+
+
+[androidJvm]\
+fun [OneOff](-one-off.html)(start: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), end: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html))
+
 
 
 

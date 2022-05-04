@@ -1,14 +1,17 @@
 ---
-title: InsightServiceImpl -
+title: InsightServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightServiceImpl](index.md)/[InsightServiceImpl](-insight-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightServiceImpl](index.html)/[InsightServiceImpl](-insight-service-impl.html)
 
 
 
-# InsightServiceImpl  
-[common]  
-Content  
-fun [InsightServiceImpl](-insight-service-impl.md)(api: <ERROR CLASS>)  
+# InsightServiceImpl
+
+
+
+[common]\
+fun [InsightServiceImpl](-insight-service-impl.html)(api: &lt;ERROR CLASS&gt;)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: sourceUri -
+title: sourceUri
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[sourceUri](source-uri.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)/[sourceUri](source-uri.html)
 
 
 
-# sourceUri  
-[androidJvm]  
-Content  
-val [sourceUri](source-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# sourceUri
+
+
+
+[androidJvm]\
+val [sourceUri](source-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

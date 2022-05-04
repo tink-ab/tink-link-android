@@ -1,24 +1,27 @@
 ---
-title: [androidJvm]TransferService -
+title: [androidJvm]TransferService
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]TransferService](index.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]TransferService](index.html)
 
 
 
-# TransferService  
- [androidJvm] interface [TransferService](index.md)   
+# TransferService
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+interface [TransferService](index.html)
+
+
+
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.transfer/TransferService/addBeneficiary/#com.tink.service.transfer.CreateBeneficiaryDescriptor/PointingToDeclaration/"></a>[addBeneficiary](add-beneficiary.md)| <a name="com.tink.service.transfer/TransferService/addBeneficiary/#com.tink.service.transfer.CreateBeneficiaryDescriptor/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract suspend fun [addBeneficiary](add-beneficiary.md)(descriptor: [CreateBeneficiaryDescriptor](../[android-jvm]-create-beneficiary-descriptor/index.md))  <br>More info  <br>Add a new beneficiary  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.service.transfer/TransferService/getBeneficiaries/#/PointingToDeclaration/"></a>[getBeneficiaries](get-beneficiaries.md)| <a name="com.tink.service.transfer/TransferService/getBeneficiaries/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract suspend fun [getBeneficiaries](get-beneficiaries.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Beneficiary](../../com.tink.model.transfer/[android-jvm]-beneficiary/index.md)>  <br>More info  <br>Lists all beneficiaries of the current user  <br><br><br>
-| <a name="com.tink.service.transfer/TransferService/getSourceAccounts/#/PointingToDeclaration/"></a>[getSourceAccounts](get-source-accounts.md)| <a name="com.tink.service.transfer/TransferService/getSourceAccounts/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract suspend fun [getSourceAccounts](get-source-accounts.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Account](../../com.tink.model.account/[android-jvm]-account/index.md)>  <br>More info  <br>Fetch a list of available source accounts.  <br><br><br>
-| <a name="com.tink.service.transfer/TransferService/getTransferStatus/#kotlin.String/PointingToDeclaration/"></a>[getTransferStatus](get-transfer-status.md)| <a name="com.tink.service.transfer/TransferService/getTransferStatus/#kotlin.String/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract suspend fun [getTransferStatus](get-transfer-status.md)(transferId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.md)  <br>More info  <br>Retrieves information about the current status of a transfer.  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.service.transfer/TransferService/initiateTransfer/#com.tink.service.transfer.CreateTransferDescriptor/PointingToDeclaration/"></a>[initiateTransfer](initiate-transfer.md)| <a name="com.tink.service.transfer/TransferService/initiateTransfer/#com.tink.service.transfer.CreateTransferDescriptor/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract suspend fun [initiateTransfer](initiate-transfer.md)(descriptor: [CreateTransferDescriptor](../[android-jvm]-create-transfer-descriptor/index.md)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.md)  <br>More info  <br>Initiates a new transfer  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [addBeneficiary](add-beneficiary.html) | [androidJvm]<br>abstract suspend fun [addBeneficiary](add-beneficiary.html)(descriptor: [CreateBeneficiaryDescriptor](../[android-jvm]-create-beneficiary-descriptor/index.html))<br>Add a new beneficiary |
+| [getBeneficiaries](get-beneficiaries.html) | [androidJvm]<br>abstract suspend fun [getBeneficiaries](get-beneficiaries.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Beneficiary](../../com.tink.model.transfer/[android-jvm]-beneficiary/index.html)&gt;<br>Lists all beneficiaries of the current user |
+| [getSourceAccounts](get-source-accounts.html) | [androidJvm]<br>abstract suspend fun [getSourceAccounts](get-source-accounts.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Account](../../com.tink.model.account/[android-jvm]-account/index.html)&gt;<br>Fetch a list of available source accounts. |
+| [getTransferStatus](get-transfer-status.html) | [androidJvm]<br>abstract suspend fun [getTransferStatus](get-transfer-status.html)(transferId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.html)<br>Retrieves information about the current status of a transfer. |
+| [initiateTransfer](initiate-transfer.html) | [androidJvm]<br>abstract suspend fun [initiateTransfer](initiate-transfer.html)(descriptor: [CreateTransferDescriptor](../[android-jvm]-create-transfer-descriptor/index.html)): [SignableOperation](../../com.tink.model.transfer/[android-jvm]-signable-operation/index.html)<br>Initiates a new transfer |
 

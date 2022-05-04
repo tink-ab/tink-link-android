@@ -1,14 +1,17 @@
 ---
-title: savedAmount -
+title: savedAmount
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryAchievedData](index.md)/[savedAmount](saved-amount.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSummaryAchievedData](index.html)/[savedAmount](saved-amount.html)
 
 
 
-# savedAmount  
-[androidJvm]  
-Content  
-val [savedAmount](saved-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# savedAmount
+
+
+
+[androidJvm]\
+val [savedAmount](saved-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

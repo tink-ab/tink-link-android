@@ -1,14 +1,17 @@
 ---
-title: budgetPeriod -
+title: budgetPeriod
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetResultData](index.md)/[budgetPeriod](budget-period.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetResultData](index.html)/[budgetPeriod](budget-period.html)
 
 
 
-# budgetPeriod  
-[common]  
-Content  
-val [budgetPeriod](budget-period.md): [Budget.Period](../../../com.tink.model.budget/[common]-budget/-period/index.md)  
+# budgetPeriod
+
+
+
+[common]\
+val [budgetPeriod](budget-period.html): [Budget.Period](../../../com.tink.model.budget/[common]-budget/-period/index.html)
+
 
 
 

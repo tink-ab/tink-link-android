@@ -1,20 +1,21 @@
 ---
-title: [common]withSslKey -
+title: [common]withSslKey
 ---
-//[link](../index.md)/[com.tink.service.network](index.md)/[[common]withSslKey]([common]with-ssl-key.md)
+//[link](../../index.html)/[com.tink.service.network](index.html)/[[common]withSslKey]([common]with-ssl-key.html)
 
 
 
-# withSslKey  
-[common]  
-Content  
-fun [Environment.Production]([common]-environment/-production/index.md).[withSslKey]([common]with-ssl-key.md)(sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Environment.Custom]([common]-environment/-custom/index.md)  
-More info  
+# withSslKey
 
 
-Creates an environment with the [Environment.Production]([common]-environment/-production/index.md) rest URL and the specified sslCertificate.
 
-  
+[common]\
+fun [Environment.Production]([common]-environment/-production/index.html).[withSslKey]([common]with-ssl-key.html)(sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Environment.Custom]([common]-environment/-custom/index.html)
+
+
+
+Creates an environment with the [Environment.Production]([common]-environment/-production/index.html) rest URL and the specified [sslCertificate]([common]with-ssl-key.html).
+
 
 
 

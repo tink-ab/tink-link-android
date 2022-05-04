@@ -1,14 +1,17 @@
 ---
-title: refresh -
+title: refresh
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsService](index.md)/[refresh](refresh.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsService](index.html)/[refresh](refresh.html)
 
 
 
-# refresh  
-[common]  
-Content  
-abstract suspend fun [refresh](refresh.md)(descriptor: [CredentialsRefreshDescriptor](../[common]-credentials-refresh-descriptor/index.md))  
+# refresh
+
+
+
+[common]\
+abstract suspend fun [refresh](refresh.html)(descriptor: [CredentialsRefreshDescriptor](../[common]-credentials-refresh-descriptor/index.html))
+
 
 
 

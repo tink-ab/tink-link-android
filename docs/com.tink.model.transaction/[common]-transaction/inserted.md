@@ -1,14 +1,17 @@
 ---
-title: inserted -
+title: inserted
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[inserted](inserted.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[inserted](inserted.html)
 
 
 
-# inserted  
-[common]  
-Content  
-val [inserted](inserted.md): <ERROR CLASS>  
+# inserted
+
+
+
+[common]\
+val [inserted](inserted.html): &lt;ERROR CLASS&gt;
+
 
 
 

@@ -1,20 +1,21 @@
 ---
-title: addBeneficiary -
+title: addBeneficiary
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[addBeneficiary](add-beneficiary.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[common]TransferService](index.html)/[addBeneficiary](add-beneficiary.html)
 
 
 
-# addBeneficiary  
-[common]  
-Content  
-abstract suspend fun [addBeneficiary](add-beneficiary.md)(descriptor: [CreateBeneficiaryDescriptor](../[common]-create-beneficiary-descriptor/index.md))  
-More info  
+# addBeneficiary
+
+
+
+[common]\
+abstract suspend fun [addBeneficiary](add-beneficiary.html)(descriptor: [CreateBeneficiaryDescriptor](../[common]-create-beneficiary-descriptor/index.html))
+
 
 
 Add a new beneficiary
 
-  
 
 
 

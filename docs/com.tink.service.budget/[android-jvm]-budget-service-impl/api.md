@@ -1,14 +1,17 @@
 ---
-title: api -
+title: api
 ---
-//[link](../../index.md)/[com.tink.service.budget](../index.md)/[[androidJvm]BudgetServiceImpl](index.md)/[api](api.md)
+//[link](../../../index.html)/[com.tink.service.budget](../index.html)/[[androidJvm]BudgetServiceImpl](index.html)/[api](api.html)
 
 
 
-# api  
-[androidJvm]  
-Content  
-val [api](api.md): BudgetApi  
+# api
+
+
+
+[androidJvm]\
+val [api](api.html): BudgetApi
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: sourceAccountUri -
+title: sourceAccountUri
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[sourceAccountUri](source-account-uri.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateTransferDescriptor](index.html)/[sourceAccountUri](source-account-uri.html)
 
 
 
-# sourceAccountUri  
-[androidJvm]  
-Content  
-val [sourceAccountUri](source-account-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# sourceAccountUri
+
+
+
+[androidJvm]\
+val [sourceAccountUri](source-account-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

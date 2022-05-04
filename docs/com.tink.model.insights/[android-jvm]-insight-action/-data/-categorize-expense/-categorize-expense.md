@@ -1,14 +1,17 @@
 ---
-title: CategorizeExpense -
+title: CategorizeExpense
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CategorizeExpense](index.md)/[CategorizeExpense](-categorize-expense.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[CategorizeExpense](index.html)/[CategorizeExpense](-categorize-expense.html)
 
 
 
-# CategorizeExpense  
-[androidJvm]  
-Content  
-fun [CategorizeExpense](-categorize-expense.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# CategorizeExpense
+
+
+
+[androidJvm]\
+fun [CategorizeExpense](-categorize-expense.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

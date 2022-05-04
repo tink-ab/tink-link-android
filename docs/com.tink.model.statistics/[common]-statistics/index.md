@@ -1,41 +1,42 @@
 ---
-title: [common]Statistics -
+title: [common]Statistics
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[common]Statistics](index.html)
 
 
 
-# Statistics  
- [common] data class [Statistics](index.md)(**identifier**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [Statistics.Type](-type/index.md), **period**: [Period](../../com.tink.model.time/[common]-period/index.md), **value**: [Amount](../../com.tink.model.misc/[common]-amount/index.md))   
+# Statistics
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Statistics](index.html)(val identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val type: [Statistics.Type](-type/index.html), val period: [Period](../../com.tink.model.time/[common]-period/index.html), val value: [Amount](../../com.tink.model.misc/[common]-amount/index.html))
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.statistics/Statistics.Type///PointingToDeclaration/"></a>[Type](-type/index.md)| <a name="com.tink.model.statistics/Statistics.Type///PointingToDeclaration/"></a>[common]  <br>Content  <br>enum [Type](-type/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[Statistics.Type](-type/index.md)>   <br><br><br>
+| [Statistics](-statistics.html) | [common]<br>fun [Statistics](-statistics.html)(identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Statistics.Type](-type/index.html), period: [Period](../../com.tink.model.time/[common]-period/index.html), value: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.statistics/Statistics/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.statistics/Statistics/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.statistics/Statistics/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.statistics/Statistics/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [Statistics.Type](-type/index.md)  <br><br><br>
-| <a name="com.tink.model.statistics/Statistics/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.statistics/Statistics/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [Period](../../com.tink.model.time/[common]-period/index.md)  <br><br><br>
-| <a name="com.tink.model.statistics/Statistics/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.statistics/Statistics/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  <br><br><br>
-| <a name="com.tink.model.statistics/Statistics/copy/#kotlin.String#com.tink.model.statistics.Statistics.Type#com.tink.model.time.Period#com.tink.model.misc.Amount/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.statistics/Statistics/copy/#kotlin.String#com.tink.model.statistics.Statistics.Type#com.tink.model.time.Period#com.tink.model.misc.Amount/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Statistics.Type](-type/index.md), period: [Period](../../com.tink.model.time/[common]-period/index.md), value: [Amount](../../com.tink.model.misc/[common]-amount/index.md)): [Statistics](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [Type](-type/index.html) | [common]<br>enum [Type](-type/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[Statistics.Type](-type/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.statistics/Statistics/identifier/#/PointingToDeclaration/"></a>[identifier](identifier.md)| <a name="com.tink.model.statistics/Statistics/identifier/#/PointingToDeclaration/"></a> [common] val [identifier](identifier.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.statistics/Statistics/period/#/PointingToDeclaration/"></a>[period](period.md)| <a name="com.tink.model.statistics/Statistics/period/#/PointingToDeclaration/"></a> [common] val [period](period.md): [Period](../../com.tink.model.time/[common]-period/index.md)   <br>
-| <a name="com.tink.model.statistics/Statistics/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.statistics/Statistics/type/#/PointingToDeclaration/"></a> [common] val [type](type.md): [Statistics.Type](-type/index.md)   <br>
-| <a name="com.tink.model.statistics/Statistics/value/#/PointingToDeclaration/"></a>[value](value.md)| <a name="com.tink.model.statistics/Statistics/value/#/PointingToDeclaration/"></a> [common] val [value](value.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)   <br>
+| [identifier](identifier.html) | [common]<br>val [identifier](identifier.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [period](period.html) | [common]<br>val [period](period.html): [Period](../../com.tink.model.time/[common]-period/index.html) |
+| [type](type.html) | [common]<br>val [type](type.html): [Statistics.Type](-type/index.html) |
+| [value](value.html) | [common]<br>val [value](value.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html) |
 

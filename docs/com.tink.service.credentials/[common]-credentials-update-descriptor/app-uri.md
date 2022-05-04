@@ -1,14 +1,17 @@
 ---
-title: appUri -
+title: appUri
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsUpdateDescriptor](index.md)/[appUri](app-uri.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsUpdateDescriptor](index.html)/[appUri](app-uri.html)
 
 
 
-# appUri  
-[common]  
-Content  
-val [appUri](app-uri.md): <ERROR CLASS>  
+# appUri
+
+
+
+[common]\
+val [appUri](app-uri.html): &lt;ERROR CLASS&gt;
+
 
 
 

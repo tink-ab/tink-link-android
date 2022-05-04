@@ -1,14 +1,17 @@
 ---
-title: api -
+title: api
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileServiceImpl](index.md)/[api](api.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[androidJvm]UserProfileServiceImpl](index.html)/[api](api.html)
 
 
 
-# api  
-[androidJvm]  
-Content  
-val [api](api.md): UserApi  
+# api
+
+
+
+[androidJvm]\
+val [api](api.html): UserApi
+
 
 
 

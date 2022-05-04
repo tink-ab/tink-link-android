@@ -1,21 +1,32 @@
 ---
-title: [common]AccountServiceImpl -
+title: [common]AccountServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]AccountServiceImpl](index.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[common]AccountServiceImpl](index.html)
 
 
 
-# AccountServiceImpl  
- [common] class [AccountServiceImpl](index.md)constructor(**api**: <ERROR CLASS>) : [AccountService](../[common]-account-service/index.md)   
+# AccountServiceImpl
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+class [AccountServiceImpl](index.html)constructor(api: &lt;ERROR CLASS&gt;) : [AccountService](../[common]-account-service/index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.service.account/AccountServiceImpl/listAccounts/#/PointingToDeclaration/"></a>[listAccounts](list-accounts.md)| <a name="com.tink.service.account/AccountServiceImpl/listAccounts/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open suspend override fun [listAccounts](list-accounts.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Account](../../com.tink.model.account/[common]-account/index.md)>  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.service.account/AccountServiceImpl/update/#com.tink.service.account.UpdateAccountDescriptor/PointingToDeclaration/"></a>[update](update.md)| <a name="com.tink.service.account/AccountServiceImpl/update/#com.tink.service.account.UpdateAccountDescriptor/PointingToDeclaration/"></a>[common]  <br>Content  <br>open suspend override fun [update](update.md)(descriptor: [UpdateAccountDescriptor](../[common]-update-account-descriptor/index.md)): [Account](../../com.tink.model.account/[common]-account/index.md)  <br><br><br>
+| [AccountServiceImpl](-account-service-impl.html) | [common]<br>fun [AccountServiceImpl](-account-service-impl.html)(api: &lt;ERROR CLASS&gt;) |
+
+
+## Functions
+
+
+| Name | Summary |
+|---|---|
+| [listAccounts](list-accounts.html) | [common]<br>open suspend override fun [listAccounts](list-accounts.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Account](../../com.tink.model.account/[common]-account/index.html)&gt; |
+| [update](update.html) | [common]<br>open suspend override fun [update](update.html)(descriptor: [UpdateAccountDescriptor](../[common]-update-account-descriptor/index.html)): [Account](../../com.tink.model.account/[common]-account/index.html) |
 

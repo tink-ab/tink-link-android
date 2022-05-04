@@ -1,14 +1,17 @@
 ---
-title: statisticsService -
+title: statisticsService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[statisticsService](statistics-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[statisticsService](statistics-service.html)
 
 
 
-# statisticsService  
-[androidJvm]  
-Content  
-abstract val [statisticsService](statistics-service.md): [StatisticsService](../../com.tink.service.statistics/[android-jvm]-statistics-service/index.md)  
+# statisticsService
+
+
+
+[androidJvm]\
+abstract val [statisticsService](statistics-service.html): [StatisticsService](../../com.tink.service.statistics/[android-jvm]-statistics-service/index.html)
+
 
 
 

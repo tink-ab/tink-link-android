@@ -1,14 +1,17 @@
 ---
-title: transactionService -
+title: transactionService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[transactionService](transaction-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[transactionService](transaction-service.html)
 
 
 
-# transactionService  
-[androidJvm]  
-Content  
-abstract val [transactionService](transaction-service.md): [TransactionService](../../com.tink.service.transaction/[android-jvm]-transaction-service/index.md)  
+# transactionService
+
+
+
+[androidJvm]\
+abstract val [transactionService](transaction-service.html): [TransactionService](../../com.tink.service.transaction/[android-jvm]-transaction-service/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: onNext -
+title: onNext
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]StreamObserver](index.md)/[onNext](on-next.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[androidJvm]StreamObserver](index.html)/[onNext](on-next.html)
 
 
 
-# onNext  
-[androidJvm]  
-Content  
-open fun [onNext](on-next.md)(value: [T](index.md))  
+# onNext
+
+
+
+[androidJvm]\
+open fun [onNext](on-next.html)(value: [T](index.html))
+
 
 
 
