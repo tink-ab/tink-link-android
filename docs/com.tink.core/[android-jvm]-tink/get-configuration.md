@@ -1,16 +1,25 @@
 ---
-title: getConfiguration -
+title: getConfiguration
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[getConfiguration](get-configuration.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]Tink](index.html)/[getConfiguration](get-configuration.html)
 
 
 
-# getConfiguration  
-[androidJvm]  
-Content  
-@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)()  
-  
-fun [getConfiguration](get-configuration.md)(): [TinkConfiguration](../../com.tink.service.network/[android-jvm]-tink-configuration/index.md)?  
+# getConfiguration
+
+
+
+[androidJvm]\
+
+
+
+
+@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
+
+
+
+fun [getConfiguration](get-configuration.html)(): [TinkConfiguration](../../com.tink.service.network/[android-jvm]-tink-configuration/index.html)?
+
 
 
 

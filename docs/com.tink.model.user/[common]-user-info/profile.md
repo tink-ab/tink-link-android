@@ -1,14 +1,17 @@
 ---
-title: profile -
+title: profile
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[profile](profile.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserInfo](index.html)/[profile](profile.html)
 
 
 
-# profile  
-[common]  
-Content  
-val [profile](profile.md): [UserProfile](../[common]-user-profile/index.md)  
+# profile
+
+
+
+[common]\
+val [profile](profile.html): [UserProfile](../[common]-user-profile/index.html)
+
 
 
 

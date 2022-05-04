@@ -1,14 +1,17 @@
 ---
-title: sslCertificate -
+title: sslCertificate
 ---
-//[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]Environment](index.md)/[sslCertificate](ssl-certificate.md)
+//[link](../../../index.html)/[com.tink.service.network](../index.html)/[[common]Environment](index.html)/[sslCertificate](ssl-certificate.html)
 
 
 
-# sslCertificate  
-[common]  
-Content  
-val [sslCertificate](ssl-certificate.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# sslCertificate
+
+
+
+[common]\
+val [sslCertificate](ssl-certificate.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

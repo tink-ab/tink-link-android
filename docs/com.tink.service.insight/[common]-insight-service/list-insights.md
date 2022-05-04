@@ -1,14 +1,17 @@
 ---
-title: listInsights -
+title: listInsights
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightService](index.md)/[listInsights](list-insights.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightService](index.html)/[listInsights](list-insights.html)
 
 
 
-# listInsights  
-[common]  
-Content  
-abstract suspend fun [listInsights](list-insights.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Insight](../../com.tink.model.insights/[common]-insight/index.md)>  
+# listInsights
+
+
+
+[common]\
+abstract suspend fun [listInsights](list-insights.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Insight](../../com.tink.model.insights/[common]-insight/index.html)&gt;
+
 
 
 

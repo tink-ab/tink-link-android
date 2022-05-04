@@ -1,20 +1,21 @@
 ---
-title: ProviderRepository -
+title: ProviderRepository
 ---
-//[link](../../index.md)/[com.tink.core.provider](../index.md)/[[common]ProviderRepository](index.md)/[ProviderRepository](-provider-repository.md)
+//[link](../../../index.html)/[com.tink.core.provider](../index.html)/[[common]ProviderRepository](index.html)/[ProviderRepository](-provider-repository.html)
 
 
 
-# ProviderRepository  
-[common]  
-Content  
-fun [ProviderRepository](-provider-repository.md)(service: [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.md))  
-More info  
+# ProviderRepository
 
 
-Create a new repository instance from a [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.md). This is usually done inside the TinkLink framework and it should normally not be necessary to create your own instance.
 
-  
+[common]\
+fun [ProviderRepository](-provider-repository.html)(service: [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.html))
+
+
+
+Create a new repository instance from a [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.html). This is usually done inside the TinkLink framework and it should normally not be necessary to create your own instance.
+
 
 
 

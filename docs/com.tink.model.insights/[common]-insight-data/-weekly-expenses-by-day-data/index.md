@@ -1,30 +1,32 @@
 ---
-title: WeeklyExpensesByDayData -
+title: WeeklyExpensesByDayData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[WeeklyExpensesByDayData](index.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[WeeklyExpensesByDayData](index.html)
 
 
 
-# WeeklyExpensesByDayData  
- [common] data class [WeeklyExpensesByDayData](index.md)(**week**: [YearWeek](../../../com.tink.model.time/[common]-year-week/index.md), **expensesByDay**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.md)>) : [InsightData](../index.md)   
+# WeeklyExpensesByDayData
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [WeeklyExpensesByDayData](index.html)(val week: [YearWeek](../../../com.tink.model.time/[common]-year-week/index.html), val expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.html)&gt;) : [InsightData](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [YearWeek](../../../com.tink.model.time/[common]-year-week/index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.md)>  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/copy/#com.tink.model.time.YearWeek#kotlin.collections.List[com.tink.model.relations.ExpensesByDay]/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/copy/#com.tink.model.time.YearWeek#kotlin.collections.List[com.tink.model.relations.ExpensesByDay]/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(week: [YearWeek](../../../com.tink.model.time/[common]-year-week/index.md), expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.md)>): [InsightData.WeeklyExpensesByDayData](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [WeeklyExpensesByDayData](-weekly-expenses-by-day-data.html) | [common]<br>fun [WeeklyExpensesByDayData](-weekly-expenses-by-day-data.html)(week: [YearWeek](../../../com.tink.model.time/[common]-year-week/index.html), expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.html)&gt;) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/expensesByDay/#/PointingToDeclaration/"></a>[expensesByDay](expenses-by-day.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/expensesByDay/#/PointingToDeclaration/"></a> [common] val [expensesByDay](expenses-by-day.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.md)>   <br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/week/#/PointingToDeclaration/"></a>[week](week.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData/week/#/PointingToDeclaration/"></a> [common] val [week](week.md): [YearWeek](../../../com.tink.model.time/[common]-year-week/index.md)   <br>
+| [expensesByDay](expenses-by-day.html) | [common]<br>val [expensesByDay](expenses-by-day.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../../com.tink.model.relations/[common]-expenses-by-day/index.html)&gt; |
+| [week](week.html) | [common]<br>val [week](week.html): [YearWeek](../../../com.tink.model.time/[common]-year-week/index.html) |
 

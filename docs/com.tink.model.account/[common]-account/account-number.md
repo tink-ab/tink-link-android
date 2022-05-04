@@ -1,14 +1,17 @@
 ---
-title: accountNumber -
+title: accountNumber
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[accountNumber](account-number.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[accountNumber](account-number.html)
 
 
 
-# accountNumber  
-[common]  
-Content  
-val [accountNumber](account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# accountNumber
+
+
+
+[common]\
+val [accountNumber](account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

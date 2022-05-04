@@ -1,35 +1,39 @@
 ---
-title: Recurring -
+title: Recurring
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[common]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[common]Budget](../../index.html)/[Periodicity](../index.html)/[Recurring](index.html)
 
 
 
-# Recurring  
- [common] data class [Recurring](index.md)(**unit**: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)) : [Budget.Periodicity](../index.md)   
+# Recurring
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Recurring](index.html)(val unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)) : [Budget.Periodicity](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring.PeriodUnit///PointingToDeclaration/"></a>[PeriodUnit](-period-unit/index.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring.PeriodUnit///PointingToDeclaration/"></a>[common]  <br>Content  <br>enum [PeriodUnit](-period-unit/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)>   <br><br><br>
+| [Recurring](-recurring.html) | [common]<br>fun [Recurring](-recurring.html)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/copy/#com.tink.model.budget.Budget.Periodicity.Recurring.PeriodUnit/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/copy/#com.tink.model.budget.Budget.Periodicity.Recurring.PeriodUnit/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)): [Budget.Periodicity.Recurring](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [PeriodUnit](-period-unit/index.html) | [common]<br>enum [PeriodUnit](-period-unit/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/unit/#/PointingToDeclaration/"></a>[unit](unit.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/unit/#/PointingToDeclaration/"></a> [common] val [unit](unit.md): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)   <br>
+| [unit](unit.html) | [common]<br>val [unit](unit.html): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html) |
 

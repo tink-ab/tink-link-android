@@ -1,26 +1,28 @@
 ---
-title: authorizationCode -
+title: authorizationCode
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]LinkUser](../index.md)/[UnauthenticatedUser](index.md)/[authorizationCode](authorization-code.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]LinkUser](../index.html)/[UnauthenticatedUser](index.html)/[authorizationCode](authorization-code.html)
 
 
 
-# authorizationCode  
-[androidJvm]  
-Content  
-val [authorizationCode](authorization-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# authorizationCode
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [authorizationCode](authorization-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/LinkUser.UnauthenticatedUser/authorizationCode/#/PointingToDeclaration/"></a>authorizationCode| <a name="com.tink.link.ui/LinkUser.UnauthenticatedUser/authorizationCode/#/PointingToDeclaration/"></a><br><br>The authorization code from delegation to use for authentication<br><br>
-  
-  
+| authorizationCode | The authorization code from delegation to use for authentication |
+
 
 
 

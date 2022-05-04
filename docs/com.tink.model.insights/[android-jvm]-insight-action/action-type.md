@@ -1,14 +1,17 @@
 ---
-title: actionType -
+title: actionType
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]InsightAction](index.md)/[actionType](action-type.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]InsightAction](index.html)/[actionType](action-type.html)
 
 
 
-# actionType  
-[androidJvm]  
-Content  
-val [actionType](action-type.md): [InsightAction.Type](-type/index.md)  
+# actionType
+
+
+
+[androidJvm]\
+val [actionType](action-type.html): [InsightAction.Type](-type/index.html)
+
 
 
 

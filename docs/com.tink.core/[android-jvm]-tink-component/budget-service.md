@@ -1,14 +1,17 @@
 ---
-title: budgetService -
+title: budgetService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[budgetService](budget-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[budgetService](budget-service.html)
 
 
 
-# budgetService  
-[androidJvm]  
-Content  
-abstract val [budgetService](budget-service.md): [BudgetService](../../com.tink.service.budget/[android-jvm]-budget-service/index.md)  
+# budgetService
+
+
+
+[androidJvm]\
+abstract val [budgetService](budget-service.html): [BudgetService](../../com.tink.service.budget/[android-jvm]-budget-service/index.html)
+
 
 
 

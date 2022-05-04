@@ -1,14 +1,17 @@
 ---
-title: ARG_CREDENTIALS_OPERATION -
+title: ARG_CREDENTIALS_OPERATION
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkUiActivity](../index.md)/[Companion](index.md)/[ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkUiActivity](../index.html)/[Companion](index.html)/[ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html)
 
 
 
-# ARG_CREDENTIALS_OPERATION  
-[common]  
-Content  
-const val [ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# ARG_CREDENTIALS_OPERATION
+
+
+
+[common]\
+const val [ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

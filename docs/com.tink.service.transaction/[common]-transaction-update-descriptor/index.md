@@ -1,36 +1,35 @@
 ---
-title: [common]TransactionUpdateDescriptor -
+title: [common]TransactionUpdateDescriptor
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[common]TransactionUpdateDescriptor](index.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[common]TransactionUpdateDescriptor](index.html)
 
 
 
-# TransactionUpdateDescriptor  
- [common] data class [TransactionUpdateDescriptor](index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **date**: <ERROR CLASS>?, **notes**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **tags**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../../com.tink.model.transaction/[common]-tag/index.md)>?)   
+# TransactionUpdateDescriptor
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [TransactionUpdateDescriptor](index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val date: &lt;ERROR CLASS&gt;? = null, val notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../../com.tink.model.transaction/[common]-tag/index.html)&gt;? = null)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): <ERROR CLASS>?  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../../com.tink.model.transaction/[common]-tag/index.md)>?  <br><br><br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/copy/#kotlin.String#kotlin.String?#?#kotlin.String?#kotlin.collections.List[com.tink.model.transaction.Tag]?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/copy/#kotlin.String#kotlin.String?#?#kotlin.String?#kotlin.collections.List[com.tink.model.transaction.Tag]?/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, date: <ERROR CLASS>? = null, notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../../com.tink.model.transaction/[common]-tag/index.md)>? = null): [TransactionUpdateDescriptor](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [TransactionUpdateDescriptor](-transaction-update-descriptor.html) | [common]<br>fun [TransactionUpdateDescriptor](-transaction-update-descriptor.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, date: &lt;ERROR CLASS&gt;? = null, notes: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, tags: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../../com.tink.model.transaction/[common]-tag/index.html)&gt;? = null) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/date/#/PointingToDeclaration/"></a>[date](date.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/date/#/PointingToDeclaration/"></a> [common] val [date](date.md): <ERROR CLASS>? = null   <br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/description/#/PointingToDeclaration/"></a>[description](description.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/description/#/PointingToDeclaration/"></a> [common] val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/notes/#/PointingToDeclaration/"></a>[notes](notes.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/notes/#/PointingToDeclaration/"></a> [common] val [notes](notes.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/tags/#/PointingToDeclaration/"></a>[tags](tags.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/tags/#/PointingToDeclaration/"></a> [common] val [tags](tags.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Tag](../../com.tink.model.transaction/[common]-tag/index.md)>? = null   <br>
-| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/transactionId/#/PointingToDeclaration/"></a>[transactionId](transaction-id.md)| <a name="com.tink.service.transaction/TransactionUpdateDescriptor/transactionId/#/PointingToDeclaration/"></a> [common] val [transactionId](transaction-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [date](date.html) | [common]<br>val [date](date.html): &lt;ERROR CLASS&gt;? = null |
+| [description](description.html) | [common]<br>val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [notes](notes.html) | [common]<br>val [notes](notes.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [tags](tags.html) | [common]<br>val [tags](tags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../../com.tink.model.transaction/[common]-tag/index.html)&gt;? = null |
+| [transactionId](transaction-id.html) | [common]<br>val [transactionId](transaction-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

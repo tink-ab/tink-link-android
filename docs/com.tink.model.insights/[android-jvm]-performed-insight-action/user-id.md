@@ -1,14 +1,17 @@
 ---
-title: userId -
+title: userId
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]PerformedInsightAction](index.md)/[userId](user-id.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]PerformedInsightAction](index.html)/[userId](user-id.html)
 
 
 
-# userId  
-[androidJvm]  
-Content  
-val [userId](user-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# userId
+
+
+
+[androidJvm]\
+val [userId](user-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

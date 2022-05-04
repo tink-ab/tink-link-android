@@ -1,14 +1,17 @@
 ---
-title: averageAmount -
+title: averageAmount
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[common]ExpensesByDay](index.md)/[averageAmount](average-amount.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[common]ExpensesByDay](index.html)/[averageAmount](average-amount.html)
 
 
 
-# averageAmount  
-[common]  
-Content  
-val [averageAmount](average-amount.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# averageAmount
+
+
+
+[common]\
+val [averageAmount](average-amount.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

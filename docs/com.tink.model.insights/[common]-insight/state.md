@@ -1,14 +1,17 @@
 ---
-title: state -
+title: state
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[state](state.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[state](state.html)
 
 
 
-# state  
-[common]  
-Content  
-val [state](state.md): [InsightState](../[common]-insight-state/index.md)  
+# state
+
+
+
+[common]\
+val [state](state.html): [InsightState](../[common]-insight-state/index.html)
+
 
 
 

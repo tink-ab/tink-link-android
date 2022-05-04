@@ -1,14 +1,17 @@
 ---
-title: onError -
+title: onError
 ---
-//[link](../../index.md)/[com.tink.service.handler](../index.md)/[[androidJvm]ResultHandler](index.md)/[onError](on-error.md)
+//[link](../../../index.html)/[com.tink.service.handler](../index.html)/[[androidJvm]ResultHandler](index.html)/[onError](on-error.html)
 
 
 
-# onError  
-[androidJvm]  
-Content  
-val [onError](on-error.md): ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)  
+# onError
+
+
+
+[androidJvm]\
+val [onError](on-error.html): ([Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+
 
 
 

@@ -1,26 +1,28 @@
 ---
-title: PermanentUser -
+title: PermanentUser
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[PermanentUser](-permanent-user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkResult](../index.html)/[PermanentUser](index.html)/[PermanentUser](-permanent-user.html)
 
 
 
-# PermanentUser  
-[androidJvm]  
-Content  
-fun [PermanentUser](-permanent-user.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md))  
-More info  
+# PermanentUser
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [PermanentUser](-permanent-user.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/PermanentUser/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/PermanentUser/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a><br><br>[Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) connected to the user<br><br>
-  
-  
+| credentials | [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) connected to the user |
+
 
 
 

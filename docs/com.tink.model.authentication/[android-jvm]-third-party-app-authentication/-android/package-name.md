@@ -1,14 +1,17 @@
 ---
-title: packageName -
+title: packageName
 ---
-//[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[androidJvm]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[packageName](package-name.md)
+//[link](../../../../index.html)/[com.tink.model.authentication](../../index.html)/[[androidJvm]ThirdPartyAppAuthentication](../index.html)/[Android](index.html)/[packageName](package-name.html)
 
 
 
-# packageName  
-[androidJvm]  
-Content  
-val [packageName](package-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# packageName
+
+
+
+[androidJvm]\
+val [packageName](package-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

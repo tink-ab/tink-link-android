@@ -1,54 +1,55 @@
 ---
-title: Refresh -
+title: Refresh
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]CredentialsOperation](../index.md)/[Refresh](index.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]CredentialsOperation](../index.html)/[Refresh](index.html)
 
 
 
-# Refresh  
- [androidJvm] data class [Refresh](index.md)(**credentialsId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **authenticate**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [CredentialsOperation](../index.md)
-
-Pass this to [TinkLinkUiActivity.createIntent](../../[android-jvm]-tink-link-ui-activity/-companion/create-intent.md) function to refresh credentials.
-
-   
+# Refresh
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [Refresh](index.html)(val credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) : [CredentialsOperation](../index.html)
+
+Pass this to [TinkLinkUiActivity.createIntent](../../[android-jvm]-tink-link-ui-activity/-companion/create-intent.html) function to refresh credentials.
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh///PointingToDeclaration/"></a>credentialsId| <a name="com.tink.link.ui/CredentialsOperation.Refresh///PointingToDeclaration/"></a><br><br>Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) to be refreshed<br><br>
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh///PointingToDeclaration/"></a>authenticate| <a name="com.tink.link.ui/CredentialsOperation.Refresh///PointingToDeclaration/"></a><br><br>Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional)<br><br>
-  
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) to be refreshed |
+| authenticate | Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional) |
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/Refresh/#kotlin.String#kotlin.Boolean/PointingToDeclaration/"></a>[Refresh](-refresh.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/Refresh/#kotlin.String#kotlin.Boolean/PointingToDeclaration/"></a> [androidJvm] fun [Refresh](-refresh.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false)Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) to be refreshed   <br>
+| [Refresh](-refresh.html) | [androidJvm]<br>fun [Refresh](-refresh.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/copy/#kotlin.String#kotlin.Boolean/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/copy/#kotlin.String#kotlin.Boolean/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false): [CredentialsOperation.Refresh](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/authenticate/#/PointingToDeclaration/"></a>[authenticate](authenticate.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/authenticate/#/PointingToDeclaration/"></a> [androidJvm] val [authenticate](authenticate.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = falseForce an authentication before the refresh, designed for open banking credentials.   <br>
-| <a name="com.tink.link.ui/CredentialsOperation.Refresh/credentialsId/#/PointingToDeclaration/"></a>[credentialsId](credentials-id.md)| <a name="com.tink.link.ui/CredentialsOperation.Refresh/credentialsId/#/PointingToDeclaration/"></a> [androidJvm] open override val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) to be refreshed   <br>
+| [authenticate](authenticate.html) | [androidJvm]<br>val [authenticate](authenticate.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false |
+| [credentialsId](credentials-id.html) | [androidJvm]<br>open override val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

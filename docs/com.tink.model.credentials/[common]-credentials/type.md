@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Credentials.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [Credentials.Type](-type/index.html)
+
 
 
 

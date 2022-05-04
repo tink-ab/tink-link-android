@@ -1,14 +1,17 @@
 ---
-title: minLength -
+title: minLength
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[minLength](min-length.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationRules](index.html)/[minLength](min-length.html)
 
 
 
-# minLength  
-[androidJvm]  
-Content  
-val [minLength](min-length.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# minLength
+
+
+
+[androidJvm]\
+val [minLength](min-length.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

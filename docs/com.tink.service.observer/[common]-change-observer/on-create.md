@@ -1,14 +1,17 @@
 ---
-title: onCreate -
+title: onCreate
 ---
-//[link](../../index.md)/[com.tink.service.observer](../index.md)/[[common]ChangeObserver](index.md)/[onCreate](on-create.md)
+//[link](../../../index.html)/[com.tink.service.observer](../index.html)/[[common]ChangeObserver](index.html)/[onCreate](on-create.html)
 
 
 
-# onCreate  
-[common]  
-Content  
-abstract fun [onCreate](on-create.md)(items: [T](index.md))  
+# onCreate
+
+
+
+[common]\
+abstract fun [onCreate](on-create.html)(items: [T](index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Provider.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [Provider.Type](-type/index.html)
+
 
 
 

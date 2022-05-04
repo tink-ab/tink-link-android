@@ -1,26 +1,28 @@
 ---
-title: credentialsId -
+title: credentialsId
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[credentialsId](credentials-id.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateBeneficiaryDescriptor](index.html)/[credentialsId](credentials-id.html)
 
 
 
-# credentialsId  
-[androidJvm]  
-Content  
-val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# credentialsId
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/credentialsId/#/PointingToDeclaration/"></a>credentialsId| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/credentialsId/#/PointingToDeclaration/"></a><br><br>The id of the Credentials used to add the beneficiary. Note that you can send in a different id here than the credentials id to which the account belongs. This functionality exists to support the case where you may have double credentials for one financial institution, due to PSD2 regulations.<br><br>
-  
-  
+| credentialsId | The id of the Credentials used to add the beneficiary. Note that you can send in a different id here than the credentials id to which the account belongs. This functionality exists to support the case where you may have double credentials for one financial institution, due to PSD2 regulations. |
+
 
 
 

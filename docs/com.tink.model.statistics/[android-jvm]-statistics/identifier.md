@@ -1,14 +1,17 @@
 ---
-title: identifier -
+title: identifier
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[identifier](identifier.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[androidJvm]Statistics](index.html)/[identifier](identifier.html)
 
 
 
-# identifier  
-[androidJvm]  
-Content  
-val [identifier](identifier.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# identifier
+
+
+
+[androidJvm]\
+val [identifier](identifier.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

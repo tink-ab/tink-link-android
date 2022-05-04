@@ -1,14 +1,17 @@
 ---
-title: IBAN -
+title: IBAN
 ---
-//[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[common]Beneficiary](../index.md)/[AccountNumberTypes](index.md)/[IBAN](-i-b-a-n.md)
+//[link](../../../../index.html)/[com.tink.model.transfer](../../index.html)/[[common]Beneficiary](../index.html)/[AccountNumberTypes](index.html)/[IBAN](-i-b-a-n.html)
 
 
 
-# IBAN  
-[common]  
-Content  
-const val [IBAN](-i-b-a-n.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# IBAN
+
+
+
+[common]\
+const val [IBAN](-i-b-a-n.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,16 +1,25 @@
 ---
-title: BudgetServiceImpl -
+title: BudgetServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.budget](../index.md)/[[androidJvm]BudgetServiceImpl](index.md)/[BudgetServiceImpl](-budget-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.budget](../index.html)/[[androidJvm]BudgetServiceImpl](index.html)/[BudgetServiceImpl](-budget-service-impl.html)
 
 
 
-# BudgetServiceImpl  
-[androidJvm]  
-Content  
-@Inject()  
-  
-fun [BudgetServiceImpl](-budget-service-impl.md)(api: BudgetApi)  
+# BudgetServiceImpl
+
+
+
+[androidJvm]\
+
+
+
+
+@Inject
+
+
+
+fun [BudgetServiceImpl](-budget-service-impl.html)(api: BudgetApi)
+
 
 
 

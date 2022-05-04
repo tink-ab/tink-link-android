@@ -1,14 +1,17 @@
 ---
-title: providerService -
+title: providerService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[providerService](provider-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[providerService](provider-service.html)
 
 
 
-# providerService  
-[androidJvm]  
-Content  
-abstract val [providerService](provider-service.md): [ProviderService](../../com.tink.service.provider/[android-jvm]-provider-service/index.md)  
+# providerService
+
+
+
+[androidJvm]\
+abstract val [providerService](provider-service.html): [ProviderService](../../com.tink.service.provider/[android-jvm]-provider-service/index.html)
+
 
 
 

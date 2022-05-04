@@ -1,14 +1,17 @@
 ---
-title: downloadMessage -
+title: downloadMessage
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)/[downloadMessage](download-message.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[androidJvm]ThirdPartyAppAuthentication](index.html)/[downloadMessage](download-message.html)
 
 
 
-# downloadMessage  
-[androidJvm]  
-Content  
-val [downloadMessage](download-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# downloadMessage
+
+
+
+[androidJvm]\
+val [downloadMessage](download-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

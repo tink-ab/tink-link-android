@@ -1,14 +1,17 @@
 ---
-title: ServiceComponent -
+title: ServiceComponent
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[ServiceComponent](-service-component.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[ServiceComponent](-service-component.html)
 
 
 
-# ServiceComponent  
-[common]  
-Content  
-fun [ServiceComponent](-service-component.md)()  
+# ServiceComponent
+
+
+
+[common]\
+fun [ServiceComponent](-service-component.html)()
+
 
 
 

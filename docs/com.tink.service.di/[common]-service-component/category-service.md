@@ -1,14 +1,17 @@
 ---
-title: categoryService -
+title: categoryService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[categoryService](category-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[categoryService](category-service.html)
 
 
 
-# categoryService  
-[common]  
-Content  
-abstract val [categoryService](category-service.md): [CategoryService](../../com.tink.service.category/[common]-category-service/index.md)  
+# categoryService
+
+
+
+[common]\
+abstract val [categoryService](category-service.html): [CategoryService](../../com.tink.service.category/[common]-category-service/index.html)
+
 
 
 

@@ -1,51 +1,55 @@
 ---
-title: [androidJvm]Category -
+title: [androidJvm]Category
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]Category](index.html)
 
 
 
-# Category  
- [androidJvm] data class [Category](index.md)(**code**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **id**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **name**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **type**: [Category.Type](-type/index.md), **parentId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **children**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>, **sortOrder**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), **isDefaultChild**: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)   
+# Category
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [Category](index.html)(val code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val type: [Category.Type](-type/index.html), val parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, val children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt;, val sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), val isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.category/Category.Type///PointingToDeclaration/"></a>[Type](-type/index.md)| <a name="com.tink.model.category/Category.Type///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>enum [Type](-type/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[Category.Type](-type/index.md)>   <br><br><br>
+| [Category](-category.html) | [androidJvm]<br>fun [Category](-category.html)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Category.Type](-type/index.html), parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt;, sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.category/Category/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.category/Category/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.category/Category/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.category/Category/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.category/Category/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [Category.Type](-type/index.md)  <br><br><br>
-| <a name="com.tink.model.category/Category/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.category/Category/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.category/Category/component6/#/PointingToDeclaration/"></a>[component6](component6.md)| <a name="com.tink.model.category/Category/component6/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component6](component6.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>  <br><br><br>
-| <a name="com.tink.model.category/Category/component7/#/PointingToDeclaration/"></a>[component7](component7.md)| <a name="com.tink.model.category/Category/component7/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component7](component7.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/component8/#/PointingToDeclaration/"></a>[component8](component8.md)| <a name="com.tink.model.category/Category/component8/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component8](component8.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="com.tink.model.category/Category/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.category.Category.Type#kotlin.String?#kotlin.collections.List[com.tink.model.category.Category]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.category/Category/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.category.Category.Type#kotlin.String?#kotlin.collections.List[com.tink.model.category.Category]#kotlin.Int#kotlin.Boolean/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(code: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), type: [Category.Type](-type/index.md), parentId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, children: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>, sortOrder: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), isDefaultChild: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)): [Category](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [Type](-type/index.html) | [androidJvm]<br>enum [Type](-type/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[Category.Type](-type/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.category/Category/children/#/PointingToDeclaration/"></a>[children](children.md)| <a name="com.tink.model.category/Category/children/#/PointingToDeclaration/"></a> [androidJvm] val [children](children.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Category](index.md)>   <br>
-| <a name="com.tink.model.category/Category/code/#/PointingToDeclaration/"></a>[code](code.md)| <a name="com.tink.model.category/Category/code/#/PointingToDeclaration/"></a> [androidJvm] val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/id/#/PointingToDeclaration/"></a>[id](id.md)| <a name="com.tink.model.category/Category/id/#/PointingToDeclaration/"></a> [androidJvm] val [id](id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/isDefaultChild/#/PointingToDeclaration/"></a>[isDefaultChild](is-default-child.md)| <a name="com.tink.model.category/Category/isDefaultChild/#/PointingToDeclaration/"></a> [androidJvm] val [isDefaultChild](is-default-child.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)   <br>
-| <a name="com.tink.model.category/Category/name/#/PointingToDeclaration/"></a>[name](name.md)| <a name="com.tink.model.category/Category/name/#/PointingToDeclaration/"></a> [androidJvm] val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.category/Category/parentId/#/PointingToDeclaration/"></a>[parentId](parent-id.md)| <a name="com.tink.model.category/Category/parentId/#/PointingToDeclaration/"></a> [androidJvm] val [parentId](parent-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?   <br>
-| <a name="com.tink.model.category/Category/sortOrder/#/PointingToDeclaration/"></a>[sortOrder](sort-order.md)| <a name="com.tink.model.category/Category/sortOrder/#/PointingToDeclaration/"></a> [androidJvm] val [sortOrder](sort-order.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)   <br>
-| <a name="com.tink.model.category/Category/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.category/Category/type/#/PointingToDeclaration/"></a> [androidJvm] val [type](type.md): [Category.Type](-type/index.md)   <br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [children](children.html) | [androidJvm]<br>val [children](children.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Category](index.html)&gt; |
+| [code](code.html) | [androidJvm]<br>val [code](code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [id](id.html) | [androidJvm]<br>val [id](id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [isDefaultChild](is-default-child.html) | [androidJvm]<br>val [isDefaultChild](is-default-child.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [name](name.html) | [androidJvm]<br>val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [parentId](parent-id.html) | [androidJvm]<br>val [parentId](parent-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
+| [sortOrder](sort-order.html) | [androidJvm]<br>val [sortOrder](sort-order.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [type](type.html) | [androidJvm]<br>val [type](type.html): [Category.Type](-type/index.html) |
 

@@ -1,14 +1,17 @@
 ---
-title: Recurring -
+title: Recurring
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[common]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)/[Recurring](-recurring.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[common]Budget](../../index.html)/[Periodicity](../index.html)/[Recurring](index.html)/[Recurring](-recurring.html)
 
 
 
-# Recurring  
-[common]  
-Content  
-fun [Recurring](-recurring.md)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md))  
+# Recurring
+
+
+
+[common]\
+fun [Recurring](-recurring.html)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html))
+
 
 
 

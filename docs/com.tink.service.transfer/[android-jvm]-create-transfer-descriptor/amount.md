@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateTransferDescriptor](index.md)/[amount](amount.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateTransferDescriptor](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[androidJvm]  
-Content  
-val [amount](amount.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# amount
+
+
+
+[androidJvm]\
+val [amount](amount.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

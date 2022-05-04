@@ -1,26 +1,28 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[name](name.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateBeneficiaryDescriptor](index.html)/[name](name.html)
 
 
 
-# name  
-[androidJvm]  
-Content  
-val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# name
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/name/#/PointingToDeclaration/"></a>name| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/name/#/PointingToDeclaration/"></a><br><br>The name of the beneficiary<br><br>
-  
-  
+| name | The name of the beneficiary |
+
 
 
 

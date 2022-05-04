@@ -1,14 +1,17 @@
 ---
-title: SE_PG -
+title: SE_PG
 ---
-//[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[androidJvm]Beneficiary](../index.md)/[AccountNumberTypes](index.md)/[SE_PG](-s-e_-p-g.md)
+//[link](../../../../index.html)/[com.tink.model.transfer](../../index.html)/[[androidJvm]Beneficiary](../index.html)/[AccountNumberTypes](index.html)/[SE_PG](-s-e_-p-g.html)
 
 
 
-# SE_PG  
-[androidJvm]  
-Content  
-const val [SE_PG](-s-e_-p-g.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# SE_PG
+
+
+
+[androidJvm]\
+const val [SE_PG](-s-e_-p-g.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

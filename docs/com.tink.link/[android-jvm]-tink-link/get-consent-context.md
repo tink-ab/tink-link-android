@@ -1,16 +1,25 @@
 ---
-title: getConsentContext -
+title: getConsentContext
 ---
-//[link](../../index.md)/[com.tink.link](../index.md)/[[androidJvm]TinkLink](index.md)/[getConsentContext](get-consent-context.md)
+//[link](../../../index.html)/[com.tink.link](../index.html)/[[androidJvm]TinkLink](index.html)/[getConsentContext](get-consent-context.html)
 
 
 
-# getConsentContext  
-[androidJvm]  
-Content  
-@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)()  
-  
-fun [getConsentContext](get-consent-context.md)(): [ConsentContext](../../com.tink.link.consent/[android-jvm]-consent-context/index.md)  
+# getConsentContext
+
+
+
+[androidJvm]\
+
+
+
+
+@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
+
+
+
+fun [getConsentContext](get-consent-context.html)(): [ConsentContext](../../com.tink.link.consent/[android-jvm]-consent-context/index.html)
+
 
 
 

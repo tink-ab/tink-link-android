@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]AccountDetails](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [AccountDetails.Type](-type/index.md)?  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [AccountDetails.Type](-type/index.html)?
+
 
 
 

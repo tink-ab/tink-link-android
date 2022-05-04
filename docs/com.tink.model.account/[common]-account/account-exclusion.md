@@ -1,14 +1,17 @@
 ---
-title: accountExclusion -
+title: accountExclusion
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[accountExclusion](account-exclusion.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[accountExclusion](account-exclusion.html)
 
 
 
-# accountExclusion  
-[common]  
-Content  
-val [accountExclusion](account-exclusion.md): [Account.AccountExclusion](-account-exclusion/index.md)  
+# accountExclusion
+
+
+
+[common]\
+val [accountExclusion](account-exclusion.html): [Account.AccountExclusion](-account-exclusion/index.html)
+
 
 
 

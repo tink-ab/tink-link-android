@@ -1,14 +1,17 @@
 ---
-title: start -
+title: start
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[OneOff](index.md)/[start](start.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Periodicity](../index.html)/[OneOff](index.html)/[start](start.html)
 
 
 
-# start  
-[androidJvm]  
-Content  
-val [start](start.md): Instant  
+# start
+
+
+
+[androidJvm]\
+val [start](start.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

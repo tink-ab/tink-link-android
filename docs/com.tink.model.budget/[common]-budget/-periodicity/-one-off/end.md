@@ -1,14 +1,17 @@
 ---
-title: end -
+title: end
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[common]Budget](../../index.md)/[Periodicity](../index.md)/[OneOff](index.md)/[end](end.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[common]Budget](../../index.html)/[Periodicity](../index.html)/[OneOff](index.html)/[end](end.html)
 
 
 
-# end  
-[common]  
-Content  
-val [end](end.md): <ERROR CLASS>  
+# end
+
+
+
+[common]\
+val [end](end.html): &lt;ERROR CLASS&gt;
+
 
 
 

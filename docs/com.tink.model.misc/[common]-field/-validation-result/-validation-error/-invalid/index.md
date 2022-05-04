@@ -1,42 +1,35 @@
 ---
-title: Invalid -
+title: Invalid
 ---
-//[link](../../../../../index.md)/[com.tink.model.misc](../../../../index.md)/[[common]Field](../../../index.md)/[ValidationResult](../../index.md)/[ValidationError](../index.md)/[Invalid](index.md)
+//[link](../../../../../../index.html)/[com.tink.model.misc](../../../../index.html)/[[common]Field](../../../index.html)/[ValidationResult](../../index.html)/[ValidationError](../index.html)/[Invalid](index.html)
 
 
 
-# Invalid  
- [common] data class [Invalid](index.md)(**fieldName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **patternError**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Field.ValidationResult.ValidationError](../index.md)
-
-Represents an error where the user input did not match the [ValidationRules.pattern](../../../-validation-rules/pattern.md).
-
-   
+# Invalid
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [Invalid](index.html)(val fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val patternError: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Field.ValidationResult.ValidationError](../index.html)
+
+Represents an error where the user input did not match the [ValidationRules.pattern](../../../-validation-rules/pattern.html).
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/Invalid/#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[Invalid](-invalid.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/Invalid/#kotlin.String#kotlin.String/PointingToDeclaration/"></a> [common] fun [Invalid](-invalid.md)(fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), patternError: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))   <br>
+| [Invalid](-invalid.html) | [common]<br>fun [Invalid](-invalid.html)(fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), patternError: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/copy/#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/copy/#kotlin.String#kotlin.String/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), patternError: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Field.ValidationResult.ValidationError.Invalid](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-
-
-## Properties  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/errorMessage/#/PointingToDeclaration/"></a>[errorMessage](index.md#%5Bcom.tink.model.misc%2FField.ValidationResult.ValidationError.Invalid%2FerrorMessage%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1647702525)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/errorMessage/#/PointingToDeclaration/"></a> [common] val [errorMessage](index.md#%5Bcom.tink.model.misc%2FField.ValidationResult.ValidationError.Invalid%2FerrorMessage%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1647702525): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?A user-friendly message describing the validation error   <br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/fieldName/#/PointingToDeclaration/"></a>[fieldName](field-name.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/fieldName/#/PointingToDeclaration/"></a> [common] open override val [fieldName](field-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The [name](../../../name.md) of the field   <br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/patternError/#/PointingToDeclaration/"></a>[patternError](pattern-error.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid/patternError/#/PointingToDeclaration/"></a> [common] val [patternError](pattern-error.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The [patternError](pattern-error.md) text to be shown to the user   <br>
+| [errorMessage](../error-message.html) | [common]<br>val [errorMessage](../error-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?<br>A user-friendly message describing the validation error |
+| [fieldName](field-name.html) | [common]<br>open override val [fieldName](field-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The [name](../../../name.html) of the field |
+| [patternError](pattern-error.html) | [common]<br>val [patternError](pattern-error.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The [patternError](pattern-error.html) text to be shown to the user |
 

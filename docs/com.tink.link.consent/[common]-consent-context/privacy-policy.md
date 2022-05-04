@@ -1,15 +1,17 @@
 ---
-title: privacyPolicy -
+title: privacyPolicy
 ---
-//[link](../../index.md)/[com.tink.link.consent](../index.md)/[[common]ConsentContext](index.md)/[privacyPolicy](privacy-policy.md)
+//[link](../../../index.html)/[com.tink.link.consent](../index.html)/[[common]ConsentContext](index.html)/[privacyPolicy](privacy-policy.html)
 
 
 
-# privacyPolicy  
-[common]  
-Content  
-fun [privacyPolicy](privacy-policy.md)(locale: <ERROR CLASS> = Locale.getDefault()): <ERROR CLASS>  
-More info  
+# privacyPolicy
+
+
+
+[common]\
+fun [privacyPolicy](privacy-policy.html)(locale: &lt;ERROR CLASS&gt; = Locale.getDefault(), showChromeless: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = true): &lt;ERROR CLASS&gt;
+
 
 
 Get a link to the Privacy Policy for Tink Link.
@@ -20,22 +22,23 @@ Note: Not all languages are supported. The link will display the page in english
 
 
 
-#### Return  
+#### Return
+
 
 
 A Uri to the Privacy Policy
 
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.consent/ConsentContext/privacyPolicy/#/PointingToDeclaration/"></a>locale| <a name="com.tink.link.consent/ConsentContext/privacyPolicy/#/PointingToDeclaration/"></a><br><br>The locale with the language to use.<br><br>
-  
-  
+| locale | The locale with the language to use. |
+
 
 
 

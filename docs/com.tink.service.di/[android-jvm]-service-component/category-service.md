@@ -1,14 +1,17 @@
 ---
-title: categoryService -
+title: categoryService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[categoryService](category-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[categoryService](category-service.html)
 
 
 
-# categoryService  
-[androidJvm]  
-Content  
-abstract val [categoryService](category-service.md): [CategoryService](../../com.tink.service.category/[android-jvm]-category-service/index.md)  
+# categoryService
+
+
+
+[androidJvm]\
+abstract val [categoryService](category-service.html): [CategoryService](../../com.tink.service.category/[android-jvm]-category-service/index.html)
+
 
 
 

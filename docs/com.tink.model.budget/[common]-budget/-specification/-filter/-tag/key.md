@@ -1,14 +1,17 @@
 ---
-title: key -
+title: key
 ---
-//[link](../../../../../index.md)/[com.tink.model.budget](../../../../index.md)/[[common]Budget](../../../index.md)/[Specification](../../index.md)/[Filter](../index.md)/[Tag](index.md)/[key](key.md)
+//[link](../../../../../../index.html)/[com.tink.model.budget](../../../../index.html)/[[common]Budget](../../../index.html)/[Specification](../../index.html)/[Filter](../index.html)/[Tag](index.html)/[key](key.html)
 
 
 
-# key  
-[common]  
-Content  
-val [key](key.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# key
+
+
+
+[common]\
+val [key](key.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: user -
+title: user
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]LinkUser](../index.md)/[ExistingUser](index.md)/[user](user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]LinkUser](../index.html)/[ExistingUser](index.html)/[user](user.html)
 
 
 
-# user  
-[common]  
-Content  
-val [user](user.md): [User](../../../com.tink.model.user/[common]-user/index.md)  
+# user
+
+
+
+[common]\
+val [user](user.html): [User](../../../com.tink.model.user/[common]-user/index.html)
+
 
 
 

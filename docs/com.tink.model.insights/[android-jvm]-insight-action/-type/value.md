@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightAction](../index.md)/[Type](index.md)/[value](value.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightAction](../index.html)/[Type](index.html)/[value](value.html)
 
 
 
-# value  
-[androidJvm]  
-Content  
-val [value](value.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# value
+
+
+
+[androidJvm]\
+val [value](value.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

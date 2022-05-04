@@ -1,49 +1,46 @@
 ---
-title: Attributes -
+title: Attributes
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[Attributes](index.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[Attributes](index.html)
 
 
 
-# Attributes  
- [androidJvm] data class [Attributes](index.md)(**description**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **hint**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **helpText**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **inputType**: [Field.InputType](../-input-type/index.md), **selectOptions**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field.SelectOption](../-select-option/index.md)>) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+# Attributes
+
+
+
+[androidJvm]\
+data class [Attributes](index.html)(val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val hint: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val helpText: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val inputType: [Field.InputType](../-input-type/index.html), val selectOptions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field.SelectOption](../-select-option/index.html)&gt;) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
 
 Represents the attributes of the field used to set up the field input view for the user.
 
-   
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.misc/Field.Attributes/Attributes/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.misc.Field.InputType#kotlin.collections.List[com.tink.model.misc.Field.SelectOption]/PointingToDeclaration/"></a>[Attributes](-attributes.md)| <a name="com.tink.model.misc/Field.Attributes/Attributes/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.misc.Field.InputType#kotlin.collections.List[com.tink.model.misc.Field.SelectOption]/PointingToDeclaration/"></a> [androidJvm] fun [Attributes](-attributes.md)(description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), hint: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), helpText: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), inputType: [Field.InputType](../-input-type/index.md), selectOptions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field.SelectOption](../-select-option/index.md)>)   <br>
+| [Attributes](-attributes.html) | [androidJvm]<br>fun [Attributes](-attributes.html)(description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), hint: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), helpText: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), inputType: [Field.InputType](../-input-type/index.html), selectOptions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field.SelectOption](../-select-option/index.html)&gt;) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.misc/Field.Attributes/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.misc/Field.Attributes/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.misc/Field.Attributes/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.misc/Field.Attributes/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.misc/Field.Attributes/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.misc/Field.Attributes/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.misc/Field.Attributes/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.misc/Field.Attributes/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [Field.InputType](../-input-type/index.md)  <br><br><br>
-| <a name="com.tink.model.misc/Field.Attributes/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.misc/Field.Attributes/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field.SelectOption](../-select-option/index.md)>  <br><br><br>
-| <a name="com.tink.model.misc/Field.Attributes/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.misc.Field.InputType#kotlin.collections.List[com.tink.model.misc.Field.SelectOption]/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.misc/Field.Attributes/copy/#kotlin.String#kotlin.String#kotlin.String#com.tink.model.misc.Field.InputType#kotlin.collections.List[com.tink.model.misc.Field.SelectOption]/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), hint: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), helpText: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), inputType: [Field.InputType](../-input-type/index.md), selectOptions: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field.SelectOption](../-select-option/index.md)>): [Field.Attributes](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.misc/Field.Attributes/description/#/PointingToDeclaration/"></a>[description](description.md)| <a name="com.tink.model.misc/Field.Attributes/description/#/PointingToDeclaration/"></a> [androidJvm] val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The text explaining what should be inside the field.   <br>
-| <a name="com.tink.model.misc/Field.Attributes/helpText/#/PointingToDeclaration/"></a>[helpText](help-text.md)| <a name="com.tink.model.misc/Field.Attributes/helpText/#/PointingToDeclaration/"></a> [androidJvm] val [helpText](help-text.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)Additional information, possibly longer, to guide the user in adding input.   <br>
-| <a name="com.tink.model.misc/Field.Attributes/hint/#/PointingToDeclaration/"></a>[hint](hint.md)| <a name="com.tink.model.misc/Field.Attributes/hint/#/PointingToDeclaration/"></a> [androidJvm] val [hint](hint.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The text giving the user a suggestion of how the input would look (e.g.   <br>
-| <a name="com.tink.model.misc/Field.Attributes/inputType/#/PointingToDeclaration/"></a>[inputType](input-type.md)| <a name="com.tink.model.misc/Field.Attributes/inputType/#/PointingToDeclaration/"></a> [androidJvm] val [inputType](input-type.md): [Field.InputType](../-input-type/index.md)Contains information about the input type for this field that can be applied to the field input view.   <br>
-| <a name="com.tink.model.misc/Field.Attributes/selectOptions/#/PointingToDeclaration/"></a>[selectOptions](select-options.md)| <a name="com.tink.model.misc/Field.Attributes/selectOptions/#/PointingToDeclaration/"></a> [androidJvm] val [selectOptions](select-options.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field.SelectOption](../-select-option/index.md)>A list of options where the user should select one.   <br>
+| [description](description.html) | [androidJvm]<br>val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The text explaining what should be inside the field. |
+| [helpText](help-text.html) | [androidJvm]<br>val [helpText](help-text.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Additional information, possibly longer, to guide the user in adding input. This might be empty. |
+| [hint](hint.html) | [androidJvm]<br>val [hint](hint.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The text giving the user a suggestion of how the input would look (e.g. YYYYMMDDNNNN for SSN) |
+| [inputType](input-type.html) | [androidJvm]<br>val [inputType](input-type.html): [Field.InputType](../-input-type/index.html)<br>Contains information about the input type for this field that can be applied to the field input view. |
+| [selectOptions](select-options.html) | [androidJvm]<br>val [selectOptions](select-options.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field.SelectOption](../-select-option/index.html)&gt;<br>A list of options where the user should select one. |
 

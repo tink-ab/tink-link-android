@@ -1,14 +1,17 @@
 ---
-title: isNumeric -
+title: isNumeric
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[InputType](index.md)/[isNumeric](is-numeric.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[InputType](index.html)/[isNumeric](is-numeric.html)
 
 
 
-# isNumeric  
-[androidJvm]  
-Content  
-val [isNumeric](is-numeric.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isNumeric
+
+
+
+[androidJvm]\
+val [isNumeric](is-numeric.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

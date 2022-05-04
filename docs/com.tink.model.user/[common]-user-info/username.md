@@ -1,14 +1,17 @@
 ---
-title: username -
+title: username
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserInfo](index.md)/[username](username.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserInfo](index.html)/[username](username.html)
 
 
 
-# username  
-[common]  
-Content  
-val [username](username.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# username
+
+
+
+[common]\
+val [username](username.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

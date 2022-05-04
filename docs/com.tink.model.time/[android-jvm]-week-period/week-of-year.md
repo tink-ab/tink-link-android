@@ -1,14 +1,17 @@
 ---
-title: weekOfYear -
+title: weekOfYear
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]WeekPeriod](index.md)/[weekOfYear](week-of-year.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[androidJvm]WeekPeriod](index.html)/[weekOfYear](week-of-year.html)
 
 
 
-# weekOfYear  
-[androidJvm]  
-Content  
-val [weekOfYear](week-of-year.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# weekOfYear
+
+
+
+[androidJvm]\
+val [weekOfYear](week-of-year.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

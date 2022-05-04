@@ -1,14 +1,17 @@
 ---
-title: selectAction -
+title: selectAction
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightServiceImpl](index.md)/[selectAction](select-action.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightServiceImpl](index.html)/[selectAction](select-action.html)
 
 
 
-# selectAction  
-[common]  
-Content  
-open suspend override fun [selectAction](select-action.md)(performedAction: [PerformedInsightAction](../../com.tink.model.insights/[common]-performed-insight-action/index.md))  
+# selectAction
+
+
+
+[common]\
+open suspend override fun [selectAction](select-action.html)(performedAction: [PerformedInsightAction](../../com.tink.model.insights/[common]-performed-insight-action/index.html))
+
 
 
 

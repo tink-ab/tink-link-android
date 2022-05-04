@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]SignableOperation](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [SignableOperation.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [SignableOperation.Type](-type/index.html)
+
 
 
 

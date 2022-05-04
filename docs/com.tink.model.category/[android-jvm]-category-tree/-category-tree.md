@@ -1,14 +1,17 @@
 ---
-title: CategoryTree -
+title: CategoryTree
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]CategoryTree](index.md)/[CategoryTree](-category-tree.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]CategoryTree](index.html)/[CategoryTree](-category-tree.html)
 
 
 
-# CategoryTree  
-[androidJvm]  
-Content  
-fun [CategoryTree](-category-tree.md)(expenses: [Category](../[android-jvm]-category/index.md), income: [Category](../[android-jvm]-category/index.md), transfers: [Category](../[android-jvm]-category/index.md))  
+# CategoryTree
+
+
+
+[androidJvm]\
+fun [CategoryTree](-category-tree.html)(expenses: [Category](../[android-jvm]-category/index.html), income: [Category](../[android-jvm]-category/index.html), transfers: [Category](../[android-jvm]-category/index.html))
+
 
 
 

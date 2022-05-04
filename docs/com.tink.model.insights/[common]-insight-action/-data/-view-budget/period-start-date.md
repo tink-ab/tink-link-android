@@ -1,14 +1,17 @@
 ---
-title: periodStartDate -
+title: periodStartDate
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[ViewBudget](index.md)/[periodStartDate](period-start-date.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[ViewBudget](index.html)/[periodStartDate](period-start-date.html)
 
 
 
-# periodStartDate  
-[common]  
-Content  
-val [periodStartDate](period-start-date.md): <ERROR CLASS>  
+# periodStartDate
+
+
+
+[common]\
+val [periodStartDate](period-start-date.html): &lt;ERROR CLASS&gt;
+
 
 
 

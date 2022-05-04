@@ -1,14 +1,17 @@
 ---
-title: market -
+title: market
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserProfile](index.md)/[market](market.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserProfile](index.html)/[market](market.html)
 
 
 
-# market  
-[androidJvm]  
-Content  
-val [market](market.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# market
+
+
+
+[androidJvm]\
+val [market](market.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

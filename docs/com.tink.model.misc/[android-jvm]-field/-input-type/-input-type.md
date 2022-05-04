@@ -1,14 +1,17 @@
 ---
-title: InputType -
+title: InputType
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[InputType](index.md)/[InputType](-input-type.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[InputType](index.html)/[InputType](-input-type.html)
 
 
 
-# InputType  
-[androidJvm]  
-Content  
-fun [InputType](-input-type.md)(isMasked: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), isNumeric: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), isImmutable: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))  
+# InputType
+
+
+
+[androidJvm]\
+fun [InputType](-input-type.html)(isMasked: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), isNumeric: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html), isImmutable: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: CredentialsRefreshDescriptor -
+title: CredentialsRefreshDescriptor
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsRefreshDescriptor](index.md)/[CredentialsRefreshDescriptor](-credentials-refresh-descriptor.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsRefreshDescriptor](index.html)/[CredentialsRefreshDescriptor](-credentials-refresh-descriptor.html)
 
 
 
-# CredentialsRefreshDescriptor  
-[common]  
-Content  
-fun [CredentialsRefreshDescriptor](-credentials-refresh-descriptor.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), refreshableItems: [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)<[RefreshableItem](../../com.tink.model.credentials/[common]-refreshable-item/index.md)>? = null, authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)? = null)  
+# CredentialsRefreshDescriptor
+
+
+
+[common]\
+fun [CredentialsRefreshDescriptor](-credentials-refresh-descriptor.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), refreshableItems: [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)&lt;[RefreshableItem](../../com.tink.model.credentials/[common]-refreshable-item/index.html)&gt;? = null, authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)? = null)
+
 
 
 

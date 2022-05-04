@@ -1,14 +1,17 @@
 ---
-title: getUserInfo -
+title: getUserInfo
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserService](index.md)/[getUserInfo](get-user-info.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[androidJvm]UserService](index.html)/[getUserInfo](get-user-info.html)
 
 
 
-# getUserInfo  
-[androidJvm]  
-Content  
-abstract suspend fun [getUserInfo](get-user-info.md)(): [UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.md)  
+# getUserInfo
+
+
+
+[androidJvm]\
+abstract suspend fun [getUserInfo](get-user-info.html)(): [UserInfo](../../com.tink.model.user/[android-jvm]-user-info/index.html)
+
 
 
 

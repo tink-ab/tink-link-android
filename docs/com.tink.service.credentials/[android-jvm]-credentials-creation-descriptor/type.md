@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsCreationDescriptor](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsCreationDescriptor](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [Credentials.Type](../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.md)  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [Credentials.Type](../../com.tink.model.credentials/[android-jvm]-credentials/-type/index.html)
+
 
 
 

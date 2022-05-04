@@ -1,14 +1,17 @@
 ---
-title: BudgetCloseData -
+title: BudgetCloseData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetCloseData](index.md)/[BudgetCloseData](-budget-close-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetCloseData](index.html)/[BudgetCloseData](-budget-close-data.html)
 
 
 
-# BudgetCloseData  
-[androidJvm]  
-Content  
-fun [BudgetCloseData](-budget-close-data.md)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[android-jvm]-budget/-period/index.md), currentTime: Instant)  
+# BudgetCloseData
+
+
+
+[androidJvm]\
+fun [BudgetCloseData](-budget-close-data.html)(budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), budgetPeriod: [Budget.Period](../../../com.tink.model.budget/[android-jvm]-budget/-period/index.html), currentTime: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html))
+
 
 
 

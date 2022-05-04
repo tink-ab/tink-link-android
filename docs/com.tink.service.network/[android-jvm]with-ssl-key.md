@@ -1,20 +1,21 @@
 ---
-title: [androidJvm]withSslKey -
+title: [androidJvm]withSslKey
 ---
-//[link](../index.md)/[com.tink.service.network](index.md)/[[androidJvm]withSslKey]([android-jvm]with-ssl-key.md)
+//[link](../../index.html)/[com.tink.service.network](index.html)/[[androidJvm]withSslKey]([android-jvm]with-ssl-key.html)
 
 
 
-# withSslKey  
-[androidJvm]  
-Content  
-fun [Environment.Production]([android-jvm]-environment/-production/index.md).[withSslKey]([android-jvm]with-ssl-key.md)(sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Environment.Custom]([android-jvm]-environment/-custom/index.md)  
-More info  
+# withSslKey
 
 
-Creates an environment with the [Environment.Production]([android-jvm]-environment/-production/index.md) rest URL and the specified sslCertificate.
 
-  
+[androidJvm]\
+fun [Environment.Production]([android-jvm]-environment/-production/index.html).[withSslKey]([android-jvm]with-ssl-key.html)(sslCertificate: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Environment.Custom]([android-jvm]-environment/-custom/index.html)
+
+
+
+Creates an environment with the [Environment.Production]([android-jvm]-environment/-production/index.html) rest URL and the specified [sslCertificate]([android-jvm]with-ssl-key.html).
+
 
 
 

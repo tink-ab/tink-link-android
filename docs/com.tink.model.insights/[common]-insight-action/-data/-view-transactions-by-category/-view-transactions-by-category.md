@@ -1,14 +1,17 @@
 ---
-title: ViewTransactionsByCategory -
+title: ViewTransactionsByCategory
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[ViewTransactionsByCategory](index.md)/[ViewTransactionsByCategory](-view-transactions-by-category.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[ViewTransactionsByCategory](index.html)/[ViewTransactionsByCategory](-view-transactions-by-category.html)
 
 
 
-# ViewTransactionsByCategory  
-[common]  
-Content  
-fun [ViewTransactionsByCategory](-view-transactions-by-category.md)(transactionsByCategory: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>>)  
+# ViewTransactionsByCategory
+
+
+
+[common]\
+fun [ViewTransactionsByCategory](-view-transactions-by-category.html)(transactionsByCategory: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;&gt;)
+
 
 
 

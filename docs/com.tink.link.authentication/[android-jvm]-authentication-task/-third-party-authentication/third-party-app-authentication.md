@@ -1,14 +1,17 @@
 ---
-title: thirdPartyAppAuthentication -
+title: thirdPartyAppAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[androidJvm]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)/[thirdPartyAppAuthentication](third-party-app-authentication.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[androidJvm]AuthenticationTask](../index.html)/[ThirdPartyAuthentication](index.html)/[thirdPartyAppAuthentication](third-party-app-authentication.html)
 
 
 
-# thirdPartyAppAuthentication  
-[androidJvm]  
-Content  
-val [thirdPartyAppAuthentication](third-party-app-authentication.md): [ThirdPartyAppAuthentication](../../../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.md)  
+# thirdPartyAppAuthentication
+
+
+
+[androidJvm]\
+val [thirdPartyAppAuthentication](third-party-app-authentication.html): [ThirdPartyAppAuthentication](../../../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.html)
+
 
 
 

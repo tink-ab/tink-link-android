@@ -1,14 +1,17 @@
 ---
-title: ProviderList -
+title: ProviderList
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]ProviderSelection](../index.md)/[ProviderList](index.md)/[ProviderList](-provider-list.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]ProviderSelection](../index.html)/[ProviderList](index.html)/[ProviderList](-provider-list.html)
 
 
 
-# ProviderList  
-[common]  
-Content  
-fun [ProviderList](-provider-list.md)(filter: [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.md) = ProviderFilter())  
+# ProviderList
+
+
+
+[common]\
+fun [ProviderList](-provider-list.html)(filter: [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html) = ProviderFilter())
+
 
 
 

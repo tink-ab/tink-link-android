@@ -1,14 +1,17 @@
 ---
-title: helpText -
+title: helpText
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[Attributes](index.md)/[helpText](help-text.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[Attributes](index.html)/[helpText](help-text.html)
 
 
 
-# helpText  
-[androidJvm]  
-Content  
-val [helpText](help-text.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# helpText
+
+
+
+[androidJvm]\
+val [helpText](help-text.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: ProviderNotFound -
+title: ProviderNotFound
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkError](../index.md)/[ProviderNotFound](index.md)/[ProviderNotFound](-provider-not-found.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkError](../index.html)/[ProviderNotFound](index.html)/[ProviderNotFound](-provider-not-found.html)
 
 
 
-# ProviderNotFound  
-[androidJvm]  
-Content  
-fun [ProviderNotFound](-provider-not-found.md)(providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# ProviderNotFound
+
+
+
+[androidJvm]\
+fun [ProviderNotFound](-provider-not-found.html)(providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

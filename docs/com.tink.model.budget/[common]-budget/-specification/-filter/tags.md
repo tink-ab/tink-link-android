@@ -1,14 +1,17 @@
 ---
-title: tags -
+title: tags
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[common]Budget](../../index.md)/[Specification](../index.md)/[Filter](index.md)/[tags](tags.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[common]Budget](../../index.html)/[Specification](../index.html)/[Filter](index.html)/[tags](tags.html)
 
 
 
-# tags  
-[common]  
-Content  
-val [tags](tags.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Budget.Specification.Filter.Tag](-tag/index.md)>  
+# tags
+
+
+
+[common]\
+val [tags](tags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Budget.Specification.Filter.Tag](-tag/index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]Insight](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [InsightType](../[android-jvm]-insight-type/index.md)  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [InsightType](../[android-jvm]-insight-type/index.html)
+
 
 
 

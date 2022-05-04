@@ -1,14 +1,17 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Authenticate](index.md)/[credentials](credentials.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[common]CredentialsOperationArgs](../index.html)/[Authenticate](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[common]  
-Content  
-val [credentials](credentials.md): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md)  
+# credentials
+
+
+
+[common]\
+val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)
+
 
 
 

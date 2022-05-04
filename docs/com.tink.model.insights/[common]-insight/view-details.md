@@ -1,14 +1,17 @@
 ---
-title: viewDetails -
+title: viewDetails
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[viewDetails](view-details.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[viewDetails](view-details.html)
 
 
 
-# viewDetails  
-[common]  
-Content  
-var [viewDetails](view-details.md): [Insight.ViewDetails](-view-details/index.md)? = null  
+# viewDetails
+
+
+
+[common]\
+var [viewDetails](view-details.html): [Insight.ViewDetails](-view-details/index.html)? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: totalAmount -
+title: totalAmount
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]ExpensesByDay](index.md)/[totalAmount](total-amount.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[androidJvm]ExpensesByDay](index.html)/[totalAmount](total-amount.html)
 
 
 
-# totalAmount  
-[androidJvm]  
-Content  
-val [totalAmount](total-amount.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# totalAmount
+
+
+
+[androidJvm]\
+val [totalAmount](total-amount.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

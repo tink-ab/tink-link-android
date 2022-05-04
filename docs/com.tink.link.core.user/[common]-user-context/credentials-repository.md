@@ -1,14 +1,17 @@
 ---
-title: credentialsRepository -
+title: credentialsRepository
 ---
-//[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[common]UserContext](index.md)/[credentialsRepository](credentials-repository.md)
+//[link](../../../index.html)/[com.tink.link.core.user](../index.html)/[[common]UserContext](index.html)/[credentialsRepository](credentials-repository.html)
 
 
 
-# credentialsRepository  
-[common]  
-Content  
-abstract val [credentialsRepository](credentials-repository.md): [CredentialsRepository](../../com.tink.link.core.credentials/[common]-credentials-repository/index.md)  
+# credentialsRepository
+
+
+
+[common]\
+abstract val [credentialsRepository](credentials-repository.html): [CredentialsRepository](../../com.tink.link.core.credentials/[common]-credentials-repository/index.html)
+
 
 
 

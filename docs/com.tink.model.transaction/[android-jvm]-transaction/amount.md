@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[amount](amount.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Transaction](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[androidJvm]  
-Content  
-val [amount](amount.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# amount
+
+
+
+[androidJvm]\
+val [amount](amount.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

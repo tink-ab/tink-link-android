@@ -1,16 +1,18 @@
 ---
-title: com.tink.model -
+title: com.tink.model
 ---
-//[link](../index.md)/[com.tink.model](index.md)
+//[link](../../index.html)/[com.tink.model](index.html)
 
 
 
-# Package com.tink.model  
+# Package com.tink.model
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model/Images///PointingToDeclaration/"></a>Images| <a name="com.tink.model/Images///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>data class [Images]([common]-images/index.md)(**icon**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **banner**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  <br>[androidJvm]  <br>data class [Images]([android-jvm]-images/index.md)(**icon**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **banner**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br><br><br>
+| Images | [common, androidJvm]<br>[common]<br>data class [Images]([common]-images/index.html)(val icon: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val banner: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))<br>[androidJvm]<br>data class [Images]([android-jvm]-images/index.html)(val icon: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val banner: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
 

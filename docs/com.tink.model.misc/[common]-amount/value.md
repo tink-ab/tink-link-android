@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]Amount](index.md)/[value](value.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]Amount](index.html)/[value](value.html)
 
 
 
-# value  
-[common]  
-Content  
-val [value](value.md): [ExactNumber](../[common]-exact-number/index.md)  
+# value
+
+
+
+[common]\
+val [value](value.html): [ExactNumber](../[common]-exact-number/index.html)
+
 
 
 

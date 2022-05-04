@@ -1,14 +1,17 @@
 ---
-title: expenses -
+title: expenses
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[MonthlySummaryExpensesByCategoryData](index.md)/[expenses](expenses.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[MonthlySummaryExpensesByCategoryData](index.html)/[expenses](expenses.html)
 
 
 
-# expenses  
-[androidJvm]  
-Content  
-val [expenses](expenses.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.md)>  
+# expenses
+
+
+
+[androidJvm]\
+val [expenses](expenses.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.html)&gt;
+
 
 
 

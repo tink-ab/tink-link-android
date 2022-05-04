@@ -1,14 +1,17 @@
 ---
-title: archivedDate -
+title: archivedDate
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightState](../index.md)/[Archived](index.md)/[archivedDate](archived-date.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightState](../index.html)/[Archived](index.html)/[archivedDate](archived-date.html)
 
 
 
-# archivedDate  
-[androidJvm]  
-Content  
-val [archivedDate](archived-date.md): Instant  
+# archivedDate
+
+
+
+[androidJvm]\
+val [archivedDate](archived-date.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

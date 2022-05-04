@@ -1,14 +1,17 @@
 ---
-title: Android -
+title: Android
 ---
-//[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[common]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[Android](-android.md)
+//[link](../../../../index.html)/[com.tink.model.authentication](../../index.html)/[[common]ThirdPartyAppAuthentication](../index.html)/[Android](index.html)/[Android](-android.html)
 
 
 
-# Android  
-[common]  
-Content  
-fun [Android](-android.md)(intent: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), requiredMinimumVersion: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  
+# Android
+
+
+
+[common]\
+fun [Android](-android.html)(intent: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), requiredMinimumVersion: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
+
 
 
 

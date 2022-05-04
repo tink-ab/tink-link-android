@@ -1,14 +1,17 @@
 ---
-title: freeTextQuery -
+title: freeTextQuery
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Specification](../index.md)/[Filter](index.md)/[freeTextQuery](free-text-query.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Specification](../index.html)/[Filter](index.html)/[freeTextQuery](free-text-query.html)
 
 
 
-# freeTextQuery  
-[androidJvm]  
-Content  
-val [freeTextQuery](free-text-query.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# freeTextQuery
+
+
+
+[androidJvm]\
+val [freeTextQuery](free-text-query.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

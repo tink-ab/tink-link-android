@@ -1,14 +1,17 @@
 ---
-title: currentTime -
+title: currentTime
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetCloseData](index.md)/[currentTime](current-time.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetCloseData](index.html)/[currentTime](current-time.html)
 
 
 
-# currentTime  
-[androidJvm]  
-Content  
-val [currentTime](current-time.md): Instant  
+# currentTime
+
+
+
+[androidJvm]\
+val [currentTime](current-time.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

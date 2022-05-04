@@ -1,14 +1,17 @@
 ---
-title: status -
+title: status
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[status](status.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[status](status.html)
 
 
 
-# status  
-[common]  
-Content  
-val [status](status.md): [Provider.Status](-status/index.md)  
+# status
+
+
+
+[common]\
+val [status](status.html): [Provider.Status](-status/index.html)
+
 
 
 

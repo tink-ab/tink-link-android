@@ -1,14 +1,17 @@
 ---
-title: toBigDecimal -
+title: toBigDecimal
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]ExactNumber](index.md)/[toBigDecimal](to-big-decimal.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]ExactNumber](index.html)/[toBigDecimal](to-big-decimal.html)
 
 
 
-# toBigDecimal  
-[common]  
-Content  
-fun [toBigDecimal](to-big-decimal.md)(): <ERROR CLASS>  
+# toBigDecimal
+
+
+
+[common]\
+fun [toBigDecimal](to-big-decimal.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

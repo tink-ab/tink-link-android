@@ -1,14 +1,17 @@
 ---
-title: build -
+title: build
 ---
-//[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[androidJvm]ServiceComponent](../index.md)/[Builder](index.md)/[build](build.md)
+//[link](../../../../index.html)/[com.tink.service.di](../../index.html)/[[androidJvm]ServiceComponent](../index.html)/[Builder](index.html)/[build](build.html)
 
 
 
-# build  
-[androidJvm]  
-Content  
-abstract fun [build](build.md)(): [ServiceComponent](../index.md)  
+# build
+
+
+
+[androidJvm]\
+abstract fun [build](build.html)(): [ServiceComponent](../index.html)
+
 
 
 

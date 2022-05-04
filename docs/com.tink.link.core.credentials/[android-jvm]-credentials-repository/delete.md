@@ -1,30 +1,32 @@
 ---
-title: delete -
+title: delete
 ---
-//[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[androidJvm]CredentialsRepository](index.md)/[delete](delete.md)
+//[link](../../../index.html)/[com.tink.link.core.credentials](../index.html)/[[androidJvm]CredentialsRepository](index.html)/[delete](delete.html)
 
 
 
-# delete  
-[androidJvm]  
-Content  
-fun [delete](delete.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)>)  
-More info  
-
-
-Deletes the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md) matching the credentialsId.
+# delete
 
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+[androidJvm]\
+fun [delete](delete.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+
+
+
+Deletes the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) matching the [credentialsId](delete.html).
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsRepository/delete/#kotlin.String#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>resultHandler| <a name="com.tink.link.core.credentials/CredentialsRepository/delete/#kotlin.String#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a><br><br>The [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.md) for processing error and success callbacks<br><br>
-  
-  
+| resultHandler | The [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html) for processing error and success callbacks |
+
 
 
 

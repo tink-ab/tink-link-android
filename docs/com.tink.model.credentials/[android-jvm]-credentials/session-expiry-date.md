@@ -1,14 +1,17 @@
 ---
-title: sessionExpiryDate -
+title: sessionExpiryDate
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[sessionExpiryDate](session-expiry-date.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]Credentials](index.html)/[sessionExpiryDate](session-expiry-date.html)
 
 
 
-# sessionExpiryDate  
-[androidJvm]  
-Content  
-val [sessionExpiryDate](session-expiry-date.md): Instant? = null  
+# sessionExpiryDate
+
+
+
+[androidJvm]\
+val [sessionExpiryDate](session-expiry-date.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: authorization -
+title: authorization
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]User](index.md)/[authorization](authorization.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]User](index.html)/[authorization](authorization.html)
 
 
 
-# authorization  
-[common]  
-Content  
-val [authorization](authorization.md): [Authorization](../[common]-authorization/index.md)  
+# authorization
+
+
+
+[common]\
+val [authorization](authorization.html): [Authorization](../[common]-authorization/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: User -
+title: User
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]User](index.md)/[User](-user.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]User](index.html)/[User](-user.html)
 
 
 
-# User  
-[androidJvm]  
-Content  
-fun [User](-user.md)(authorization: [Authorization](../[android-jvm]-authorization/index.md))  
+# User
+
+
+
+[androidJvm]\
+fun [User](-user.html)(authorization: [Authorization](../[android-jvm]-authorization/index.html))
+
 
 
 

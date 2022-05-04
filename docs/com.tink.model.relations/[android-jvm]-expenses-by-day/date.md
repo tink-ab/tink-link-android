@@ -1,14 +1,17 @@
 ---
-title: date -
+title: date
 ---
-//[link](../../index.md)/[com.tink.model.relations](../index.md)/[[androidJvm]ExpensesByDay](index.md)/[date](date.md)
+//[link](../../../index.html)/[com.tink.model.relations](../index.html)/[[androidJvm]ExpensesByDay](index.html)/[date](date.html)
 
 
 
-# date  
-[androidJvm]  
-Content  
-val [date](date.md): LocalDate  
+# date
+
+
+
+[androidJvm]\
+val [date](date.html): [LocalDate](https://developer.android.com/reference/kotlin/java/time/LocalDate.html)
+
 
 
 

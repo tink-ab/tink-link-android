@@ -1,14 +1,17 @@
 ---
-title: LargeExpenseData -
+title: LargeExpenseData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[LargeExpenseData](index.md)/[LargeExpenseData](-large-expense-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[LargeExpenseData](index.html)/[LargeExpenseData](-large-expense-data.html)
 
 
 
-# LargeExpenseData  
-[common]  
-Content  
-fun [LargeExpenseData](-large-expense-data.md)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# LargeExpenseData
+
+
+
+[common]\
+fun [LargeExpenseData](-large-expense-data.html)(transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

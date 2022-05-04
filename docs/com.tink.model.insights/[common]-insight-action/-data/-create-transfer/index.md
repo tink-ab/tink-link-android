@@ -1,36 +1,35 @@
 ---
-title: CreateTransfer -
+title: CreateTransfer
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)
 
 
 
-# CreateTransfer  
- [common] data class [CreateTransfer](index.md)(**sourceUri**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **destinationUri**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **amount**: [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?, **sourceAccountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?, **destinationAccountNumber**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?) : [InsightAction.Data](../index.md)   
+# CreateTransfer
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [CreateTransfer](index.html)(val sourceUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val destinationUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)? = null, val sourceAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, val destinationAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) : [InsightAction.Data](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/copy/#kotlin.String?#kotlin.String?#com.tink.model.misc.Amount?#kotlin.String?#kotlin.String?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/copy/#kotlin.String?#kotlin.String?#com.tink.model.misc.Amount?#kotlin.String?#kotlin.String?/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(sourceUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, destinationUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)? = null, sourceAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, destinationAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null): [InsightAction.Data.CreateTransfer](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [CreateTransfer](-create-transfer.html) | [common]<br>fun [CreateTransfer](-create-transfer.html)(sourceUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, destinationUri: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)? = null, sourceAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null, destinationAccountNumber: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/amount/#/PointingToDeclaration/"></a>[amount](amount.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/amount/#/PointingToDeclaration/"></a> [common] val [amount](amount.md): [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)? = null   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/destinationAccountNumber/#/PointingToDeclaration/"></a>[destinationAccountNumber](destination-account-number.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/destinationAccountNumber/#/PointingToDeclaration/"></a> [common] val [destinationAccountNumber](destination-account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/destinationUri/#/PointingToDeclaration/"></a>[destinationUri](destination-uri.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/destinationUri/#/PointingToDeclaration/"></a> [common] val [destinationUri](destination-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/sourceAccountNumber/#/PointingToDeclaration/"></a>[sourceAccountNumber](source-account-number.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/sourceAccountNumber/#/PointingToDeclaration/"></a> [common] val [sourceAccountNumber](source-account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/sourceUri/#/PointingToDeclaration/"></a>[sourceUri](source-uri.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateTransfer/sourceUri/#/PointingToDeclaration/"></a> [common] val [sourceUri](source-uri.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null   <br>
+| [amount](amount.html) | [common]<br>val [amount](amount.html): [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)? = null |
+| [destinationAccountNumber](destination-account-number.html) | [common]<br>val [destinationAccountNumber](destination-account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [destinationUri](destination-uri.html) | [common]<br>val [destinationUri](destination-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [sourceAccountNumber](source-account-number.html) | [common]<br>val [sourceAccountNumber](source-account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
+| [sourceUri](source-uri.html) | [common]<br>val [sourceUri](source-uri.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null |
 

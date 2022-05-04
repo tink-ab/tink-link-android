@@ -1,14 +1,17 @@
 ---
-title: appUri -
+title: appUri
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsUpdateDescriptor](index.md)/[appUri](app-uri.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsUpdateDescriptor](index.html)/[appUri](app-uri.html)
 
 
 
-# appUri  
-[androidJvm]  
-Content  
-val [appUri](app-uri.md): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)  
+# appUri
+
+
+
+[androidJvm]\
+val [appUri](app-uri.html): [Uri](https://developer.android.com/reference/kotlin/android/net/Uri.html)
+
 
 
 

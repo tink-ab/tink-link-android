@@ -1,14 +1,17 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[name](name.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[name](name.html)
 
 
 
-# name  
-[androidJvm]  
-Content  
-val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# name
+
+
+
+[androidJvm]\
+val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: Summary -
+title: Summary
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Summary](index.md)/[Summary](-summary.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Summary](index.html)/[Summary](-summary.html)
 
 
 
-# Summary  
-[androidJvm]  
-Content  
-fun [Summary](-summary.md)(budgetSpecification: [Budget.Specification](../-specification/index.md), budgetPeriod: [Budget.Period](../-period/index.md))  
+# Summary
+
+
+
+[androidJvm]\
+fun [Summary](-summary.html)(budgetSpecification: [Budget.Specification](../-specification/index.html), budgetPeriod: [Budget.Period](../-period/index.html))
+
 
 
 

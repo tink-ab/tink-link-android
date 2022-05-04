@@ -1,14 +1,17 @@
 ---
-title: onCreate -
+title: onCreate
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[onCreate](on-create.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[common]TinkLinkUiActivity](index.html)/[onCreate](on-create.html)
 
 
 
-# onCreate  
-[common]  
-Content  
-open fun [onCreate](on-create.md)(savedInstanceState: <ERROR CLASS>?)  
+# onCreate
+
+
+
+[common]\
+open fun [onCreate](on-create.html)(savedInstanceState: &lt;ERROR CLASS&gt;?)
+
 
 
 

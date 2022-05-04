@@ -1,14 +1,17 @@
 ---
-title: SupplementalInformation -
+title: SupplementalInformation
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[androidJvm]AuthenticationTask](../index.md)/[SupplementalInformation](index.md)/[SupplementalInformation](-supplemental-information.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[androidJvm]AuthenticationTask](../index.html)/[SupplementalInformation](index.html)/[SupplementalInformation](-supplemental-information.html)
 
 
 
-# SupplementalInformation  
-[androidJvm]  
-Content  
-fun [SupplementalInformation](-supplemental-information.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md))  
+# SupplementalInformation
+
+
+
+[androidJvm]\
+fun [SupplementalInformation](-supplemental-information.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
+
 
 
 

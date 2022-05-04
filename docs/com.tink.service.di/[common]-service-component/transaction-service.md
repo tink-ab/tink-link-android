@@ -1,14 +1,17 @@
 ---
-title: transactionService -
+title: transactionService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[transactionService](transaction-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[transactionService](transaction-service.html)
 
 
 
-# transactionService  
-[common]  
-Content  
-abstract val [transactionService](transaction-service.md): [TransactionService](../../com.tink.service.transaction/[common]-transaction-service/index.md)  
+# transactionService
+
+
+
+[common]\
+abstract val [transactionService](transaction-service.html): [TransactionService](../../com.tink.service.transaction/[common]-transaction-service/index.html)
+
 
 
 

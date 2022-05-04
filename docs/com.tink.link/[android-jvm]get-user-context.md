@@ -1,24 +1,25 @@
 ---
-title: [androidJvm]getUserContext -
+title: [androidJvm]getUserContext
 ---
-//[link](../index.md)/[com.tink.link](index.md)/[[androidJvm]getUserContext]([android-jvm]get-user-context.md)
+//[link](../../index.html)/[com.tink.link](index.html)/[[androidJvm]getUserContext]([android-jvm]get-user-context.html)
 
 
 
-# getUserContext  
-[androidJvm]  
-Content  
-fun [Tink](../com.tink.core/[android-jvm]-tink/index.md).[getUserContext]([android-jvm]get-user-context.md)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.md)?  
-More info  
+# getUserContext
 
 
-Fetches the [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.md) from Tink if a user is set.
+
+[androidJvm]\
+fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[getUserContext]([android-jvm]get-user-context.html)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html)?
+
+
+
+Fetches the [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html) from Tink if a user is set.
 
 
 
 If no user is set, this will return null
 
-  
 
 
 

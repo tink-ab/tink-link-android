@@ -1,14 +1,17 @@
 ---
-title: transferService -
+title: transferService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[transferService](transfer-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[transferService](transfer-service.html)
 
 
 
-# transferService  
-[common]  
-Content  
-abstract val [transferService](transfer-service.md): [TransferService](../../com.tink.service.transfer/[common]-transfer-service/index.md)  
+# transferService
+
+
+
+[common]\
+abstract val [transferService](transfer-service.html): [TransferService](../../com.tink.service.transfer/[common]-transfer-service/index.html)
+
 
 
 

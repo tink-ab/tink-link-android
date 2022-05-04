@@ -1,14 +1,17 @@
 ---
-title: YearPeriod -
+title: YearPeriod
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[YearPeriod](-year-period.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearPeriod](index.html)/[YearPeriod](-year-period.html)
 
 
 
-# YearPeriod  
-[common]  
-Content  
-fun [YearPeriod](-year-period.md)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: <ERROR CLASS>, end: <ERROR CLASS>)  
+# YearPeriod
+
+
+
+[common]\
+fun [YearPeriod](-year-period.html)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: &lt;ERROR CLASS&gt;, end: &lt;ERROR CLASS&gt;)
+
 
 
 

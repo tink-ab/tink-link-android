@@ -1,14 +1,17 @@
 ---
-title: thirdPartyAppAuthentication -
+title: thirdPartyAppAuthentication
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[thirdPartyAppAuthentication](third-party-app-authentication.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[thirdPartyAppAuthentication](third-party-app-authentication.html)
 
 
 
-# thirdPartyAppAuthentication  
-[common]  
-Content  
-val [thirdPartyAppAuthentication](third-party-app-authentication.md): [ThirdPartyAppAuthentication](../../com.tink.model.authentication/[common]-third-party-app-authentication/index.md)? = null  
+# thirdPartyAppAuthentication
+
+
+
+[common]\
+val [thirdPartyAppAuthentication](third-party-app-authentication.html): [ThirdPartyAppAuthentication](../../com.tink.model.authentication/[common]-third-party-app-authentication/index.html)? = null
+
 
 
 

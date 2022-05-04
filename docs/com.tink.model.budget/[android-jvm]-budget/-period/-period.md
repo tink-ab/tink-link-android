@@ -1,14 +1,17 @@
 ---
-title: Period -
+title: Period
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Period](index.md)/[Period](-period.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Period](index.html)/[Period](-period.html)
 
 
 
-# Period  
-[androidJvm]  
-Content  
-fun [Period](-period.md)(start: Instant, end: Instant, spentAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md), budgetAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md))  
+# Period
+
+
+
+[androidJvm]\
+fun [Period](-period.html)(start: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), end: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), spentAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html), budgetAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html))
+
 
 
 

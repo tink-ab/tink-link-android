@@ -1,26 +1,28 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../../index.md)/[com.tink.link.core.credentials](../../index.md)/[[androidJvm]CredentialsStatus](../index.md)/[AwaitingAuthentication](index.md)/[credentials](credentials.md)
+//[link](../../../../index.html)/[com.tink.link.core.credentials](../../index.html)/[[androidJvm]CredentialsStatus](../index.html)/[AwaitingAuthentication](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[androidJvm]  
-Content  
-open override val [credentials](credentials.md): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)  
-More info  
+# credentials
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/credentials/#/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/credentials/#/PointingToDeclaration/"></a><br><br>the credentials for which authentication is needed<br><br>
-  
-  
+| credentials | the credentials for which authentication is needed |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: nationalId -
+title: nationalId
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[nationalId](national-id.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserInfo](index.html)/[nationalId](national-id.html)
 
 
 
-# nationalId  
-[androidJvm]  
-Content  
-val [nationalId](national-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# nationalId
+
+
+
+[androidJvm]\
+val [nationalId](national-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

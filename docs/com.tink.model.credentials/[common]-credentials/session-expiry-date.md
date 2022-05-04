@@ -1,14 +1,17 @@
 ---
-title: sessionExpiryDate -
+title: sessionExpiryDate
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[sessionExpiryDate](session-expiry-date.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[sessionExpiryDate](session-expiry-date.html)
 
 
 
-# sessionExpiryDate  
-[common]  
-Content  
-val [sessionExpiryDate](session-expiry-date.md): <ERROR CLASS>? = null  
+# sessionExpiryDate
+
+
+
+[common]\
+val [sessionExpiryDate](session-expiry-date.html): &lt;ERROR CLASS&gt;? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: providerName -
+title: providerName
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[providerName](provider-name.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]Credentials](index.html)/[providerName](provider-name.html)
 
 
 
-# providerName  
-[androidJvm]  
-Content  
-val [providerName](provider-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# providerName
+
+
+
+[androidJvm]\
+val [providerName](provider-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

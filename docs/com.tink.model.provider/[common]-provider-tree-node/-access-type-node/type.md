@@ -1,26 +1,28 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[AccessTypeNode](index.md)/[type](type.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[AccessTypeNode](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Provider.AccessType](../../[common]-provider/-access-type/index.md)  
-More info  
+# type
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [type](type.html): [Provider.AccessType](../../[common]-provider/-access-type/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/type/#/PointingToDeclaration/"></a>type| <a name="com.tink.model.provider/ProviderTreeNode.AccessTypeNode/type/#/PointingToDeclaration/"></a><br><br>Grouping identifier. See [Provider.AccessType](../../[common]-provider/-access-type/index.md)<br><br>
-  
-  
+| type | Grouping identifier. See [Provider.AccessType](../../[common]-provider/-access-type/index.html) |
+
 
 
 

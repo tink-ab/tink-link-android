@@ -1,14 +1,17 @@
 ---
-title: capabilities -
+title: capabilities
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[capabilities](capabilities.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[capabilities](capabilities.html)
 
 
 
-# capabilities  
-[common]  
-Content  
-val [capabilities](capabilities.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Provider.Capability](-capability/index.md)>  
+# capabilities
+
+
+
+[common]\
+val [capabilities](capabilities.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Provider.Capability](-capability/index.html)&gt;
+
 
 
 

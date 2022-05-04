@@ -1,14 +1,17 @@
 ---
-title: [androidJvm]plus -
+title: [androidJvm]plus
 ---
-//[link](../index.md)/[com.tink.model.credentials](index.md)/[[androidJvm]plus]([android-jvm]plus.md)
+//[link](../../index.html)/[com.tink.model.credentials](index.html)/[[androidJvm]plus]([android-jvm]plus.html)
 
 
 
-# plus  
-[androidJvm]  
-Content  
-operator fun [RefreshableItem]([android-jvm]-refreshable-item/index.md).[plus]([android-jvm]plus.md)(other: [RefreshableItem]([android-jvm]-refreshable-item/index.md)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem]([android-jvm]-refreshable-item/index.md)>  
+# plus
+
+
+
+[androidJvm]\
+operator fun [RefreshableItem]([android-jvm]-refreshable-item/index.html).[plus]([android-jvm]plus.html)(other: [RefreshableItem]([android-jvm]-refreshable-item/index.html)): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem]([android-jvm]-refreshable-item/index.html)&gt;
+
 
 
 

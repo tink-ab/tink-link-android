@@ -1,14 +1,17 @@
 ---
-title: start -
+title: start
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Period](index.md)/[start](start.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Period](index.html)/[start](start.html)
 
 
 
-# start  
-[common]  
-Content  
-val [start](start.md): <ERROR CLASS>  
+# start
+
+
+
+[common]\
+val [start](start.html): &lt;ERROR CLASS&gt;
+
 
 
 

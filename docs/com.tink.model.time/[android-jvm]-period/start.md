@@ -1,14 +1,17 @@
 ---
-title: start -
+title: start
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]Period](index.md)/[start](start.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[androidJvm]Period](index.html)/[start](start.html)
 
 
 
-# start  
-[androidJvm]  
-Content  
-abstract val [start](start.md): Instant  
+# start
+
+
+
+[androidJvm]\
+abstract val [start](start.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

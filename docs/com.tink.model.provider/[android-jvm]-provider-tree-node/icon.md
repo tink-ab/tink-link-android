@@ -1,20 +1,21 @@
 ---
-title: icon -
+title: icon
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]ProviderTreeNode](index.md)/[icon](icon.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]ProviderTreeNode](index.html)/[icon](icon.html)
 
 
 
-# icon  
-[androidJvm]  
-Content  
-abstract val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
-More info  
+# icon
+
+
+
+[androidJvm]\
+abstract val [icon](icon.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 An optional url linking to a visual description of the node.
 
-  
 
 
 

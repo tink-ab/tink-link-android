@@ -1,26 +1,28 @@
 ---
-title: environment -
+title: environment
 ---
-//[link](../../index.md)/[com.tink.service.network](../index.md)/[[androidJvm]TinkConfiguration](index.md)/[environment](environment.md)
+//[link](../../../index.html)/[com.tink.service.network](../index.html)/[[androidJvm]TinkConfiguration](index.html)/[environment](environment.html)
 
 
 
-# environment  
-[androidJvm]  
-Content  
-val [environment](environment.md): [Environment](../[android-jvm]-environment/index.md)  
-More info  
+# environment
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [environment](environment.html): [Environment](../[android-jvm]-environment/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.network/TinkConfiguration/environment/#/PointingToDeclaration/"></a>environment| <a name="com.tink.service.network/TinkConfiguration/environment/#/PointingToDeclaration/"></a><br><br>The environment you want to connect to. Use [Environment.Production](../[android-jvm]-environment/-production/index.md) if you are using the Tink environment or add your own with [Environment.Custom](../[android-jvm]-environment/-custom/index.md)<br><br>
-  
-  
+| environment | The environment you want to connect to. Use [Environment.Production](../[android-jvm]-environment/-production/index.html) if you are using the Tink environment or add your own with [Environment.Custom](../[android-jvm]-environment/-custom/index.html) |
+
 
 
 

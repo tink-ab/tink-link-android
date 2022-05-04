@@ -1,26 +1,28 @@
 ---
-title: clientUrl -
+title: clientUrl
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[clientUrl](client-url.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]OAuthClientDescription](index.html)/[clientUrl](client-url.html)
 
 
 
-# clientUrl  
-[androidJvm]  
-Content  
-val [clientUrl](client-url.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# clientUrl
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [clientUrl](client-url.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/clientUrl/#/PointingToDeclaration/"></a>clientUrl| <a name="com.tink.model.consent/OAuthClientDescription/clientUrl/#/PointingToDeclaration/"></a><br><br>: A url specified by the client for additional information. Can be empty.<br><br>
-  
-  
+| clientUrl | : A url specified by the client for additional information. Can be empty. |
+
 
 
 

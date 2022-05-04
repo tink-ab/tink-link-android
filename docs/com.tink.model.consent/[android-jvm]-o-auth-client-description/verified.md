@@ -1,26 +1,28 @@
 ---
-title: verified -
+title: verified
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[verified](verified.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]OAuthClientDescription](index.html)/[verified](verified.html)
 
 
 
-# verified  
-[androidJvm]  
-Content  
-val [verified](verified.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
-More info  
+# verified
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [verified](verified.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/verified/#/PointingToDeclaration/"></a>verified| <a name="com.tink.model.consent/OAuthClientDescription/verified/#/PointingToDeclaration/"></a><br><br>: Indicates whether the app is verified or not. If it is unverified, the user should be cautious when sharing financial data.<br><br>
-  
-  
+| verified | : Indicates whether the app is verified or not. If it is unverified, the user should be cautious when sharing financial data. |
+
 
 
 

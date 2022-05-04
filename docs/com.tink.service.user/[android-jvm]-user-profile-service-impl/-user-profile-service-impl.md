@@ -1,16 +1,25 @@
 ---
-title: UserProfileServiceImpl -
+title: UserProfileServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.user](../index.md)/[[androidJvm]UserProfileServiceImpl](index.md)/[UserProfileServiceImpl](-user-profile-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.user](../index.html)/[[androidJvm]UserProfileServiceImpl](index.html)/[UserProfileServiceImpl](-user-profile-service-impl.html)
 
 
 
-# UserProfileServiceImpl  
-[androidJvm]  
-Content  
-@Inject()  
-  
-fun [UserProfileServiceImpl](-user-profile-service-impl.md)(api: UserApi)  
+# UserProfileServiceImpl
+
+
+
+[androidJvm]\
+
+
+
+
+@Inject
+
+
+
+fun [UserProfileServiceImpl](-user-profile-service-impl.html)(api: UserApi)
+
 
 
 

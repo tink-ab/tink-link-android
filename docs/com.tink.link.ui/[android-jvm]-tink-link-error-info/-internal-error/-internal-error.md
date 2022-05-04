@@ -1,14 +1,17 @@
 ---
-title: InternalError -
+title: InternalError
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkErrorInfo](../index.md)/[InternalError](index.md)/[InternalError](-internal-error.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkErrorInfo](../index.html)/[InternalError](index.html)/[InternalError](-internal-error.html)
 
 
 
-# InternalError  
-[androidJvm]  
-Content  
-fun [InternalError](-internal-error.md)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# InternalError
+
+
+
+[androidJvm]\
+fun [InternalError](-internal-error.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

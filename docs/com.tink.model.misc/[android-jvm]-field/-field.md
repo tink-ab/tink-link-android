@@ -1,14 +1,17 @@
 ---
-title: Field -
+title: Field
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Field](index.md)/[Field](-field.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]Field](index.html)/[Field](-field.html)
 
 
 
-# Field  
-[androidJvm]  
-Content  
-fun [Field](-field.md)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), validationRules: [Field.ValidationRules](-validation-rules/index.md), attributes: [Field.Attributes](-attributes/index.md))  
+# Field
+
+
+
+[androidJvm]\
+fun [Field](-field.html)(name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), value: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), validationRules: [Field.ValidationRules](-validation-rules/index.html), attributes: [Field.Attributes](-attributes/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: transactions -
+title: transactions
 ---
-//[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[Companion](index.md)/[transactions](transactions.md)
+//[link](../../../../index.html)/[com.tink.model.credentials](../../index.html)/[[androidJvm]RefreshableItem](../index.html)/[Companion](index.html)/[transactions](transactions.html)
 
 
 
-# transactions  
-[androidJvm]  
-Content  
-fun [transactions](transactions.md)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../index.md)>  
+# transactions
+
+
+
+[androidJvm]\
+fun [transactions](transactions.html)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: pattern -
+title: pattern
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[ValidationRules](index.md)/[pattern](pattern.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[ValidationRules](index.html)/[pattern](pattern.html)
 
 
 
-# pattern  
-[androidJvm]  
-Content  
-val [pattern](pattern.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# pattern
+
+
+
+[androidJvm]\
+val [pattern](pattern.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: periodicity -
+title: periodicity
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.md)/[periodicity](periodicity.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[androidJvm]BudgetCreateOrUpdateDescriptor](index.html)/[periodicity](periodicity.html)
 
 
 
-# periodicity  
-[androidJvm]  
-Content  
-val [periodicity](periodicity.md): [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.md)  
+# periodicity
+
+
+
+[androidJvm]\
+val [periodicity](periodicity.html): [Budget.Periodicity](../[android-jvm]-budget/-periodicity/index.html)
+
 
 
 

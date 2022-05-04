@@ -1,14 +1,17 @@
 ---
-title: build -
+title: build
 ---
-//[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[common]ServiceComponent](../index.md)/[Builder](index.md)/[build](build.md)
+//[link](../../../../index.html)/[com.tink.service.di](../../index.html)/[[common]ServiceComponent](../index.html)/[Builder](index.html)/[build](build.html)
 
 
 
-# build  
-[common]  
-Content  
-abstract fun [build](build.md)(): [ServiceComponent](../index.md)  
+# build
+
+
+
+[common]\
+abstract fun [build](build.html)(): [ServiceComponent](../index.html)
+
 
 
 

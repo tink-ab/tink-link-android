@@ -1,14 +1,17 @@
 ---
-title: amount -
+title: amount
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Specification](index.md)/[amount](amount.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Specification](index.html)/[amount](amount.html)
 
 
 
-# amount  
-[common]  
-Content  
-val [amount](amount.md): [Amount](../../../com.tink.model.misc/[common]-amount/index.md)  
+# amount
+
+
+
+[common]\
+val [amount](amount.html): [Amount](../../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

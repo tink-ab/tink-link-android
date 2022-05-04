@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[androidJvm]Statistics](index.md)/[value](value.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[androidJvm]Statistics](index.html)/[value](value.html)
 
 
 
-# value  
-[androidJvm]  
-Content  
-val [value](value.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# value
+
+
+
+[androidJvm]\
+val [value](value.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: end -
+title: end
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[end](end.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearPeriod](index.html)/[end](end.html)
 
 
 
-# end  
-[common]  
-Content  
-open override val [end](end.md): <ERROR CLASS>  
+# end
+
+
+
+[common]\
+open override val [end](end.html): &lt;ERROR CLASS&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: Period -
+title: Period
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[common]Budget](../index.md)/[Period](index.md)/[Period](-period.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[common]Budget](../index.html)/[Period](index.html)/[Period](-period.html)
 
 
 
-# Period  
-[common]  
-Content  
-fun [Period](-period.md)(start: <ERROR CLASS>, end: <ERROR CLASS>, spentAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md), budgetAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.md))  
+# Period
+
+
+
+[common]\
+fun [Period](-period.html)(start: &lt;ERROR CLASS&gt;, end: &lt;ERROR CLASS&gt;, spentAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), budgetAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html))
+
 
 
 

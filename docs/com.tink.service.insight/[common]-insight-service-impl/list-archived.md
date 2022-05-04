@@ -1,14 +1,17 @@
 ---
-title: listArchived -
+title: listArchived
 ---
-//[link](../../index.md)/[com.tink.service.insight](../index.md)/[[common]InsightServiceImpl](index.md)/[listArchived](list-archived.md)
+//[link](../../../index.html)/[com.tink.service.insight](../index.html)/[[common]InsightServiceImpl](index.html)/[listArchived](list-archived.html)
 
 
 
-# listArchived  
-[common]  
-Content  
-open suspend override fun [listArchived](list-archived.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Insight](../../com.tink.model.insights/[common]-insight/index.md)>  
+# listArchived
+
+
+
+[common]\
+open suspend override fun [listArchived](list-archived.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Insight](../../com.tink.model.insights/[common]-insight/index.html)&gt;
+
 
 
 

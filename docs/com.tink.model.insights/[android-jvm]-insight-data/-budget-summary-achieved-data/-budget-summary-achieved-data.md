@@ -1,14 +1,17 @@
 ---
-title: BudgetSummaryAchievedData -
+title: BudgetSummaryAchievedData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSummaryAchievedData](index.md)/[BudgetSummaryAchievedData](-budget-summary-achieved-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSummaryAchievedData](index.html)/[BudgetSummaryAchievedData](-budget-summary-achieved-data.html)
 
 
 
-# BudgetSummaryAchievedData  
-[androidJvm]  
-Content  
-fun [BudgetSummaryAchievedData](-budget-summary-achieved-data.md)(achievedBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.md)>, overspentBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.md)>, savedAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md))  
+# BudgetSummaryAchievedData
+
+
+
+[androidJvm]\
+fun [BudgetSummaryAchievedData](-budget-summary-achieved-data.html)(achievedBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.html)&gt;, overspentBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](../-budget-id-to-period/index.html)&gt;, savedAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html))
+
 
 
 

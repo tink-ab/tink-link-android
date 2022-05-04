@@ -1,14 +1,17 @@
 ---
-title: unsubscribe -
+title: unsubscribe
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]StreamSubscription](index.md)/[unsubscribe](unsubscribe.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[androidJvm]StreamSubscription](index.html)/[unsubscribe](unsubscribe.html)
 
 
 
-# unsubscribe  
-[androidJvm]  
-Content  
-abstract fun [unsubscribe](unsubscribe.md)()  
+# unsubscribe
+
+
+
+[androidJvm]\
+abstract fun [unsubscribe](unsubscribe.html)()
+
 
 
 

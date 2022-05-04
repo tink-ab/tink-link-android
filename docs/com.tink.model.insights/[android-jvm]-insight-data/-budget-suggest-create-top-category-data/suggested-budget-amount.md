@@ -1,14 +1,17 @@
 ---
-title: suggestedBudgetAmount -
+title: suggestedBudgetAmount
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSuggestCreateTopCategoryData](index.md)/[suggestedBudgetAmount](suggested-budget-amount.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSuggestCreateTopCategoryData](index.html)/[suggestedBudgetAmount](suggested-budget-amount.html)
 
 
 
-# suggestedBudgetAmount  
-[androidJvm]  
-Content  
-val [suggestedBudgetAmount](suggested-budget-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# suggestedBudgetAmount
+
+
+
+[androidJvm]\
+val [suggestedBudgetAmount](suggested-budget-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

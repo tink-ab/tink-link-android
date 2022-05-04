@@ -1,14 +1,17 @@
 ---
-title: currentTime -
+title: currentTime
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetCloseData](index.md)/[currentTime](current-time.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetCloseData](index.html)/[currentTime](current-time.html)
 
 
 
-# currentTime  
-[common]  
-Content  
-val [currentTime](current-time.md): <ERROR CLASS>  
+# currentTime
+
+
+
+[common]\
+val [currentTime](current-time.html): &lt;ERROR CLASS&gt;
+
 
 
 

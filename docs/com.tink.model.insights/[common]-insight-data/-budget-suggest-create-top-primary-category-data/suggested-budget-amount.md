@@ -1,14 +1,17 @@
 ---
-title: suggestedBudgetAmount -
+title: suggestedBudgetAmount
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[BudgetSuggestCreateTopPrimaryCategoryData](index.md)/[suggestedBudgetAmount](suggested-budget-amount.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[BudgetSuggestCreateTopPrimaryCategoryData](index.html)/[suggestedBudgetAmount](suggested-budget-amount.html)
 
 
 
-# suggestedBudgetAmount  
-[common]  
-Content  
-val [suggestedBudgetAmount](suggested-budget-amount.md): [Amount](../../../com.tink.model.misc/[common]-amount/index.md)  
+# suggestedBudgetAmount
+
+
+
+[common]\
+val [suggestedBudgetAmount](suggested-budget-amount.html): [Amount](../../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: iconUrl -
+title: iconUrl
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[SelectOption](index.md)/[iconUrl](icon-url.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[SelectOption](index.html)/[iconUrl](icon-url.html)
 
 
 
-# iconUrl  
-[androidJvm]  
-Content  
-val [iconUrl](icon-url.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# iconUrl
+
+
+
+[androidJvm]\
+val [iconUrl](icon-url.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

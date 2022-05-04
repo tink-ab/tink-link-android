@@ -1,14 +1,17 @@
 ---
-title: validationRules -
+title: validationRules
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]Field](index.md)/[validationRules](validation-rules.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]Field](index.html)/[validationRules](validation-rules.html)
 
 
 
-# validationRules  
-[common]  
-Content  
-val [validationRules](validation-rules.md): [Field.ValidationRules](-validation-rules/index.md)  
+# validationRules
+
+
+
+[common]\
+val [validationRules](validation-rules.html): [Field.ValidationRules](-validation-rules/index.html)
+
 
 
 

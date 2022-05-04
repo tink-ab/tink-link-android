@@ -1,14 +1,17 @@
 ---
-title: flags -
+title: flags
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[flags](flags.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserInfo](index.html)/[flags](flags.html)
 
 
 
-# flags  
-[androidJvm]  
-Content  
-val [flags](flags.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>  
+# flags
+
+
+
+[androidJvm]\
+val [flags](flags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;
+
 
 
 

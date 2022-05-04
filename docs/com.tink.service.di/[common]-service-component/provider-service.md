@@ -1,14 +1,17 @@
 ---
-title: providerService -
+title: providerService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[providerService](provider-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[providerService](provider-service.html)
 
 
 
-# providerService  
-[common]  
-Content  
-abstract val [providerService](provider-service.md): [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.md)  
+# providerService
+
+
+
+[common]\
+abstract val [providerService](provider-service.html): [ProviderService](../../com.tink.service.provider/[common]-provider-service/index.html)
+
 
 
 

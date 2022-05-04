@@ -1,14 +1,17 @@
 ---
-title: listBudgets -
+title: listBudgets
 ---
-//[link](../../index.md)/[com.tink.service.budget](../index.md)/[[androidJvm]BudgetServiceImpl](index.md)/[listBudgets](list-budgets.md)
+//[link](../../../index.html)/[com.tink.service.budget](../index.html)/[[androidJvm]BudgetServiceImpl](index.html)/[listBudgets](list-budgets.html)
 
 
 
-# listBudgets  
-[androidJvm]  
-Content  
-open suspend override fun [listBudgets](list-budgets.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[BudgetSummary](../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetSummary%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)>  
+# listBudgets
+
+
+
+[androidJvm]\
+open suspend override fun [listBudgets](list-budgets.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[BudgetSummary](../../com.tink.model.budget/index.html#1968246694%2FClasslikes%2F-812656150)&gt;
+
 
 
 

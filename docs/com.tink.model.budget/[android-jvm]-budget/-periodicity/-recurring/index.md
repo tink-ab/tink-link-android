@@ -1,37 +1,48 @@
 ---
-title: Recurring -
+title: Recurring
 ---
-//[link](../../../../index.md)/[com.tink.model.budget](../../../index.md)/[[androidJvm]Budget](../../index.md)/[Periodicity](../index.md)/[Recurring](index.md)
+//[link](../../../../../index.html)/[com.tink.model.budget](../../../index.html)/[[androidJvm]Budget](../../index.html)/[Periodicity](../index.html)/[Recurring](index.html)
 
 
 
-# Recurring  
- [androidJvm] data class [Recurring](index.md)(**unit**: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)) : [Budget.Periodicity](../index.md)   
+# Recurring
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [Recurring](index.html)(val unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)) : [Budget.Periodicity](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring.PeriodUnit///PointingToDeclaration/"></a>[PeriodUnit](-period-unit/index.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring.PeriodUnit///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>enum [PeriodUnit](-period-unit/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)>   <br><br><br>
+| [Recurring](-recurring.html) | [androidJvm]<br>fun [Recurring](-recurring.html)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)  <br><br><br>
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/copy/#com.tink.model.budget.Budget.Periodicity.Recurring.PeriodUnit/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/copy/#com.tink.model.budget.Budget.Periodicity.Recurring.PeriodUnit/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(unit: [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)): [Budget.Periodicity.Recurring](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [PeriodUnit](-period-unit/index.html) | [androidJvm]<br>enum [PeriodUnit](-period-unit/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/unit/#/PointingToDeclaration/"></a>[unit](unit.md)| <a name="com.tink.model.budget/Budget.Periodicity.Recurring/unit/#/PointingToDeclaration/"></a> [androidJvm] val [unit](unit.md): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.md)   <br>
+| [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [unit](unit.html) | [androidJvm]<br>val [unit](unit.html): [Budget.Periodicity.Recurring.PeriodUnit](-period-unit/index.html) |
 

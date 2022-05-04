@@ -1,26 +1,28 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]Beneficiary](index.md)/[name](name.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]Beneficiary](index.html)/[name](name.html)
 
 
 
-# name  
-[common]  
-Content  
-val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# name
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.transfer/Beneficiary/name/#/PointingToDeclaration/"></a>name| <a name="com.tink.model.transfer/Beneficiary/name/#/PointingToDeclaration/"></a><br><br>The name chosen by the user for this beneficiary.<br><br>
-  
-  
+| name | The name chosen by the user for this beneficiary. |
+
 
 
 

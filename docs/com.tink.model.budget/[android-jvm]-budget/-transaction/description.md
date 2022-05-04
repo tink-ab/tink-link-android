@@ -1,14 +1,17 @@
 ---
-title: description -
+title: description
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)/[description](description.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Transaction](index.html)/[description](description.html)
 
 
 
-# description  
-[androidJvm]  
-Content  
-val [description](description.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# description
+
+
+
+[androidJvm]\
+val [description](description.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

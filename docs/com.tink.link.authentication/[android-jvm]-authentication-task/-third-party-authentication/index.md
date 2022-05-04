@@ -1,49 +1,52 @@
 ---
-title: ThirdPartyAuthentication -
+title: ThirdPartyAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[androidJvm]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[androidJvm]AuthenticationTask](../index.html)/[ThirdPartyAuthentication](index.html)
 
 
 
-# ThirdPartyAuthentication  
- [androidJvm] data class [ThirdPartyAuthentication](index.md)(**credentials**: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)) : [AuthenticationTask](../index.md)
-
-Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](launch.md), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](third-party-app-authentication.md)
-
-   
+# ThirdPartyAuthentication
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [ThirdPartyAuthentication](index.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) : [AuthenticationTask](../index.html)
+
+Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](launch.html), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](third-party-app-authentication.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/ThirdPartyAuthentication/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[ThirdPartyAuthentication](-third-party-authentication.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/ThirdPartyAuthentication/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a> [androidJvm] fun [ThirdPartyAuthentication](-third-party-authentication.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md))   <br>
+| [ThirdPartyAuthentication](-third-party-authentication.html) | [androidJvm]<br>fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) |
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult///PointingToDeclaration/"></a>[LaunchResult](-launch-result/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication.LaunchResult///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>sealed class [LaunchResult](-launch-result/index.md) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br>More info  <br>Indicates if the user was successfully redirected when [launch](launch.md) was called.  <br><br><br>
+| [LaunchResult](-launch-result/index.html) | [androidJvm]<br>sealed class [LaunchResult](-launch-result/index.html) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)<br>Indicates if the user was successfully redirected when [launch](launch.html) was called. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)): [AuthenticationTask.ThirdPartyAuthentication](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[isNewerThan](../is-newer-than.md)| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [isNewerThan](../is-newer-than.md)(other: [AuthenticationTask](../index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br>More info  <br>Helper function comparing two [AuthenticationTask](../index.md)s to see if one is newer than that the other.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/launch/#android.app.Activity/PointingToDeclaration/"></a>[launch](launch.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/launch/#android.app.Activity/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [launch](launch.md)(activity: [Activity](https://developer.android.com/reference/kotlin/android/app/Activity.html)): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.md)  <br>More info  <br>Try to redirect the user to the third party app for authentication.  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [isNewerThan](../is-newer-than.html) | [androidJvm]<br>fun [isNewerThan](../is-newer-than.html)(other: [AuthenticationTask](../index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Helper function comparing two [AuthenticationTask](../index.html)s to see if one is newer than that the other. This can be used to determine if a new update should be sent. This is for internal use in the Tink Sdk and it should not be necessary to use it otherwise. |
+| [launch](launch.html) | [androidJvm]<br>fun [launch](launch.html)(activity: [Activity](https://developer.android.com/reference/kotlin/android/app/Activity.html)): [AuthenticationTask.ThirdPartyAuthentication.LaunchResult](-launch-result/index.html)<br>Try to redirect the user to the third party app for authentication. |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/thirdPartyAppAuthentication/#/PointingToDeclaration/"></a>[thirdPartyAppAuthentication](third-party-app-authentication.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication/thirdPartyAppAuthentication/#/PointingToDeclaration/"></a> [androidJvm] val [thirdPartyAppAuthentication](third-party-app-authentication.md): [ThirdPartyAppAuthentication](../../../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.md)   <br>
+| [thirdPartyAppAuthentication](third-party-app-authentication.html) | [androidJvm]<br>val [thirdPartyAppAuthentication](third-party-app-authentication.html): [ThirdPartyAppAuthentication](../../../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.html) |
 

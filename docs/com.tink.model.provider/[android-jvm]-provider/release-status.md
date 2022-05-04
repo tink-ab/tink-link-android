@@ -1,14 +1,17 @@
 ---
-title: releaseStatus -
+title: releaseStatus
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[releaseStatus](release-status.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[releaseStatus](release-status.html)
 
 
 
-# releaseStatus  
-[androidJvm]  
-Content  
-val [releaseStatus](release-status.md): [Provider.ReleaseStatus](-release-status/index.md)? = null  
+# releaseStatus
+
+
+
+[androidJvm]\
+val [releaseStatus](release-status.html): [Provider.ReleaseStatus](-release-status/index.html)? = null
+
 
 
 

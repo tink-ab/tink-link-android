@@ -1,14 +1,17 @@
 ---
-title: getUserInfo -
+title: getUserInfo
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[common]UserService](index.md)/[getUserInfo](get-user-info.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[common]UserService](index.html)/[getUserInfo](get-user-info.html)
 
 
 
-# getUserInfo  
-[common]  
-Content  
-abstract suspend fun [getUserInfo](get-user-info.md)(): [UserInfo](../../com.tink.model.user/[common]-user-info/index.md)  
+# getUserInfo
+
+
+
+[common]\
+abstract suspend fun [getUserInfo](get-user-info.html)(): [UserInfo](../../com.tink.model.user/[common]-user-info/index.html)
+
 
 
 

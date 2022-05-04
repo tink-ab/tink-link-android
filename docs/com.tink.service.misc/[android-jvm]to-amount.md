@@ -1,14 +1,17 @@
 ---
-title: [androidJvm]toAmount -
+title: [androidJvm]toAmount
 ---
-//[link](../index.md)/[com.tink.service.misc](index.md)/[[androidJvm]toAmount]([android-jvm]to-amount.md)
+//[link](../../index.html)/[com.tink.service.misc](index.html)/[[androidJvm]toAmount]([android-jvm]to-amount.html)
 
 
 
-# toAmount  
-[androidJvm]  
-Content  
-fun CurrencyDenominatedAmount.[toAmount]([android-jvm]to-amount.md)(): [Amount](../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# toAmount
+
+
+
+[androidJvm]\
+fun CurrencyDenominatedAmount.[toAmount]([android-jvm]to-amount.html)(): [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

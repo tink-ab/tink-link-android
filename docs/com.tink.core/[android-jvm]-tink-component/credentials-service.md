@@ -1,14 +1,17 @@
 ---
-title: credentialsService -
+title: credentialsService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[credentialsService](credentials-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[credentialsService](credentials-service.html)
 
 
 
-# credentialsService  
-[androidJvm]  
-Content  
-abstract val [credentialsService](credentials-service.md): [CredentialsService](../../com.tink.service.credentials/[android-jvm]-credentials-service/index.md)  
+# credentialsService
+
+
+
+[androidJvm]\
+abstract val [credentialsService](credentials-service.html): [CredentialsService](../../com.tink.service.credentials/[android-jvm]-credentials-service/index.html)
+
 
 
 

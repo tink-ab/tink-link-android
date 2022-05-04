@@ -1,49 +1,46 @@
 ---
-title: ValidationError -
+title: ValidationError
 ---
-//[link](../../../../index.md)/[com.tink.model.misc](../../../index.md)/[[androidJvm]Field](../../index.md)/[ValidationResult](../index.md)/[ValidationError](index.md)
+//[link](../../../../../index.html)/[com.tink.model.misc](../../../index.html)/[[androidJvm]Field](../../index.html)/[ValidationResult](../index.html)/[ValidationError](index.html)
 
 
 
-# ValidationError  
- [androidJvm] sealed class [ValidationError](index.md) : [Field.ValidationResult](../index.md)
-
-Represents the type of [ValidationResult](../index.md) when the user input is invalid.
-
-   
+# ValidationError
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+sealed class [ValidationError](index.html) : [Field.ValidationResult](../index.html)
+
+Represents the type of [ValidationResult](../index.html) when the user input is invalid.
+
+
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid///PointingToDeclaration/"></a>[Invalid](-invalid/index.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [Invalid](-invalid/index.md)(**fieldName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **patternError**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Field.ValidationResult.ValidationError](index.md)  <br>More info  <br>Represents an error where the user input did not match the [ValidationRules.pattern](../../-validation-rules/pattern.md).  <br><br><br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MaxLengthLimit///PointingToDeclaration/"></a>[MaxLengthLimit](-max-length-limit/index.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MaxLengthLimit///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [MaxLengthLimit](-max-length-limit/index.md)(**fieldName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **maxLength**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Field.ValidationResult.ValidationError](index.md)  <br>More info  <br>Represents an error where the user input was too long, above the maximum allowed length.  <br><br><br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MinLengthLimit///PointingToDeclaration/"></a>[MinLengthLimit](-min-length-limit/index.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MinLengthLimit///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [MinLengthLimit](-min-length-limit/index.md)(**fieldName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **minLength**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Field.ValidationResult.ValidationError](index.md)  <br>More info  <br>Represents an error where the user input was too short, below the minimum allowed length.  <br><br><br>
+| [Invalid](-invalid/index.html) | [androidJvm]<br>data class [Invalid](-invalid/index.html)(val fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val patternError: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Field.ValidationResult.ValidationError](index.html)<br>Represents an error where the user input did not match the [ValidationRules.pattern](../../-validation-rules/pattern.html). |
+| [MaxLengthLimit](-max-length-limit/index.html) | [androidJvm]<br>data class [MaxLengthLimit](-max-length-limit/index.html)(val fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val maxLength: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Field.ValidationResult.ValidationError](index.html)<br>Represents an error where the user input was too long, above the maximum allowed length. |
+| [MinLengthLimit](-min-length-limit/index.html) | [androidJvm]<br>data class [MinLengthLimit](-min-length-limit/index.html)(val fieldName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val minLength: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Field.ValidationResult.ValidationError](index.html)<br>Represents an error where the user input was too short, below the minimum allowed length. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator fun [equals](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [hashCode](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [toString](../../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [errorMessage](error-message.html) | [androidJvm]<br>val [errorMessage](error-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?<br>A user-friendly message describing the validation error |
+| [fieldName](field-name.html) | [androidJvm]<br>abstract val [fieldName](field-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The [name](../../name.html) of the field |
 
 
-## Properties  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError/errorMessage/#/PointingToDeclaration/"></a>[errorMessage](error-message.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError/errorMessage/#/PointingToDeclaration/"></a> [androidJvm] val [errorMessage](error-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?A user-friendly message describing the validation error   <br>
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError/fieldName/#/PointingToDeclaration/"></a>[fieldName](field-name.md)| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError/fieldName/#/PointingToDeclaration/"></a> [androidJvm] abstract val [fieldName](field-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The [name](../../name.md) of the field   <br>
+## Inheritors
 
 
-## Inheritors  
-  
-|  Name| 
+| Name |
 |---|
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MinLengthLimit///PointingToDeclaration/"></a>Field.ValidationResult.ValidationError
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.MaxLengthLimit///PointingToDeclaration/"></a>Field.ValidationResult.ValidationError
-| <a name="com.tink.model.misc/Field.ValidationResult.ValidationError.Invalid///PointingToDeclaration/"></a>Field.ValidationResult.ValidationError
+| MinLengthLimit |
+| MaxLengthLimit |
+| Invalid |
 

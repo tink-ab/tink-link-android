@@ -1,26 +1,28 @@
 ---
-title: authorizationCode -
+title: authorizationCode
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkResult](../index.md)/[TemporaryUser](index.md)/[authorizationCode](authorization-code.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkResult](../index.html)/[TemporaryUser](index.html)/[authorizationCode](authorization-code.html)
 
 
 
-# authorizationCode  
-[common]  
-Content  
-val [authorizationCode](authorization-code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# authorizationCode
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [authorizationCode](authorization-code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/authorizationCode/#/PointingToDeclaration/"></a>authorizationCode| <a name="com.tink.link.ui/TinkLinkResult.TemporaryUser/authorizationCode/#/PointingToDeclaration/"></a><br><br>Authorization code from authorizing the user towards a new set of scopes<br><br>
-  
-  
+| authorizationCode | Authorization code from authorizing the user towards a new set of scopes |
+
 
 
 

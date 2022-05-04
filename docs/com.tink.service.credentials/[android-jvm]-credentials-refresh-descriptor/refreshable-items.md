@@ -1,14 +1,17 @@
 ---
-title: refreshableItems -
+title: refreshableItems
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsRefreshDescriptor](index.md)/[refreshableItems](refreshable-items.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsRefreshDescriptor](index.html)/[refreshableItems](refreshable-items.html)
 
 
 
-# refreshableItems  
-[androidJvm]  
-Content  
-val [refreshableItems](refreshable-items.md): [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)<[RefreshableItem](../../com.tink.model.credentials/[android-jvm]-refreshable-item/index.md)>? = null  
+# refreshableItems
+
+
+
+[androidJvm]\
+val [refreshableItems](refreshable-items.html): [Collection](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html)&lt;[RefreshableItem](../../com.tink.model.credentials/[android-jvm]-refreshable-item/index.html)&gt;? = null
+
 
 
 

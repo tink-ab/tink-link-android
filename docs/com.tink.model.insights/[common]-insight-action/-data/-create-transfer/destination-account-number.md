@@ -1,14 +1,17 @@
 ---
-title: destinationAccountNumber -
+title: destinationAccountNumber
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateTransfer](index.md)/[destinationAccountNumber](destination-account-number.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateTransfer](index.html)/[destinationAccountNumber](destination-account-number.html)
 
 
 
-# destinationAccountNumber  
-[common]  
-Content  
-val [destinationAccountNumber](destination-account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# destinationAccountNumber
+
+
+
+[common]\
+val [destinationAccountNumber](destination-account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

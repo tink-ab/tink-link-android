@@ -1,44 +1,47 @@
 ---
-title: [common]AuthenticationTask -
+title: [common]AuthenticationTask
 ---
-//[link](../../index.md)/[com.tink.link.authentication](../index.md)/[[common]AuthenticationTask](index.md)
+//[link](../../../index.html)/[com.tink.link.authentication](../index.html)/[[common]AuthenticationTask](index.html)
 
 
 
-# AuthenticationTask  
- [common] sealed class [AuthenticationTask](index.md)
+# AuthenticationTask
+
+
+
+[common]\
+sealed class [AuthenticationTask](index.html)
 
 Represents an authentication that needs to be completed by the user.
 
 
 
-The possible values are [SupplementalInformation](-supplemental-information/index.md) and [ThirdPartyAppAuthentication](../../com.tink.model.authentication/[common]-third-party-app-authentication/index.md)
-
-   
+The possible values are [SupplementalInformation](-supplemental-information/index.html) and [ThirdPartyAppAuthentication](../../com.tink.model.authentication/[common]-third-party-app-authentication/index.html)
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation///PointingToDeclaration/"></a>[SupplementalInformation](-supplemental-information/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [SupplementalInformation](-supplemental-information/index.md)(**credentials**: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)) : [AuthenticationTask](index.md)  <br>More info  <br>Indicates that there is additional information required from the user to proceed.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication///PointingToDeclaration/"></a>[ThirdPartyAuthentication](-third-party-authentication/index.md)| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [ThirdPartyAuthentication](-third-party-authentication/index.md)(**credentials**: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)) : [AuthenticationTask](index.md)  <br>More info  <br>Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication.  <br><br><br>
+| [SupplementalInformation](-supplemental-information/index.html) | [common]<br>data class [SupplementalInformation](-supplemental-information/index.html)(credentials: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)) : [AuthenticationTask](index.html)<br>Indicates that there is additional information required from the user to proceed. This can for example be an OTP sent via SMS or authentication app. First the [fields](-supplemental-information/fields.html) should be made accessible to the user for example as text input fields. Then [submit](-supplemental-information/submit.html) should be called as soon as the fields have been validated and the user is ready to send the information. |
+| [ThirdPartyAuthentication](-third-party-authentication/index.html) | [common]<br>data class [ThirdPartyAuthentication](-third-party-authentication/index.html)(credentials: [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)) : [AuthenticationTask](index.html)<br>Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](-third-party-authentication/launch.html), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](-third-party-authentication/third-party-app-authentication.html) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[isNewerThan](is-newer-than.md)| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [isNewerThan](is-newer-than.md)(other: [AuthenticationTask](index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br>More info  <br>Helper function comparing two [AuthenticationTask](index.md)s to see if one is newer than that the other.  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [isNewerThan](is-newer-than.html) | [common]<br>fun [isNewerThan](is-newer-than.html)(other: [AuthenticationTask](index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Helper function comparing two [AuthenticationTask](index.html)s to see if one is newer than that the other. This can be used to determine if a new update should be sent. This is for internal use in the Tink Sdk and it should not be necessary to use it otherwise. |
 
 
-## Inheritors  
-  
-|  Name| 
+## Inheritors
+
+
+| Name |
 |---|
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation///PointingToDeclaration/"></a>AuthenticationTask
-| <a name="com.tink.link.authentication/AuthenticationTask.ThirdPartyAuthentication///PointingToDeclaration/"></a>AuthenticationTask
+| SupplementalInformation |
+| ThirdPartyAuthentication |
 

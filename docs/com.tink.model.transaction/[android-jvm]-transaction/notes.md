@@ -1,14 +1,17 @@
 ---
-title: notes -
+title: notes
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[notes](notes.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Transaction](index.html)/[notes](notes.html)
 
 
 
-# notes  
-[androidJvm]  
-Content  
-val [notes](notes.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# notes
+
+
+
+[androidJvm]\
+val [notes](notes.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

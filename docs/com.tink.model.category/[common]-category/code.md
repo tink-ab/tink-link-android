@@ -1,14 +1,17 @@
 ---
-title: code -
+title: code
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[code](code.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]Category](index.html)/[code](code.html)
 
 
 
-# code  
-[common]  
-Content  
-val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# code
+
+
+
+[common]\
+val [code](code.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: message -
+title: message
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkErrorInfo](../index.md)/[InternalError](index.md)/[message](message.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkErrorInfo](../index.html)/[InternalError](index.html)/[message](message.html)
 
 
 
-# message  
-[androidJvm]  
-Content  
-open override val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# message
+
+
+
+[androidJvm]\
+open override val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

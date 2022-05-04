@@ -1,14 +1,17 @@
 ---
-title: userProfileService -
+title: userProfileService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[userProfileService](user-profile-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[userProfileService](user-profile-service.html)
 
 
 
-# userProfileService  
-[common]  
-Content  
-abstract val [userProfileService](user-profile-service.md): [UserProfileService](../../com.tink.service.user/[common]-user-profile-service/index.md)  
+# userProfileService
+
+
+
+[common]\
+abstract val [userProfileService](user-profile-service.html): [UserProfileService](../../com.tink.service.user/[common]-user-profile-service/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: MonthlyAdjusted -
+title: MonthlyAdjusted
 ---
-//[link](../../../../index.md)/[com.tink.model.user](../../../index.md)/[[common]UserProfile](../../index.md)/[PeriodMode](../index.md)/[MonthlyAdjusted](index.md)/[MonthlyAdjusted](-monthly-adjusted.md)
+//[link](../../../../../index.html)/[com.tink.model.user](../../../index.html)/[[common]UserProfile](../../index.html)/[PeriodMode](../index.html)/[MonthlyAdjusted](index.html)/[MonthlyAdjusted](-monthly-adjusted.html)
 
 
 
-# MonthlyAdjusted  
-[common]  
-Content  
-fun [MonthlyAdjusted](-monthly-adjusted.md)(periodAdjustedDayOfMonth: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  
+# MonthlyAdjusted
+
+
+
+[common]\
+fun [MonthlyAdjusted](-monthly-adjusted.html)(periodAdjustedDayOfMonth: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))
+
 
 
 

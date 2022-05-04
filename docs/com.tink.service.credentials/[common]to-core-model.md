@@ -1,14 +1,17 @@
 ---
-title: [common]toCoreModel -
+title: [common]toCoreModel
 ---
-//[link](../index.md)/[com.tink.service.credentials](index.md)/[[common]toCoreModel]([common]to-core-model.md)
+//[link](../../index.html)/[com.tink.service.credentials](index.html)/[[common]toCoreModel]([common]to-core-model.html)
 
 
 
-# toCoreModel  
-[common]  
-Content  
-fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): <ERROR CLASS>  
+# toCoreModel
+
+
+
+[common]\
+fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

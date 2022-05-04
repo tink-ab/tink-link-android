@@ -1,14 +1,17 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../index.md)/[com.tink.link.core.credentials](../index.md)/[[common]CredentialsFailure](index.md)/[credentials](credentials.md)
+//[link](../../../index.html)/[com.tink.link.core.credentials](../index.html)/[[common]CredentialsFailure](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[common]  
-Content  
-val [credentials](credentials.md): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)  
+# credentials
+
+
+
+[common]\
+val [credentials](credentials.html): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)
+
 
 
 

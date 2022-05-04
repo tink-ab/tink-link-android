@@ -1,14 +1,17 @@
 ---
-title: accountId -
+title: accountId
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)/[accountId](account-id.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Transaction](index.html)/[accountId](account-id.html)
 
 
 
-# accountId  
-[androidJvm]  
-Content  
-val [accountId](account-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# accountId
+
+
+
+[androidJvm]\
+val [accountId](account-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

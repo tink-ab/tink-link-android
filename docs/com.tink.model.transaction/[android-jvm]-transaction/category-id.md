@@ -1,14 +1,17 @@
 ---
-title: categoryId -
+title: categoryId
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[androidJvm]Transaction](index.md)/[categoryId](category-id.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[androidJvm]Transaction](index.html)/[categoryId](category-id.html)
 
 
 
-# categoryId  
-[androidJvm]  
-Content  
-val [categoryId](category-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# categoryId
+
+
+
+[androidJvm]\
+val [categoryId](category-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

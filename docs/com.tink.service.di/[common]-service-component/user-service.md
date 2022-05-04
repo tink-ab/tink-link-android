@@ -1,14 +1,17 @@
 ---
-title: userService -
+title: userService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[userService](user-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[userService](user-service.html)
 
 
 
-# userService  
-[common]  
-Content  
-abstract val [userService](user-service.md): [UserService](../../com.tink.service.authorization/[common]-user-service/index.md)  
+# userService
+
+
+
+[common]\
+abstract val [userService](user-service.html): [UserService](../../com.tink.service.authorization/[common]-user-service/index.html)
+
 
 
 

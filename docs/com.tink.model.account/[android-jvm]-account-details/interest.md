@@ -1,14 +1,17 @@
 ---
-title: interest -
+title: interest
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)/[interest](interest.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]AccountDetails](index.html)/[interest](interest.html)
 
 
 
-# interest  
-[androidJvm]  
-Content  
-val [interest](interest.md): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)? = null  
+# interest
+
+
+
+[androidJvm]\
+val [interest](interest.html): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)? = null
+
 
 
 

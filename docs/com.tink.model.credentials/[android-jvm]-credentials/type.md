@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]Credentials](index.html)/[type](type.html)
 
 
 
-# type  
-[androidJvm]  
-Content  
-val [type](type.md): [Credentials.Type](-type/index.md)  
+# type
+
+
+
+[androidJvm]\
+val [type](type.html): [Credentials.Type](-type/index.html)
+
 
 
 

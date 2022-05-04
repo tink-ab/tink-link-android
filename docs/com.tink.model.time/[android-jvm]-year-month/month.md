@@ -1,14 +1,17 @@
 ---
-title: month -
+title: month
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]YearMonth](index.md)/[month](month.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[androidJvm]YearMonth](index.html)/[month](month.html)
 
 
 
-# month  
-[androidJvm]  
-Content  
-val [month](month.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# month
+
+
+
+[androidJvm]\
+val [month](month.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

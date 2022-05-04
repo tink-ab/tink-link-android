@@ -1,14 +1,17 @@
 ---
-title: budgetPeriod -
+title: budgetPeriod
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Summary](index.md)/[budgetPeriod](budget-period.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Summary](index.html)/[budgetPeriod](budget-period.html)
 
 
 
-# budgetPeriod  
-[androidJvm]  
-Content  
-val [budgetPeriod](budget-period.md): [Budget.Period](../-period/index.md)  
+# budgetPeriod
+
+
+
+[androidJvm]\
+val [budgetPeriod](budget-period.html): [Budget.Period](../-period/index.html)
+
 
 
 

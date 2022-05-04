@@ -1,14 +1,17 @@
 ---
-title: [common]createThirdPartyAuthForMobileBankId -
+title: [common]createThirdPartyAuthForMobileBankId
 ---
-//[link](../index.md)/[com.tink.service.credentials](index.md)/[[common]createThirdPartyAuthForMobileBankId]([common]create-third-party-auth-for-mobile-bank-id.md)
+//[link](../../index.html)/[com.tink.service.credentials](index.html)/[[common]createThirdPartyAuthForMobileBankId]([common]create-third-party-auth-for-mobile-bank-id.html)
 
 
 
-# createThirdPartyAuthForMobileBankId  
-[common]  
-Content  
-fun [createThirdPartyAuthForMobileBankId]([common]create-third-party-auth-for-mobile-bank-id.md)(autostartToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?): [ThirdPartyAppAuthentication](../com.tink.model.authentication/[common]-third-party-app-authentication/index.md)?  
+# createThirdPartyAuthForMobileBankId
+
+
+
+[common]\
+fun [createThirdPartyAuthForMobileBankId]([common]create-third-party-auth-for-mobile-bank-id.html)(autostartToken: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?): [ThirdPartyAppAuthentication](../com.tink.model.authentication/[common]-third-party-app-authentication/index.html)?
+
 
 
 

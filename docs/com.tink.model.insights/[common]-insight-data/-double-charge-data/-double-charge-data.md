@@ -1,14 +1,17 @@
 ---
-title: DoubleChargeData -
+title: DoubleChargeData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[DoubleChargeData](index.md)/[DoubleChargeData](-double-charge-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[DoubleChargeData](index.html)/[DoubleChargeData](-double-charge-data.html)
 
 
 
-# DoubleChargeData  
-[common]  
-Content  
-fun [DoubleChargeData](-double-charge-data.md)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>)  
+# DoubleChargeData
+
+
+
+[common]\
+fun [DoubleChargeData](-double-charge-data.html)(transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;)
+
 
 
 

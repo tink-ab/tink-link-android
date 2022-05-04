@@ -1,14 +1,17 @@
 ---
-title: insightService -
+title: insightService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[insightService](insight-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[insightService](insight-service.html)
 
 
 
-# insightService  
-[androidJvm]  
-Content  
-abstract val [insightService](insight-service.md): [InsightService](../../com.tink.service.insight/[android-jvm]-insight-service/index.md)  
+# insightService
+
+
+
+[androidJvm]\
+abstract val [insightService](insight-service.html): [InsightService](../../com.tink.service.insight/[android-jvm]-insight-service/index.html)
+
 
 
 

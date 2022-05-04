@@ -1,14 +1,17 @@
 ---
-title: userService -
+title: userService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[userService](user-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[userService](user-service.html)
 
 
 
-# userService  
-[androidJvm]  
-Content  
-abstract val [userService](user-service.md): [UserService](../../com.tink.service.authorization/[android-jvm]-user-service/index.md)  
+# userService
+
+
+
+[androidJvm]\
+abstract val [userService](user-service.html): [UserService](../../com.tink.service.authorization/[android-jvm]-user-service/index.html)
+
 
 
 

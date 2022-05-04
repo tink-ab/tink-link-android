@@ -1,14 +1,17 @@
 ---
-title: Images -
+title: Images
 ---
-//[link](../../index.md)/[com.tink.model](../index.md)/[[common]Images](index.md)/[Images](-images.md)
+//[link](../../../index.html)/[com.tink.model](../index.html)/[[common]Images](index.html)/[Images](-images.html)
 
 
 
-# Images  
-[common]  
-Content  
-fun [Images](-images.md)(icon: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), banner: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# Images
+
+
+
+[common]\
+fun [Images](-images.html)(icon: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), banner: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

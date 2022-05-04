@@ -1,14 +1,17 @@
 ---
-title: WeekPeriod -
+title: WeekPeriod
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]WeekPeriod](index.md)/[WeekPeriod](-week-period.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]WeekPeriod](index.html)/[WeekPeriod](-week-period.html)
 
 
 
-# WeekPeriod  
-[common]  
-Content  
-fun [WeekPeriod](-week-period.md)(weekOfYear: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: <ERROR CLASS>, end: <ERROR CLASS>)  
+# WeekPeriod
+
+
+
+[common]\
+fun [WeekPeriod](-week-period.html)(weekOfYear: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: &lt;ERROR CLASS&gt;, end: &lt;ERROR CLASS&gt;)
+
 
 
 

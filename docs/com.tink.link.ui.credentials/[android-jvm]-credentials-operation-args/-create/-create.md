@@ -1,14 +1,17 @@
 ---
-title: Create -
+title: Create
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[androidJvm]CredentialsOperationArgs](../index.md)/[Create](index.md)/[Create](-create.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[androidJvm]CredentialsOperationArgs](../index.html)/[Create](index.html)/[Create](-create.html)
 
 
 
-# Create  
-[androidJvm]  
-Content  
-fun [Create](-create.md)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.md))  
+# Create
+
+
+
+[androidJvm]\
+fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html))
+
 
 
 

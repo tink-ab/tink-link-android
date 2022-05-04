@@ -1,14 +1,17 @@
 ---
-title: ownership -
+title: ownership
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[ownership](ownership.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[ownership](ownership.html)
 
 
 
-# ownership  
-[androidJvm]  
-Content  
-val [ownership](ownership.md): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)  
+# ownership
+
+
+
+[androidJvm]\
+val [ownership](ownership.html): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)
+
 
 
 

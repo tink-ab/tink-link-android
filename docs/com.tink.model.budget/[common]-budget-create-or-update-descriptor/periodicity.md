@@ -1,14 +1,17 @@
 ---
-title: periodicity -
+title: periodicity
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[common]BudgetCreateOrUpdateDescriptor](index.md)/[periodicity](periodicity.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[common]BudgetCreateOrUpdateDescriptor](index.html)/[periodicity](periodicity.html)
 
 
 
-# periodicity  
-[common]  
-Content  
-val [periodicity](periodicity.md): [Budget.Periodicity](../[common]-budget/-periodicity/index.md)  
+# periodicity
+
+
+
+[common]\
+val [periodicity](periodicity.html): [Budget.Periodicity](../[common]-budget/-periodicity/index.html)
+
 
 
 

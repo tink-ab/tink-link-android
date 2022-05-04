@@ -1,14 +1,17 @@
 ---
-title: requireCapability -
+title: requireCapability
 ---
-//[link](../../index.md)/[com.tink.service.provider](../index.md)/[[androidJvm]ProviderFilter](index.md)/[requireCapability](require-capability.md)
+//[link](../../../index.html)/[com.tink.service.provider](../index.html)/[[androidJvm]ProviderFilter](index.html)/[requireCapability](require-capability.html)
 
 
 
-# requireCapability  
-[androidJvm]  
-Content  
-val [requireCapability](require-capability.md): [Provider.Capability](../../com.tink.model.provider/[android-jvm]-provider/-capability/index.md)? = null  
+# requireCapability
+
+
+
+[androidJvm]\
+val [requireCapability](require-capability.html): [Provider.Capability](../../com.tink.model.provider/[android-jvm]-provider/-capability/index.html)? = null
+
 
 
 

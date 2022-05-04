@@ -1,32 +1,33 @@
 ---
-title: handleUri -
+title: handleUri
 ---
-//[link](../../index.md)/[com.tink.link.core.user](../index.md)/[[common]UserContext](index.md)/[handleUri](handle-uri.md)
+//[link](../../../index.html)/[com.tink.link.core.user](../index.html)/[[common]UserContext](index.html)/[handleUri](handle-uri.html)
 
 
 
-# handleUri  
-[common]  
-Content  
-abstract fun [handleUri](handle-uri.md)(uri: <ERROR CLASS>, resultHandler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.md)<[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)>? = null): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
-More info  
+# handleUri
+
+
+
+[common]\
+abstract fun [handleUri](handle-uri.html)(uri: &lt;ERROR CLASS&gt;, resultHandler: [ResultHandler](../../com.tink.service.handler/[common]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;? = null): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 Handle a third-party callback.
 
 
 
-Call this method when identifying a third-party callback from the registered [redirectUri](../../com.tink.service.network/[common]-tink-configuration/redirect-uri.md)
+Call this method when identifying a third-party callback from the registered [redirectUri](../../com.tink.service.network/[common]-tink-configuration/redirect-uri.html)
 
 
 
 Example:
 
-private fun redirectIfAppropriate(intent: Intent?) {  
-     intent?.data?.let { uri ->  
-         Tink.getUserContext()?.handleUri(uri)  
-     }  
-}  
-
+private fun redirectIfAppropriate(intent: Intent?) {\
+     intent?.data?.let { uri -&gt;\
+         Tink.getUserContext()?.handleUri(uri)\
+     }\
+}
 
 

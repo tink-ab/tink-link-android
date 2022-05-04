@@ -1,14 +1,17 @@
 ---
-title: isMasked -
+title: isMasked
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[androidJvm]Field](../index.md)/[InputType](index.md)/[isMasked](is-masked.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[androidJvm]Field](../index.html)/[InputType](index.html)/[isMasked](is-masked.html)
 
 
 
-# isMasked  
-[androidJvm]  
-Content  
-val [isMasked](is-masked.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isMasked
+
+
+
+[androidJvm]\
+val [isMasked](is-masked.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

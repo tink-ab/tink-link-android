@@ -1,14 +1,17 @@
 ---
-title: releaseStatus -
+title: releaseStatus
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]Provider](index.md)/[releaseStatus](release-status.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]Provider](index.html)/[releaseStatus](release-status.html)
 
 
 
-# releaseStatus  
-[common]  
-Content  
-val [releaseStatus](release-status.md): [Provider.ReleaseStatus](-release-status/index.md)? = null  
+# releaseStatus
+
+
+
+[common]\
+val [releaseStatus](release-status.html): [Provider.ReleaseStatus](-release-status/index.html)? = null
+
 
 
 

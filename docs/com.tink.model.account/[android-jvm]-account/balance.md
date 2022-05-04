@@ -1,14 +1,17 @@
 ---
-title: balance -
+title: balance
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[balance](balance.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[balance](balance.html)
 
 
 
-# balance  
-[androidJvm]  
-Content  
-val [balance](balance.md): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# balance
+
+
+
+[androidJvm]\
+val [balance](balance.html): [Amount](../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: hasMore -
+title: hasMore
 ---
-//[link](../../index.md)/[com.tink.service.transaction](../index.md)/[[androidJvm]Pageable](index.md)/[hasMore](has-more.md)
+//[link](../../../index.html)/[com.tink.service.transaction](../index.html)/[[androidJvm]Pageable](index.html)/[hasMore](has-more.html)
 
 
 
-# hasMore  
-[androidJvm]  
-Content  
-abstract fun [hasMore](has-more.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# hasMore
+
+
+
+[androidJvm]\
+abstract fun [hasMore](has-more.html)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

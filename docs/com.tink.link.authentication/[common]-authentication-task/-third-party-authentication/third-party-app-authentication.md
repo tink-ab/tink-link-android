@@ -1,14 +1,17 @@
 ---
-title: thirdPartyAppAuthentication -
+title: thirdPartyAppAuthentication
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[ThirdPartyAuthentication](index.md)/[thirdPartyAppAuthentication](third-party-app-authentication.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[common]AuthenticationTask](../index.html)/[ThirdPartyAuthentication](index.html)/[thirdPartyAppAuthentication](third-party-app-authentication.html)
 
 
 
-# thirdPartyAppAuthentication  
-[common]  
-Content  
-val [thirdPartyAppAuthentication](third-party-app-authentication.md): <ERROR CLASS>  
+# thirdPartyAppAuthentication
+
+
+
+[common]\
+val [thirdPartyAppAuthentication](third-party-app-authentication.html): &lt;ERROR CLASS&gt;
+
 
 
 

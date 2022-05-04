@@ -1,14 +1,17 @@
 ---
-title: profile -
+title: profile
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[androidJvm]UserInfo](index.md)/[profile](profile.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[androidJvm]UserInfo](index.html)/[profile](profile.html)
 
 
 
-# profile  
-[androidJvm]  
-Content  
-val [profile](profile.md): [UserProfile](../[android-jvm]-user-profile/index.md)  
+# profile
+
+
+
+[androidJvm]\
+val [profile](profile.html): [UserProfile](../[android-jvm]-user-profile/index.html)
+
 
 
 

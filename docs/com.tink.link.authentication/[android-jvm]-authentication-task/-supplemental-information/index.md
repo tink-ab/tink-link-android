@@ -1,43 +1,45 @@
 ---
-title: SupplementalInformation -
+title: SupplementalInformation
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[androidJvm]AuthenticationTask](../index.md)/[SupplementalInformation](index.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[androidJvm]AuthenticationTask](../index.html)/[SupplementalInformation](index.html)
 
 
 
-# SupplementalInformation  
- [androidJvm] data class [SupplementalInformation](index.md)(**credentials**: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)) : [AuthenticationTask](../index.md)
-
-Indicates that there is additional information required from the user to proceed. This can for example be an OTP sent via SMS or authentication app. First the [fields](fields.md) should be made accessible to the user for example as text input fields. Then [submit](submit.md) should be called as soon as the fields have been validated and the user is ready to send the information.
-
-   
+# SupplementalInformation
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [SupplementalInformation](index.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) : [AuthenticationTask](../index.html)
+
+Indicates that there is additional information required from the user to proceed. This can for example be an OTP sent via SMS or authentication app. First the [fields](fields.html) should be made accessible to the user for example as text input fields. Then [submit](submit.html) should be called as soon as the fields have been validated and the user is ready to send the information.
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/SupplementalInformation/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[SupplementalInformation](-supplemental-information.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/SupplementalInformation/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a> [androidJvm] fun [SupplementalInformation](-supplemental-information.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md))   <br>
+| [SupplementalInformation](-supplemental-information.html) | [androidJvm]<br>fun [SupplementalInformation](-supplemental-information.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/cancel/#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>[cancel](cancel.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/cancel/#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [cancel](cancel.md)(resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)>)  <br>More info  <br>Cancel the ongoing supplemental information task.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/copy/#com.tink.model.credentials.Credentials/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)): [AuthenticationTask.SupplementalInformation](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[isNewerThan](../is-newer-than.md)| <a name="com.tink.link.authentication/AuthenticationTask/isNewerThan/#com.tink.link.authentication.AuthenticationTask/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [isNewerThan](../is-newer-than.md)(other: [AuthenticationTask](../index.md)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br>More info  <br>Helper function comparing two [AuthenticationTask](../index.md)s to see if one is newer than that the other.  <br><br><br>
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/submit/#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>[submit](submit.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/submit/#kotlin.collections.Map[kotlin.String,kotlin.String]#com.tink.service.handler.ResultHandler[kotlin.Unit]/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [submit](submit.md)(filledFields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>, resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.md)<[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)>)  <br>More info  <br>Submit supplemental information for the authentication to Tink.  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [cancel](cancel.html) | [androidJvm]<br>fun [cancel](cancel.html)(resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)<br>Cancel the ongoing supplemental information task. This can be used to fail the authentication should the user back out of the authentication. If not called, the authentication will time out on its own. This is a shortcut to be able to get into a failed state faster and thus be able to retry more quickly. |
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [isNewerThan](../is-newer-than.html) | [androidJvm]<br>fun [isNewerThan](../is-newer-than.html)(other: [AuthenticationTask](../index.html)): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>Helper function comparing two [AuthenticationTask](../index.html)s to see if one is newer than that the other. This can be used to determine if a new update should be sent. This is for internal use in the Tink Sdk and it should not be necessary to use it otherwise. |
+| [submit](submit.html) | [androidJvm]<br>fun [submit](submit.html)(filledFields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)<br>Submit supplemental information for the authentication to Tink. Should be called as soon as the fields have been validated and the user is ready to send the information. |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/fields/#/PointingToDeclaration/"></a>[fields](fields.md)| <a name="com.tink.link.authentication/AuthenticationTask.SupplementalInformation/fields/#/PointingToDeclaration/"></a> [androidJvm] val [fields](fields.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field](../../../com.tink.model.misc/[android-jvm]-field/index.md)>The fields that need to be displayed to the user for input   <br>
+| [fields](fields.html) | [androidJvm]<br>val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field](../../../com.tink.model.misc/[android-jvm]-field/index.html)&gt;<br>The fields that need to be displayed to the user for input |
 

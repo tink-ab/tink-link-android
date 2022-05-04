@@ -1,14 +1,17 @@
 ---
-title: favored -
+title: favored
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[favored](favored.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[favored](favored.html)
 
 
 
-# favored  
-[common]  
-Content  
-val [favored](favored.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# favored
+
+
+
+[common]\
+val [favored](favored.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

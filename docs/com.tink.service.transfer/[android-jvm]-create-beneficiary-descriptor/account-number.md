@@ -1,26 +1,28 @@
 ---
-title: accountNumber -
+title: accountNumber
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[androidJvm]CreateBeneficiaryDescriptor](index.md)/[accountNumber](account-number.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[androidJvm]CreateBeneficiaryDescriptor](index.html)/[accountNumber](account-number.html)
 
 
 
-# accountNumber  
-[androidJvm]  
-Content  
-val [accountNumber](account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# accountNumber
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [accountNumber](account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/accountNumber/#/PointingToDeclaration/"></a>accountNumber| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/accountNumber/#/PointingToDeclaration/"></a><br><br>The account number of the beneficiary, for example the BG/PG number or the IBAN<br><br>
-  
-  
+| accountNumber | The account number of the beneficiary, for example the BG/PG number or the IBAN |
+
 
 
 

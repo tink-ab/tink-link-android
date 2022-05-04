@@ -1,26 +1,28 @@
 ---
-title: clientIconUrl -
+title: clientIconUrl
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[common]OAuthClientDescription](index.md)/[clientIconUrl](client-icon-url.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[common]OAuthClientDescription](index.html)/[clientIconUrl](client-icon-url.html)
 
 
 
-# clientIconUrl  
-[common]  
-Content  
-val [clientIconUrl](client-icon-url.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# clientIconUrl
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [clientIconUrl](client-icon-url.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/clientIconUrl/#/PointingToDeclaration/"></a>clientIconUrl| <a name="com.tink.model.consent/OAuthClientDescription/clientIconUrl/#/PointingToDeclaration/"></a><br><br>: A url for a client icon. Can be empty.<br><br>
-  
-  
+| clientIconUrl | : A url for a client icon. Can be empty. |
+
 
 
 

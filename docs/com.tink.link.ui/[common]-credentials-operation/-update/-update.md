@@ -1,26 +1,28 @@
 ---
-title: Update -
+title: Update
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]CredentialsOperation](../index.md)/[Update](index.md)/[Update](-update.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]CredentialsOperation](../index.html)/[Update](index.html)/[Update](-update.html)
 
 
 
-# Update  
-[common]  
-Content  
-fun [Update](-update.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
-More info  
+# Update
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+fun [Update](-update.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Update/Update/#kotlin.String/PointingToDeclaration/"></a>credentialsId| <a name="com.tink.link.ui/CredentialsOperation.Update/Update/#kotlin.String/PointingToDeclaration/"></a><br><br>Id of the [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md) to be updated<br><br>
-  
-  
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) to be updated |
+
 
 
 

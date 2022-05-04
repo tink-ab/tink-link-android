@@ -1,14 +1,17 @@
 ---
-title: insightId -
+title: insightId
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]PerformedInsightAction](index.md)/[insightId](insight-id.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]PerformedInsightAction](index.html)/[insightId](insight-id.html)
 
 
 
-# insightId  
-[common]  
-Content  
-val [insightId](insight-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# insightId
+
+
+
+[common]\
+val [insightId](insight-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

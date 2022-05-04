@@ -1,14 +1,17 @@
 ---
-title: subscribe -
+title: subscribe
 ---
-//[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[androidJvm]UserEventBus](index.md)/[subscribe](subscribe.md)
+//[link](../../../index.html)/[com.tink.service.authentication](../index.html)/[[androidJvm]UserEventBus](index.html)/[subscribe](subscribe.html)
 
 
 
-# subscribe  
-[androidJvm]  
-Content  
-fun [subscribe](subscribe.md)(onUserReceived: ([User](../../com.tink.model.user/[android-jvm]-user/index.md)) -> [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Disposable  
+# subscribe
+
+
+
+[androidJvm]\
+fun [subscribe](subscribe.html)(onUserReceived: ([User](../../com.tink.model.user/[android-jvm]-user/index.html)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): Disposable
+
 
 
 

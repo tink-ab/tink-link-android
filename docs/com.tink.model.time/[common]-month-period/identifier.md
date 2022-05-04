@@ -1,14 +1,17 @@
 ---
-title: identifier -
+title: identifier
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]MonthPeriod](index.md)/[identifier](identifier.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]MonthPeriod](index.html)/[identifier](identifier.html)
 
 
 
-# identifier  
-[common]  
-Content  
-open override val [identifier](identifier.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# identifier
+
+
+
+[common]\
+open override val [identifier](identifier.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

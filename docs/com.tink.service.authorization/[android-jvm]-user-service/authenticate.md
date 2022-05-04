@@ -1,14 +1,17 @@
 ---
-title: authenticate -
+title: authenticate
 ---
-//[link](../../index.md)/[com.tink.service.authorization](../index.md)/[[androidJvm]UserService](index.md)/[authenticate](authenticate.md)
+//[link](../../../index.html)/[com.tink.service.authorization](../index.html)/[[androidJvm]UserService](index.html)/[authenticate](authenticate.html)
 
 
 
-# authenticate  
-[androidJvm]  
-Content  
-abstract suspend fun [authenticate](authenticate.md)(authenticationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# authenticate
+
+
+
+[androidJvm]\
+abstract suspend fun [authenticate](authenticate.html)(authenticationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

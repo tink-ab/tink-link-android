@@ -1,26 +1,28 @@
 ---
-title: accessTypes -
+title: accessTypes
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[common]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[accessTypes](access-types.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[common]ProviderTreeNode](../index.html)/[AuthenticationUserTypeNode](index.html)/[accessTypes](access-types.html)
 
 
 
-# accessTypes  
-[common]  
-Content  
-val [accessTypes](access-types.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.AccessTypeNode](../-access-type-node/index.md)>  
-More info  
+# accessTypes
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [accessTypes](access-types.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.AccessTypeNode](../-access-type-node/index.html)&gt;
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/accessTypes/#/PointingToDeclaration/"></a>accessTypes| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/accessTypes/#/PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
-  
+| accessTypes | The list of child nodes. |
+
 
 
 

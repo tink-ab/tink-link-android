@@ -1,14 +1,17 @@
 ---
-title: provider -
+title: provider
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[androidJvm]CredentialsOperationArgs](../index.md)/[Create](index.md)/[provider](provider.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[androidJvm]CredentialsOperationArgs](../index.html)/[Create](index.html)/[provider](provider.html)
 
 
 
-# provider  
-[androidJvm]  
-Content  
-open override val [provider](provider.md): [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.md)  
+# provider
+
+
+
+[androidJvm]\
+open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html)
+
 
 
 

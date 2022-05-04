@@ -1,26 +1,28 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[FinancialInstitutionGroupNode](index.md)/[name](name.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[FinancialInstitutionGroupNode](index.html)/[name](name.html)
 
 
 
-# name  
-[androidJvm]  
-Content  
-open override val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# name
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+open override val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.FinancialInstitutionGroupNode/name/#/PointingToDeclaration/"></a>name| <a name="com.tink.model.provider/ProviderTreeNode.FinancialInstitutionGroupNode/name/#/PointingToDeclaration/"></a><br><br>The grouping identifier related to the [Provider](../../[android-jvm]-provider/index.md)'s groupDisplayName or     financialInstitution.name property.<br><br>
-  
-  
+| name | The grouping identifier related to the [Provider](../../[android-jvm]-provider/index.html)'s groupDisplayName or     financialInstitution.name property. |
+
 
 
 

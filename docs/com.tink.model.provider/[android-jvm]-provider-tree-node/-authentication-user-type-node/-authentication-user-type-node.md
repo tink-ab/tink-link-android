@@ -1,27 +1,29 @@
 ---
-title: AuthenticationUserTypeNode -
+title: AuthenticationUserTypeNode
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[AuthenticationUserTypeNode](index.md)/[AuthenticationUserTypeNode](-authentication-user-type-node.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[AuthenticationUserTypeNode](index.html)/[AuthenticationUserTypeNode](-authentication-user-type-node.html)
 
 
 
-# AuthenticationUserTypeNode  
-[androidJvm]  
-Content  
-fun [AuthenticationUserTypeNode](-authentication-user-type-node.md)(authenticationUserType: [Provider.AuthenticationUserType](../../[android-jvm]-provider/-authentication-user-type/index.md), accessTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ProviderTreeNode.AccessTypeNode](../-access-type-node/index.md)>)  
-More info  
+# AuthenticationUserTypeNode
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [AuthenticationUserTypeNode](-authentication-user-type-node.html)(authenticationUserType: [Provider.AuthenticationUserType](../../[android-jvm]-provider/-authentication-user-type/index.html), accessTypes: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ProviderTreeNode.AccessTypeNode](../-access-type-node/index.html)&gt;)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/AuthenticationUserTypeNode/#com.tink.model.provider.Provider.AuthenticationUserType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.AccessTypeNode]/PointingToDeclaration/"></a>authenticationUserType| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/AuthenticationUserTypeNode/#com.tink.model.provider.Provider.AuthenticationUserType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.AccessTypeNode]/PointingToDeclaration/"></a><br><br>The authenticationUserType that this node represents.<br><br>
-| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/AuthenticationUserTypeNode/#com.tink.model.provider.Provider.AuthenticationUserType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.AccessTypeNode]/PointingToDeclaration/"></a>accessTypes| <a name="com.tink.model.provider/ProviderTreeNode.AuthenticationUserTypeNode/AuthenticationUserTypeNode/#com.tink.model.provider.Provider.AuthenticationUserType#kotlin.collections.List[com.tink.model.provider.ProviderTreeNode.AccessTypeNode]/PointingToDeclaration/"></a><br><br>The list of child nodes.<br><br>
-  
-  
+| authenticationUserType | The authenticationUserType that this node represents. |
+| accessTypes | The list of child nodes. |
+
 
 
 

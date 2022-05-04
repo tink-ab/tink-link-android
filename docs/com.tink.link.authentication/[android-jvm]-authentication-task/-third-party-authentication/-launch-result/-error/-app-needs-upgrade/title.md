@@ -1,14 +1,17 @@
 ---
-title: title -
+title: title
 ---
-//[link](../../../../../../index.md)/[com.tink.link.authentication](../../../../../index.md)/[[androidJvm]AuthenticationTask](../../../../index.md)/[ThirdPartyAuthentication](../../../index.md)/[LaunchResult](../../index.md)/[Error](../index.md)/[AppNeedsUpgrade](index.md)/[title](title.md)
+//[link](../../../../../../../index.html)/[com.tink.link.authentication](../../../../../index.html)/[[androidJvm]AuthenticationTask](../../../../index.html)/[ThirdPartyAuthentication](../../../index.html)/[LaunchResult](../../index.html)/[Error](../index.html)/[AppNeedsUpgrade](index.html)/[title](title.html)
 
 
 
-# title  
-[androidJvm]  
-Content  
-open override val [title](title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# title
+
+
+
+[androidJvm]\
+open override val [title](title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

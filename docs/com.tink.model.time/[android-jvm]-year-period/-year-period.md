@@ -1,14 +1,17 @@
 ---
-title: YearPeriod -
+title: YearPeriod
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[androidJvm]YearPeriod](index.md)/[YearPeriod](-year-period.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[androidJvm]YearPeriod](index.html)/[YearPeriod](-year-period.html)
 
 
 
-# YearPeriod  
-[androidJvm]  
-Content  
-fun [YearPeriod](-year-period.md)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: Instant, end: Instant)  
+# YearPeriod
+
+
+
+[androidJvm]\
+fun [YearPeriod](-year-period.html)(year: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), identifier: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), start: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html), end: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html))
+
 
 
 

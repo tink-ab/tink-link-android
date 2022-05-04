@@ -1,14 +1,17 @@
 ---
-title: underlyingId -
+title: underlyingId
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[underlyingId](underlying-id.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]SignableOperation](index.html)/[underlyingId](underlying-id.html)
 
 
 
-# underlyingId  
-[common]  
-Content  
-val [underlyingId](underlying-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# underlyingId
+
+
+
+[common]\
+val [underlyingId](underlying-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

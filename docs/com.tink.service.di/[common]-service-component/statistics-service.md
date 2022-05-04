@@ -1,14 +1,17 @@
 ---
-title: statisticsService -
+title: statisticsService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[common]ServiceComponent](index.md)/[statisticsService](statistics-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[common]ServiceComponent](index.html)/[statisticsService](statistics-service.html)
 
 
 
-# statisticsService  
-[common]  
-Content  
-abstract val [statisticsService](statistics-service.md): [StatisticsService](../../com.tink.service.statistics/[common]-statistics-service/index.md)  
+# statisticsService
+
+
+
+[common]\
+abstract val [statisticsService](statistics-service.html): [StatisticsService](../../com.tink.service.statistics/[common]-statistics-service/index.html)
+
 
 
 

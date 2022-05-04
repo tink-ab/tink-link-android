@@ -1,14 +1,17 @@
 ---
-title: providerRepository -
+title: providerRepository
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]Tink](index.md)/[providerRepository](provider-repository.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]Tink](index.html)/[providerRepository](provider-repository.html)
 
 
 
-# providerRepository  
-[common]  
-Content  
-fun [providerRepository](provider-repository.md)(): [ProviderRepository](../../com.tink.core.provider/[common]-provider-repository/index.md)  
+# providerRepository
+
+
+
+[common]\
+fun [providerRepository](provider-repository.html)(): [ProviderRepository](../../com.tink.core.provider/[common]-provider-repository/index.html)
+
 
 
 

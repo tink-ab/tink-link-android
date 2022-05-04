@@ -1,43 +1,43 @@
 ---
-title: [common]UserProfile -
+title: [common]UserProfile
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]UserProfile](index.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]UserProfile](index.html)
 
 
 
-# UserProfile  
- [common] data class [UserProfile](index.md)(**locale**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **market**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **timeZone**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **currency**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **periodMode**: [UserProfile.PeriodMode](-period-mode/index.md))   
+# UserProfile
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [UserProfile](index.html)(val locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val periodMode: [UserProfile.PeriodMode](-period-mode/index.html))
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.user/UserProfile.PeriodMode///PointingToDeclaration/"></a>[PeriodMode](-period-mode/index.md)| <a name="com.tink.model.user/UserProfile.PeriodMode///PointingToDeclaration/"></a>[common]  <br>Content  <br>sealed class [PeriodMode](-period-mode/index.md)  <br><br><br>
+| [UserProfile](-user-profile.html) | [common]<br>fun [UserProfile](-user-profile.html)(locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), periodMode: [UserProfile.PeriodMode](-period-mode/index.html)) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.user/UserProfile/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.user/UserProfile/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.user/UserProfile/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.user/UserProfile/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.user/UserProfile/component4/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.user/UserProfile/component5/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component5](component5.md)(): [UserProfile.PeriodMode](-period-mode/index.md)  <br><br><br>
-| <a name="com.tink.model.user/UserProfile/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.user.UserProfile.PeriodMode/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.user/UserProfile/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.user.UserProfile.PeriodMode/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(locale: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), market: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), timeZone: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), currency: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), periodMode: [UserProfile.PeriodMode](-period-mode/index.md)): [UserProfile](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [PeriodMode](-period-mode/index.html) | [common]<br>sealed class [PeriodMode](-period-mode/index.html) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.user/UserProfile/currency/#/PointingToDeclaration/"></a>[currency](currency.md)| <a name="com.tink.model.user/UserProfile/currency/#/PointingToDeclaration/"></a> [common] val [currency](currency.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/locale/#/PointingToDeclaration/"></a>[locale](locale.md)| <a name="com.tink.model.user/UserProfile/locale/#/PointingToDeclaration/"></a> [common] val [locale](locale.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/market/#/PointingToDeclaration/"></a>[market](market.md)| <a name="com.tink.model.user/UserProfile/market/#/PointingToDeclaration/"></a> [common] val [market](market.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
-| <a name="com.tink.model.user/UserProfile/periodMode/#/PointingToDeclaration/"></a>[periodMode](period-mode.md)| <a name="com.tink.model.user/UserProfile/periodMode/#/PointingToDeclaration/"></a> [common] val [periodMode](period-mode.md): [UserProfile.PeriodMode](-period-mode/index.md)   <br>
-| <a name="com.tink.model.user/UserProfile/timeZone/#/PointingToDeclaration/"></a>[timeZone](time-zone.md)| <a name="com.tink.model.user/UserProfile/timeZone/#/PointingToDeclaration/"></a> [common] val [timeZone](time-zone.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)   <br>
+| [currency](currency.html) | [common]<br>val [currency](currency.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [locale](locale.html) | [common]<br>val [locale](locale.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [market](market.html) | [common]<br>val [market](market.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [periodMode](period-mode.html) | [common]<br>val [periodMode](period-mode.html): [UserProfile.PeriodMode](-period-mode/index.html) |
+| [timeZone](time-zone.html) | [common]<br>val [timeZone](time-zone.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

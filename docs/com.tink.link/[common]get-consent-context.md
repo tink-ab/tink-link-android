@@ -1,14 +1,17 @@
 ---
-title: [common]getConsentContext -
+title: [common]getConsentContext
 ---
-//[link](../index.md)/[com.tink.link](index.md)/[[common]getConsentContext]([common]get-consent-context.md)
+//[link](../../index.html)/[com.tink.link](index.html)/[[common]getConsentContext]([common]get-consent-context.html)
 
 
 
-# getConsentContext  
-[common]  
-Content  
-fun [Tink](../com.tink.core/[common]-tink/index.md).[getConsentContext]([common]get-consent-context.md)(): <ERROR CLASS>  
+# getConsentContext
+
+
+
+[common]\
+fun [Tink](../com.tink.core/[common]-tink/index.html).[getConsentContext]([common]get-consent-context.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

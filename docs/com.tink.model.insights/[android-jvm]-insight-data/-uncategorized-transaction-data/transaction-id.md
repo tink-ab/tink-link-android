@@ -1,14 +1,17 @@
 ---
-title: transactionId -
+title: transactionId
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[UncategorizedTransactionData](index.md)/[transactionId](transaction-id.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[UncategorizedTransactionData](index.html)/[transactionId](transaction-id.html)
 
 
 
-# transactionId  
-[androidJvm]  
-Content  
-val [transactionId](transaction-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# transactionId
+
+
+
+[androidJvm]\
+val [transactionId](transaction-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

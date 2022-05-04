@@ -1,26 +1,28 @@
 ---
-title: ownerAccountId -
+title: ownerAccountId
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]CreateBeneficiaryDescriptor](index.md)/[ownerAccountId](owner-account-id.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[common]CreateBeneficiaryDescriptor](index.html)/[ownerAccountId](owner-account-id.html)
 
 
 
-# ownerAccountId  
-[common]  
-Content  
-val [ownerAccountId](owner-account-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# ownerAccountId
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [ownerAccountId](owner-account-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/ownerAccountId/#/PointingToDeclaration/"></a>ownerAccountId| <a name="com.tink.service.transfer/CreateBeneficiaryDescriptor/ownerAccountId/#/PointingToDeclaration/"></a><br><br>The id of the source account the beneficiary belongs to, see [Account.id](../../com.tink.model.account/[common]-account/id.md)<br><br>
-  
-  
+| ownerAccountId | The id of the source account the beneficiary belongs to, see [Account.id](../../com.tink.model.account/[common]-account/id.html) |
+
 
 
 

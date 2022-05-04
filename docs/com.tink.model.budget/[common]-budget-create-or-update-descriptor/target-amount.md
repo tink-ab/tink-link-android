@@ -1,14 +1,17 @@
 ---
-title: targetAmount -
+title: targetAmount
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[common]BudgetCreateOrUpdateDescriptor](index.md)/[targetAmount](target-amount.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[common]BudgetCreateOrUpdateDescriptor](index.html)/[targetAmount](target-amount.html)
 
 
 
-# targetAmount  
-[common]  
-Content  
-val [targetAmount](target-amount.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# targetAmount
+
+
+
+[common]\
+val [targetAmount](target-amount.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

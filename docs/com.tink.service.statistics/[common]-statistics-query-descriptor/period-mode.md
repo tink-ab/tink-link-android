@@ -1,14 +1,17 @@
 ---
-title: periodMode -
+title: periodMode
 ---
-//[link](../../index.md)/[com.tink.service.statistics](../index.md)/[[common]StatisticsQueryDescriptor](index.md)/[periodMode](period-mode.md)
+//[link](../../../index.html)/[com.tink.service.statistics](../index.html)/[[common]StatisticsQueryDescriptor](index.html)/[periodMode](period-mode.html)
 
 
 
-# periodMode  
-[common]  
-Content  
-val [periodMode](period-mode.md): [UserProfile.PeriodMode](../../com.tink.model.user/[common]-user-profile/-period-mode/index.md)  
+# periodMode
+
+
+
+[common]\
+val [periodMode](period-mode.html): [UserProfile.PeriodMode](../../com.tink.model.user/[common]-user-profile/-period-mode/index.html)
+
 
 
 

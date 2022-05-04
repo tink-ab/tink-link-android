@@ -1,14 +1,17 @@
 ---
-title: SessionId -
+title: SessionId
 ---
-//[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[common]Authorization](../index.md)/[SessionId](index.md)/[SessionId](-session-id.md)
+//[link](../../../../index.html)/[com.tink.model.user](../../index.html)/[[common]Authorization](../index.html)/[SessionId](index.html)/[SessionId](-session-id.html)
 
 
 
-# SessionId  
-[common]  
-Content  
-fun [SessionId](-session-id.md)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# SessionId
+
+
+
+[common]\
+fun [SessionId](-session-id.html)(sessionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

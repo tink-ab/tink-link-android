@@ -1,14 +1,17 @@
 ---
-title: data -
+title: data
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[androidJvm]Insight](index.md)/[data](data.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[androidJvm]Insight](index.html)/[data](data.html)
 
 
 
-# data  
-[androidJvm]  
-Content  
-val [data](data.md): [InsightData](../[android-jvm]-insight-data/index.md)  
+# data
+
+
+
+[androidJvm]\
+val [data](data.html): [InsightData](../[android-jvm]-insight-data/index.html)
+
 
 
 

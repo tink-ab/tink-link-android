@@ -1,14 +1,17 @@
 ---
-title: dispensableAmount -
+title: dispensableAmount
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Transaction](index.md)/[dispensableAmount](dispensable-amount.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Transaction](index.html)/[dispensableAmount](dispensable-amount.html)
 
 
 
-# dispensableAmount  
-[androidJvm]  
-Content  
-val [dispensableAmount](dispensable-amount.md): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md)  
+# dispensableAmount
+
+
+
+[androidJvm]\
+val [dispensableAmount](dispensable-amount.html): [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html)
+
 
 
 

@@ -1,20 +1,21 @@
 ---
-title: name -
+title: name
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[common]ProviderTreeNode](index.md)/[name](name.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[common]ProviderTreeNode](index.html)/[name](name.html)
 
 
 
-# name  
-[common]  
-Content  
-abstract val [name](name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
-More info  
+# name
+
+
+
+[common]\
+abstract val [name](name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 A textual description of the node.
 
-  
 
 
 

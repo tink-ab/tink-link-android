@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Account.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [Account.Type](-type/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: onBackPressed -
+title: onBackPressed
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[androidJvm]TinkLinkUiActivity](index.md)/[onBackPressed](on-back-pressed.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[androidJvm]TinkLinkUiActivity](index.html)/[onBackPressed](on-back-pressed.html)
 
 
 
-# onBackPressed  
-[androidJvm]  
-Content  
-open override fun [onBackPressed](on-back-pressed.md)()  
+# onBackPressed
+
+
+
+[androidJvm]\
+open override fun [onBackPressed](on-back-pressed.html)()
+
 
 
 

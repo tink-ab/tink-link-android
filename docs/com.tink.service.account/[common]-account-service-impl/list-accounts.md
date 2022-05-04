@@ -1,14 +1,17 @@
 ---
-title: listAccounts -
+title: listAccounts
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]AccountServiceImpl](index.md)/[listAccounts](list-accounts.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[common]AccountServiceImpl](index.html)/[listAccounts](list-accounts.html)
 
 
 
-# listAccounts  
-[common]  
-Content  
-open suspend override fun [listAccounts](list-accounts.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Account](../../com.tink.model.account/[common]-account/index.md)>  
+# listAccounts
+
+
+
+[common]\
+open suspend override fun [listAccounts](list-accounts.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Account](../../com.tink.model.account/[common]-account/index.html)&gt;
+
 
 
 

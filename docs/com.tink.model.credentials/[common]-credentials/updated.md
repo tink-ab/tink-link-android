@@ -1,14 +1,17 @@
 ---
-title: updated -
+title: updated
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[updated](updated.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[updated](updated.html)
 
 
 
-# updated  
-[common]  
-Content  
-val [updated](updated.md): <ERROR CLASS>  
+# updated
+
+
+
+[common]\
+val [updated](updated.html): &lt;ERROR CLASS&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: CustomScope -
+title: CustomScope
 ---
-//[link](../../../index.md)/[com.tink.model.user](../../index.md)/[[androidJvm]Scope](../index.md)/[CustomScope](index.md)/[CustomScope](-custom-scope.md)
+//[link](../../../../index.html)/[com.tink.model.user](../../index.html)/[[androidJvm]Scope](../index.html)/[CustomScope](index.html)/[CustomScope](-custom-scope.html)
 
 
 
-# CustomScope  
-[androidJvm]  
-Content  
-fun [CustomScope](-custom-scope.md)(scope: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# CustomScope
+
+
+
+[androidJvm]\
+fun [CustomScope](-custom-scope.html)(scope: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

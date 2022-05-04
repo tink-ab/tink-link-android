@@ -1,14 +1,17 @@
 ---
-title: icon -
+title: icon
 ---
-//[link](../../index.md)/[com.tink.model](../index.md)/[[androidJvm]Images](index.md)/[icon](icon.md)
+//[link](../../../index.html)/[com.tink.model](../index.html)/[[androidJvm]Images](index.html)/[icon](icon.html)
 
 
 
-# icon  
-[androidJvm]  
-Content  
-val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# icon
+
+
+
+[androidJvm]\
+val [icon](icon.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

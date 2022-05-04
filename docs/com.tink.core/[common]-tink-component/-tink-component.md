@@ -1,14 +1,17 @@
 ---
-title: TinkComponent -
+title: TinkComponent
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[TinkComponent](-tink-component.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[TinkComponent](-tink-component.html)
 
 
 
-# TinkComponent  
-[common]  
-Content  
-fun [TinkComponent](-tink-component.md)()  
+# TinkComponent
+
+
+
+[common]\
+fun [TinkComponent](-tink-component.html)()
+
 
 
 

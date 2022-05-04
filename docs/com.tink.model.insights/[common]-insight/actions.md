@@ -1,14 +1,17 @@
 ---
-title: actions -
+title: actions
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[actions](actions.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[actions](actions.html)
 
 
 
-# actions  
-[common]  
-Content  
-val [actions](actions.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightAction](../[common]-insight-action/index.md)>  
+# actions
+
+
+
+[common]\
+val [actions](actions.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightAction](../[common]-insight-action/index.html)&gt;
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: credentialsId -
+title: credentialsId
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[common]SignableOperation](index.md)/[credentialsId](credentials-id.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[common]SignableOperation](index.html)/[credentialsId](credentials-id.html)
 
 
 
-# credentialsId  
-[common]  
-Content  
-val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
+# credentialsId
+
+
+
+[common]\
+val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: expenses -
+title: expenses
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]CategoryTree](index.md)/[expenses](expenses.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]CategoryTree](index.html)/[expenses](expenses.html)
 
 
 
-# expenses  
-[androidJvm]  
-Content  
-val [expenses](expenses.md): [Category](../[android-jvm]-category/index.md)  
+# expenses
+
+
+
+[androidJvm]\
+val [expenses](expenses.html): [Category](../[android-jvm]-category/index.html)
+
 
 
 

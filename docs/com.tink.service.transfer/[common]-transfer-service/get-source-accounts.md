@@ -1,20 +1,21 @@
 ---
-title: getSourceAccounts -
+title: getSourceAccounts
 ---
-//[link](../../index.md)/[com.tink.service.transfer](../index.md)/[[common]TransferService](index.md)/[getSourceAccounts](get-source-accounts.md)
+//[link](../../../index.html)/[com.tink.service.transfer](../index.html)/[[common]TransferService](index.html)/[getSourceAccounts](get-source-accounts.html)
 
 
 
-# getSourceAccounts  
-[common]  
-Content  
-abstract suspend fun [getSourceAccounts](get-source-accounts.md)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Account](../../com.tink.model.account/[common]-account/index.md)>  
-More info  
+# getSourceAccounts
+
+
+
+[common]\
+abstract suspend fun [getSourceAccounts](get-source-accounts.html)(): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Account](../../com.tink.model.account/[common]-account/index.html)&gt;
+
 
 
 Fetch a list of available source accounts.
 
-  
 
 
 

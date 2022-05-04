@@ -1,14 +1,17 @@
 ---
-title: onNext -
+title: onNext
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[common]StreamObserver](index.md)/[onNext](on-next.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[common]StreamObserver](index.html)/[onNext](on-next.html)
 
 
 
-# onNext  
-[common]  
-Content  
-open fun [onNext](on-next.md)(value: [T](index.md))  
+# onNext
+
+
+
+[common]\
+open fun [onNext](on-next.html)(value: [T](index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: CredentialsNotFound -
+title: CredentialsNotFound
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkError](../index.md)/[CredentialsNotFound](index.md)/[CredentialsNotFound](-credentials-not-found.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkError](../index.html)/[CredentialsNotFound](index.html)/[CredentialsNotFound](-credentials-not-found.html)
 
 
 
-# CredentialsNotFound  
-[androidJvm]  
-Content  
-fun [CredentialsNotFound](-credentials-not-found.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# CredentialsNotFound
+
+
+
+[androidJvm]\
+fun [CredentialsNotFound](-credentials-not-found.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

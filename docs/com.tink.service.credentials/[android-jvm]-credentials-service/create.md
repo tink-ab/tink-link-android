@@ -1,14 +1,17 @@
 ---
-title: create -
+title: create
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[create](create.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsService](index.html)/[create](create.html)
 
 
 
-# create  
-[androidJvm]  
-Content  
-abstract suspend fun [create](create.md)(descriptor: [CredentialsCreationDescriptor](../[android-jvm]-credentials-creation-descriptor/index.md)): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md)  
+# create
+
+
+
+[androidJvm]\
+abstract suspend fun [create](create.html)(descriptor: [CredentialsCreationDescriptor](../[android-jvm]-credentials-creation-descriptor/index.html)): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)
+
 
 
 

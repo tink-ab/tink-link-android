@@ -1,22 +1,25 @@
 ---
-title: Companion -
+title: Companion
 ---
-//[link](../../../index.md)/[com.tink.model.credentials](../../index.md)/[[androidJvm]RefreshableItem](../index.md)/[Companion](index.md)
+//[link](../../../../index.html)/[com.tink.model.credentials](../../index.html)/[[androidJvm]RefreshableItem](../index.html)/[Companion](index.html)
 
 
 
-# Companion  
- [androidJvm] object [Companion](index.md)   
+# Companion
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+object [Companion](index.html)
+
+
+
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.credentials/RefreshableItem.Companion/accounts/#/PointingToDeclaration/"></a>[accounts](accounts.md)| <a name="com.tink.model.credentials/RefreshableItem.Companion/accounts/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [accounts](accounts.md)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../index.md)>  <br><br><br>
-| <a name="com.tink.model.credentials/RefreshableItem.Companion/all/#/PointingToDeclaration/"></a>[all](all.md)| <a name="com.tink.model.credentials/RefreshableItem.Companion/all/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [all](all.md)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../index.md)>  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator fun [equals](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [hashCode](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open fun [toString](../../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.credentials/RefreshableItem.Companion/transactions/#/PointingToDeclaration/"></a>[transactions](transactions.md)| <a name="com.tink.model.credentials/RefreshableItem.Companion/transactions/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [transactions](transactions.md)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)<[RefreshableItem](../index.md)>  <br><br><br>
+| [accounts](accounts.html) | [androidJvm]<br>fun [accounts](accounts.html)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../index.html)&gt; |
+| [all](all.html) | [androidJvm]<br>fun [all](all.html)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../index.html)&gt; |
+| [transactions](transactions.html) | [androidJvm]<br>fun [transactions](transactions.html)(): [Set](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)&lt;[RefreshableItem](../index.html)&gt; |
 

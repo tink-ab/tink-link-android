@@ -1,26 +1,28 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[credentials](credentials.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]TinkLinkResult](../index.html)/[PermanentUser](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[androidJvm]  
-Content  
-val [credentials](credentials.md): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md)  
-More info  
+# credentials
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/credentials/#/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/credentials/#/PointingToDeclaration/"></a><br><br>[Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) connected to the user<br><br>
-  
-  
+| credentials | [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) connected to the user |
+
 
 
 

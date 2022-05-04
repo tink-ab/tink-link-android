@@ -1,14 +1,17 @@
 ---
-title: attributes -
+title: attributes
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[common]Field](index.md)/[attributes](attributes.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[common]Field](index.html)/[attributes](attributes.html)
 
 
 
-# attributes  
-[common]  
-Content  
-val [attributes](attributes.md): [Field.Attributes](-attributes/index.md)  
+# attributes
+
+
+
+[common]\
+val [attributes](attributes.html): [Field.Attributes](-attributes/index.html)
+
 
 
 

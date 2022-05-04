@@ -1,14 +1,17 @@
 ---
-title: update -
+title: update
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[androidJvm]CredentialsService](index.md)/[update](update.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[androidJvm]CredentialsService](index.html)/[update](update.html)
 
 
 
-# update  
-[androidJvm]  
-Content  
-abstract suspend fun [update](update.md)(descriptor: [CredentialsUpdateDescriptor](../[android-jvm]-credentials-update-descriptor/index.md)): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.md)  
+# update
+
+
+
+[androidJvm]\
+abstract suspend fun [update](update.html)(descriptor: [CredentialsUpdateDescriptor](../[android-jvm]-credentials-update-descriptor/index.html)): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)
+
 
 
 

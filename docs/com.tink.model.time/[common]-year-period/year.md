@@ -1,14 +1,17 @@
 ---
-title: year -
+title: year
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[year](year.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearPeriod](index.html)/[year](year.html)
 
 
 
-# year  
-[common]  
-Content  
-val [year](year.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# year
+
+
+
+[common]\
+val [year](year.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

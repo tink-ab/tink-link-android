@@ -1,16 +1,25 @@
 ---
-title: applicationContext -
+title: applicationContext
 ---
-//[link](../../../index.md)/[com.tink.service.di](../../index.md)/[[androidJvm]ServiceComponent](../index.md)/[Builder](index.md)/[applicationContext](application-context.md)
+//[link](../../../../index.html)/[com.tink.service.di](../../index.html)/[[androidJvm]ServiceComponent](../index.html)/[Builder](index.html)/[applicationContext](application-context.html)
 
 
 
-# applicationContext  
-[androidJvm]  
-Content  
-@BindsInstance()  
-  
-abstract fun [applicationContext](application-context.md)(applicationContext: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)): [ServiceComponent.Builder](index.md)  
+# applicationContext
+
+
+
+[androidJvm]\
+
+
+
+
+@BindsInstance
+
+
+
+abstract fun [applicationContext](application-context.html)(applicationContext: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)): [ServiceComponent.Builder](index.html)
+
 
 
 

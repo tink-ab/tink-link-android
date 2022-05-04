@@ -1,56 +1,54 @@
 ---
-title: [androidJvm]ThirdPartyAppAuthentication -
+title: [androidJvm]ThirdPartyAppAuthentication
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[androidJvm]ThirdPartyAppAuthentication](index.html)
 
 
 
-# ThirdPartyAppAuthentication  
- [androidJvm] data class [ThirdPartyAppAuthentication](index.md)(**downloadMessage**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **downloadTitle**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **upgradeMessage**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **upgradeTitle**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **android**: [ThirdPartyAppAuthentication.Android](-android/index.md)?) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+# ThirdPartyAppAuthentication
+
+
+
+[androidJvm]\
+data class [ThirdPartyAppAuthentication](index.html)(val downloadMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val downloadTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val upgradeMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val upgradeTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val android: [ThirdPartyAppAuthentication.Android](-android/index.html)? = null) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
 
 This model contains information required for third party authentication flow.
 
-   
 
 
-## Constructors  
-  
-|  Name|  Summary| 
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/ThirdPartyAppAuthentication/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.authentication.ThirdPartyAppAuthentication.Android?/PointingToDeclaration/"></a>[ThirdPartyAppAuthentication](-third-party-app-authentication.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/ThirdPartyAppAuthentication/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.authentication.ThirdPartyAppAuthentication.Android?/PointingToDeclaration/"></a> [androidJvm] fun [ThirdPartyAppAuthentication](-third-party-app-authentication.md)(downloadMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), downloadTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), android: [ThirdPartyAppAuthentication.Android](-android/index.md)? = null)   <br>
+| [ThirdPartyAppAuthentication](-third-party-app-authentication.html) | [androidJvm]<br>fun [ThirdPartyAppAuthentication](-third-party-app-authentication.html)(downloadMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), downloadTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), android: [ThirdPartyAppAuthentication.Android](-android/index.html)? = null) |
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication.Android///PointingToDeclaration/"></a>[Android](-android/index.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication.Android///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>data class [Android](-android/index.md)(**intent**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **packageName**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **requiredMinimumVersion**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)  <br>More info  <br>This model contains Android specific information required to launch the third party application.  <br><br><br>
+| [Android](-android/index.html) | [androidJvm]<br>data class [Android](-android/index.html)(val intent: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val packageName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val requiredMinimumVersion: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)<br>This model contains Android specific information required to launch the third party application. |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component5/#/PointingToDeclaration/"></a>[component5](component5.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/component5/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component5](component5.md)(): [ThirdPartyAppAuthentication.Android](-android/index.md)?  <br><br><br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.authentication.ThirdPartyAppAuthentication.Android?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/copy/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#com.tink.model.authentication.ThirdPartyAppAuthentication.Android?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(downloadMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), downloadTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeMessage: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), upgradeTitle: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), android: [ThirdPartyAppAuthentication.Android](-android/index.md)? = null): [ThirdPartyAppAuthentication](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/android/#/PointingToDeclaration/"></a>[android](android.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/android/#/PointingToDeclaration/"></a> [androidJvm] val [android](android.md): [ThirdPartyAppAuthentication.Android](-android/index.md)? = nullThe object containing Android specific information required to launch the third party application.   <br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/downloadMessage/#/PointingToDeclaration/"></a>[downloadMessage](download-message.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/downloadMessage/#/PointingToDeclaration/"></a> [androidJvm] val [downloadMessage](download-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)A user-friendly text requesting the user to download the application for third party app authentication   <br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/downloadTitle/#/PointingToDeclaration/"></a>[downloadTitle](download-title.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/downloadTitle/#/PointingToDeclaration/"></a> [androidJvm] val [downloadTitle](download-title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The title of the download application prompt shown to the users   <br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/upgradeMessage/#/PointingToDeclaration/"></a>[upgradeMessage](upgrade-message.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/upgradeMessage/#/PointingToDeclaration/"></a> [androidJvm] val [upgradeMessage](upgrade-message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)A user-friendly text requesting the user to upgrade the application for third party app authentication   <br>
-| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/upgradeTitle/#/PointingToDeclaration/"></a>[upgradeTitle](upgrade-title.md)| <a name="com.tink.model.authentication/ThirdPartyAppAuthentication/upgradeTitle/#/PointingToDeclaration/"></a> [androidJvm] val [upgradeTitle](upgrade-title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)The title of the upgrade application prompt shown to the users   <br>
+| [android](android.html) | [androidJvm]<br>val [android](android.html): [ThirdPartyAppAuthentication.Android](-android/index.html)? = null<br>The object containing Android specific information required to launch the third party application. |
+| [downloadMessage](download-message.html) | [androidJvm]<br>val [downloadMessage](download-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>A user-friendly text requesting the user to download the application for third party app authentication |
+| [downloadTitle](download-title.html) | [androidJvm]<br>val [downloadTitle](download-title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The title of the download application prompt shown to the users |
+| [upgradeMessage](upgrade-message.html) | [androidJvm]<br>val [upgradeMessage](upgrade-message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>A user-friendly text requesting the user to upgrade the application for third party app authentication |
+| [upgradeTitle](upgrade-title.html) | [androidJvm]<br>val [upgradeTitle](upgrade-title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>The title of the upgrade application prompt shown to the users |
 

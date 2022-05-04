@@ -1,26 +1,28 @@
 ---
-title: UnauthenticatedUser -
+title: UnauthenticatedUser
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]LinkUser](../index.md)/[UnauthenticatedUser](index.md)/[UnauthenticatedUser](-unauthenticated-user.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]LinkUser](../index.html)/[UnauthenticatedUser](index.html)/[UnauthenticatedUser](-unauthenticated-user.html)
 
 
 
-# UnauthenticatedUser  
-[androidJvm]  
-Content  
-fun [UnauthenticatedUser](-unauthenticated-user.md)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
-More info  
+# UnauthenticatedUser
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+fun [UnauthenticatedUser](-unauthenticated-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/LinkUser.UnauthenticatedUser/UnauthenticatedUser/#kotlin.String/PointingToDeclaration/"></a>authorizationCode| <a name="com.tink.link.ui/LinkUser.UnauthenticatedUser/UnauthenticatedUser/#kotlin.String/PointingToDeclaration/"></a><br><br>The authorization code from delegation to use for authentication<br><br>
-  
-  
+| authorizationCode | The authorization code from delegation to use for authentication |
+
 
 
 

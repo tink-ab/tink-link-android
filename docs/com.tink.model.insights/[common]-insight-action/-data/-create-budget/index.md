@@ -1,32 +1,33 @@
 ---
-title: CreateBudget -
+title: CreateBudget
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[common]InsightAction](../../index.md)/[Data](../index.md)/[CreateBudget](index.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[common]InsightAction](../../index.html)/[Data](../index.html)/[CreateBudget](index.html)
 
 
 
-# CreateBudget  
- [common] data class [CreateBudget](index.md)(**budgetFilter**: [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?, **amount**: [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?, **periodicity**: [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?) : [InsightAction.Data](../index.md)   
+# CreateBudget
 
 
-## Functions  
-  
-|  Name|  Summary| 
+
+[common]\
+data class [CreateBudget](index.html)(val budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-1713223439)?, val amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)?, val periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-1713223439)?) : [InsightAction.Data](../index.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component1/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component1](component1.md)(): [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component2/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component2](component2.md)(): [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/component3/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>operator fun [component3](component3.md)(): [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?  <br><br><br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/copy/#com.tink.model.budget.Budget.Specification.Filter?#com.tink.model.misc.Amount?#com.tink.model.budget.Budget.Periodicity?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/copy/#com.tink.model.budget.Budget.Specification.Filter?#com.tink.model.misc.Amount?#com.tink.model.budget.Budget.Periodicity?/PointingToDeclaration/"></a>[common]  <br>Content  <br>fun [copy](copy.md)(budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?, amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?, periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?): [InsightAction.Data.CreateBudget](index.md)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator override fun [equals](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [hashCode](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open override fun [toString](../../../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+| [CreateBudget](-create-budget.html) | [common]<br>fun [CreateBudget](-create-budget.html)(budgetFilter: [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-1713223439)?, amount: [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)?, periodicity: [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-1713223439)?) |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Properties
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/amount/#/PointingToDeclaration/"></a>[amount](amount.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/amount/#/PointingToDeclaration/"></a> [common] val [amount](amount.md): [Amount](../../../../com.tink.model.misc/[common]-amount/index.md)?   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/budgetFilter/#/PointingToDeclaration/"></a>[budgetFilter](budget-filter.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/budgetFilter/#/PointingToDeclaration/"></a> [common] val [budgetFilter](budget-filter.md): [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?   <br>
-| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/periodicity/#/PointingToDeclaration/"></a>[periodicity](periodicity.md)| <a name="com.tink.model.insights/InsightAction.Data.CreateBudget/periodicity/#/PointingToDeclaration/"></a> [common] val [periodicity](periodicity.md): [BudgetPeriodicity](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)?   <br>
+| [amount](amount.html) | [common]<br>val [amount](amount.html): [Amount](../../../../com.tink.model.misc/[common]-amount/index.html)? |
+| [budgetFilter](budget-filter.html) | [common]<br>val [budgetFilter](budget-filter.html): [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-1713223439)? |
+| [periodicity](periodicity.html) | [common]<br>val [periodicity](periodicity.html): [BudgetPeriodicity](../../../../com.tink.model.budget/index.html#-756637127%2FClasslikes%2F-1713223439)? |
 

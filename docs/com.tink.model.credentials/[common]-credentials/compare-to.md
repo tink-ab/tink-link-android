@@ -1,14 +1,17 @@
 ---
-title: compareTo -
+title: compareTo
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[compareTo](compare-to.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[compareTo](compare-to.html)
 
 
 
-# compareTo  
-[common]  
-Content  
-open operator override fun [compareTo](compare-to.md)(other: [Credentials](index.md)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# compareTo
+
+
+
+[common]\
+open operator override fun [compareTo](compare-to.html)(other: [Credentials](index.html)): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

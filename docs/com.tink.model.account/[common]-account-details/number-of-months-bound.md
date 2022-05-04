@@ -1,14 +1,17 @@
 ---
-title: numberOfMonthsBound -
+title: numberOfMonthsBound
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[numberOfMonthsBound](number-of-months-bound.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]AccountDetails](index.html)/[numberOfMonthsBound](number-of-months-bound.html)
 
 
 
-# numberOfMonthsBound  
-[common]  
-Content  
-val [numberOfMonthsBound](number-of-months-bound.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null  
+# numberOfMonthsBound
+
+
+
+[common]\
+val [numberOfMonthsBound](number-of-months-bound.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null
+
 
 
 

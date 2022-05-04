@@ -1,14 +1,17 @@
 ---
-title: intent -
+title: intent
 ---
-//[link](../../../index.md)/[com.tink.model.authentication](../../index.md)/[[androidJvm]ThirdPartyAppAuthentication](../index.md)/[Android](index.md)/[intent](intent.md)
+//[link](../../../../index.html)/[com.tink.model.authentication](../../index.html)/[[androidJvm]ThirdPartyAppAuthentication](../index.html)/[Android](index.html)/[intent](intent.html)
 
 
 
-# intent  
-[androidJvm]  
-Content  
-val [intent](intent.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# intent
+
+
+
+[androidJvm]\
+val [intent](intent.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

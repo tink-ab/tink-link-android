@@ -1,14 +1,17 @@
 ---
-title: Amount -
+title: Amount
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Amount](index.md)/[Amount](-amount.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]Amount](index.html)/[Amount](-amount.html)
 
 
 
-# Amount  
-[androidJvm]  
-Content  
-fun [Amount](-amount.md)(value: [ExactNumber](../[android-jvm]-exact-number/index.md), currencyCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# Amount
+
+
+
+[androidJvm]\
+fun [Amount](-amount.html)(value: [ExactNumber](../[android-jvm]-exact-number/index.html), currencyCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

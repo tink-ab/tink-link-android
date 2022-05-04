@@ -1,26 +1,28 @@
 ---
-title: accountNumber -
+title: accountNumber
 ---
-//[link](../../index.md)/[com.tink.model.transfer](../index.md)/[[androidJvm]Beneficiary](index.md)/[accountNumber](account-number.md)
+//[link](../../../index.html)/[com.tink.model.transfer](../index.html)/[[androidJvm]Beneficiary](index.html)/[accountNumber](account-number.html)
 
 
 
-# accountNumber  
-[androidJvm]  
-Content  
-val [accountNumber](account-number.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# accountNumber
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [accountNumber](account-number.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.transfer/Beneficiary/accountNumber/#/PointingToDeclaration/"></a>accountNumber| <a name="com.tink.model.transfer/Beneficiary/accountNumber/#/PointingToDeclaration/"></a><br><br>The account number for the beneficiary. The structure of this field depends on the [accountNumberType](account-number-type.md).<br><br>
-  
-  
+| accountNumber | The account number for the beneficiary. The structure of this field depends on the [accountNumberType](account-number-type.html). |
+
 
 
 

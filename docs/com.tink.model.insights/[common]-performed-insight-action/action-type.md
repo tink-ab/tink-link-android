@@ -1,14 +1,17 @@
 ---
-title: actionType -
+title: actionType
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]PerformedInsightAction](index.md)/[actionType](action-type.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]PerformedInsightAction](index.html)/[actionType](action-type.html)
 
 
 
-# actionType  
-[common]  
-Content  
-val [actionType](action-type.md): [InsightAction.Type](../[common]-insight-action/-type/index.md)  
+# actionType
+
+
+
+[common]\
+val [actionType](action-type.html): [InsightAction.Type](../[common]-insight-action/-type/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: identifier -
+title: identifier
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[identifier](identifier.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[common]Statistics](index.html)/[identifier](identifier.html)
 
 
 
-# identifier  
-[common]  
-Content  
-val [identifier](identifier.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# identifier
+
+
+
+[common]\
+val [identifier](identifier.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: BudgetServiceImpl -
+title: BudgetServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.budget](../index.md)/[[common]BudgetServiceImpl](index.md)/[BudgetServiceImpl](-budget-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.budget](../index.html)/[[common]BudgetServiceImpl](index.html)/[BudgetServiceImpl](-budget-service-impl.html)
 
 
 
-# BudgetServiceImpl  
-[common]  
-Content  
-fun [BudgetServiceImpl](-budget-service-impl.md)(api: <ERROR CLASS>)  
+# BudgetServiceImpl
+
+
+
+[common]\
+fun [BudgetServiceImpl](-budget-service-impl.html)(api: &lt;ERROR CLASS&gt;)
+
 
 
 

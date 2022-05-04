@@ -1,14 +1,17 @@
 ---
-title: financialInstitutionID -
+title: financialInstitutionID
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]Account](index.md)/[financialInstitutionID](financial-institution-i-d.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]Account](index.html)/[financialInstitutionID](financial-institution-i-d.html)
 
 
 
-# financialInstitutionID  
-[androidJvm]  
-Content  
-val [financialInstitutionID](financial-institution-i-d.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# financialInstitutionID
+
+
+
+[androidJvm]\
+val [financialInstitutionID](financial-institution-i-d.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: provider -
+title: provider
 ---
-//[link](../../../index.md)/[com.tink.link.ui.credentials](../../index.md)/[[common]CredentialsOperationArgs](../index.md)/[Create](index.md)/[provider](provider.md)
+//[link](../../../../index.html)/[com.tink.link.ui.credentials](../../index.html)/[[common]CredentialsOperationArgs](../index.html)/[Create](index.html)/[provider](provider.html)
 
 
 
-# provider  
-[common]  
-Content  
-open override val [provider](provider.md): [Provider](../../../com.tink.model.provider/[common]-provider/index.md)  
+# provider
+
+
+
+[common]\
+open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[common]-provider/index.html)
+
 
 
 

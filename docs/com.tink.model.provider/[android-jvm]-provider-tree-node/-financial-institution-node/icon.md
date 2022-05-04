@@ -1,20 +1,21 @@
 ---
-title: icon -
+title: icon
 ---
-//[link](../../../index.md)/[com.tink.model.provider](../../index.md)/[[androidJvm]ProviderTreeNode](../index.md)/[FinancialInstitutionNode](index.md)/[icon](icon.md)
+//[link](../../../../index.html)/[com.tink.model.provider](../../index.html)/[[androidJvm]ProviderTreeNode](../index.html)/[FinancialInstitutionNode](index.html)/[icon](icon.html)
 
 
 
-# icon  
-[androidJvm]  
-Content  
-open override val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?  
-More info  
+# icon
+
+
+
+[androidJvm]\
+open override val [icon](icon.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)?
+
 
 
 An optional url linking to a visual description of the node.
 
-  
 
 
 

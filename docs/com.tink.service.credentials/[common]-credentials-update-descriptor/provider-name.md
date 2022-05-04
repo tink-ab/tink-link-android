@@ -1,14 +1,17 @@
 ---
-title: providerName -
+title: providerName
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsUpdateDescriptor](index.md)/[providerName](provider-name.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsUpdateDescriptor](index.html)/[providerName](provider-name.html)
 
 
 
-# providerName  
-[common]  
-Content  
-val [providerName](provider-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# providerName
+
+
+
+[common]\
+val [providerName](provider-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

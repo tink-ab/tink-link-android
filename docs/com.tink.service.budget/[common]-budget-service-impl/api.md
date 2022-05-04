@@ -1,14 +1,17 @@
 ---
-title: api -
+title: api
 ---
-//[link](../../index.md)/[com.tink.service.budget](../index.md)/[[common]BudgetServiceImpl](index.md)/[api](api.md)
+//[link](../../../index.html)/[com.tink.service.budget](../index.html)/[[common]BudgetServiceImpl](index.html)/[api](api.html)
 
 
 
-# api  
-[common]  
-Content  
-val [api](api.md): <ERROR CLASS>  
+# api
+
+
+
+[common]\
+val [api](api.html): &lt;ERROR CLASS&gt;
+
 
 
 

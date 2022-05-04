@@ -1,14 +1,17 @@
 ---
-title: originalAmount -
+title: originalAmount
 ---
-//[link](../../index.md)/[com.tink.model.transaction](../index.md)/[[common]Transaction](index.md)/[originalAmount](original-amount.md)
+//[link](../../../index.html)/[com.tink.model.transaction](../index.html)/[[common]Transaction](index.html)/[originalAmount](original-amount.html)
 
 
 
-# originalAmount  
-[common]  
-Content  
-val [originalAmount](original-amount.md): [Amount](../../com.tink.model.misc/[common]-amount/index.md)  
+# originalAmount
+
+
+
+[common]\
+val [originalAmount](original-amount.html): [Amount](../../com.tink.model.misc/[common]-amount/index.html)
+
 
 
 

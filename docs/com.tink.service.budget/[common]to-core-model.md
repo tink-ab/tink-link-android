@@ -1,15 +1,21 @@
 ---
-title: [common]toCoreModel -
+title: [common]toCoreModel
 ---
-//[link](../index.md)/[com.tink.service.budget](index.md)/[[common]toCoreModel]([common]to-core-model.md)
+//[link](../../index.html)/[com.tink.service.budget](index.html)/[[common]toCoreModel]([common]to-core-model.html)
 
 
 
-# toCoreModel  
-[common]  
-Content  
-fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): <ERROR CLASS>  
-fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): [BudgetSpecification](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetSpecification%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)  
+# toCoreModel
+
+
+
+[common]\
+fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): &lt;ERROR CLASS&gt;
+
+fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): [BudgetSpecification](../com.tink.model.budget/index.html#1357535401%2FClasslikes%2F-1713223439)
+
+fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(budgetAmount: [Amount](../com.tink.model.misc/[common]-amount/index.html)): &lt;ERROR CLASS&gt;
+
 
 
 

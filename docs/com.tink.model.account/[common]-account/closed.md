@@ -1,14 +1,17 @@
 ---
-title: closed -
+title: closed
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]Account](index.md)/[closed](closed.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]Account](index.html)/[closed](closed.html)
 
 
 
-# closed  
-[common]  
-Content  
-val [closed](closed.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# closed
+
+
+
+[common]\
+val [closed](closed.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: archivedDate -
+title: archivedDate
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightState](../index.md)/[Archived](index.md)/[archivedDate](archived-date.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightState](../index.html)/[Archived](index.html)/[archivedDate](archived-date.html)
 
 
 
-# archivedDate  
-[common]  
-Content  
-val [archivedDate](archived-date.md): <ERROR CLASS>  
+# archivedDate
+
+
+
+[common]\
+val [archivedDate](archived-date.html): &lt;ERROR CLASS&gt;
+
 
 
 

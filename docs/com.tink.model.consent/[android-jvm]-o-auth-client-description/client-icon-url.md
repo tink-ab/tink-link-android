@@ -1,26 +1,28 @@
 ---
-title: clientIconUrl -
+title: clientIconUrl
 ---
-//[link](../../index.md)/[com.tink.model.consent](../index.md)/[[androidJvm]OAuthClientDescription](index.md)/[clientIconUrl](client-icon-url.md)
+//[link](../../../index.html)/[com.tink.model.consent](../index.html)/[[androidJvm]OAuthClientDescription](index.html)/[clientIconUrl](client-icon-url.html)
 
 
 
-# clientIconUrl  
-[androidJvm]  
-Content  
-val [clientIconUrl](client-icon-url.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# clientIconUrl
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+val [clientIconUrl](client-icon-url.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.model.consent/OAuthClientDescription/clientIconUrl/#/PointingToDeclaration/"></a>clientIconUrl| <a name="com.tink.model.consent/OAuthClientDescription/clientIconUrl/#/PointingToDeclaration/"></a><br><br>: A url for a client icon. Can be empty.<br><br>
-  
-  
+| clientIconUrl | : A url for a client icon. Can be empty. |
+
 
 
 

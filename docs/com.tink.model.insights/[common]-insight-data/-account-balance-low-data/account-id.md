@@ -1,14 +1,17 @@
 ---
-title: accountId -
+title: accountId
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[AccountBalanceLowData](index.md)/[accountId](account-id.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[AccountBalanceLowData](index.html)/[accountId](account-id.html)
 
 
 
-# accountId  
-[common]  
-Content  
-val [accountId](account-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# accountId
+
+
+
+[common]\
+val [accountId](account-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

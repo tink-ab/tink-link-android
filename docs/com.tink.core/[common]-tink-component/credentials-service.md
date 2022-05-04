@@ -1,14 +1,17 @@
 ---
-title: credentialsService -
+title: credentialsService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[common]TinkComponent](index.md)/[credentialsService](credentials-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[common]TinkComponent](index.html)/[credentialsService](credentials-service.html)
 
 
 
-# credentialsService  
-[common]  
-Content  
-abstract val [credentialsService](credentials-service.md): [CredentialsService](../../com.tink.service.credentials/[common]-credentials-service/index.md)  
+# credentialsService
+
+
+
+[common]\
+abstract val [credentialsService](credentials-service.html): [CredentialsService](../../com.tink.service.credentials/[common]-credentials-service/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: value -
+title: value
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]Amount](index.md)/[value](value.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]Amount](index.html)/[value](value.html)
 
 
 
-# value  
-[androidJvm]  
-Content  
-val [value](value.md): [ExactNumber](../[android-jvm]-exact-number/index.md)  
+# value
+
+
+
+[androidJvm]\
+val [value](value.html): [ExactNumber](../[android-jvm]-exact-number/index.html)
+
 
 
 

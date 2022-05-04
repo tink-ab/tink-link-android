@@ -1,14 +1,17 @@
 ---
-title: statusPayload -
+title: statusPayload
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]Credentials](index.md)/[statusPayload](status-payload.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]Credentials](index.html)/[statusPayload](status-payload.html)
 
 
 
-# statusPayload  
-[androidJvm]  
-Content  
-val [statusPayload](status-payload.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null  
+# statusPayload
+
+
+
+[androidJvm]\
+val [statusPayload](status-payload.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null
+
 
 
 

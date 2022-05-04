@@ -1,14 +1,17 @@
 ---
-title: getProvider -
+title: getProvider
 ---
-//[link](../../index.md)/[com.tink.service.provider](../index.md)/[[common]ProviderService](index.md)/[getProvider](get-provider.md)
+//[link](../../../index.html)/[com.tink.service.provider](../index.html)/[[common]ProviderService](index.html)/[getProvider](get-provider.html)
 
 
 
-# getProvider  
-[common]  
-Content  
-abstract suspend fun [getProvider](get-provider.md)(providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Provider](../../com.tink.model.provider/[common]-provider/index.md)?  
+# getProvider
+
+
+
+[common]\
+abstract suspend fun [getProvider](get-provider.html)(providerName: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)): [Provider](../../com.tink.model.provider/[common]-provider/index.html)?
+
 
 
 

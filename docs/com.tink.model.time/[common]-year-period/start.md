@@ -1,14 +1,17 @@
 ---
-title: start -
+title: start
 ---
-//[link](../../index.md)/[com.tink.model.time](../index.md)/[[common]YearPeriod](index.md)/[start](start.md)
+//[link](../../../index.html)/[com.tink.model.time](../index.html)/[[common]YearPeriod](index.html)/[start](start.html)
 
 
 
-# start  
-[common]  
-Content  
-open override val [start](start.md): <ERROR CLASS>  
+# start
+
+
+
+[common]\
+open override val [start](start.html): &lt;ERROR CLASS&gt;
+
 
 
 

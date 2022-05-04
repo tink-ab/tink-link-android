@@ -1,14 +1,17 @@
 ---
-title: interest -
+title: interest
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[common]AccountDetails](index.md)/[interest](interest.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[common]AccountDetails](index.html)/[interest](interest.html)
 
 
 
-# interest  
-[common]  
-Content  
-val [interest](interest.md): [ExactNumber](../../com.tink.model.misc/[common]-exact-number/index.md)? = null  
+# interest
+
+
+
+[common]\
+val [interest](interest.html): [ExactNumber](../../com.tink.model.misc/[common]-exact-number/index.html)? = null
+
 
 
 

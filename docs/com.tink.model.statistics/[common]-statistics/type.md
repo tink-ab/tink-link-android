@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.statistics](../index.md)/[[common]Statistics](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.statistics](../index.html)/[[common]Statistics](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Statistics.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [Statistics.Type](-type/index.html)
+
 
 
 

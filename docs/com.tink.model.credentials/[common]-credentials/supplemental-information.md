@@ -1,14 +1,17 @@
 ---
-title: supplementalInformation -
+title: supplementalInformation
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[common]Credentials](index.md)/[supplementalInformation](supplemental-information.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[common]Credentials](index.html)/[supplementalInformation](supplemental-information.html)
 
 
 
-# supplementalInformation  
-[common]  
-Content  
-val [supplementalInformation](supplemental-information.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[Field](../../com.tink.model.misc/[common]-field/index.md)>  
+# supplementalInformation
+
+
+
+[common]\
+val [supplementalInformation](supplemental-information.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field](../../com.tink.model.misc/[common]-field/index.html)&gt;
+
 
 
 

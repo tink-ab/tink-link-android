@@ -1,14 +1,17 @@
 ---
-title: onCompleted -
+title: onCompleted
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[androidJvm]StreamObserver](index.md)/[onCompleted](on-completed.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[androidJvm]StreamObserver](index.html)/[onCompleted](on-completed.html)
 
 
 
-# onCompleted  
-[androidJvm]  
-Content  
-open fun [onCompleted](on-completed.md)()  
+# onCompleted
+
+
+
+[androidJvm]\
+open fun [onCompleted](on-completed.html)()
+
 
 
 

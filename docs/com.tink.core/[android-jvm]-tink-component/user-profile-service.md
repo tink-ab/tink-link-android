@@ -1,14 +1,17 @@
 ---
-title: userProfileService -
+title: userProfileService
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]TinkComponent](index.md)/[userProfileService](user-profile-service.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]TinkComponent](index.html)/[userProfileService](user-profile-service.html)
 
 
 
-# userProfileService  
-[androidJvm]  
-Content  
-abstract val [userProfileService](user-profile-service.md): [UserProfileService](../../com.tink.service.user/[android-jvm]-user-profile-service/index.md)  
+# userProfileService
+
+
+
+[androidJvm]\
+abstract val [userProfileService](user-profile-service.html): [UserProfileService](../../com.tink.service.user/[android-jvm]-user-profile-service/index.html)
+
 
 
 

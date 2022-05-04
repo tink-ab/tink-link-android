@@ -1,16 +1,25 @@
 ---
-title: AccountServiceImpl -
+title: AccountServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[androidJvm]AccountServiceImpl](index.md)/[AccountServiceImpl](-account-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[androidJvm]AccountServiceImpl](index.html)/[AccountServiceImpl](-account-service-impl.html)
 
 
 
-# AccountServiceImpl  
-[androidJvm]  
-Content  
-@Inject()  
-  
-fun [AccountServiceImpl](-account-service-impl.md)(api: AccountApi)  
+# AccountServiceImpl
+
+
+
+[androidJvm]\
+
+
+
+
+@Inject
+
+
+
+fun [AccountServiceImpl](-account-service-impl.html)(api: AccountApi)
+
 
 
 

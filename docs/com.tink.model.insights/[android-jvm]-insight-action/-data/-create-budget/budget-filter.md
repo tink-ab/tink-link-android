@@ -1,14 +1,17 @@
 ---
-title: budgetFilter -
+title: budgetFilter
 ---
-//[link](../../../../index.md)/[com.tink.model.insights](../../../index.md)/[[androidJvm]InsightAction](../../index.md)/[Data](../index.md)/[CreateBudget](index.md)/[budgetFilter](budget-filter.md)
+//[link](../../../../../index.html)/[com.tink.model.insights](../../../index.html)/[[androidJvm]InsightAction](../../index.html)/[Data](../index.html)/[CreateBudget](index.html)/[budgetFilter](budget-filter.html)
 
 
 
-# budgetFilter  
-[androidJvm]  
-Content  
-val [budgetFilter](budget-filter.md): [BudgetFilter](../../../../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetFilter%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)?  
+# budgetFilter
+
+
+
+[androidJvm]\
+val [budgetFilter](budget-filter.html): [BudgetFilter](../../../../com.tink.model.budget/index.html#-2018963458%2FClasslikes%2F-812656150)?
+
 
 
 

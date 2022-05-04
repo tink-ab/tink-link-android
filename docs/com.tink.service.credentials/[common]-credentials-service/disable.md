@@ -1,14 +1,17 @@
 ---
-title: disable -
+title: disable
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsService](index.md)/[disable](disable.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsService](index.html)/[disable](disable.html)
 
 
 
-# disable  
-[common]  
-Content  
-abstract suspend fun [disable](disable.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# disable
+
+
+
+[common]\
+abstract suspend fun [disable](disable.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

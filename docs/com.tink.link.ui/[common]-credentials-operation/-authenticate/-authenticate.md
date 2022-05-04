@@ -1,26 +1,28 @@
 ---
-title: Authenticate -
+title: Authenticate
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]CredentialsOperation](../index.md)/[Authenticate](index.md)/[Authenticate](-authenticate.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]CredentialsOperation](../index.html)/[Authenticate](index.html)/[Authenticate](-authenticate.html)
 
 
 
-# Authenticate  
-[common]  
-Content  
-fun [Authenticate](-authenticate.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
-More info  
+# Authenticate
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+fun [Authenticate](-authenticate.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Authenticate/Authenticate/#kotlin.String/PointingToDeclaration/"></a>credentialsId| <a name="com.tink.link.ui/CredentialsOperation.Authenticate/Authenticate/#kotlin.String/PointingToDeclaration/"></a><br><br>Id of the [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md) to be authenticated<br><br>
-  
-  
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) to be authenticated |
+
 
 
 

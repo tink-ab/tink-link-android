@@ -1,14 +1,17 @@
 ---
-title: periodService -
+title: periodService
 ---
-//[link](../../index.md)/[com.tink.service.di](../index.md)/[[androidJvm]ServiceComponent](index.md)/[periodService](period-service.md)
+//[link](../../../index.html)/[com.tink.service.di](../index.html)/[[androidJvm]ServiceComponent](index.html)/[periodService](period-service.html)
 
 
 
-# periodService  
-[androidJvm]  
-Content  
-abstract val [periodService](period-service.md): [PeriodService](../../com.tink.service.time/[android-jvm]-period-service/index.md)  
+# periodService
+
+
+
+[androidJvm]\
+abstract val [periodService](period-service.html): [PeriodService](../../com.tink.service.time/[android-jvm]-period-service/index.html)
+
 
 
 

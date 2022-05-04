@@ -1,16 +1,25 @@
 ---
-title: setUser -
+title: setUser
 ---
-//[link](../../index.md)/[com.tink.core](../index.md)/[[androidJvm]Tink](index.md)/[setUser](set-user.md)
+//[link](../../../index.html)/[com.tink.core](../index.html)/[[androidJvm]Tink](index.html)/[setUser](set-user.html)
 
 
 
-# setUser  
-[androidJvm]  
-Content  
-@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)()  
-  
-fun [setUser](set-user.md)(user: [User](../../com.tink.model.user/[android-jvm]-user/index.md))  
+# setUser
+
+
+
+[androidJvm]\
+
+
+
+
+@[JvmStatic](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-static/index.html)
+
+
+
+fun [setUser](set-user.html)(user: [User](../../com.tink.model.user/[android-jvm]-user/index.html))
+
 
 
 

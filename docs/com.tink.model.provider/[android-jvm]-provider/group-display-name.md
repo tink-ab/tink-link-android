@@ -1,14 +1,17 @@
 ---
-title: groupDisplayName -
+title: groupDisplayName
 ---
-//[link](../../index.md)/[com.tink.model.provider](../index.md)/[[androidJvm]Provider](index.md)/[groupDisplayName](group-display-name.md)
+//[link](../../../index.html)/[com.tink.model.provider](../index.html)/[[androidJvm]Provider](index.html)/[groupDisplayName](group-display-name.html)
 
 
 
-# groupDisplayName  
-[androidJvm]  
-Content  
-val [groupDisplayName](group-display-name.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# groupDisplayName
+
+
+
+[androidJvm]\
+val [groupDisplayName](group-display-name.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

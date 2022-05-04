@@ -1,14 +1,17 @@
 ---
-title: downloadTitle -
+title: downloadTitle
 ---
-//[link](../../index.md)/[com.tink.model.authentication](../index.md)/[[androidJvm]ThirdPartyAppAuthentication](index.md)/[downloadTitle](download-title.md)
+//[link](../../../index.html)/[com.tink.model.authentication](../index.html)/[[androidJvm]ThirdPartyAppAuthentication](index.html)/[downloadTitle](download-title.html)
 
 
 
-# downloadTitle  
-[androidJvm]  
-Content  
-val [downloadTitle](download-title.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# downloadTitle
+
+
+
+[androidJvm]\
+val [downloadTitle](download-title.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

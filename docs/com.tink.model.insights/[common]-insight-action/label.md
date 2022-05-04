@@ -1,14 +1,17 @@
 ---
-title: label -
+title: label
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]InsightAction](index.md)/[label](label.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]InsightAction](index.html)/[label](label.html)
 
 
 
-# label  
-[common]  
-Content  
-val [label](label.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# label
+
+
+
+[common]\
+val [label](label.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

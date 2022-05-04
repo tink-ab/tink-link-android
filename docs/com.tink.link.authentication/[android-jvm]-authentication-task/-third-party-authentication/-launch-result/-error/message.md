@@ -1,14 +1,17 @@
 ---
-title: message -
+title: message
 ---
-//[link](../../../../../index.md)/[com.tink.link.authentication](../../../../index.md)/[[androidJvm]AuthenticationTask](../../../index.md)/[ThirdPartyAuthentication](../../index.md)/[LaunchResult](../index.md)/[Error](index.md)/[message](message.md)
+//[link](../../../../../../index.html)/[com.tink.link.authentication](../../../../index.html)/[[androidJvm]AuthenticationTask](../../../index.html)/[ThirdPartyAuthentication](../../index.html)/[LaunchResult](../index.html)/[Error](index.html)/[message](message.html)
 
 
 
-# message  
-[androidJvm]  
-Content  
-abstract val [message](message.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# message
+
+
+
+[androidJvm]\
+abstract val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: unsubscribe -
+title: unsubscribe
 ---
-//[link](../../index.md)/[com.tink.service.streaming.publisher](../index.md)/[[common]StreamSubscription](index.md)/[unsubscribe](unsubscribe.md)
+//[link](../../../index.html)/[com.tink.service.streaming.publisher](../index.html)/[[common]StreamSubscription](index.html)/[unsubscribe](unsubscribe.html)
 
 
 
-# unsubscribe  
-[common]  
-Content  
-abstract fun [unsubscribe](unsubscribe.md)()  
+# unsubscribe
+
+
+
+[common]\
+abstract fun [unsubscribe](unsubscribe.html)()
+
 
 
 

@@ -1,26 +1,28 @@
 ---
-title: oAuthClientId -
+title: oAuthClientId
 ---
-//[link](../../index.md)/[com.tink.service.network](../index.md)/[[common]TinkConfiguration](index.md)/[oAuthClientId](o-auth-client-id.md)
+//[link](../../../index.html)/[com.tink.service.network](../index.html)/[[common]TinkConfiguration](index.html)/[oAuthClientId](o-auth-client-id.html)
 
 
 
-# oAuthClientId  
-[common]  
-Content  
-val [oAuthClientId](o-auth-client-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# oAuthClientId
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [oAuthClientId](o-auth-client-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.service.network/TinkConfiguration/oAuthClientId/#/PointingToDeclaration/"></a>oAuthClientId| <a name="com.tink.service.network/TinkConfiguration/oAuthClientId/#/PointingToDeclaration/"></a><br><br>Your client id. You can retrieve it from https://console.tink.com.<br><br>
-  
-  
+| oAuthClientId | Your client id. You can retrieve it from https://console.tink.com. |
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: type -
+title: type
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[common]Category](index.md)/[type](type.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[common]Category](index.html)/[type](type.html)
 
 
 
-# type  
-[common]  
-Content  
-val [type](type.md): [Category.Type](-type/index.md)  
+# type
+
+
+
+[common]\
+val [type](type.html): [Category.Type](-type/index.html)
+
 
 
 

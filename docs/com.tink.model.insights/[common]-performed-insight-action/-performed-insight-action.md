@@ -1,14 +1,17 @@
 ---
-title: PerformedInsightAction -
+title: PerformedInsightAction
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]PerformedInsightAction](index.md)/[PerformedInsightAction](-performed-insight-action.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]PerformedInsightAction](index.html)/[PerformedInsightAction](-performed-insight-action.html)
 
 
 
-# PerformedInsightAction  
-[common]  
-Content  
-fun [PerformedInsightAction](-performed-insight-action.md)(insightId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), userId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), actionType: [InsightAction.Type](../[common]-insight-action/-type/index.md))  
+# PerformedInsightAction
+
+
+
+[common]\
+fun [PerformedInsightAction](-performed-insight-action.html)(insightId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), userId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), actionType: [InsightAction.Type](../[common]-insight-action/-type/index.html))
+
 
 
 

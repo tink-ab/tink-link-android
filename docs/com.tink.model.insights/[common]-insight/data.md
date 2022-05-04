@@ -1,14 +1,17 @@
 ---
-title: data -
+title: data
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[data](data.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[data](data.html)
 
 
 
-# data  
-[common]  
-Content  
-val [data](data.md): [InsightData](../[common]-insight-data/index.md)  
+# data
+
+
+
+[common]\
+val [data](data.html): [InsightData](../[common]-insight-data/index.html)
+
 
 
 

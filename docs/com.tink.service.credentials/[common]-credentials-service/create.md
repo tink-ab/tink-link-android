@@ -1,14 +1,17 @@
 ---
-title: create -
+title: create
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsService](index.md)/[create](create.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsService](index.html)/[create](create.html)
 
 
 
-# create  
-[common]  
-Content  
-abstract suspend fun [create](create.md)(descriptor: [CredentialsCreationDescriptor](../[common]-credentials-creation-descriptor/index.md)): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.md)  
+# create
+
+
+
+[common]\
+abstract suspend fun [create](create.html)(descriptor: [CredentialsCreationDescriptor](../[common]-credentials-creation-descriptor/index.html)): [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)
+
 
 
 

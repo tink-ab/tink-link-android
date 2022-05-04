@@ -1,16 +1,25 @@
 ---
-title: CategoryServiceImpl -
+title: CategoryServiceImpl
 ---
-//[link](../../index.md)/[com.tink.service.category](../index.md)/[[androidJvm]CategoryServiceImpl](index.md)/[CategoryServiceImpl](-category-service-impl.md)
+//[link](../../../index.html)/[com.tink.service.category](../index.html)/[[androidJvm]CategoryServiceImpl](index.html)/[CategoryServiceImpl](-category-service-impl.html)
 
 
 
-# CategoryServiceImpl  
-[androidJvm]  
-Content  
-@Inject()  
-  
-fun [CategoryServiceImpl](-category-service-impl.md)(api: CategoryApi)  
+# CategoryServiceImpl
+
+
+
+[androidJvm]\
+
+
+
+
+@Inject
+
+
+
+fun [CategoryServiceImpl](-category-service-impl.html)(api: CategoryApi)
+
 
 
 

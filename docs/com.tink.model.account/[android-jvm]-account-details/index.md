@@ -1,43 +1,51 @@
 ---
-title: [androidJvm]AccountDetails -
+title: [androidJvm]AccountDetails
 ---
-//[link](../../index.md)/[com.tink.model.account](../index.md)/[[androidJvm]AccountDetails](index.md)
+//[link](../../../index.html)/[com.tink.model.account](../index.html)/[[androidJvm]AccountDetails](index.html)
 
 
 
-# AccountDetails  
- [androidJvm] data class [AccountDetails](index.md)(**interest**: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)?, **numberOfMonthsBound**: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?, **type**: [AccountDetails.Type](-type/index.md)?, **nextDayOfTermsChange**: Instant?) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)   
+# AccountDetails
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+data class [AccountDetails](index.html)(val interest: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)? = null, val numberOfMonthsBound: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null, val type: [AccountDetails.Type](-type/index.html)?, val nextDayOfTermsChange: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html)
+
+
+
+## Constructors
+
+
+| | |
 |---|---|
-| <a name="com.tink.model.account/AccountDetails.Type///PointingToDeclaration/"></a>[Type](-type/index.md)| <a name="com.tink.model.account/AccountDetails.Type///PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>enum [Type](-type/index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)<[AccountDetails.Type](-type/index.md)>   <br><br><br>
+| [AccountDetails](-account-details.html) | [androidJvm]<br>fun [AccountDetails](-account-details.html)(interest: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)? = null, numberOfMonthsBound: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null, type: [AccountDetails.Type](-type/index.html)?, nextDayOfTermsChange: [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.account/AccountDetails/component1/#/PointingToDeclaration/"></a>[component1](component1.md)| <a name="com.tink.model.account/AccountDetails/component1/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component1](component1.md)(): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)?  <br><br><br>
-| <a name="com.tink.model.account/AccountDetails/component2/#/PointingToDeclaration/"></a>[component2](component2.md)| <a name="com.tink.model.account/AccountDetails/component2/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component2](component2.md)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)?  <br><br><br>
-| <a name="com.tink.model.account/AccountDetails/component3/#/PointingToDeclaration/"></a>[component3](component3.md)| <a name="com.tink.model.account/AccountDetails/component3/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component3](component3.md)(): [AccountDetails.Type](-type/index.md)?  <br><br><br>
-| <a name="com.tink.model.account/AccountDetails/component4/#/PointingToDeclaration/"></a>[component4](component4.md)| <a name="com.tink.model.account/AccountDetails/component4/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>operator fun [component4](component4.md)(): Instant?  <br><br><br>
-| <a name="com.tink.model.account/AccountDetails/copy/#com.tink.model.misc.ExactNumber?#kotlin.Int?#com.tink.model.account.AccountDetails.Type?#org.threeten.bp.Instant?/PointingToDeclaration/"></a>[copy](copy.md)| <a name="com.tink.model.account/AccountDetails/copy/#com.tink.model.misc.ExactNumber?#kotlin.Int?#com.tink.model.account.AccountDetails.Type?#org.threeten.bp.Instant?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>fun [copy](copy.md)(interest: [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)? = null, numberOfMonthsBound: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null, type: [AccountDetails.Type](-type/index.md)?, nextDayOfTermsChange: Instant? = null): [AccountDetails](index.md)  <br><br><br>
-| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/describeContents/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FdescribeContents%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open operator override fun [equals](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [hashCode](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>open override fun [toString](../../com.tink.service.user/[android-jvm]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
-| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)| <a name="android.os/Parcelable/writeToParcel/#android.os.Parcel#kotlin.Int/PointingToDeclaration/"></a>[androidJvm]  <br>Content  <br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.md#%5Bandroid.os%2FParcelable%2FwriteToParcel%2F%23android.os.Parcel%23kotlin.Int%2FPointingToDeclaration%2F%5D%2FFunctions%2F-586840090)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))  <br><br><br>
+| [Type](-type/index.html) | [androidJvm]<br>enum [Type](-type/index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html)&lt;[AccountDetails.Type](-type/index.html)&gt; |
 
 
-## Properties  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.account/AccountDetails/interest/#/PointingToDeclaration/"></a>[interest](interest.md)| <a name="com.tink.model.account/AccountDetails/interest/#/PointingToDeclaration/"></a> [androidJvm] val [interest](interest.md): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.md)? = null   <br>
-| <a name="com.tink.model.account/AccountDetails/nextDayOfTermsChange/#/PointingToDeclaration/"></a>[nextDayOfTermsChange](next-day-of-terms-change.md)| <a name="com.tink.model.account/AccountDetails/nextDayOfTermsChange/#/PointingToDeclaration/"></a> [androidJvm] val [nextDayOfTermsChange](next-day-of-terms-change.md): Instant? = null   <br>
-| <a name="com.tink.model.account/AccountDetails/numberOfMonthsBound/#/PointingToDeclaration/"></a>[numberOfMonthsBound](number-of-months-bound.md)| <a name="com.tink.model.account/AccountDetails/numberOfMonthsBound/#/PointingToDeclaration/"></a> [androidJvm] val [numberOfMonthsBound](number-of-months-bound.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null   <br>
-| <a name="com.tink.model.account/AccountDetails/type/#/PointingToDeclaration/"></a>[type](type.md)| <a name="com.tink.model.account/AccountDetails/type/#/PointingToDeclaration/"></a> [androidJvm] val [type](type.md): [AccountDetails.Type](-type/index.md)?   <br>
+| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+
+
+## Properties
+
+
+| Name | Summary |
+|---|---|
+| [interest](interest.html) | [androidJvm]<br>val [interest](interest.html): [ExactNumber](../../com.tink.model.misc/[android-jvm]-exact-number/index.html)? = null |
+| [nextDayOfTermsChange](next-day-of-terms-change.html) | [androidJvm]<br>val [nextDayOfTermsChange](next-day-of-terms-change.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)? = null |
+| [numberOfMonthsBound](number-of-months-bound.html) | [androidJvm]<br>val [numberOfMonthsBound](number-of-months-bound.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null |
+| [type](type.html) | [androidJvm]<br>val [type](type.html): [AccountDetails.Type](-type/index.html)? |
 

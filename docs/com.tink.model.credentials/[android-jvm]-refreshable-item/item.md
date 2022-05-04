@@ -1,14 +1,17 @@
 ---
-title: item -
+title: item
 ---
-//[link](../../index.md)/[com.tink.model.credentials](../index.md)/[[androidJvm]RefreshableItem](index.md)/[item](item.md)
+//[link](../../../index.html)/[com.tink.model.credentials](../index.html)/[[androidJvm]RefreshableItem](index.html)/[item](item.html)
 
 
 
-# item  
-[androidJvm]  
-Content  
-val [item](item.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# item
+
+
+
+[androidJvm]\
+val [item](item.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

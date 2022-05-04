@@ -1,14 +1,17 @@
 ---
-title: created -
+title: created
 ---
-//[link](../../../index.md)/[com.tink.model.budget](../../index.md)/[[androidJvm]Budget](../index.md)/[Specification](index.md)/[created](created.md)
+//[link](../../../../index.html)/[com.tink.model.budget](../../index.html)/[[androidJvm]Budget](../index.html)/[Specification](index.html)/[created](created.html)
 
 
 
-# created  
-[androidJvm]  
-Content  
-val [created](created.md): Instant  
+# created
+
+
+
+[androidJvm]\
+val [created](created.html): [Instant](https://developer.android.com/reference/kotlin/java/time/Instant.html)
+
 
 
 

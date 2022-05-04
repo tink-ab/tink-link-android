@@ -1,14 +1,17 @@
 ---
-title: Account -
+title: Account
 ---
-//[link](../../../../../index.md)/[com.tink.model.budget](../../../../index.md)/[[common]Budget](../../../index.md)/[Specification](../../index.md)/[Filter](../index.md)/[Account](index.md)/[Account](-account.md)
+//[link](../../../../../../index.html)/[com.tink.model.budget](../../../../index.html)/[[common]Budget](../../../index.html)/[Specification](../../index.html)/[Filter](../index.html)/[Account](index.html)/[Account](-account.html)
 
 
 
-# Account  
-[common]  
-Content  
-fun [Account](-account.md)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# Account
+
+
+
+[common]\
+fun [Account](-account.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: sortOrder -
+title: sortOrder
 ---
-//[link](../../index.md)/[com.tink.model.category](../index.md)/[[androidJvm]Category](index.md)/[sortOrder](sort-order.md)
+//[link](../../../index.html)/[com.tink.model.category](../index.html)/[[androidJvm]Category](index.html)/[sortOrder](sort-order.html)
 
 
 
-# sortOrder  
-[androidJvm]  
-Content  
-val [sortOrder](sort-order.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  
+# sortOrder
+
+
+
+[androidJvm]\
+val [sortOrder](sort-order.html): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
+
 
 
 

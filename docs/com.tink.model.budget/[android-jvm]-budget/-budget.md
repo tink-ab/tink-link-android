@@ -1,14 +1,17 @@
 ---
-title: Budget -
+title: Budget
 ---
-//[link](../../index.md)/[com.tink.model.budget](../index.md)/[[androidJvm]Budget](index.md)/[Budget](-budget.md)
+//[link](../../../index.html)/[com.tink.model.budget](../index.html)/[[androidJvm]Budget](index.html)/[Budget](-budget.html)
 
 
 
-# Budget  
-[androidJvm]  
-Content  
-fun [Budget](-budget.md)()  
+# Budget
+
+
+
+[androidJvm]\
+fun [Budget](-budget.html)()
+
 
 
 

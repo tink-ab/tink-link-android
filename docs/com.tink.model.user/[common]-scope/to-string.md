@@ -1,14 +1,17 @@
 ---
-title: toString -
+title: toString
 ---
-//[link](../../index.md)/[com.tink.model.user](../index.md)/[[common]Scope](index.md)/[toString](to-string.md)
+//[link](../../../index.html)/[com.tink.model.user](../index.html)/[[common]Scope](index.html)/[toString](to-string.html)
 
 
 
-# toString  
-[common]  
-Content  
-open override fun [toString](to-string.md)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# toString
+
+
+
+[common]\
+open override fun [toString](to-string.html)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

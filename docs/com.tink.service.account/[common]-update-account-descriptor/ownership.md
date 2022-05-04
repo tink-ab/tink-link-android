@@ -1,14 +1,17 @@
 ---
-title: ownership -
+title: ownership
 ---
-//[link](../../index.md)/[com.tink.service.account](../index.md)/[[common]UpdateAccountDescriptor](index.md)/[ownership](ownership.md)
+//[link](../../../index.html)/[com.tink.service.account](../index.html)/[[common]UpdateAccountDescriptor](index.html)/[ownership](ownership.html)
 
 
 
-# ownership  
-[common]  
-Content  
-val [ownership](ownership.md): [ExactNumber](../../com.tink.model.misc/[common]-exact-number/index.md)? = null  
+# ownership
+
+
+
+[common]\
+val [ownership](ownership.html): [ExactNumber](../../com.tink.model.misc/[common]-exact-number/index.html)? = null
+
 
 
 

@@ -1,14 +1,17 @@
 ---
-title: AccountBalanceLowData -
+title: AccountBalanceLowData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[common]InsightData](../index.md)/[AccountBalanceLowData](index.md)/[AccountBalanceLowData](-account-balance-low-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[common]InsightData](../index.html)/[AccountBalanceLowData](index.html)/[AccountBalanceLowData](-account-balance-low-data.html)
 
 
 
-# AccountBalanceLowData  
-[common]  
-Content  
-fun [AccountBalanceLowData](-account-balance-low-data.md)(accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), balance: [Amount](../../../com.tink.model.misc/[common]-amount/index.md))  
+# AccountBalanceLowData
+
+
+
+[common]\
+fun [AccountBalanceLowData](-account-balance-low-data.html)(accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), balance: [Amount](../../../com.tink.model.misc/[common]-amount/index.html))
+
 
 
 

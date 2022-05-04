@@ -1,14 +1,17 @@
 ---
-title: toBigDecimal -
+title: toBigDecimal
 ---
-//[link](../../index.md)/[com.tink.model.misc](../index.md)/[[androidJvm]ExactNumber](index.md)/[toBigDecimal](to-big-decimal.md)
+//[link](../../../index.html)/[com.tink.model.misc](../index.html)/[[androidJvm]ExactNumber](index.html)/[toBigDecimal](to-big-decimal.html)
 
 
 
-# toBigDecimal  
-[androidJvm]  
-Content  
-fun [toBigDecimal](to-big-decimal.md)(): [BigDecimal](https://developer.android.com/reference/kotlin/java/math/BigDecimal.html)  
+# toBigDecimal
+
+
+
+[androidJvm]\
+fun [toBigDecimal](to-big-decimal.html)(): [BigDecimal](https://developer.android.com/reference/kotlin/java/math/BigDecimal.html)
+
 
 
 

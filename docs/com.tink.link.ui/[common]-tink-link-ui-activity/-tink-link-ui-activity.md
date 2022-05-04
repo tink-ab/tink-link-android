@@ -1,14 +1,17 @@
 ---
-title: TinkLinkUiActivity -
+title: TinkLinkUiActivity
 ---
-//[link](../../index.md)/[com.tink.link.ui](../index.md)/[[common]TinkLinkUiActivity](index.md)/[TinkLinkUiActivity](-tink-link-ui-activity.md)
+//[link](../../../index.html)/[com.tink.link.ui](../index.html)/[[common]TinkLinkUiActivity](index.html)/[TinkLinkUiActivity](-tink-link-ui-activity.html)
 
 
 
-# TinkLinkUiActivity  
-[common]  
-Content  
-fun [TinkLinkUiActivity](-tink-link-ui-activity.md)()  
+# TinkLinkUiActivity
+
+
+
+[common]\
+fun [TinkLinkUiActivity](-tink-link-ui-activity.html)()
+
 
 
 

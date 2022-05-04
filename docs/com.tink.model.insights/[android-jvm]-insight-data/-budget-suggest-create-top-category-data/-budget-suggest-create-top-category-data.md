@@ -1,14 +1,17 @@
 ---
-title: BudgetSuggestCreateTopCategoryData -
+title: BudgetSuggestCreateTopCategoryData
 ---
-//[link](../../../index.md)/[com.tink.model.insights](../../index.md)/[[androidJvm]InsightData](../index.md)/[BudgetSuggestCreateTopCategoryData](index.md)/[BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data.md)
+//[link](../../../../index.html)/[com.tink.model.insights](../../index.html)/[[androidJvm]InsightData](../index.html)/[BudgetSuggestCreateTopCategoryData](index.html)/[BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data.html)
 
 
 
-# BudgetSuggestCreateTopCategoryData  
-[androidJvm]  
-Content  
-fun [BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data.md)(categorySpending: [AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.md), suggestedBudgetAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.md))  
+# BudgetSuggestCreateTopCategoryData
+
+
+
+[androidJvm]\
+fun [BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data.html)(categorySpending: [AmountByCategory](../../../com.tink.model.relations/[android-jvm]-amount-by-category/index.html), suggestedBudgetAmount: [Amount](../../../com.tink.model.misc/[android-jvm]-amount/index.html))
+
 
 
 

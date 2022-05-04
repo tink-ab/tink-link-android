@@ -1,14 +1,17 @@
 ---
-title: isEndState -
+title: isEndState
 ---
-//[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[common]SignableOperation](../index.md)/[Status](index.md)/[isEndState](is-end-state.md)
+//[link](../../../../index.html)/[com.tink.model.transfer](../../index.html)/[[common]SignableOperation](../index.html)/[Status](index.html)/[isEndState](is-end-state.html)
 
 
 
-# isEndState  
-[common]  
-Content  
-fun [isEndState](is-end-state.md)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isEndState
+
+
+
+[common]\
+fun [isEndState](is-end-state.html)(): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

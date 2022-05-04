@@ -1,68 +1,74 @@
 ---
-title: [common]InsightData -
+title: [common]InsightData
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]InsightData](index.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]InsightData](index.html)
 
 
 
-# InsightData  
- [common] sealed class [InsightData](index.md)
+# InsightData
+
+
+
+[common]\
+sealed class [InsightData](index.html)
 
 All subclasses should be data classes or provide a meaningful equals() function
 
-   
 
 
-## Types  
-  
-|  Name|  Summary| 
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.model.insights/InsightData.AccountBalanceLowData///PointingToDeclaration/"></a>[AccountBalanceLowData](-account-balance-low-data/index.md)| <a name="com.tink.model.insights/InsightData.AccountBalanceLowData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [AccountBalanceLowData](-account-balance-low-data/index.md)(**accountId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **balance**: [Amount](../../com.tink.model.misc/[common]-amount/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetCloseData///PointingToDeclaration/"></a>[BudgetCloseData](-budget-close-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetCloseData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetCloseData](-budget-close-data/index.md)(**budgetId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **budgetPeriod**: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.md), **currentTime**: <ERROR CLASS>) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetIdToPeriod///PointingToDeclaration/"></a>[BudgetIdToPeriod](-budget-id-to-period/index.md)| <a name="com.tink.model.insights/InsightData.BudgetIdToPeriod///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetIdToPeriod](-budget-id-to-period/index.md)(**budgetId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **budgetPeriod**: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.md))  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetResultData///PointingToDeclaration/"></a>[BudgetResultData](-budget-result-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetResultData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetResultData](-budget-result-data/index.md)(**budgetId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), **budgetPeriod**: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateFirstData///PointingToDeclaration/"></a>[BudgetSuggestCreateFirstData](-budget-suggest-create-first-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateFirstData///PointingToDeclaration/"></a>[common]  <br>Content  <br>object [BudgetSuggestCreateFirstData](-budget-suggest-create-first-data/index.md) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopCategoryData///PointingToDeclaration/"></a>[BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopCategoryData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data/index.md)(**categorySpending**: [AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.md), **suggestedBudgetAmount**: [Amount](../../com.tink.model.misc/[common]-amount/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopPrimaryCategoryData///PointingToDeclaration/"></a>[BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopPrimaryCategoryData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data/index.md)(**categorySpending**: [AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.md), **suggestedBudgetAmount**: [Amount](../../com.tink.model.misc/[common]-amount/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetSummaryAchievedData///PointingToDeclaration/"></a>[BudgetSummaryAchievedData](-budget-summary-achieved-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetSummaryAchievedData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetSummaryAchievedData](-budget-summary-achieved-data/index.md)(**achievedBudgets**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.md)>, **overspentBudgets**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.md)>, **savedAmount**: [Amount](../../com.tink.model.misc/[common]-amount/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.BudgetSummaryOverspentData///PointingToDeclaration/"></a>[BudgetSummaryOverspentData](-budget-summary-overspent-data/index.md)| <a name="com.tink.model.insights/InsightData.BudgetSummaryOverspentData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [BudgetSummaryOverspentData](-budget-summary-overspent-data/index.md)(**achievedBudgets**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.md)>, **overspentBudgets**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.md)>, **overspentAmount**: [Amount](../../com.tink.model.misc/[common]-amount/index.md)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.DoubleChargeData///PointingToDeclaration/"></a>[DoubleChargeData](-double-charge-data/index.md)| <a name="com.tink.model.insights/InsightData.DoubleChargeData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [DoubleChargeData](-double-charge-data/index.md)(**transactionIds**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.LargeExpenseData///PointingToDeclaration/"></a>[LargeExpenseData](-large-expense-data/index.md)| <a name="com.tink.model.insights/InsightData.LargeExpenseData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [LargeExpenseData](-large-expense-data/index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.MonthlySummaryExpensesByCategoryData///PointingToDeclaration/"></a>[MonthlySummaryExpensesByCategoryData](-monthly-summary-expenses-by-category-data/index.md)| <a name="com.tink.model.insights/InsightData.MonthlySummaryExpensesByCategoryData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [MonthlySummaryExpensesByCategoryData](-monthly-summary-expenses-by-category-data/index.md)(**month**: [YearMonth](../../com.tink.model.time/[common]-year-month/index.md), **expenses**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.md)>) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.NoData///PointingToDeclaration/"></a>[NoData](-no-data/index.md)| <a name="com.tink.model.insights/InsightData.NoData///PointingToDeclaration/"></a>[common]  <br>Content  <br>object [NoData](-no-data/index.md) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.UncategorizedTransactionData///PointingToDeclaration/"></a>[UncategorizedTransactionData](-uncategorized-transaction-data/index.md)| <a name="com.tink.model.insights/InsightData.UncategorizedTransactionData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [UncategorizedTransactionData](-uncategorized-transaction-data/index.md)(**transactionId**: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByCategoryData///PointingToDeclaration/"></a>[WeeklyExpensesByCategoryData](-weekly-expenses-by-category-data/index.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByCategoryData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [WeeklyExpensesByCategoryData](-weekly-expenses-by-category-data/index.md)(**week**: [YearWeek](../../com.tink.model.time/[common]-year-week/index.md), **expenses**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.md)>) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData///PointingToDeclaration/"></a>[WeeklyExpensesByDayData](-weekly-expenses-by-day-data/index.md)| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [WeeklyExpensesByDayData](-weekly-expenses-by-day-data/index.md)(**week**: [YearWeek](../../com.tink.model.time/[common]-year-week/index.md), **expensesByDay**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[ExpensesByDay](../../com.tink.model.relations/[common]-expenses-by-day/index.md)>) : [InsightData](index.md)  <br><br><br>
-| <a name="com.tink.model.insights/InsightData.WeeklyUncategorizedTransactionsData///PointingToDeclaration/"></a>[WeeklyUncategorizedTransactionsData](-weekly-uncategorized-transactions-data/index.md)| <a name="com.tink.model.insights/InsightData.WeeklyUncategorizedTransactionsData///PointingToDeclaration/"></a>[common]  <br>Content  <br>data class [WeeklyUncategorizedTransactionsData](-weekly-uncategorized-transactions-data/index.md)(**week**: [YearWeek](../../com.tink.model.time/[common]-year-week/index.md), **transactionIds**: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)<[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)>) : [InsightData](index.md)  <br><br><br>
+| [AccountBalanceLowData](-account-balance-low-data/index.html) | [common]<br>data class [AccountBalanceLowData](-account-balance-low-data/index.html)(val accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val balance: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [AggregationRefreshPsd2CredentialData](-aggregation-refresh-psd2-credential-data/index.html) | [common]<br>data class [AggregationRefreshPsd2CredentialData](-aggregation-refresh-psd2-credential-data/index.html)(val credential: [RefreshCredential](../../com.tink.model.credentials/[common]-refresh-credential/index.html)) : [InsightData](index.html) |
+| [BudgetCloseData](-budget-close-data/index.html) | [common]<br>data class [BudgetCloseData](-budget-close-data/index.html)(val budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val budgetPeriod: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.html), val currentTime: &lt;ERROR CLASS&gt;) : [InsightData](index.html) |
+| [BudgetIdToPeriod](-budget-id-to-period/index.html) | [common]<br>data class [BudgetIdToPeriod](-budget-id-to-period/index.html)(val budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val budgetPeriod: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.html)) |
+| [BudgetResultData](-budget-result-data/index.html) | [common]<br>data class [BudgetResultData](-budget-result-data/index.html)(val budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val budgetPeriod: [Budget.Period](../../com.tink.model.budget/[common]-budget/-period/index.html)) : [InsightData](index.html) |
+| [BudgetSuggestCreateFirstData](-budget-suggest-create-first-data/index.html) | [common]<br>object [BudgetSuggestCreateFirstData](-budget-suggest-create-first-data/index.html) : [InsightData](index.html) |
+| [BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data/index.html) | [common]<br>data class [BudgetSuggestCreateTopCategoryData](-budget-suggest-create-top-category-data/index.html)(val categorySpending: [AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.html), val suggestedBudgetAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data/index.html) | [common]<br>data class [BudgetSuggestCreateTopPrimaryCategoryData](-budget-suggest-create-top-primary-category-data/index.html)(val categorySpending: [AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.html), val suggestedBudgetAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [BudgetSummaryAchievedData](-budget-summary-achieved-data/index.html) | [common]<br>data class [BudgetSummaryAchievedData](-budget-summary-achieved-data/index.html)(val achievedBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.html)&gt;, val overspentBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.html)&gt;, val savedAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [BudgetSummaryOverspentData](-budget-summary-overspent-data/index.html) | [common]<br>data class [BudgetSummaryOverspentData](-budget-summary-overspent-data/index.html)(val achievedBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.html)&gt;, val overspentBudgets: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[InsightData.BudgetIdToPeriod](-budget-id-to-period/index.html)&gt;, val overspentAmount: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [CreditCardLimitCloseData](-credit-card-limit-close-data/index.html) | [common]<br>data class [CreditCardLimitCloseData](-credit-card-limit-close-data/index.html)(val account: [AccountWithName](../../com.tink.model.account/[common]-account-with-name/index.html), val availableCredit: [Amount](../../com.tink.model.misc/[common]-amount/index.html)) : [InsightData](index.html) |
+| [CreditCardLimitReachedData](-credit-card-limit-reached-data/index.html) | [common]<br>data class [CreditCardLimitReachedData](-credit-card-limit-reached-data/index.html)(val account: [AccountWithName](../../com.tink.model.account/[common]-account-with-name/index.html)) : [InsightData](index.html) |
+| [DoubleChargeData](-double-charge-data/index.html) | [common]<br>data class [DoubleChargeData](-double-charge-data/index.html)(val transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : [InsightData](index.html) |
+| [LargeExpenseData](-large-expense-data/index.html) | [common]<br>data class [LargeExpenseData](-large-expense-data/index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightData](index.html) |
+| [MonthlyExpenseTransactionsData](-monthly-expense-transactions-data/index.html) | [common]<br>data class [MonthlyExpenseTransactionsData](-monthly-expense-transactions-data/index.html)(val month: [YearMonth](../../com.tink.model.time/[common]-year-month/index.html), val transactionSummary: [TransactionSummary](../../com.tink.model.relations/[common]-transaction-summary/index.html)) : [InsightData](index.html) |
+| [MonthlySummaryExpensesByCategoryData](-monthly-summary-expenses-by-category-data/index.html) | [common]<br>data class [MonthlySummaryExpensesByCategoryData](-monthly-summary-expenses-by-category-data/index.html)(val month: [YearMonth](../../com.tink.model.time/[common]-year-month/index.html), val expenses: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.html)&gt;) : [InsightData](index.html) |
+| [NoData](-no-data/index.html) | [common]<br>object [NoData](-no-data/index.html) : [InsightData](index.html) |
+| [UncategorizedTransactionData](-uncategorized-transaction-data/index.html) | [common]<br>data class [UncategorizedTransactionData](-uncategorized-transaction-data/index.html)(val transactionId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightData](index.html) |
+| [WeeklyExpensesByCategoryData](-weekly-expenses-by-category-data/index.html) | [common]<br>data class [WeeklyExpensesByCategoryData](-weekly-expenses-by-category-data/index.html)(val week: [YearWeek](../../com.tink.model.time/[common]-year-week/index.html), val expenses: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[AmountByCategory](../../com.tink.model.relations/[common]-amount-by-category/index.html)&gt;) : [InsightData](index.html) |
+| [WeeklyExpensesByDayData](-weekly-expenses-by-day-data/index.html) | [common]<br>data class [WeeklyExpensesByDayData](-weekly-expenses-by-day-data/index.html)(val week: [YearWeek](../../com.tink.model.time/[common]-year-week/index.html), val expensesByDay: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[ExpensesByDay](../../com.tink.model.relations/[common]-expenses-by-day/index.html)&gt;) : [InsightData](index.html) |
+| [WeeklyExpenseTransactionsData](-weekly-expense-transactions-data/index.html) | [common]<br>data class [WeeklyExpenseTransactionsData](-weekly-expense-transactions-data/index.html)(val week: [YearWeek](../../com.tink.model.time/[common]-year-week/index.html), val transactionSummary: [TransactionSummary](../../com.tink.model.relations/[common]-transaction-summary/index.html)) : [InsightData](index.html) |
+| [WeeklyUncategorizedTransactionsData](-weekly-uncategorized-transactions-data/index.html) | [common]<br>data class [WeeklyUncategorizedTransactionsData](-weekly-uncategorized-transactions-data/index.html)(val week: [YearWeek](../../com.tink.model.time/[common]-year-week/index.html), val transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : [InsightData](index.html) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
-|---|---|
-| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/equals/#kotlin.Any?/PointingToDeclaration/"></a>[common]  <br>Content  <br>open operator fun [equals](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(other: [Any](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)?): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  <br><br><br>
-| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/hashCode/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [hashCode](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)  <br><br><br>
-| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)| <a name="kotlin/Any/toString/#/PointingToDeclaration/"></a>[common]  <br>Content  <br>open fun [toString](../../com.tink.service.user/[common]-user-profile-service-impl/index.md#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1647702525)(): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  <br><br><br>
+## Inheritors
 
 
-## Inheritors  
-  
-|  Name| 
+| Name |
 |---|
-| <a name="com.tink.model.insights/InsightData.NoData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.AccountBalanceLowData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetResultData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetSummaryAchievedData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetSummaryOverspentData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateFirstData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopCategoryData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetSuggestCreateTopPrimaryCategoryData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.BudgetCloseData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.UncategorizedTransactionData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.LargeExpenseData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.DoubleChargeData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByCategoryData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.WeeklyUncategorizedTransactionsData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.WeeklyExpensesByDayData///PointingToDeclaration/"></a>InsightData
-| <a name="com.tink.model.insights/InsightData.MonthlySummaryExpensesByCategoryData///PointingToDeclaration/"></a>InsightData
+| NoData |
+| AccountBalanceLowData |
+| AggregationRefreshPsd2CredentialData |
+| BudgetResultData |
+| BudgetSummaryAchievedData |
+| BudgetSummaryOverspentData |
+| BudgetSuggestCreateFirstData |
+| BudgetSuggestCreateTopCategoryData |
+| BudgetSuggestCreateTopPrimaryCategoryData |
+| BudgetCloseData |
+| CreditCardLimitCloseData |
+| CreditCardLimitReachedData |
+| UncategorizedTransactionData |
+| LargeExpenseData |
+| DoubleChargeData |
+| WeeklyExpensesByCategoryData |
+| WeeklyUncategorizedTransactionsData |
+| WeeklyExpensesByDayData |
+| MonthlySummaryExpensesByCategoryData |
+| MonthlyExpenseTransactionsData |
+| WeeklyExpenseTransactionsData |
 

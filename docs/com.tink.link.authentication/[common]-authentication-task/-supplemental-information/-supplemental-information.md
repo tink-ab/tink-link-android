@@ -1,14 +1,17 @@
 ---
-title: SupplementalInformation -
+title: SupplementalInformation
 ---
-//[link](../../../index.md)/[com.tink.link.authentication](../../index.md)/[[common]AuthenticationTask](../index.md)/[SupplementalInformation](index.md)/[SupplementalInformation](-supplemental-information.md)
+//[link](../../../../index.html)/[com.tink.link.authentication](../../index.html)/[[common]AuthenticationTask](../index.html)/[SupplementalInformation](index.html)/[SupplementalInformation](-supplemental-information.html)
 
 
 
-# SupplementalInformation  
-[common]  
-Content  
-fun [SupplementalInformation](-supplemental-information.md)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md))  
+# SupplementalInformation
+
+
+
+[common]\
+fun [SupplementalInformation](-supplemental-information.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+
 
 
 

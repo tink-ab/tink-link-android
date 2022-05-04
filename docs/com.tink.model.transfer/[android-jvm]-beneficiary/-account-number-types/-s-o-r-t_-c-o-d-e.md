@@ -1,14 +1,17 @@
 ---
-title: SORT_CODE -
+title: SORT_CODE
 ---
-//[link](../../../index.md)/[com.tink.model.transfer](../../index.md)/[[androidJvm]Beneficiary](../index.md)/[AccountNumberTypes](index.md)/[SORT_CODE](-s-o-r-t_-c-o-d-e.md)
+//[link](../../../../index.html)/[com.tink.model.transfer](../../index.html)/[[androidJvm]Beneficiary](../index.html)/[AccountNumberTypes](index.html)/[SORT_CODE](-s-o-r-t_-c-o-d-e.html)
 
 
 
-# SORT_CODE  
-[androidJvm]  
-Content  
-const val [SORT_CODE](-s-o-r-t_-c-o-d-e.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
+# SORT_CODE
+
+
+
+[androidJvm]\
+const val [SORT_CODE](-s-o-r-t_-c-o-d-e.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
 
 
 

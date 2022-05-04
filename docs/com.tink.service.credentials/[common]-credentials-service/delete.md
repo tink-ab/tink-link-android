@@ -1,14 +1,17 @@
 ---
-title: delete -
+title: delete
 ---
-//[link](../../index.md)/[com.tink.service.credentials](../index.md)/[[common]CredentialsService](index.md)/[delete](delete.md)
+//[link](../../../index.html)/[com.tink.service.credentials](../index.html)/[[common]CredentialsService](index.html)/[delete](delete.html)
 
 
 
-# delete  
-[common]  
-Content  
-abstract suspend fun [delete](delete.md)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))  
+# delete
+
+
+
+[common]\
+abstract suspend fun [delete](delete.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))
+
 
 
 

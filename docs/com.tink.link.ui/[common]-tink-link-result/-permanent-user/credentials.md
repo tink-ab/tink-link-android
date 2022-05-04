@@ -1,26 +1,28 @@
 ---
-title: credentials -
+title: credentials
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[common]TinkLinkResult](../index.md)/[PermanentUser](index.md)/[credentials](credentials.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[common]TinkLinkResult](../index.html)/[PermanentUser](index.html)/[credentials](credentials.html)
 
 
 
-# credentials  
-[common]  
-Content  
-val [credentials](credentials.md): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md)  
-More info  
+# credentials
 
 
-## Parameters  
-  
-common  
-  
-|  Name|  Summary| 
+
+[common]\
+val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)
+
+
+
+## Parameters
+
+
+common
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/credentials/#/PointingToDeclaration/"></a>credentials| <a name="com.tink.link.ui/TinkLinkResult.PermanentUser/credentials/#/PointingToDeclaration/"></a><br><br>[Credentials](../../../com.tink.model.credentials/[common]-credentials/index.md) connected to the user<br><br>
-  
-  
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
+
 
 
 

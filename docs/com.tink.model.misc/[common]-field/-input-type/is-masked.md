@@ -1,14 +1,17 @@
 ---
-title: isMasked -
+title: isMasked
 ---
-//[link](../../../index.md)/[com.tink.model.misc](../../index.md)/[[common]Field](../index.md)/[InputType](index.md)/[isMasked](is-masked.md)
+//[link](../../../../index.html)/[com.tink.model.misc](../../index.html)/[[common]Field](../index.html)/[InputType](index.html)/[isMasked](is-masked.html)
 
 
 
-# isMasked  
-[common]  
-Content  
-val [isMasked](is-masked.md): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)  
+# isMasked
+
+
+
+[common]\
+val [isMasked](is-masked.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
+
 
 
 

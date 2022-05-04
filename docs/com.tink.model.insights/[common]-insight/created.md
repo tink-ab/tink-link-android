@@ -1,14 +1,17 @@
 ---
-title: created -
+title: created
 ---
-//[link](../../index.md)/[com.tink.model.insights](../index.md)/[[common]Insight](index.md)/[created](created.md)
+//[link](../../../index.html)/[com.tink.model.insights](../index.html)/[[common]Insight](index.html)/[created](created.html)
 
 
 
-# created  
-[common]  
-Content  
-val [created](created.md): <ERROR CLASS>  
+# created
+
+
+
+[common]\
+val [created](created.html): &lt;ERROR CLASS&gt;
+
 
 
 

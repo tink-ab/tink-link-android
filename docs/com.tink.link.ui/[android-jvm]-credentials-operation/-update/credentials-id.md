@@ -1,26 +1,28 @@
 ---
-title: credentialsId -
+title: credentialsId
 ---
-//[link](../../../index.md)/[com.tink.link.ui](../../index.md)/[[androidJvm]CredentialsOperation](../index.md)/[Update](index.md)/[credentialsId](credentials-id.md)
+//[link](../../../../index.html)/[com.tink.link.ui](../../index.html)/[[androidJvm]CredentialsOperation](../index.html)/[Update](index.html)/[credentialsId](credentials-id.html)
 
 
 
-# credentialsId  
-[androidJvm]  
-Content  
-open override val [credentialsId](credentials-id.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)  
-More info  
+# credentialsId
 
 
-## Parameters  
-  
-androidJvm  
-  
-|  Name|  Summary| 
+
+[androidJvm]\
+open override val [credentialsId](credentials-id.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+
+
+## Parameters
+
+
+androidJvm
+
+| | |
 |---|---|
-| <a name="com.tink.link.ui/CredentialsOperation.Update/credentialsId/#/PointingToDeclaration/"></a>credentialsId| <a name="com.tink.link.ui/CredentialsOperation.Update/credentialsId/#/PointingToDeclaration/"></a><br><br>Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.md) to be updated<br><br>
-  
-  
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) to be updated |
+
 
 
 

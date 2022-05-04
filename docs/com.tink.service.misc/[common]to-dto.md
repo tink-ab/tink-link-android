@@ -1,14 +1,17 @@
 ---
-title: [common]toDto -
+title: [common]toDto
 ---
-//[link](../index.md)/[com.tink.service.misc](index.md)/[[common]toDto]([common]to-dto.md)
+//[link](../../index.html)/[com.tink.service.misc](index.html)/[[common]toDto]([common]to-dto.html)
 
 
 
-# toDto  
-[common]  
-Content  
-fun [Amount](../com.tink.model.misc/[common]-amount/index.md).[toDto]([common]to-dto.md)(): <ERROR CLASS>  
+# toDto
+
+
+
+[common]\
+fun [Amount](../com.tink.model.misc/[common]-amount/index.html).[toDto]([common]to-dto.html)(): &lt;ERROR CLASS&gt;
+
 
 
 

@@ -1,25 +1,28 @@
 ---
-title: com.tink.service.budget -
+title: com.tink.service.budget
 ---
-//[link](../index.md)/[com.tink.service.budget](index.md)
+//[link](../../index.html)/[com.tink.service.budget](index.html)
 
 
 
-# Package com.tink.service.budget  
+# Package com.tink.service.budget
 
 
-## Types  
-  
-|  Name|  Summary| 
+
+## Types
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.budget/BudgetService///PointingToDeclaration/"></a>BudgetService| <a name="com.tink.service.budget/BudgetService///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>interface [BudgetService]([common]-budget-service/index.md)  <br>[androidJvm]  <br>interface [BudgetService]([android-jvm]-budget-service/index.md)  <br><br><br>
-| <a name="com.tink.service.budget/BudgetServiceImpl///PointingToDeclaration/"></a>BudgetServiceImpl| <a name="com.tink.service.budget/BudgetServiceImpl///PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>class [BudgetServiceImpl]([common]-budget-service-impl/index.md)constructor(**api**: <ERROR CLASS>) : [BudgetService]([common]-budget-service/index.md)  <br>[androidJvm]  <br>class [BudgetServiceImpl]([android-jvm]-budget-service-impl/index.md)@Inject()constructor(**api**: BudgetApi) : [BudgetService]([android-jvm]-budget-service/index.md)  <br><br><br>
+| BudgetService | [common, androidJvm]<br>[common]<br>interface [BudgetService]([common]-budget-service/index.html)<br>[androidJvm]<br>interface [BudgetService]([android-jvm]-budget-service/index.html) |
+| BudgetServiceImpl | [common, androidJvm]<br>[common]<br>class [BudgetServiceImpl]([common]-budget-service-impl/index.html)constructor(val api: &lt;ERROR CLASS&gt;) : [BudgetService]([common]-budget-service/index.html)<br>[androidJvm]<br>class [BudgetServiceImpl]([android-jvm]-budget-service-impl/index.html)@Injectconstructor(val api: BudgetApi) : [BudgetService]([android-jvm]-budget-service/index.html) |
 
 
-## Functions  
-  
-|  Name|  Summary| 
+## Functions
+
+
+| Name | Summary |
 |---|---|
-| <a name="com.tink.service.budget//toCoreModel/#/PointingToDeclaration/"></a>toCoreModel| <a name="com.tink.service.budget//toCoreModel/#/PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): <ERROR CLASS>  <br>[common]  <br>fun <ERROR CLASS>.[toCoreModel]([common]to-core-model.md)(): [BudgetSpecification](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetSpecification%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525)  <br>[androidJvm]  <br>fun Budget.[toCoreModel]([android-jvm]to-core-model.md)(): [BudgetSpecification](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FBudgetSpecification%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090)  <br>[androidJvm]  <br>fun BudgetSummary.[toCoreModel]([android-jvm]to-core-model.md)(): [Budget.Summary](../com.tink.model.budget/[android-jvm]-budget/-summary/index.md)  <br>[androidJvm]  <br>fun BudgetTransaction.[toCoreModel]([android-jvm]to-core-model.md)(): [Budget.Transaction](../com.tink.model.budget/[android-jvm]-budget/-transaction/index.md)  <br>[androidJvm]  <br>fun Filter.[toCoreModel]([android-jvm]to-core-model.md)(): [Budget.Specification.Filter](../com.tink.model.budget/[android-jvm]-budget/-specification/-filter/index.md)  <br>[common]  <br>fun <ERROR CLASS>.[toCoreModel](to-core-model.md)(budgetAmount: [Amount](../com.tink.model.misc/[common]-amount/index.md)): <ERROR CLASS>  <br>[androidJvm]  <br>fun BudgetPeriod.[toCoreModel]([android-jvm]to-core-model.md)(budgetAmount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.md)): [Budget.Period](../com.tink.model.budget/[android-jvm]-budget/-period/index.md)  <br><br><br>
-| <a name="com.tink.service.budget//toDto/com.tink.model.budget.Budget.Periodicity.OneOff#/PointingToDeclaration/"></a>toDto| <a name="com.tink.service.budget//toDto/com.tink.model.budget.Budget.Periodicity.OneOff#/PointingToDeclaration/"></a>[common, androidJvm]  <br>Content  <br>[common]  <br>fun [OneOffPeriodicity](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FOneOffPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525).[toDto]([common]to-dto.md)(): <ERROR CLASS>  <br>[androidJvm]  <br>fun [OneOffPeriodicity](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FOneOffPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090).[toDto]([android-jvm]to-dto.md)(): OneOffPeriodicity  <br>[common]  <br>fun [RecurringPeriodicity](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FRecurringPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F1647702525).[toDto]([common]to-dto.md)(): <ERROR CLASS>  <br>[androidJvm]  <br>fun [RecurringPeriodicity](../com.tink.model.budget/index.md#%5Bcom.tink.model.budget%2FRecurringPeriodicity%2F%2F%2FPointingToDeclaration%2F%5D%2FClasslikes%2F-586840090).[toDto]([android-jvm]to-dto.md)(): RecurringPeriodicity  <br>[common]  <br>fun [Budget.Specification.Filter](../com.tink.model.budget/[common]-budget/-specification/-filter/index.md).[toDto]([common]to-dto.md)(): <ERROR CLASS>  <br>[androidJvm]  <br>fun [Budget.Specification.Filter](../com.tink.model.budget/[android-jvm]-budget/-specification/-filter/index.md).[toDto]([android-jvm]to-dto.md)(): Filter  <br><br><br>
+| toCoreModel | [common, androidJvm]<br>[common]<br>fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): [BudgetSpecification](../com.tink.model.budget/index.html#1357535401%2FClasslikes%2F-1713223439)<br>[common]<br>fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun Budget.[toCoreModel]([android-jvm]to-core-model.html)(): [BudgetSpecification](../com.tink.model.budget/index.html#1357535401%2FClasslikes%2F-812656150)<br>[androidJvm]<br>fun BudgetSummary.[toCoreModel]([android-jvm]to-core-model.html)(): [Budget.Summary](../com.tink.model.budget/[android-jvm]-budget/-summary/index.html)<br>[androidJvm]<br>fun BudgetTransaction.[toCoreModel]([android-jvm]to-core-model.html)(): [Budget.Transaction](../com.tink.model.budget/[android-jvm]-budget/-transaction/index.html)<br>[androidJvm]<br>fun Filter.[toCoreModel]([android-jvm]to-core-model.html)(): [Budget.Specification.Filter](../com.tink.model.budget/[android-jvm]-budget/-specification/-filter/index.html)<br>[common]<br>fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(budgetAmount: [Amount](../com.tink.model.misc/[common]-amount/index.html)): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun BudgetPeriod.[toCoreModel]([android-jvm]to-core-model.html)(budgetAmount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html)): [Budget.Period](../com.tink.model.budget/[android-jvm]-budget/-period/index.html) |
+| toDto | [common, androidJvm]<br>[common]<br>fun [OneOffPeriodicity](../com.tink.model.budget/index.html#668268061%2FClasslikes%2F-1713223439).[toDto]([common]to-dto.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun [OneOffPeriodicity](../com.tink.model.budget/index.html#668268061%2FClasslikes%2F-812656150).[toDto]([android-jvm]to-dto.html)(): OneOffPeriodicity<br>[common]<br>fun [RecurringPeriodicity](../com.tink.model.budget/index.html#-420361691%2FClasslikes%2F-1713223439).[toDto]([common]to-dto.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun [RecurringPeriodicity](../com.tink.model.budget/index.html#-420361691%2FClasslikes%2F-812656150).[toDto]([android-jvm]to-dto.html)(): RecurringPeriodicity<br>[common]<br>fun [Budget.Specification.Filter](../com.tink.model.budget/[common]-budget/-specification/-filter/index.html).[toDto]([common]to-dto.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun [Budget.Specification.Filter](../com.tink.model.budget/[android-jvm]-budget/-specification/-filter/index.html).[toDto]([android-jvm]to-dto.html)(): Filter |
 

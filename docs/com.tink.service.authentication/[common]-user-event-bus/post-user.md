@@ -1,14 +1,17 @@
 ---
-title: postUser -
+title: postUser
 ---
-//[link](../../index.md)/[com.tink.service.authentication](../index.md)/[[common]UserEventBus](index.md)/[postUser](post-user.md)
+//[link](../../../index.html)/[com.tink.service.authentication](../index.html)/[[common]UserEventBus](index.html)/[postUser](post-user.html)
 
 
 
-# postUser  
-[common]  
-Content  
-fun [postUser](post-user.md)(user: [User](../../com.tink.model.user/[common]-user/index.md)): <ERROR CLASS>  
+# postUser
+
+
+
+[common]\
+fun [postUser](post-user.html)(user: [User](../../com.tink.model.user/[common]-user/index.html)): &lt;ERROR CLASS&gt;
+
 
 
 
