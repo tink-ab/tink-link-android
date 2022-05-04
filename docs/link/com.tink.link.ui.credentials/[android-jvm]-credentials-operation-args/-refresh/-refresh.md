@@ -10,7 +10,7 @@ title: Refresh
 
 
 [androidJvm]\
-fun [Refresh](-refresh.html)(provider: Provider, credentials: Credentials, authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+fun [Refresh](-refresh.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
 
 
 

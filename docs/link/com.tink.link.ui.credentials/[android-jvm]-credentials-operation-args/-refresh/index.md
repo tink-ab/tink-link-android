@@ -10,7 +10,7 @@ title: Refresh
 
 
 [androidJvm]\
-data class [Refresh](index.html)(val provider: Provider, val credentials: Credentials, val authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [CredentialsOperationArgs](../index.html)
+data class [Refresh](index.html)(val provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html), val credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html), val authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) : [CredentialsOperationArgs](../index.html)
 
 
 
@@ -19,7 +19,7 @@ data class [Refresh](index.html)(val provider: Provider, val credentials: Creden
 
 | | |
 |---|---|
-| [Refresh](-refresh.html) | [androidJvm]<br>fun [Refresh](-refresh.html)(provider: Provider, credentials: Credentials, authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
+| [Refresh](-refresh.html) | [androidJvm]<br>fun [Refresh](-refresh.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 
 
 ## Functions
@@ -27,8 +27,8 @@ data class [Refresh](index.html)(val provider: Provider, val credentials: Creden
 
 | Name | Summary |
 |---|---|
-| [describeContents](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [writeToParcel](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
 ## Properties
@@ -37,6 +37,6 @@ data class [Refresh](index.html)(val provider: Provider, val credentials: Creden
 | Name | Summary |
 |---|---|
 | [authenticate](authenticate.html) | [androidJvm]<br>val [authenticate](authenticate.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
-| [credentials](credentials.html) | [androidJvm]<br>val [credentials](credentials.html): Credentials |
-| [provider](provider.html) | [androidJvm]<br>open override val [provider](provider.html): Provider |
+| [credentials](credentials.html) | [androidJvm]<br>val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) |
+| [provider](provider.html) | [androidJvm]<br>open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html) |
 

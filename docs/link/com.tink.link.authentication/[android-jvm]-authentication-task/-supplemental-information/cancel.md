@@ -10,7 +10,7 @@ title: cancel
 
 
 [androidJvm]\
-fun [cancel](cancel.html)(resultHandler: ResultHandler&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+fun [cancel](cancel.html)(resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
 
 
 

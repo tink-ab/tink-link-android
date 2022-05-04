@@ -10,7 +10,7 @@ title: filter
 
 
 [androidJvm]\
-val [filter](filter.html): ProviderFilter
+val [filter](filter.html): [ProviderFilter](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html)
 
 
 

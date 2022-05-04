@@ -10,7 +10,7 @@ title: Create
 
 
 [common]\
-fun [Create](-create.html)(provider: &lt;ERROR CLASS&gt;)
+fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html))
 
 
 

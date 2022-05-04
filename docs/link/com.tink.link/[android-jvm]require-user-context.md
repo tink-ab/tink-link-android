@@ -10,7 +10,7 @@ title: [androidJvm]requireUserContext
 
 
 [androidJvm]\
-fun Tink.[requireUserContext]([android-jvm]require-user-context.html)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html)
+fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[requireUserContext]([android-jvm]require-user-context.html)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html)
 
 
 

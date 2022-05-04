@@ -10,7 +10,7 @@ title: credentials
 
 
 [common]\
-open override val [credentials](credentials.html): &lt;ERROR CLASS&gt;
+open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)
 
 
 

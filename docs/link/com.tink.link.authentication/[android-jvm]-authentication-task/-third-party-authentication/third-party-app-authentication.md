@@ -10,7 +10,7 @@ title: thirdPartyAppAuthentication
 
 
 [androidJvm]\
-val [thirdPartyAppAuthentication](third-party-app-authentication.html): ThirdPartyAppAuthentication
+val [thirdPartyAppAuthentication](third-party-app-authentication.html): [ThirdPartyAppAuthentication](../../../com.tink.model.authentication/[android-jvm]-third-party-app-authentication/index.html)
 
 
 

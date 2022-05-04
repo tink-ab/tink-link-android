@@ -10,7 +10,7 @@ title: provider
 
 
 [common]\
-open override val [provider](provider.html): &lt;ERROR CLASS&gt;
+open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[common]-provider/index.html)
 
 
 

@@ -10,7 +10,7 @@ title: credentials
 
 
 [androidJvm]\
-open override val [credentials](credentials.html): Credentials? = null
+open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null
 
 
 

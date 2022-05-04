@@ -10,7 +10,7 @@ title: provider
 
 
 [androidJvm]\
-open override val [provider](provider.html): Provider
+open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html)
 
 
 

@@ -10,7 +10,7 @@ title: ExistingUser
 
 
 [common]\
-fun [ExistingUser](-existing-user.html)(user: &lt;ERROR CLASS&gt;)
+fun [ExistingUser](-existing-user.html)(user: [User](../../../com.tink.model.user/[common]-user/index.html))
 
 
 

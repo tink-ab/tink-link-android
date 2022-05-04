@@ -10,7 +10,7 @@ title: Authenticate
 
 
 [androidJvm]\
-fun [Authenticate](-authenticate.html)(provider: Provider, credentials: Credentials)
+fun [Authenticate](-authenticate.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
 
 
 

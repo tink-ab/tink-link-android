@@ -10,7 +10,7 @@ title: ExistingUser
 
 
 [androidJvm]\
-fun [ExistingUser](-existing-user.html)(user: User)
+fun [ExistingUser](-existing-user.html)(user: [User](../../../com.tink.model.user/[android-jvm]-user/index.html))
 
 
 

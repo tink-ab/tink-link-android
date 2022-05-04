@@ -10,7 +10,7 @@ title: TemporaryUser
 
 
 [androidJvm]\
-fun [TemporaryUser](-temporary-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: Credentials)
+fun [TemporaryUser](-temporary-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
 
 
 
@@ -22,7 +22,7 @@ androidJvm
 | | |
 |---|---|
 | authorizationCode | Authorization code from authorizing the user towards a new set of scopes |
-| credentials | Credentials connected to the user |
+| credentials | [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) connected to the user |
 
 
 

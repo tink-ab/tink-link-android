@@ -10,7 +10,7 @@ title: submit
 
 
 [androidJvm]\
-fun [submit](submit.html)(filledFields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, resultHandler: ResultHandler&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+fun [submit](submit.html)(filledFields: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;, resultHandler: [ResultHandler](../../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
 
 
 
@@ -25,7 +25,7 @@ androidJvm
 
 | | |
 |---|---|
-| filledFields | A key-value map of the supplemental information. The key should always be Field.name from [fields](fields.html) and the value should be the user input of that field. |
+| filledFields | A key-value map of the supplemental information. The key should always be [Field.name](../../../com.tink.model.misc/[android-jvm]-field/name.html) from [fields](fields.html) and the value should be the user input of that field. |
 
 
 

@@ -10,7 +10,7 @@ title: AwaitingAuthentication
 
 
 [common]\
-fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), credentials: &lt;ERROR CLASS&gt;)
+fun [AwaitingAuthentication](-awaiting-authentication.html)(authenticationTask: [AuthenticationTask](../../../com.tink.link.authentication/[common]-authentication-task/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
 
 
 

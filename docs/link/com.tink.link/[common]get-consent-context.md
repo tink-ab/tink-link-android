@@ -10,7 +10,7 @@ title: [common]getConsentContext
 
 
 [common]\
-fun &lt;ERROR CLASS&gt;.[getConsentContext]([common]get-consent-context.html)(): &lt;ERROR CLASS&gt;
+fun [Tink](../com.tink.core/[common]-tink/index.html).[getConsentContext]([common]get-consent-context.html)(): &lt;ERROR CLASS&gt;
 
 
 

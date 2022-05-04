@@ -21,7 +21,7 @@ androidJvm
 
 | | |
 |---|---|
-| credentialsId | Id of the Credentials to be refreshed |
+| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) to be refreshed |
 
 
 

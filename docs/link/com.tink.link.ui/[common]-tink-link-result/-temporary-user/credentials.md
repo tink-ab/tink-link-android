@@ -10,7 +10,7 @@ title: credentials
 
 
 [common]\
-val [credentials](credentials.html): &lt;ERROR CLASS&gt;
+val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)
 
 
 
@@ -21,7 +21,7 @@ common
 
 | | |
 |---|---|
-| credentials | Credentials connected to the user |
+| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
 
 
 

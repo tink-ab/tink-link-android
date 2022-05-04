@@ -10,7 +10,7 @@ title: SupplementalInformation
 
 
 [androidJvm]\
-fun [SupplementalInformation](-supplemental-information.html)(credentials: Credentials)
+fun [SupplementalInformation](-supplemental-information.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
 
 
 

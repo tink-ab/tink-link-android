@@ -10,7 +10,7 @@ title: ThirdPartyAuthentication
 
 
 [androidJvm]\
-fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: Credentials)
+fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
 
 
 

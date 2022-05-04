@@ -10,7 +10,7 @@ title: Create
 
 
 [common]\
-data class [Create](index.html)(val provider: &lt;ERROR CLASS&gt;) : [CredentialsOperationArgs](../index.html)
+data class [Create](index.html)(val provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html)) : [CredentialsOperationArgs](../index.html)
 
 
 
@@ -19,7 +19,7 @@ data class [Create](index.html)(val provider: &lt;ERROR CLASS&gt;) : [Credential
 
 | | |
 |---|---|
-| [Create](-create.html) | [common]<br>fun [Create](-create.html)(provider: &lt;ERROR CLASS&gt;) |
+| [Create](-create.html) | [common]<br>fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html)) |
 
 
 ## Properties
@@ -27,5 +27,5 @@ data class [Create](index.html)(val provider: &lt;ERROR CLASS&gt;) : [Credential
 
 | Name | Summary |
 |---|---|
-| [provider](provider.html) | [common]<br>open override val [provider](provider.html): &lt;ERROR CLASS&gt; |
+| [provider](provider.html) | [common]<br>open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[common]-provider/index.html) |
 
