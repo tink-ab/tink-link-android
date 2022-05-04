@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <resources>
     <string name="tink_provider_list_title">Escolha o banco</string>
     <string name="tink_provider_list_search_hint">Procurar por banco ou cartão</string>
@@ -63,6 +64,7 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <!-- TODO: Non-translatable strings -->
     <string name="tink_credentials_empty_fields_instructions_text_1">Será transferido de forma segura para %1$s.</string>
     <string name="tink_credentials_empty_fields_instructions_text_2">Será obrigado a autenticar-se.</string>
     <string name="tink_credentials_empty_fields_instructions_text_3">Depois de autenticado voltará a ser redirecionado.</string>
