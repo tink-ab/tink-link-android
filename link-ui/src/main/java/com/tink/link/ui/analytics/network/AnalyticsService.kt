@@ -12,10 +12,10 @@ import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.analytics.models.ViewEventDto
 import okhttp3.OkHttpClient
-import org.threeten.bp.ZonedDateTime
-import org.threeten.bp.format.DateTimeFormatter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 internal object AnalyticsService {
 

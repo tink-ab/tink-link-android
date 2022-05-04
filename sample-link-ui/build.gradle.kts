@@ -44,7 +44,6 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
     implementation(Dependencies.timber)
-    implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
 }

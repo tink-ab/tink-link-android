@@ -27,6 +27,10 @@ android {
         }
     }
 
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+    }
+
     sourceSets {
         val sharedTestDir = "src/sharedTest/java"
         getByName("test") {
@@ -47,6 +51,8 @@ android {
 dependencies {
     api(project(":link"))
 
+    coreLibraryDesugaring(Dependencies.desugar)
+
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
     implementation(Dependencies.Androidx.core_ktx)
@@ -62,7 +68,6 @@ dependencies {
     implementation(Dependencies.Androidx.navigation_ui)
 
     implementation(Dependencies.timber)
-    implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
     implementation(Dependencies.picasso)
