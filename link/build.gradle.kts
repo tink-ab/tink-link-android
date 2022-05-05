@@ -3,8 +3,8 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("org.jetbrains.dokka").version(Versions.dokka)
     id("com.github.ben-manes.versions") version "0.38.0"
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -72,29 +72,15 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
         configureEach {
             sourceRoots
                 .from(rootDir.resolve("link/src"))
-                .from(rootDir.resolve("link-payments/src"))
                 .from(rootDir.resolve("link-ui/src"))
                 .from(rootDir.resolve("../tink-sdk-core-android/core/src"))
                 .from(rootDir.resolve("../tink-sdk-core-android/models/src"))
                 .from(rootDir.resolve("../tink-sdk-core-android/service/src"))
-
-            samples
-                .from(rootDir.resolve("link-payments/src/main/java/com/tink/link/payments/codeexamples"))
-                .from(rootDir.resolve("link-ui/src/main/java/com/tink/link/ui/codeexamples"))
         }
     }
 
     doFirst {
         println("Deleting old /docs")
         delete("../docs")
-    }
-    doLast {
-        println("Copying docs from /docs/link to /docs")
-        copy {
-            from("../docs/link")
-            into("../docs")
-        }
-        println("Deleting /docs/link")
-        delete("../docs/link")
     }
 }
