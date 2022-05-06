@@ -26,14 +26,6 @@
       android:name="com.tink.link.ui.TinkLinkUiActivity"
       android:exported="false"
       android:launchMode="singleTask">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-        <data
-          android:scheme="@string/redirect_uri_scheme"
-          android:host="@string/redirect_uri_host" />
-      </intent-filter>
     </activity>
 
   </application>
