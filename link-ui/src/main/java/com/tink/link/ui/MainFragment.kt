@@ -73,10 +73,9 @@ internal class MainFragment : Fragment() {
     }
 
     private fun showClientConfigurationErrorDialog(error: ClientConfigurationCheck) {
-        // TODO: add correct error message (Onesky!)
         val errorMessageRes = when (error) {
             ClientConfigurationCheck.GENERIC_ERROR -> R.string.tink_error_unknown
-            ClientConfigurationCheck.AUTHENTICATION_ERROR -> R.string.tink_error_credentials_already_exists
+            ClientConfigurationCheck.AUTHENTICATION_ERROR -> R.string.tink_startup_wrong_redirect_uri_dialog_message
             else -> null
         }
         errorDialog = SimpleErrorDialogFactory.createDialog(
