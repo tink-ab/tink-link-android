@@ -51,7 +51,6 @@ internal abstract class TinkLinkComponent {
         }
     }
 
-    // TODO: use Dagger to inject the TinkLinkErrorHandler into the client
     internal fun getErrorHandler(): TinkLinkErrorHandler = TinkLinkErrorHandlerFactory.createErrorHandler()
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
