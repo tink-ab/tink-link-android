@@ -125,10 +125,12 @@ class TinkLinkUiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
-        intent.extras?.getBoolean(ARG_FIRST_LAUNCH)?.let { isFirstLaunch -> if(isFirstLaunch) {
-            Timber.d("[TinkLink]: Version ${BuildConfig.libraryVersion}")
-            Timber.d("[TinkCore]: Version ${com.tink.core.BuildConfig.libraryVersion}")
-        } }
+        intent.extras?.getBoolean(ARG_FIRST_LAUNCH)?.let { isFirstLaunch ->
+            if (isFirstLaunch) {
+                Timber.d("[TinkLink]: Version ${BuildConfig.libraryVersion}")
+                Timber.d("[TinkCore]: Version ${com.tink.core.BuildConfig.libraryVersion}")
+            }
+        }
         setContentView(R.layout.tink_activity_main)
         findNavController(R.id.nav_host_fragment).setGraph(
             R.navigation.tink_nav_graph,
