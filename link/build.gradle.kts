@@ -3,8 +3,9 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("com.github.ben-manes.versions") version "0.38.0"
     id("org.jetbrains.dokka")
+    id("org.jlleitschuh.gradle.ktlint")
+    id("com.github.ben-manes.versions") version "0.38.0"
 }
 
 android {
@@ -25,7 +26,6 @@ android {
         }
     }
     namespace = "com.tink.link"
-
 }
 
 dependencies {
