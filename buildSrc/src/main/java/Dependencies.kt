@@ -63,7 +63,7 @@ object Dependencies {
     const val desugar = "com.android.tools:desugar_jdk_libs:1.1.5"
 
     object Tink {
-        private const val coreVersion = "0.8.3"
+        private const val coreVersion = "0.8.4"
         const val core = "com.tink:core:$coreVersion"
     }
 }
