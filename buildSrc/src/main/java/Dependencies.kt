@@ -5,7 +5,7 @@ object Versions {
     const val targetSdk = 31
 
     const val gradle = "7.2.0"
-    const val kotlin = "1.5.31"
+    const val kotlin = "1.6.21"
     const val dagger = "2.35.1"
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
