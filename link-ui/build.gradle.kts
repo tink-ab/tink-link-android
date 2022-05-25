@@ -46,6 +46,7 @@ android {
     }
 
     resourcePrefix("tink_")
+    namespace = "com.tink.link.ui"
 }
 
 dependencies {
