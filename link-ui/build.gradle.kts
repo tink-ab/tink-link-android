@@ -63,8 +63,6 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
-    kapt(Dependencies.Moshi.moshi_codegen)
-
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
 
