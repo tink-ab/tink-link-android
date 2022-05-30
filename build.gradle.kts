@@ -1,10 +1,10 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.1.2")
+        classpath("com.android.tools.build:gradle:${Versions.gradle}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation}")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:${Versions.dokka}")
@@ -15,7 +15,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Remove jcenter when we can, currently blocked by this https://youtrack.jetbrains.com/issue/KT-44730
     }
 }
 

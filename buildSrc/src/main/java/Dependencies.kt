@@ -4,13 +4,13 @@ object Versions {
     const val minSdk = 21
     const val targetSdk = 31
 
-    const val kotlin = "1.5.31"
+    const val gradle = "7.2.0"
+    const val kotlin = "1.6.21"
     const val dagger = "2.35.1"
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
-    const val navigation = "2.3.5"
+    const val navigation = "2.4.2"
     const val dokka = "1.6.21"
-    const val moshi = "1.12.0"
     const val mockk = "1.12.2"
     const val espresso = "3.4.0"
 }
@@ -46,10 +46,6 @@ object Dependencies {
         const val test_assertj = "org.assertj:assertj-core:3.22.0"
         const val test_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
         const val test_mockwebserver = "com.squareup.okhttp3:mockwebserver:4.3.1"
-    }
-
-    object Moshi {
-        const val moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
     }
 
     const val material_components = "com.google.android.material:material:1.3.0"
