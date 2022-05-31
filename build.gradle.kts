@@ -11,6 +11,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
+}
+
 allprojects {
     repositories {
         google()
@@ -28,6 +32,4 @@ subprojects {
     tasks {
         withType(Javadoc::class).all { enabled = false }
     }
-
-    apply { from("../ktlint.gradle") }
 }

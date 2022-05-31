@@ -54,7 +54,6 @@ object Dependencies {
     const val junit = "junit:junit:4.13.2"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val picasso = "com.squareup.picasso:picasso:2.8"
-    const val ktlint = "com.pinterest:ktlint:0.45.1"
     const val zxing = "com.google.zxing:core:3.4.1"
     const val desugar = "com.android.tools:desugar_jdk_libs:1.1.5"
 
