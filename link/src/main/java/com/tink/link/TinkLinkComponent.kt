@@ -8,6 +8,8 @@ import com.tink.link.consent.ConsentContext
 import com.tink.link.core.access.AccessRepository
 import com.tink.link.core.credentials.CredentialsRepository
 import com.tink.link.core.user.UserContext
+import com.tink.link.errorhandler.TinkLinkErrorHandler
+import com.tink.link.errorhandler.TinkLinkErrorHandlerFactory
 import com.tink.model.user.Scope
 import com.tink.model.user.User
 import com.tink.model.user.UserInfo
@@ -48,6 +50,8 @@ internal abstract class TinkLinkComponent {
             accessRepository.authorize(scopes, resultHandler)
         }
     }
+
+    internal fun getErrorHandler(): TinkLinkErrorHandler = TinkLinkErrorHandlerFactory.createErrorHandler()
 
     internal fun getUserContext(): UserContext? = Tink.getUser()?.let { _userContext }
 

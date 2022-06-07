@@ -151,8 +151,8 @@ internal class CredentialsViewModel : ViewModel() {
     private fun postCredentials(credentials: Credentials?) {
         credentials?.let {
             addedCredentials[it.providerName] = it
+            _credentials.postValue(it)
         }
-        _credentials.postValue(credentials)
     }
 
     /**
@@ -214,9 +214,7 @@ internal class CredentialsViewModel : ViewModel() {
 
     fun setCredentialsForProvider(providerName: String) {
         val credentialsForProvider = addedCredentials[providerName]
-        if (credentialsForProvider != null) {
-            _credentials.postValue(credentialsForProvider)
-        }
+        credentialsForProvider?.let { _credentials.postValue(it) }
     }
 
     private fun sessionHasExpired(credentials: Credentials) =
