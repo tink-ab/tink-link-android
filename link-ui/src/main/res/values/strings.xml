@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Search for a bank or card</string>
     <string name="tink_provider_list_error_title">We are sorry, but we could not load any banks at the moment</string>
     <string name="tink_provider_list_error_description">This could be a temporary error, please try again and see if the problem persists.</string>
+    <string name="tink_provider_list_empty">No banks found</string>
     <string name="tink_provider_list_error_retry_button">Try again</string>
     <string name="tink_provider_select_authentication_user_type_title">Login type</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personal</string>
