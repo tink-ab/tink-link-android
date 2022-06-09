@@ -11,7 +11,7 @@ interface TinkLinkErrorHandler {
         nonFatalErrorMessage: String,
         t: Throwable
     )
-    fun handleNonHttpError(message: String)
+    fun handleInternalError(message: String)
 }
 
 class TinkLinkReleaseErrorHandler : TinkLinkErrorHandler {
@@ -25,7 +25,7 @@ class TinkLinkReleaseErrorHandler : TinkLinkErrorHandler {
         // left empty intentionally. Don't throw exceptions or log in production
     }
 
-    override fun handleNonHttpError(message: String) {
+    override fun handleInternalError(message: String) {
         // left empty intentionally.
     }
 }
@@ -44,7 +44,7 @@ class TinkLinkDebugErrorHandler : TinkLinkErrorHandler {
             Timber.e(nonFatalErrorMessage)
         }
     }
-    override fun handleNonHttpError(message: String) {
+    override fun handleInternalError(message: String) {
         Timber.e(message)
     }
 }

@@ -48,14 +48,14 @@ internal class MainViewModel : ViewModel() {
                         errorHandler.handleHttpError(
                             errorCode = tinkLinkErrorInfo.code,
                             fatalErrorCode = 401,
-                            fatalErrorMessage = "Redirect URI is wrong. Please make sure to use the same 'redirect' URI defined in the Tink console",
+                            fatalErrorMessage = "Found a problem in TinkLink configuration. Please check that the access token and the 'redirect' URI are correct. Please make sure to use the same 'redirect' URI defined in the Tink console",
                             nonFatalErrorMessage = "Error from api/v1/oauth/describe",
                             t = it
                         )
                         ClientConfigurationCheck.AUTHENTICATION_ERROR
                     }
                     is TinkLinkErrorInfo.InternalError -> {
-                        errorHandler.handleNonHttpError("Non HTTP error from api/v1/oauth/describe")
+                        errorHandler.handleInternalError("Generic error from api/v1/oauth/describe")
                         ClientConfigurationCheck.GENERIC_ERROR
                     }
                 }
