@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Søg efter bank eller kort</string>
     <string name="tink_provider_list_error_title">Vi beklager, men vi kunne ikke indlæse nogen banker i øjeblikket</string>
     <string name="tink_provider_list_error_description">Vi er blevet oplyst om denne fejl og arbejder hårdt på at løse den. Hav lidt tålmodighed med os, og prøv så lidt senere.</string>
+    <string name="tink_provider_list_empty">Ingen banker fundet</string>
     <string name="tink_provider_list_error_retry_button">Prøv igen</string>
     <string name="tink_provider_select_authentication_user_type_title">Type af log ind</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personligt</string>

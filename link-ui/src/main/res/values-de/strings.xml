@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Nach Bank oder Karte suchen</string>
     <string name="tink_provider_list_error_title">Leider können wir derzeit keine Banken laden</string>
     <string name="tink_provider_list_error_description">Wir sind über diesen Fehler informiert und arbeiten hart daran, ihn zu beheben. Bitte haben Sie Geduld und versuchen Sie es etwas später noch einmal.</string>
+    <string name="tink_provider_list_empty">Keine Banken gefunden</string>
     <string name="tink_provider_list_error_retry_button">Wiederholen</string>
     <string name="tink_provider_select_authentication_user_type_title">Anmeldeart</string>
     <string name="tink_provider_select_authentication_user_type_personal">Persönlich</string>

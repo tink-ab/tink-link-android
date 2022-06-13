@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Rechercher une banque ou une carte</string>
     <string name="tink_provider_list_error_title">Nous sommes navrés, mais nous n\'avons pu charger aucune banque pour l\'instant</string>
     <string name="tink_provider_list_error_description">Nous avons été informés de cette erreur et nous faisons tout notre possible pour la résoudre. Veuillez patienter et réessayer un peu plus tard.</string>
+    <string name="tink_provider_list_empty">Aucune banque trouvée</string>
     <string name="tink_provider_list_error_retry_button">Réessayer</string>
     <string name="tink_provider_select_authentication_user_type_title">Type de connexion</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personnelle</string>

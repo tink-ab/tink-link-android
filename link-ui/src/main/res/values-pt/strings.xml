@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Procurar por banco ou cartão</string>
     <string name="tink_provider_list_error_title">Lamentamos, mas não conseguimos, de momento, carregar nenhum banco</string>
     <string name="tink_provider_list_error_description">Estamos informados quanto a este erro e estamos a trabalhar arduamente para o resolver. Aguardar um pouco e tente novamente mais tarde.</string>
+    <string name="tink_provider_list_empty">Não foram encontrados bancos</string>
     <string name="tink_provider_list_error_retry_button">Voltar a tentar</string>
     <string name="tink_provider_select_authentication_user_type_title">Tipo de início de sessão</string>
     <string name="tink_provider_select_authentication_user_type_personal">Pessoal</string>

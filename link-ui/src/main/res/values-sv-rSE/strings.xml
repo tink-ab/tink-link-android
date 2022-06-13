@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Sök efter banker eller kort</string>
     <string name="tink_provider_list_error_title">Inga banker hittades</string>
     <string name="tink_provider_list_error_description">Det kan vara ett tillfälligt fel. Försök igen och se om problemet kvarstår.</string>
+    <string name="tink_provider_list_empty">Inga banker hittades</string>
     <string name="tink_provider_list_error_retry_button">Försök igen</string>
     <string name="tink_provider_select_authentication_user_type_title">Inloggningstyp</string>
     <string name="tink_provider_select_authentication_user_type_personal">Logga in som privatkund</string>
