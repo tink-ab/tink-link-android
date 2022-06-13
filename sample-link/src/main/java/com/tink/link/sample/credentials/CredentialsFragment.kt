@@ -90,15 +90,10 @@ class CredentialsFragment : Fragment(R.layout.fragment_credentials) {
         }
 
         viewModel.statusText.observe(
-            viewLifecycleOwner,
-            Observer { statusText ->
-                if (statusText != null) {
-                    status.text = "Status = $statusText"
-                } else {
-                    status.text = ""
-                }
-            }
-        )
+            viewLifecycleOwner
+        ) { statusText ->
+            status.text = if (statusText.isNotEmpty()) "Status = $statusText" else ""
+        }
 
         viewModel.viewState.observe(
             viewLifecycleOwner,
