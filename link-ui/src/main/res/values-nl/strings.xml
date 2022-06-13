@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Zoek een bank of pas</string>
     <string name="tink_provider_list_error_title">Het spijt ons, maar we konden op dit moment geen banken laden.</string>
     <string name="tink_provider_list_error_description">We zijn op de hoogte van deze fout en werken hard aan een oplossing. We hopen dat je even geduld hebt en het later opnieuw wilt proberen.</string>
+    <string name="tink_provider_list_empty">Geen banken gevonden</string>
     <string name="tink_provider_list_error_retry_button">Opnieuw proberen</string>
     <string name="tink_provider_select_authentication_user_type_title">Inlogtype</string>
     <string name="tink_provider_select_authentication_user_type_personal">Persoonlijk</string>

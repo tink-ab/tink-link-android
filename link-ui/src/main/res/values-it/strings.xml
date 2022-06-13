@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Cerca una banca o una carta</string>
     <string name="tink_provider_list_error_title">Siamo spiacenti, ma al momento non è possibile caricare alcuna banca</string>
     <string name="tink_provider_list_error_description">Siamo al corrente di questo errore e ci stiamo adoperando per risolverlo. Ti invitiamo ad avere pazienza e riprovare più tardi.</string>
+    <string name="tink_provider_list_empty">Nessuna banca trovata</string>
     <string name="tink_provider_list_error_retry_button">Riprova</string>
     <string name="tink_provider_select_authentication_user_type_title">Tipo di accesso</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personale</string>

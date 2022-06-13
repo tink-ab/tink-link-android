@@ -4,6 +4,7 @@
     <string name="tink_provider_list_search_hint">Etsi pankkia tai korttia</string>
     <string name="tink_provider_list_error_title">Emme valitettavasti voineet ladata yhtään pankkia tällä kertaa</string>
     <string name="tink_provider_list_error_description">Olemme tietoisia tästä virheestä ja pyrimme ratkaisemaan sen. Pyydämme, että olet kärsivällinen ja yrität uudelleen hieman myöhemmin.</string>
+    <string name="tink_provider_list_empty">Pankkeja ei löytynyt</string>
     <string name="tink_provider_list_error_retry_button">Yritä uudelleen</string>
     <string name="tink_provider_select_authentication_user_type_title">Kirjautumistyyppi</string>
     <string name="tink_provider_select_authentication_user_type_personal">Henkilökohtainen</string>
