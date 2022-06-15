@@ -13,18 +13,18 @@ then
   git switch -c master-dry-run-2 public/master_2
   git push --set-upstream public master-dry-run-2
 
-  git checkout master-for-public
+  git checkout public-master
   git pull
-  git checkout -b master-for-public-dry-run
-  git push --set-upstream origin master-for-public-dry-run
+  git checkout -b public-master-dry-run
+  git push --set-upstream origin public-master-dry-run
 
   privateRepoMasterBranch=master-dry-run
-  masterForPublicBranch=master-for-public-dry-run
+  masterForPublicBranch=public-master-dry-run
   publicRepoMasterBranch=master-dry-run-2
 else
   privateRepoMasterBranch=master
-  masterForPublicBranch=master-for-public
-  publicRepoMasterBranch=master-2
+  masterForPublicBranch=public-master
+  publicRepoMasterBranch=master
 fi
 
 echo "--------> Initialized branches"
