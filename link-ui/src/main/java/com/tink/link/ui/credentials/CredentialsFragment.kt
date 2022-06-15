@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.text.method.LinkMovementMethod
 import android.view.View
-import android.view.inputmethod.EditorInfo
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.UiThread
 import androidx.appcompat.app.AlertDialog
@@ -260,15 +259,8 @@ internal class CredentialsFragment : Fragment(R.layout.tink_fragment_credentials
             if (credentialsFields.childCount > 0) {
                 credentialsFields.removeAllViews()
             }
-
-            fieldList.forEachIndexed { index, field ->
-                val isLast = index == fieldList.lastIndex
-                credentialsFields.addView(
-                    field.toView(
-                        requireContext(),
-                        if (isLast) EditorInfo.IME_ACTION_DONE else EditorInfo.IME_ACTION_NEXT
-                    )
-                )
+            for (field in fieldList) {
+                credentialsFields.addView(field.toView(requireContext()))
             }
         }
 

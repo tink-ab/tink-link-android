@@ -5,7 +5,6 @@ import android.text.InputFilter
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
-import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.updatePadding
@@ -16,7 +15,7 @@ import kotlinx.android.synthetic.main.tink_view_credentials_field.view.*
 import kotlinx.android.synthetic.main.tink_view_credentials_field_immutable.view.*
 
 internal interface CredentialsField {
-    fun setupField(field: Field, imeOption: Int = EditorInfo.IME_ACTION_NEXT)
+    fun setupField(field: Field)
     fun validateContent(): Boolean
     fun getFilledField(): Field
 }
@@ -37,7 +36,7 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
         orientation = VERTICAL
     }
 
-    override fun setupField(field: Field, imeOption: Int) {
+    override fun setupField(field: Field) {
         this.field = field
         updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         textInputLayout.hint = field.attributes.description +
@@ -55,11 +54,8 @@ internal class MutableCredentialsField : LinearLayout, CredentialsField {
             }
 
             if (field.attributes.inputType.isMasked) {
-                inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
                 transformationMethod = PasswordTransformationMethod.getInstance()
             }
-
-            imeOptions = imeOption
 
             field.validationRules.maxLength
                 .takeIf { it != 0 }
@@ -117,7 +113,7 @@ internal class ImmutableCredentialsField : ConstraintLayout, CredentialsField {
         inflate(R.layout.tink_view_credentials_field_immutable, true)
     }
 
-    override fun setupField(field: Field, imeOption: Int) {
+    override fun setupField(field: Field) {
         this.field = field
         updatePadding(bottom = resources.getDimensionPixelSize(R.dimen.tink_credentials_field_padding_bottom))
         description.text = field.attributes.description

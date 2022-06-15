@@ -9,7 +9,7 @@ object Versions {
     const val androidx_appcompat = "1.2.0"
     const val androidx_core_ktx = "1.3.2"
     const val navigation = "2.3.5"
-    const val dokka = "1.6.21"
+    const val dokka = "1.4.20"
     const val moshi = "1.12.0"
 }
 

@@ -85,11 +85,9 @@ class MyApp : Application() {
 - [Tink Link Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-headless-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
 - [Tink Link UI Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
 
-## Samples
-|Sample|Description|Temporary User|Existing User|
-|---|---|---|---|
-|**[Tink Link Sample](/sample-link)**|Demonstrates the usage of `TinkLink` Android SDK.|<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|
-|**[Tink Link UI Sample](/sample-link-ui)**|Demonstrates the usage of `TinkLinkUI` Android SDK.||<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|
+## Examples
+- [Tink Link Sample](/sample-link)
+- [Tink Link UI Sample](/sample-link-ui)
 
 ## Developer documentation
 - [Tink Link Android Reference](https://tink-ab.github.io/tink-link-android/)
