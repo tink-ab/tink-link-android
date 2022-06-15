@@ -1,4 +1,11 @@
-# Tink Link UI Sample
+![Platform](https://img.shields.io/badge/platform-Android-orange.svg)
+![Languages](https://img.shields.io/badge/languages-kotlin-orange.svg)
+
+# TinkLink Sample
+
+This directory contains sample code that demonstrates the usage of `TinkLinkUI` Android SDK.
+
+![Tink Link Android](https://images.ctfassets.net/tmqu5vj33f7w/iSJMvxhKcd64b6oJ2RG8F/d9e7da7635fb94755362a6d95eb7aaa7/Tink_Link_Android.png)
 
 ## Prerequisites
 
@@ -65,8 +72,6 @@ You can change the redirect URI by doing the following:
    </activity>
    ```
    For more information, please see the official Android guide [on deep linking](https://developer.android.com/training/app-links/deep-linking.html).
-   
-	**Note:** Tink Link supports both portrait and landscape mode. If your app only supports portrait mode you might want to disable landscape mode in Tink Link to stay consistent with your other screens. To do so add the `android:screenOrientation="portrait"` attribute to `com.tink.link.ui.TinkLinkUiActivity`.
 
 3. Update the `TinkConfiguration` object in [`src/main/java/com/tink/sample/MainLinkUiActivity.kt`](src/main/java/com/tink/sample/MainLinkUiActivity.kt) with the new redirect URI.
 
@@ -82,3 +87,5 @@ You can change the redirect URI by doing the following:
                    .build()
        )
    ```
+   
+   Read more about TinkLink Android in [here](https://docs.tink.com/resources/tink-link-android).

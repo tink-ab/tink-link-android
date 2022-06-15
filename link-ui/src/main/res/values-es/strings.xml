@@ -1,8 +1,10 @@
+<?xml version="1.0"?>
 <resources>
     <string name="tink_provider_list_title">Elegir banco</string>
     <string name="tink_provider_list_search_hint">Buscar por banco o tarjeta</string>
     <string name="tink_provider_list_error_title">Lo sentimos, pero no hemos podido cargar ningún banco en este momento.</string>
     <string name="tink_provider_list_error_description">Estamos informados de este error y estamos trabajando para resolverlo. Ten paciencia e inténtalo un poco más tarde.</string>
+    <string name="tink_provider_list_empty">No se han encontrado bancos</string>
     <string name="tink_provider_list_error_retry_button">Volver a intentar</string>
     <string name="tink_provider_select_authentication_user_type_title">Tipo de inicio de sesión</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personal</string>
@@ -63,6 +65,7 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <!-- TODO: Non-translatable strings -->
     <string name="tink_credentials_empty_fields_instructions_text_1">Vas a ser redirigido de forma segura a %1$s.</string>
     <string name="tink_credentials_empty_fields_instructions_text_2">Se requerirá autenticación.</string>
     <string name="tink_credentials_empty_fields_instructions_text_3">Una vez autenticado, regresarás aquí.</string>

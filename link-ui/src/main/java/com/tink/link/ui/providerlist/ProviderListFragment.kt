@@ -6,6 +6,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -86,7 +87,7 @@ internal class ProviderListFragment : Fragment(R.layout.tink_fragment_provider_l
             Observer { providerList ->
                 providerAdapter?.providers = providerList
                 updateSearchView()
-
+                tvNoBanks.isVisible = providerList.isEmpty()
                 if (providerList.size == 1 && providerSelection is ProviderSelection.SingleProvider) {
                     // The list consists only of a single provider.
                     val node = providerList.first()

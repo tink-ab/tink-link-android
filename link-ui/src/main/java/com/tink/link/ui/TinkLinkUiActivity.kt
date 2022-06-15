@@ -21,6 +21,7 @@ import com.tink.service.network.coreSdkInformation
 import com.tink.service.provider.ProviderFilter
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.tink_activity_main.*
+import timber.log.Timber
 
 /**
  * Activity used for displaying the full Tink Link UI flow.
@@ -57,6 +58,7 @@ class TinkLinkUiActivity : AppCompatActivity() {
         const val ARG_SCOPES = "scopes"
         const val ARG_LINK_USER = "linkUser"
         const val ARG_CREDENTIALS_OPERATION = "credentialsOperation"
+        const val ARG_FIRST_LAUNCH = "firstLaunch"
 
         /**
          * Creates an intent for use when starting this activity.
@@ -87,7 +89,8 @@ class TinkLinkUiActivity : AppCompatActivity() {
                         ARG_STYLE to styleResId,
                         ARG_SCOPES to scopes.toArrayList(),
                         ARG_LINK_USER to linkUser,
-                        ARG_CREDENTIALS_OPERATION to credentialsOperation
+                        ARG_CREDENTIALS_OPERATION to credentialsOperation,
+                        ARG_FIRST_LAUNCH to true
                     )
                     putExtras(bundle)
                 }
@@ -122,6 +125,12 @@ class TinkLinkUiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.extras?.getInt(ARG_STYLE)?.let { setTheme(it) } ?: setTheme(R.style.TinkLinkUiStyle)
+        intent.extras?.getBoolean(ARG_FIRST_LAUNCH)?.let { isFirstLaunch ->
+            if (isFirstLaunch) {
+                Timber.d("[TinkLink]: Version ${BuildConfig.libraryVersion}")
+                Timber.d("[TinkCore]: Version ${com.tink.core.BuildConfig.libraryVersion}")
+            }
+        }
         setContentView(R.layout.tink_activity_main)
         findNavController(R.id.nav_host_fragment).setGraph(
             R.navigation.tink_nav_graph,
@@ -132,6 +141,11 @@ class TinkLinkUiActivity : AppCompatActivity() {
         )
 
         redirectIfAppropriate(intent)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(ARG_FIRST_LAUNCH, false)
     }
 
     override fun onNewIntent(intent: Intent?) {
