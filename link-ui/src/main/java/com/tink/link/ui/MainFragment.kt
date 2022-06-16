@@ -25,6 +25,7 @@ import com.tink.link.ui.credentials.CredentialsStatusDialogFactory
 import com.tink.link.ui.providerlist.FRAGMENT_ARG_PROVIDER_SELECTION
 import com.tink.model.user.User
 import com.tink.service.handler.ResultHandler
+import kotlinx.android.synthetic.main.tink_fragment_main.*
 import kotlinx.coroutines.launch
 
 const val FRAGMENT_ARG_LINK_USER = "linkUserArg"
@@ -45,6 +46,7 @@ internal class MainFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
 
     private var statusDialog: AlertDialog? = null
+    private var errorDialog: AlertDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,10 +57,57 @@ internal class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.clientConfigurationObservable.observe(viewLifecycleOwner) { status: ClientConfigurationCheck ->
+            progressBar.visibility = View.GONE
+            when (status) {
+                ClientConfigurationCheck.SUCCESS -> continueWithNextFlow()
+                ClientConfigurationCheck.GENERIC_ERROR,
+                ClientConfigurationCheck.AUTHENTICATION_ERROR -> showClientConfigurationErrorDialog(status)
+            }
+        }
         when (linkUser) {
-            is LinkUser.TemporaryUser -> createUser { launchLinkUiFlowForUser(it) }
-            is LinkUser.UnauthenticatedUser -> authenticateUser { launchLinkUiFlowForUser(it) }
-            is LinkUser.ExistingUser -> launchLinkUiFlowForUser((linkUser as LinkUser.ExistingUser).user)
+            is LinkUser.TemporaryUser -> createUser { checkClientConfiguration(it) }
+            is LinkUser.UnauthenticatedUser -> authenticateUser { checkClientConfiguration(it) }
+            is LinkUser.ExistingUser -> checkClientConfiguration((linkUser as LinkUser.ExistingUser).user)
+        }
+    }
+
+    private fun showClientConfigurationErrorDialog(error: ClientConfigurationCheck) {
+        val errorMessageRes = when (error) {
+            ClientConfigurationCheck.GENERIC_ERROR -> R.string.tink_error_unknown
+            ClientConfigurationCheck.AUTHENTICATION_ERROR -> R.string.tink_startup_wrong_redirect_uri_dialog_message
+            else -> null
+        }
+        errorDialog = SimpleErrorDialogFactory.createDialog(
+            requireContext(),
+            message = errorMessageRes
+        ) {
+            errorDialog?.dismiss()
+            (activity as? TinkLinkUiActivity)?.closeTinkLinkUi(
+                TinkLinkUiActivity.RESULT_FAILURE
+            )
+        }.also {
+            it.show()
+        }
+    }
+
+    private fun continueWithNextFlow() {
+        setupInternalTracker(requireContext())
+        when (val operation = credentialsOperation) {
+            is CredentialsOperation.Create -> {
+                findNavController().navigate(
+                    R.id.action_mainFragment_to_providerListFragment,
+                    bundleOf(FRAGMENT_ARG_PROVIDER_SELECTION to operation.providerSelection)
+                )
+            }
+
+            is CredentialsOperation.Update,
+            is CredentialsOperation.Authenticate,
+            is CredentialsOperation.Refresh -> {
+                operation.credentialsId?.let {
+                    viewModel.setCredentialsId(it, ::onCredentialsSuccess, ::onCredentialsError)
+                }
+            }
         }
     }
 
@@ -90,26 +139,10 @@ internal class MainFragment : Fragment() {
         )
     }
 
-    private fun launchLinkUiFlowForUser(user: User) {
+    private fun checkClientConfiguration(user: User) {
         Tink.setUser(user)
-        setupInternalTracker(requireContext())
-        when (val operation = credentialsOperation) {
-            is CredentialsOperation.Create -> {
-                activity?.runOnUiThread {
-                    findNavController().navigate(
-                        R.id.action_mainFragment_to_providerListFragment,
-                        bundleOf(FRAGMENT_ARG_PROVIDER_SELECTION to operation.providerSelection)
-                    )
-                }
-            }
-
-            is CredentialsOperation.Update,
-            is CredentialsOperation.Authenticate,
-            is CredentialsOperation.Refresh -> {
-                operation.credentialsId?.let {
-                    viewModel.setCredentialsId(it, ::onCredentialsSuccess, ::onCredentialsError)
-                }
-            }
+        (activity as? TinkLinkUiActivity)?.scopes?.let {
+            viewModel.checkClientConfiguration(it)
         }
     }
 

@@ -4,6 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("org.jlleitschuh.gradle.ktlint")
     id("com.github.ben-manes.versions") version "0.38.0"
 }
 
@@ -29,6 +30,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    namespace = "com.tink.sample"
 }
 
 dependencies {
@@ -44,7 +46,6 @@ dependencies {
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
     implementation(Dependencies.timber)
-    implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
 }

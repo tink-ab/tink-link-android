@@ -18,8 +18,8 @@ import com.tink.model.provider.Provider
 import com.tink.service.handler.ResultHandler
 import com.tink.service.streaming.publisher.StreamObserver
 import com.tink.service.streaming.publisher.StreamSubscription
-import org.threeten.bp.Instant
 import timber.log.Timber
+import java.time.Instant
 
 class RefreshCredentialsViewModel : ViewModel() {
 

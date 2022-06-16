@@ -2,6 +2,7 @@ package com.tink.link
 
 import com.tink.core.Tink
 import com.tink.link.core.user.UserContext
+import com.tink.link.errorhandler.TinkLinkErrorHandler
 import com.tink.model.user.User
 import com.tink.model.user.UserInfo
 import com.tink.service.handler.ResultHandler
@@ -19,6 +20,12 @@ object TinkLink {
      */
     @JvmStatic
     fun getUserContext() = Tink.getUserContext()
+
+    /**
+     * Fetches the [TinkLinkErrorHandler].
+     */
+    @JvmStatic
+    fun getErrorHandler() = Tink.getErrorHandler()
 
     /**
      * Fetches the [UserContext] from Tink if a user is set.
@@ -102,3 +109,9 @@ fun Tink.getConsentContext() = TinkLinkComponent.instance.consentContext
 @JvmSynthetic
 fun Tink.createTemporaryUser(market: String, locale: String, resultHandler: ResultHandler<User>) =
     TinkLinkComponent.instance.createTemporaryUser(market, locale, resultHandler)
+
+/**
+ * Fetches the [TinkLinkErrorHandler]
+ */
+@JvmSynthetic
+fun Tink.getErrorHandler(): TinkLinkErrorHandler = TinkLinkComponent.instance.getErrorHandler()

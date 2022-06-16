@@ -4,6 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("org.jlleitschuh.gradle.ktlint")
     id("com.github.ben-manes.versions") version "0.38.0"
 }
 
@@ -27,37 +28,46 @@ android {
         }
     }
 
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+    }
+
+    sourceSets {
+        val sharedTestDir = "src/sharedTest/java"
+        getByName("test") {
+            java.srcDir(sharedTestDir)
+        }
+        getByName("androidTest") {
+            java.srcDirs(sharedTestDir)
+        }
+    }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     resourcePrefix("tink_")
+    namespace = "com.tink.link.ui"
 }
 
 dependencies {
     api(project(":link"))
 
+    coreLibraryDesugaring(Dependencies.desugar)
+
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
     implementation(Dependencies.Androidx.core_ktx)
     implementation(Dependencies.Androidx.constraint_layout)
-    testImplementation(Dependencies.junit)
-    testImplementation(Dependencies.Testing.test_assertj)
-    androidTestImplementation(Dependencies.Testing.test_assertj)
-    androidTestImplementation(Dependencies.Androidx.test_runner)
-    androidTestImplementation(Dependencies.Androidx.test_espresso)
 
     implementation(Dependencies.Dagger.dagger_android)
     kapt(Dependencies.Dagger.dagger_android_processor)
     kapt(Dependencies.Dagger.dagger_android_compiler)
 
-    kapt(Dependencies.Moshi.moshi_codegen)
-
     implementation(Dependencies.Androidx.navigation_fragment)
     implementation(Dependencies.Androidx.navigation_ui)
 
     implementation(Dependencies.timber)
-    implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
     implementation(Dependencies.picasso)
@@ -65,6 +75,20 @@ dependencies {
     implementation(Dependencies.Androidx.browser)
 
     implementation(Dependencies.zxing)
+
+    testImplementation(Dependencies.junit)
+    testImplementation(Dependencies.Testing.test_assertj)
+    testImplementation(Dependencies.Testing.test_mockk)
+
+    androidTestImplementation(Dependencies.Testing.test_assertj)
+    androidTestImplementation(Dependencies.Testing.test_coroutines)
+    androidTestImplementation(Dependencies.Testing.test_mockk_android)
+    androidTestImplementation(Dependencies.Testing.test_mockwebserver)
+    androidTestImplementation(Dependencies.Androidx.test_espresso)
+    androidTestImplementation(Dependencies.Androidx.test_runner)
+
+    debugImplementation(Dependencies.Androidx.test_espresso_idling_resource)
+    debugImplementation(Dependencies.Androidx.test_fragment)
 }
 
 apply(from = "../publishing.gradle")

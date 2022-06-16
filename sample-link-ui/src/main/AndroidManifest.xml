@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.tink.sample">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
   <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -15,6 +14,7 @@
 
     <activity
       android:name="com.tink.sample.MainLinkUiActivity"
+      android:exported="true"
       android:launchMode="singleTask">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -26,14 +26,6 @@
       android:name="com.tink.link.ui.TinkLinkUiActivity"
       android:exported="false"
       android:launchMode="singleTask">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-        <data
-          android:scheme="@string/redirect_uri_scheme"
-          android:host="@string/redirect_uri_host" />
-      </intent-filter>
     </activity>
 
   </application>

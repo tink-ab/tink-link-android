@@ -1,8 +1,10 @@
+<?xml version="1.0"?>
 <resources>
     <string name="tink_provider_list_title">Vælg bank</string>
     <string name="tink_provider_list_search_hint">Søg efter bank eller kort</string>
     <string name="tink_provider_list_error_title">Vi beklager, men vi kunne ikke indlæse nogen banker i øjeblikket</string>
     <string name="tink_provider_list_error_description">Vi er blevet oplyst om denne fejl og arbejder hårdt på at løse den. Hav lidt tålmodighed med os, og prøv så lidt senere.</string>
+    <string name="tink_provider_list_empty">Ingen banker fundet</string>
     <string name="tink_provider_list_error_retry_button">Prøv igen</string>
     <string name="tink_provider_select_authentication_user_type_title">Type af log ind</string>
     <string name="tink_provider_select_authentication_user_type_personal">Personligt</string>
@@ -63,6 +65,7 @@
     <string name="tink_add_credentials_button">Add bank</string>
     <string name="tink_search">Search</string>
     <string name="tink_close">Close</string>
+    <!-- TODO: Non-translatable strings -->
     <string name="tink_credentials_empty_fields_instructions_text_1">Du overføres sikkert til %1$s.</string>
     <string name="tink_credentials_empty_fields_instructions_text_2">Du bliver bedt om at godkende.</string>
     <string name="tink_credentials_empty_fields_instructions_text_3">Når du er godkendt, omdirigeres du tilbage.</string>
