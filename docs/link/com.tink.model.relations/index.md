@@ -1,0 +1,22 @@
+---
+title: com.tink.model.relations
+---
+//[link](../../index.html)/[com.tink.model.relations](index.html)
+
+
+
+# Package com.tink.model.relations
+
+
+
+## Types
+
+
+| Name | Summary |
+|---|---|
+| AmountByCategory | [common, androidJvm]<br>[common]<br>data class [AmountByCategory]([common]-amount-by-category/index.html)(val categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val amount: [Amount](../com.tink.model.misc/[common]-amount/index.html))<br>[androidJvm]<br>data class [AmountByCategory]([android-jvm]-amount-by-category/index.html)(val categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val amount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
+| CommonTransactionsOverview | [common, androidJvm]<br>[common]<br>data class [CommonTransactionsOverview]([common]-common-transactions-overview/index.html)(val mostCommonTransactionDescription: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val totalNumberOfTransactions: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), val mostCommonTransactionCount: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))<br>[androidJvm]<br>data class [CommonTransactionsOverview]([android-jvm]-common-transactions-overview/index.html)(val mostCommonTransactionDescription: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val totalNumberOfTransactions: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), val mostCommonTransactionCount: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
+| ExpensesByDay | [common, androidJvm]<br>[common]<br>data class [ExpensesByDay]([common]-expenses-by-day/index.html)(val date: &lt;ERROR CLASS&gt;, val totalAmount: [Amount](../com.tink.model.misc/[common]-amount/index.html), val averageAmount: [Amount](../com.tink.model.misc/[common]-amount/index.html))<br>[androidJvm]<br>data class [ExpensesByDay]([android-jvm]-expenses-by-day/index.html)(val date: [LocalDate](https://developer.android.com/reference/kotlin/java/time/LocalDate.html), val totalAmount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html), val averageAmount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
+| LargestExpense | [common, androidJvm]<br>[common]<br>data class [LargestExpense]([common]-largest-expense/index.html)(val date: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), val amount: [Amount](../com.tink.model.misc/[common]-amount/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html))<br>[androidJvm]<br>data class [LargestExpense]([android-jvm]-largest-expense/index.html)(val date: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), val amount: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html), val description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
+| TransactionSummary | [common, androidJvm]<br>[common]<br>data class [TransactionSummary]([common]-transaction-summary/index.html)(val commonTransactionsOverview: [CommonTransactionsOverview]([common]-common-transactions-overview/index.html), val totalExpenses: [Amount](../com.tink.model.misc/[common]-amount/index.html), val largestExpense: [LargestExpense]([common]-largest-expense/index.html))<br>[androidJvm]<br>data class [TransactionSummary]([android-jvm]-transaction-summary/index.html)(val commonTransactionsOverview: [CommonTransactionsOverview]([android-jvm]-common-transactions-overview/index.html), val totalExpenses: [Amount](../com.tink.model.misc/[android-jvm]-amount/index.html), val largestExpense: [LargestExpense]([android-jvm]-largest-expense/index.html)) : [Parcelable](https://developer.android.com/reference/kotlin/android/os/Parcelable.html) |
+

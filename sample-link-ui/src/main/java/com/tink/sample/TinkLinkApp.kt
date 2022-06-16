@@ -1,15 +1,12 @@
 package com.tink.sample
 
 import android.app.Application
-import com.jakewharton.threetenabp.AndroidThreeTen
 import timber.log.Timber
 
 class TinkLinkApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        AndroidThreeTen.init(this)
         Timber.plant(getTimberTree())
     }
 

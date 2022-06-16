@@ -18,7 +18,7 @@ sealed class CredentialsStatus {
      * @param credentials the successfully created credentials
      */
     data class Success(
-        val message: String? = null,
+        val message: String = "",
         override val credentials: Credentials
     ) : CredentialsStatus()
 
@@ -30,7 +30,7 @@ sealed class CredentialsStatus {
      * @param credentials the credentials being processed, if available
      */
     data class Loading(
-        val message: String? = null,
+        val message: String = "",
         override val credentials: Credentials? = null
     ) : CredentialsStatus()
 
