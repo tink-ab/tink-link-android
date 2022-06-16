@@ -28,6 +28,7 @@ object [Companion](index.html)
 | Name | Summary |
 |---|---|
 | [ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html) | [androidJvm]<br>const val [ARG_CREDENTIALS_OPERATION](-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ARG_FIRST_LAUNCH](-a-r-g_-f-i-r-s-t_-l-a-u-n-c-h.html) | [androidJvm]<br>const val [ARG_FIRST_LAUNCH](-a-r-g_-f-i-r-s-t_-l-a-u-n-c-h.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.html) | [androidJvm]<br>const val [ARG_LINK_USER](-a-r-g_-l-i-n-k_-u-s-e-r.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.html) | [androidJvm]<br>const val [ARG_SCOPES](-a-r-g_-s-c-o-p-e-s.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ARG_STYLE](-a-r-g_-s-t-y-l-e.html) | [androidJvm]<br>const val [ARG_STYLE](-a-r-g_-s-t-y-l-e.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
