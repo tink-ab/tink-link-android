@@ -2,7 +2,7 @@ object TinkLinkVersion {
 
     private const val major = 0
     private const val minor = 15
-    private const val patch = 2
+    private const val patch = 3
 
     const val name = "$major.$minor.$patch"
 
@@ -13,3 +13,4 @@ object TinkLinkVersion {
     //For example 4.12.3 will be 412003
     const val code = major * majorOffset + minor * minorOffset + patch
 }
+
