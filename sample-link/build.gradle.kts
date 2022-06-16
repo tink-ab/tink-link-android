@@ -12,8 +12,8 @@ android {
     buildToolsVersion = Versions.buildTools
     defaultConfig {
         applicationId = "com.tink.link.sample"
-        minSdk = Versions.minSdk
-        targetSdk = Versions.targetSdk
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
         versionCode = TinkLinkVersion.code
         versionName = TinkLinkVersion.name
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -25,13 +25,20 @@ android {
         }
     }
 
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
+    }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    namespace = "com.tink.link.sample"
 }
 
 dependencies {
     implementation(project(":link"))
+
+    coreLibraryDesugaring(Dependencies.desugar)
 
     implementation(Dependencies.kotlin_stdlib)
     implementation(Dependencies.Androidx.appcompat)
@@ -46,7 +53,6 @@ dependencies {
     implementation(Dependencies.Androidx.navigation_ui)
 
     implementation(Dependencies.timber)
-    implementation(Dependencies.three_ten_abp)
 
     implementation(Dependencies.material_components)
     implementation(Dependencies.picasso)

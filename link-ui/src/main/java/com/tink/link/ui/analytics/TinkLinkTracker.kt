@@ -8,6 +8,7 @@ import com.tink.link.ui.analytics.models.ScreenEvent
 import com.tink.link.ui.analytics.models.ScreenEventData
 import com.tink.link.ui.analytics.models.toFlowInfo
 import com.tink.link.ui.analytics.network.AnalyticsService
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -15,7 +16,13 @@ import kotlinx.coroutines.launch
 
 internal object TinkLinkTracker {
 
-    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    // TODO: use dependency injection
+    private val scope = CoroutineScope(
+        Dispatchers.IO + SupervisorJob() +
+            CoroutineExceptionHandler { _, _ ->
+                // TODO: log only in debug mode (use Timber)
+            }
+    )
 
     fun initialize(
         clientId: String,

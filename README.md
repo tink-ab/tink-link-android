@@ -1,8 +1,12 @@
+![Min Android API level](https://img.shields.io/badge/api-21%2B-0E9EC2)
+
 # Tink Link Android SDK
 
 ## Prerequisites
 1. Follow the [getting started guide](https://docs.tink.com/resources/getting-started/set-up-your-account) to create your developer account and retrieve your Client ID.
 2. Register the Redirect URI for your app (e.g. `myapp://callback` or `https://myapp.com/callback`) in the list of allowed redirect URIs in console.tink.com.
+
+The minimum API level required for using this library is 21 (Android 5.0).
 
 ## Installation
 
@@ -69,25 +73,15 @@ dependencies {
  }
 ```
 
-### Initializing the `AndroidThreeTen` library
-Currently, Tink Link UI uses the [`AndroidThreeTen`](https://github.com/JakeWharton/ThreeTenABP) library and this needs the timezone information to be initialized in your `Application.onCreate()` method as mentioned [here](https://github.com/JakeWharton/ThreeTenABP#usage).
-```kotlin
-class MyApp : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-        AndroidThreeTen.init(this)
-    }
-}
-```
-
 ## Tutorials
 - [Tink Link Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-headless-tutorial) This section outlines how to use the different classes and types provided with Tink Link.
 - [Tink Link UI Tutorial](https://docs.tink.com/resources/tink-link-android/tink-link-android-tutorial) This tutorial outlines how to configure and use Tink Link UI in your application.
 
-## Examples
-- [Tink Link Sample](/sample-link)
-- [Tink Link UI Sample](/sample-link-ui)
+## Samples
+|Sample|Description|Temporary User|Existing User|
+|---|---|---|---|
+|**[Tink Link Sample](/sample-link)**|Demonstrates the usage of `TinkLink` Android SDK.|<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|
+|**[Tink Link UI Sample](/sample-link-ui)**|Demonstrates the usage of `TinkLinkUI` Android SDK.||<p align="center"><img align="center" width="20" alt="icon-check-green" src="https://user-images.githubusercontent.com/14132621/116664333-9a132080-a998-11eb-92da-0de3116551be.png"></p>|
 
 ## Developer documentation
 - [Tink Link Android Reference](https://tink-ab.github.io/tink-link-android/)

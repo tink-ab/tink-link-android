@@ -76,6 +76,22 @@
     app:layout_constraintTop_toTopOf="parent" />
 
   <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/tvNoBanks"
+      style="@style/tink_deci.primary"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/tink_provider_list_error_marginStart"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="@dimen/tink_provider_list_error_marginEnd"
+      android:layout_marginBottom="20dp"
+      android:gravity="center_horizontal"
+      android:visibility="gone"
+      android:text="@string/tink_provider_list_empty"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/errorTitle" />
+
+  <com.google.android.material.textview.MaterialTextView
     android:id="@+id/errorMessage"
     style="@style/tink_deci.primary"
     android:layout_width="0dp"
