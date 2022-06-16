@@ -1,67 +1,64 @@
 ---
-title: link
+title: link -
 ---
-//[link](index.html)
+//[link](index.md)
 
 
 
-# link
+# link  
 
 
-
-## Packages
-
-
-| Name |
-|---|
-| [com.tink.core](link/com.tink.core/index.html) |
-| [com.tink.core.provider](link/com.tink.core.provider/index.html) |
-| [com.tink.link](link/com.tink.link/index.html) |
-| [com.tink.link.authentication](link/com.tink.link.authentication/index.html) |
-| [com.tink.link.consent](link/com.tink.link.consent/index.html) |
-| [com.tink.link.core.credentials](link/com.tink.link.core.credentials/index.html) |
-| [com.tink.link.core.events](link/com.tink.link.core.events/index.html) |
-| [com.tink.link.core.user](link/com.tink.link.core.user/index.html) |
-| [com.tink.link.ui](link/com.tink.link.ui/index.html) |
-| [com.tink.link.ui.credentials](link/com.tink.link.ui.credentials/index.html) |
-| [com.tink.link.ui.providerlist](link/com.tink.link.ui.providerlist/index.html) |
-| [com.tink.link.ui.utils](link/com.tink.link.ui.utils/index.html) |
-| [com.tink.model](link/com.tink.model/index.html) |
-| [com.tink.model.account](link/com.tink.model.account/index.html) |
-| [com.tink.model.authentication](link/com.tink.model.authentication/index.html) |
-| [com.tink.model.budget](link/com.tink.model.budget/index.html) |
-| [com.tink.model.category](link/com.tink.model.category/index.html) |
-| [com.tink.model.consent](link/com.tink.model.consent/index.html) |
-| [com.tink.model.credentials](link/com.tink.model.credentials/index.html) |
-| [com.tink.model.insights](link/com.tink.model.insights/index.html) |
-| [com.tink.model.misc](link/com.tink.model.misc/index.html) |
-| [com.tink.model.provider](link/com.tink.model.provider/index.html) |
-| [com.tink.model.relations](link/com.tink.model.relations/index.html) |
-| [com.tink.model.statistics](link/com.tink.model.statistics/index.html) |
-| [com.tink.model.time](link/com.tink.model.time/index.html) |
-| [com.tink.model.transaction](link/com.tink.model.transaction/index.html) |
-| [com.tink.model.transfer](link/com.tink.model.transfer/index.html) |
-| [com.tink.model.user](link/com.tink.model.user/index.html) |
-| [com.tink.service.account](link/com.tink.service.account/index.html) |
-| [com.tink.service.authentication](link/com.tink.service.authentication/index.html) |
-| [com.tink.service.authorization](link/com.tink.service.authorization/index.html) |
-| [com.tink.service.budget](link/com.tink.service.budget/index.html) |
-| [com.tink.service.category](link/com.tink.service.category/index.html) |
-| [com.tink.service.consent](link/com.tink.service.consent/index.html) |
-| [com.tink.service.credentials](link/com.tink.service.credentials/index.html) |
-| [com.tink.service.di](link/com.tink.service.di/index.html) |
-| [com.tink.service.handler](link/com.tink.service.handler/index.html) |
-| [com.tink.service.insight](link/com.tink.service.insight/index.html) |
-| [com.tink.service.misc](link/com.tink.service.misc/index.html) |
-| [com.tink.service.network](link/com.tink.service.network/index.html) |
-| [com.tink.service.observer](link/com.tink.service.observer/index.html) |
-| [com.tink.service.provider](link/com.tink.service.provider/index.html) |
-| [com.tink.service.statistics](link/com.tink.service.statistics/index.html) |
-| [com.tink.service.streaming](link/com.tink.service.streaming/index.html) |
-| [com.tink.service.streaming.publisher](link/com.tink.service.streaming.publisher/index.html) |
-| [com.tink.service.time](link/com.tink.service.time/index.html) |
-| [com.tink.service.transaction](link/com.tink.service.transaction/index.html) |
-| [com.tink.service.transfer](link/com.tink.service.transfer/index.html) |
-| [com.tink.service.user](link/com.tink.service.user/index.html) |
-| [com.tink.service.util](link/com.tink.service.util/index.html) |
+## Packages  
+  
+|  Name|  Summary| 
+|---|---|
+| <a name="com.tink.core////PointingToDeclaration/"></a>[com.tink.core](com.tink.core/index.md) | 
+| <a name="com.tink.core.provider////PointingToDeclaration/"></a>[com.tink.core.provider](com.tink.core.provider/index.md) | 
+| <a name="com.tink.link////PointingToDeclaration/"></a>[com.tink.link](com.tink.link/index.md) | 
+| <a name="com.tink.link.authentication////PointingToDeclaration/"></a>[com.tink.link.authentication](com.tink.link.authentication/index.md) | 
+| <a name="com.tink.link.consent////PointingToDeclaration/"></a>[com.tink.link.consent](com.tink.link.consent/index.md) | 
+| <a name="com.tink.link.core.credentials////PointingToDeclaration/"></a>[com.tink.link.core.credentials](com.tink.link.core.credentials/index.md) | 
+| <a name="com.tink.link.core.user////PointingToDeclaration/"></a>[com.tink.link.core.user](com.tink.link.core.user/index.md) | 
+| <a name="com.tink.link.payments////PointingToDeclaration/"></a>[com.tink.link.payments](com.tink.link.payments/index.md) | 
+| <a name="com.tink.link.payments.di////PointingToDeclaration/"></a>[com.tink.link.payments.di](com.tink.link.payments.di/index.md) | 
+| <a name="com.tink.link.ui////PointingToDeclaration/"></a>[com.tink.link.ui](com.tink.link.ui/index.md) | 
+| <a name="com.tink.link.ui.credentials////PointingToDeclaration/"></a>[com.tink.link.ui.credentials](com.tink.link.ui.credentials/index.md) | 
+| <a name="com.tink.link.ui.providerlist////PointingToDeclaration/"></a>[com.tink.link.ui.providerlist](com.tink.link.ui.providerlist/index.md) | 
+| <a name="com.tink.model////PointingToDeclaration/"></a>[com.tink.model](com.tink.model/index.md) | 
+| <a name="com.tink.model.account////PointingToDeclaration/"></a>[com.tink.model.account](com.tink.model.account/index.md) | 
+| <a name="com.tink.model.authentication////PointingToDeclaration/"></a>[com.tink.model.authentication](com.tink.model.authentication/index.md) | 
+| <a name="com.tink.model.budget////PointingToDeclaration/"></a>[com.tink.model.budget](com.tink.model.budget/index.md) | 
+| <a name="com.tink.model.category////PointingToDeclaration/"></a>[com.tink.model.category](com.tink.model.category/index.md) | 
+| <a name="com.tink.model.consent////PointingToDeclaration/"></a>[com.tink.model.consent](com.tink.model.consent/index.md) | 
+| <a name="com.tink.model.credentials////PointingToDeclaration/"></a>[com.tink.model.credentials](com.tink.model.credentials/index.md) | 
+| <a name="com.tink.model.insights////PointingToDeclaration/"></a>[com.tink.model.insights](com.tink.model.insights/index.md) | 
+| <a name="com.tink.model.misc////PointingToDeclaration/"></a>[com.tink.model.misc](com.tink.model.misc/index.md) | 
+| <a name="com.tink.model.provider////PointingToDeclaration/"></a>[com.tink.model.provider](com.tink.model.provider/index.md) | 
+| <a name="com.tink.model.relations////PointingToDeclaration/"></a>[com.tink.model.relations](com.tink.model.relations/index.md) | 
+| <a name="com.tink.model.statistics////PointingToDeclaration/"></a>[com.tink.model.statistics](com.tink.model.statistics/index.md) | 
+| <a name="com.tink.model.time////PointingToDeclaration/"></a>[com.tink.model.time](com.tink.model.time/index.md) | 
+| <a name="com.tink.model.transaction////PointingToDeclaration/"></a>[com.tink.model.transaction](com.tink.model.transaction/index.md) | 
+| <a name="com.tink.model.transfer////PointingToDeclaration/"></a>[com.tink.model.transfer](com.tink.model.transfer/index.md) | 
+| <a name="com.tink.model.user////PointingToDeclaration/"></a>[com.tink.model.user](com.tink.model.user/index.md) | 
+| <a name="com.tink.service.account////PointingToDeclaration/"></a>[com.tink.service.account](com.tink.service.account/index.md) | 
+| <a name="com.tink.service.authentication////PointingToDeclaration/"></a>[com.tink.service.authentication](com.tink.service.authentication/index.md) | 
+| <a name="com.tink.service.authorization////PointingToDeclaration/"></a>[com.tink.service.authorization](com.tink.service.authorization/index.md) | 
+| <a name="com.tink.service.budget////PointingToDeclaration/"></a>[com.tink.service.budget](com.tink.service.budget/index.md) | 
+| <a name="com.tink.service.category////PointingToDeclaration/"></a>[com.tink.service.category](com.tink.service.category/index.md) | 
+| <a name="com.tink.service.consent////PointingToDeclaration/"></a>[com.tink.service.consent](com.tink.service.consent/index.md) | 
+| <a name="com.tink.service.credentials////PointingToDeclaration/"></a>[com.tink.service.credentials](com.tink.service.credentials/index.md) | 
+| <a name="com.tink.service.di////PointingToDeclaration/"></a>[com.tink.service.di](com.tink.service.di/index.md) | 
+| <a name="com.tink.service.handler////PointingToDeclaration/"></a>[com.tink.service.handler](com.tink.service.handler/index.md) | 
+| <a name="com.tink.service.insight////PointingToDeclaration/"></a>[com.tink.service.insight](com.tink.service.insight/index.md) | 
+| <a name="com.tink.service.misc////PointingToDeclaration/"></a>[com.tink.service.misc](com.tink.service.misc/index.md) | 
+| <a name="com.tink.service.network////PointingToDeclaration/"></a>[com.tink.service.network](com.tink.service.network/index.md) | 
+| <a name="com.tink.service.observer////PointingToDeclaration/"></a>[com.tink.service.observer](com.tink.service.observer/index.md) | 
+| <a name="com.tink.service.provider////PointingToDeclaration/"></a>[com.tink.service.provider](com.tink.service.provider/index.md) | 
+| <a name="com.tink.service.statistics////PointingToDeclaration/"></a>[com.tink.service.statistics](com.tink.service.statistics/index.md) | 
+| <a name="com.tink.service.streaming////PointingToDeclaration/"></a>[com.tink.service.streaming](com.tink.service.streaming/index.md) | 
+| <a name="com.tink.service.streaming.publisher////PointingToDeclaration/"></a>[com.tink.service.streaming.publisher](com.tink.service.streaming.publisher/index.md) | 
+| <a name="com.tink.service.time////PointingToDeclaration/"></a>[com.tink.service.time](com.tink.service.time/index.md) | 
+| <a name="com.tink.service.transaction////PointingToDeclaration/"></a>[com.tink.service.transaction](com.tink.service.transaction/index.md) | 
+| <a name="com.tink.service.transfer////PointingToDeclaration/"></a>[com.tink.service.transfer](com.tink.service.transfer/index.md) | 
+| <a name="com.tink.service.user////PointingToDeclaration/"></a>[com.tink.service.user](com.tink.service.user/index.md) | 
 

@@ -1,11 +1,4 @@
-![Platform](https://img.shields.io/badge/platform-Android-orange.svg)
-![Languages](https://img.shields.io/badge/languages-kotlin-orange.svg)
-
-# TinkLink Sample
-
-This directory contains sample code that demonstrates the usage of `TinkLinkUI` Android SDK.
-
-![Tink Link Android](https://images.ctfassets.net/tmqu5vj33f7w/iSJMvxhKcd64b6oJ2RG8F/d9e7da7635fb94755362a6d95eb7aaa7/Tink_Link_Android.png)
+# Tink Link UI Sample
 
 ## Prerequisites
 
@@ -89,5 +82,3 @@ You can change the redirect URI by doing the following:
                    .build()
        )
    ```
-   
-   Read more about TinkLink Android in [here](https://docs.tink.com/resources/tink-link-android).
