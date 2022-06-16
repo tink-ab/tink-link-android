@@ -94,11 +94,11 @@ $dokka.location:com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthent
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/authenticationTask/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-awaiting-authentication/authentication-task.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.AwaitingAuthentication/credentials/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-awaiting-authentication/credentials.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Loading///PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-loading/index.html
-$dokka.location:com.tink.link.core.credentials/CredentialsStatus.Loading/Loading/#kotlin.String?#com.tink.model.credentials.Credentials?/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-loading/-loading.html
+$dokka.location:com.tink.link.core.credentials/CredentialsStatus.Loading/Loading/#kotlin.String#com.tink.model.credentials.Credentials?/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-loading/-loading.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Loading/credentials/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-loading/credentials.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Loading/message/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-loading/message.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Success///PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-success/index.html
-$dokka.location:com.tink.link.core.credentials/CredentialsStatus.Success/Success/#kotlin.String?#com.tink.model.credentials.Credentials/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-success/-success.html
+$dokka.location:com.tink.link.core.credentials/CredentialsStatus.Success/Success/#kotlin.String#com.tink.model.credentials.Credentials/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-success/-success.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Success/credentials/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-success/credentials.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus.Success/message/#/PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/-success/message.html
 $dokka.location:com.tink.link.core.credentials/CredentialsStatus///PointingToDeclaration/link/com.tink.link.core.credentials/[android-jvm]-credentials-status/index.html
@@ -117,6 +117,20 @@ $dokka.location:com.tink.link.core.user/UserContext/credentialsRepository/#/Poin
 $dokka.location:com.tink.link.core.user/UserContext/handleUri/#Uri#com.tink.service.handler.ResultHandler[kotlin.Unit]?/PointingToDeclaration/link/com.tink.link.core.user/[common]-user-context/handle-uri.html
 $dokka.location:com.tink.link.core.user/UserContext/handleUri/#android.net.Uri#com.tink.service.handler.ResultHandler[kotlin.Unit]?/PointingToDeclaration/link/com.tink.link.core.user/[android-jvm]-user-context/handle-uri.html
 $dokka.location:com.tink.link.core.user/UserContext/providerRepository/#/PointingToDeclaration/link/com.tink.link.core.user/[android-jvm]-user-context/provider-repository.html
+$dokka.location:com.tink.link.errorhandler////PointingToDeclaration/link/com.tink.link.errorhandler/index.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkDebugErrorHandler///PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-debug-error-handler/index.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkDebugErrorHandler/TinkLinkDebugErrorHandler/#/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-debug-error-handler/-tink-link-debug-error-handler.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkDebugErrorHandler/handleHttpError/#kotlin.Int#kotlin.Int#kotlin.String#kotlin.String#kotlin.Throwable/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-debug-error-handler/handle-http-error.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkDebugErrorHandler/handleInternalError/#kotlin.String/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-debug-error-handler/handle-internal-error.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkErrorHandler///PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-error-handler/index.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkErrorHandler/handleHttpError/#kotlin.Int#kotlin.Int#kotlin.String#kotlin.String#kotlin.Throwable/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-error-handler/handle-http-error.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkErrorHandler/handleInternalError/#kotlin.String/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-error-handler/handle-internal-error.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkErrorHandlerFactory///PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-error-handler-factory/index.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkErrorHandlerFactory/createErrorHandler/#/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-error-handler-factory/create-error-handler.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkReleaseErrorHandler///PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-release-error-handler/index.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkReleaseErrorHandler/TinkLinkReleaseErrorHandler/#/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-release-error-handler/-tink-link-release-error-handler.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkReleaseErrorHandler/handleHttpError/#kotlin.Int#kotlin.Int#kotlin.String#kotlin.String#kotlin.Throwable/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-release-error-handler/handle-http-error.html
+$dokka.location:com.tink.link.errorhandler/TinkLinkReleaseErrorHandler/handleInternalError/#kotlin.String/PointingToDeclaration/link/com.tink.link.errorhandler/[android-jvm]-tink-link-release-error-handler/handle-internal-error.html
 $dokka.location:com.tink.link.ui.credentials////PointingToDeclaration/link/com.tink.link.ui.credentials/index.html
 $dokka.location:com.tink.link.ui.credentials//isExistingCredentialsError/kotlin.Throwable#/PointingToDeclaration/link/com.tink.link.ui.credentials/[android-jvm]is-existing-credentials-error.html
 $dokka.location:com.tink.link.ui.credentials/CredentialsOperationArgs.Authenticate///PointingToDeclaration/link/com.tink.link.ui.credentials/[android-jvm]-credentials-operation-args/-authenticate/index.html
@@ -145,6 +159,10 @@ $dokka.location:com.tink.link.ui.utils/ColorsUtils/adjustAlpha/#kotlin.Int#kotli
 $dokka.location:com.tink.link.ui////PointingToDeclaration/link/com.tink.link.ui/index.html
 $dokka.location:com.tink.link.ui//FRAGMENT_ARG_CREDENTIALS_OPERATION/#/PointingToDeclaration/link/com.tink.link.ui/-f-r-a-g-m-e-n-t_-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html
 $dokka.location:com.tink.link.ui//FRAGMENT_ARG_LINK_USER/#/PointingToDeclaration/link/com.tink.link.ui/-f-r-a-g-m-e-n-t_-a-r-g_-l-i-n-k_-u-s-e-r.html
+$dokka.location:com.tink.link.ui/ClientConfigurationCheck.AUTHENTICATION_ERROR///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}link/com.tink.link.ui/[android-jvm]-client-configuration-check/-a-u-t-h-e-n-t-i-c-a-t-i-o-n_-e-r-r-o-r/index.html
+$dokka.location:com.tink.link.ui/ClientConfigurationCheck.GENERIC_ERROR///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}link/com.tink.link.ui/[android-jvm]-client-configuration-check/-g-e-n-e-r-i-c_-e-r-r-o-r/index.html
+$dokka.location:com.tink.link.ui/ClientConfigurationCheck.SUCCESS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}link/com.tink.link.ui/[android-jvm]-client-configuration-check/-s-u-c-c-e-s-s/index.html
+$dokka.location:com.tink.link.ui/ClientConfigurationCheck///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-client-configuration-check/index.html
 $dokka.location:com.tink.link.ui/CredentialsOperation.Authenticate///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-credentials-operation/-authenticate/index.html
 $dokka.location:com.tink.link.ui/CredentialsOperation.Authenticate/Authenticate/#kotlin.String/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-credentials-operation/-authenticate/-authenticate.html
 $dokka.location:com.tink.link.ui/CredentialsOperation.Authenticate/credentialsId/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-credentials-operation/-authenticate/credentials-id.html
@@ -178,6 +196,10 @@ $dokka.location:com.tink.link.ui/ProviderSelection.SingleProvider///PointingToDe
 $dokka.location:com.tink.link.ui/ProviderSelection.SingleProvider/SingleProvider/#kotlin.String/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-provider-selection/-single-provider/-single-provider.html
 $dokka.location:com.tink.link.ui/ProviderSelection.SingleProvider/name/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-provider-selection/-single-provider/name.html
 $dokka.location:com.tink.link.ui/ProviderSelection///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-provider-selection/index.html
+$dokka.location:com.tink.link.ui/Temp.Companion///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-temp/-companion/index.html
+$dokka.location:com.tink.link.ui/Temp.Companion/x/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-temp/-companion/x.html
+$dokka.location:com.tink.link.ui/Temp///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-temp/index.html
+$dokka.location:com.tink.link.ui/Temp/Temp/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-temp/-temp.html
 $dokka.location:com.tink.link.ui/TinkLinkError.CredentialsNotFound///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-error/-credentials-not-found/index.html
 $dokka.location:com.tink.link.ui/TinkLinkError.CredentialsNotFound/CredentialsNotFound/#kotlin.String/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-error/-credentials-not-found/-credentials-not-found.html
 $dokka.location:com.tink.link.ui/TinkLinkError.CredentialsNotFound/credentialsId/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-error/-credentials-not-found/credentials-id.html
@@ -210,6 +232,7 @@ $dokka.location:com.tink.link.ui/TinkLinkResult.TemporaryUser/credentials/#/Poin
 $dokka.location:com.tink.link.ui/TinkLinkResult///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-result/index.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion///PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/index.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion/ARG_CREDENTIALS_OPERATION/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/-a-r-g_-c-r-e-d-e-n-t-i-a-l-s_-o-p-e-r-a-t-i-o-n.html
+$dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion/ARG_FIRST_LAUNCH/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/-a-r-g_-f-i-r-s-t_-l-a-u-n-c-h.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion/ARG_LINK_USER/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/-a-r-g_-l-i-n-k_-u-s-e-r.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion/ARG_SCOPES/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/-a-r-g_-s-c-o-p-e-s.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity.Companion/ARG_STYLE/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/-companion/-a-r-g_-s-t-y-l-e.html
@@ -226,10 +249,12 @@ $dokka.location:com.tink.link.ui/TinkLinkUiActivity/TinkLinkUiActivity/#/Pointin
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity/onBackPressed/#/PointingToDeclaration/link/com.tink.link.ui/[android-jvm]-tink-link-ui-activity/on-back-pressed.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity/onCreate/#Bundle?/PointingToDeclaration/link/com.tink.link.ui/[common]-tink-link-ui-activity/on-create.html
 $dokka.location:com.tink.link.ui/TinkLinkUiActivity/onNewIntent/#Intent?/PointingToDeclaration/link/com.tink.link.ui/[common]-tink-link-ui-activity/on-new-intent.html
+$dokka.location:com.tink.link.ui/TinkLinkUiActivity/onSaveInstanceState/#Bundle/PointingToDeclaration/link/com.tink.link.ui/[common]-tink-link-ui-activity/on-save-instance-state.html
 $dokka.location:com.tink.link////PointingToDeclaration/link/com.tink.link/index.html
 $dokka.location:com.tink.link//authenticateUser/com.tink.core.Tink#kotlin.String#com.tink.service.handler.ResultHandler[com.tink.model.user.User]/PointingToDeclaration/link/com.tink.link/[android-jvm]authenticate-user.html
 $dokka.location:com.tink.link//createTemporaryUser/com.tink.core.Tink#kotlin.String#kotlin.String#com.tink.service.handler.ResultHandler[com.tink.model.user.User]/PointingToDeclaration/link/com.tink.link/[android-jvm]create-temporary-user.html
 $dokka.location:com.tink.link//getConsentContext/com.tink.core.Tink#/PointingToDeclaration/link/com.tink.link/[android-jvm]get-consent-context.html
+$dokka.location:com.tink.link//getErrorHandler/com.tink.core.Tink#/PointingToDeclaration/link/com.tink.link/[android-jvm]get-error-handler.html
 $dokka.location:com.tink.link//getUserContext/com.tink.core.Tink#/PointingToDeclaration/link/com.tink.link/[android-jvm]get-user-context.html
 $dokka.location:com.tink.link//getUserInfo/com.tink.core.Tink#com.tink.service.handler.ResultHandler[com.tink.model.user.UserInfo]/PointingToDeclaration/link/com.tink.link/[android-jvm]get-user-info.html
 $dokka.location:com.tink.link//requireUserContext/com.tink.core.Tink#/PointingToDeclaration/link/com.tink.link/[android-jvm]require-user-context.html
@@ -237,9 +262,13 @@ $dokka.location:com.tink.link/TinkLink///PointingToDeclaration/link/com.tink.li
 $dokka.location:com.tink.link/TinkLink/authenticateUser/#kotlin.String#com.tink.service.handler.ResultHandler[com.tink.model.user.User]/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/authenticate-user.html
 $dokka.location:com.tink.link/TinkLink/createTemporaryUser/#kotlin.String#kotlin.String#com.tink.service.handler.ResultHandler[com.tink.model.user.User]/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/create-temporary-user.html
 $dokka.location:com.tink.link/TinkLink/getConsentContext/#/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/get-consent-context.html
+$dokka.location:com.tink.link/TinkLink/getErrorHandler/#/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/get-error-handler.html
 $dokka.location:com.tink.link/TinkLink/getUserContext/#/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/get-user-context.html
 $dokka.location:com.tink.link/TinkLink/getUserInfo/#com.tink.service.handler.ResultHandler[com.tink.model.user.UserInfo]/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/get-user-info.html
 $dokka.location:com.tink.link/TinkLink/requireUserContext/#/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link/require-user-context.html
+$dokka.location:com.tink.link/TinkLinkException///PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link-exception/index.html
+$dokka.location:com.tink.link/TinkLinkException/TinkLinkException/#kotlin.String?#kotlin.Throwable?/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link-exception/-tink-link-exception.html
+$dokka.location:com.tink.link/TinkLinkException/TinkLinkException/#kotlin.Throwable/PointingToDeclaration/link/com.tink.link/[android-jvm]-tink-link-exception/-tink-link-exception.html
 $dokka.location:com.tink.model.account////PointingToDeclaration/link/com.tink.model.account/index.html
 $dokka.location:com.tink.model.account/Account.AccountExclusion.AGGREGATION///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}link/com.tink.model.account/[android-jvm]-account/-account-exclusion/-a-g-g-r-e-g-a-t-i-o-n/index.html
 $dokka.location:com.tink.model.account/Account.AccountExclusion.NONE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}link/com.tink.model.account/[android-jvm]-account/-account-exclusion/-n-o-n-e/index.html
@@ -1398,6 +1427,11 @@ $dokka.location:com.tink.service.util/DispatcherProvider/default/#/PointingToDec
 $dokka.location:com.tink.service.util/DispatcherProvider/io/#/PointingToDeclaration/link/com.tink.service.util/[android-jvm]-dispatcher-provider/io.html
 $dokka.location:com.tink.service.util/DispatcherProvider/main/#/PointingToDeclaration/link/com.tink.service.util/[android-jvm]-dispatcher-provider/main.html
 $dokka.location:com.tink.service.util/DispatcherProvider/unconfined/#/PointingToDeclaration/link/com.tink.service.util/[android-jvm]-dispatcher-provider/unconfined.html
+$dokka.location:tink.link.ui.utils////PointingToDeclaration/link/tink.link.ui.utils/index.html
+$dokka.location:tink.link.ui.utils/EspressoIdlingResource///PointingToDeclaration/link/tink.link.ui.utils/[android-jvm]-espresso-idling-resource/index.html
+$dokka.location:tink.link.ui.utils/EspressoIdlingResource/countingIdlingResource/#/PointingToDeclaration/link/tink.link.ui.utils/[android-jvm]-espresso-idling-resource/counting-idling-resource.html
+$dokka.location:tink.link.ui.utils/EspressoIdlingResource/decrement/#/PointingToDeclaration/link/tink.link.ui.utils/[android-jvm]-espresso-idling-resource/decrement.html
+$dokka.location:tink.link.ui.utils/EspressoIdlingResource/increment/#/PointingToDeclaration/link/tink.link.ui.utils/[android-jvm]-espresso-idling-resource/increment.html
 com.tink.core
 com.tink.core.provider
 com.tink.link
@@ -1406,6 +1440,7 @@ com.tink.link.consent
 com.tink.link.core.credentials
 com.tink.link.core.events
 com.tink.link.core.user
+com.tink.link.errorhandler
 com.tink.link.ui
 com.tink.link.ui.credentials
 com.tink.link.ui.providerlist
@@ -1448,4 +1483,5 @@ com.tink.service.transaction
 com.tink.service.transfer
 com.tink.service.user
 com.tink.service.util
+tink.link.ui.utils
 

@@ -22,6 +22,7 @@ title: link
 | [com.tink.link.core.credentials](link/com.tink.link.core.credentials/index.html) |
 | [com.tink.link.core.events](link/com.tink.link.core.events/index.html) |
 | [com.tink.link.core.user](link/com.tink.link.core.user/index.html) |
+| [com.tink.link.errorhandler](link/com.tink.link.errorhandler/index.html) |
 | [com.tink.link.ui](link/com.tink.link.ui/index.html) |
 | [com.tink.link.ui.credentials](link/com.tink.link.ui.credentials/index.html) |
 | [com.tink.link.ui.providerlist](link/com.tink.link.ui.providerlist/index.html) |
@@ -64,4 +65,5 @@ title: link
 | [com.tink.service.transfer](link/com.tink.service.transfer/index.html) |
 | [com.tink.service.user](link/com.tink.service.user/index.html) |
 | [com.tink.service.util](link/com.tink.service.util/index.html) |
+| [tink.link.ui.utils](link/tink.link.ui.utils/index.html) |
 

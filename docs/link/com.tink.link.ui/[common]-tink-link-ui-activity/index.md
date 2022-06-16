@@ -57,4 +57,5 @@ tinkLinkUIExample
 | [onBackPressed](on-back-pressed.html) | [common]<br>open fun [onBackPressed](on-back-pressed.html)() |
 | [onCreate](on-create.html) | [common]<br>open fun [onCreate](on-create.html)(savedInstanceState: &lt;ERROR CLASS&gt;?) |
 | [onNewIntent](on-new-intent.html) | [common]<br>open fun [onNewIntent](on-new-intent.html)(intent: &lt;ERROR CLASS&gt;?) |
+| [onSaveInstanceState](on-save-instance-state.html) | [common]<br>open fun [onSaveInstanceState](on-save-instance-state.html)(outState: &lt;ERROR CLASS&gt;) |
 
