@@ -15,16 +15,6 @@
     android:paddingEnd="24dp"
     android:paddingBottom="32dp">
 
-    <com.google.android.material.textview.MaterialTextView
-      android:id="@+id/title"
-      style="@style/tink_mega"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:text="@string/tink_supplemental_information_title"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
       android:id="@+id/qrCode"
       android:layout_width="@dimen/tink_qr_code_size"
@@ -35,7 +25,7 @@
       android:scaleType="centerInside"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/title" />
+      app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
       android:id="@+id/qrCodeTitle"
