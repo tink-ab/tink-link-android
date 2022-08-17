@@ -17,6 +17,9 @@ import com.tink.link.ui.viewholders.ClickableViewHolder
 import com.tink.link.ui.viewholders.OnViewHolderClickedListener
 import com.tink.model.credentials.Credentials
 import com.tink.model.provider.Provider
+import com.tink.model.provider.Provider.AccessType.OPEN_BANKING
+import com.tink.model.provider.Provider.AccessType.OTHER
+import com.tink.model.provider.Provider.AccessType.UNKNOWN
 import com.tink.model.provider.ProviderTreeNode
 import kotlin.properties.Delegates
 
@@ -56,18 +59,16 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
     ClickableViewHolder(itemView, clickListener) {
 
     private val title: TextView = itemView.findViewById(R.id.title)
+    private val description: TextView = itemView.findViewById(R.id.description)
     private val logo: ImageView = itemView.findViewById(R.id.logo)
 
     fun bind(item: ProviderTreeNode) {
-        title.text = when (item) {
-            is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
-            is ProviderTreeNode.FinancialInstitutionNode -> item.name
-            is ProviderTreeNode.AuthenticationUserTypeNode -> item.authenticationUserType.getDescription(title.context)
-            is ProviderTreeNode.AccessTypeNode -> item.capabilitiesText(title.context)
-            is ProviderTreeNode.CredentialsTypeNode -> item.name ?: item.type.getDescription(title.context)
-            is ProviderTreeNode.ProviderNode -> item.name
-        }
+        setTitle(item)
+        setDescription(item)
+        setIcon(item)
+    }
 
+    private fun setIcon(item: ProviderTreeNode) {
         val iconRes = when (item) {
             is ProviderTreeNode.CredentialsTypeNode -> item.iconResource()
             is ProviderTreeNode.AuthenticationUserTypeNode -> item.iconResource()
@@ -83,9 +84,40 @@ internal class ProviderViewHolder(itemView: View, clickListener: OnViewHolderCli
             }
         } else {
             item.icon?.let {
+                logo.apply {
+                    imageTintList = null
+                    background = null
+                    visibility = View.VISIBLE
+                }
                 Picasso.get().load(it).into(logo)
-                logo.visibility = View.VISIBLE
             }
+        }
+    }
+
+    private fun setDescription(item: ProviderTreeNode) {
+        when (item) {
+            is ProviderTreeNode.AccessTypeNode -> {
+                description.apply {
+                    text = item.capabilitiesText(description.context)
+                    visibility = View.VISIBLE
+                }
+            }
+            else -> description.visibility = View.GONE
+        }
+    }
+
+    private fun setTitle(item: ProviderTreeNode) {
+        title.text = when (item) {
+            is ProviderTreeNode.FinancialInstitutionGroupNode -> item.name
+            is ProviderTreeNode.FinancialInstitutionNode -> item.name
+            is ProviderTreeNode.AuthenticationUserTypeNode -> item.authenticationUserType.getDescription(
+                title.context
+            )
+            is ProviderTreeNode.AccessTypeNode -> item.type.getDescription(title.context)
+            is ProviderTreeNode.CredentialsTypeNode ->
+                item.name
+                    ?: item.type.getDescription(title.context)
+            is ProviderTreeNode.ProviderNode -> item.name
         }
     }
 }
@@ -110,6 +142,13 @@ private fun Provider.AuthenticationUserType.getDescription(context: Context): St
         Provider.AuthenticationUserType.PERSONAL -> context.getString(R.string.tink_provider_select_authentication_user_type_personal)
         Provider.AuthenticationUserType.BUSINESS -> context.getString(R.string.tink_provider_select_authentication_user_type_business)
         Provider.AuthenticationUserType.CORPORATE -> context.getString(R.string.tink_provider_select_authentication_user_type_corporate)
+    }
+
+private fun Provider.AccessType.getDescription(context: Context): String =
+    when (this) {
+        UNKNOWN -> context.getString(R.string.tink_provider_select_access_type_unknown)
+        OPEN_BANKING -> context.getString(R.string.tink_provider_select_access_type_openbanking)
+        OTHER -> context.getString(R.string.tink_provider_select_access_type_other)
     }
 
 private fun Credentials.Type.getDescription(context: Context) =
