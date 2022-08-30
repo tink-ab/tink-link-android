@@ -1,14 +1,107 @@
-set -e
+# shellcheck disable=SC2162
+clear
 
-echo "--------> Pre release check"
-echo "--------> 1) Check that mavenLocal() is not used in the main build.gradle file"
-echo "--------> 2) Check that you are pointing to the correct Tink Core sdk in Dependencies.kt"
-echo "--------> If everything looks good, press any key to run ktlintFormat"
-read -r
-echo "--------> 3) Running ktlintFormat"
-git checkout development
-git fetch
+printf "\n"
+echo "--------> TINK LINK RELEASE"
+printf "\n"
+echo "--------> !! You can stop this release process at any time by clicking 'control+c' !!"
+printf "\n"
+read  -p '--------> Press any key to start'
+printf "\n"
+
+if ! git remote show public; then
+  clear
+  echo "--------> Error: add the public repository as a remote. Run the following: 'git remote add public git@github.com:tink-ab/tink-link-android-private.git'"
+  exit
+else
+  :
+fi
+
+clear
+read -p "--------> Enter NEW version (x.y.z format): " newVersion
+if [[ $newVersion =~ ^([0-9]{1,2}\.){2}[0-9]{1,10}$ ]]; then
+   if ! git checkout release-"$newVersion"; then
+     clear
+     echo "--------> Error: a release branch named 'release-x.y.z' must exist LOCALLY"
+     exit
+   else
+     git push --set-upstream origin "release-$newVersion"
+   fi
+else
+  echo "--------> Error: $newVersion is not in the right format."
+  exit
+fi
+
+clear
+read -p "--------> Enter PREVIOUS version (x.y.z format): " oldVersion
+if [[ $oldVersion =~ ^([0-9]{1,2}\.){2}[0-9]{1,10}$ ]]; then
+  :
+else
+  echo "--------> Error: $oldVersion is not in the right format."
+  exit
+fi
+
+clear
+read -p "--------> Enter Jira ticket number (xxxx format - skip PFMF): " jiraTicketNumber
+if [[ $jiraTicketNumber =~ ^[0-9]{4}$ ]]; then
+  :
+else
+  echo "--------> Error: $jiraTicketNumber is not in the right format."
+  exit
+fi
+
+clear
+echo "--------> Dry-run 'y': simulate a release using copy of master, development and release branches."
+echo "--------> Dry-run 'n': does a real release"
+read -p "--------> Dry-run? (y/n): " isDryRun
+
+clear
+echo "--------> new version number: $newVersion"
+echo "--------> previous version number: $oldVersion"
+echo "--------> Jira ticket number: $jiraTicketNumber"
+echo "--------> Dry-run: $isDryRun"
+read -p "--------> Press any key to continue if the values are correct"
+
+# Init branches
+if [[ $isDryRun = 'y' ]]
+then
+  masterBranch=master-dry-run
+  git branch -d $masterBranch
+  git push origin --delete $masterBranch
+  git checkout master
+  git pull
+  git checkout -b $masterBranch
+  git push --set-upstream origin $masterBranch
+  devBranch=dev-dry-run
+  git branch -d $devBranch
+  git push origin --delete $devBranch
+  git checkout development
+  git pull
+  git checkout -b $devBranch
+  git push --set-upstream origin $devBranch
+  releaseBranch=release-$newVersion-dry-run
+  git branch -d "$releaseBranch"
+  git push origin --delete "$releaseBranch"
+  git checkout release-"$newVersion"
+  git pull
+  git checkout -b "$releaseBranch"
+  git push --set-upstream origin "$releaseBranch"
+  publicMasterBranch=public-master-dry-run
+  git branch -d $publicMasterBranch
+  git push origin --delete $publicMasterBranch
+else
+  masterBranch=master
+  devBranch=development
+  releaseBranch=release-"$newVersion"
+  publicMasterBranch=public-master
+  git branch -d $publicMasterBranch
+  git push origin --delete $publicMasterBranch
+fi
+
+git checkout "$releaseBranch"
 git pull
+
+echo "--------> Running ktlintFormat"
 ./gradlew ktlintFormat
 
 if [[ $(git status --porcelain) ]]; then
@@ -18,69 +111,7 @@ else
  echo "--------> No changes to commit/discard, continuing with the release"
 fi
 
-echo "--------> Enter NEW version (x.y.z format):"
-# shellcheck disable=SC2162
-read newVersion
-if [[ $newVersion =~ ^([0-9]{1,2}\.){2}[0-9]{1,10}$ ]]; then
-   echo ""
-else
-  echo "--------> $newVersion is not in the right format."
-  exit
-fi
-
-echo "--------> Enter PREVIOUS version (x.y.z format):"
-# shellcheck disable=SC2162
-read oldVersion
-if [[ $oldVersion =~ ^([0-9]{1,2}\.){2}[0-9]{1,10}$ ]]; then
-  echo ""
-else
-  echo "--------> $oldVersion is not in the right format."
-  exit
-fi
-
-echo "--------> Enter Jira ticket number (xxxx format - skip PFMF):"
-# shellcheck disable=SC2162
-read jiraTicketNumber
-if [[ $jiraTicketNumber =~ ^[0-9]{4}$ ]]; then
-  echo ""
-else
-  echo "--------> jiraTicketNumber is not in the right format."
-  exit
-fi
-
-echo "--------> Dry-run? (y/n):"
-# shellcheck disable=SC2162
-read isDryRun
-
-printf "\n\n"
-echo "--------> new version number: $newVersion"
-echo "--------> previous version number: $oldVersion"
-echo "--------> Jira ticket number: $jiraTicketNumber"
-echo "--------> Dry-run: $isDryRun"
-read -p "--------> Press enter to start the release process"
-
-# Init branches
-versionBumpBranch=version-bump-"$newVersion"
-if [[ $isDryRun = 'y' ]]
-then
-  masterBranch=master-dry-run
-  git checkout master
-  git pull
-  git checkout -b "$masterBranch"
-  git push --set-upstream origin "$masterBranch"
-  devBranch=dev-dry-run
-  git checkout development
-  git checkout -b "$devBranch"
-  git push --set-upstream origin "$devBranch"
-else
-  masterBranch=master
-  devBranch=development
-fi
-
-echo "--------> Creating branch $versionBumpBranch"
-git checkout -b "$versionBumpBranch"
-
-#echo "--------> Running Dokka"
+echo "--------> Running Dokka"
 ./gradlew dokkaJekyll
 git add docs/
 echo "--------> Creating dokka commit"
@@ -110,28 +141,37 @@ echo "object TinkLinkVersion {
     const val code = major * majorOffset + minor * minorOffset + patch
 }
 " >> $versionFilePath
-git add $versionFilePath
-
 echo "--------> Creating version bump commit"
+git add $versionFilePath
 git commit -m "Version bump to $newVersion"
-git push --set-upstream origin "$versionBumpBranch"
+git push
 
-gh pr create --repo tink-ab/tink-link-android-private --head "$versionBumpBranch" -t "PFMF-$jiraTicketNumber - Version bump to $newVersion" -b "Version bump to $newVersion" --base $devBranch -r tink-ab/android-maintainer
-echo "--------> Created version bump PR from $versionBumpBranch to $devBranch"
-echo "--------> NEXT: Merge version bump PR"
+if [[ $isDryRun = 'y' ]]
+then
+  prTitlePrefix="DRY-RUN"
+else
+  prTitlePrefix=""
+fi
+
+gh pr create --repo tink-ab/tink-link-android-private --head "$releaseBranch" -t "$prTitlePrefix PFMF-$jiraTicketNumber - Release $newVersion" -b "Release $newVersion" --base $masterBranch -r tink-ab/android-maintainer
+clear
+echo "--------> DONE: Created release PR from $releaseBranch to $masterBranch"
+echo "--------> NEXT: Merge release PR using MERGE PULL REQUEST (don't SQUASH & MERGE, we want to see all the commits made into the release branch)"
 read -p "--------> Press enter when PR is merged"
 read -p "--------> Press enter to confirm PR is merged"
 
-git checkout $devBranch
+gh pr create --repo tink-ab/tink-link-android-private --head "$releaseBranch" -t "$prTitlePrefix PFMF-$jiraTicketNumber - Release $newVersion" -b "Release $newVersion" --base $devBranch -r tink-ab/android-maintainer
+clear
+echo "--------> DONE: Created release PR from $releaseBranch to $devBranch"
+echo "--------> NEXT: Merge release PR using MERGE PULL REQUEST (don't SQUASH & MERGE, we want to see all the commits made into the release branch)"
+read -p "--------> Press enter when PR is merged"
+read -p "--------> Press enter to confirm PR is merged"
+
+git checkout $masterBranch
 git pull
-gh pr create --repo tink-ab/tink-link-android-private --head $devBranch -t "PFMF-$jiraTicketNumber - Release $newVersion" -b "Release $newVersion" --base $masterBranch -r tink-ab/android-maintainer
-echo "--------> Created release PR from $devBranch to $masterBranch"
-echo "--------> NEXT: Merge release PR"
-read -p "--------> Press enter when PR is merged"
-read -p "--------> Press enter to confirm PR is merged"
 
-echo "--------> Launching the script #2 to publish to Maven local"
-./scripts/2-publish-to-maven-local.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
+read -p "--------> Press enter to launch the script #2 for publishing to Maven local"
+./scripts/2_publish_to_maven_local.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
 
 
 
