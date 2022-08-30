@@ -25,4 +25,5 @@ title: com.tink.service.transaction
 | Name | Summary |
 |---|---|
 | toCoreModel | [common, androidJvm]<br>[common]<br>fun &lt;ERROR CLASS&gt;.[toCoreModel]([common]to-core-model.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun Transaction.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html)<br>[androidJvm]<br>fun TransactionResponse.[toCoreModel]([android-jvm]to-core-model.html)(): [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html) |
+| toTransactionUpdateObject | [common, androidJvm]<br>[common]<br>fun [Transaction](../com.tink.model.transaction/[common]-transaction/index.html).[toTransactionUpdateObject]([common]to-transaction-update-object.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun [Transaction](../com.tink.model.transaction/[android-jvm]-transaction/index.html).[toTransactionUpdateObject]([android-jvm]to-transaction-update-object.html)(): TransactionUpdateObject |
 

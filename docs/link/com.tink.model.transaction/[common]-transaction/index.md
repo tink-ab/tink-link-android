@@ -43,3 +43,11 @@ data class [Transaction](index.html)(val id: [String](https://kotlinlang.org/api
 | [tags](tags.html) | [common]<br>val [tags](tags.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Tag](../[common]-tag/index.html)&gt; |
 | [upcoming](upcoming.html) | [common]<br>val [upcoming](upcoming.html): [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
 
+
+## Extensions
+
+
+| Name | Summary |
+|---|---|
+| toTransactionUpdateObject | [common, androidJvm]<br>[common]<br>fun [Transaction](index.html).[toTransactionUpdateObject](../../com.tink.service.transaction/[common]to-transaction-update-object.html)(): &lt;ERROR CLASS&gt;<br>[androidJvm]<br>fun [Transaction](../[android-jvm]-transaction/index.html).[toTransactionUpdateObject](../../com.tink.service.transaction/[android-jvm]to-transaction-update-object.html)(): TransactionUpdateObject |
+

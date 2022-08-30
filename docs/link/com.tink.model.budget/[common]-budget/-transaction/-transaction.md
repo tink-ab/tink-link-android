@@ -10,7 +10,7 @@ title: Transaction
 
 
 [common]\
-fun [Transaction](-transaction.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), dispensableAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: &lt;ERROR CLASS&gt;)
+fun [Transaction](-transaction.html)(id: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), amount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), dispensableAmount: [Amount](../../../com.tink.model.misc/[common]-amount/index.html), categoryCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), description: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), date: &lt;ERROR CLASS&gt;, pending: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
 
 
 
