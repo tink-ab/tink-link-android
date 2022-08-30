@@ -7,49 +7,77 @@
     android:layout_height="wrap_content"
     android:background="@drawable/tink_item_ripple_background">
 
-  <ImageView
-      android:id="@+id/logo"
-      android:layout_width="40dp"
-      android:layout_height="40dp"
-      android:layout_marginStart="@dimen/tink_standard_margin_start"
-      android:layout_marginTop="16dp"
-      android:scaleType="fitCenter"
-      app:layout_constraintBottom_toTopOf="@id/barrier"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/tink_standard_margin_start"
+        android:layout_marginEnd="@dimen/tink_standard_margin_start"
+        android:layout_marginTop="@dimen/tink_standard_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-  <TextView
-      android:id="@+id/title"
-      style="@style/tink_hecto"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="@dimen/tink_standard_margin_end"
-      android:gravity="center_vertical|start"
-      app:layout_constraintBottom_toTopOf="@id/barrier"
-      app:layout_constraintStart_toEndOf="@+id/logo"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:ellipsize="end"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintHorizontal_chainStyle="packed"
-      tools:text="Placeholder title" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/tink_bankid"
+            tools:tint="@color/cardview_dark_background" />
 
-  <androidx.constraintlayout.widget.Barrier
-      android:id="@+id/barrier"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:barrierDirection="bottom"
-      app:constraint_referenced_ids="logo,title" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
 
-  <View
-      android:id="@+id/divider"
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:layout_marginStart="@dimen/tink_item_provider_divider_marginStart"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="@dimen/tink_standard_margin_end"
-      android:background="?tink_dividerColor"
-      app:layout_constraintTop_toBottomOf="@id/barrier" />
+            <TextView
+                android:id="@+id/title"
+                style="@style/tink_hecto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginStart="@dimen/tink_standard_margin_start"
+                android:ellipsize="end"
+                tools:text="[Open Banking]" />
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/tink_deci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginStart="@dimen/tink_standard_margin_start"
+                tools:text="[ Checkings accounts, savings accounts, credit cards, investements, loans, identity data ]"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/tink_standard_margin_start"
+        android:layout_marginStart="@dimen/tink_item_provider_divider_marginStart"
+        android:layout_marginEnd="@dimen/tink_standard_margin_end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content"
+        android:background="?tink_dividerColor"/>
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

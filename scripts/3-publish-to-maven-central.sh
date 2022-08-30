@@ -12,6 +12,7 @@ else
   masterBranch=master
 fi
 
+echo "-------> Checking out master"
 git checkout $masterBranch
 git fetch
 git pull
@@ -33,6 +34,7 @@ do
 done
 
 echo "\007"
+clear
 echo "-------> DONE: Publishing to Maven Central!"
-echo "-------> Launching the script #4 to create a Github release on public and private repos"
+read -p "-------> Press enter to launch the script #4 to create a Github release on the public repo"
 ./scripts/4-github-release.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"

@@ -19,6 +19,7 @@ enum [Type](index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/ko
 
 | | |
 |---|---|
+| [VIEW_LEFT_TO_SPEND](-v-i-e-w_-l-e-f-t_-t-o_-s-p-e-n-d/index.html) | [androidJvm]<br>[VIEW_LEFT_TO_SPEND](-v-i-e-w_-l-e-f-t_-t-o_-s-p-e-n-d/index.html)(&quot;VIEW_LEFT_TO_SPEND&quot;) |
 | [REFRESH_CREDENTIAL](-r-e-f-r-e-s-h_-c-r-e-d-e-n-t-i-a-l/index.html) | [androidJvm]<br>[REFRESH_CREDENTIAL](-r-e-f-r-e-s-h_-c-r-e-d-e-n-t-i-a-l/index.html)(&quot;REFRESH_CREDENTIAL&quot;) |
 | [VIEW_TRANSACTIONS_BY_CATEGORY](-v-i-e-w_-t-r-a-n-s-a-c-t-i-o-n-s_-b-y_-c-a-t-e-g-o-r-y/index.html) | [androidJvm]<br>[VIEW_TRANSACTIONS_BY_CATEGORY](-v-i-e-w_-t-r-a-n-s-a-c-t-i-o-n-s_-b-y_-c-a-t-e-g-o-r-y/index.html)(&quot;VIEW_TRANSACTIONS_BY_CATEGORY&quot;) |
 | [VIEW_TRANSACTIONS](-v-i-e-w_-t-r-a-n-s-a-c-t-i-o-n-s/index.html) | [androidJvm]<br>[VIEW_TRANSACTIONS](-v-i-e-w_-t-r-a-n-s-a-c-t-i-o-n-s/index.html)(&quot;VIEW_TRANSACTIONS&quot;) |
