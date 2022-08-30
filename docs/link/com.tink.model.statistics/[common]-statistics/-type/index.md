@@ -20,6 +20,8 @@ enum [Type](index.html) : [Enum](https://kotlinlang.org/api/latest/jvm/stdlib/ko
 | | |
 |---|---|
 | [UNKNOWN](-u-n-k-n-o-w-n/index.html) | [common]<br>[UNKNOWN](-u-n-k-n-o-w-n/index.html)(&quot;&quot;) |
+| [LEFT_TO_SPEND_AVERAGE](-l-e-f-t_-t-o_-s-p-e-n-d_-a-v-e-r-a-g-e/index.html) | [common]<br>[LEFT_TO_SPEND_AVERAGE](-l-e-f-t_-t-o_-s-p-e-n-d_-a-v-e-r-a-g-e/index.html)(&quot;left-to-spend-average&quot;) |
+| [LEFT_TO_SPEND](-l-e-f-t_-t-o_-s-p-e-n-d/index.html) | [common]<br>[LEFT_TO_SPEND](-l-e-f-t_-t-o_-s-p-e-n-d/index.html)(&quot;left-to-spend&quot;) |
 | [INCOME_BY_CATEGORY](-i-n-c-o-m-e_-b-y_-c-a-t-e-g-o-r-y/index.html) | [common]<br>[INCOME_BY_CATEGORY](-i-n-c-o-m-e_-b-y_-c-a-t-e-g-o-r-y/index.html)(&quot;income-by-category&quot;) |
 | [EXPENSES_BY_CATEGORY](-e-x-p-e-n-s-e-s_-b-y_-c-a-t-e-g-o-r-y/index.html) | [common]<br>[EXPENSES_BY_CATEGORY](-e-x-p-e-n-s-e-s_-b-y_-c-a-t-e-g-o-r-y/index.html)(&quot;expenses-by-category&quot;) |
 
