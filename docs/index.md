@@ -35,6 +35,7 @@ title: link
 | [com.tink.model.consent](link/com.tink.model.consent/index.html) |
 | [com.tink.model.credentials](link/com.tink.model.credentials/index.html) |
 | [com.tink.model.insights](link/com.tink.model.insights/index.html) |
+| [com.tink.model.leftToSpend](link/com.tink.model.leftToSpend/index.html) |
 | [com.tink.model.misc](link/com.tink.model.misc/index.html) |
 | [com.tink.model.provider](link/com.tink.model.provider/index.html) |
 | [com.tink.model.relations](link/com.tink.model.relations/index.html) |

@@ -31,6 +31,7 @@ All subclasses should be data classes or provide a meaningful equals() function
 | [RefreshCredential](-refresh-credential/index.html) | [common]<br>data class [RefreshCredential](-refresh-credential/index.html)(val credentialId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.html) |
 | [ViewAccount](-view-account/index.html) | [common]<br>data class [ViewAccount](-view-account/index.html)(val accountId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [InsightAction.Data](index.html) |
 | [ViewBudget](-view-budget/index.html) | [common]<br>data class [ViewBudget](-view-budget/index.html)(val budgetId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), val periodStartDate: &lt;ERROR CLASS&gt;) : [InsightAction.Data](index.html) |
+| [ViewLeftToSpend](-view-left-to-spend/index.html) | [common]<br>data class [ViewLeftToSpend](-view-left-to-spend/index.html)(val month: [YearMonth](../../../com.tink.model.time/[common]-year-month/index.html)) : [InsightAction.Data](index.html) |
 | [ViewTransactions](-view-transactions/index.html) | [common]<br>data class [ViewTransactions](-view-transactions/index.html)(val transactionIds: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : [InsightAction.Data](index.html) |
 | [ViewTransactionsByCategory](-view-transactions-by-category/index.html) | [common]<br>data class [ViewTransactionsByCategory](-view-transactions-by-category/index.html)(val transactionsByCategory: [Map](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;&gt;) : [InsightAction.Data](index.html) |
 
@@ -52,4 +53,5 @@ All subclasses should be data classes or provide a meaningful equals() function
 | ViewAccount |
 | ViewTransactions |
 | ViewTransactionsByCategory |
+| ViewLeftToSpend |
 
