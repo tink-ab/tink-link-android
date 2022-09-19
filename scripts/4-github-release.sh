@@ -92,7 +92,7 @@ read -p "--------> Debug"
 
 git checkout -b "$publicRepoReleaseBranch"
 git push --set-upstream public "$publicRepoReleaseBranch"
-git rebase --onto public/$publicRepoMasterBranchLocal HEAD^1
+git rebase --onto public/$publicRepoMasterBranchRemote HEAD^1
 git push -f
 echo "--------> Created a release branch $publicRepoReleaseBranch on the public repo"
 

@@ -39,4 +39,4 @@ ls -R /Users/"$USER"/.m2/repository/com/tink
 #open /Users/"$USER"/.m2/repository/com/tink
 
 read -p "-------> Press enter to launch the script #3 to publish to Maven Central"
-./scripts/3_publish_to_maven_central.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
+./scripts/3-publish-to-maven-central.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
