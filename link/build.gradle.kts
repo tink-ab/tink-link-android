@@ -43,10 +43,10 @@ dependencies {
     testImplementation(Dependencies.Testing.test_mockk)
 }
 
-// Force jsoup 1.14.3 for security updates
+// Force jsoup 1.15.3 for security updates
 configurations.all {
     resolutionStrategy {
-        force("org.jsoup:jsoup:1.14.3")
+        force("org.jsoup:jsoup:1.15.3")
     }
 }
 
