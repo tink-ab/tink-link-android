@@ -23,7 +23,7 @@ common
 
 | | |
 |---|---|
-| credentialsId | Id of the [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) to be refreshed |
+| credentialsId | Id of the Credentials to be refreshed |
 | authenticate | Force an authentication before the refresh, designed for open banking credentials. Defaults to false. (optional) |
 
 

@@ -10,7 +10,7 @@ title: PermanentUser
 
 
 [androidJvm]\
-fun [PermanentUser](-permanent-user.html)(credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
+fun [PermanentUser](-permanent-user.html)(credentials: Credentials)
 
 
 
@@ -21,7 +21,7 @@ androidJvm
 
 | | |
 |---|---|
-| credentials | [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) connected to the user |
+| credentials | Credentials connected to the user |
 
 
 

@@ -10,7 +10,7 @@ title: ThirdPartyAuthentication
 
 
 [common]\
-fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: &lt;ERROR CLASS&gt;)
 
 
 

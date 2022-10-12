@@ -10,7 +10,7 @@ title: [androidJvm]getConsentContext
 
 
 [androidJvm]\
-fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[getConsentContext]([android-jvm]get-consent-context.html)(): [ConsentContext](../com.tink.link.consent/[android-jvm]-consent-context/index.html)
+fun Tink.[getConsentContext]([android-jvm]get-consent-context.html)(): [ConsentContext](../com.tink.link.consent/[android-jvm]-consent-context/index.html)
 
 
 

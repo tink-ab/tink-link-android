@@ -10,7 +10,7 @@ title: provider
 
 
 [androidJvm]\
-abstract val [provider](provider.html): [Provider](../../com.tink.model.provider/[android-jvm]-provider/index.html)
+abstract val [provider](provider.html): Provider
 
 
 

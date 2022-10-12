@@ -10,7 +10,7 @@ title: requireUserContext
 
 
 [common]\
-fun [requireUserContext](require-user-context.html)(): [UserContext](../../com.tink.link.core.user/[common]-user-context/index.html)
+fun [requireUserContext](require-user-context.html)(): &lt;ERROR CLASS&gt;
 
 
 
