@@ -14,5 +14,5 @@ title: com.tink.link.consent
 
 | Name | Summary |
 |---|---|
-| ConsentContext | [common, androidJvm]<br>[common]<br>class [ConsentContext]([common]-consent-context/index.html)(consentService: [ConsentService](../com.tink.service.consent/[common]-consent-service/index.html), dispatcher: &lt;ERROR CLASS&gt;)<br>[androidJvm]<br>class [ConsentContext]([android-jvm]-consent-context/index.html)(consentService: [ConsentService](../com.tink.service.consent/[android-jvm]-consent-service/index.html), dispatcher: CoroutineDispatcher)<br>Context for handling things around user consent. |
+| ConsentContext | [common, androidJvm]<br>[common]<br>class [ConsentContext]([common]-consent-context/index.html)(consentService: &lt;ERROR CLASS&gt;, dispatcher: &lt;ERROR CLASS&gt;)<br>[androidJvm]<br>class [ConsentContext]([android-jvm]-consent-context/index.html)(consentService: ConsentService, dispatcher: CoroutineDispatcher)<br>Context for handling things around user consent. |
 

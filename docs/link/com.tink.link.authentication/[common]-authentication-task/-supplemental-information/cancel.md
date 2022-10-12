@@ -10,7 +10,7 @@ title: cancel
 
 
 [common]\
-fun [cancel](cancel.html)(resultHandler: [ResultHandler](../../../com.tink.service.handler/[common]-result-handler/index.html)&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
+fun [cancel](cancel.html)(resultHandler: &lt;ERROR CLASS&gt;&lt;[Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)&gt;)
 
 
 

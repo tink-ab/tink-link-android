@@ -10,7 +10,7 @@ title: Loading
 
 
 [androidJvm]\
-fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)? = null)
+fun [Loading](-loading.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, credentials: Credentials? = null)
 
 
 

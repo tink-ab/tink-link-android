@@ -10,7 +10,7 @@ title: providerRepository
 
 
 [common]\
-abstract val [providerRepository](provider-repository.html): [ProviderRepository](../../com.tink.core.provider/[common]-provider-repository/index.html)
+abstract val [providerRepository](provider-repository.html): &lt;ERROR CLASS&gt;
 
 
 

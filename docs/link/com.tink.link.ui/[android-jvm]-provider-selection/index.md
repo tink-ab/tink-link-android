@@ -21,7 +21,7 @@ Used as an argument for the [TinkLinkUiActivity](../[android-jvm]-tink-link-ui-a
 
 | Name | Summary |
 |---|---|
-| [ProviderList](-provider-list/index.html) | [androidJvm]<br>data class [ProviderList](-provider-list/index.html)(val filter: [ProviderFilter](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html) = ProviderFilter()) : [ProviderSelection](index.html)<br>Show a provider list selection in the UI. This allows you to also specify an optional [filter](-provider-list/filter.html). |
+| [ProviderList](-provider-list/index.html) | [androidJvm]<br>data class [ProviderList](-provider-list/index.html)(val filter: ProviderFilter = ProviderFilter()) : [ProviderSelection](index.html)<br>Show a provider list selection in the UI. This allows you to also specify an optional [filter](-provider-list/filter.html). |
 | [SingleProvider](-single-provider/index.html) | [androidJvm]<br>data class [SingleProvider](-single-provider/index.html)(val name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)) : [ProviderSelection](index.html)<br>Adapt the UI to launch directly into a single provider with a unique [name](-single-provider/name.html) identifier. This will launch the create credentials view directly and skip the provider list selection. |
 
 
@@ -30,8 +30,8 @@ Used as an argument for the [TinkLinkUiActivity](../[android-jvm]-tink-link-ui-a
 
 | Name | Summary |
 |---|---|
-| [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [describeContents](../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
 ## Inheritors

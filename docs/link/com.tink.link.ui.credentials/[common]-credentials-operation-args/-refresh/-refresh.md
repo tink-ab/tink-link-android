@@ -10,7 +10,7 @@ title: Refresh
 
 
 [common]\
-fun [Refresh](-refresh.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html), authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
+fun [Refresh](-refresh.html)(provider: &lt;ERROR CLASS&gt;, credentials: &lt;ERROR CLASS&gt;, authenticate: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html))
 
 
 

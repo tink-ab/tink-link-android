@@ -10,7 +10,7 @@ title: TemporaryUser
 
 
 [common]\
-fun [TemporaryUser](-temporary-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+fun [TemporaryUser](-temporary-user.html)(authorizationCode: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), credentials: &lt;ERROR CLASS&gt;)
 
 
 
@@ -22,7 +22,7 @@ common
 | | |
 |---|---|
 | authorizationCode | Authorization code from authorizing the user towards a new set of scopes |
-| credentials | [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html) connected to the user |
+| credentials | Credentials connected to the user |
 
 
 

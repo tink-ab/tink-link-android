@@ -10,7 +10,7 @@ title: fields
 
 
 [common]\
-val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Field](../../../com.tink.model.misc/[common]-field/index.html)&gt;
+val [fields](fields.html): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;&lt;ERROR CLASS&gt;&gt;
 
 
 

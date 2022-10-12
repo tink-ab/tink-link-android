@@ -10,7 +10,7 @@ title: Update
 
 
 [common]\
-fun [Update](-update.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+fun [Update](-update.html)(provider: &lt;ERROR CLASS&gt;, credentials: &lt;ERROR CLASS&gt;)
 
 
 
