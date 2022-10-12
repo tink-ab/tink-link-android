@@ -10,15 +10,15 @@ title: listStream
 
 
 [androidJvm]\
-fun [listStream](list-stream.html)(): [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html)&lt;[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)&gt;&gt;
+fun [listStream](list-stream.html)(): Stream&lt;[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;Credentials&gt;&gt;
 
 
 
-Returns a [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html) containing the list of [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) objects.
+Returns a Stream containing the list of Credentials objects.
 
 
 
-You can subscribe to the [Stream](../../com.tink.service.streaming.publisher/[android-jvm]-stream/index.html) and observe changes in the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) objects and act upon them.
+You can subscribe to the Stream and observe changes in the Credentials objects and act upon them.
 
 
 

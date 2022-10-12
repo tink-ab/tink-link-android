@@ -10,15 +10,15 @@ title: listStream
 
 
 [common]\
-fun [listStream](list-stream.html)(): [Stream](../../com.tink.service.streaming.publisher/[common]-stream/index.html)&lt;[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Credentials](../../com.tink.model.credentials/[common]-credentials/index.html)&gt;&gt;
+fun [listStream](list-stream.html)(): &lt;ERROR CLASS&gt;&lt;[List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;&lt;ERROR CLASS&gt;&gt;&gt;
 
 
 
-Returns a [Stream](../../com.tink.service.streaming.publisher/[common]-stream/index.html) containing the list of [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html) objects.
+Returns a Stream containing the list of Credentials objects.
 
 
 
-You can subscribe to the [Stream](../../com.tink.service.streaming.publisher/[common]-stream/index.html) and observe changes in the [Credentials](../../com.tink.model.credentials/[common]-credentials/index.html) objects and act upon them.
+You can subscribe to the Stream and observe changes in the Credentials objects and act upon them.
 
 
 

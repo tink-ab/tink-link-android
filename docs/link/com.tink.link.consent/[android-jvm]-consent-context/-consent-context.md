@@ -18,9 +18,9 @@ title: ConsentContext
 
 
 
-fun [ConsentContext](-consent-context.html)(consentService: [ConsentService](../../com.tink.service.consent/[android-jvm]-consent-service/index.html))
+fun [ConsentContext](-consent-context.html)(consentService: ConsentService)
 
-fun [ConsentContext](-consent-context.html)(consentService: [ConsentService](../../com.tink.service.consent/[android-jvm]-consent-service/index.html), dispatcher: CoroutineDispatcher)
+fun [ConsentContext](-consent-context.html)(consentService: ConsentService, dispatcher: CoroutineDispatcher)
 
 
 

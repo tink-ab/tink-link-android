@@ -10,7 +10,7 @@ title: Success
 
 
 [androidJvm]\
-data class [Success](index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, val credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) : [CredentialsStatus](../index.html)
+data class [Success](index.html)(val message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, val credentials: Credentials) : [CredentialsStatus](../index.html)
 
 The credentials were successfully created.
 
@@ -33,7 +33,7 @@ androidJvm
 
 | | |
 |---|---|
-| [Success](-success.html) | [androidJvm]<br>fun [Success](-success.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html)) |
+| [Success](-success.html) | [androidJvm]<br>fun [Success](-success.html)(message: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) = &quot;&quot;, credentials: Credentials) |
 
 
 ## Properties
@@ -41,6 +41,6 @@ androidJvm
 
 | Name | Summary |
 |---|---|
-| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html) |
+| [credentials](credentials.html) | [androidJvm]<br>open override val [credentials](credentials.html): Credentials |
 | [message](message.html) | [androidJvm]<br>val [message](message.html): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 

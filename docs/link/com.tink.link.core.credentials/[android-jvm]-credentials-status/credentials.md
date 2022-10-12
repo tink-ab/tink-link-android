@@ -10,7 +10,7 @@ title: credentials
 
 
 [androidJvm]\
-abstract val [credentials](credentials.html): [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)?
+abstract val [credentials](credentials.html): Credentials?
 
 
 

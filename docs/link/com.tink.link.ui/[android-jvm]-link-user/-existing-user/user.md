@@ -10,7 +10,7 @@ title: user
 
 
 [androidJvm]\
-val [user](user.html): [User](../../../com.tink.model.user/[android-jvm]-user/index.html)
+val [user](user.html): User
 
 
 

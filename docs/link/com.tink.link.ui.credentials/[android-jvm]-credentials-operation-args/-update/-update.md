@@ -10,7 +10,7 @@ title: Update
 
 
 [androidJvm]\
-fun [Update](-update.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[android-jvm]-credentials/index.html))
+fun [Update](-update.html)(provider: Provider, credentials: Credentials)
 
 
 

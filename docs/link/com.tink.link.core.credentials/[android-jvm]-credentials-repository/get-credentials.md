@@ -10,11 +10,11 @@ title: getCredentials
 
 
 [androidJvm]\
-fun [getCredentials](get-credentials.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: [ResultHandler](../../com.tink.service.handler/[android-jvm]-result-handler/index.html)&lt;[Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html)&gt;)
+fun [getCredentials](get-credentials.html)(credentialsId: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), resultHandler: ResultHandler&lt;Credentials&gt;)
 
 
 
-Gets the [Credentials](../../com.tink.model.credentials/[android-jvm]-credentials/index.html) matching the [credentialsId](get-credentials.html).
+Gets the Credentials matching the [credentialsId](get-credentials.html).
 
 
 

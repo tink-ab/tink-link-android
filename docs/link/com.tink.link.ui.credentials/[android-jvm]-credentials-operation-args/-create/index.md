@@ -10,7 +10,7 @@ title: Create
 
 
 [androidJvm]\
-data class [Create](index.html)(val provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html)) : [CredentialsOperationArgs](../index.html)
+data class [Create](index.html)(val provider: Provider) : [CredentialsOperationArgs](../index.html)
 
 
 
@@ -19,7 +19,7 @@ data class [Create](index.html)(val provider: [Provider](../../../com.tink.model
 
 | | |
 |---|---|
-| [Create](-create.html) | [androidJvm]<br>fun [Create](-create.html)(provider: [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html)) |
+| [Create](-create.html) | [androidJvm]<br>fun [Create](-create.html)(provider: Provider) |
 
 
 ## Functions
@@ -27,8 +27,8 @@ data class [Create](index.html)(val provider: [Provider](../../../com.tink.model
 
 | Name | Summary |
 |---|---|
-| [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
-| [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
+| [describeContents](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [describeContents](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1578325224%2FFunctions%2F-812656150)(): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [writeToParcel](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150) | [androidJvm]<br>abstract fun [writeToParcel](../../../com.tink.link.authentication/[android-jvm]-authentication-task/-third-party-authentication/-launch-result/-error/-app-needs-upgrade/index.html#-1754457655%2FFunctions%2F-812656150)(p0: [Parcel](https://developer.android.com/reference/kotlin/android/os/Parcel.html), p1: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)) |
 
 
 ## Properties
@@ -36,5 +36,5 @@ data class [Create](index.html)(val provider: [Provider](../../../com.tink.model
 
 | Name | Summary |
 |---|---|
-| [provider](provider.html) | [androidJvm]<br>open override val [provider](provider.html): [Provider](../../../com.tink.model.provider/[android-jvm]-provider/index.html) |
+| [provider](provider.html) | [androidJvm]<br>open override val [provider](provider.html): Provider |
 
