@@ -171,7 +171,7 @@ git checkout $masterBranch
 git pull
 
 read -p "--------> Press enter to launch the script #2 for publishing to Maven local"
-./scripts/2_publish_to_maven_local.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
+./scripts/2-publish-to-maven-local.sh "$newVersion" "$oldVersion" "$jiraTicketNumber" "$isDryRun"
 
 
 

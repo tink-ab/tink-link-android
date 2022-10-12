@@ -10,7 +10,7 @@ title: ProviderList
 
 
 [common]\
-data class [ProviderList](index.html)(val filter: [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html) = ProviderFilter()) : [ProviderSelection](../index.html)
+data class [ProviderList](index.html)(val filter: &lt;ERROR CLASS&gt; = ProviderFilter()) : [ProviderSelection](../index.html)
 
 Show a provider list selection in the UI. This allows you to also specify an optional [filter](filter.html).
 
@@ -21,7 +21,7 @@ Show a provider list selection in the UI. This allows you to also specify an opt
 
 | | |
 |---|---|
-| [ProviderList](-provider-list.html) | [common]<br>fun [ProviderList](-provider-list.html)(filter: [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html) = ProviderFilter()) |
+| [ProviderList](-provider-list.html) | [common]<br>fun [ProviderList](-provider-list.html)(filter: &lt;ERROR CLASS&gt; = ProviderFilter()) |
 
 
 ## Properties
@@ -29,5 +29,5 @@ Show a provider list selection in the UI. This allows you to also specify an opt
 
 | Name | Summary |
 |---|---|
-| [filter](filter.html) | [common]<br>val [filter](filter.html): [ProviderFilter](../../../com.tink.service.provider/[common]-provider-filter/index.html) |
+| [filter](filter.html) | [common]<br>val [filter](filter.html): &lt;ERROR CLASS&gt; |
 

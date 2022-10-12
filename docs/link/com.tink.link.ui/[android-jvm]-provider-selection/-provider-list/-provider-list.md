@@ -10,7 +10,7 @@ title: ProviderList
 
 
 [androidJvm]\
-fun [ProviderList](-provider-list.html)(filter: [ProviderFilter](../../../com.tink.service.provider/[android-jvm]-provider-filter/index.html) = ProviderFilter())
+fun [ProviderList](-provider-list.html)(filter: ProviderFilter = ProviderFilter())
 
 
 

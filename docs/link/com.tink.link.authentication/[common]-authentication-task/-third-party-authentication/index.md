@@ -10,7 +10,7 @@ title: ThirdPartyAuthentication
 
 
 [common]\
-data class [ThirdPartyAuthentication](index.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) : [AuthenticationTask](../index.html)
+data class [ThirdPartyAuthentication](index.html)(credentials: &lt;ERROR CLASS&gt;) : [AuthenticationTask](../index.html)
 
 Indicates that there is an authentication in a third party app or in the browser necessary to proceed with the authentication. The user can be sent to redirected by calling [launch](launch.html), or you can provide a custom redirection logic with the use of the data in [thirdPartyAppAuthentication](third-party-app-authentication.html)
 
@@ -21,7 +21,7 @@ Indicates that there is an authentication in a third party app or in the browser
 
 | | |
 |---|---|
-| [ThirdPartyAuthentication](-third-party-authentication.html) | [common]<br>fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html)) |
+| [ThirdPartyAuthentication](-third-party-authentication.html) | [common]<br>fun [ThirdPartyAuthentication](-third-party-authentication.html)(credentials: &lt;ERROR CLASS&gt;) |
 
 
 ## Types

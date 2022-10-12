@@ -10,7 +10,7 @@ title: getErrorHandler
 
 
 [common]\
-fun [getErrorHandler](get-error-handler.html)(): [TinkLinkErrorHandler](../../com.tink.link.errorhandler/[common]-tink-link-error-handler/index.html)
+fun [getErrorHandler](get-error-handler.html)(): &lt;ERROR CLASS&gt;
 
 
 

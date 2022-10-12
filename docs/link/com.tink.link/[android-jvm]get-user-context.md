@@ -10,7 +10,7 @@ title: [androidJvm]getUserContext
 
 
 [androidJvm]\
-fun [Tink](../com.tink.core/[android-jvm]-tink/index.html).[getUserContext]([android-jvm]get-user-context.html)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html)?
+fun Tink.[getUserContext]([android-jvm]get-user-context.html)(): [UserContext](../com.tink.link.core.user/[android-jvm]-user-context/index.html)?
 
 
 

@@ -10,7 +10,7 @@ title: Authenticate
 
 
 [common]\
-fun [Authenticate](-authenticate.html)(provider: [Provider](../../../com.tink.model.provider/[common]-provider/index.html), credentials: [Credentials](../../../com.tink.model.credentials/[common]-credentials/index.html))
+fun [Authenticate](-authenticate.html)(provider: &lt;ERROR CLASS&gt;, credentials: &lt;ERROR CLASS&gt;)
 
 
 

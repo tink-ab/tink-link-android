@@ -10,11 +10,11 @@ title: CredentialsRepository
 
 
 [common]\
-fun [CredentialsRepository](-credentials-repository.html)(service: [CredentialsService](../../com.tink.service.credentials/[common]-credentials-service/index.html), tinkConfiguration: [TinkConfiguration](../../com.tink.service.network/[common]-tink-configuration/index.html))
+fun [CredentialsRepository](-credentials-repository.html)(service: &lt;ERROR CLASS&gt;, tinkConfiguration: &lt;ERROR CLASS&gt;)
 
 
 
-Create a new repository instance from a [CredentialsService](../../com.tink.service.credentials/[common]-credentials-service/index.html) This is usually done inside the Tink framework and it should normally not be necessary to create your own instance.
+Create a new repository instance from a CredentialsService This is usually done inside the Tink framework and it should normally not be necessary to create your own instance.
 
 
 
