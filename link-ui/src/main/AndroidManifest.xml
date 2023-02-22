@@ -1,7 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application>
-    <activity
-      android:name="com.tink.link.ui.TinkLinkUiActivity"
-      android:configChanges="orientation|screenSize" />
-  </application>
-</manifest>
