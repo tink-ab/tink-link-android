@@ -1,0 +1,4 @@
+<resources>
+    <string name="sample_app_name" translatable="false">Sample</string>
+    <string name="sample_activity_name" translatable="false">Sample</string>
+</resources>
