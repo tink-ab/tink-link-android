@@ -32,8 +32,8 @@ Tink.initSdk(
    redirectUri = "{REDIRECT_URI_SCHEME}://{REDIRECT_URI_HOST}" //[^1]
 )
 ```
-^1: You must add a custom URL scheme or supported web URLs to handle redirects from a third-party authentication flow back to your app.
-The redirect URI should be the same as the one you've entered in Console > **App settings**(https://console.tink.com/account-verification/tink-link).
+^1: *You must add a custom URL scheme or supported web URLs to handle redirects from a third-party authentication flow back to your app.
+The redirect URI should be the same as the one you've entered in Console > **App settings**(https://console.tink.com/account-verification/tink-link).*
 
 2. Configure activity and an intent filter in your Manifest file
 
@@ -54,7 +54,7 @@ The redirect URI should be the same as the one you've entered in Console > **App
            android:scheme="{REDIRECT_URI_SCHEME}" /> // [^2]
 </intent-filter>
 ```
-^2: Use the same redirect URI as noted in step 1[^1].
+^2: *Use the same redirect URI as noted in step 1[^1].*
 
 ## Display Tink Link into your application
 Tink Link can be displayed in two different ways inside your application: Fullscreen and Modal mode.
@@ -92,7 +92,7 @@ val dataRequest = ConnectAccountsForContinuousAccess(
 )
 ```
 
-^3: To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).
+^3: *To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).*
 
 ### Customize the look of Tink Link
 Customize the look of Tink Link by creating a theme for both light and dark modes. This is mandatory and it's needed for matching Tink Link with the UI style of your app.
