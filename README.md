@@ -69,7 +69,7 @@ Fullscreen launchmode will show Tink SDK in fullscreen mode inside your app, lea
 Modal launch mode shows Tink SDK inside a modal bottom sheet, which leaves the top part of your app still visible but not selectable.
 <img src="https://user-images.githubusercontent.com/102951880/208936710-d48fab76-c479-485d-947b-5a1b457662ad.png" alt="modal" width="200"/>
 
-## FullScreen and Modal integration guide
+## Integration guide
 
 For any Tink Link flow regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), the steps required are the following:
 
