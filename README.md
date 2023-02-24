@@ -29,10 +29,10 @@ dependencies {
 ```kotlin
 Tink.initSdk(
    clientId = "YOUR_CLIENT_ID", // Your clientId. Retrieve it from console.tink.com.
-   redirectUri = "{REDIRECT_URI_SCHEME}://{REDIRECT_URI_HOST}" // [^1]
+   redirectUri = "{REDIRECT_URI_SCHEME}://{REDIRECT_URI_HOST}" //[^1]
 )
 ```
-[^1]: You must add a custom URL scheme or supported web URLs to handle redirects from a third-party authentication flow back to your app.
+^1: You must add a custom URL scheme or supported web URLs to handle redirects from a third-party authentication flow back to your app.
 The redirect URI should be the same as the one you've entered in Console > **App settings**(https://console.tink.com/account-verification/tink-link).
 
 2. Configure activity and an intent filter in your Manifest file
@@ -54,7 +54,7 @@ The redirect URI should be the same as the one you've entered in Console > **App
            android:scheme="{REDIRECT_URI_SCHEME}" /> // [^2]
 </intent-filter>
 ```
-[^2]: Use the same redirect URI as noted in step 1[^1].
+^2: Use the same redirect URI as noted in step 1[^1].
 
 ## Display Tink Link into your application
 Tink Link can be displayed in two different ways inside your application: Fullscreen and Modal mode.
@@ -73,10 +73,10 @@ Modal launch mode shows Tink SDK inside a modal bottom sheet, which leaves the t
 
 For any Tink Link flow regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), the steps required are the following:
 
-1. Create the request object
-2. Customize Tink Link UI
-3. Start the flow in Fullscreen or Modal mode
-4. Collect the outcome of the flow 
+1. [Create the request object](#create-the-request-object)
+2. [Customize Tink Link UI](#customize-the-look-of-tink-link)
+3. [Start the flow](#launch-tink-link-flow)
+4. [Collect the outcome of the flow](#collect-tink-link-flow-outcome) 
 
 In the sections below we will show you how to start the flow for connecting accounts to a permanent user (also called "continuous access").
 
@@ -92,7 +92,7 @@ val dataRequest = ConnectAccountsForContinuousAccess(
 )
 ```
 
-[^3]: To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).
+^3: To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).
 
 ### Customize the look of Tink Link
 Customize the look of Tink Link by creating a theme for both light and dark modes. This is mandatory and it's needed for matching Tink Link with the UI style of your app.
