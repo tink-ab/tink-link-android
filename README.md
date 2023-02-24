@@ -14,34 +14,20 @@
 The minimum API level that's required to use this library is 23 (Android 6.0).
 
 ## Installation
-1. Make sure that `mavenCentral()` is added to your repositories (it should be, by default).
+1. Add the Tink Link .aar file named "sdk-release.aar" to the `libs` folder of your app module. The .aar file can be found on the Github release page for this project under the "Tink Link iOS 2.0.0 Release Candidate 1"
+2. In your app module build.gradle file add the following line in the "dependencies" section:
 
-```groovy
-allprojects {
-   repositories {
-      mavenCentral()
-   }
-}
-```
-
-2. Add dependency on the latest version:
-
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-sdk-android-private?color=%230E9EC2)](https://github.com/tink-ab/tink-sdk-android-private/releases/latest)
-
-```groovy
+```xml
 dependencies {
-   implementation "com.tink:link:<version>"
+   implementation fileTree(dir: "libs", include: ["*.aar"])
+   ...
 }
 ```
-
-3. Optional: Verify artifact checksums
-
-A SHA-256 checksum is documented per [release](https://github.com/tink-ab/tink-sdk-android-private/releases).•
 
 ## Initialization
 1. Initialize Tink Link in your Application class:
 
-```kotlin
+```xml
 Tink.initSdk(
    clientId = "YOUR_CLIENT_ID", // Your clientId. Retrieve it from console.tink.com.
    redirectUri = "{REDIRECT_URI_SCHEME}://{REDIRECT_URI_HOST}" // [^1]
@@ -73,43 +59,120 @@ android:launchMode="singleInstance">
 
 [^2]: Use the same redirect URI as noted in step 1[^1].
 
-
-## Integrate Tink SDK into your application
-Tink SDK can be displayed in two different ways inside your application: Fullscreen and Modal mode.
-
-![flow_comparison](https://user-images.githubusercontent.com/102951880/211849562-9bc886e4-084f-4592-83db-40438872fe45.png)
-
-The following sections describe the three integration modes and the code that's needed in your app to launch Tink SDK.
-
-Tink SDK can be integrated in all apps regardless of UI architecture. In other words, use either XML layout or Jetpack Compose.
-
-- [Fullscreen](#fullscreen)[^3]
-- [Modal](#modal)[^3]
-
-[^3]: The implementation is the same for both an XML layout-based app and Jetpack Compose.
+## Integrate Tink Link into your application
+Tink Link can be displayed in two different ways inside your application: Fullscreen and Modal mode.
 
 ### FullScreen
 
+Fullscreen launchmode will show Tink SDK in fullscreen mode inside your app, leaving only the status bar visible.
 <img src="https://user-images.githubusercontent.com/102951880/208935693-15f6aa04-80d2-4d47-bf9c-824068088ed3.png" alt="fullscreen" width="200"/>
 
-Fullscreen launchmode will show Tink SDK in fullscreen mode inside your app, leaving only the status bar visible while hiding the actionbar.
+### Modal
 
-Regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), to launch a Tink SDK flow in fullscreen mode requires you to do the following:
+Modal launch mode shows Tink SDK inside a modal bottom sheet, which leaves the top part of your app still visible but not selectable.
+<img src="https://user-images.githubusercontent.com/102951880/208936710-d48fab76-c479-485d-947b-5a1b457662ad.png" alt="modal" width="200"/>
 
-1. Create the correct request object for the selected flow (in the example, this is `Tink.Transactions.connectOneTimeAccessTransaction`)
+### FullScreen and Modal integration guide
+
+Regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), to launch a Tink SDK flow requires you to do the following:
+
+1. Create the correct request object for the selected flow (in the example, this is `Tink.Transactions.connectAccountsForContinuousAccess`)
    and enter values for the mandatory and eventually optional parameters:
-```kotlin
-val dataRequest = ConnectAccountsForOneTimeAccess(
+   
+```xml
+val dataRequest = ConnectAccountsForContinuousAccess(
+   authorizationCode = "{YOUR_AUTH_CODE_HERE}", // [^3]
    market = Market.SE
 )
 ```
 
-2. Launch the selected flow by passing the request object (that you created in the previous step) and setting the `launchMode` parameter to FullScreen:
-```kotlin
-Tink.Transactions.connectAccountsForOneTimeAccess(
-   this,
+[^3]: To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).
+
+2. Customize the look of Tink Link by creating a theme for both light and dark modes. This is mandatory and it's needed for matching Tink Link with the UI style of your app.
+
+If your UI architecture is based on XML layout, create a `TinkAppearanceXml`object similar to the following:
+
+```xml
+TinkAppearanceXml(
+   light = TinkAppearanceXml.ThemeAttributes(
+      toolbarColorId = R.color.white,
+      windowBackgroundColorId = R.color.white,
+      iconBackId = R.drawable.ic_back,
+      iconBackTint = R.color.black,
+      iconBackDescriptionId = R.string.app_name,
+      iconCloseId = R.drawable.ic_cross,
+      iconCloseTint = R.color.black,
+      iconCloseDescriptionId = R.string.app_name,
+      toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+   ),
+   dark = TinkAppearanceXml.ThemeAttributes(
+      toolbarColorId = R.color.black,
+      windowBackgroundColorId = R.color.white,
+      iconBackId = R.drawable.ic_back,
+      iconBackTint = R.color.white,
+      iconBackDescriptionId = R.string.app_name,
+      iconCloseId = R.drawable.ic_cross,
+      iconCloseTint = R.color.white,
+      iconCloseDescriptionId = R.string.app_name,
+      toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+   )
+)
+```
+
+If your UI architecture is based on Jetpack Compose layout, create a `TinkAppearanceCompose`object similar to the following:
+```xml
+   TinkAppearanceCompose(
+      light = TinkAppearanceCompose.ThemeAttributes(
+         toolbarColor = Color.White,
+         windowBackgroundColor = Color.White,
+         iconBack = {
+            Icon(
+               imageVector = Icons.Filled.ArrowBack,
+               contentDescription = "Back",
+               tint = Color.Black
+            )
+         },
+         iconClose = {
+            Icon(
+               imageVector = Icons.Filled.Close,
+               contentDescription = "Close",
+               tint = Color.Black
+            )
+         },
+         toolbarTitle = { Text(text = "Tink", color = Color.Black) }
+      ),
+      dark = TinkAppearanceCompose.ThemeAttributes(
+         toolbarColor = Color.Black,
+         windowBackgroundColor = Color.Black,
+         iconBack = {
+            Icon(
+               imageVector = Icons.Filled.ArrowBack,
+               contentDescription = "Back",
+               tint = Color.White
+            )
+         },
+         iconClose = {
+            Icon(
+               imageVector = Icons.Filled.Close,
+               contentDescription = "Close",
+               tint = Color.White
+            )
+         },
+         toolbarTitle = { Text(text = "Tink", color = Color.White, fontSize = 20.sp) }
+      )
+   )
+```
+
+Please replace the values in the above examples with something suitable for your app.
+
+
+3. Launch the selected flow from within your activity, fragment or Composable by passing the request object (that you created in the previous step), setting the `launchMode` parameter to FullScreen or Modal adding the theme (that you created in the previous step):
+
+```xml
+Tink.Transactions.connectAccountsForContinuousAccess(
+   this, //Activity context
    dataRequest,
-   FullScreen,
+   fullscreen,
    { success: TinkTransactionSuccess ->
       // callback for handling successful outcome.
    },
@@ -119,38 +182,24 @@ Tink.Transactions.connectAccountsForOneTimeAccess(
 )
 ```
 
-1. After the flow has completed, Tink SDK will asynchronously return the successful or erroneous outcome in one of the callbacks previously specified.
+4. After the flow has completed, Tink SDK will asynchronously return the successful or erroneous outcome in one of the callbacks previously specified.
 
-### Modal
-<img src="https://user-images.githubusercontent.com/102951880/208936710-d48fab76-c479-485d-947b-5a1b457662ad.png" alt="modal" width="200"/>
+## Permanent users: connect accounts, extend and update consent
+Tink Link offers different flows for different use cases. For connecting accounts for permanent users and for updating and extending the consent, please refer to the sample [code](sample-app/src/main/java/com/tink/link/app/navToFlows/FlowCases.kt)  
 
-Modal launch mode shows Tink SDK inside a modal bottom sheet, which leaves the top part of your app still visible but not selectable.
-
-Regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), to launch a Tink SDK flow in modal mode requires you to do the following:
-
-1. Create the correct request object for the selected flow (in the example, this is `Tink.Transactions.connectOneTimeAccessTransaction`)
-   and enter values for the mandatory and eventually optional parameters:
+## Preselecting a provider
+You can also optimize your integration in different ways, such as [preselecting a provider](https://docs.tink.com/resources/account-check/optimize-your-account-check-integration#preselecting-a-bank).
+To preselect a provider, simply add your provider name in the request object, like in this example:
 ```kotlin
 val dataRequest = ConnectAccountsForOneTimeAccess(
-   market = Market.SE
+   market = Market.SE,
+   input_provider = "sbab-bankid",
 )
 ```
-2. Launch the selected flow by passing the request object (that you created in the previous step) and setting the `launchMode` parameter to Modal:
-```kotlin
-Tink.Transactions.connectAccountsForOneTimeAccess(
-   this,
-   dataRequest,
-   Modal,
-   { success: TinkTransactionSuccess ->
-      // handle successful completion here.
-   },
-   { error: TinkError ->
-      // handle error completion or user cancellation here.
-   }
-)
-```
+Parameter input_provider gives the option to use the data to skip the provider-selection screen and preselect the user's provider (in this example, SBAB is preselected.)
 
-3. After the flow has completed, Tink SDK will asynchronously return the successful or error outcome in one of the callbacks previously specified.
+To get the list of all providers available for an authenticated user, please refer to [list-providers](https://docs.tink.com/api#connectivity/provider/list-providers)
+To get the list of all providers on a specified market, please refer to [list-providers-for-a-market](https://docs.tink.com/api#connectivity/provider/list-providers-for-a-market)
 
 ## Samples
 For code samples on how to integrate Tink Link in your app, please refer to the:
@@ -159,7 +208,7 @@ For code samples on how to integrate Tink Link in your app, please refer to the:
 For testing all the different Tink products, please refer to the: 
 - [Sample App](sample-app)
 
-## Developer documentation (add correct link to Tink Docs)
+## Developer documentation
 - [Tink Link Android Reference](https://github.com/tink-ab/tink-sdk-android-private)
 
 ## Support
