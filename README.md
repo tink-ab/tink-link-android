@@ -5,7 +5,6 @@
 # Tink Link Android
 ![thumbnail](https://user-images.githubusercontent.com/102951880/211527808-dc74007b-aa9b-4fc5-97f9-9cc94f26fce2.png)
 
-
 ## Prerequisites
 1. Go to [Set up your Tink Console account](https://docs.tink.com/resources/getting-started/set-up-your-account) and follow the steps to create a Console account and an app. Make a note of your `client_id`.
 2. In Console, go to **App settings** > API client. In the Redirect URIs section, select **Add new redirect URI**. Add a redirect URI to your app. Your redirect URI needs a scheme and host, for example: `awesomeApp://callback`.
