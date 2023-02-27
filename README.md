@@ -13,12 +13,38 @@
 The minimum API level that's required to use this library is 23 (Android 6.0).
 
 ## Installation
-1. Add the Tink Link .aar file named "sdk-release.aar" to the `libs` folder of your app module. The .aar file can be found on the Github release page for this project under the "Tink Link iOS 2.0.0 Release Candidate 1"
-2. In your app module build.gradle file add the following line in the "dependencies" section:
+
+1. Download the [Tink Link 2.0.0 release candidate](https://github.com/tink-ab/tink-link-android/releases/tag/untagged-e573410c507bdc6fc800) zip file.
+2. Unzip it and copy the `com` folder (containing the SDK's local maven dependencies) into your local maven repository folder: `~/.m2/repository/`.
+3. Add `mavenLocal()` as a repository inside the **dependencyResolutionManagement** section in *settings.gradle* file. 
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        // Rest of the repositories
+    }
+}
+```
+
+If you don't have the **dependencyResolutionManagement** section, then you can add `mavenLocal()` in your root level build.gradle file.
+
+```groovy
+allprojects {
+    repositories {
+        mavenLocal()
+        // Rest of the repositories
+    }
+}
+```
+
+_Note: The `mavenLocal()` repository needs to be on top of the other repositories, as shown above._
+
+4. Add dependency on this SDK:
 
 ```groovy
 dependencies {
-   implementation fileTree(dir: "libs", include: ["*.aar"])
+    implementation 'com.tink.link:tinklink:2.0.0-rc'
 }
 ```
 
