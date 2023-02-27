@@ -8,8 +8,9 @@ import com.tink.link.core.data.request.transaction.ConnectAccountsForOneTimeAcce
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.FullScreen
+import com.tink.link.core.themes.TinkAppearance
+import com.tink.link.core.themes.TinkAppearanceXml
 import com.tink.link.sample.R
-
 
 /**
  * This class is to show how to implement Transactions as Fullscreen in XML.
@@ -36,6 +37,7 @@ class FullScreenActivity : AppCompatActivity() {
     // Example of one time access to Transactions presented in a fullscreen.
     // TODO: For launching other flows, please find implementation guidance in this link.
     private fun showTransactionsWithOneTimeAccess() {
+        val fullScreen = FullScreen(getTinkAppearance())
         // More parameters, such as market = Market.SE can be added to ConnectAccountsForOneTimeAccess().
         val oneTimeAccess = ConnectAccountsForOneTimeAccess()
 
@@ -43,7 +45,7 @@ class FullScreenActivity : AppCompatActivity() {
         Tink.Transactions.connectAccountsForOneTimeAccess(
             this,
             oneTimeAccess,
-            FullScreen,
+            fullScreen,
             { success: TinkTransactionsSuccess ->
                 Log.d(TAG, "credentials_id = ${success.credentialsId}")
                 Log.d(TAG, "code = ${success.code}")
@@ -51,6 +53,33 @@ class FullScreenActivity : AppCompatActivity() {
             { error: TinkError ->
                 Log.d(TAG, "error message = ${error.errorDescription}")
             }
+        )
+    }
+
+    private fun getTinkAppearance(): TinkAppearance {
+        return TinkAppearanceXml(
+            light = TinkAppearanceXml.ThemeAttributes(
+                toolbarColorId = R.color.white,
+                windowBackgroundColorId = R.color.white,
+                iconBackId = R.drawable.ic_back,
+                iconBackTint = R.color.black,
+                iconBackDescriptionId = R.string.app_name,
+                iconCloseId = R.drawable.ic_cross,
+                iconCloseTint = R.color.black,
+                iconCloseDescriptionId = R.string.app_name,
+                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+            ),
+            dark = TinkAppearanceXml.ThemeAttributes(
+                toolbarColorId = R.color.black,
+                windowBackgroundColorId = R.color.white,
+                iconBackId = R.drawable.ic_back,
+                iconBackTint = R.color.white,
+                iconBackDescriptionId = R.string.app_name,
+                iconCloseId = R.drawable.ic_cross,
+                iconCloseTint = R.color.white,
+                iconCloseDescriptionId = R.string.app_name,
+                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+            )
         )
     }
 }

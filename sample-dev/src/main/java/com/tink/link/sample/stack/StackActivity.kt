@@ -12,6 +12,8 @@ import com.tink.link.core.data.request.transaction.ConnectAccountsForOneTimeAcce
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.Stack
+import com.tink.link.core.themes.TinkAppearance
+import com.tink.link.core.themes.TinkAppearanceXml
 import com.tink.link.core.widgets.stack.StackContainer
 
 /**
@@ -48,7 +50,7 @@ class StackActivity : AppCompatActivity() {
     // TODO: For launching other flows, please find implementation guidance in this link.
     @Composable
     private fun ShowTransactionsWithOneTimeAccess() {
-        val stack = Stack(onDismiss = {
+        val stack = Stack(tinkAppearance = getTinkAppearance(), onDismiss = {
             finish() // Pop backstack or finish activity (Depends upon implementation).
         })
 
@@ -70,6 +72,33 @@ class StackActivity : AppCompatActivity() {
                 }
             )
         }
+    }
+
+    private fun getTinkAppearance(): TinkAppearance {
+        return TinkAppearanceXml(
+            light = TinkAppearanceXml.ThemeAttributes(
+                toolbarColorId = R.color.white,
+                windowBackgroundColorId = R.color.white,
+                iconBackId = R.drawable.ic_back,
+                iconBackTint = R.color.black,
+                iconBackDescriptionId = R.string.app_name,
+                iconCloseId = R.drawable.ic_cross,
+                iconCloseTint = R.color.black,
+                iconCloseDescriptionId = R.string.app_name,
+                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+            ),
+            dark = TinkAppearanceXml.ThemeAttributes(
+                toolbarColorId = R.color.black,
+                windowBackgroundColorId = R.color.white,
+                iconBackId = R.drawable.ic_back,
+                iconBackTint = R.color.white,
+                iconBackDescriptionId = R.string.app_name,
+                iconCloseId = R.drawable.ic_cross,
+                iconCloseTint = R.color.white,
+                iconCloseDescriptionId = R.string.app_name,
+                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+            )
+        )
     }
 }
 
