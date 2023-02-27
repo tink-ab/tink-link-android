@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tink.link.app.SDKAppearance.getComposeAppearance
 import com.tink.link.app.SampleComposeStackActivity
 import com.tink.link.app.navToFlows.LaunchModeName
 import com.tink.link.app.navToFlows.navigateToFlows
@@ -103,8 +104,8 @@ fun ExpandableCard(
                     items(itemList) { selectedFlow ->
                         FlowCard(selectedFlow) {
                             when (selectedLaunchMode) {
-                                LaunchModeName.FULL_SCREEN -> executeLaunch(activity, FullScreen, selectedFlow)
-                                LaunchModeName.MODAL -> executeLaunch(activity, Modal, selectedFlow)
+                                LaunchModeName.FULL_SCREEN -> executeLaunch(activity, FullScreen(getComposeAppearance()), selectedFlow)
+                                LaunchModeName.MODAL -> executeLaunch(activity, Modal(getComposeAppearance()), selectedFlow)
                                 LaunchModeName.STACK -> executeLaunch(activity, selectedFlow = selectedFlow)
                             }
                         }

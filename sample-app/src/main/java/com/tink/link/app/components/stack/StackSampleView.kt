@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import com.tink.link.app.SDKAppearance
 import com.tink.link.app.navToFlows.navigateToFlows
 import com.tink.link.core.navigator.Stack
 import com.tink.link.core.widgets.stack.StackContainer
@@ -18,7 +19,7 @@ fun StackSampleView(activity: Activity, selectedFlow: String) {
             backgroundColor = Color.Black
         )
 
-        Stack(onDismiss = {
+        Stack(tinkAppearance = SDKAppearance.getComposeAppearance(), onDismiss = {
             activity.finish()
         }).also {
             StackContainer(it) {

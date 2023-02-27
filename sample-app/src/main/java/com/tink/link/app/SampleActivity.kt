@@ -22,8 +22,8 @@ class SampleActivity : ComponentActivity() {
 
         Tink.initSdk(
             // required for all flows
-            clientId = "0c16388dd2ba43e5a7cda346d4961583",
-            redirectUri = "tink://callback"
+            clientId = "",
+            redirectUri = ""
         )
 
         setContent {

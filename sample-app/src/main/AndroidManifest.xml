@@ -27,8 +27,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="callback"
-                    android:scheme="tink" />
+                    android:host="{redirectUri Host}"
+                    android:scheme="{redirectUri scheme}" />
             </intent-filter>
         </activity>
 
