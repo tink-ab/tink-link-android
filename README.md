@@ -245,8 +245,4 @@ For code samples on how to integrate Tink Link in your app, please refer to the:
 For testing all the different Tink products, please refer to the: 
 - [Sample App](sample-app)
 
-### Developer documentation
-- [Tink Link Android Reference](https://github.com/tink-ab/tink-sdk-android-private)
 
-### Support
-👋 We are always working on improving our API developer experience. Don't hesitate to [contact us](https://support.tink.com) for support or if you have questions or suggestions.
