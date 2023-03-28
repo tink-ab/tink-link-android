@@ -3,6 +3,7 @@ package com.tink.link.app.navToFlows
 import android.app.Activity
 import android.util.Log
 import com.tink.link.app.NecessaryIds
+import com.tink.link.app.TAG
 import com.tink.link.core.base.Tink
 import com.tink.link.core.data.request.accountcheck.AccountCheckCreateReport
 import com.tink.link.core.data.request.bundleReports.AccountDialogType
@@ -62,10 +63,10 @@ fun showCreateReportForExpenseCheck(
         request,
         launchMode,
         { success: TinkExpenseCheckSuccess ->
-            Log.d("tink-sdk-sample", "expenseCheckId = ${success.expenseCheckId}")
+            Log.d(TAG, "expenseCheckId = ${success.expenseCheckId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -91,10 +92,10 @@ fun showCreateReportForIncomeCheck(
         request,
         launchMode,
         { success: TinkIncomeCheckSuccess ->
-            Log.d("tink-sdk-sample", "incomeCheckId = ${success.incomeCheckId}")
+            Log.d(TAG, "incomeCheckId = ${success.incomeCheckId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -120,10 +121,10 @@ fun showCreateReportForRiskInsights(
         request,
         launchMode,
         { success: TinkRiskInsightsSuccess ->
-            Log.d("tink-sdk-sample", "riskInsightsId = ${success.riskInsightsId}")
+            Log.d(TAG, "riskInsightsId = ${success.riskInsightsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -149,10 +150,10 @@ fun showCreateReportForAccountCheck(
         request,
         launchMode,
         { success: TinkAccountCheckSuccess ->
-            Log.d("tink-sdk-sample", "accountVerificationReportId = ${success.accountVerificationReportId}")
+            Log.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -178,10 +179,10 @@ fun showCreateReportForBusinessAccountCheck(
         request,
         launchMode,
         { success: TinkBusinessAccountCheckSuccess ->
-            Log.d("tink-sdk-sample", "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}")
+            Log.d(TAG, "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -221,11 +222,11 @@ fun showCreateReportForReports(
         request,
         launchMode,
         { success: TinkReportsSuccess ->
-            Log.d("tink-sdk-sample", "accountVerificationReportId = ${success.accountVerificationReportId}")
-            Log.d("tink-sdk-sample", "transactionReportId = ${success.transactionReportId}")
+            Log.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
+            Log.d(TAG, "transactionReportId = ${success.transactionReportId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -251,10 +252,10 @@ fun showOneTimePayment(
         oneTimePayment,
         launchMode,
         { success: TinkPaymentsSuccess ->
-            Log.d("tink-sdk-sample", "payment_request_id = ${success.paymentRequestId}")
+            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -280,11 +281,11 @@ fun showConnectAccountsForOneTimeAccess(
         oneTimeAccess,
         launchMode,
         { success: TinkTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
-            Log.d("tink-sdk-sample", "code = ${success.code}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "code = ${success.code}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -310,11 +311,11 @@ fun showConnectAccountsForBusinessOneTimeAccess(
         oneTimeAccess,
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
-            Log.d("tink-sdk-sample", "code = ${success.code}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "code = ${success.code}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -344,10 +345,10 @@ fun showConnectAccountsForContinuousAccess(
         continuousAccessConnect,
         launchMode,
         { success: TinkTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -377,10 +378,10 @@ fun showConnectAccountsForBusinessContinuousAccess(
         continuousAccessConnect,
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -411,10 +412,10 @@ fun showUpdateConsent(
         continuousAccessUpdate,
         launchMode,
         { success: TinkTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -445,10 +446,10 @@ fun showBusinessUpdateConsent(
         continuousAccessUpdate,
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -479,10 +480,10 @@ fun showExtendConsent(
         continuousAccessExtend,
         launchMode,
         { success: TinkTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -513,10 +514,10 @@ fun showBusinessExtendConsent(
         continuousAccessExtend,
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
-            Log.d("tink-sdk-sample", "credentials_id = ${success.credentialsId}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
-            Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+            Log.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }

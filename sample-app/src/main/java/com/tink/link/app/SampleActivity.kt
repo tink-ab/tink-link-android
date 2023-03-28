@@ -19,7 +19,7 @@ class SampleActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("tink-sdk-sample", "onCreate()")
+        Log.d(TAG, "onCreate()")
 
         val configuration = Configuration(clientId = "", redirectUri = "")
 
@@ -42,12 +42,12 @@ class SampleActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("tink-sdk-sample", "onResume()")
+        Log.d(TAG, "onResume()")
     }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        Log.d("tink-sdk-sample", "onNewIntent() intent.data = ${intent?.data}")
+        Log.d(TAG, "onNewIntent() intent.data = ${intent?.data}")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
