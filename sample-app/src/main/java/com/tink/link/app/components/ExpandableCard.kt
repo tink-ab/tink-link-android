@@ -2,19 +2,15 @@ package com.tink.link.app.components
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
@@ -37,12 +33,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tink.link.app.SDKAppearance.getComposeAppearance
-import com.tink.link.app.SampleComposeStackActivity
 import com.tink.link.app.navToFlows.LaunchModeName
 import com.tink.link.app.navToFlows.navigateToFlows
 import com.tink.link.app.theme.Blue300
 import com.tink.link.app.theme.Blue500
 import com.tink.link.app.theme.Blue700
+import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.navigator.FullScreen
 import com.tink.link.core.navigator.LaunchMode
 import com.tink.link.core.navigator.Modal
@@ -54,18 +50,21 @@ fun ExpandableCard(
     header: String,
     itemList: List<String>,
     activity: Activity,
+    configuration: Configuration,
     selectedLaunchMode: LaunchModeName
 ) {
     var expand by remember { mutableStateOf(false) } // Expand State
     val rotationState by animateFloatAsState(if (expand) 180f else 0f) // Rotation State
 
     Card(
-        modifier = Modifier.animateContentSize( // Animation
-            animationSpec = tween(
-                durationMillis = 400, // Animation Speed
-                easing = LinearOutSlowInEasing // Animation Type
+        modifier = Modifier
+            .animateContentSize( // Animation
+                animationSpec = tween(
+                    durationMillis = 400, // Animation Speed
+                    easing = LinearOutSlowInEasing // Animation Type
+                )
             )
-        ).padding(12.dp),
+            .padding(12.dp),
         backgroundColor = Blue300,
         shape = RoundedCornerShape(16.dp),
         onClick = { expand = !expand }
@@ -74,7 +73,9 @@ fun ExpandableCard(
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
-                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -82,16 +83,23 @@ fun ExpandableCard(
                     text = header,
                     fontSize = 20.sp,
                     textAlign = TextAlign.Start,
-                    modifier = Modifier.weight(.9f).padding(start = 8.dp),
+                    modifier = Modifier
+                        .weight(.9f)
+                        .padding(start = 8.dp),
                     style = TextStyle(
                         color = Blue500,
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold
                     )
                 )
-                IconButton(modifier = Modifier.rotate(rotationState).weight(.1f), onClick = {
-                    expand = !expand
-                }) {
+                IconButton(
+                    modifier = Modifier
+                        .rotate(rotationState)
+                        .weight(.1f),
+                    onClick = {
+                        expand = !expand
+                    }
+                ) {
                     Icon(
                         imageVector = Icons.Default.KeyboardArrowDown,
                         tint = Blue700,
@@ -100,13 +108,12 @@ fun ExpandableCard(
                 }
             }
             if (expand) {
-                LazyColumn(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
-                    items(itemList) { selectedFlow ->
-                        FlowCard(selectedFlow) {
+                Column(Modifier.padding(bottom = 20.dp)) {
+                    itemList.forEach { item ->
+                        FlowCard(item) {
                             when (selectedLaunchMode) {
-                                LaunchModeName.FULL_SCREEN -> executeLaunch(activity, FullScreen(getComposeAppearance()), selectedFlow)
-                                LaunchModeName.MODAL -> executeLaunch(activity, Modal(getComposeAppearance()), selectedFlow)
-                                LaunchModeName.STACK -> executeLaunch(activity, selectedFlow = selectedFlow)
+                                LaunchModeName.FULL_SCREEN -> executeLaunch(activity, configuration, FullScreen(getComposeAppearance()), item)
+                                LaunchModeName.MODAL -> executeLaunch(activity, configuration, Modal(getComposeAppearance()), item)
                             }
                         }
                     }
@@ -116,14 +123,8 @@ fun ExpandableCard(
     }
 }
 
-private fun executeLaunch(activity: Activity, launchMode: LaunchMode? = null, selectedFlow: String) {
+private fun executeLaunch(activity: Activity, configuration: Configuration, launchMode: LaunchMode? = null, selectedFlow: String) {
     launchMode?.let {
-        navigateToFlows(launchMode, selectedFlow, activity)
-    } ?: openStackFlow(activity, selectedFlow)
-}
-
-private fun openStackFlow(activity: Activity, selectedFlow: String) {
-    val intent = Intent(activity, SampleComposeStackActivity::class.java)
-    intent.putExtra("selected_flow", selectedFlow)
-    activity.startActivity(intent)
+        navigateToFlows(launchMode, configuration, selectedFlow, activity)
+    }
 }

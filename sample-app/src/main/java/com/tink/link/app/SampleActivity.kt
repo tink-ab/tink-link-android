@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.tink.link.app.theme.WebTheme
 import com.tink.link.core.base.Tink
+import com.tink.link.core.data.request.configuration.Configuration
 
 class SampleActivity : ComponentActivity() {
 
@@ -20,11 +21,11 @@ class SampleActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d("tink-sdk-sample", "onCreate()")
 
-        Tink.initSdk(
-            // required for all flows
-            clientId = "",
-            redirectUri = ""
-        )
+        val configuration = Configuration(clientId = "", redirectUri = "")
+
+        savedInstanceState?.let {
+            Tink.restoreState(it)
+        }
 
         setContent {
             WebTheme {
@@ -33,7 +34,7 @@ class SampleActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    HomeScreenApp(this)
+                    HomeScreenApp(this, configuration)
                 }
             }
         }
@@ -49,6 +50,12 @@ class SampleActivity : ComponentActivity() {
         Log.d("tink-sdk-sample", "onNewIntent() intent.data = ${intent?.data}")
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        Tink.saveState(outState)
+    }
+
     @Preview(showBackground = true)
     @Composable
     fun DefaultPreview() {
@@ -58,7 +65,7 @@ class SampleActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colors.background
             ) {
-                HomeScreenApp(this)
+                HomeScreenApp(this, Configuration("", ""))
             }
         }
     }

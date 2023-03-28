@@ -31,8 +31,5 @@
                     android:scheme="{redirectUri scheme}" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.tink.link.app.SampleComposeStackActivity" />
     </application>
-
 </manifest>

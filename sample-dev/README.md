@@ -13,4 +13,3 @@ For integrating Tink Link in:
 
 - `FullScreen` mode, please refer to the [Fullscreen samples](src/main/java/com/tink/link/sample/fullscreen)
 - `Modal` mode, please refer to the [Modal samples](src/main/java/com/tink/link/sample/modal)
-- `Stack` mode, please refer to the [Stack samples](src/main/java/com/tink/link/sample/stack)

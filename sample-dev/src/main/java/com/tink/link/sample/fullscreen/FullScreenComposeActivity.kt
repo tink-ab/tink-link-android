@@ -9,13 +9,14 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import com.tink.link.core.base.Tink
-import com.tink.link.core.data.request.transaction.ConnectAccountsForOneTimeAccess
+import com.tink.link.core.data.request.common.Market
+import com.tink.link.core.data.request.configuration.Configuration
+import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.FullScreen
@@ -31,13 +32,6 @@ class FullScreenComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Initialize the SDK.
-        Tink.initSdk(
-            // Required for all flows.
-            clientId = "",
-            redirectUri = ""
-        )
-
         // Add Compose view.
         setContent {
             // Present the SDK.
@@ -49,14 +43,18 @@ class FullScreenComposeActivity : ComponentActivity() {
     // TODO: For launching other flows, please find implementation guidance in this link.
     @Composable
     private fun ShowTransactionsWithOneTimeAccess() {
+        val configuration = Configuration(
+            clientId = "",
+            redirectUri = "")
         val fullScreen = FullScreen(getTinkTheme())
 
-        // More parameters, such as market = Market.SE can be added to ConnectAccountsForOneTimeAccess().
-        val oneTimeAccess = ConnectAccountsForOneTimeAccess()
+        // More parameters can be added to ConnectAccountsForOneTimeAccess().
+        val oneTimeAccess = ConnectAccountsForOneTimeAccess(Market.SE)
 
         // Call this method to trigger the flow.
         Tink.Transactions.connectAccountsForOneTimeAccess(
             this,
+            configuration,
             oneTimeAccess,
             fullScreen,
             { success: TinkTransactionsSuccess ->
