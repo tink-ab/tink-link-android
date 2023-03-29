@@ -1,248 +1,73 @@
-![Min Android API level](https://img.shields.io/badge/api-23%2B-0E9EC2)
+![Minimum Android API level](https://img.shields.io/badge/api-23%2B-0E9EC2)
 ![Platform](https://img.shields.io/badge/platform-Android-blue.svg)
 ![Languages](https://img.shields.io/badge/languages-Kotlin-blue.svg)
 
 # Tink Link Android
-![thumbnail](https://user-images.githubusercontent.com/102951880/211527808-dc74007b-aa9b-4fc5-97f9-9cc94f26fce2.png)
+
+![Tink Link Android](https://user-images.githubusercontent.com/102951880/228022921-d954956d-918e-45f0-b1e0-8adc99ecc31c.png)
 
 ## Prerequisites
-1. Go to [Set up your Tink Console account](https://docs.tink.com/resources/getting-started/set-up-your-account) and follow the steps to create a Console account and an app. Make a note of your `client_id`.
-2. In Console, go to **App settings** > API client. In the Redirect URIs section, select **Add new redirect URI**. Add a redirect URI to your app. Your redirect URI needs a scheme and host, for example: `awesomeApp://callback`.
+
+1. [Set up your Tink Console account](https://docs.tink.com/resources/console/set-up-your-tink-account) and retrieve the `client ID` for your app.
+2. Add an App Link (or deep link) to your app in the list of redirect URIs under _App settings > API client_ (eg. `myapp://callback`).
 
 ## Requirements
+
 The minimum API level that's required to use this library is 23 (Android 6.0).
 
 ## Installation
 
-1. Download the [Tink Link 2.0.0 release candidate](https://github.com/tink-ab/tink-link-android/releases/tag/untagged-e573410c507bdc6fc800) zip file.
-2. Unzip it and copy the `com` folder (containing the SDK's local maven dependencies) into your local maven repository folder: `~/.m2/repository/`.
-3. Add `mavenLocal()` as a repository inside the **dependencyResolutionManagement** section in *settings.gradle* file. 
+To install the SDK, add `link` to your `app/build.gradle` dependencies.
 
-```groovy
-dependencyResolutionManagement {
-    repositories {
-        mavenLocal()
-        // Rest of the repositories
-    }
-}
-```
-
-If you don't have the **dependencyResolutionManagement** section, then you can add `mavenLocal()` in your root level build.gradle file.
-
-```groovy
-allprojects {
-    repositories {
-        mavenLocal()
-        // Rest of the repositories
-    }
-}
-```
-
-_Note: The `mavenLocal()` repository needs to be on top of the other repositories, as shown above._
-
-4. Add dependency on this SDK:
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tink-ab/tink-link-android?color=%230E9EC2)](https://github.com/tink-ab/tink-link-android/releases/latest)
 
 ```groovy
 dependencies {
-    implementation 'com.tink.link:tinklink:2.0.0-rc'
+   implementation "com.tink:link:2.0.0"
 }
 ```
 
 ## Initialization
-1. Initialize Tink Link in your Application class:
 
-```kotlin
-Tink.initSdk(
-   clientId = "YOUR_CLIENT_ID", // Your clientId. Retrieve it from console.tink.com.
-   redirectUri = "{REDIRECT_URI_SCHEME}://{REDIRECT_URI_HOST}" //[^1]
-)
-```
-^1: *You must add a custom URL scheme or supported web URLs to handle redirects from a third-party authentication flow back to your app.
-The redirect URI should be the same as the one you've entered in Console > **App settings**(https://console.tink.com/account-verification/tink-link).*
-
-2. Configure activity and an intent filter in your Manifest file
+1. In you `AndroidManifest.xml` file configure the Activity that will launch Tink Link:
 
 ```xml
 <activity
-   android:exported="true"
-   android:launchMode="singleInstance">
+    ...
+    android:exported="true"
+    android:launchMode="singleInstance">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data
+                android:host="callback"
+                android:scheme="myapp" />
+    </intent-filter>
 </activity>
 ```
 
-```xml
-<intent-filter>
-   <action android:name="android.intent.action.VIEW" />
-   <category android:name="android.intent.category.DEFAULT" />
-   <category android:name="android.intent.category.BROWSABLE" />
-   <data
-           android:host="{REDIRECT_URI_HOST}"
-           android:scheme="{REDIRECT_URI_SCHEME}" /> // [^2]
-</intent-filter>
-```
-^2: *Use the same redirect URI as noted in step 1[^1].*
+You must configure an [App Link](https://developer.android.com/training/app-links) or a [deep link](https://developer.android.com/training/app-links/deep-linking) to handle redirects, as the end user may be taken out of your app to complete the authentication (for example, into their banking app or system browser). This link needs to match the redirect URI registered in [Tink Console](https://console.tink.com/).
 
-## Display Tink Link into your application
-Tink Link can be displayed in two different ways inside your application: Fullscreen and Modal mode.
+## Launching the SDK
 
-### FullScreen
+To launch the SDK in your Android app, please see the product specific documentation.
 
-Fullscreen launchmode will show Tink SDK in fullscreen mode inside your app, leaving only the status bar visible.
-<img src="https://user-images.githubusercontent.com/102951880/208935693-15f6aa04-80d2-4d47-bf9c-824068088ed3.png" alt="fullscreen" width="200"/>
+|                       |                                                                                                                    |                                                                                                                                               |                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Account Check**     | [Getting started](https://docs.tink.com/resources/account-check/verify-your-first-account)                         | [Setup and integrate](https://docs.tink.com/resources/account-check/setup-and-integrate-account-check#tink-link-for-android)                  | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.accountCheck/-tink-account-check/index.html) |
+| **Expense Check**     | [Getting started](https://docs.tink.com/resources/expense-check/fetch-your-first-expense-check-report)             | [Setup and integrate](https://docs.tink.com/resources/expense-check/setup-and-integrate-expense-check#tink-link-for-android)                  | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.expensecheck/-tink-expense-check/index.html) |
+| **Income Check**      | [Getting started](https://docs.tink.com/resources/income-check/fetch-your-first-income-check-report)               | [Setup and integrate](https://docs.tink.com/resources/income-check/setup-and-integrate-income-check#tink-link-for-android)                    | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.incomecheck/-tink-income-check/index.html) |
+| **One-time payments** | [Getting started](https://docs.tink.com/resources/payments/one-time-payments/initiate-your-first-one-time-payment) | [Setup and integrate](https://docs.tink.com/resources/payments/one-time-payments/setup-and-integrate-one-time-payments#tink-link-for-android) | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.payments/-tink-payments/index.html) |
+| **Risk Insights**     | [Getting started](https://docs.tink.com/resources/risk-insights/fetch-your-first-risk-insights-report)             | [Setup and integrate](https://docs.tink.com/resources/risk-insights/setup-and-integrate-risk-insights#tink-link-for-android)                  | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.riskInsights/-tink-risk-insights/index.html) |
+| **Transactions**      | [Getting started](https://docs.tink.com/resources/transactions/connect-to-a-bank-account)                          | [Setup and integrate](https://docs.tink.com/resources/transactions/setup-and-integrate-transactions#tink-link-for-android)                    | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.transactions/-tink-transactions/index.html) |
+| **Report bundling**   | -                                                                                                                  | -                                                                                                                                             | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.reports/-tink-reports/index.html) |
 
-### Modal
+### Sample apps
 
-Modal launch mode shows Tink SDK inside a modal bottom sheet, which leaves the top part of your app still visible but not selectable.
-<img src="https://user-images.githubusercontent.com/102951880/208936710-d48fab76-c479-485d-947b-5a1b457662ad.png" alt="modal" width="200"/>
+- [Simple sample app](https://github.com/tink-ab/tink-link-android/tree/master/sample-dev) shows code samples how to integrate the Tink Link SDK in the easiest and fastest manner
+- [Products sample app](https://github.com/tink-ab/tink-link-android/tree/master/sample-app) showcases and allows you to try different Tink products
 
-## Integration guide
+## SDK reference
 
-For any Tink Link flow regardless of the UI architecture that you've chosen for your app (XML layouts or Jetpack Compose), the steps required are the following:
-
-1. [Create the request object](#create-the-request-object)
-2. [Customize Tink Link UI](#customize-the-look-of-tink-link)
-3. [Start the flow](#launch-tink-link-flow)
-4. [Collect the outcome of the flow](#collect-tink-link-flow-outcome) 
-
-In the sections below we will show you how to start the flow for connecting accounts to a permanent user (also called "continuous access").
-
-### Create the request object
-
-Create the correct request object for the desired flow (in the example, this is `Tink.Transactions.connectAccountsForContinuousAccess`)
-and enter values for the mandatory and eventually optional parameters:
-   
-```kotlin
-val dataRequest = ConnectAccountsForContinuousAccess(
-   authorizationCode = "{YOUR_AUTH_CODE_HERE}", // [^3]
-   market = Market.SE
-)
-```
-
-^3: *To learn how to retrieve an authorization code, please visit our [Tink documentation guide](https://docs.tink.com/api#general/oauth/create-authorization).*
-
-### Customize the look of Tink Link
-Customize the look of Tink Link by creating a theme for both light and dark modes. This is mandatory and it's needed for matching Tink Link with the UI style of your app.
-
-If your UI architecture is based on XML layout, create a `TinkAppearanceXml`object similar to the following:
-
-```kotlin
-TinkAppearanceXml(
-   light = TinkAppearanceXml.ThemeAttributes(
-      toolbarColorId = R.color.white,
-      windowBackgroundColorId = R.color.white,
-      iconBackId = R.drawable.ic_back,
-      iconBackTint = R.color.black,
-      iconBackDescriptionId = R.string.app_name,
-      iconCloseId = R.drawable.ic_cross,
-      iconCloseTint = R.color.black,
-      iconCloseDescriptionId = R.string.app_name,
-      toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
-   ),
-   dark = TinkAppearanceXml.ThemeAttributes(
-      toolbarColorId = R.color.black,
-      windowBackgroundColorId = R.color.white,
-      iconBackId = R.drawable.ic_back,
-      iconBackTint = R.color.white,
-      iconBackDescriptionId = R.string.app_name,
-      iconCloseId = R.drawable.ic_cross,
-      iconCloseTint = R.color.white,
-      iconCloseDescriptionId = R.string.app_name,
-      toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
-   )
-)
-```
-
-If your UI architecture is based on Jetpack Compose layout, create a `TinkAppearanceCompose`object similar to the following:
-
-```kotlin
-TinkAppearanceCompose(
-   light = TinkAppearanceCompose.ThemeAttributes(
-      toolbarColor = Color.White,
-      windowBackgroundColor = Color.White,
-      iconBack = {
-         Icon(
-            imageVector = Icons.Filled.ArrowBack,
-            contentDescription = "Back",
-            tint = Color.Black
-         )
-      },
-      iconClose = {
-         Icon(
-            imageVector = Icons.Filled.Close,
-            contentDescription = "Close",
-            tint = Color.Black
-         )
-      },
-      toolbarTitle = { Text(text = "Tink", color = Color.Black) }
-   ),
-   dark = TinkAppearanceCompose.ThemeAttributes(
-      toolbarColor = Color.Black,
-      windowBackgroundColor = Color.Black,
-      iconBack = {
-         Icon(
-            imageVector = Icons.Filled.ArrowBack,
-            contentDescription = "Back",
-            tint = Color.White
-         )
-      },
-      iconClose = {
-         Icon(
-            imageVector = Icons.Filled.Close,
-            contentDescription = "Close",
-            tint = Color.White
-         )
-      },
-      toolbarTitle = { Text(text = "Tink", color = Color.White, fontSize = 20.sp) }
-   )
-)
-```
-
-Please replace the values in the above examples with something suitable for your app.
-
-### Launch Tink Link flow
-Launch the selected flow from within your Activity, Fragment or Composable by passing the request object (that you created in the previous step), and setting the `launchMode` parameter to FullScreen or Modal adding the theme (that you created in the previous step):
-
-```kotlin
-Tink.Transactions.connectAccountsForContinuousAccess(
-   this, //Activity context
-   dataRequest,
-   fullscreen,
-   { success: TinkTransactionSuccess ->
-      // callback for handling successful outcome.
-   },
-   { error: TinkError ->
-      // callback for handling erroneous or user cancellation outcome.
-   }
-)
-```
-### Collect Tink Link flow outcome
-After the flow has completed, Tink Link will asynchronously return the successful or erroneous outcome in one of the callbacks previously specified.
-
-## Permanent users and preselecting a provider
-
-### Permanent users: connect accounts, extend and update consent
-Tink Link offers different flows for different use cases. For connecting accounts for permanent users and for updating and extending the consent, please refer to the sample [code](sample-app/src/main/java/com/tink/link/app/navToFlows/FlowCases.kt)  
-
-### Preselecting a provider
-You can also optimize your integration in different ways, such as [preselecting a provider](https://docs.tink.com/resources/account-check/optimize-your-account-check-integration#preselecting-a-bank).
-To preselect a provider, simply add your provider name in the request object, like in this example:
-```kotlin
-val dataRequest = ConnectAccountsForOneTimeAccess(
-   market = Market.SE,
-   input_provider = "sbab-bankid",
-)
-```
-Parameter input_provider gives the option to use the data to skip the provider-selection screen and preselect the user's provider (in this example, SBAB is preselected.)
-
-To get the list of all providers available for an authenticated user, please refer to [list-providers](https://docs.tink.com/api#connectivity/provider/list-providers)
-To get the list of all providers on a specified market, please refer to [list-providers-for-a-market](https://docs.tink.com/api#connectivity/provider/list-providers-for-a-market)
-
-## Additional resources
-
-### Samples
-For code samples on how to integrate Tink Link in your app, please refer to the:
-- [Sample dev](sample-dev)
-
-For testing all the different Tink products, please refer to the: 
-- [Sample App](sample-app)
-
-
+For the full API reference, please see the [Tink Link Android SDK Reference](https://tink-ab.github.io/tink-link-android/).

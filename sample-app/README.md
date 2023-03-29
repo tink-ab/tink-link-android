@@ -10,7 +10,7 @@ An Android app designed to demonstrate a simple use case of Tink Link for Androi
 
 1. Follow the [getting started guide](https://docs.tink.com/resources/getting-started/set-up-your-account) to set up your Tink account and to retrieve your `clientID`.
 
-2. Add `demo://authorize` into the [list of redirect URIs under your app's settings in Console](https://console.tink.com/overview).
+2. In Tink Console, go to [**App settings** > API client](https://console.tink.com/app-settings/client). In the Redirect URIs section, select **Add new redirect URI**. Add a redirect URI to your app. Your redirect URI needs a scheme and host, for example: `awesomeApp://callback`.
 
 ## How to run the sample app
 
@@ -18,7 +18,7 @@ An Android app designed to demonstrate a simple use case of Tink Link for Androi
 
 2. Open [SampleActivity](src/main/java/com/tink/link/app/SampleActivity.kt)
 
-3. Replace `clientId` placeholder in the source code with a `clientID` you retrieved in the [Prerequisites](#Prerequisites) section.
+3. Add your `clientId` and `redirectUri` that you retrieved in the [Prerequisites](#Prerequisites) section, inside `val configuration = Configuration(clientId = "", redirectUri = "")`.
 
 4. Open [AndroidManifest](src/main/AndroidManifest.xml)
 
