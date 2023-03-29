@@ -3,6 +3,8 @@ package com.tink.link.app
 import android.app.Activity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -15,12 +17,18 @@ import com.tink.link.app.components.ExpandableCardWithRadio
 import com.tink.link.app.components.TitleText
 import com.tink.link.app.navToFlows.FlowDetails
 import com.tink.link.app.navToFlows.LaunchModeName
+import com.tink.link.core.data.request.configuration.Configuration
 
 @Composable
-fun HomeScreenApp(activity: Activity) {
+fun HomeScreenApp(activity: Activity, configuration: Configuration) {
     var launchModeName by remember { mutableStateOf(LaunchModeName.FULL_SCREEN) }
 
-    Column(modifier = Modifier.padding(top = 30.dp)) {
+    Column(
+        modifier = Modifier
+            .verticalScroll(
+                rememberScrollState()
+            )
+    ) {
         ExpandableCardWithRadio(
             "Launch Mode",
             LaunchModeName.values()
@@ -28,12 +36,12 @@ fun HomeScreenApp(activity: Activity) {
             launchModeName = selectedMode
         }
 
-        FlowOptions(activity, launchModeName)
+        FlowOptions(activity, configuration, launchModeName)
     }
 }
 
 @Composable
-fun FlowOptions(activity: Activity, selectedLaunchMode: LaunchModeName) {
+fun FlowOptions(activity: Activity, configuration: Configuration, selectedLaunchMode: LaunchModeName) {
     Column(
         modifier = Modifier.padding(top = 30.dp)
     ) {
@@ -43,6 +51,7 @@ fun FlowOptions(activity: Activity, selectedLaunchMode: LaunchModeName) {
             "Transaction",
             FlowDetails.transactionOptions,
             activity,
+            configuration,
             selectedLaunchMode
         )
 
@@ -50,6 +59,7 @@ fun FlowOptions(activity: Activity, selectedLaunchMode: LaunchModeName) {
             "Payment",
             FlowDetails.paymentOptions,
             activity,
+            configuration,
             selectedLaunchMode
         )
 
@@ -57,6 +67,7 @@ fun FlowOptions(activity: Activity, selectedLaunchMode: LaunchModeName) {
             "Report",
             FlowDetails.reportOptions,
             activity,
+            configuration,
             selectedLaunchMode
         )
     }

@@ -6,5 +6,4 @@ package com.tink.link.app.navToFlows
 enum class LaunchModeName(val modeName: String) {
     FULL_SCREEN("Full Screen"),
     MODAL("Modal"),
-    STACK("Stack")
 }

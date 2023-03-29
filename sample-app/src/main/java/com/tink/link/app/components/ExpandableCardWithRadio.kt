@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -57,7 +59,7 @@ fun ExpandableCardWithRadio(
                     easing = LinearOutSlowInEasing // Animation Type
                 )
             )
-            .padding(12.dp),
+            .padding(horizontal = 16.dp, vertical = 20.dp),
         backgroundColor = Blue300,
         shape = RoundedCornerShape(16.dp),
         onClick = { expand = !expand }
@@ -69,8 +71,7 @@ fun ExpandableCardWithRadio(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = header,
@@ -99,23 +100,28 @@ fun ExpandableCardWithRadio(
                 }
             }
             if (expand) {
-                itemList.forEach { label ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp)
-                            .selectable(
-                                selected = (selectedItem == label),
-                                onClick = {
-                                    selectedItem = label
-                                    callback(label)
-                                },
-                                role = Role.RadioButton
-                            )
-                            .padding(horizontal = 16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        RadioSelected(selectedItem, label, callback)
+                LazyRow(
+                    modifier = Modifier.padding(bottom = 16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    items(itemList) { label ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp)
+                                .selectable(
+                                    selected = (selectedItem == label),
+                                    onClick = {
+                                        selectedItem = label
+                                        callback(label)
+                                    },
+                                    role = Role.RadioButton
+                                )
+                                .padding(horizontal = 16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButtonWithText(selectedItem, label)
+                        }
                     }
                 }
             }
