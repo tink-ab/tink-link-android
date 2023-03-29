@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Web">
         <activity
+            android:usesCleartextTraffic="false"
+            android:allowBackup="false"
             android:name="com.tink.link.app.SampleActivity"
             android:exported="true"
             android:label="@string/sample_activity_name"
