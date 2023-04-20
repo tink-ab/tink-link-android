@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tink-link-android
+  description: Tink Link Android Public
+  tags: []
+  annotations:
+    github.com/project-slug: tink-ab/tink-link-android
+  links: []
+spec:
+  owner: android
+  type: library
+  lifecycle: production
