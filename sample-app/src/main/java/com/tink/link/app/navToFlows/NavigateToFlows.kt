@@ -18,6 +18,7 @@ fun navigateToFlows(mode: LaunchMode, configuration: Configuration, selectedFlow
         FlowDetails.transactionOptions[7] -> showBusinessExtendConsent(activity, configuration, mode)
 
         FlowDetails.paymentOptions[0] -> showOneTimePayment(activity, configuration, mode)
+        FlowDetails.paymentOptions[1] -> showOneTimePaymentWithPermanentUser(activity, configuration, mode)
 
         FlowDetails.reportOptions[0] -> showCreateReportForAccountCheck(activity, configuration, mode)
         FlowDetails.reportOptions[1] -> showCreateReportForBusinessAccountCheck(activity, configuration, mode)
