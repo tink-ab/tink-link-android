@@ -13,7 +13,8 @@ object FlowDetails {
     )
 
     val paymentOptions = listOf(
-        "One-time payment"
+        "One-time payment",
+        "One-time payment with permanent user"
     )
 
     val reportOptions = listOf(

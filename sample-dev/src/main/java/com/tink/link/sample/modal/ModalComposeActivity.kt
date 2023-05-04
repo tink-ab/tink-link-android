@@ -47,13 +47,17 @@ class ModalComposeActivity : ComponentActivity() {
     }
 
     // Example of one time access to Transactions presented in a modal.
-    // TODO: For launching other flows, please find implementation guidance in this link.
+    // For launching other flows, please find implementation guidance in this link: https://github.com/tink-ab/tink-link-android/blob/master/sample-app/src/main/java/com/tink/link/app/navToFlows/FlowCases.kt
     @Composable
     private fun ShowTransactionsWithOneTimeAccess() {
+        // Add basic required parameters.
         val configuration = Configuration(
             clientId = "",
             redirectUri = "")
+
+        // Get Modal UI.
         val modal = Modal(getTinkTheme())
+
         // More parameters can be added to ConnectAccountsForOneTimeAccess().
         val oneTimeAccess = ConnectAccountsForOneTimeAccess(Market.SE)
 
@@ -73,6 +77,7 @@ class ModalComposeActivity : ComponentActivity() {
         )
     }
 
+    // Color, icons and title can be customized for both Light/Dark mode by changing the values on TinkAppearanceCompose.ThemeAttributes as below:
     private fun getTinkTheme(): TinkAppearance {
         return TinkAppearanceCompose(
             light = TinkAppearanceCompose.ThemeAttributes(

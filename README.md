@@ -23,7 +23,7 @@ To install the SDK, add `link` to your `app/build.gradle` dependencies.
 
 ```groovy
 dependencies {
-   implementation "com.tink:link:2.0.0"
+   implementation "com.tink:link:2.1.0"
 }
 ```
 
@@ -62,6 +62,21 @@ To launch the SDK in your Android app, please see the product specific documenta
 | **Risk Insights**     | [Getting started](https://docs.tink.com/resources/risk-insights/fetch-your-first-risk-insights-report)             | [Setup and integrate](https://docs.tink.com/resources/risk-insights/setup-and-integrate-risk-insights#tink-link-for-android)                  | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.riskInsights/-tink-risk-insights/index.html) |
 | **Transactions**      | [Getting started](https://docs.tink.com/resources/transactions/connect-to-a-bank-account)                          | [Setup and integrate](https://docs.tink.com/resources/transactions/setup-and-integrate-transactions#tink-link-for-android)                    | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.transactions/-tink-transactions/index.html) |
 | **Report bundling**   | -                                                                                                                  | -                                                                                                                                             | [SDK reference](https://tink-ab.github.io/tink-link-android/-tink%20-link%20-android%20-s-d-k/com.tink.link.core.features.reports/-tink-reports/index.html) |
+
+## Preselecting a provider
+
+You can also optimize your integration in different ways, such as [preselecting a provider](https://docs.tink.com/resources/account-check/optimize-your-account-check-integration#preselecting-a-bank).
+To preselect a provider, simply add your provider name in the request object, like in this example:
+
+```kotlin
+val dataRequest = ConnectAccountsForOneTimeAccess(
+   market = Market.SE,
+   input_provider = "sbab-bankid",
+)
+```
+Parameter input_provider gives the option to use the data to skip the provider-selection screen and preselect the user's provider (in this example, SBAB is preselected.)
+
+To get the list of all providers available for an authenticated user, please refer to [list-providers](https://docs.tink.com/api#connectivity/provider/list-providers)
 
 ### Sample apps
 

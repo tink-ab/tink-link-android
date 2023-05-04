@@ -20,6 +20,7 @@ import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.expensecheck.ExpenseCheckCreateReport
 import com.tink.link.core.data.request.incomecheck.IncomeCheckCreateReport
 import com.tink.link.core.data.request.payment.InitiateOneTimePayment
+import com.tink.link.core.data.request.payment.InitiateOneTimePaymentWithPermanentUser
 import com.tink.link.core.data.request.riskInsights.RiskInsightsCreateReport
 import com.tink.link.core.data.request.transactions.ConnectAccountsForContinuousAccess
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
@@ -250,6 +251,39 @@ fun showOneTimePayment(
         activity,
         configuration,
         oneTimePayment,
+        launchMode,
+        { success: TinkPaymentsSuccess ->
+            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for Initiate One-time payment with permanent user.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showOneTimePaymentWithPermanentUser(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to InitiateOneTimePaymentWithPermanentUser()
+    val oneTimePaymentWithPermanentUser = InitiateOneTimePaymentWithPermanentUser(
+        paymentRequestId = NecessaryIds.paymentRequestId,
+        authorizationCode = NecessaryIds.authorizationCode,
+        market = Market.SE
+    )
+
+    // Call this method to trigger the flow.
+    Tink.Payments.initiateOneTimePayment(
+        activity,
+        configuration,
+        oneTimePaymentWithPermanentUser,
         launchMode,
         { success: TinkPaymentsSuccess ->
             Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
