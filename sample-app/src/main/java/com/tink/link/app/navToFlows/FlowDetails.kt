@@ -25,4 +25,12 @@ object FlowDetails {
         "Create risk insights report",
         "Reports: account & transaction"
     )
+
+    val accountAggregationOptions = listOf(
+        "Authorize for one-time-access",
+        "Add credentials",
+        "Refresh credentials",
+        "Authenticate credentials",
+        "Extend consent",
+    )
 }

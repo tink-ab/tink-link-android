@@ -5,6 +5,10 @@ import android.util.Log
 import com.tink.link.app.NecessaryIds
 import com.tink.link.app.TAG
 import com.tink.link.core.base.Tink
+import com.tink.link.core.data.request.accountAggregation.AddCredentials
+import com.tink.link.core.data.request.accountAggregation.AuthenticateCredentials
+import com.tink.link.core.data.request.accountAggregation.AuthorizeForOneTimeAccess
+import com.tink.link.core.data.request.accountAggregation.RefreshCredentials
 import com.tink.link.core.data.request.accountcheck.AccountCheckCreateReport
 import com.tink.link.core.data.request.bundleReports.AccountDialogType
 import com.tink.link.core.data.request.bundleReports.ReportType
@@ -16,6 +20,7 @@ import com.tink.link.core.data.request.businessTransactions.BusinessConnectAccou
 import com.tink.link.core.data.request.businessTransactions.BusinessExtendConsent
 import com.tink.link.core.data.request.businessTransactions.BusinessUpdateConsent
 import com.tink.link.core.data.request.common.Market
+import com.tink.link.core.data.request.common.Scope
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.expensecheck.ExpenseCheckCreateReport
 import com.tink.link.core.data.request.incomecheck.IncomeCheckCreateReport
@@ -24,9 +29,9 @@ import com.tink.link.core.data.request.payment.InitiateOneTimePaymentWithPermane
 import com.tink.link.core.data.request.riskInsights.RiskInsightsCreateReport
 import com.tink.link.core.data.request.transactions.ConnectAccountsForContinuousAccess
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
-import com.tink.link.core.data.request.transactions.ExtendConsent
 import com.tink.link.core.data.request.transactions.UpdateConsent
 import com.tink.link.core.data.response.error.TinkError
+import com.tink.link.core.data.response.success.accountAggregation.TinkAccountAggregationSuccess
 import com.tink.link.core.data.response.success.accountCheck.TinkAccountCheckSuccess
 import com.tink.link.core.data.response.success.bundleReports.TinkReportsSuccess
 import com.tink.link.core.data.response.success.businessAccountCheck.TinkBusinessAccountCheckSuccess
@@ -502,7 +507,7 @@ fun showExtendConsent(
     configuration: Configuration,
     launchMode: LaunchMode
 ) {
-    val continuousAccessExtend = ExtendConsent(
+    val continuousAccessExtend = com.tink.link.core.data.request.transactions.ExtendConsent(
         authorizationCode = NecessaryIds.authorizationCode, // Required (Replace with your value).
         credentialsId = NecessaryIds.credentialsId // Required (Replace with your value).
     )
@@ -548,6 +553,175 @@ fun showBusinessExtendConsent(
         continuousAccessExtend,
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example of Account Aggregation with one-time-access.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showAccountAggregationAuthorizeForOneTimeAccess(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to AuthorizeForOneTimeAccess()
+    val authorizeForOneTimeAccess = AuthorizeForOneTimeAccess(
+        market = Market.SE,
+
+        // The scopes present in this example is what is needed for aggregation.
+        scope = listOf(
+            Scope.USER_CREATE,
+            Scope.AUTHORIZATION_GRANT
+        )
+    )
+
+    // Call this method to trigger the flow.
+    Tink.AccountAggregation.authorizeForOneTimeAccess(
+        activity,
+        configuration,
+        authorizeForOneTimeAccess,
+        launchMode,
+        { success: TinkAccountAggregationSuccess ->
+            Log.d(TAG, "code = ${success.code}")
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for adding the credentials of Account Aggregation with continuous-access.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showAccountAggregationAddCredentials(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to AddCredentials()
+    val addCredentials = AddCredentials(
+        authorizationCode = NecessaryIds.authorizationCode,
+        market = Market.SE
+    )
+
+    // Call this method to trigger the flow.
+    Tink.AccountAggregation.addCredentials(
+        activity,
+        configuration,
+        addCredentials,
+        launchMode,
+        { success: TinkAccountAggregationSuccess ->
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for refreshing the credentials of Account Aggregation with continuous-access.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showAccountAggregationRefreshCredentials(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to RefreshCredentials()
+    val refreshCredentials = RefreshCredentials(
+        authorizationCode = NecessaryIds.authorizationCode,
+        credentialsId = NecessaryIds.credentialsId,
+        market = Market.SE
+    )
+
+    // Call this method to trigger the flow.
+    Tink.AccountAggregation.refreshCredentials(
+        activity,
+        configuration,
+        refreshCredentials,
+        launchMode,
+        { success: TinkAccountAggregationSuccess ->
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for authenticating the credentials of Account Aggregation with continuous-access.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showAccountAggregationAuthenticateCredentials(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to AuthenticateCredentials()
+    val authenticateCredentials = AuthenticateCredentials(
+        authorizationCode = NecessaryIds.authorizationCode,
+        credentialsId = NecessaryIds.credentialsId,
+        market = Market.SE
+    )
+
+    // Call this method to trigger the flow.
+    Tink.AccountAggregation.authenticateCredentials(
+        activity,
+        configuration,
+        authenticateCredentials,
+        launchMode,
+        { success: TinkAccountAggregationSuccess ->
+            Log.d(TAG, "credentials_id = ${success.credentialsId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for extending the consent of Account Aggregation with continuous-access.
+ * @param activity
+ * @param configuration [Configuration] Tink Link configuration for this flow
+ * @param launchMode can be selected from [LaunchMode]
+ * */
+fun showAccountAggregationExtendConsent(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to ExtendConsent()
+    val extendConsent = com.tink.link.core.data.request.accountAggregation.ExtendConsent(
+        authorizationCode = NecessaryIds.authorizationCode,
+        credentialsId = NecessaryIds.credentialsId,
+        market = Market.SE
+    )
+
+    // Call this method to trigger the flow.
+    Tink.AccountAggregation.extendConsent(
+        activity,
+        configuration,
+        extendConsent,
+        launchMode,
+        { success: TinkAccountAggregationSuccess ->
             Log.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->

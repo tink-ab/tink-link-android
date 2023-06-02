@@ -23,7 +23,7 @@ To install the SDK, add `link` to your `app/build.gradle` dependencies.
 
 ```groovy
 dependencies {
-   implementation "com.tink:link:2.1.1"
+   implementation "com.tink:link:2.2.0"
 }
 ```
 

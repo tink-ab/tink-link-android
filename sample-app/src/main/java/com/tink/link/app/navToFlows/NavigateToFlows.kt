@@ -27,6 +27,12 @@ fun navigateToFlows(mode: LaunchMode, configuration: Configuration, selectedFlow
         FlowDetails.reportOptions[4] -> showCreateReportForRiskInsights(activity, configuration, mode)
         FlowDetails.reportOptions[5] -> showCreateReportForReports(activity, configuration, mode)
 
+        FlowDetails.accountAggregationOptions[0] -> showAccountAggregationAuthorizeForOneTimeAccess(activity, configuration, mode)
+        FlowDetails.accountAggregationOptions[1] -> showAccountAggregationAddCredentials(activity, configuration, mode)
+        FlowDetails.accountAggregationOptions[2] -> showAccountAggregationRefreshCredentials(activity, configuration, mode)
+        FlowDetails.accountAggregationOptions[3] -> showAccountAggregationAuthenticateCredentials(activity, configuration, mode)
+        FlowDetails.accountAggregationOptions[4] -> showAccountAggregationExtendConsent(activity, configuration, mode)
+
         else -> {
             Log.d(TAG, "not matching selection or not yet implemented")
         }

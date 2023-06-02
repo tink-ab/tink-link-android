@@ -70,5 +70,13 @@ fun FlowOptions(activity: Activity, configuration: Configuration, selectedLaunch
             configuration,
             selectedLaunchMode
         )
+
+        ExpandableCard(
+            "Account Aggregation",
+            FlowDetails.accountAggregationOptions,
+            activity,
+            configuration,
+            selectedLaunchMode
+        )
     }
 }
