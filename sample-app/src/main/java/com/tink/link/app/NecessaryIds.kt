@@ -1,10 +1,9 @@
 package com.tink.link.app
 
 object NecessaryIds {
-    // required for Transaction Continuous-access Connect/Update/Extend, and One-time Payment with permanent user.
+    // required for Continuous-access Connect/Update/Extend for Transactions and Account Aggregation
     var authorizationCode = ""
-
-    // required for Transaction Continuous-access Update/Extend
+    // required for Continuous-access Update/Extend for Transactions and Account Aggregation
     var credentialsId = ""
 
     // required for One-time Payment
