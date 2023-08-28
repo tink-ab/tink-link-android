@@ -4,7 +4,7 @@
 
 # Tink Link Android
 
-![Tink Link Android](https://user-images.githubusercontent.com/102951880/228022921-d954956d-918e-45f0-b1e0-8adc99ecc31c.png)
+![Tink Link Android](https://user-images.githubusercontent.com/102951880/235088600-260085f3-e73c-41ee-b95b-e032e7ca2200.png)
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ To install the SDK, add `link` to your `app/build.gradle` dependencies.
 
 ```groovy
 dependencies {
-   implementation "com.tink:link:2.2.0"
+   implementation "com.tink:link:2.3.0"
 }
 ```
 
@@ -70,18 +70,18 @@ To preselect a provider, simply add your provider name in the request object, li
 
 ```kotlin
 val dataRequest = ConnectAccountsForOneTimeAccess(
-   market = Market.SE,
-   input_provider = "sbab-bankid",
+   market = "SE",
+   inputProvider = "sbab-bankid",
 )
 ```
-Parameter input_provider gives the option to use the data to skip the provider-selection screen and preselect the user's provider (in this example, SBAB is preselected.)
+Parameter `inputProvider` gives the option to use the data to skip the provider-selection screen and preselect the user's provider (in this example, SBAB is preselected.)
 
 To get the list of all providers available for an authenticated user, please refer to [list-providers](https://docs.tink.com/api#connectivity/provider/list-providers)
 
-### Sample apps
+### Example apps
 
-- [Simple sample app](https://github.com/tink-ab/tink-link-android/tree/master/sample-dev) shows code samples how to integrate the Tink Link SDK in the easiest and fastest manner
-- [Products sample app](https://github.com/tink-ab/tink-link-android/tree/master/sample-app) showcases and allows you to try different Tink products
+- [Simple example app](https://github.com/tink-ab/tink-link-android/tree/master/sample-dev) shows code samples how to integrate the Tink Link SDK in the easiest and fastest manner
+- [Products example app](https://github.com/tink-ab/tink-link-android/tree/master/sample-app) showcases and allows you to try different Tink products
 
 ## SDK reference
 

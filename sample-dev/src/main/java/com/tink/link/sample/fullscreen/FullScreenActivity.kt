@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.link.core.base.Tink
-import com.tink.link.core.data.request.common.Market
+import com.tink.link.core.data.request.configuration.BaseDomain
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.response.error.TinkError
@@ -47,13 +47,15 @@ class FullScreenActivity : AppCompatActivity() {
         // Add basic required parameters.
         val configuration = Configuration(
             clientId = "",
-            redirectUri = "")
+            redirectUri = "",
+            baseDomain = BaseDomain.EU
+        )
 
         // Get Fullscreen UI.
         val fullScreen = FullScreen(getTinkAppearance())
 
         // More parameters can be added to ConnectAccountsForOneTimeAccess().
-        val oneTimeAccess = ConnectAccountsForOneTimeAccess(Market.SE)
+        val oneTimeAccess = ConnectAccountsForOneTimeAccess("SE")
 
         // Call this method to trigger the flow.
         Tink.Transactions.connectAccountsForOneTimeAccess(
