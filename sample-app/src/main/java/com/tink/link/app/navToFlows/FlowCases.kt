@@ -19,7 +19,6 @@ import com.tink.link.core.data.request.businessTransactions.BusinessConnectAccou
 import com.tink.link.core.data.request.businessTransactions.BusinessConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.request.businessTransactions.BusinessExtendConsent
 import com.tink.link.core.data.request.businessTransactions.BusinessUpdateConsent
-import com.tink.link.core.data.request.common.Market
 import com.tink.link.core.data.request.common.Scope
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.expensecheck.ExpenseCheckCreateReport
@@ -60,7 +59,7 @@ fun showCreateReportForExpenseCheck(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to ExpenseCheckCreateReport().
-    val request = ExpenseCheckCreateReport(Market.SE)
+    val request = ExpenseCheckCreateReport("SE")
 
     // Call this method to trigger the flow.
     Tink.ExpenseCheck.createReport(
@@ -89,7 +88,7 @@ fun showCreateReportForIncomeCheck(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to IncomeCheckCreateReport().
-    val request = IncomeCheckCreateReport(Market.SE)
+    val request = IncomeCheckCreateReport("SE")
 
     // Call this method to trigger the flow.
     Tink.IncomeCheck.createReport(
@@ -118,7 +117,7 @@ fun showCreateReportForRiskInsights(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to RiskInsightsCreateReport().
-    val request = RiskInsightsCreateReport(Market.SE)
+    val request = RiskInsightsCreateReport("SE")
 
     // Call this method to trigger the flow.
     Tink.RiskInsights.createReport(
@@ -147,7 +146,7 @@ fun showCreateReportForAccountCheck(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to AccountCheckCreateReport().
-    val request = AccountCheckCreateReport(Market.SE)
+    val request = AccountCheckCreateReport("SE")
 
     // Call this method to trigger the flow.
     Tink.AccountCheck.createReport(
@@ -176,7 +175,7 @@ fun showCreateReportForBusinessAccountCheck(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to BusinessAccountCheckCreateReport().
-    val request = BusinessAccountCheckCreateReport(Market.SE)
+    val request = BusinessAccountCheckCreateReport("SE")
 
     // Call this method to trigger the flow.
     Tink.BusinessAccountCheck.createReport(
@@ -249,7 +248,7 @@ fun showOneTimePayment(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to InitiateOneTimePayment()
-    val oneTimePayment = InitiateOneTimePayment(paymentRequestId = NecessaryIds.paymentRequestId, Market.SE)
+    val oneTimePayment = InitiateOneTimePayment(paymentRequestId = NecessaryIds.paymentRequestId, "SE")
 
     // Call this method to trigger the flow.
     Tink.Payments.initiateOneTimePayment(
@@ -281,7 +280,7 @@ fun showOneTimePaymentWithPermanentUser(
     val oneTimePaymentWithPermanentUser = InitiateOneTimePaymentWithPermanentUser(
         paymentRequestId = NecessaryIds.paymentRequestId,
         authorizationCode = NecessaryIds.authorizationCode,
-        market = Market.SE
+        market = "SE"
     )
 
     // Call this method to trigger the flow.
@@ -311,7 +310,7 @@ fun showConnectAccountsForOneTimeAccess(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to ConnectAccountsForOneTimeAccess().
-    val oneTimeAccess = ConnectAccountsForOneTimeAccess(Market.SE)
+    val oneTimeAccess = ConnectAccountsForOneTimeAccess("SE")
 
     // Call this method to trigger the flow.
     Tink.Transactions.connectAccountsForOneTimeAccess(
@@ -341,7 +340,7 @@ fun showConnectAccountsForBusinessOneTimeAccess(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to ConnectAccountsForOneTimeAccess().
-    val oneTimeAccess = BusinessConnectAccountsForOneTimeAccess(Market.SE)
+    val oneTimeAccess = BusinessConnectAccountsForOneTimeAccess("SE")
 
     // Call this method to trigger the flow.
     Tink.BusinessTransactions.connectAccountsForOneTimeAccess(
@@ -374,7 +373,7 @@ fun showConnectAccountsForContinuousAccess(
     val continuousAccessConnect =
         ConnectAccountsForContinuousAccess(
             authorizationCode = NecessaryIds.authorizationCode, // Required (Replace with your value).
-            market = Market.SE // Required
+            market = "SE" // Required
         )
 
     // Call this method to trigger the flow.
@@ -407,7 +406,7 @@ fun showConnectAccountsForBusinessContinuousAccess(
     val continuousAccessConnect =
         BusinessConnectAccountsForContinuousAccess(
             authorizationCode = NecessaryIds.authorizationCode, // Required (Replace with your value).
-            market = Market.SE // Required
+            market = "SE" // Required
         )
 
     // Call this method to trigger the flow.
@@ -574,7 +573,7 @@ fun showAccountAggregationAuthorizeForOneTimeAccess(
 ) {
     // More parameters can be added to AuthorizeForOneTimeAccess()
     val authorizeForOneTimeAccess = AuthorizeForOneTimeAccess(
-        market = Market.SE,
+        market = "SE",
 
         // The scopes present in this example is what is needed for aggregation.
         scope = listOf(
@@ -613,7 +612,7 @@ fun showAccountAggregationAddCredentials(
     // More parameters can be added to AddCredentials()
     val addCredentials = AddCredentials(
         authorizationCode = NecessaryIds.authorizationCode,
-        market = Market.SE
+        market = "SE"
     )
 
     // Call this method to trigger the flow.
@@ -646,7 +645,7 @@ fun showAccountAggregationRefreshCredentials(
     val refreshCredentials = RefreshCredentials(
         authorizationCode = NecessaryIds.authorizationCode,
         credentialsId = NecessaryIds.credentialsId,
-        market = Market.SE
+        market = "SE"
     )
 
     // Call this method to trigger the flow.
@@ -679,7 +678,7 @@ fun showAccountAggregationAuthenticateCredentials(
     val authenticateCredentials = AuthenticateCredentials(
         authorizationCode = NecessaryIds.authorizationCode,
         credentialsId = NecessaryIds.credentialsId,
-        market = Market.SE
+        market = "SE"
     )
 
     // Call this method to trigger the flow.
@@ -712,7 +711,7 @@ fun showAccountAggregationExtendConsent(
     val extendConsent = com.tink.link.core.data.request.accountAggregation.ExtendConsent(
         authorizationCode = NecessaryIds.authorizationCode,
         credentialsId = NecessaryIds.credentialsId,
-        market = Market.SE
+        market = "SE"
     )
 
     // Call this method to trigger the flow.

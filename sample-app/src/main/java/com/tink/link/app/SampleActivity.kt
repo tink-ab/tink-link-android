@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.tink.link.app.theme.WebTheme
 import com.tink.link.core.base.Tink
+import com.tink.link.core.data.request.configuration.BaseDomain
 import com.tink.link.core.data.request.configuration.Configuration
 
 class SampleActivity : ComponentActivity() {
@@ -21,7 +22,8 @@ class SampleActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate()")
 
-        val configuration = Configuration(clientId = "", redirectUri = "")
+        val configuration =
+            Configuration(clientId = "", redirectUri = "", baseDomain = BaseDomain.EU)
 
         savedInstanceState?.let {
             Tink.restoreState(it)
@@ -65,7 +67,7 @@ class SampleActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colors.background
             ) {
-                HomeScreenApp(this, Configuration("", ""))
+                HomeScreenApp(this, Configuration("", "", BaseDomain.EU))
             }
         }
     }

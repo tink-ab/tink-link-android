@@ -15,14 +15,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import com.tink.link.core.base.Tink
+import com.tink.link.core.data.request.configuration.BaseDomain
+import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.Modal
 import com.tink.link.core.themes.TinkAppearance
 import com.tink.link.core.themes.TinkAppearanceCompose
-import com.tink.link.core.data.request.common.Market
-import com.tink.link.core.data.request.configuration.Configuration
 
 /**
  * This class is to show how to run Transactions as Modal in Compose.
@@ -53,13 +53,15 @@ class ModalComposeActivity : ComponentActivity() {
         // Add basic required parameters.
         val configuration = Configuration(
             clientId = "",
-            redirectUri = "")
+            redirectUri = "",
+            baseDomain = BaseDomain.EU
+        )
 
         // Get Modal UI.
         val modal = Modal(getTinkTheme())
 
         // More parameters can be added to ConnectAccountsForOneTimeAccess().
-        val oneTimeAccess = ConnectAccountsForOneTimeAccess(Market.SE)
+        val oneTimeAccess = ConnectAccountsForOneTimeAccess("SE")
 
         // Call this method to trigger the flow.
         Tink.Transactions.connectAccountsForOneTimeAccess(
