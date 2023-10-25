@@ -46,8 +46,8 @@ class ModalActivity : AppCompatActivity() {
     private fun showTransactionsWithOneTimeAccess() {
         // Add basic required parameters.
         val configuration = Configuration(
-            clientId = "10a9c086411441a38c36acf4b1d55f98",
-            redirectUri = "tink://callback",
+            clientId = "",
+            redirectUri = "",
             baseDomain = BaseDomain.EU
         )
 

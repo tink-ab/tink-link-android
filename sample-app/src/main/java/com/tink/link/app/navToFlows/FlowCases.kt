@@ -23,6 +23,8 @@ import com.tink.link.core.data.request.common.Scope
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.expensecheck.ExpenseCheckCreateReport
 import com.tink.link.core.data.request.incomecheck.IncomeCheckCreateReport
+import com.tink.link.core.data.request.payment.InitiateBulkPayment
+import com.tink.link.core.data.request.payment.InitiateBulkPaymentWithPermanentUser
 import com.tink.link.core.data.request.payment.InitiateOneTimePayment
 import com.tink.link.core.data.request.payment.InitiateOneTimePaymentWithPermanentUser
 import com.tink.link.core.data.request.riskInsights.RiskInsightsCreateReport
@@ -50,8 +52,8 @@ import com.tink.link.core.navigator.LaunchMode
 /**
  * This is an example for the Expense Check: create report flow.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForExpenseCheck(
     activity: Activity,
@@ -79,8 +81,8 @@ fun showCreateReportForExpenseCheck(
 /**
  * This is an example for the Income Check: create report flow.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForIncomeCheck(
     activity: Activity,
@@ -108,8 +110,8 @@ fun showCreateReportForIncomeCheck(
 /**
  * This is an example for the Risk Insights: create report flow.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForRiskInsights(
     activity: Activity,
@@ -137,8 +139,8 @@ fun showCreateReportForRiskInsights(
 /**
  * This is an example for the Account Check: create report flow.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForAccountCheck(
     activity: Activity,
@@ -166,8 +168,8 @@ fun showCreateReportForAccountCheck(
 /**
  * This is an example for the Business Account Check: create report flow.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForBusinessAccountCheck(
     activity: Activity,
@@ -195,8 +197,8 @@ fun showCreateReportForBusinessAccountCheck(
 /**
  * This is an example for the ReportsCreateReport: create-report flow (Fetch account and transaction data in one flow).
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showCreateReportForReports(
     activity: Activity,
@@ -239,8 +241,8 @@ fun showCreateReportForReports(
 /**
  * This is an example for one-time payment.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showOneTimePayment(
     activity: Activity,
@@ -268,8 +270,8 @@ fun showOneTimePayment(
 /**
  * This is an example for Initiate One-time payment with permanent user.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showOneTimePaymentWithPermanentUser(
     activity: Activity,
@@ -299,10 +301,72 @@ fun showOneTimePaymentWithPermanentUser(
 }
 
 /**
+ * This is an example for one-time bulk payment.
+ * @param activity
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
+ * */
+fun showBulkPayment(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to InitiateBulkPayment()
+    val bulkPayment = InitiateBulkPayment(paymentRequestId = NecessaryIds.paymentRequestId, "SE")
+
+    // Call this method to trigger the flow.
+    Tink.Payments.initiateBulkPayment(
+        activity,
+        configuration,
+        bulkPayment,
+        launchMode,
+        { success: TinkPaymentsSuccess ->
+            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for initiating a one-time bulk payment with permanent users.
+ * @param activity
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
+ * */
+fun showBulkPaymentWithPermanentUser(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to InitiateBulkPaymentWithPermanentUser()
+    val bulkPaymentWithPermanentUser = InitiateBulkPaymentWithPermanentUser(
+        paymentRequestId = NecessaryIds.paymentRequestId,
+        authorizationCode = NecessaryIds.authorizationCode,
+        market = "SE"
+    )
+
+    // Call this method to trigger the flow.
+    Tink.Payments.initiateBulkPayment(
+        activity,
+        configuration,
+        bulkPaymentWithPermanentUser,
+        launchMode,
+        { success: TinkPaymentsSuccess ->
+            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
  * This is an example for one time access to Transactions.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showConnectAccountsForOneTimeAccess(
     activity: Activity,
@@ -331,8 +395,8 @@ fun showConnectAccountsForOneTimeAccess(
 /**
  * This is an example for one time access to Business Transactions.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showConnectAccountsForBusinessOneTimeAccess(
     activity: Activity,
@@ -362,8 +426,8 @@ fun showConnectAccountsForBusinessOneTimeAccess(
  * This is an example for connecting continuous access to Transactions.
  * authorizationCode is required, it can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showConnectAccountsForContinuousAccess(
     activity: Activity,
@@ -395,8 +459,8 @@ fun showConnectAccountsForContinuousAccess(
  * This is an example for connecting continuous access to Business Transactions.
  * authorizationCode is required, it can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showConnectAccountsForBusinessContinuousAccess(
     activity: Activity,
@@ -430,8 +494,8 @@ fun showConnectAccountsForBusinessContinuousAccess(
  * authorizationCode can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * credentialsId can be retrieved from callback from previous flow -- Connecting continuous access to Transactions:  Tink.Transactions.connectContinuousAccess.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showUpdateConsent(
     activity: Activity,
@@ -464,8 +528,8 @@ fun showUpdateConsent(
  * authorizationCode can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * credentialsId can be retrieved from callback from previous flow -- Connecting continuous access to Transactions:  Tink.Transactions.connectContinuousAccess.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showBusinessUpdateConsent(
     activity: Activity,
@@ -498,8 +562,8 @@ fun showBusinessUpdateConsent(
  * authorizationCode can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * credentialsId can be retrieved from callback from previous flow -- Connecting continuous access to Transactions:  Tink.Transactions.connectContinuousAccess.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showExtendConsent(
     activity: Activity,
@@ -532,8 +596,8 @@ fun showExtendConsent(
  * authorizationCode can be retrieved by following this link:[authorization code](https://docs.tink.com/api#general/oauth/create-authorization).
  * credentialsId can be retrieved from callback from previous flow -- Connecting continuous access to Transactions:  Tink.Transactions.connectContinuousAccess.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showBusinessExtendConsent(
     activity: Activity,
@@ -563,8 +627,8 @@ fun showBusinessExtendConsent(
 /**
  * This is an example of Account Aggregation with one-time-access.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showAccountAggregationAuthorizeForOneTimeAccess(
     activity: Activity,
@@ -601,8 +665,8 @@ fun showAccountAggregationAuthorizeForOneTimeAccess(
 /**
  * This is an example for adding the credentials of Account Aggregation with continuous-access.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showAccountAggregationAddCredentials(
     activity: Activity,
@@ -633,8 +697,8 @@ fun showAccountAggregationAddCredentials(
 /**
  * This is an example for refreshing the credentials of Account Aggregation with continuous-access.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showAccountAggregationRefreshCredentials(
     activity: Activity,
@@ -666,8 +730,8 @@ fun showAccountAggregationRefreshCredentials(
 /**
  * This is an example for authenticating the credentials of Account Aggregation with continuous-access.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showAccountAggregationAuthenticateCredentials(
     activity: Activity,
@@ -699,8 +763,8 @@ fun showAccountAggregationAuthenticateCredentials(
 /**
  * This is an example for extending the consent of Account Aggregation with continuous-access.
  * @param activity
- * @param configuration [Configuration] Tink Link configuration for this flow
- * @param launchMode can be selected from [LaunchMode]
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
  * */
 fun showAccountAggregationExtendConsent(
     activity: Activity,

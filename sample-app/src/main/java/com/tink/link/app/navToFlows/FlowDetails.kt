@@ -9,12 +9,14 @@ object FlowDetails {
         "Update consent",
         "Update consent for business",
         "Extend consent",
-        "Extend consent for business",
+        "Extend consent for business"
     )
 
     val paymentOptions = listOf(
         "One-time payment",
-        "One-time payment with permanent user"
+        "One-time payment with permanent user",
+        "Bulk payment",
+        "Bulk payment with permanent user"
     )
 
     val reportOptions = listOf(
@@ -31,6 +33,6 @@ object FlowDetails {
         "Add credentials",
         "Refresh credentials",
         "Authenticate credentials",
-        "Extend consent",
+        "Extend consent"
     )
 }
