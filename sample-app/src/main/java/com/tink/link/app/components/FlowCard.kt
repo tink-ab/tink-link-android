@@ -21,7 +21,6 @@ import com.tink.link.app.theme.Blue900
 
 @Composable
 fun FlowCard(flowType: String, onClick: () -> Unit) {
-
     Card(
         modifier = Modifier
             .padding(horizontal = 14.dp, vertical = 8.dp)
@@ -41,7 +40,7 @@ fun FlowCard(flowType: String, onClick: () -> Unit) {
                     style = TextStyle(
                         color = Blue900,
                         fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.Bold
                     )
                 )
             }

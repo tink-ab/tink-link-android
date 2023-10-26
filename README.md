@@ -4,7 +4,7 @@
 
 # Tink Link Android
 
-![Tink Link Android](https://user-images.githubusercontent.com/102951880/235088600-260085f3-e73c-41ee-b95b-e032e7ca2200.png)
+![Tink Link Android](https://github.com/tink-ab/tink-link-android-private/assets/102951880/40b9dab6-b823-4b1e-9d1b-abb4f9958f11)
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ To install the SDK, add `link` to your `app/build.gradle` dependencies.
 
 ```groovy
 dependencies {
-   implementation "com.tink:link:2.3.0"
+   implementation "com.tink:link:2.4.0"
 }
 ```
 
