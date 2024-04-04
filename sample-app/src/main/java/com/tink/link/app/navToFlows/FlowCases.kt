@@ -43,6 +43,7 @@ import com.tink.link.core.data.response.success.payments.TinkPaymentsSuccess
 import com.tink.link.core.data.response.success.riskInsights.TinkRiskInsightsSuccess
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.LaunchMode
+import java.util.Locale
 
 /**
  * This file is to show examples about how to launch each flow
@@ -709,7 +710,8 @@ fun showAccountAggregationRefreshCredentials(
     val refreshCredentials = RefreshCredentials(
         authorizationCode = NecessaryIds.authorizationCode,
         credentialsId = NecessaryIds.credentialsId,
-        market = "SE"
+        market = "SE",
+        locale = Locale("sv", "SE")
     )
 
     // Call this method to trigger the flow.
