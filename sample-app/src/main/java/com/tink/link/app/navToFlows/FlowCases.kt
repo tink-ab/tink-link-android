@@ -23,6 +23,7 @@ import com.tink.link.core.data.request.common.Scope
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.data.request.expensecheck.ExpenseCheckCreateReport
 import com.tink.link.core.data.request.incomecheck.IncomeCheckCreateReport
+import com.tink.link.core.data.request.payment.AuthorizeVariableRecurringPaymentsMandate
 import com.tink.link.core.data.request.payment.InitiateBulkPayment
 import com.tink.link.core.data.request.payment.InitiateBulkPaymentWithPermanentUser
 import com.tink.link.core.data.request.payment.InitiateOneTimePayment
@@ -40,6 +41,7 @@ import com.tink.link.core.data.response.success.businessTransactions.TinkBusines
 import com.tink.link.core.data.response.success.expensecheck.TinkExpenseCheckSuccess
 import com.tink.link.core.data.response.success.incomecheck.TinkIncomeCheckSuccess
 import com.tink.link.core.data.response.success.payments.TinkPaymentsSuccess
+import com.tink.link.core.data.response.success.payments.TinkVariableRecurringPaymentsSuccess
 import com.tink.link.core.data.response.success.riskInsights.TinkRiskInsightsSuccess
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.LaunchMode
@@ -356,6 +358,39 @@ fun showBulkPaymentWithPermanentUser(
         launchMode,
         { success: TinkPaymentsSuccess ->
             Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+        },
+        { error: TinkError ->
+            Log.d(TAG, "error message = ${error.errorDescription}")
+        }
+    )
+}
+
+/**
+ * This is an example for initiating a variable recurring payment.
+ * @param activity
+ * @param configuration The Tink Link [Configuration] for this flow.
+ * @param launchMode The [LaunchMode] for this flow.
+ * */
+fun showVariableRecurringPayment(
+    activity: Activity,
+    configuration: Configuration,
+    launchMode: LaunchMode
+) {
+    // More parameters can be added to AuthorizeVariableRecurringPaymentsMandate()
+    val variableRecurringPayment = AuthorizeVariableRecurringPaymentsMandate(
+        consentId = NecessaryIds.consentId,
+        authorizationCode = NecessaryIds.authorizationCode,
+        market = "SE"
+    )
+
+    // Call this method to trigger the flow.
+    Tink.Payments.authorizeVariableRecurringPaymentsMandate(
+        activity,
+        configuration,
+        variableRecurringPayment,
+        launchMode,
+        { success: TinkVariableRecurringPaymentsSuccess ->
+            Log.d(TAG, "consent_id = ${success.consentId}")
         },
         { error: TinkError ->
             Log.d(TAG, "error message = ${error.errorDescription}")
