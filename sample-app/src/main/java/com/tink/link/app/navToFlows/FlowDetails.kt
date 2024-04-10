@@ -16,7 +16,8 @@ object FlowDetails {
         "One-time payment",
         "One-time payment with permanent user",
         "Bulk payment",
-        "Bulk payment with permanent user"
+        "Bulk payment with permanent user",
+        "Variable recurring payment"
     )
 
     val reportOptions = listOf(

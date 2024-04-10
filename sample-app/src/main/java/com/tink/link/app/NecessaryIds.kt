@@ -10,4 +10,7 @@ object NecessaryIds {
 
     // required for single and bulk payments
     var paymentRequestId = ""
+
+    // required for variable recurring payments
+    var consentId = ""
 }
