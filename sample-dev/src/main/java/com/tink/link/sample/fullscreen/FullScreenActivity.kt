@@ -77,28 +77,10 @@ class FullScreenActivity : AppCompatActivity() {
     private fun getTinkAppearance(): TinkAppearance {
         return TinkAppearanceXml(
             light = TinkAppearanceXml.ThemeAttributes(
-                toolbarColorId = R.color.white,
-                windowBackgroundColorId = R.color.white,
-                iconBackId = R.drawable.ic_back,
-                iconBackTint = R.color.black,
-                iconBackDescriptionId = R.string.app_name,
-                iconCloseId = R.drawable.ic_cross,
-                iconCloseTint = R.color.black,
-                iconCloseDescriptionId = R.string.app_name,
-
-                // ToolbarTitle can be changed by adding parameter in TinkAppearanceXml.ToolbarTitle(toolbarTextId = R.string.title)
-                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+                windowBackgroundColorId = R.color.white
             ),
             dark = TinkAppearanceXml.ThemeAttributes(
-                toolbarColorId = R.color.black,
-                windowBackgroundColorId = R.color.white,
-                iconBackId = R.drawable.ic_back,
-                iconBackTint = R.color.white,
-                iconBackDescriptionId = R.string.app_name,
-                iconCloseId = R.drawable.ic_cross,
-                iconCloseTint = R.color.white,
-                iconCloseDescriptionId = R.string.app_name,
-                toolbarTitleObj = TinkAppearanceXml.ToolbarTitle()
+                windowBackgroundColorId = R.color.white
             )
         )
     }

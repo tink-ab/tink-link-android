@@ -76,42 +76,10 @@ class FullScreenComposeActivity : ComponentActivity() {
     private fun getTinkTheme(): TinkAppearance {
         return TinkAppearanceCompose(
             light = TinkAppearanceCompose.ThemeAttributes(
-                toolbarColor = Color.White,
-                windowBackgroundColor = Color.White,
-                iconBack = {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Back",
-                        tint = Color.Black
-                    )
-                },
-                iconClose = {
-                    Icon(
-                        imageVector = Icons.Filled.Close,
-                        contentDescription = "Close",
-                        tint = Color.Black
-                    )
-                },
-                toolbarTitle = { Text(text = "Tink", color = Color.Black, fontSize = 24.sp) }
+                windowBackgroundColor = Color.White
             ),
             dark = TinkAppearanceCompose.ThemeAttributes(
-                toolbarColor = Color.Black,
-                windowBackgroundColor = Color.Black,
-                iconBack = {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Back",
-                        tint = Color.White
-                    )
-                },
-                iconClose = {
-                    Icon(
-                        imageVector = Icons.Outlined.Close,
-                        contentDescription = "Close",
-                        tint = Color.White
-                    )
-                },
-                toolbarTitle = { Text(text = "Tink", color = Color.White, fontSize = 24.sp) }
+                windowBackgroundColor = Color.Black
             )
         )
     }
