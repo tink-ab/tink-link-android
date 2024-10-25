@@ -201,6 +201,7 @@ $dokka.location:com.tink.link.core.data.request.configuration////PointingToDecla
 $dokka.location:com.tink.link.core.data.request.configuration/BaseDomain.Custom///PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/-custom/index.html
 $dokka.location:com.tink.link.core.data.request.configuration/BaseDomain.Custom/Custom/#kotlin.String/PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/-custom/-custom.html
 $dokka.location:com.tink.link.core.data.request.configuration/BaseDomain.EU///PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/-e-u/index.html
+$dokka.location:com.tink.link.core.data.request.configuration/BaseDomain.US///PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/-u-s/index.html
 $dokka.location:com.tink.link.core.data.request.configuration/BaseDomain///PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/index.html
 $dokka.location:com.tink.link.core.data.request.configuration/BaseDomain/url/#/PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-base-domain/url.html
 $dokka.location:com.tink.link.core.data.request.configuration/Configuration///PointingToDeclaration/-tink -link -android -s-d-k/com.tink.link.core.data.request.configuration/-configuration/index.html
