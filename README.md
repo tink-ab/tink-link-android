@@ -1,4 +1,4 @@
-![Minimum Android API level](https://img.shields.io/badge/api-23%2B-0E9EC2)
+![Minimum Android API level](https://img.shields.io/badge/api-29%2B-0E9EC2)
 ![Platform](https://img.shields.io/badge/platform-Android-blue.svg)
 ![Languages](https://img.shields.io/badge/languages-Kotlin-blue.svg)
 
@@ -13,7 +13,7 @@
 
 ## Requirements
 
-The minimum API level that's required to use this library is 23 (Android 6.0).
+The minimum API level that's required to use this library is 29 (Android 10.0).
 
 ## Installation
 
