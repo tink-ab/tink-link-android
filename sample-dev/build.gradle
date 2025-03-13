@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.tink.link.sample'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 29
-        targetSdk 33
+        targetSdk 35
         versionCode 1
         versionName "1.0"
 
@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation "com.tink:link:3.0.0"
+    implementation "com.tink:link:3.0.1"
     implementation "androidx.core:core-ktx:$core_ktx_version"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
