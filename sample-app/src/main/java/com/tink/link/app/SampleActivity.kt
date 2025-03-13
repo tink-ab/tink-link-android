@@ -5,8 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -29,14 +34,18 @@ class SampleActivity : ComponentActivity() {
             Tink.restoreState(it)
         }
 
+        val activity = this
         setContent {
             WebTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    HomeScreenApp(this, configuration)
+                Scaffold(
+                    contentWindowInsets = WindowInsets.safeDrawing
+                ) { innerPadding ->
+                    Column(
+                        modifier = Modifier.padding(innerPadding)
+                    ) {
+                        HomeScreenApp(activity, configuration)
+                    }
                 }
             }
         }
@@ -47,9 +56,9 @@ class SampleActivity : ComponentActivity() {
         Log.d(TAG, "onResume()")
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        Log.d(TAG, "onNewIntent() intent.data = ${intent?.data}")
+        Log.d(TAG, "onNewIntent() intent.data = ${intent.data}")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
