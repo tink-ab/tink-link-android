@@ -9,38 +9,50 @@ This example app demonstrates how to integrate Tink Link using a WebView compone
 
 ## Steps
 
-### 1. Add WebView dependency
-Update your `build.gradle.kts` file to include the `androidx.webkit` library, which provides access to the `WebView` component.
+### 1. Add dependencies
+* Update your `build.gradle.kts` file to include the `androidx.webkit` library, which provides access to the `WebView` component.
+* Update your `build.gradle.kts` file to include the `androidx.browser` library, which provides access to the `CustomTabsIntent` component.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/build.gradle.kts#L55)
+[View code ↗](./app/build.gradle.kts#L55-L56)
 
-### 2. Create a `TinkLinkActivity` wrapping `WebView`
+### 2. Create a `CustomTabsHelper`
+Add a `CustomTabsHelper` type providing an interface to handle [Android's Custom Tabs](https://developer.android.com/develop/ui/views/layout/webapps/overview-of-android-custom-tabs).
+* Interface to warmup private `CustomTabsClient` with URLs that user is likely to reach. (optional)
+* Interface to open a web-based authentication URL in Custom Tabs.
+
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/CustomTabsHelper.kt#L23)
+
+### 3. Create a `TinkLinkActivity` wrapping `WebView`
 Implement a `TinkLinkActivity` that wraps the `WebView`. This activity handles:
-* Displaying the Tink Link interface
-* Managing redirects
-* Processing the final response
+* Displaying the Tink Link interface.
+* Managing redirects.
+* Processing the final response.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L18)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L18)
 
 ### 3. Update `AndroidManifest.xml`
-Extend the manifest and add the necessary intent filters to support app redirection back to the `TinkLinkActivity`.
+* Extend the manifest and add the necessary intent filters to support app redirection back to the `TinkLinkActivity`.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/src/main/AndroidManifest.xml#L31-L50)
+[View code ↗](./app/src/main/AndroidManifest.xml#L31-L50)
+
+* Add a query that allows the app to find and use a web browser that supports the Custom Tabs feature on Android 11 (API 30) and higher.
+
+[View code ↗](./app/src/main/AndroidManifest.xml#L7-L12)
 
 ### 4. Configure Tink Link URL parameters
 Set up the Tink Link URL with your credentials and required parameters.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L31-L40)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L27-L43)
 
 ### 5. Launch `TinkLinkActivity`
 Start the `TinkLinkActivity`, passing the configured URL as an intent extra.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L79-L81)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L67-L69)
 
 ### 6. Handle the callback response
 Parse the `callback` query response parameters to handle the response.
 
-[View code ↗](https://github.com/tink-ab/tink-link-android/blob/8d4375ce5f3a2e591439dd89f472bfa2a55b8e32/sample-web/app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L74-L82)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L73-L83)
 
 ## Support
 If you have any questions or need assistance, please contact [Tink Support](https://docs.tink.com/resources/support).

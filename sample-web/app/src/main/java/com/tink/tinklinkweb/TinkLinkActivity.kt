@@ -11,15 +11,17 @@ import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.net.toUri
 
 class TinkLinkActivity: ComponentActivity() {
 
     companion object {
         const val EXTRA_LINK_URL = "com.tink.tinklinkweb.LinkUrl"
     }
+
+    private val customTabsHelper: CustomTabsHelper = CustomTabsHelper()
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
@@ -30,10 +32,19 @@ class TinkLinkActivity: ComponentActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         handleIntent(intent)
 
-        val linkUrl = Uri.parse(requireNotNull(intent.getStringExtra(EXTRA_LINK_URL)) { "Intent extra is required" })
+        val linkUrl = requireNotNull(intent.getStringExtra(EXTRA_LINK_URL)) { "Intent extra is required" }.toUri()
+
+        // Optional:
+        // Array of URLs to preload for faster access.
+        val preloadURLs: Array<String> = arrayOf(
+            "https:www.example.com",
+            "https:www.example.com",
+            "https:www.example.com",
+        )
+
+        customTabsHelper.warmupCustomTabService(this, preloadURLs)
 
         setContent {
             AndroidView(
@@ -54,15 +65,15 @@ class TinkLinkActivity: ComponentActivity() {
                                 val uri = Uri.parse(url)
                                 if (uri.host == linkUrl.host) {
                                     return false
+                                } else if (uri.scheme == "https" && customTabsHelper.isCustomTabsAvailable(context)) {
+                                    customTabsHelper.openCustomTab(url.toString(), context)
+                                    return true
                                 } else {
-                                    val intent = Intent(Intent.ACTION_VIEW, uri)
-                                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                    view!!.context.startActivity(intent)
+                                    fallbackToBrowser(uri.toString())
                                     return true
                                 }
                             }
                         }
-
                         loadUrl(linkUrl.toString())
                     }
                 }
@@ -80,5 +91,11 @@ class TinkLinkActivity: ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun fallbackToBrowser(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 }

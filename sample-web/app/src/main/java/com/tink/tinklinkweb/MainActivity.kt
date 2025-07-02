@@ -2,9 +2,6 @@ package com.tink.tinklinkweb
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,10 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.graphics.toColorInt
 import com.tink.tinklinkweb.ui.theme.TinkLinkWebTheme
 
 /// Domain:
@@ -39,6 +35,7 @@ const val yourPaymentRequestID: String = "yourPaymentRequestID"
 const val yourRedirectURI: String = "example://callback"
 const val yourAppURI: String = "example://open"
 
+/// Link to open in WebView.
 val examplePaymentsUrl: String =
     """
     https://
@@ -81,8 +78,8 @@ class MainActivity : ComponentActivity() {
                         context.startActivity(intent)
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF6200EA),
-                        contentColor = Color.White
+                        containerColor = Color("#1434CB".toColorInt()),
+                        contentColor = Color("#FCC015".toColorInt())
                     ),
                     shape = RoundedCornerShape(16.dp),
                     modifier = Modifier
