@@ -30,7 +30,7 @@ Implement a `TinkLinkActivity` that wraps the `WebView`. This activity handles:
 
 [View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L18)
 
-### 3. Update `AndroidManifest.xml`
+### 4. Update `AndroidManifest.xml`
 * Extend the manifest and add the necessary intent filters to support app redirection back to the `TinkLinkActivity`.
 
 [View code ↗](./app/src/main/AndroidManifest.xml#L31-L50)
@@ -39,17 +39,17 @@ Implement a `TinkLinkActivity` that wraps the `WebView`. This activity handles:
 
 [View code ↗](./app/src/main/AndroidManifest.xml#L7-L12)
 
-### 4. Configure Tink Link URL parameters
+### 5. Configure Tink Link URL parameters
 Set up the Tink Link URL with your credentials and required parameters.
 
 [View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L27-L43)
 
-### 5. Launch `TinkLinkActivity`
+### 6. Launch `TinkLinkActivity`
 Start the `TinkLinkActivity`, passing the configured URL as an intent extra.
 
 [View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L67-L69)
 
-### 6. Handle the callback response
+### 7. Handle the callback response
 Parse the `callback` query response parameters to handle the response.
 
 [View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L73-L83)
