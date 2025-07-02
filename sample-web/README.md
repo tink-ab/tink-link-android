@@ -42,17 +42,17 @@ Implement a `TinkLinkActivity` that wraps the `WebView`. This activity handles:
 ### 5. Configure Tink Link URL parameters
 Set up the Tink Link URL with your credentials and required parameters.
 
-[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L27-L43)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L32-L52)
 
 ### 6. Launch `TinkLinkActivity`
 Start the `TinkLinkActivity`, passing the configured URL as an intent extra.
 
-[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L67-L69)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/MainActivity.kt#L76-L78)
 
 ### 7. Handle the callback response
 Parse the `callback` query response parameters to handle the response.
 
-[View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L73-L83)
+[View code ↗](./app/src/main/java/com/tink/tinklinkweb/TinkLinkActivity.kt#L84-L94)
 
 ## Support
 If you have any questions or need assistance, please contact [Tink Support](https://docs.tink.com/resources/support).
