@@ -2,6 +2,23 @@
 ![Platform](https://img.shields.io/badge/platform-Android-blue.svg)
 ![Languages](https://img.shields.io/badge/languages-Kotlin-blue.svg)
 
+# ⚠️ Important Notice
+
+**This mobile SDK is no longer recommended for new integrations.**  
+
+Please refer to one of our latest integration guides instead:
+* [Integrate One-Time Payments in Android apps](https://docs.tink.com/resources/payments/one-time-payments/integrate-one-time-payments-in-android-apps)
+* [Integrate Account Check in Android apps](https://docs.tink.com/resources/account-check/integrate-account-check-in-android-apps)
+* [Integrate Business Account Check in Android apps](https://docs.tink.com/resources/business-account-check/integrate-business-account-check-in-android-apps)
+* [Integrate Transactions in Android apps](https://docs.tink.com/resources/transactions/integrate-transactions-in-android-apps)
+* [Integrate Business Transactions in Android apps](https://docs.tink.com/resources/business-transactions/integrate-business-transactions-in-android-apps)
+* [Integrate Income Check in Android apps](https://docs.tink.com/resources/income-check/integrate-income-check-in-android-apps)
+* [Integrate Expense Check in Android apps](https://docs.tink.com/resources/expense-check/integrate-expense-check-in-android-apps)
+* [Integrate Risk Insights in Android apps](https://docs.tink.com/resources/risk-insights/integrate-risk-insights-in-android-apps)
+
+This repository will remain available for legacy integrations and will only receive security and bug-fix updates going forward.
+
+
 # Tink Link Android
 
 ![Tink Link Android](https://github.com/tink-ab/tink-link-android-private/assets/102951880/40b9dab6-b823-4b1e-9d1b-abb4f9958f11)
