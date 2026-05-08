@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.tink.link.app'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         minSdk 29
