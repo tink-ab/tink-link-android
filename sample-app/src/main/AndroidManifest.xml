@@ -28,8 +28,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="{redirectUri Host}"
-                    android:scheme="{redirectUri scheme}" />
+                    android:host="redirect_uri_host"
+                    android:scheme="redirect_uri_scheme" />
             </intent-filter>
         </activity>
     </application>
