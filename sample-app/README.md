@@ -1,4 +1,4 @@
-![Min Android API level](https://img.shields.io/badge/api-23%2B-0E9EC2)
+![Minimum Android API level](https://img.shields.io/badge/api-29%2B-0E9EC2)
 ![Platform](https://img.shields.io/badge/platform-Android-blue.svg)
 ![Languages](https://img.shields.io/badge/languages-Kotlin-blue.svg)
 
@@ -24,7 +24,7 @@ An Android app designed to demonstrate a simple use case of Tink Link for Androi
 
 5. Replace `android:host` and `android:scheme` placeholder in the source code with the `host` and `scheme` of the `redirectURI` you specified in the [Prerequisites](#Prerequisites) section.
 
-6. Make sure `sample-ui` is selected as run target.
+6. Make sure `sample-app` is selected as run target.
 
 7. Select any `Android phone emulator` or `physical device` as deployment target device.
 
