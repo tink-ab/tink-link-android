@@ -11,7 +11,7 @@ let sourcesetNotification;
 const samplesDarkThemeName = 'darcula'
 const samplesLightThemeName = 'idea'
 
-window.addEventListener('load', () => {
+globalThis.addEventListener('load', () => {
     document.querySelectorAll("div[data-platform-hinted]")
         .forEach(elem => elem.addEventListener('click', (event) => togglePlatformDependent(event, elem)))
     document.querySelectorAll("div[tabs-section]")
@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
 const darkModeSwitch = () => {
     const localStorageKey = "dokka-dark-mode"
     const storage = localStorage.getItem(localStorageKey)
-    const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    const osDarkSchemePreferred = globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches
     const darkModeEnabled = storage ? JSON.parse(storage) : osDarkSchemePreferred
     const element = document.getElementById("theme-toggle-button")
     initPlayground(darkModeEnabled ? samplesDarkThemeName : samplesLightThemeName)
@@ -97,7 +97,7 @@ const initHidingLeftNavigation = () => {
 
 // Hash change is needed in order to allow for linking inside the same page with anchors
 // If this is not present user is forced to refresh the site in order to use an anchor
-window.onhashchange = handleAnchor
+globalThis.onhashchange = handleAnchor
 
 function scrollToElementInContent(element) {
     const scrollToElement = () => document.getElementById('main').scrollTo({
@@ -147,14 +147,14 @@ function handleAnchor() {
         return result
     }
 
-    let anchor = window.location.hash
+    let anchor = globalThis.location.hash
     if (anchor != "") {
         anchor = anchor.substring(1)
         let element = document.querySelector('a[data-name="' + anchor + '"]')
 
         if (element) {
             const content = element.nextElementSibling
-            const contentStyle = window.getComputedStyle(content)
+            const contentStyle = globalThis.getComputedStyle(content)
             if(contentStyle.display == 'none') {
 		 let tab = findAnyTab(searchForContentTarget(content))
 		 if (tab) {
@@ -214,7 +214,7 @@ function initializeFiltering() {
         filteringContext.dependencies[p] = filteringContext.dependencies[p]
             .filter(q => -1 !== filteringContext.restrictedDependencies.indexOf(q))
     })
-    let cached = window.localStorage.getItem('inactive-filters')
+    let cached = globalThis.localStorage.getItem('inactive-filters')
     if (cached) {
         let parsed = JSON.parse(cached)
         filteringContext.activeFilters = filteringContext.restrictedDependencies
