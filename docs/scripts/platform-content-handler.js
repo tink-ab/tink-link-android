@@ -31,7 +31,7 @@ globalThis.addEventListener('load', () => {
 const darkModeSwitch = () => {
     const localStorageKey = "dokka-dark-mode"
     const storage = localStorage.getItem(localStorageKey)
-    const osDarkSchemePreferred = globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches
+    const osDarkSchemePreferred = globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches
     const darkModeEnabled = storage ? JSON.parse(storage) : osDarkSchemePreferred
     const element = document.getElementById("theme-toggle-button")
     initPlayground(darkModeEnabled ? samplesDarkThemeName : samplesLightThemeName)
@@ -274,11 +274,11 @@ function toggleSections(target) {
             }
         }
     }
-    const toggleTargets = target.getAttribute("data-togglable").split(",")
+    const toggleTargets = new Set(target.getAttribute("data-togglable").split(","))
     const activateTabsBody = (containerClass) => {
         document.querySelectorAll("." + containerClass + " *[data-togglable]")
             .forEach(child => {
-                    if (toggleTargets.includes(child.getAttribute("data-togglable"))) {
+                    if (toggleTargets.has(child.getAttribute("data-togglable"))) {
                         child.setAttribute("data-active", "")
                     } else if(!child.classList.contains("sourceset-dependent-content")) { // data-togglable is used to switch source set as well, ignore it
                         child.removeAttribute("data-active")

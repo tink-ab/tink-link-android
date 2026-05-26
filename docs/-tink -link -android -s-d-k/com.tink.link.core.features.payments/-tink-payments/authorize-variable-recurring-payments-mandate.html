@@ -7,7 +7,7 @@
     <script>var pathToRoot = "../../../";</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
-        const osDarkSchemePreferred = globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches
+        const osDarkSchemePreferred = globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
             document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
