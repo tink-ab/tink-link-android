@@ -69,14 +69,14 @@ const resetSymbolParametersWrapping = (symbol) => {
 }
 
 if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', () => {
+    globalThis.addEventListener('DOMContentLoaded', () => {
         wrapAllSymbolParameters()
     })
 } else {
     wrapAllSymbolParameters()
 }
 
-window.onresize = event => {
+globalThis.onresize = event => {
     // need to re-calculate if params need to be wrapped after resize
     resetAllSymbolParametersWrapping()
     wrapAllSymbolParameters()

@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+globalThis.addEventListener('load', () => {
     document.querySelectorAll('span.copy-icon').forEach(element => {
         element.addEventListener('click', (el) => copyElementsContentToClipboard(element));
     })
@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 })
 
 const copyElementsContentToClipboard = (element) => {
-    const selection = window.getSelection();
+    const selection = globalThis.getSelection();
     const range = document.createRange();
     range.selectNodeContents(element.parentNode.parentNode);
     selection.removeAllRanges();
@@ -48,5 +48,5 @@ const copyAndShowPopup = (element, after) => {
     }
 }
 
-const hrefWithoutCurrentlyUsedAnchor = () => window.location.href.split('#')[0]
+const hrefWithoutCurrentlyUsedAnchor = () => globalThis.location.href.split('#')[0]
 

@@ -83,7 +83,7 @@ scrollNavigationToSelectedElement = () => {
     It doesn't fire a DOMContentLoaded, presumabely because eventListener is added after it wants to do it
 */
 if (document.readyState == 'loading') {
-    window.addEventListener('DOMContentLoaded', () => {
+    globalThis.addEventListener('DOMContentLoaded', () => {
         displayNavigationFromPage()
     })
 } else {

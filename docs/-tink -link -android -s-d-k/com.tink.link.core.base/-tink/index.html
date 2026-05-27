@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Tink</title>
@@ -7,7 +7,7 @@
     <script>var pathToRoot = "../../../";</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
     if (storage == null) {
-        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        const osDarkSchemePreferred = globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
             document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
@@ -40,7 +40,7 @@
             </a>
     </div>
     <div>
-3.0.0    </div>
+    </div>
     <div class="pull-right d-flex">
         <div class="filter-section" id="filter-section">
                 <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sdk:dokkaHtml/release">androidJvm</button>
@@ -65,7 +65,7 @@
     <div class="tabs-section-body">
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="891499492%2FFunctions%2F165651098" anchor-label="restoreState" id="891499492%2FFunctions%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+        <div class="table"><a data-name="891499492%2FFunctions%2F165651098" anchor-label="restoreState" aria-label="restoreState" id="891499492%2FFunctions%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -80,7 +80,7 @@
               </div>
             </div>
           </div>
-<a data-name="1293544419%2FFunctions%2F165651098" anchor-label="saveState" id="1293544419%2FFunctions%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="1293544419%2FFunctions%2F165651098" anchor-label="saveState" aria-label="saveState" id="1293544419%2FFunctions%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -99,7 +99,7 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="1666344319%2FProperties%2F165651098" anchor-label="AccountAggregation" id="1666344319%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+        <div class="table"><a data-name="1666344319%2FProperties%2F165651098" anchor-label="AccountAggregation" aria-label="AccountAggregation" id="1666344319%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -114,7 +114,7 @@
               </div>
             </div>
           </div>
-<a data-name="1125701913%2FProperties%2F165651098" anchor-label="AccountCheck" id="1125701913%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="1125701913%2FProperties%2F165651098" anchor-label="AccountCheck" aria-label="AccountCheck" id="1125701913%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -129,7 +129,7 @@
               </div>
             </div>
           </div>
-<a data-name="1648147001%2FProperties%2F165651098" anchor-label="BusinessAccountCheck" id="1648147001%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="1648147001%2FProperties%2F165651098" anchor-label="BusinessAccountCheck" aria-label="BusinessAccountCheck" id="1648147001%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -144,7 +144,7 @@
               </div>
             </div>
           </div>
-<a data-name="-1966486273%2FProperties%2F165651098" anchor-label="BusinessTransactions" id="-1966486273%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="-1966486273%2FProperties%2F165651098" anchor-label="BusinessTransactions" aria-label="BusinessTransactions" id="-1966486273%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -159,7 +159,7 @@
               </div>
             </div>
           </div>
-<a data-name="-283952636%2FProperties%2F165651098" anchor-label="ExpenseCheck" id="-283952636%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="-283952636%2FProperties%2F165651098" anchor-label="ExpenseCheck" aria-label="ExpenseCheck" id="-283952636%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -174,7 +174,7 @@
               </div>
             </div>
           </div>
-<a data-name="466200839%2FProperties%2F165651098" anchor-label="IncomeCheck" id="466200839%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="466200839%2FProperties%2F165651098" anchor-label="IncomeCheck" aria-label="IncomeCheck" id="466200839%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -189,7 +189,7 @@
               </div>
             </div>
           </div>
-<a data-name="-180441977%2FProperties%2F165651098" anchor-label="Payments" id="-180441977%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="-180441977%2FProperties%2F165651098" anchor-label="Payments" aria-label="Payments" id="-180441977%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -204,7 +204,7 @@
               </div>
             </div>
           </div>
-<a data-name="2146473127%2FProperties%2F165651098" anchor-label="Reports" id="2146473127%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="2146473127%2FProperties%2F165651098" anchor-label="Reports" aria-label="Reports" id="2146473127%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -219,7 +219,7 @@
               </div>
             </div>
           </div>
-<a data-name="-1380291830%2FProperties%2F165651098" anchor-label="RiskInsights" id="-1380291830%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="-1380291830%2FProperties%2F165651098" anchor-label="RiskInsights" aria-label="RiskInsights" id="-1380291830%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -234,7 +234,7 @@
               </div>
             </div>
           </div>
-<a data-name="1806035935%2FProperties%2F165651098" anchor-label="Transactions" id="1806035935%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
+<a data-name="1806035935%2FProperties%2F165651098" anchor-label="Transactions" aria-label="Transactions" id="1806035935%2FProperties%2F165651098" data-filterable-set=":sdk:dokkaHtml/release"></a>
           <div class="table-row" data-filterable-current=":sdk:dokkaHtml/release" data-filterable-set=":sdk:dokkaHtml/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -255,7 +255,7 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link" aria-label="Go to top"></a></span><span>© 2026 Copyright</span><span
                 class="pull-right"><span>Generated by </span><a
                 href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
