@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.tink.link.app.theme.WebTheme
 import com.tink.link.core.base.Tink
 import com.tink.link.core.data.request.configuration.BaseDomain
+import com.tink.link.app.BuildConfig
 import com.tink.link.core.data.request.configuration.Configuration
 
 class SampleActivity : ComponentActivity() {
@@ -58,7 +59,10 @@ class SampleActivity : ComponentActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        Log.d(TAG, "onNewIntent() intent.data = ${intent.data}")
+        // WARNING: Never log intent.data in production — it may contain OAuth authorization codes.
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "onNewIntent() intent received")
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
