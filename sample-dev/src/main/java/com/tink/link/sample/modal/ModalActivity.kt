@@ -1,18 +1,17 @@
 package com.tink.link.sample.modal
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.tink.link.core.base.Tink
 import com.tink.link.core.data.request.configuration.BaseDomain
 import com.tink.link.core.data.request.configuration.Configuration
-import com.tink.link.sample.BuildConfig
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
 import com.tink.link.core.navigator.Modal
 import com.tink.link.core.themes.TinkAppearance
 import com.tink.link.core.themes.TinkAppearanceXml
+import com.tink.link.sample.Logger
 import com.tink.link.sample.R
 
 /**
@@ -66,13 +65,11 @@ class ModalActivity : AppCompatActivity() {
             modal,
             { success: TinkTransactionsSuccess ->
                 // WARNING: Do not log authorization codes or credentials IDs in production.
-                if (BuildConfig.DEBUG) {
-                    Log.d(TAG, "credentials_id = ${success.credentialsId}")
-                    Log.d(TAG, "code = ${success.code}")
-                }
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "code = ${success.code}")
             },
             { error: TinkError ->
-                Log.d(TAG, "error message = ${error.errorDescription}")
+                Logger.d(TAG, "error message = ${error.errorDescription}")
             }
         )
     }

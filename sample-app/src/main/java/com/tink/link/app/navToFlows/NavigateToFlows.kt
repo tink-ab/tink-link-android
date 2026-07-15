@@ -1,7 +1,7 @@
 package com.tink.link.app.navToFlows
 
 import android.app.Activity
-import android.util.Log
+import com.tink.link.app.Logger
 import com.tink.link.app.TAG
 import com.tink.link.core.data.request.configuration.Configuration
 import com.tink.link.core.navigator.LaunchMode
@@ -37,7 +37,7 @@ fun navigateToFlows(mode: LaunchMode, configuration: Configuration, selectedFlow
         FlowDetails.accountAggregationOptions[4] -> showAccountAggregationExtendConsent(activity, configuration, mode)
 
         else -> {
-            Log.d(TAG, "not matching selection or not yet implemented")
+            Logger.d(TAG, "not matching selection or not yet implemented")
         }
     }
 }
