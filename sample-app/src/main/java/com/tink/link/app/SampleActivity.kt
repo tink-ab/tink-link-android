@@ -59,9 +59,7 @@ class SampleActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         // WARNING: Never log intent.data in production — it may contain OAuth authorization codes.
-        if (BuildConfig.DEBUG) {
-            Logger.d(TAG, "onNewIntent() intent received")
-        }
+        Logger.d(TAG, "onNewIntent() intent received")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

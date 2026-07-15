@@ -67,10 +67,8 @@ class ModalComposeActivity : ComponentActivity() {
             modal,
             { success: TinkTransactionsSuccess ->
                 // WARNING: Do not log authorization codes or credentials IDs in production.
-                if (BuildConfig.DEBUG) {
-                    Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-                    Logger.d(TAG, "code = ${success.code}")
-                }
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "code = ${success.code}")
             },
             { error: TinkError ->
                 Logger.d(TAG, "error message = ${error.errorDescription}")

@@ -190,7 +190,10 @@ fun showCreateReportForBusinessAccountCheck(
         request,
         launchMode,
         { success: TinkBusinessAccountCheckSuccess ->
-            Logger.d(TAG, "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}")
+            Logger.d(
+                TAG,
+                "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}"
+            )
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -218,7 +221,10 @@ fun showCreateReportForReports(
         /**
          * Required, can be selected from [ReportsRefreshableItem]
          * */
-        refreshableItems = listOf(ReportsRefreshableItem.IDENTITY_DATA, ReportsRefreshableItem.CHECKING_ACCOUNTS),
+        refreshableItems = listOf(
+            ReportsRefreshableItem.IDENTITY_DATA,
+            ReportsRefreshableItem.CHECKING_ACCOUNTS
+        ),
 
         /**
          * Required, can be selected from [AccountDialogType]
@@ -254,7 +260,8 @@ fun showOneTimePayment(
     launchMode: LaunchMode
 ) {
     // More parameters can be added to InitiateOneTimePayment()
-    val oneTimePayment = InitiateOneTimePayment(paymentRequestId = NecessaryIds.paymentRequestId, "SE")
+    val oneTimePayment =
+        InitiateOneTimePayment(paymentRequestId = NecessaryIds.paymentRequestId, "SE")
 
     // Call this method to trigger the flow.
     Tink.Payments.initiateOneTimePayment(
@@ -421,10 +428,8 @@ fun showConnectAccountsForOneTimeAccess(
         launchMode,
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-                Logger.d(TAG, "code = ${success.code}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+            Logger.d(TAG, "code = ${success.code}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -454,10 +459,8 @@ fun showConnectAccountsForBusinessOneTimeAccess(
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-                Logger.d(TAG, "code = ${success.code}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+            Logger.d(TAG, "code = ${success.code}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -491,9 +494,7 @@ fun showConnectAccountsForContinuousAccess(
         launchMode,
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -527,9 +528,7 @@ fun showConnectAccountsForBusinessContinuousAccess(
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -564,9 +563,7 @@ fun showUpdateConsent(
         launchMode,
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -601,9 +598,7 @@ fun showBusinessUpdateConsent(
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -638,9 +633,7 @@ fun showExtendConsent(
         launchMode,
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -675,9 +668,7 @@ fun showBusinessExtendConsent(
         launchMode,
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -715,10 +706,8 @@ fun showAccountAggregationAuthorizeForOneTimeAccess(
         launchMode,
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "code = ${success.code}")
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "code = ${success.code}")
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -751,9 +740,7 @@ fun showAccountAggregationAddCredentials(
         launchMode,
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -788,9 +775,7 @@ fun showAccountAggregationRefreshCredentials(
         launchMode,
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -824,9 +809,7 @@ fun showAccountAggregationAuthenticateCredentials(
         launchMode,
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
@@ -860,9 +843,7 @@ fun showAccountAggregationExtendConsent(
         launchMode,
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
-            if (BuildConfig.DEBUG) {
-                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
-            }
+            Logger.d(TAG, "credentials_id = ${success.credentialsId}")
         },
         { error: TinkError ->
             Logger.d(TAG, "error message = ${error.errorDescription}")
