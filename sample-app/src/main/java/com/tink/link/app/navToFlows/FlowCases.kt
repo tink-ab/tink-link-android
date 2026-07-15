@@ -1,8 +1,8 @@
 package com.tink.link.app.navToFlows
 
 import android.app.Activity
-import android.util.Log
 import com.tink.link.app.BuildConfig
+import com.tink.link.app.Logger
 import com.tink.link.app.NecessaryIds
 import com.tink.link.app.TAG
 import com.tink.link.core.base.Tink
@@ -74,10 +74,10 @@ fun showCreateReportForExpenseCheck(
         request,
         launchMode,
         { success: TinkExpenseCheckSuccess ->
-            Log.d(TAG, "expenseCheckId = ${success.expenseCheckId}")
+            Logger.d(TAG, "expenseCheckId = ${success.expenseCheckId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -103,10 +103,10 @@ fun showCreateReportForIncomeCheck(
         request,
         launchMode,
         { success: TinkIncomeCheckSuccess ->
-            Log.d(TAG, "incomeCheckId = ${success.incomeCheckId}")
+            Logger.d(TAG, "incomeCheckId = ${success.incomeCheckId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -132,10 +132,10 @@ fun showCreateReportForRiskInsights(
         request,
         launchMode,
         { success: TinkRiskInsightsSuccess ->
-            Log.d(TAG, "riskInsightsId = ${success.riskInsightsId}")
+            Logger.d(TAG, "riskInsightsId = ${success.riskInsightsId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -161,10 +161,10 @@ fun showCreateReportForAccountCheck(
         request,
         launchMode,
         { success: TinkAccountCheckSuccess ->
-            Log.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
+            Logger.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -190,10 +190,10 @@ fun showCreateReportForBusinessAccountCheck(
         request,
         launchMode,
         { success: TinkBusinessAccountCheckSuccess ->
-            Log.d(TAG, "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}")
+            Logger.d(TAG, "businessAccountVerificationReportId = ${success.businessAccountVerificationReportId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -233,11 +233,11 @@ fun showCreateReportForReports(
         request,
         launchMode,
         { success: TinkReportsSuccess ->
-            Log.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
-            Log.d(TAG, "transactionReportId = ${success.transactionReportId}")
+            Logger.d(TAG, "accountVerificationReportId = ${success.accountVerificationReportId}")
+            Logger.d(TAG, "transactionReportId = ${success.transactionReportId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -263,10 +263,10 @@ fun showOneTimePayment(
         oneTimePayment,
         launchMode,
         { success: TinkPaymentsSuccess ->
-            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+            Logger.d(TAG, "payment_request_id = ${success.paymentRequestId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -296,10 +296,10 @@ fun showOneTimePaymentWithPermanentUser(
         oneTimePaymentWithPermanentUser,
         launchMode,
         { success: TinkPaymentsSuccess ->
-            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+            Logger.d(TAG, "payment_request_id = ${success.paymentRequestId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -325,10 +325,10 @@ fun showBulkPayment(
         bulkPayment,
         launchMode,
         { success: TinkPaymentsSuccess ->
-            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+            Logger.d(TAG, "payment_request_id = ${success.paymentRequestId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -358,10 +358,10 @@ fun showBulkPaymentWithPermanentUser(
         bulkPaymentWithPermanentUser,
         launchMode,
         { success: TinkPaymentsSuccess ->
-            Log.d(TAG, "payment_request_id = ${success.paymentRequestId}")
+            Logger.d(TAG, "payment_request_id = ${success.paymentRequestId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -391,10 +391,10 @@ fun showVariableRecurringPayment(
         variableRecurringPayment,
         launchMode,
         { success: TinkVariableRecurringPaymentsSuccess ->
-            Log.d(TAG, "consent_id = ${success.consentId}")
+            Logger.d(TAG, "consent_id = ${success.consentId}")
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -422,12 +422,12 @@ fun showConnectAccountsForOneTimeAccess(
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
-                Log.d(TAG, "code = ${success.code}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "code = ${success.code}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -455,12 +455,12 @@ fun showConnectAccountsForBusinessOneTimeAccess(
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
-                Log.d(TAG, "code = ${success.code}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "code = ${success.code}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -492,11 +492,11 @@ fun showConnectAccountsForContinuousAccess(
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -528,11 +528,11 @@ fun showConnectAccountsForBusinessContinuousAccess(
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -565,11 +565,11 @@ fun showUpdateConsent(
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -602,11 +602,11 @@ fun showBusinessUpdateConsent(
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -639,11 +639,11 @@ fun showExtendConsent(
         { success: TinkTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -676,11 +676,11 @@ fun showBusinessExtendConsent(
         { success: TinkBusinessTransactionsSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -716,12 +716,12 @@ fun showAccountAggregationAuthorizeForOneTimeAccess(
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log authorization codes or credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "code = ${success.code}")
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "code = ${success.code}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -752,11 +752,11 @@ fun showAccountAggregationAddCredentials(
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -789,11 +789,11 @@ fun showAccountAggregationRefreshCredentials(
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -825,11 +825,11 @@ fun showAccountAggregationAuthenticateCredentials(
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }
@@ -861,11 +861,11 @@ fun showAccountAggregationExtendConsent(
         { success: TinkAccountAggregationSuccess ->
             // WARNING: Do not log credentials IDs in production.
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "credentials_id = ${success.credentialsId}")
+                Logger.d(TAG, "credentials_id = ${success.credentialsId}")
             }
         },
         { error: TinkError ->
-            Log.d(TAG, "error message = ${error.errorDescription}")
+            Logger.d(TAG, "error message = ${error.errorDescription}")
         }
     )
 }

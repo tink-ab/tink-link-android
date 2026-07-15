@@ -2,7 +2,6 @@ package com.tink.link.app
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -26,7 +25,7 @@ class SampleActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate()")
+        Logger.d(TAG, "onCreate()")
 
         val configuration =
             Configuration(clientId = "", redirectUri = "", baseDomain = BaseDomain.EU)
@@ -54,14 +53,14 @@ class SampleActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume()")
+        Logger.d(TAG, "onResume()")
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         // WARNING: Never log intent.data in production — it may contain OAuth authorization codes.
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "onNewIntent() intent received")
+            Logger.d(TAG, "onNewIntent() intent received")
         }
     }
 

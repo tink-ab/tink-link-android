@@ -1,6 +1,5 @@
 package com.tink.link.sample
 
-import android.util.Log
 import com.tink.link.core.data.response.error.AccountInformationErrorReason
 import com.tink.link.core.data.response.error.AuthenticationErrorType
 import com.tink.link.core.data.response.error.AuthorizationErrorReason
@@ -18,17 +17,17 @@ import com.tink.link.core.data.response.error.UserLoginErrorReason
 object SampleErrorHandler {
 
     fun parseError(error: TinkError) {
-        Log.d("tink-sdk-sample", "error status = ${error.errorStatus}")
-        Log.d("tink-sdk-sample", "error type = ${error.errorType}")
-        Log.d("tink-sdk-sample", "error reason = ${error.errorReason}")
-        Log.d("tink-sdk-sample", "error message = ${error.errorDescription}")
-        Log.d("tink-sdk-sample", "error trackingId = ${error.trackingId}")
+        Logger.d("tink-sdk-sample", "error status = ${error.errorStatus}")
+        Logger.d("tink-sdk-sample", "error type = ${error.errorType}")
+        Logger.d("tink-sdk-sample", "error reason = ${error.errorReason}")
+        Logger.d("tink-sdk-sample", "error message = ${error.errorDescription}")
+        Logger.d("tink-sdk-sample", "error trackingId = ${error.trackingId}")
         when (val status = error.code) {
             is ErrorStatus.AuthenticationError -> {
-                Log.d("tink-sdk-sample", "error type = ${status.errorType}")
+                Logger.d("tink-sdk-sample", "error type = ${status.errorType}")
                 when (val type = status.errorType) {
                     is AuthenticationErrorType.AccountInformationError -> {
-                        Log.d("tink-sdk-sample", "error reason = ${type.reason}")
+                        Logger.d("tink-sdk-sample", "error reason = ${type.reason}")
                         when (type.reason) {
                             AccountInformationErrorReason.NO_ACCOUNTS -> Unit
                             AccountInformationErrorReason.UNDEFINED -> Unit
@@ -37,7 +36,7 @@ object SampleErrorHandler {
                     is AuthenticationErrorType.AuthorizationError -> when (type.reason) {
                         AuthorizationErrorReason.ACTION_NOT_PERMITTED,
                         AuthorizationErrorReason.SESSION_EXPIRED,
-                        AuthorizationErrorReason.USER_ACTION_REQUIRED -> Log.d(
+                        AuthorizationErrorReason.USER_ACTION_REQUIRED -> Logger.d(
                             "tink-sdk-sample",
                             "error reason = ${type.reason}"
                         )
@@ -45,7 +44,7 @@ object SampleErrorHandler {
                     }
                     is AuthenticationErrorType.ProviderError -> when (type.reason) {
                         ProviderErrorReason.PROVIDER_UNAVAILABLE,
-                        ProviderErrorReason.LICENSED_PARTY_REJECTED -> Log.d(
+                        ProviderErrorReason.LICENSED_PARTY_REJECTED -> Logger.d(
                             "tink-sdk-sample",
                             "error reason = ${type.reason}"
                         )
@@ -54,7 +53,7 @@ object SampleErrorHandler {
                     is AuthenticationErrorType.TinkSideError -> when (type.reason) {
                         TinkSideErrorReason.UNKNOWN_ERROR,
                         TinkSideErrorReason.TINK_INTERNAL_SERVER_ERROR,
-                        TinkSideErrorReason.AUTHENTICATION_METHOD_NOT_SUPPORTED -> Log.d(
+                        TinkSideErrorReason.AUTHENTICATION_METHOD_NOT_SUPPORTED -> Logger.d(
                             "tink-sdk-sample",
                             "error reason = ${type.reason}"
                         )
@@ -68,7 +67,7 @@ object SampleErrorHandler {
                         UserLoginErrorReason.DYNAMIC_CREDENTIALS_FLOW_TIMEOUT,
                         UserLoginErrorReason.USER_NOT_A_CUSTOMER,
                         UserLoginErrorReason.USER_BLOCKED,
-                        UserLoginErrorReason.USER_CONCURRENT_LOGINS -> Log.d(
+                        UserLoginErrorReason.USER_CONCURRENT_LOGINS -> Logger.d(
                             "tink-sdk-sample",
                             "error reason = ${type.reason}"
                         )

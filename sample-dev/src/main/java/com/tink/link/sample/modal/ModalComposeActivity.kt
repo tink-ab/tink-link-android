@@ -1,7 +1,6 @@
 package com.tink.link.sample.modal
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -19,6 +18,7 @@ import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuc
 import com.tink.link.core.navigator.Modal
 import com.tink.link.core.themes.TinkAppearance
 import com.tink.link.core.themes.TinkAppearanceCompose
+import com.tink.link.sample.Logger
 
 /**
  * This class is to show how to run Transactions as Modal in Compose.
@@ -68,12 +68,12 @@ class ModalComposeActivity : ComponentActivity() {
             { success: TinkTransactionsSuccess ->
                 // WARNING: Do not log authorization codes or credentials IDs in production.
                 if (BuildConfig.DEBUG) {
-                    Log.d(TAG, "credentials_id = ${success.credentialsId}")
-                    Log.d(TAG, "code = ${success.code}")
+                    Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                    Logger.d(TAG, "code = ${success.code}")
                 }
             },
             { error: TinkError ->
-                Log.d(TAG, "error message = ${error.errorDescription}")
+                Logger.d(TAG, "error message = ${error.errorDescription}")
             }
         )
     }

@@ -1,7 +1,6 @@
 package com.tink.link.sample.fullscreen
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
@@ -16,6 +15,7 @@ import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuc
 import com.tink.link.core.navigator.FullScreen
 import com.tink.link.core.themes.TinkAppearance
 import com.tink.link.core.themes.TinkAppearanceCompose
+import com.tink.link.sample.Logger
 
 /**
  * This class is to show how to implement Transactions as Fullscreen in Compose.
@@ -59,12 +59,12 @@ class FullScreenComposeActivity : ComponentActivity() {
             { success: TinkTransactionsSuccess ->
                 // WARNING: Do not log authorization codes or credentials IDs in production.
                 if (BuildConfig.DEBUG) {
-                    Log.d(TAG, "credentials_id = ${success.credentialsId}")
-                    Log.d(TAG, "code = ${success.code}")
+                    Logger.d(TAG, "credentials_id = ${success.credentialsId}")
+                    Logger.d(TAG, "code = ${success.code}")
                 }
             },
             { error: TinkError ->
-                Log.d(TAG, "error message = ${error.errorDescription}")
+                Logger.d(TAG, "error message = ${error.errorDescription}")
             }
         )
     }
