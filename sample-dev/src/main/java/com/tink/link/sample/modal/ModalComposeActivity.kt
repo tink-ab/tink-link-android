@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.Color
 import com.tink.link.core.base.Tink
 import com.tink.link.core.data.request.configuration.BaseDomain
 import com.tink.link.core.data.request.configuration.Configuration
-import com.tink.link.sample.BuildConfig
 import com.tink.link.core.data.request.transactions.ConnectAccountsForOneTimeAccess
 import com.tink.link.core.data.response.error.TinkError
 import com.tink.link.core.data.response.success.transactions.TinkTransactionsSuccess
