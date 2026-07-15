@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.tink.link.app.theme.WebTheme
 import com.tink.link.core.base.Tink
 import com.tink.link.core.data.request.configuration.BaseDomain
-import com.tink.link.app.BuildConfig
 import com.tink.link.core.data.request.configuration.Configuration
 
 class SampleActivity : ComponentActivity() {

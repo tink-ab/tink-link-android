@@ -1,7 +1,6 @@
 package com.tink.link.app.navToFlows
 
 import android.app.Activity
-import com.tink.link.app.BuildConfig
 import com.tink.link.app.Logger
 import com.tink.link.app.NecessaryIds
 import com.tink.link.app.TAG
